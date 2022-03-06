@@ -31,9 +31,9 @@ function App() {
           <Route path="/coustomize-suit "></Route>
           <Route path="/coustomize-craft "></Route>
           <Route path="/coustomize-seat "></Route>
+          <Route path="/coustomize-order "></Route>
           <Route path="/trans-mainpage "></Route>
-          <Route path="/trans-map "></Route>
-          <Route path="/trans-input "></Route>
+          <Route path="/trans-order "></Route>
           <Route path="/products-seat "></Route>
           <Route path="/products-list "></Route>
           <Route path="/products-detail "></Route>
@@ -42,6 +42,7 @@ function App() {
           <Route path="/cart-final-check "></Route>
           <Route path="/cart-credit-card "></Route>
           <Route path="/cart-complete "></Route>
+          
         </Switch>
       </>
     </Router>
