@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  /* font-family: 'Noto Serif JP'; */
   font-family: 'Noto Sans HK', sans-serif;
 }
 
@@ -28,13 +27,17 @@
 }
 
 .f1 {
-  padding: 30px 0px 0px;
+  padding: 65px 0px 0px;
 }
 
 .f2,
 .f3 {
   padding: 0px;
   margin-right: 40px;
+}
+
+.f2-p{
+  margin-left: 10px;
 }
 
 .f4 {
@@ -71,12 +74,12 @@ li {
 }
 
 .footer-heading {
-  font-size: 2rem;
+  font-size: 30px;
   color: white;
 }
 
 .footer-heading2 {
-  font-size: 1.5rem;
+  font-size: 21px;
   color: #05f2f2;
 }
 
@@ -91,20 +94,7 @@ li {
   text-decoration: none;
 }
 
-.contact-info {
-  color: #acacac;
-  font-size: 14px;
-}
 
-.footer-social-icon {
-  font-size: 15px;
-  height: 34px;
-  width: 34px;
-  line-height: 34px;
-  border-radius: 3px;
-  text-align: center;
-  display: inline-block;
-}
 
 .footer-alt {
   color: #acacac;
