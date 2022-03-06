@@ -117,7 +117,7 @@ const Footer = () => {
           </div>
 
           <div className="f5 d-none d-xl-block">
-            <p className="footer-alt mb-0 f-14" style={{ wordSpacing: '70px' }}>
+            <p className="footer-alt mb-0 f-14">
               <a href="#/">Terms&Conditions </a>
               <a href="#/">PrivacyPolicy</a>
             </p>
