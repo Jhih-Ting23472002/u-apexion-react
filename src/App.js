@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import './App.css';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -44,6 +47,7 @@ function App() {
           <Route path="/cart-complete "></Route>
           
         </Switch>
+        <Footer />
       </>
     </Router>
   );

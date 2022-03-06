@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    /* font-family: 'Noto Serif JP'; */
+    font-family: 'Noto Sans HK', sans-serif;
+    
+}
+
+#root{
+    background-color: #000;
+}
+@media (min-width: 1920px) {
+    .container {
+      max-width: 95rem;
+    }
+  }
+
+  .bg-footer {
+    /* background-image: url(./footer.png); */
+    background-position: center center;
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+
+  }
+
+  .container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .f1 {
+    padding: 30px 0px 0px;
+  }
+
+  .f2,
+  .f3 {
+    padding: 0px;
+    margin-right: 40px;
+  }
+
+  .f4 {
+    padding: 0px;
+  }
+
+  .f5 {
+    text-align: right;
+    padding: 30px 65px 0px 0px;
+  }
+
+
+  .f5-p {
+    text-align: center;
+    display: flex;
+  }
+
+  .f5 a {
+    color: #acacac;
+    text-decoration: none;
+    transition: all 0.5s;
+  }
+
+  .f5 a:hover {
+    color: #1bbc9b;
+  }
+
+  .f6 {
+    text-align: center;
+  }
+
+  li {
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .footer-heading {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .footer-heading2 {
+    font-size: 1.5rem;
+    color: #05F2F2;
+  }
+
+  .footer-link a {
+    color: #acacac;
+    line-height: 40px;
+    transition: all 0.5s;
+  }
+
+  .footer-link a:hover {
+    color: #1bbc9b;
+    text-decoration: none;
+  }
+
+  .contact-info {
+    color: #acacac;
+    font-size: 14px;
+  }
+
+  .footer-social-icon {
+    font-size: 15px;
+    height: 34px;
+    width: 34px;
+    line-height: 34px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .footer-alt {
+    color: #acacac;
+  }
+
+  .footer-heading2 {
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  .footer-heading2:after {
+    content: '';
+    width: 25px;
+    border-bottom: 1px solid #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-bottom: 1px solid #1bbc9b;
+  }
+
+  @media (max-width: 991px) {
+    .row {
+      text-align: center;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    .footer-heading2 {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+
+    .footer-heading2:after {
+      border-bottom: 0px;
+    }
+
+    .f1 {
+      margin-bottom: 50px;
+    }
+
+    .fa-brands {
+      margin-left: 40px;
+      margin-right: 40px;
+      font-size: 30px;
+      color: white;
+    }
+  }
