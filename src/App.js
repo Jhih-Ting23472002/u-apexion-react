@@ -11,11 +11,13 @@ function App() {
           <Route path="/index-postPage "></Route>
           <Route path="/index-postPage "></Route>
           <Route path="/member-login "></Route>
+          <Route path="/member-signup "></Route>
           <Route path="/member-person "></Route>
           <Route path="/member-password "></Route>
+          <Route path="/member-address "></Route>
           <Route path="/member-address-new "></Route>
           <Route path="/member-love "></Route>
-          <Route path="/member-address "></Route>
+          <Route path="/member-history"></Route>
           <Route path="/member-history-detail "></Route>
           <Route path="/travel "></Route>
           <Route path="/travel-choose "></Route>
