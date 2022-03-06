@@ -20,7 +20,6 @@ function App() {
           <Route path="/travel "></Route>
           <Route path="/travel-choose "></Route>
           <Route path="/travel-notes "></Route>
-          <Route path="/travel-notes "></Route>
           <Route path="/ticket-order "></Route>
           <Route path="/ticket-trip-choose "></Route>
           <Route path="/ticket-date-choose "></Route>
