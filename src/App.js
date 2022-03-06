@@ -19,7 +19,7 @@ function App() {
           <Route path="/member-love "></Route>
           <Route path="/member-history"></Route>
           <Route path="/member-history-detail "></Route>
-          <Route path="/travel "></Route>
+          <Route path="/travel-index "></Route>
           <Route path="/travel-choose "></Route>
           <Route path="/travel-notes "></Route>
           <Route path="/ticket-order "></Route>
