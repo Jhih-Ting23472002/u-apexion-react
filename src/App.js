@@ -37,9 +37,9 @@ function App() {
           <Route path="/coustomize-order "></Route>
           <Route path="/trans-mainpage "></Route>
           <Route path="/trans-order "></Route>
-          <Route path="/products-seat "></Route>
           <Route path="/products-list "></Route>
-          <Route path="/products-detail "></Route>
+          <Route path="/products-detail/:id"></Route>
+          <Route path="/products" exact></Route>
           <Route path="/cart-payment "></Route>
           <Route path="/cart-information "></Route>
           <Route path="/cart-final-check "></Route>
