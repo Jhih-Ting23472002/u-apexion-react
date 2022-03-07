@@ -1,18 +1,17 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
-import { useState } from 'react'
+import Navbar from './components/navbar';
+import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
+import { useState } from 'react';
 
 //頁面元件
-
-
-
-
 
 function App() {
   return (
     <Router>
       <>
+      <Navbar />
         <Switch>
           <Route path="/index-video "></Route>
           <Route path="/index "></Route>
@@ -36,7 +35,9 @@ function App() {
           <Route path="/ticket-date-choose "></Route>
           <Route path="/ticket-meal-choose "></Route>
           <Route path="/ticket-confirm "></Route>
-          <Route path="/coustomize-mainpage "></Route>
+          <Route path="/coustomize-mainpage">
+            <CoustomizeMainPage />
+          </Route>
           <Route path="/coustomize-suit "></Route>
           <Route path="/coustomize-craft "></Route>
           <Route path="/coustomize-seat "></Route>
@@ -51,9 +52,8 @@ function App() {
           <Route path="/cart-final-check "></Route>
           <Route path="/cart-credit-card "></Route>
           <Route path="/cart-complete "></Route>
-          
         </Switch>
-        <Footer />
+      <Footer />
       </>
     </Router>
   );

@@ -1,0 +1,51 @@
+path{
+    box-shadow: 5px 5px 15px black;
+}
+.cir{ width: 100px;
+    height: 100px;
+    }
+.ppp{
+    width: 100px;
+    height: 100px;
+    box-shadow: 5px 5px 15px black;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    /* overflow:hidden; */
+    position: relative;
+}
+.movie-select {
+    display: flex;
+    position: relative;
+}
+
+.suit {
+    background-color: rgb(204, 112, 112);
+    width: 33.333%;
+    height: 100vh;
+
+}
+
+.craft {
+    background-color: rgb(143, 159, 245);
+    width: 33.333%;
+    height: 100vh;
+}
+
+.seat {
+    background-color: rgb(176, 236, 186);
+    width: 33.333%;
+    height: 100vh;
+}
+
+.moon {
+    width: 1500px;
+    height:500px;
+    /* box-shadow: 5px 5px 15px black; */
+    position: absolute;
+    bottom: -200px ;
+    left: 20px;
+    transform: rotate(17deg);
+    /* background-color: #000; */
+}
