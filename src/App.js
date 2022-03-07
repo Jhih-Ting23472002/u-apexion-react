@@ -1,6 +1,12 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
+import { useState } from 'react'
+
+//頁面元件
+
+
+
 
 
 function App() {
