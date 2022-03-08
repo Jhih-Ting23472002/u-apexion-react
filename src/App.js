@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <>
-      <Navbar />
+        <Navbar />
         <Switch>
           <Route path="/index-video "></Route>
           <Route path="/index "></Route>
@@ -53,7 +53,7 @@ function App() {
           <Route path="/cart-credit-card "></Route>
           <Route path="/cart-complete "></Route>
         </Switch>
-      <Footer />
+        <Footer />
       </>
     </Router>
   );
