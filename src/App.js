@@ -1,13 +1,9 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
-import { useState } from 'react'
 
 //頁面元件
-
-
-
-
+import Products from './pages/Products/Products';
 
 function App() {
   return (
@@ -45,13 +41,14 @@ function App() {
           <Route path="/trans-order "></Route>
           <Route path="/products-list "></Route>
           <Route path="/products-detail/:id"></Route>
-          <Route path="/products" exact></Route>
+          <Route path="/products" exact>
+            <Products/>
+          </Route>
           <Route path="/cart-payment "></Route>
           <Route path="/cart-information "></Route>
           <Route path="/cart-final-check "></Route>
           <Route path="/cart-credit-card "></Route>
           <Route path="/cart-complete "></Route>
-          
         </Switch>
         <Footer />
       </>
