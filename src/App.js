@@ -49,7 +49,9 @@ function App() {
           <Route path="/trans-order"></Route>
           <Route path="/products-list"></Route>
           <Route path="/products-detail/:id"></Route>
-          <Route path="/products" exact><Products /></Route>
+          <Route path="/products" exact>
+            <Products />
+          </Route>
           <Route exact path="/cart-payment">
             <CartChoosePayment />
           </Route>
