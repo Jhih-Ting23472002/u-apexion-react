@@ -40,30 +40,30 @@
 }
 @media screen and (max-width:375px) {
     .pr-home-mv-img{
-      
+        position: relative;
         >.pr-home-mv-p{
-            margin-top: 26%;
+            margin-top: 25%;
             position: absolute;
             width:100%;
             text-align: center;
             >.pr-home-h2{  
+                margin:0px;
                 font-weight: 900;
-                font-size: 24px;
+                font-size: 20px;
                 color: white;
-                line-height: 120%;
                 text-transform: capitalize;
                 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
             }
             >.pr-home-p1{
-                font-size: 18px;
+                margin:0px;
+                font-size: 14px;
                 text-align: center;
                 text-transform: capitalize;
                 color: #FFFFFF;
                 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
             }
             >.pr-home-p2{
-                font-size: 18px;
-                line-height: 110%;
+                font-size: 14px;
                 text-align: center;
                 text-transform: capitalize;
                 color: #FFFFFF;
@@ -73,3 +73,4 @@
     
     }
 }
+/* 第2段時裝照--------------------------------------------------------------------------------------- */
