@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
+
+//頁面元件
+import Products from './pages/Products/Products';
 import Navbar from './components/navbar';
 import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -47,6 +50,16 @@ function App() {
           <Route path="/trans-order"></Route>
           <Route path="/products-list"></Route>
           <Route path="/products-detail/:id"></Route>
+<<<<<<< HEAD
+          <Route path="/products" exact>
+            <Products/>
+          </Route>
+          <Route path="/cart-payment "></Route>
+          <Route path="/cart-information "></Route>
+          <Route path="/cart-final-check "></Route>
+          <Route path="/cart-credit-card "></Route>
+          <Route path="/cart-complete "></Route>
+=======
           <Route path="/products" exact></Route>
           <Route exact path="/cart-payment">
             <CartChoosePayment />
@@ -55,6 +68,7 @@ function App() {
           <Route path="/cart-final-check"></Route>
           <Route path="/cart-credit-card"></Route>
           <Route path="/cart-complete"></Route>
+>>>>>>> refs/remotes/origin/main
         </Switch>
         <Footer />
       </>

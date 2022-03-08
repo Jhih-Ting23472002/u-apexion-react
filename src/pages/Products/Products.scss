@@ -1,1 +1,75 @@
 @import '~bootstrap/scss/bootstrap.scss';
+
+/* 第1段--------------------------------------------------------------------------------------- */
+
+.pr-home-mv-img{
+    position: relative;
+    >.pr-home-mv-p{
+        margin-top: 26%;
+        position: absolute;
+        width:100%;
+        text-align: center;
+        >.pr-home-h2{  
+            font-weight: 900;
+            font-size: 96px;
+            color: white;
+            line-height: 140%;
+            text-transform: capitalize;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        }
+        >.pr-home-p1{
+            font-size: 50px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        }
+        >.pr-home-p2{
+            font-size: 36px;
+            line-height: 140%;
+            text-align: center;
+            text-transform: capitalize;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        }
+    }
+    > img{
+        width: 100%;
+        Object-fit: contain;
+    }
+}
+@media screen and (max-width:375px) {
+    .pr-home-mv-img{
+      
+        >.pr-home-mv-p{
+            margin-top: 26%;
+            position: absolute;
+            width:100%;
+            text-align: center;
+            >.pr-home-h2{  
+                font-weight: 900;
+                font-size: 24px;
+                color: white;
+                line-height: 20;
+                text-transform: capitalize;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+            }
+            >.pr-home-p1{
+                font-size: 18px;
+                text-align: center;
+                text-transform: capitalize;
+                color: #FFFFFF;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+            }
+            >.pr-home-p2{
+                font-size: 18px;
+                line-height: 120%;
+                text-align: center;
+                text-transform: capitalize;
+                color: #FFFFFF;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+            }
+        }
+    
+    }
+}
