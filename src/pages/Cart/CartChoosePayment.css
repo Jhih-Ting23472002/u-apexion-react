@@ -5,6 +5,10 @@
 .container{
     padding-top: 5%;
     /* position: relative; */
+    display: flex;
+    
+    flex-direction: column;
+    padding-bottom: 50px;
 }
 .steps{
     width: 50px;
@@ -45,7 +49,16 @@
 .btn{
     background-color: #023E73;
     color: #fff;
-    width: 200px;
-    border-radius: 15px;
-    /* padding-bottom: 1px; */
+    width: 250px;
+    border-radius: 20px;
+    margin: auto
+}
+.btn:hover{
+    color: pink;
+}
+.separated-line{
+    width: 100%;
+    background-color: #000;
+    height: 1px;
+    margin-top: 40px;
 }

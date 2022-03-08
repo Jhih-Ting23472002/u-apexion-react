@@ -29,7 +29,13 @@ const CartChoosePayment = () => {
           <div className="cart d-flex justify-content-center py-5 total-price-text">
             您的購物袋裡有以下商品，目前總金額是 NT$xxxxxx。
           </div>
-          <button className="btn">結帳</button>
+          <button className="btn" type="button">
+            結帳
+          </button>
+          <div className="cart separated-line"></div>
+          <div className="cart order-item">
+            <img src="" alt=""></img>
+          </div>
         </div>
       </div>
     </>
