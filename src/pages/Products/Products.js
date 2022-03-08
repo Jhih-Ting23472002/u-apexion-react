@@ -1,9 +1,6 @@
 import React from 'react';
 import './Products.scss';
 
-
-
-
 function Products() {
   return (
     <article>
@@ -13,8 +10,9 @@ function Products() {
           <p className="pr-home-p1">autumn and winter series</p>
           <p className="pr-home-p2">Take you to space!</p>
         </div>
-        <img src='./product_img/product_01.jpg' alt=""/>
+        <img src="./product_img/product_01.jpg" alt="" />
       </div>
+      //時裝照
     </article>
   );
 }
