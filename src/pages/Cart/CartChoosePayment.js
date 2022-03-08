@@ -34,7 +34,9 @@ const CartChoosePayment = () => {
           </button>
           <div className="cart separated-line"></div>
           <div className="cart order-item">
-            <img src="" alt=""></img>
+            <div className="cart img-div">
+              <img src="../../public/example.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
