@@ -4,6 +4,7 @@ import './navbar.css';
 function navbar() {
   return (
     <>
+      <div className="topspace"></div>
       <nav>
         <div className="nav_container">
           <a href="#/" className="nav_UA-logo"></a>

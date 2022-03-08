@@ -1,6 +1,10 @@
 /* 還差字體跟手機板的目錄 */
 
 @media screen and (max-width: 950px) {
+  .topspace{
+    height: 60px;
+    width: 100%;
+  }
   nav {
     z-index: 99;
     position: fixed;
@@ -43,6 +47,10 @@
 }
 
 @media screen and (min-width: 950px) {
+  .topspace{
+    height: 60px;
+    width: 100%;
+  }
   .nav_menu {
     display: none;
   }
@@ -79,6 +87,7 @@
     text-align: center;
     align-items: center;
     font-size: 15px;
+    margin: 0;
   }
   .nav_nav-bar li {
     width: 110px;

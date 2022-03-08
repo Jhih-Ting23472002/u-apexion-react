@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
-
+import Navbar from './components/navbar';
 //頁面元件
 import Products from './pages/Products/Products';
-import Navbar from './components/navbar';
 import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
