@@ -1,0 +1,173 @@
+img {
+    width: 100%;
+}
+
+/* 訂票輸入欄樣式開始 */
+.ticketWrap {
+    background: url(img/ticket-order-bg.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+.inputArea {
+    width: 30%;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.698);
+    margin-left: 10%;
+    position: absolute;
+    bottom: 5%;
+    text-align: center;
+}
+
+.inputArea h2 {
+    color: white;
+    font-size: 3rem;
+    margin: 7% 0;
+}
+
+.inputWrap {
+    /* border: 1px solid green; */
+    width: 85%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputArea label {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.inputArea .inputGroup {
+    padding: 6px;
+    width: 75%;
+    border: #48EDE8 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputArea input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 80%;
+}
+
+.inputArea input:focus-visible {
+    outline: none;
+}
+
+.inputArea input::placeholder,
+.inputGroup p {
+    color: white;
+    font-size: .87rem;
+    margin: 0;
+}
+
+.inputArea i {
+    color: #48EDE8;
+    font-size: 20px;
+    border-left: #48EDE8 1px solid;
+    text-align: right;
+    padding-left: 6px;
+}
+
+.inputArea i:first-child {
+    padding: 0 6px;
+}
+
+.inputPassport {
+    padding: 6px;
+    width: 60%;
+    border: #48EDE8 1px solid;
+}
+
+.inputArea input#file-upload-button {
+    color: red;
+}
+
+.uploadButton {
+    position: relative;
+    margin: 0;
+    /* border: 1px solid yellow; */
+}
+
+.tickitConfirmBtn {
+    background-color: #48EDE8;
+    color: #023E73;
+    width: 40%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    /* padding: 7px 0; */
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    cursor: pointer;
+}
+
+.tickitConfirmBtn::after {
+    content: "";
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    /* padding: 7px 0; */
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+/* 訂票輸入欄樣式結束 */
+/* 輪播牆樣式開始 */
+.sliderArea {
+    width: 20%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    margin-right: 5%;
+
+    padding-left: 30px;
+    /* border: 1px solid rgb(0, 255, 42); */
+}
+
+.sliderArea .sliderWrap {
+
+    height: 200vh;
+    padding-left: 30px;
+    /* border: 1px solid yellow; */
+    /* margin-top: -100vh; */
+    animation: img-slider 35s linear infinite;
+
+}
+
+.sliderArea div {
+    height: 25vh;
+}
+
+.sliderArea div:nth-child(odd) {
+    transform: translateX(-30px);
+}
+
+.sliderArea img {
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes img-slider {
+    from {
+        margin-top: 0;
+    }
+
+    to {
+        margin-top: -200vh;
+    }
+}
+
+
+
+/* 輪播牆樣式結束 */

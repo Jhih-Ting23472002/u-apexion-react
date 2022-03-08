@@ -7,6 +7,7 @@ import Products from './pages/Products/Products';
 import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
+import Ticket from './pages/Ticket/Ticket';
 
 //頁面元件
 
@@ -33,7 +34,9 @@ function App() {
           <Route path="/travel-index"></Route>
           <Route path="/travel-choose"></Route>
           <Route path="/travel-notes"></Route>
-          <Route path="/ticket-order"></Route>
+          <Route path="/ticket-order">
+            <Ticket />
+          </Route>
           <Route path="/ticket-trip-choose"></Route>
           <Route path="/ticket-date-choose"></Route>
           <Route path="/ticket-meal-choose"></Route>
