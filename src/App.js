@@ -11,6 +11,7 @@ import { useState } from 'react';
 import Ticket from './pages/Ticket/Ticket';
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
+import TravelNotes from './pages/Travel/TravelNotes';
 
 //頁面元件
 
@@ -40,9 +41,11 @@ function App() {
             <TravelIndex />
           </Route>
           <Route path="/travel-choose">
-          <TravelChoose />
+            <TravelChoose />
           </Route>
-          <Route path="/travel-notes"></Route>
+          <Route path="/travel-notes">
+            <TravelNotes/>
+          </Route>
           <Route path="/ticket-order">
             <Ticket />
           </Route>
