@@ -9,9 +9,9 @@ import slider06 from './img/slider06.jpg';
 import slider07 from './img/slider07.jpeg';
 import slider08 from './img/slider08.jpg';
 import { useState } from 'react';
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import MyVerticallyCenteredModal from "./MyVerticallyCenteredModal";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import TicketOrderModal from './TicketOrderModal';
 
 function Ticket() {
   const [modalShow, setModalShow] = useState(false);
@@ -30,10 +30,14 @@ function Ticket() {
                 type="text"
                 placeholder="請輸入人數，上限4人"
                 onChange={e => {
-                   setNumber(e.target.value)
+                  setNumber(e.target.value);
                 }}
               />
-              <span onClick={() =>number<=4 ? setCount(number) : setModalShow(true)}>
+              <span
+                onClick={() =>
+                  number <= 4 ? setCount(number) : setModalShow(true)
+                }
+              >
                 <i className="fas fa-chevron-down"></i>
               </span>
             </div>
@@ -83,12 +87,9 @@ function Ticket() {
         </div>
       </div>
 
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-    
-   />
-      </>);
+      <TicketOrderModal show={modalShow} onHide={() => setModalShow(false)} />
+    </>
+  );
 }
 
 export default Ticket;
