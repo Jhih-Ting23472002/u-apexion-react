@@ -87,8 +87,28 @@ function Products() {
           </div>
         </div>
       </div>
-    {/*------------------------新品--------------------------*/}
+      {/* 手機sp */}
+      <div className="pr-pic-ctn">
+        <div className="pic-ctn">
+          <img src="./product_img/_CHA0912.jpg" alt="" class="pic" />
+          <img src="./product_img/_LLL6122.jpg" alt="" class="pic" />
+          <img src="./product_img/_CHA0364.jpg" alt="" class="pic" />
+          <img src="./product_img/_CHA0849.jpg" alt="" class="pic" />
+          <img src="./product_img/_CHA0903.jpg" alt="" class="pic" />
+        </div>
+      </div>
 
+      {/*------------------------新品--------------------------*/}
+      <div className="pr-h10rem"></div>
+      <div className="pr-home-new">
+        <div className="pr-home-new-img-photo">
+          <img src="./product_img/M021J_BK019_1.jpg" alt="" />
+        </div>
+        <div className="pr-home-new-list">
+          <h3>NEW</h3>
+        </div>
+      </div>
+      <div className="pr-h10rem"></div>
     </article>
   );
 }
