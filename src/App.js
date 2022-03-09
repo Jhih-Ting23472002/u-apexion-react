@@ -3,15 +3,14 @@ import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
 //頁面元件
+import MemberLogin from './pages/Member/MemberLogin';
 import Products from './pages/Products/Products';
 import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
 import Ticket from './pages/Ticket/Ticket';
-// 以下Travel領域
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
-import TravelNotes from './pages/Travel/TravelNotes';
 
 //頁面元件
 
@@ -26,7 +25,9 @@ function App() {
           <Route path="/forum-index"></Route>
           <Route path="/index-postPage"></Route>
           <Route path="/index-postPage"></Route>
-          <Route path="/member-login"></Route>
+          <Route path="/member-login">
+            <MemberLogin />
+          </Route>
           <Route path="/member-signup"></Route>
           <Route path="/member-person"></Route>
           <Route path="/member-password"></Route>
@@ -39,11 +40,9 @@ function App() {
             <TravelIndex />
           </Route>
           <Route path="/travel-choose">
-            <TravelChoose />
+          <TravelChoose />
           </Route>
-          <Route path="/travel-notes">
-            <TravelNotes />
-          </Route>
+          <Route path="/travel-notes"></Route>
           <Route path="/ticket-order">
             <Ticket />
           </Route>
