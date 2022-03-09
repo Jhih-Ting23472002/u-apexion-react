@@ -11,7 +11,7 @@ import slider08 from './img/slider08.jpg';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
+import TicketOrderModal from './TicketOrderModal';
 
 function Ticket() {
   const [modalShow, setModalShow] = useState(false);
@@ -87,10 +87,7 @@ function Ticket() {
         </div>
       </div>
 
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+      <TicketOrderModal show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }

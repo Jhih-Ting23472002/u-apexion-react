@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
-function MyVerticallyCenteredModal(props) {
+function TicketOrderModal(props) {
   return (
     <Modal
       {...props}
@@ -11,15 +11,11 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-        輸入錯誤
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">輸入錯誤</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <h4>輸入錯誤</h4>
-        <p>
-          人數上限為4人，請重新輸入。
-        </p>
+        <p>人數上限為4人，請重新輸入。</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉</Button>
@@ -28,4 +24,4 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-export default MyVerticallyCenteredModal
+export default TicketOrderModal;
