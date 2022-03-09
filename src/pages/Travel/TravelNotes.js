@@ -3,8 +3,8 @@ import './TravelNotes.css';
 function TravelNotes() {
   return (
     <>
-      <div className="container">
-        <nav aria-label="breadcrumb">
+      <div className="Tcontainer">
+        <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item active" aria-current="page">
               柴達星
@@ -25,7 +25,7 @@ function TravelNotes() {
               <a href="#/">006星</a>
             </li>
           </ol>
-        </nav>
+        </div>
         <div className="grid">
           <div className="column-xs-12">
             <ul className="slider">
