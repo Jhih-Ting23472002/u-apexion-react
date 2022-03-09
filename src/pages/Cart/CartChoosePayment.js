@@ -40,7 +40,6 @@ const CartChoosePayment = () => {
             </div>
             <div className="cart content-detail col-8">
               <h3>商品名稱</h3>
-
             </div>
           </div>
         </div>
