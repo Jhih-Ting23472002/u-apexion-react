@@ -5,7 +5,7 @@ function TravelChoose() {
     <>
       <section className="py-5">
         <div className="container">
-          <h2>Navbar</h2>
+          <h2 className="navbarh2">Navbar</h2>
           <div id="menu" className="position-relative">
             <div className="text-white px-3 pt-3 my-4 sticky-top">
               <div className="row align-items-center filters">
@@ -19,20 +19,20 @@ function TravelChoose() {
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
                   <button
-                    className="sort btn btn-light w-100"
+                    className="sort itemBuyButton w-100"
                     data-sort="price"
                   >
                     價格排序
                   </button>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
-                  <button className="sort btn btn-light w-100" data-sort="day">
+                  <button className="sort itemBuyButton w-100" data-sort="day">
                     天數排序
                   </button>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
                   <input
-                    className="search form-control"
+                    className="searchchoose form-control"
                     placeholder="產品名稱/關鍵字/產品代碼"
                   />
                 </div>

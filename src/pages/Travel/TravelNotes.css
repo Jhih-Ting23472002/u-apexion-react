@@ -41,8 +41,9 @@ body {
   padding: 0px
 }
 
-p {
+.description>p {
   letter-spacing: 2px;
+  color:black;
 }
 
 .grid {
@@ -542,7 +543,14 @@ p {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 
 .desc {
@@ -790,7 +798,7 @@ button {
   }
 
   .nav2 {
-    padding: 1.75rem 0 1.75rem 0;
+    padding: 6rem 0 1.75rem 0;
   }
 
   .nav2 ul {
@@ -1311,8 +1319,17 @@ a.portfolio-link {
   background-color: #000000;
 }
 
+@media (max-width: 768px) {
+ 
+  .breadcrumb{
+    background-color: #000000;
+    font-size:12px
+  }
+}
+
 .breadcrumb-item>a{
   color:#03e9f4;
+  text-decoration:none;
 }
 
 .signup{

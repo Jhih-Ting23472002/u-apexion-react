@@ -247,7 +247,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_1"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 1</h1>
@@ -268,7 +268,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_2"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 2</h1>
@@ -287,7 +287,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_3"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 3</h1>
@@ -304,7 +304,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_4"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 4</h1>
@@ -323,7 +323,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_5"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 5</h1>
@@ -345,7 +345,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_6"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 6</h1>
@@ -364,7 +364,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_7"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 7</h1>
@@ -381,7 +381,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_8"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 8</h1>
