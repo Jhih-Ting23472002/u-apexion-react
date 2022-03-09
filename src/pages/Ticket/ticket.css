@@ -171,3 +171,409 @@ img {
 
 
 /* 輪播牆樣式結束 */
+
+.ticket-container {
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    max-height: 1050px;
+}
+
+.step-circle {
+    width: auto;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+/* 行程選擇樣式開始 */
+.ticket-trip {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    border: 1px solid yellow;
+
+}
+
+.ticket-trip-wrap {
+    width: 75%;
+    border: 1px solid rgb(13, 212, 39);
+    position: absolute;
+    right: 0;
+    margin: 0 5% 5% 0;
+    padding-top: 30px;
+    max-height: 1050px;
+    /* display: flex; */
+}
+
+.ticket-trip-wrap h2 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.ticket-trip-wrap>p {
+    text-align: center;
+    color: white;
+    font-size: .9rem;
+}
+
+.ticket-trip-list-btn {
+    margin: 2% 0;
+    text-align: left;
+}
+
+.sign-list-btn {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid black;
+    /* padding: 7px 0; */
+    position: relative;
+    cursor: pointer;
+}
+
+.sign-list-btn::after {
+    content: "";
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.movie-list-btn {
+    background-color: #48EDE8;
+    color: #023E73;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    /* padding: 7px 0; */
+    position: relative;
+    cursor: pointer;
+}
+
+.movie-list-btn::after {
+    content: "";
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border: 1px solid #023E73;
+    border-radius: 15px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.ticket-trip-prev-btn {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: -15px;
+    text-align: center;
+    line-height: 30px;
+    z-index: 9;
+}
+
+.ticket-trip-next-btn {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 15px);
+    right: -15px;
+    text-align: center;
+    line-height: 30px;
+    z-index: 9;
+}
+
+.ticket-trip-card-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-trip-card {
+    width: 32%;
+    position: relative;
+}
+
+.ticket-trip-card-head {
+    height: 45vh;
+    overflow: hidden;
+}
+
+.ticket-trip-card-head img {
+    height: 100%;
+    width: auto;
+}
+
+.ticket-trip-card-body {
+    padding: 6%;
+    background-color: white;
+}
+
+.ticket-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+.ticket-title h3:nth-child(2) {
+    color: #048ABF;
+}
+
+.ticket-trip-card-body p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.ticket-trip-card-footer {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6% 6% 6%;
+}
+
+.tickit-choose-btn {
+    background-color: #000000;
+    color: #ffffff;
+    width: 40%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    /* padding: 7px 0; */
+    position: relative;
+    cursor: pointer;
+}
+
+.tickit-choose-btn::after {
+    content: "";
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.trip-detail-btn {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    width: 40%;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid black;
+    /* padding: 7px 0; */
+    position: relative;
+    cursor: pointer;
+}
+
+.trip-detail-btn::after {
+    content: "";
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.ticket-trip-days {
+    position: absolute;
+    background-color: #48EDE8;
+    color: #023E73;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    right: 5%;
+}
+
+.ticket-next {
+    margin-top: 1%;
+    color: #48EDE8;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+}
+
+.ticket-next i {
+    color: #48EDE8;
+    font-size: 20px;
+}
+
+/* 行程選擇樣式結束 */
+/* 餐點選擇樣式開始 */
+.ticket-menu {
+    height: 100vh;
+}
+
+.ticket-menu {
+    background-color: #000000;
+}
+
+.ticket-menu-wrap {
+    width: 75%;
+    /* border: 1px solid white; */
+    position: absolute;
+    right: 0;
+    margin: 30px 5% 30px 0;
+    height: calc(100vh - 60px);
+    background-color: white;
+    border-radius: 10px;
+    /* padding: 0 5%; */
+}
+
+.ticket-menu-wrap h2 {
+    margin-top: 30px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+}
+
+.ticket-menu-wrap>p {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: .9rem;
+}
+
+.menu-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(9, 19, 102);
+}
+
+.menu-list {
+    width: 40%;
+    margin-top: 2%;
+    padding: 3% 3% 5% 3%;
+    background-color: #000000;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    /* max-height: 800px; */
+    height: 70vh;
+    /* border: 1px solid red; */
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    /* border: 1px solid yellow; */
+    /* flex: 1; */
+    height: 15vh;
+    /* margin-top: 5%; */
+}
+
+.menu:last-child {
+    margin-bottom: 0;
+}
+
+.menu-img {
+    display: flex;
+    width: 50%;
+    margin-right: 3%;
+    /* border: 1px solid green; */
+}
+
+.menu-img img {
+    object-fit: cover;
+}
+
+.menu-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.menu-detail p {
+    margin-top: 1rem;
+    font-size: .85rem;
+}
+
+.menu-demo-area {
+    /* margin-left: -5%; */
+    width: 50%;
+    
+    /* display: inline-block; */
+    border: 1px solid gray;
+
+}
+
+.menu-demo-area img {
+    border: 10px solid white;
+    min-height: 55vh;;
+    box-shadow: 3px 3px 5px gray;
+    object-fit: cover;
+}
+
+.menu-select-area {
+    width: 60%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    background-color: white;
+    min-height: 15vh;
+}
+
+.menu-select-area div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 49%;
+    /* height: 100%; */
+    background-color: #000000;
+    margin-bottom: 2%;
+    margin-right: 1%;
+    /* border: 1px solid red; */
+}
+
+.menu-select-area div:nth-child(3),
+.menu-select-area div:nth-child(4) {
+    margin-bottom: 0;
+}
+
+.menu-select-area select {
+    width: 70%;
+    padding: 5px;
+    height: 100%;
+}
+
+.menu-select-area label {
+    background-color: #000000;
+    color: white;
+    height: 100%;
+    /* border: 1px solid red; */
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+/* 餐點選擇樣式結束 */

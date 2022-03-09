@@ -8,6 +8,7 @@ import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
 import Ticket from './pages/Ticket/Ticket';
+import TicketTrip from './pages/Ticket/TicketTrip';
 
 //頁面元件
 
@@ -37,8 +38,11 @@ function App() {
           <Route path="/ticket-order">
             <Ticket />
           </Route>
-          <Route path="/ticket-trip-choose"></Route>
+          <Route path="/ticket-trip-choose">
+            <TicketTrip />
+          </Route>
           <Route path="/ticket-date-choose"></Route>
+          <Route path="/ticket-seat-choose"></Route>
           <Route path="/ticket-meal-choose"></Route>
           <Route path="/ticket-confirm"></Route>
           <Route path="/coustomize-mainpage">
