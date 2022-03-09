@@ -530,11 +530,11 @@
 
 
 
-  img {
+  /* img {
     width: 100%;
     height: 43vh;
     object-fit: cover;
-  }
+  } */
 
   .vertical {
     flex-direction: column;
@@ -733,9 +733,9 @@
       background: rgba(128, 128, 128, 0.5);
     }
 
-    img {
+    /* img {
       height: 60vh;
-    }
+    } */
 
     .previous,
     .next {

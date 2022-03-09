@@ -12,9 +12,8 @@ function Products() {
         </div>
         <img src="./product_img/product_01.jpg" alt="" />
       </div>
-      {/*-------時裝照--------------------------*/}
+      {/*------------------------時裝照--------------------------*/}
       <div className="pr-home-fashion-img">
-       
         <div className="slider_container">
           <div>
             <img src="./product_img/_CHA0849.jpg" alt="" />
@@ -54,13 +53,42 @@ function Products() {
           </div>
         </div>
         <div class="slider_container2">
-          <div><img src="./product_img/_CHA0912.jpg" alt="" /></div>
-          <div><img src="./product_img/_LLL6122.jpg" alt="" /></div>
-          <div><img src="./product_img/_CHA2055.jpg" alt="" /></div>
-          <div><img src="./product_img/_ARC0233.jpg" alt="" /></div>
-          <div><img src="./product_img/_CHA0448.jpg" alt="" /></div>
+          <div>
+            <img src="./product_img/_CHA0912.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_LLL6122.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_CHA2055.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_ARC0233.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_CHA0448.jpg" alt="" />
+          </div>
+        </div>
+        <div class="slider_container3">
+          <div>
+            <img src="./product_img/1488892689522.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_CHA0364.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_CHA2343.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_LLL6211.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./product_img/_CHA0903.jpg" alt="" />
+          </div>
         </div>
       </div>
+    {/*------------------------新品--------------------------*/}
+
     </article>
   );
 }
