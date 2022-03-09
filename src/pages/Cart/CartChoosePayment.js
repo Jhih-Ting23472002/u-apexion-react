@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartChoosePayment.css';
+import example from './img/example.png';
 
 const CartChoosePayment = () => {
   return (
@@ -33,9 +34,13 @@ const CartChoosePayment = () => {
             結帳
           </button>
           <div className="cart separated-line"></div>
-          <div className="cart order-item">
-            <div className="cart img-div">
-              <img src="../../public/example.png" alt="" />
+          <div className="cart order-item d-flex">
+            <div className="cart img-div col-4">
+              <img src={example} alt="" />
+            </div>
+            <div className="cart content-detail col-8">
+              <h3>商品名稱</h3>
+
             </div>
           </div>
         </div>
