@@ -10,9 +10,6 @@ html {
     background-color: black;
   }
 
-  /* ::-webkit-scrollbar {
-display: none;
-} */
   .main-img,
   .overlay,
   .trivia {
@@ -46,7 +43,7 @@ display: none;
     margin-bottom: 1%;
   }
 
-  .row {
+  .travelrow {
     display: flex;
     flex-direction: row;
     margin-left: 5px;
@@ -74,39 +71,20 @@ display: none;
 
   .overlay {
     background-size: cover;
-    color: white;
     width: 100%;
     margin: 0 auto;
     justify-content: center;
     text-align: center;
   }
 
-  f .overlay>h1 {
-    font-size: 100px;
+  .overlay>h1 {
+    font-size: 64px;
     margin-bottom: 1%;
+    color:white;
   }
 
   .overlay>h2 {
-    font-size: 30px;
-  }
-
-  /* carousel */
-
-  .travel_carousel>img {
-    height: 50%;
-    margin: 0 auto;
-  }
-
-  .trivia {
-    text-align: center;
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 1%;
-  }
-
-  .trivia>h3 {
     font-size: 40px;
-    color: #05DBF2;
   }
 
   /* search */
@@ -233,26 +211,33 @@ display: none;
     }
   }
 
-  p {
-    color: black;
-    font-size: 22px;
-    padding: 10px;
-    line-height: 1.5;
-    margin-bottom: 0px;
-    letter-spacing: 2px;
-  }
-
-  #tour {
-    margin-bottom: 3%;
-  }
-
-  #tour-img {
+  /* carousel */
+  
+  .trivia {
     text-align: center;
-    background-image: url('/public/travelimg/48954138922_55008a2275_k.jpg');
-    height: 350px;
-    border: 1px solid black;
-    width: 90%;
+    width: 75%;
     margin: 0 auto;
+    margin-top: 1%;
+  }
+
+  .triviah2 {
+    font-size: 40px;
+    color: #05DBF2;
+    margin-top: 2%;
+  }
+
+  .travel_carousel{
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom:3%;
+  }
+
+  .carouselh4{
+    font-size:32px;
+  }
+
+  .carouselp{
+    font-size:1.5rem;
   }
 
   .tourOverlay {
@@ -262,7 +247,8 @@ display: none;
     margin-top: 4%;
   }
 
-  .tourOverlay>h2 {
+  .tourOverlayh2 {
+    font-size: 40px;
     color: white;
     text-shadow: 2px 2px black;
   }
@@ -287,9 +273,44 @@ display: none;
       0 0 25px #03e9f4;
   }
 
+  #tour {
+    margin-bottom: 3%;
+  }
+
+  #tour-img {
+    text-align: center;
+    background-image: url('/public/travelimg/48954138922_55008a2275_k.jpg');
+    height: 350px;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+  /* p {
+    color: black;
+    font-size: 22px;
+    padding: 10px;
+    line-height: 1.5;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+  } */
+
+
+
+  
+
+
+
+
   /* shop */
 
-  #shopSection,
+  .shopHeaderh2{
+    margin-top: 2%;
+    font-size: 40px;
+  }
+
+  .shopSection,
   .shopItem,
   .informationShop {
     display: flex;
@@ -297,7 +318,7 @@ display: none;
     text-align: center;
   }
 
-  #shopSection {
+  .shopSection {
     background-color: #f4f5f7;
     height: relative;
   }
@@ -311,10 +332,7 @@ display: none;
     font-size: 40px;
   }
 
-  #shopSection>h2 {
-    margin-top: 2%;
-    font-size: 43px;
-  }
+  
 
   .shopItem,
   .shopPackage {
@@ -338,7 +356,7 @@ display: none;
   }
 
   .informationPackage>p {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   /* Shop --> Items */
@@ -443,14 +461,14 @@ display: none;
 
   /* sizing */
 
-  @media screen and (max-width: 1100px) {
+  /* @media screen and (max-width: 1100px) {
 
     p,
     .informationPackage>p,
     informationShopItem>p {
       font-size: 19px;
     }
-  }
+  } */
 
   @media screen and (max-width: 1007px) {
     .projects {

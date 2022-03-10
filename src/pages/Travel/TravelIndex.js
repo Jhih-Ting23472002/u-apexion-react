@@ -24,46 +24,78 @@ function TravelIndex() {
         </div>
       </section>
 
-      <section className="trivia" id="trivia">
-        <h3 id="trivia">訓練活動花絮</h3>
+      <section className="trivia">
+        <h2 className="triviah2">訓練活動花絮</h2>
         <hr className="generalHr" />
       </section>
 
       <Carousel fade>
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-100"
+            className="travel_carousel d-block w-50"
             src="./travelimg/fun2.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h4 className="carouselh4">First slide label</h4>
+            <p className="carouselp">
+              Nulla vitae elit libero, a pharetra augue mollis interdum.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-100"
+            className="travel_carousel d-block w-50"
             src="./travelimg/fun2.jpg"
             alt="Second slide"
           />
-
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h4 className="carouselh4">Second slide label</h4>
+            <p className="carouselp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-100"
+            className="travel_carousel d-block w-50"
             src="./travelimg/fun2.jpg"
-            alt="Third slide"
+            alt="Second slide"
           />
-
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            <h4 className="carouselh4">Second slide label</h4>
+            <p className="carouselp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="travel_carousel d-block w-50"
+            src="./travelimg/fun2.jpg"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h4 className="carouselh4">Second slide label</h4>
+            <p className="carouselp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="travel_carousel d-block w-50"
+            src="./travelimg/fun2.jpg"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h4 className="carouselh4">Second slide label</h4>
+            <p className="carouselp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -72,7 +104,7 @@ function TravelIndex() {
       <section id="tour">
         <div id="tour-img">
           <div className="tourOverlay">
-            <h2>U-APEXION站內論壇</h2>
+            <h2 className="tourOverlayh2">U-APEXION站內論壇</h2>
             <a href="#/" target="_blank">
               <button className="tourButton">let's go</button>
             </a>
@@ -80,16 +112,16 @@ function TravelIndex() {
         </div>
       </section>
 
-      <section id="shopSection">
+      <section className="shopSection">
         <div className="shopHeader">
-          <h3>主打星座熱門行程</h3>
+          <h2 className="shopHeaderh2">主打星座熱門行程</h2>
           <hr className="generalHr" />
         </div>
         <div id="shop">
-          <div className="shopPackage" id="onePack">
+          <div className="shopPackage">
             <img src="./travelimg/s1.png" alt="" />
             <div className="informationPackage">
-              <h3>Taurus(一月啟程)</h3>
+              <h2>Taurus(一月啟程)</h2>
               <hr className="generalHrpart1" />
               <h2>$19,999,999.99</h2>
               <p>
@@ -102,11 +134,11 @@ function TravelIndex() {
               </a>
             </div>
           </div>
-          <div className="shopPackage" id="twoPack">
+          <div className="shopPackage">
             {/* Unintentional pun */}
             <img src="./travelimg/s2.png" alt="" />
             <div className="informationPackage">
-              <h3>Scorpio(三月啟程)</h3>
+              <h2>Scorpio(三月啟程)</h2>
               <hr className="generalHrpart1" />
               <h2>$29,999,999.99</h2>
               <p>
@@ -119,16 +151,16 @@ function TravelIndex() {
               </a>
             </div>
           </div>
-          <div className="shopPackage" id="threePack">
+          <div className="shopPackage">
             <img src="./travelimg/s10.png" alt="" />
             <div className="informationPackage">
-              <h3>Gemini(五月啟程)</h3>
+              <h2>Gemini(五月啟程)</h2>
               <hr className="generalHrpart1" />
               <h2>$39,999,999.99</h2>
               <p>
-                This Package is for the elite Travelers. This includes all the
-                packages but you can go anywhere in our Milky Way Galaxy.
-                Teleporting will you $300 per person outside our solar system.{' '}
+                is for the elite Travelers. This includes all the packages but
+                you can go anywhere in our Milky Way Galaxy. Teleporting will
+                you $300 per person outside our solar system.{' '}
               </p>
               <a href="#/" target="_blank">
                 <button className="itemBuyButton">Details</button>
@@ -147,7 +179,7 @@ function TravelIndex() {
             <img src="./travelimg/titan.png" alt="" />
             <div className="informationShopItem">
               <h3>Titan(二月啟程)</h3>
-              <div className="row">
+              <div className="travelrow">
                 <h2>$49,999,999.99</h2>
                 <a href="#/" target="_blank">
                   <button className="itemBuyButton">Details</button>
@@ -161,7 +193,7 @@ function TravelIndex() {
             <img src="./travelimg/xandar.jpg" alt="" />
             <div className="informationShopItem">
               <h3>Xandar(四月啟程)</h3>
-              <div className="row">
+              <div className="travelrow">
                 <h2>$59,999,999.99</h2>
                 <a href="./page3.html" target="_self">
                   <button className="itemBuyButton">Details</button>
@@ -177,7 +209,7 @@ function TravelIndex() {
             <img src="./travelimg/mann.png" alt="" />
             <div className="informationShopItem">
               <h3>Mann(六月啟程)</h3>
-              <div className="row">
+              <div className="travelrow">
                 <h2>$69,999,999.99</h2>
                 <a href="#/" target="_blank">
                   <button className="itemBuyButton">Details</button>
