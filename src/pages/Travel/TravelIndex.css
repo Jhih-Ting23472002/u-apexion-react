@@ -10,6 +10,25 @@ html {
     background-color: black;
   }
 
+  .travelitemBuyButton {
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top:18%;
+    margin-right:10px;
+    color: #05F2F2;
+    background-color: black;
+    border: 4px double #05F2F2;
+    border-radius: 200px;
+    font-size: 18px;
+  }
+
+  .travelitemBuyButton:hover {
+    background-color: #05F2F2;
+    color: black;
+    border: 4px double black;
+  }
+
   .main-img,
   .overlay,
   .trivia {
@@ -30,24 +49,13 @@ html {
   }
 
   .generalHrpart1 {
-    width: 40%;
-    margin: 0 auto;
-    border: 1px solid orange;
-    margin-bottom: 1%;
-  }
-
-  .generalHrpart2 {
     width: 100%;
     margin: 0 auto;
     border: 1px solid orange;
     margin-bottom: 1%;
   }
 
-  .travelrow {
-    display: flex;
-    flex-direction: row;
-    margin-left: 5px;
-  }
+
 
   /* main-img */
   .main-img,
@@ -287,31 +295,24 @@ html {
   }
 
 
-  /* p {
-    color: black;
-    font-size: 22px;
-    padding: 10px;
-    line-height: 1.5;
-    margin-bottom: 0px;
-    letter-spacing: 2px;
-  } */
-
-
-
-  
-
-
-
-
   /* shop */
 
-  .shopHeaderh2{
-    margin-top: 2%;
-    font-size: 40px;
+  .travelrow {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 5px;
+  }
+
+  .shop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .shopSection,
-  .shopItem,
   .informationShop {
     display: flex;
     flex-direction: column;
@@ -328,45 +329,31 @@ html {
     margin: 50px auto;
   }
 
-  .shopHeader>h3 {
-    font-size: 40px;
-  }
-
-  
-
   .shopItem,
   .shopPackage {
     margin: 2%;
-    /*   border: 1px solid blue; */
   }
 
-  /* Shop --> packages */
-  .shopPackage {
-    width: 400px;
-    height: relative;
-  }
-
-  .shopPackage>img {
-    width: 400px;
-    height: 353px;
-  }
-
-  .informationPackage>h2 {
+  .informationShopItemh2{
+    margin-top: 5%;
     font-size: 40px;
   }
 
-  .informationPackage>p {
+  .informationShopItemprice{
+    margin-top: 5%;
+    font-size: 40px;
+    color:rgb(255, 51, 51);
+  }
+
+  .informationShopItemhp{
     font-size: 28px;
-  }
-
-  /* Shop --> Items */
-  .informationShopItem>h3 {
-    font-size: 40px;
+    margin-top: 6%;
   }
 
   .informationShopItem {
     text-align: left;
     padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
     height: relative;
     background-color: white;
@@ -378,37 +365,12 @@ html {
     width: 400px;
   }
 
-  .itemBuyButton {
-    width: 120px;
-    height: 40px;
-    margin: 0 auto;
-    color: #05F2F2;
-    background-color: black;
-    border: 4px double #05F2F2;
-    border-radius: 200px;
-    font-size: 18px;
-  }
-
-  .itemBuyButton:hover {
-    background-color: #05F2F2;
-    color: black;
-    border: 4px double black;
-  }
-
   #smallItem>img {
     height: 345px;
     width: 400px;
   }
 
-  #shop {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  /* Projects */
+  /* locations */
 
   .projects {
     margin: 0 auto;
@@ -420,11 +382,7 @@ html {
     margin-bottom: 4%;
   }
 
-  #projectSection {
-    background: url("");
-  }
-
-  #projectSection>h2 {
+  .projectSectionh2 {
     font-size: 42px;
     text-align: center;
     margin-top: 2%;
@@ -440,6 +398,12 @@ html {
     width: 600px;
     z-index: 0;
     margin: 2%;
+  }
+
+  .projectItemp{
+    color:black;
+    font-size:24px;
+    margin-top:1%;
   }
 
   .projectItemDesc {
@@ -460,15 +424,6 @@ html {
   }
 
   /* sizing */
-
-  /* @media screen and (max-width: 1100px) {
-
-    p,
-    .informationPackage>p,
-    informationShopItem>p {
-      font-size: 19px;
-    }
-  } */
 
   @media screen and (max-width: 1007px) {
     .projects {
