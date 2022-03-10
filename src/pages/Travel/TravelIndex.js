@@ -47,7 +47,7 @@ function TravelIndex() {
         <Carousel.Item>
           <img
             className="travel_carousel d-block w-50"
-            src="./travelimg/fun2.jpg"
+            src="./travelimg/fun3.png"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -61,7 +61,7 @@ function TravelIndex() {
         <Carousel.Item>
           <img
             className="travel_carousel d-block w-50"
-            src="./travelimg/fun2.jpg"
+            src="./travelimg/fun4.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -75,7 +75,7 @@ function TravelIndex() {
         <Carousel.Item>
           <img
             className="travel_carousel d-block w-50"
-            src="./travelimg/fun2.jpg"
+            src="./travelimg/fun1.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -89,7 +89,7 @@ function TravelIndex() {
         <Carousel.Item>
           <img
             className="travel_carousel d-block w-50"
-            src="./travelimg/fun2.jpg"
+            src="./travelimg/fun5.png"
             alt="Second slide"
           />
           <Carousel.Caption>
