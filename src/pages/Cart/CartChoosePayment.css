@@ -215,5 +215,17 @@
   flex-direction: column;
   height: 100%;
   width: 60%;
+  justify-content: center;
+}
+.cart-ticket-country-badge{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
   justify-content: space-around;
+}
+.content-detail-inside-bottom-suit{
+  display: flex;
+  align-items: center;
+  height: 30%;
 }

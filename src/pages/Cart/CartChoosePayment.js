@@ -119,13 +119,21 @@ const CartChoosePayment = () => {
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top-suit">
                   <h5 className="cart-suit-name">個人宇航服</h5>
-                  <div className="cart-ticket-during">
-                    <h5 className="cart-start-time">啟航 2022/03/10 </h5>
-                    <h5 className="cart-gohome-time">回程 2022/03/15 </h5>
+                  <div className="cart-ticket-country-badge">
+                    <select className="cart-select-country">
+                      <option>日本</option>
+                      <option>美國</option>
+                      <option>台灣</option>
+                    </select>
+                    <select className="cart-select-badge">
+                      <option>日本</option>
+                      <option>美國</option>
+                      <option>台灣</option>
+                    </select>
                   </div>
                 </div>
-                <div className="content-detail-inside-bottom-ticket">
-                  <h5 className="cart-number-people">人數 5</h5>
+                <div className="content-detail-inside-bottom-suit">
+                  <div className="cart-empty-place"></div>
                   <button className="btn cart-remove-btn">remove btn</button>
                   <div className="cart-order-money">$XXXXX</div>
                 </div>
