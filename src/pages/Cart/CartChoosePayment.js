@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartChoosePayment.css';
 import example from './img/example.png';
-import cartTicket from './img/cartTicket.png'
+import cartTicket from './img/cartTicket.png';
 
 const CartChoosePayment = () => {
   return (
@@ -42,7 +42,7 @@ const CartChoosePayment = () => {
             <div className="cart content-detail col-8 d-flex">
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top">
-                  <h4 className="cart-product-name">商品名稱</h4>
+                  <h5 className="cart-product-name">商品名稱</h5>
                   <select className="cart-select">
                     <option>1</option>
                     <option>2</option>
@@ -67,7 +67,7 @@ const CartChoosePayment = () => {
             <div className="cart content-detail col-8 d-flex">
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top">
-                  <h4 className="cart-product-name">商品名稱</h4>
+                  <h5 className="cart-product-name">商品名稱</h5>
                   <select className="cart-select">
                     <option>1</option>
                     <option>2</option>
@@ -102,7 +102,7 @@ const CartChoosePayment = () => {
                   </div>
                 </div>
                 <div className="content-detail-inside-bottom-ticket">
-                  <div className="cart-empty-place"></div>
+                  <h5 className="cart-number-people">人數 5</h5>
                   <button className="btn cart-remove-btn">remove btn</button>
                   <div className="cart-order-money">$XXXXX</div>
                 </div>

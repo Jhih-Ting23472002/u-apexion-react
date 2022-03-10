@@ -70,15 +70,15 @@
 }
 .cart-img-div {
   width: 50px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   /* height: 200px; */
 }
 .cart-img-div img {
   width: 100%;
-  border: 1px solid rgb(0, 45, 128);
+  /* border: 1px solid rgb(0, 45, 128); */
 }
 .content-detail {
-  border: 1px solid brown;
+  /* border: 1px solid brown; */
   /* height: 100%; */
 }
 .content-detail-inside {
@@ -97,7 +97,7 @@
 }
 /* 商品衣服、褲子 */
 .cart-product-name {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   display: flex;
   align-items: center;
@@ -120,10 +120,13 @@
   border-radius: 20px;
   font-size: 0.5rem;
   border: 0px;
+  font-weight: bold;
   /* border: 1px solid red; */
 }
 
-
+.cart-remove-btn:hover {
+  color: pink;
+}
 
 .cart-order-money {
   width: 20%;
@@ -132,6 +135,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 .cart-select {
   font-size: 1.5rem;
@@ -151,13 +155,13 @@
   /* justify-content:space-between; */
   border-bottom: 1px solid black;
   width: 100%;
-  height: 80%;
+  height: 70%;
   /* align-items: center; */
 }
 .content-detail-inside-bottom-ticket{
   display: flex;
   align-items: center;
-  height: 20%;
+  height: 30%;
 }
 .cart-ticket-destination{
   display: flex;
@@ -169,14 +173,14 @@
 
 /* 票種 */
 .cart-trip-name {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   /* display: flex; */
   /* justify-content: start; */
   /* width: 60%; */
 }
 .cart-trip-food {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   /* display: flex; */
   /* justify-content: end; */
@@ -188,4 +192,13 @@
   height: 100%;
   width: 40%;
   justify-content: space-around;
+}
+.cart-number-people {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1rem;
+  /* border: 1px solid red; */
 }
