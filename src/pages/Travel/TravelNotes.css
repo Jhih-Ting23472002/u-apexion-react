@@ -33,7 +33,7 @@ body {
   background: #000000;
 }
 
-.Tcontainer {
+.container {
   margin: auto;
   /* max-width: 78.13rem; */
   max-width: 95rem;
@@ -542,16 +542,6 @@ body {
     }
   }
 }
-
-* {
-  box-sizing: border-box;
-}
-
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 
 .desc {
   color: white;

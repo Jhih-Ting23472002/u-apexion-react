@@ -4,7 +4,7 @@ import './TravelNotes.css';
 function TravelNotes() {
   return (
     <>
-      <div className="Tcontainer">
+      <div className="container">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item active" aria-current="page">
