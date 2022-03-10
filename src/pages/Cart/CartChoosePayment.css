@@ -46,7 +46,7 @@
   font-size: 1.7rem;
   font-weight: bold;
 }
-.cart-btn {
+.cart-btn-check {
   background-color: #023e73;
   color: #fff;
   width: 250px;
@@ -65,7 +65,7 @@
 .cart-order-item {
   width: 100%;
   padding: 3.5%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .cart-img-div {
   width: 50px;
@@ -101,20 +101,29 @@
 .content-detail-inside-bottom {
   display: flex;
 }
+
 .cart-empty-place {
   width: 60%;
   /* border: 1px solid red; */
 }
 .cart-remove-btn {
   width: 20%;
+  background-color: #023e73;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.5rem;
   /* border: 1px solid red; */
 }
+
+
+
 .cart-order-money {
   width: 20%;
   /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.2rem;
 }
 .cart-select {
   font-size: 1.5rem;

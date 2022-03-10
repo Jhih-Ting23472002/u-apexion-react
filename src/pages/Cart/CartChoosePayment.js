@@ -30,7 +30,7 @@ const CartChoosePayment = () => {
           <div className="cart d-flex justify-content-center py-5 total-price-text">
             您的購物袋裡有以下商品，目前總金額是 NT$xxxxxx。
           </div>
-          <button className="btn cart-btn" type="button">
+          <button className="btn cart-btn-check" type="button">
             結帳
           </button>
           <div className="cart separated-line"></div>
@@ -46,12 +46,39 @@ const CartChoosePayment = () => {
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                   </select>
                 </div>
                 <div className="content-detail-inside-bottom">
                   <div className="cart-empty-place"></div>
                   <button className="cart-remove-btn">remove btn</button>
                   <div className="cart-order-money">$888</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="cart separated-line"></div>
+          <div className="cart cart-order-item d-flex">
+            <div className="cart cart-img-div col-4">
+              <img src={example} alt="" />
+            </div>
+            <div className="cart content-detail col-8 d-flex">
+              <div className="content-detail-inside">
+                <div className="content-detail-inside-top">
+                  <h4 className="cart-product-name">商品名稱</h4>
+                  <select className="cart-select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div className="content-detail-inside-bottom">
+                  <div className="cart-empty-place"></div>
+                  <button className="cart-remove-btn">remove btn</button>
+                  <div className="cart-order-money">NT$XXXXX</div>
                 </div>
               </div>
             </div>
