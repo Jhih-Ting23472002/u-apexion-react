@@ -1,8 +1,8 @@
-.container-fluid {
+.cart-background {
   background-color: #fff;
   /* height: 100vh; */
 }
-.container {
+.cart-container {
   padding-top: 5%;
   /* position: relative; */
   display: flex;
@@ -10,7 +10,7 @@
   flex-direction: column;
   padding-bottom: 50px;
 }
-.steps {
+.cart-steps {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -24,16 +24,16 @@
 .process-line {
   position: relative;
 }
-.ml-6 {
+.cart-ml-6 {
   margin: 0px 80px 20px 80px;
 }
-.ml-7 {
+.cart-ml-7 {
   margin: 0px 8% 0px 8%;
   z-index: 2;
   text-align: center;
   /* line-height: 1%; */
 }
-.step-line {
+.cart-step-line {
   background-color: #000;
   height: 5px;
   width: 65%;
@@ -46,14 +46,14 @@
   font-size: 1.7rem;
   font-weight: bold;
 }
-.btn {
+.cart-btn {
   background-color: #023e73;
   color: #fff;
   width: 250px;
   border-radius: 20px;
   margin: auto;
 }
-.btn:hover {
+.cart-btn:hover {
   color: pink;
 }
 .separated-line {
@@ -62,17 +62,70 @@
   height: 1px;
   margin-top: 40px;
 }
-.order-item {
+.cart-order-item {
   width: 100%;
   padding: 3.5%;
   border: 1px solid red;
 }
-.img-div {
+.cart-img-div {
   width: 50px;
   border: 1px solid green;
   /* height: 200px; */
 }
-.img-div img {
+.cart-img-div img {
   width: 100%;
   border: 1px solid rgb(0, 45, 128);
+}
+.content-detail {
+  /* border: 1px solid brown; */
+}
+.content-detail-inside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content-detail-inside-top {
+  display: flex;
+  /* justify-content:space-between; */
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 60%;
+}
+.cart-product-name {
+  /* border: 1px solid red; */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+.content-detail-inside-bottom {
+  display: flex;
+}
+.cart-empty-place {
+  width: 60%;
+  /* border: 1px solid red; */
+}
+.cart-remove-btn {
+  width: 20%;
+  /* border: 1px solid red; */
+}
+.cart-order-money {
+  width: 20%;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-select {
+  font-size: 1.5rem;
+  appearance: none;
+  background: url('./img/icons8-chevron-down-64.png') no-repeat right center
+    transparent;
+  width: 6%;
+  height: 30%;
+  /* padding: 0px; */
+  margin-top: 6.5%;
+  /* padding-right: 10px; */
+  background-size: 20px;
+  border: 0px;
 }
