@@ -1,3 +1,4 @@
+import React from 'react';
 import './TravelNotes.css';
 
 function TravelNotes() {
@@ -26,7 +27,7 @@ function TravelNotes() {
             </li>
           </ol>
         </div>
-        <div className="grid">
+        {/* <div className="grid">
           <div className="column-xs-12">
             <ul className="slider">
               <li className="slider-item active">
@@ -237,7 +238,7 @@ function TravelNotes() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* 1st group */}
 

@@ -624,7 +624,7 @@ color: #ffffff;
   margin: 1rem 0;
 }
 
-button {
+/* button {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -640,7 +640,7 @@ button {
   font-size: inherit;
   width: 55px;
   height: 55px;
-}
+} */
 .controls {
   position: relative;
   z-index: 1;
