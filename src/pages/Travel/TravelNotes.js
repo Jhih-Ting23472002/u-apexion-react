@@ -399,7 +399,7 @@ function TravelNotes() {
           <section id="timeline" className="timeline-outer">
             <div className="content" id="content">
               <div className="row">
-                <div className="col s12 m12 l12">
+                <div className="tinerarynotes col s12 m12 l12">
                   <h2 className="blue-text lighten-1 header">
                     行程備註Itinerary notes
                   </h2>
