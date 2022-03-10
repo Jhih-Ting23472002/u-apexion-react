@@ -2,6 +2,7 @@ import React from 'react';
 import './CartChoosePayment.css';
 import example from './img/example.png';
 import cartTicket from './img/cartTicket.png';
+import spaceSuit from './img/spaceSuit.png';
 
 const CartChoosePayment = () => {
   return (
@@ -112,15 +113,12 @@ const CartChoosePayment = () => {
           <div className="cart separated-line"></div>
           <div className="cart cart-order-item d-flex">
             <div className="cart cart-img-div col-4">
-              <img src={cartTicket} alt="" />
+              <img src={spaceSuit} alt="" />
             </div>
             <div className="cart content-detail col-8 d-flex">
               <div className="content-detail-inside">
-                <div className="content-detail-inside-top-ticket">
-                  <div className="cart-ticket-destination">
-                    <h5 className="cart-trip-name">行程:泰坦星</h5>
-                    <h5 className="cart-trip-food">太空餐點</h5>
-                  </div>
+                <div className="content-detail-inside-top-suit">
+                  <h5 className="cart-suit-name">個人宇航服</h5>
                   <div className="cart-ticket-during">
                     <h5 className="cart-start-time">啟航 2022/03/10 </h5>
                     <h5 className="cart-gohome-time">回程 2022/03/15 </h5>
