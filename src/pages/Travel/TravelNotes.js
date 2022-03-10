@@ -40,7 +40,7 @@ function TravelNotes() {
                   </div>
                   <div className="column-xs-12 column-md-10">
                     <div className="image-holder">
-                      <img src="./CABIN1.jpg" alt="" />
+                      <img src="./travelimg/CABIN1.jpg" alt="" />
                     </div>
                     <div className="grid">
                       <div className="column-xs-12 column-md-9">

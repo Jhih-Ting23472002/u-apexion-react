@@ -42,21 +42,21 @@ function TravelIndex() {
           </ol>
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src="./space2.jpg" className="d-block w-75" alt="" />
+              <img src="./travelimg/fun2.jpg" className="d-block w-75" alt="" />
               <div className="carousel-caption d-none d-md-block">
                 <h5>團隊生活照</h5>
                 <p>123456789123456789</p>
               </div>
             </div>
             <div className="carousel-item">
-              <img src="./space2.jpg" className="d-block w-75" alt="" />
+              <img src="" className="d-block w-75" alt="" />
               <div className="carousel-caption d-none d-md-block">
                 <h5>...</h5>
                 <p>...</p>
               </div>
             </div>
             <div className="carousel-item">
-              <img src="./space2.jpg" className="d-block w-75" alt="" />
+              <img src="" className="d-block w-75" alt="" />
               <div className="carousel-caption d-none d-md-block">
                 <h5>...</h5>
                 <p>...</p>
@@ -110,7 +110,7 @@ function TravelIndex() {
         </div>
         <div id="shop">
           <div className="shopPackage" id="onePack">
-            <img src="./s1.png" alt="" />
+            <img src="./travelimg/s1.png" alt="" />
             <div className="informationPackage">
               <h3>Taurus(一月啟程)</h3>
               <hr className="generalHrpart1" />
@@ -127,7 +127,7 @@ function TravelIndex() {
           </div>
           <div className="shopPackage" id="twoPack">
             {/* Unintentional pun */}
-            <img src="./s2.png" alt="" />
+            <img src="./travelimg/s2.png" alt="" />
             <div className="informationPackage">
               <h3>Scorpio(三月啟程)</h3>
               <hr className="generalHrpart1" />
@@ -143,7 +143,7 @@ function TravelIndex() {
             </div>
           </div>
           <div className="shopPackage" id="threePack">
-            <img src="./s10.png" alt="" />
+            <img src="./travelimg/s10.png" alt="" />
             <div className="informationPackage">
               <h3>Gemini(五月啟程)</h3>
               <hr className="generalHrpart1" />
@@ -167,7 +167,7 @@ function TravelIndex() {
 
         <div id="shop">
           <div className="shopItem" id="smallItem">
-            <img src="./titan.png" alt="" />
+            <img src="./travelimg/titan.png" alt="" />
             <div className="informationShopItem">
               <h3>Titan(二月啟程)</h3>
               <div className="row">
@@ -181,7 +181,7 @@ function TravelIndex() {
             </div>
           </div>
           <div className="shopItem" id="smallItem">
-            <img src="./xandar.jpg" alt="" />
+            <img src="./travelimg/xandar.jpg" alt="" />
             <div className="informationShopItem">
               <h3>Xandar(四月啟程)</h3>
               <div className="row">
@@ -197,7 +197,7 @@ function TravelIndex() {
             </div>
           </div>
           <div className="shopItem" id="smallItem">
-            <img src="./mann.png" alt="" />
+            <img src="./travelimg/mann.png" alt="" />
             <div className="informationShopItem">
               <h3>Mann(六月啟程)</h3>
               <div className="row">
@@ -218,13 +218,13 @@ function TravelIndex() {
         <hr className="generalHr" />
         <div className="projects">
           <div className="projectItem">
-            <img src="./Taiwan.jpg" alt="" />
+            <img src="./travelimg/Taiwan.jpg" alt="" />
             <a className="projectItemDesc" target="_blank" href="#/">
               <p>Taiwan (971花蓮縣新城鄉七星街79巷5號) </p>
             </a>
           </div>
           <div className="projectItem">
-            <img src="./USA.jpg" alt="" />
+            <img src="./travelimg/USA.jpg" alt="" />
             <a className="projectItemDesc" target="_blank" href="#/">
               <p>USA (1601 U-PX Parkway Houston,TX,USA 77058)</p>
             </a>
