@@ -1212,17 +1212,17 @@ a.portfolio-link {
   transition: 0.5s;
   margin: 40px 0 80px;
   letter-spacing: 4px;
-  border: 4px double black;
+  
 }
 
 .login-box a:hover {
   background: #03e9f4;
   color: #fff;
-  border-radius: 200px;
+  border-radius: 10px;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
     0 0 100px #03e9f4;
   color: black;
-  border: 4px double black;
+  
 }
 
 .login-box a span {
