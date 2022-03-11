@@ -121,18 +121,12 @@ const CartChoosePayment = () => {
                 <div className="content-detail-inside-top-suit">
                   <h5 className="cart-suit-name">個人宇航服</h5>
                   <div className="cart-ticket-country-badge">
-                    <select className="cart-select-country-badge">
-                      <option defaultValue>請選擇國旗</option>
-                      <option>日本</option>
-                      <option>美國</option>
-                      <option>台灣</option>
-                    </select>
-                    <select className="cart-select-country-badge">
-                      <option defaultValue>請選擇徽章</option>
-                      <option>日本</option>
-                      <option>美國</option>
-                      <option>台灣</option>
-                    </select>
+                    <div className="cart-select-country-badge">
+                      已選好的國旗
+                    </div>
+                    <div className="cart-select-country-badge">
+                      已選好的徽章
+                    </div>
                   </div>
                 </div>
                 <div className="content-detail-inside-bottom-suit">
@@ -152,12 +146,7 @@ const CartChoosePayment = () => {
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top">
                   <h5 className="cart-product-seat">太空艙座位</h5>
-                  <select className="cart-select-color">
-                    <option defaultValue>請選擇顏色</option>
-                    <option>white</option>
-                    <option>orange</option>
-                    <option>blue</option>
-                  </select>
+                  <div className="cart-select-color">已選好的顏色</div>
                 </div>
                 <div className="content-detail-inside-bottom">
                   <div className="cart-empty-place"></div>

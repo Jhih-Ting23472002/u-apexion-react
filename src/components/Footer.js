@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <>
       <footer className="section bg-footer">
-        <div className="container">
-          <div className="row">
+        <div className="footercontainer">
+          <div className="footerrow row">
             <div className="f1 col-lg-4">
               <div className="">
                 <h6 className="footer-heading">U-APEXION</h6>

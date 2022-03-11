@@ -1,9 +1,6 @@
 
-#root {
-  background-color: #000;
-}
 @media (min-width: 1920px) {
-  .container {
+  .footercontainer {
     max-width: 95rem;
   }
 }
@@ -17,7 +14,7 @@
   width: 100%;
 }
 
-.container {
+.footercontainer {
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -32,9 +29,9 @@
   margin-right: 40px;
 }
 
-.f2-p{
+/* .f2-p{
   margin-left: 10px;
-}
+} */
 
 .f4 {
   padding: 0px;
@@ -115,7 +112,7 @@ li {
 }
 
 @media (max-width: 991px) {
-  .row {
+  .footerrow {
     text-align: center;
     margin-right: 0px;
     margin-left: 0px;
