@@ -52,7 +52,9 @@ function TravelNotes() {
 
             <Carousel.Caption>
               <h2 className="carouselh4">Second slide label</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p className="carouselp">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
