@@ -9,6 +9,7 @@ import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
 import Ticket from './pages/Ticket/Ticket';
+import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketMeal from './pages/Ticket/TicketMeal';
 // 以下為Travel頁面
@@ -52,11 +53,12 @@ function App() {
             <MemberLogin />
           </Route>
           <Route path="/member-signup"></Route>
+          <Route path="/member-forgot-pwd"></Route>
           <Route path="/member-person"></Route>
-          <Route path="/member-password"></Route>
+          <Route path="/member-password-edit"></Route>
           <Route path="/member-address"></Route>
           <Route path="/member-address-new"></Route>
-          <Route path="/member-love"></Route>
+          <Route path="/member-collect"></Route>
           <Route path="/member-history"></Route>
           <Route path="/member-history-detail"></Route>
           <Route path="/travel-index">
@@ -74,7 +76,9 @@ function App() {
           <Route path="/ticket-trip-choose">
             <TicketTrip />
           </Route>
-          <Route path="/ticket-date-choose"></Route>
+          <Route path="/ticket-date-choose">
+            <TicketDate />
+          </Route>
           <Route path="/ticket-seat-choose"></Route>
           <Route path="/ticket-meal-choose">
             <TicketMeal />

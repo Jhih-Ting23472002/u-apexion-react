@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap.scss';
+//@import '~bootstrap/scss/bootstrap.scss';
 
 .pr-h10rem {
     width           : 100%;
@@ -111,13 +111,12 @@
             }
 
             >.pr-home-fashion-txt {
-                margin-left: 25px;
-                ;
+                
                 position: absolute;
 
                 >.pr-home-fashion-h2 {
                     color    : #FFFFFF;
-                    font-size: 72px;
+                    font-size: 70px;
                 }
 
                 >.pr-home-fashion-p {
@@ -227,7 +226,7 @@
         .slider_container2 {
             top       : 24%;
             left      : 35%;
-            width     : 25%;
+            width     : 26%;
             position  : absolute;
             box-shadow: #666 0 0 5px;
         }
@@ -419,16 +418,17 @@
 
 }
 
-// 手機----------------------------------------------------------
+// --------手機----------------------------------------------------------
 @media screen and (max-width:390px) {
     .pr-home-fashion-img {
         display: none;
     }
 
     .pr-pic-ctn {
-        width : 75%;
+        width : 78%;
         height: 421px;
         margin: auto;
+        overflow: hidden;
 
         .pic-ctn {
             position: relative;
@@ -500,25 +500,27 @@
         height  : 94vh;
         overflow: hidden;
 
-        >img {
+        > img {
             Object-fit: contain;
         }
     }
 
     >.pr-home-new-list {
         width: 57%;
-        >h3 {
+
+        > h3 {
             text-align: center;
             color     : white;
             font-size : 36px;
         }
-        >.pr-card-new{
-            margin:5%;
-            >.wrapper{
-                width: 300px;
-                margin: 0 auto;
-                // padding-top: 5rem;
-              }
+
+        >.pr-card-new {
+            margin : 5%;
+            display: flex;
+            >.pr-card-list {
+                width: 100%;
+
+            }
         }
     }
 

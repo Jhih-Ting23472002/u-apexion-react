@@ -1,19 +1,7 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  background: black repeat center top;
-  max-width: 100%;
-}
 
 .align-items-stretch {
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse;
-}
-
-.container{
-  padding-right: 0px;
-  padding-left: 0px;
 }
 
 /* h1 {

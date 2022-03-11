@@ -1,4 +1,9 @@
 import './ticket.css';
+import stepCircle from './img/stepCircle.png';
+import menu01 from './img/menu01.jpg';
+import menu02 from './img/menu02.jpg';
+import menu03 from './img/menu03.jpg';
+import menu04 from './img/menu04.jpg';
 
 function TicketMeal() {
   return (
@@ -6,7 +11,11 @@ function TicketMeal() {
       (
       <div class="ticket-container">
         <div class="step-circle">
-          <img src="/img/step-circle.png" alt="" />
+          <img src={stepCircle} alt="" />
+          <div className="ticket-steps">
+            <p>STEP</p>
+            <p>4</p>
+          </div>
         </div>
         <div class="ticket-menu">
           <div class="ticket-menu-wrap">
@@ -16,7 +25,7 @@ function TicketMeal() {
               <div class="menu-list">
                 <div class="menu">
                   <div class="menu-img">
-                    <img src="img/menu01.jpg" alt="" />
+                    <img src={menu01} alt="" />
                   </div>
                   <div class="menu-detail">
                     <h3>太空拉麵</h3>
@@ -27,7 +36,7 @@ function TicketMeal() {
                 </div>
                 <div class="menu">
                   <div class="menu-img">
-                    <img src="img/menu02.jpg" alt="" />
+                    <img src={menu02} alt="" />
                   </div>
                   <div class="menu-detail">
                     <h3>太空炒飯</h3>
@@ -38,7 +47,7 @@ function TicketMeal() {
                 </div>
                 <div class="menu">
                   <div class="menu-img">
-                    <img src="img/menu03.jpg" alt="" />
+                    <img src={menu03} alt="" />
                   </div>
                   <div class="menu-detail">
                     <h3>太空咖哩</h3>
@@ -49,7 +58,7 @@ function TicketMeal() {
                 </div>
                 <div class="menu">
                   <div class="menu-img">
-                    <img src="img/menu04.jpg" alt="" />
+                    <img src={menu04} alt="" />
                   </div>
                   <div class="menu-detail">
                     <h3>太空炒麵</h3>
@@ -60,7 +69,7 @@ function TicketMeal() {
                 </div>
               </div>
               <div class="menu-demo-area">
-                <img src="img/menu01.jpg" alt="" />
+                <img src={menu01} alt="" />
               </div>
             </div>
             <div class="menu-select-area">

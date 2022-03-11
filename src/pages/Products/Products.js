@@ -41,8 +41,8 @@ function Products() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M6.93835 0H0V155.993H641.406V142.181H6.93835V0Z"
               fill="white"
             />
@@ -107,31 +107,15 @@ function Products() {
         <div className="pr-home-new-list">
           <h3>NEW</h3>
           <div className="pr-card-new">
-            <div className="wrapper">
-              <div className="product-card">
-                <a href="#/" className="product-link">
-                  <img src="./product_img/M021J_BK019.jpg" />
-                  <span className="overlay">太空飛行員外套</span>
-                  <span className="info">
-                    <span className="title">太空飛行員外套</span>
-                    <span className="price">
-                      <span className="woocommerce-Price-currencySymbol">
-                        $
-                      </span>
-                      1650
-                    </span>
-                  </span>
-                </a>
-
-                <div className="button-wrap">
-                  <a href="#/" className="cart button">
-                    ＋
-                  </a>
-                  <a href="#/" className="wish button">
-                    <i className="fa fa-heart"></i>
-                  </a>
-                </div>
-              </div>
+            <div className="pr-card-list">
+            <div>
+            <img src="./product_img/M021J_BK019.jpg" alt="" />
+          </div>
+          <h3>太空飛行員外套</h3>
+						<p>黑色科技棉防撕裂物料</p>
+            <div className="fas fa-star-div">
+            <i className="fas fa-star"></i>
+            </div>
             </div>
           </div>
         </div>

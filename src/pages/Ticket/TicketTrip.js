@@ -1,4 +1,7 @@
 import './ticket.css';
+import trip01 from './img/trip01.png';
+import trip02 from './img/trip02.jpeg';
+import trip03 from './img/trip03.jpg';
 import stepCircle from './img/stepCircle.png';
 
 function TicketTrip() {
@@ -7,6 +10,10 @@ function TicketTrip() {
       <div class="ticket-container">
         <div class="step-circle">
           <img src={stepCircle} alt="" />
+          <div className="ticket-steps">
+            <p>STEP</p>
+            <p>1</p>
+          </div>
         </div>
         <div class="ticket-trip">
           <div class="ticket-trip-wrap">
@@ -14,7 +21,7 @@ function TicketTrip() {
               <i class="fas fa-angle-left"></i>
             </div>
             <div class="ticket-trip-next-btn">
-              <i class="fas fa-angle-right"></i>
+              <i class="fa-solid fa-angle-right"></i>
             </div>
             <h2>請選擇 旅遊行程</h2>
             <p>Select a travel destionation,please</p>
@@ -26,7 +33,7 @@ function TicketTrip() {
               <div class="ticket-trip-card">
                 <div class="ticket-trip-days">5日</div>
                 <div class="ticket-trip-card-head">
-                  <img src="./img/taitan.png" alt="" />
+                  <img src={trip01} alt="" />
                 </div>
                 <div class="ticket-trip-card-body">
                   <div class="ticket-title">
@@ -45,7 +52,7 @@ function TicketTrip() {
               <div class="ticket-trip-card">
                 <div class="ticket-trip-days">5日</div>
                 <div class="ticket-trip-card-head">
-                  <img src="./img/pan.jpeg" alt="" />
+                  <img src={trip02} alt="" />
                 </div>
                 <div class="ticket-trip-card-body">
                   <div class="ticket-title">
@@ -64,7 +71,7 @@ function TicketTrip() {
               <div class="ticket-trip-card">
                 <div class="ticket-trip-days">5日</div>
                 <div class="ticket-trip-card-head">
-                  <img src="./img/mars.jpg" alt="" />
+                  <img src={trip03} alt="" />
                 </div>
                 <div class="ticket-trip-card-body">
                   <div class="ticket-title">
@@ -82,7 +89,7 @@ function TicketTrip() {
               </div>
             </div>
             <a class="ticket-next" href="/">
-              Next<i class="far fa-arrow-right"></i>
+              Next<i class="fa-solid fa-right-long"></i>
             </a>
           </div>
         </div>

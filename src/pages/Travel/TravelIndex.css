@@ -1,20 +1,9 @@
-html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    min-width: 200px;
-    padding: 0px;
-    max-width: 1920px;
-    transition: 1s ease-in-out;
-    background-color: black;
-  }
 
   .travelitemBuyButton {
     width: 120px;
     height: 40px;
     margin: 0 auto;
-    margin-top:18%;
+    margin-top:15%;
     margin-right:10px;
     color: #05F2F2;
     background-color: black;
@@ -52,15 +41,15 @@ html {
     width: 100%;
     margin: 0 auto;
     border: 1px solid orange;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
 
 
   /* main-img */
   .main-img,
-  #tour-img,
-  #projects {
+  .tour-img{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -239,7 +228,7 @@ html {
     margin-top: 2%;
     margin-bottom:3%;
     height: 90vh;
-    width: 80%;
+    width: 70%;
   }
 
   @media (max-width: 640px) {
@@ -256,7 +245,9 @@ html {
   }
 
   .carouselp{
-    font-size:1.5rem;
+    font-size:21px;
+    margin-top: 2%;
+    margin-bottom: 3%;
   }
 
   .tourOverlay {
@@ -292,21 +283,25 @@ html {
       0 0 25px #03e9f4;
   }
 
-  #tour {
+  .tour {
     margin-bottom: 3%;
   }
 
-  #tour-img {
+  .tour-img {
     text-align: center;
     background-image: url('/public/travelimg/48954138922_55008a2275_k.jpg');
     height: 350px;
     border: 1px solid black;
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 
 
   /* shop */
+
+  .shopHeaderh2{
+    font-size:40px;
+  }
 
   .travelrow {
     display: flex;
@@ -370,15 +365,15 @@ html {
     background-color: white;
   }
 
-  #smallItem {
+  .smallItem {
     background-color: white;
     height: relative;
     width: 400px;
   }
 
-  #smallItem>img {
+  .smallItem>img {
     height: 345px;
-    width: 400px;
+    width:100%;
   }
 
   /* locations */
@@ -414,7 +409,7 @@ html {
   .projectItemp{
     color:black;
     font-size:24px;
-    margin-top:1%;
+    margin-top:2.3%;
   }
 
   .projectItemDesc {
@@ -506,7 +501,7 @@ html {
   }
 
   @media screen and (max-width: 400px) {
-    #smallItem>img {
+    .smallItem>img {
       width: relatve;
     }
   }

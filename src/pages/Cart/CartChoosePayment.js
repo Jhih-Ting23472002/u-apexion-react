@@ -121,18 +121,12 @@ const CartChoosePayment = () => {
                 <div className="content-detail-inside-top-suit">
                   <h5 className="cart-suit-name">個人宇航服</h5>
                   <div className="cart-ticket-country-badge">
-                    <select className="cart-select-country-badge">
-                      <option defaultValue>請選擇國旗</option>
-                      <option>日本</option>
-                      <option>美國</option>
-                      <option>台灣</option>
-                    </select>
-                    <select className="cart-select-country-badge">
-                      <option defaultValue>請選擇徽章</option>
-                      <option>日本</option>
-                      <option>美國</option>
-                      <option>台灣</option>
-                    </select>
+                    <div className="cart-select-country-badge">
+                      已選好的國旗
+                    </div>
+                    <div className="cart-select-country-badge">
+                      已選好的徽章
+                    </div>
                   </div>
                 </div>
                 <div className="content-detail-inside-bottom-suit">
@@ -152,15 +146,35 @@ const CartChoosePayment = () => {
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top">
                   <h5 className="cart-product-seat">太空艙座位</h5>
-                  <select className="cart-select-color">
-                    <option defaultValue>請選擇顏色</option>
-                    <option>white</option>
-                    <option>orange</option>
-                    <option>blue</option>
-                  </select>
+                  <div className="cart-select-color">已選好的顏色</div>
                 </div>
                 <div className="content-detail-inside-bottom">
                   <div className="cart-empty-place"></div>
+                  <button className="btn cart-remove-btn">remove</button>
+                  <div className="cart-order-money">$XXXXX</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="cart separated-line"></div>
+          <div className="cart cart-order-item d-flex">
+            <div className="cart cart-img-div col-4">
+              <img src={cartTicket} alt="" />
+            </div>
+            <div className="cart content-detail col-8 d-flex">
+              <div className="content-detail-inside">
+                <div className="content-detail-inside-top-ticket">
+                  <div className="cart-ticket-destination">
+                    <h5 className="cart-trip-name">行程:泰坦星</h5>
+                    <h5 className="cart-trip-food">太空餐點</h5>
+                  </div>
+                  <div className="cart-ticket-during">
+                    <h5 className="cart-start-time">啟航 2022/03/10 </h5>
+                    <h5 className="cart-gohome-time">回程 2022/03/15 </h5>
+                  </div>
+                </div>
+                <div className="content-detail-inside-bottom-ticket">
+                  <h5 className="cart-number-people">人數 5</h5>
                   <button className="btn cart-remove-btn">remove</button>
                   <div className="cart-order-money">$XXXXX</div>
                 </div>
