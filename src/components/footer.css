@@ -17,9 +17,7 @@
   margin-right: 0;
 }
 
-.ooo{
-padding-left: 20px;
-}
+
 .bg-footer {
   background-image: url('/public/footer.png');
   background-position: center center;
@@ -39,10 +37,8 @@ padding-left: 20px;
   padding: 65px 0px 0px;
 }
 
-.f2,
-.f3 {
+.f2, .f3{
   padding: 0px;
-  margin-right: 40px;
 }
 
 .f4 {
@@ -59,7 +55,7 @@ padding-left: 20px;
 
 .f5 {
   text-align: right;
-  padding: 30px 75px 0px 0px;
+  padding: 30px 140px 0px 0px;
 }
 
 .f5-p {
@@ -77,6 +73,14 @@ padding-left: 20px;
   color: #1bbc9b;
   text-decoration: none;
 }
+
+@media (min-width: 1920px) {
+  .f5 {
+    text-align: right;
+    padding: 30px 140px 0px 0px;
+  }
+
+  }
 
 .f6 {
   text-align: center;
@@ -132,11 +136,17 @@ li {
   border-bottom: 1px solid #1bbc9b;
 }
 
+.footerrow{
+  justify-content: center;
+}
+
 @media (max-width: 991px) {
   .footerrow {
     text-align: center;
     margin-right: 0px;
     margin-left: 0px;
+
+
   }
 
   .footer-heading2 {
