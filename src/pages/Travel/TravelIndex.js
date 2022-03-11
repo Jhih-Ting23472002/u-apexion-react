@@ -6,7 +6,7 @@ function TravelIndex() {
   return (
     <>
       <section>
-        <div className="main-img" id="home">
+        <div className="main-img">
           {/* The img itself is a background image */}
           <div className="overlay">
             <h1>The Future is Here</h1>
@@ -32,7 +32,7 @@ function TravelIndex() {
       <Carousel fade>
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-50"
+            className="travelcarousel d-block "
             src="./travelimg/fun2.jpg"
             alt="First slide"
           />
@@ -46,7 +46,7 @@ function TravelIndex() {
 
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-50"
+            className="travelcarousel d-block "
             src="./travelimg/fun3.png"
             alt="Second slide"
           />
@@ -60,7 +60,7 @@ function TravelIndex() {
 
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-50"
+            className="travelcarousel d-block "
             src="./travelimg/fun4.jpg"
             alt="Second slide"
           />
@@ -74,7 +74,7 @@ function TravelIndex() {
 
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-50"
+            className="travelcarousel d-block "
             src="./travelimg/fun1.jpg"
             alt="Second slide"
           />
@@ -88,7 +88,7 @@ function TravelIndex() {
 
         <Carousel.Item>
           <img
-            className="travel_carousel d-block w-50"
+            className="travelcarousel d-block "
             src="./travelimg/fun5.png"
             alt="Second slide"
           />
@@ -101,8 +101,8 @@ function TravelIndex() {
         </Carousel.Item>
       </Carousel>
 
-      <section id="tour">
-        <div id="tour-img">
+      <section className="tour">
+        <div className="tour-img">
           <div className="tourOverlay">
             <h2 className="tourOverlayh2">U-APEXION站內論壇</h2>
             <a href="#/" target="_blank">
@@ -119,7 +119,7 @@ function TravelIndex() {
         </div>
 
         <div className="shop">
-          <div className="shopItem" id="smallItem">
+          <div className="shopItem smallItem">
             <img src="./travelimg/titan.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
@@ -135,7 +135,7 @@ function TravelIndex() {
               </p>
             </div>
           </div>
-          <div className="shopItem" id="smallItem">
+          <div className="shopItem smallItem">
             <img src="./travelimg/xandar.jpg" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
@@ -151,7 +151,7 @@ function TravelIndex() {
               </p>
             </div>
           </div>
-          <div className="shopItem" id="smallItem">
+          <div className="shopItem smallItem">
             <img src="./travelimg/mann.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
@@ -175,7 +175,7 @@ function TravelIndex() {
         </div>
 
         <div className="shop">
-          <div className="shopItem" id="smallItem">
+          <div className="shopItem smallItem">
             <img src="./travelimg/titan.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
@@ -191,7 +191,7 @@ function TravelIndex() {
               </p>
             </div>
           </div>
-          <div className="shopItem" id="smallItem">
+          <div className="shopItem smallItem">
             <img src="./travelimg/xandar.jpg" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
@@ -207,7 +207,7 @@ function TravelIndex() {
               </p>
             </div>
           </div>
-          <div className="shopItem" id="smallItem">
+          <div className="shopItem smallItem">
             <img src="./travelimg/mann.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Mann(六月啟程)</h2>

@@ -5,47 +5,58 @@ function CoustomizeMainPage() {
   return (
     <>
       <section>
-        <div class="main">
-          <div class="movie-select">
-            <div class="suit">
+        <div className="main">
+          <div className="movie-select">
+            <div className="suit-text-box">
+              <div className="suit-text-card"></div>
+            </div>
+            <div className="seat-text-box"></div>
+            <div className="suit">
               <a href="#/">
                 <video
-                  src=""
-                  playsinline=""
+                  src={require('./movies/suit.mp4')}
+                  playsInline=""
                   loop="loop"
-                  autoplay="autoplay"
+                  autoPlay="autoplay"
                 ></video>
               </a>
             </div>
-            <div class="craft">
+            <div className="craft-text-box">
+              <div className="craft-text-card">
+                <h1>FALCON HEAVY</h1>
+                <hr />
+                <p>
+                  With more than 5 million pounds of thrust at liftoff, Falcon
+                  Heavy is the most capable rocket flying. By comparison, the
+                  liftoff thrust of the Falcon Heavy equals eighteen 747
+                  aircraft at full power.
+                </p>
+              </div>
+            </div>
+            <div className="craft">
               <a href="#/">
                 <video
-                  src=""
-                  playsinline=""
+                  src={require('./movies/spacecraft.webm')}
+                  playsInline=""
                   loop="loop"
-                  autoplay="autoplay"
+                  autoPlay="autoplay"
                 ></video>
               </a>
             </div>
-            <div class="seat">
+            <div className="seat">
               <a href="#/">
                 <video
-                  src=""
-                  playsinline=""
+                  src={require('./movies/seats3.mp4')}
+                  playsInline=""
                   loop="loop"
-                  autoplay="autoplay"
+                  autoPlay="autoplay"
                 ></video>
               </a>
             </div>
           </div>
-          <embed class="ppp" src="" type="" />
-
-          <svg className="cir" viewBox="0 0 1920 1080">
-            <path
-              d="M1506.5,166.4c-268.6,81.2-403.2,140.1-695.5,276.7C448.3,625.8,315,752.3,209.5,835.3c-8.3,6.7,0,42.7,0,42.7H1507
-               L1506.5,166.4z"
-            />
-          </svg>
+          <div className="moon-box">
+            <div className="moon"></div>
+          </div>
         </div>
       </section>
     </>

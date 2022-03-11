@@ -12,14 +12,10 @@ import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketMeal from './pages/Ticket/TicketMeal';
-// 以下Travel領域
-// import TravelIndex from './pages/Travel/TravelIndex';
-// import TravelChoose from './pages/Travel/TravelChoose';
-// import TravelNotes from './pages/Travel/TravelNotes';
 // 以下為Travel頁面
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
-import TravelNotes from './pages/Travel/TravelNotes';
+// import TravelNotes from './pages/Travel/TravelNotes';
 
 //頁面元件
 
@@ -38,16 +34,23 @@ function App() {
             <MemberLogin />
           </Route>
           <Route path="/member-signup"></Route>
+          <Route path="/member-forgot-pwd"></Route>
           <Route path="/member-person"></Route>
-          <Route path="/member-password"></Route>
+          <Route path="/member-password-edit"></Route>
           <Route path="/member-address"></Route>
           <Route path="/member-address-new"></Route>
-          <Route path="/member-love"></Route>
+          <Route path="/member-collect"></Route>
           <Route path="/member-history"></Route>
           <Route path="/member-history-detail"></Route>
-          <Route path="/travel-index">{/* <TravelIndex /> */}</Route>
-          <Route path="/travel-choose">{/* <TravelChoose /> */}</Route>
-          <Route path="/travel-notes">{/* <TravelNotes /> */}</Route>
+          <Route path="/travel-index">
+            <TravelIndex />
+          </Route>
+          <Route path="/travel-choose">
+            <TravelChoose />
+          </Route>
+          <Route path="/travel-notes">
+            {/* <TravelNotes /> */}
+          </Route>
           <Route path="/ticket-order">
             <Ticket />
           </Route>

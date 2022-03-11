@@ -1,10 +1,11 @@
 import React from 'react';
 import './TravelNotes.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 function TravelNotes() {
   return (
     <>
-      <div className="container">
+      <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item active" aria-current="page">
@@ -27,223 +28,93 @@ function TravelNotes() {
             </li>
           </ol>
         </div>
-        {/* <div className="grid">
-          <div className="column-xs-12">
-            <ul className="slider">
-              <li className="slider-item active">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">CABIN</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./travelimg/CABIN1.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">CABIN</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          普通艙
-                          <br />
-                          <br />
-                          普通艙面積達 160 至 182 平方英呎（4.5 至 5
-                          坪），精心配備各類精美高品質設施，為您帶來舒適的住宿享受。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="slider-item">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">CABIN</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./CABIN2.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">CABIN</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          尊爵艙
-                          <br />
-                          <br />
-                          尊爵艙面積為 232 至 274 平方英呎（6.5 至 7.7
-                          坪），內部設施一應俱全。47 平方英呎（1.3
-                          坪）讓您在艙房內盡情領略迷人太空景色。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="slider-item">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">FACIL</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./FACIL1.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">FACIL</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          爵士酒吧Take Five
-                          <br />
-                          <br />
-                          酒吧內的全天候服務餐廳，提供品種豐富的「太空上最佳披薩」和各種飲品酒類，一邊吃著美食一邊享受爵士樂。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="slider-item">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">FACIL</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./FACIL2.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">FACIL</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          太空步道The SpaceWalk
-                          <br />
-                          <br />
-                          懸於國際站外39米、長達8.5米的全透明玻璃步道－漫步其中，如同懸浮於太空之間，飽覽令人驚嘆的美景之餘充分洗滌身心。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <li className="slider-item">
-              <div className="grid vertical">
-                <div className="column-xs-12 column-md-2 hide-mobile">
-                  <div className="intro">
-                    <h1 className="title">
-                      <span className="underline">DINING</span>
-                    </h1>
-                  </div>
-                </div>
-                <div className="column-xs-12 column-md-10">
-                  <div className="image-holder">
-                    <img src="./DINING2.jpg" alt="" />
-                  </div>
-                  <div className="grid">
-                    <div className="column-xs-12 column-md-9">
-                      <div className="intro show-mobile">
-                        <h1 className="title">
-                          <span className="underline">DINING</span>
-                        </h1>
-                      </div>
-                      <p className="desc">
-                        環球美食自助餐廳World Fresh Marketplace
-                        <br />
-                        <br />
-                        來自世界各地的美味，餐檯上從傳統中式料理到地中海菜式，多樣佳餚隨時變換菜色，中島區域的烘焙坊更專為各式經典麵包、西點等。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li className="slider-item">
-              <div className="grid vertical">
-                <div className="column-xs-12 column-md-2 hide-mobile">
-                  <div className="intro">
-                    <h1 className="title">
-                      <span className="underline">DINING</span>
-                    </h1>
-                  </div>
-                </div>
-                <div className="column-xs-12 column-md-10">
-                  <div className="image-holder">
-                    <img src="./DINING1.jpg" alt="" />
-                  </div>
-                  <div className="grid">
-                    <div className="column-xs-12 column-md-9">
-                      <div className="intro show-mobile">
-                        <h1 className="title">
-                          <span className="underline">DINING</span>
-                        </h1>
-                      </div>
-                      <p className="desc">
-                        太空國際點心吧International Cafe
-                        <br />
-                        <br />
-                        琳瑯滿目的口袋餅、英式馬芬、蛋糕與各式輕食鹹點，24小時全天候不間斷提供各類餐點，還有許多不同茶飲、義大利特調和其他特製咖啡等，在深夜隨時滿足您的需求。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <div className="grid">
-              <div className="column-xs-12">
-                <div className="controls">
-                  <button className="previous">
-                    <span className="visually-hidden">Previous</span>
-                    <span className="icon arrow-left" aria-hidden="true"></span>
-                  </button>
-                  <button className="next">
-                    <span className="visually-hidden">Next</span>
-                    <span
-                      className="icon arrow-right"
-                      aria-hidden="true"
-                    ></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/cabin1.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h2>First slide label</h2>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/cabin2.jpg"
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h2>Second slide label</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/facil1.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/facil2.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/dining1.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/dining2.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
 
         {/* 1st group */}
 
-        <div className="content" id="content">
-          <h2 className="blue-text lighten-1 header">柴達星Xandar</h2>
+        <div className="content">
+          <h1 className="blue-text lighten-1 header">柴達星Xandar</h1>
         </div>
         <div className="blog-card">
           <div className="meta">
@@ -251,9 +122,9 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 1</h1>
-            <h2>Opening a door to the future</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 1</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
+            <p className="descriptionp">
               今日集合於USA太空發射站，專人協辦出境手續後，搭乘豪華客機飛往USA。抵達後，辦理入關手續，夜宿發射站。
               <br />
               <br />
@@ -272,9 +143,11 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 2</h1>
-            <h2>Java is not the same as JavaScript</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 2</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
+            <p className="descriptionp">
               國際太空站
               <br />
               <br />
@@ -291,9 +164,9 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 3</h1>
-            <h2>Opening a door to the future</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 3</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
+            <p className="descriptionp">
               引人入勝的娛樂活動
               <br />
               <br />
@@ -308,9 +181,11 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 4</h1>
-            <h2>Java is not the same as JavaScript</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 4</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
+            <p className="descriptionp">
               太空艙內的自由活動1
               <br />
               <br />
@@ -327,9 +202,9 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 5</h1>
-            <h2>Opening a door to the future</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 5</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
+            <p className="descriptionp">
               抵達柴達星h928-1區
               <br />
               <br />
@@ -349,9 +224,11 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 6</h1>
-            <h2>Java is not the same as JavaScript</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 6</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
+            <p className="descriptionp">
               太空艙內的自由活動2
               <br />
               <br />
@@ -368,9 +245,9 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 7</h1>
-            <h2>Opening a door to the future</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 7</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
+            <p className="descriptionp">
               返航回國際太空站
               <br />
               <br />
@@ -385,9 +262,11 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 8</h1>
-            <h2>Java is not the same as JavaScript</h2>
-            <p>
+            <h2 className="descriptionh2">DAY 8</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
+            <p className="descriptionp">
               快樂賦歸
               <br />
               今日從USA機場登機返回台灣，航越過國際換日線於次日抵達國門，夜宿機上。
@@ -396,16 +275,16 @@ function TravelNotes() {
         </div>
 
         <div className="main-container">
-          <section id="timeline" className="timeline-outer">
-            <div className="content" id="content">
+          <section className="timeline-outer">
+            <div className="content">
               <div className="row">
                 <div className="tinerarynotes col s12 m12 l12">
-                  <h2 className="blue-text lighten-1 header">
+                  <h2 className="itinerarynotesh2 blue-text lighten-1 header">
                     行程備註Itinerary notes
                   </h2>
                   <ul className="timeline">
                     <li className="event" data-date="A. 團費與訂金說明">
-                      <p>
+                      <p className="timelinep">
                         Claromentis is an intranet software provider company. I
                         started working at the Brighton office as a Marketing
                         Designer while I was still attending my final year at
@@ -414,7 +293,7 @@ function TravelNotes() {
                         re-designed their website, and have created marketing
                         materials such as brochures.
                       </p>
-                      <p>
+                      <p className="timelinep">
                         Since graduating from university, I have also undertaken
                         responsibilities for designing a product for the
                         company. The roles I have been given have provided the
@@ -424,7 +303,7 @@ function TravelNotes() {
                       </p>
                     </li>
                     <li className="event" data-date="B. 住房權益小叮嚀">
-                      <p>
+                      <p className="timelinep">
                         Claromentis is an intranet software provider company. I
                         started working at the Brighton office as a Marketing
                         Designer while I was still attending my final year at
@@ -433,7 +312,7 @@ function TravelNotes() {
                         re-designed their website, and have created marketing
                         materials such as brochures.
                       </p>
-                      <p>
+                      <p className="timelinep">
                         Since graduating from university, I have also undertaken
                         responsibilities for designing a product for the
                         company. The roles I have been given have provided the
@@ -443,7 +322,7 @@ function TravelNotes() {
                       </p>
                     </li>
                     <li className="event" data-date="C. 注意事項&建議">
-                      <p>
+                      <p className="timelinep">
                         Throughout my degree I have gained expansive knowledge
                         of informatics areas including Human Computer
                         Interaction, Multimedia Design and Development, Program
@@ -453,7 +332,7 @@ function TravelNotes() {
                         and further develop it to add new levels and improve the
                         features.
                       </p>
-                      <p>
+                      <p className="timelinep">
                         Since graduating from university, I have also undertaken
                         responsibilities for designing a product for the
                         company. The roles I have been given have provided the
