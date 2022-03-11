@@ -1,75 +1,525 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+.pr-h10rem {
+    width           : 100%;
+    height          : 10rem;
+    background-color: black;
+    display         : inline-block;
+}
+
 /* 第1段--------------------------------------------------------------------------------------- */
 
-.pr-home-mv-img{
+.pr-home-mv-img {
     position: relative;
-    >.pr-home-mv-p{
+
+    >.pr-home-mv-p {
         margin-top: 26%;
-        position: absolute;
-        width:100%;
+        position  : absolute;
+        width     : 100%;
         text-align: center;
-        >.pr-home-h2{  
-            font-weight: 900;
-            font-size: 96px;
-            color: white;
-            line-height: 140%;
+
+        >.pr-home-h2 {
+            font-weight   : 900;
+            font-size     : 96px;
+            color         : white;
+            line-height   : 140%;
             text-transform: capitalize;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+            text-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.35);
         }
-        >.pr-home-p1{
-            font-size: 50px;
-            text-align: center;
+
+        >.pr-home-p1 {
+            font-size     : 50px;
+            text-align    : center;
             text-transform: capitalize;
-            color: #FFFFFF;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+            color         : #FFFFFF;
+            text-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.35);
         }
-        >.pr-home-p2{
-            font-size: 36px;
-            line-height: 140%;
-            text-align: center;
+
+        >.pr-home-p2 {
+            font-size     : 36px;
+            line-height   : 140%;
+            text-align    : center;
             text-transform: capitalize;
-            color: #FFFFFF;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+            color         : #FFFFFF;
+            text-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.35);
         }
     }
-    > img{
-        width: 100%;
+
+    >&.img {
+        width     : 100%;
         Object-fit: contain;
     }
 }
-@media screen and (max-width:375px) {
-    .pr-home-mv-img{
-      
-        >.pr-home-mv-p{
-            margin-top: 26%;
-            position: absolute;
-            width:100%;
+
+@media screen and (max-width:390px) {
+    .pr-home-mv-img {
+        position: relative;
+
+        >.pr-home-mv-p {
+
+            position  : absolute;
+            width     : 100%;
             text-align: center;
-            >.pr-home-h2{  
-                font-weight: 900;
-                font-size: 24px;
-                color: white;
-                line-height: 120%;
-                text-transform: capitalize;
-                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+
+            >.pr-home-h2 {
+                margin           : 0px;
+                font-weight      : 900;
+                font-size        : 20px;
+                color            : white;
+                // text-transform: capitalize;
+                text-shadow      : 0px 4px 4px rgba(0, 0, 0, 0.35);
             }
-            >.pr-home-p1{
-                font-size: 18px;
-                text-align: center;
-                text-transform: capitalize;
-                color: #FFFFFF;
-                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+
+            >.pr-home-p1 {
+                margin           : 0px;
+                padding          : 0px;
+                font-size        : 14px;
+                text-align       : center;
+                // text-transform: capitalize;
+                color            : #FFFFFF;
+                text-shadow      : 0px 4px 4px rgba(0, 0, 0, 0.35);
             }
-            >.pr-home-p2{
-                font-size: 18px;
-                line-height: 110%;
-                text-align: center;
-                text-transform: capitalize;
-                color: #FFFFFF;
-                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+
+            >.pr-home-p2 {
+                font-size        : 14px;
+                text-align       : center;
+                padding          : 0px;
+                // text-transform: capitalize;
+                color            : #FFFFFF;
+                text-shadow      : 0px 4px 4px rgba(0, 0, 0, 0.35);
             }
         }
-    
+
     }
+}
+
+/* 第2段時裝照--------------------------------------------------------------------------------------- */
+@media screen and (min-width:390px) {
+    .pr-home-fashion-img {
+        width          : 100%;
+        display        : flex;
+        position       : relative;
+        justify-content: space-between;
+
+        >.pr-home-fashion-div {
+            display       : flex;
+            flex-direction: row-reverse;
+            margin-right  : 9%;
+
+            >.pr-home-fashion-svg {
+                position: relative;
+            }
+
+            >.pr-home-fashion-txt {
+                margin-left: 25px;
+                ;
+                position: absolute;
+
+                >.pr-home-fashion-h2 {
+                    color    : #FFFFFF;
+                    font-size: 72px;
+                }
+
+                >.pr-home-fashion-p {
+                    color    : #FFFFFF;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .slider_container {
+            display                  : block;
+            margin-left              : 2%;
+            margin-top               : 2%;
+            height                   : 100vh;
+            // top                   : 2%;
+            width                    : 35%;
+            position                 : relative;
+
+        }
+
+        .slider_container div {
+            position: absolute;
+
+            width  : 100%;
+            top    : 0;
+            left   : 0;
+            opacity: 0;
+            filter : alpha(opacity=0);
+
+            >img {
+                width: 100%;
+            }
+        }
+
+        // 設定動畫週期
+        .slider_container div {
+            -webkit-animation: round 25s linear infinite;
+            animation        : round 25s linear infinite;
+        }
+
+        @-webkit-keyframes round {
+            4% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 0 - 1秒 淡入*/
+            }
+
+            20% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 1- 5秒靜止*/
+            }
+
+            24% {
+                opacity: 0;
+                filter : alpha(opacity=0);
+                /* 5-6秒淡出*/
+            }
+        }
+
+        @keyframes round {
+            4% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 0 - 1秒 淡入*/
+            }
+
+            20% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 1- 5秒靜止*/
+            }
+
+            24% {
+                opacity: 0;
+                filter : alpha(opacity=0);
+                /* 5-6秒淡出*/
+            }
+        }
+
+        //每張圖片進場時間相隔5秒
+        .slider_container div:nth-child(5) {
+            -webkit-animation-delay: 0s;
+            animation-delay        : 0s;
+        }
+
+        .slider_container div:nth-child(4) {
+            -webkit-animation-delay: 5s;
+            animation-delay        : 5s;
+        }
+
+        .slider_container div:nth-child(3) {
+            -webkit-animation-delay: 10s;
+            animation-delay        : 10s;
+        }
+
+        .slider_container div:nth-child(2) {
+            -webkit-animation-delay: 15s;
+            animation-delay        : 15s;
+        }
+
+        .slider_container div:nth-child(1) {
+            -webkit-animation-delay: 20s;
+            animation-delay        : 20s;
+        }
+
+        .slider_container2 {
+            top       : 24%;
+            left      : 35%;
+            width     : 25%;
+            position  : absolute;
+            box-shadow: #666 0 0 5px;
+        }
+
+        .slider_container2 div {
+            position    : absolute;
+            border      : 10px solid;
+            border-color: #fff;
+            width       : 100%;
+            top         : 0;
+            left        : 0;
+            opacity     : 0;
+            filter      : alpha(opacity=0);
+
+            >img {
+                width: 100%;
+            }
+        }
+
+        // 設定動畫週期
+        .slider_container2 div {
+            -webkit-animation: round 25s linear infinite;
+            animation        : round 25s linear infinite;
+        }
+
+        @-webkit-keyframes round {
+            4% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 0 - 1秒 淡入*/
+            }
+
+            20% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 1- 5秒靜止*/
+            }
+
+            24% {
+                opacity: 0;
+                filter : alpha(opacity=0);
+                /* 5-6秒淡出*/
+            }
+        }
+
+        @keyframes round {
+            4% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 0 - 1秒 淡入*/
+            }
+
+            20% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 1- 5秒靜止*/
+            }
+
+            24% {
+                opacity: 0;
+                filter : alpha(opacity=0);
+                /* 5-6秒淡出*/
+            }
+        }
+
+        //每張圖片進場時間相隔5秒
+        .slider_container2 div:nth-child(5) {
+            -webkit-animation-delay: 0s;
+            animation-delay        : 0s;
+        }
+
+        .slider_container2 div:nth-child(4) {
+            -webkit-animation-delay: 5s;
+            animation-delay        : 5s;
+        }
+
+        .slider_container2 div:nth-child(3) {
+            -webkit-animation-delay: 10s;
+            animation-delay        : 10s;
+        }
+
+        .slider_container2 div:nth-child(2) {
+            -webkit-animation-delay: 15s;
+            animation-delay        : 15s;
+        }
+
+        .slider_container2 div:nth-child(1) {
+            -webkit-animation-delay: 20s;
+            animation-delay        : 20s;
+        }
+
+        .slider_container3 {
+            top       : 20%;
+            right     : 7%;
+            width     : 29%;
+            position  : absolute;
+            box-shadow: #666 0 0 5px;
+        }
+
+        .slider_container3 div {
+            position: absolute;
+            width   : 100%;
+            top     : 0;
+            left    : 0;
+            opacity : 0;
+            filter  : alpha(opacity=0);
+
+            >img {
+                width: 100%;
+            }
+        }
+
+        // 設定動畫週期
+        .slider_container3 div {
+            -webkit-animation: round 25s linear infinite;
+            animation        : round 25s linear infinite;
+        }
+
+        @-webkit-keyframes round {
+            4% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 0 - 1秒 淡入*/
+            }
+
+            20% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 1- 5秒靜止*/
+            }
+
+            24% {
+                opacity: 0;
+                filter : alpha(opacity=0);
+                /* 5-6秒淡出*/
+            }
+        }
+
+        @keyframes round {
+            4% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 0 - 1秒 淡入*/
+            }
+
+            20% {
+                opacity: 1;
+                filter : alpha(opacity=100);
+                /* 1- 5秒靜止*/
+            }
+
+            24% {
+                opacity: 0;
+                filter : alpha(opacity=0);
+                /* 5-6秒淡出*/
+            }
+        }
+
+        //每張圖片進場時間相隔5秒
+        .slider_container3 div:nth-child(5) {
+            -webkit-animation-delay: 0s;
+            animation-delay        : 0s;
+        }
+
+        .slider_container3 div:nth-child(4) {
+            -webkit-animation-delay: 5s;
+            animation-delay        : 5s;
+        }
+
+        .slider_container3 div:nth-child(3) {
+            -webkit-animation-delay: 10s;
+            animation-delay        : 10s;
+        }
+
+        .slider_container3 div:nth-child(2) {
+            -webkit-animation-delay: 15s;
+            animation-delay        : 15s;
+        }
+
+        .slider_container3 div:nth-child(1) {
+            -webkit-animation-delay: 20s;
+            animation-delay        : 20s;
+        }
+    }
+
+    .pic-ctn {
+        display: none;
+    }
+
+}
+
+// 手機----------------------------------------------------------
+@media screen and (max-width:390px) {
+    .pr-home-fashion-img {
+        display: none;
+    }
+
+    .pr-pic-ctn {
+        width : 75%;
+        height: 421px;
+        margin: auto;
+
+        .pic-ctn {
+            position: relative;
+            width   : 100%;
+        }
+    }
+
+    .pic-ctn>img {
+        position  : absolute;
+        top       : 0;
+        opacity   : 0;
+        animation : display 10s infinite;
+        Object-fit: contain;
+    }
+
+
+    @keyframes display {
+        0% {
+            transform: translateX(200px);
+            opacity  : 0;
+        }
+
+        10% {
+            transform: translateX(0);
+            opacity  : 1;
+        }
+
+        20% {
+            transform: translateX(0);
+            opacity  : 1;
+        }
+
+        30% {
+            transform: translateX(-200px);
+            opacity  : 0;
+        }
+
+        100% {
+            transform: translateX(-200px);
+            opacity  : 0;
+        }
+    }
+
+
+    img:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    img:nth-child(3) {
+        animation-delay: 4s;
+    }
+
+    img:nth-child(4) {
+        animation-delay: 6s;
+    }
+
+    img:nth-child(5) {
+        animation-delay: 8s;
+    }
+}
+
+// 新品----------------------------------------------------------
+.pr-home-new {
+    width  : 100%;
+    display: flex;
+
+    >.pr-home-new-img-photo {
+        width   : 43%;
+        height  : 94vh;
+        overflow: hidden;
+
+        >img {
+            Object-fit: contain;
+        }
+    }
+
+    >.pr-home-new-list {
+        width: 57%;
+        >h3 {
+            text-align: center;
+            color     : white;
+            font-size : 36px;
+        }
+        >.pr-card-new{
+            margin:5%;
+            >.wrapper{
+                width: 300px;
+                margin: 0 auto;
+                // padding-top: 5rem;
+              }
+        }
+    }
+
 }
