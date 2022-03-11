@@ -25,7 +25,7 @@ function TravelIndex() {
       </section>
 
       <section className="trivia">
-        <h2 className="triviah2">訓練活動花</h2>
+        <h2 className="triviah2">訓練活動花絮</h2>
         <hr className="generalHr" />
       </section>
 
