@@ -37,8 +37,10 @@ function TravelNotes() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h2>First slide label</h2>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h2 className="carouselh4">First slide label</h2>
+              <p className="carouselp">
+                Nulla vitae elit libero, a pharetra augue mollis interdum.
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -49,7 +51,7 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2>Second slide label</h2>
+              <h2 className="carouselh4">Second slide label</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -61,8 +63,8 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2>Third slide label</h2>
-              <p>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </Carousel.Caption>
@@ -75,8 +77,8 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2>Third slide label</h2>
-              <p>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </Carousel.Caption>
@@ -89,8 +91,8 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2>Third slide label</h2>
-              <p>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </Carousel.Caption>
@@ -103,8 +105,8 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2>Third slide label</h2>
-              <p>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </Carousel.Caption>

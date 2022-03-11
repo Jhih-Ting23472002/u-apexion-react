@@ -15,7 +15,7 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 // 以下為Travel頁面
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
-// import TravelNotes from './pages/Travel/TravelNotes';
+import TravelNotes from './pages/Travel/TravelNotes';
 
 //頁面元件
 
@@ -49,7 +49,7 @@ function App() {
             <TravelChoose />
           </Route>
           <Route path="/travel-notes">
-            {/* <TravelNotes /> */}
+            <TravelNotes />
           </Route>
           <Route path="/ticket-order">
             <Ticket />
