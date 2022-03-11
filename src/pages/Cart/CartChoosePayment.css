@@ -73,13 +73,12 @@
   /* border: 1px solid green; */
   /* height: 200px; */
 }
+.cart-ticket-margin-y{
+  margin-top: 2%;
+}
 .cart-img-div img {
   width: 100%;
   /* border: 1px solid rgb(0, 45, 128); */
-}
-.content-detail {
-  /* border: 1px solid brown; */
-  /* height: 100%; */
 }
 .content-detail-inside {
   width: 100%;
@@ -109,10 +108,6 @@
   height: 40%;
 }
 
-.cart-empty-place {
-  width: 60%;
-  /* border: 1px solid red; */
-}
 .cart-remove-btn {
   width: 20%;
   background-color: #023e73;
@@ -153,6 +148,7 @@
   display: flex;
   /* justify-content:space-between; */
   border-bottom: 1px solid black;
+  padding: 5% 0px;
   width: 100%;
   height: 70%;
   /* align-items: center; */
@@ -161,7 +157,7 @@
   display: flex;
   align-items: center;
   height: 30%;
-  margin-top: 2%;
+  margin-top: 5%;
 }
 .cart-ticket-destination {
   display: flex;
@@ -261,6 +257,52 @@
   /* background-size: 13%; */
   border: 0px solid red;
 }
+.spaceship-height{
+  height: 260px;
+  object-fit: contain;
+}
+.content-detail-inside-top-spaceship{
+  display: flex;
+  /* justify-content:space-between; */
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 70%;
+  /* align-items: center; */
+}
+.content-detail-inside-bottom-spaceship{
+  display: flex;
+  align-items: center;
+  height: 30%;
+  margin-top: 2%;
+}
+.cart-spaceship {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+  justify-content: space-around;
+}
+.cart-spaceship-name {
+  /* border: 1px solid red; */
+  margin: 0;
+  /* display: flex; */
+  /* justify-content: start; */
+  /* width: 60%; */
+}
+.cart-spaceship-text{
+  /* border: 1px solid red; */
+  margin: 0;
+  /* display: flex; */
+  /* justify-content: end; */
+  /* width: 60%; */
+}
+.cart-country-flag{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  justify-content: space-around;
+}
 
 
 
@@ -315,6 +357,7 @@
   }
   .cart-trip-name{
     font-size: 1rem;
+    margin-bottom: 10%;
   }
   .cart-trip-food{
     font-size: 1rem;
@@ -324,6 +367,7 @@
   }
   .cart-start-time{
     font-size: 1rem;
+    margin-bottom: 10%;
   }
   .cart-gohome-time{
     font-size: 1rem;
@@ -356,6 +400,18 @@
   }
   .cart-empty-place{
     width: 40%;
+  }
+  .cart-spaceship{
+    width: 40%;
+  }
+  .cart-spaceship-name{
+    font-size: 1rem;
+  }
+  .cart-spaceship-text{
+    font-size: 1rem;
+  }
+  .cart-country-flag-text{
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -418,6 +474,18 @@
   .cart-empty-place{
     width: 60%;
   }
+  .cart-spaceship{
+    width: 60%;
+  }
+  .cart-spaceship-name{
+    font-size: 1.1rem;
+  }
+  .cart-spaceship-text{
+    font-size: 1.1rem;
+  }
+  .cart-country-flag-text{
+    font-size: 1.1rem;
+  }
 }
 @media screen and (min-width: 992px) {
   .cart-select{
@@ -426,20 +494,14 @@
     background-size: 40%;
   }
   .cart-product-name{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     width: 65%;
   }
-  .cart-select{
-    font-size: 1.3rem;
-  }
-  .cart-product-name{
-    font-size: 1.3rem;
-  }
   .cart-trip-name{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .cart-trip-food{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .cart-start-time{
     font-size: 1.3rem;
@@ -452,16 +514,25 @@
     width: 60%;
   }
   .cart-suit-name{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .cart-product-seat{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .cart-select-color {
     font-size: 1.3rem;
     width: 25%;
   }
   .cart-order-money{
+    font-size: 1.3rem;
+  }
+  .cart-spaceship-name{
+    font-size: 1.5rem;
+  }
+  .cart-spaceship-text{
+    font-size: 1.5rem;
+  }
+  .cart-country-flag-text{
     font-size: 1.3rem;
   }
 }
