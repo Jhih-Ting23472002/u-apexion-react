@@ -28,95 +28,88 @@ function TravelNotes() {
             </li>
           </ol>
         </div>
-        <div className="travelcarousel">
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./travelimg/cabin1.jpg"
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h2>First slide label</h2>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./travelimg/cabin2.jpg"
-                alt="Second slide"
-              />
 
-              <Carousel.Caption>
-                <h2>Second slide label</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./travelimg/facil1.jpg"
-                alt="Third slide"
-              />
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/cabin1.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h2>First slide label</h2>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/cabin2.jpg"
+              alt="Second slide"
+            />
 
-              <Carousel.Caption>
-                <h2>Third slide label</h2>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./travelimg/facil2.jpg"
-                alt="Third slide"
-              />
+            <Carousel.Caption>
+              <h2>Second slide label</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/facil1.jpg"
+              alt="Third slide"
+            />
 
-              <Carousel.Caption>
-                <h2>Third slide label</h2>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./travelimg/dining1.jpg"
-                alt="Third slide"
-              />
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/facil2.jpg"
+              alt="Third slide"
+            />
 
-              <Carousel.Caption>
-                <h2>Third slide label</h2>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="./travelimg/dining2.jpg"
-                alt="Third slide"
-              />
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/dining1.jpg"
+              alt="Third slide"
+            />
 
-              <Carousel.Caption>
-                <h2>Third slide label</h2>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-        </div>
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/dining2.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2>Third slide label</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
 
         {/* 1st group */}
 
