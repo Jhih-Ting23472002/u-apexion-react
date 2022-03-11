@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel';
 function TravelNotes() {
   return (
     <>
-      <div className="container">
+      <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item active" aria-current="page">
@@ -36,7 +36,7 @@ function TravelNotes() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
+              <h2>First slide label</h2>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -48,7 +48,7 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h3>Second slide label</h3>
+              <h2>Second slide label</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -60,7 +60,7 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h3>Third slide label</h3>
+              <h2>Third slide label</h2>
               <p>
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
@@ -71,7 +71,7 @@ function TravelNotes() {
         {/* 1st group */}
 
         <div className="content" id="content">
-          <h2 className="blue-text lighten-1 header">柴達星Xandar</h2>
+          <h3 className="blue-text lighten-1 header">柴達星Xandar</h3>
         </div>
         <div className="blog-card">
           <div className="meta">
@@ -79,8 +79,8 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 1</h1>
-            <h2>Opening a door to the future</h2>
+            <h2 className="descriptionh2">DAY 1</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
             <p>
               今日集合於USA太空發射站，專人協辦出境手續後，搭乘豪華客機飛往USA。抵達後，辦理入關手續，夜宿發射站。
               <br />
@@ -100,8 +100,10 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 2</h1>
-            <h2>Java is not the same as JavaScript</h2>
+            <h2 className="descriptionh2">DAY 2</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
             <p>
               國際太空站
               <br />
@@ -119,8 +121,8 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 3</h1>
-            <h2>Opening a door to the future</h2>
+            <h2 className="descriptionh2">DAY 3</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
             <p>
               引人入勝的娛樂活動
               <br />
@@ -136,8 +138,10 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 4</h1>
-            <h2>Java is not the same as JavaScript</h2>
+            <h2 className="descriptionh2">DAY 4</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
             <p>
               太空艙內的自由活動1
               <br />
@@ -155,8 +159,8 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 5</h1>
-            <h2>Opening a door to the future</h2>
+            <h2 className="descriptionh2">DAY 5</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
             <p>
               抵達柴達星h928-1區
               <br />
@@ -177,8 +181,10 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 6</h1>
-            <h2>Java is not the same as JavaScript</h2>
+            <h2 className="descriptionh2">DAY 6</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
             <p>
               太空艙內的自由活動2
               <br />
@@ -196,8 +202,8 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 7</h1>
-            <h2>Opening a door to the future</h2>
+            <h2 className="descriptionh2">DAY 7</h2>
+            <h3 className="descriptionh3">Opening a door to the future</h3>
             <p>
               返航回國際太空站
               <br />
@@ -213,8 +219,10 @@ function TravelNotes() {
             <ul className="details"></ul>
           </div>
           <div className="description">
-            <h1>DAY 8</h1>
-            <h2>Java is not the same as JavaScript</h2>
+            <h2 className="descriptionh2">DAY 8</h2>
+            <h3 className="descriptionh3">
+              Java is not the same as JavaScript
+            </h3>
             <p>
               快樂賦歸
               <br />
@@ -228,9 +236,9 @@ function TravelNotes() {
             <div className="content" id="content">
               <div className="row">
                 <div className="tinerarynotes col s12 m12 l12">
-                  <h2 className="blue-text lighten-1 header">
+                  <h3 className="blue-text lighten-1 header">
                     行程備註Itinerary notes
-                  </h2>
+                  </h3>
                   <ul className="timeline">
                     <li className="event" data-date="A. 團費與訂金說明">
                       <p>
