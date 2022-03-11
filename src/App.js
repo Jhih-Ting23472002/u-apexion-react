@@ -15,7 +15,12 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
-
+// forum
+import ForumHomePage from './pages/Forum/ForumHomePage';
+import ForumSinglePostPage from './pages/Forum/ForumSinglePostPage';
+import ForumPublishPage from './pages/Forum/ForumPublishPage';
+import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
+import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
 //頁面元件
 
 function App() {
@@ -26,7 +31,21 @@ function App() {
         <Switch>
           <Route path="/index-video"></Route>
           <Route path="/index"></Route>
-          <Route path="/forum-index"></Route>
+          <Route exact path="/forum-home">
+            <ForumHomePage />
+          </Route>
+          <Route path="/forum-home/posts/:sid">
+            <ForumSinglePostPage />
+          </Route>
+          <Route path="/publish">
+            <ForumPublishPage />
+          </Route>
+          <Route path="/forum-apexion-articles">
+            <ForumUArticlePage />
+          </Route>
+          <Route path="/posts-category/:art_category_sid">
+            <ForumPostCategoryPage />
+          </Route>
           <Route path="/index-postPage"></Route>
           <Route path="/index-postPage"></Route>
           <Route path="/member-login">

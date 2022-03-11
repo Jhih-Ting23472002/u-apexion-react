@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans HK', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #fff;
+}
+
+/* chrome的input樣式 */
+.forum-input-wrapper input:-webkit-autofill {
+  -webkit-animation: autofill-fix 1s infinite;
+  /* -webkit-text-fill-color: #fff; */
+}
+@-webkit-keyframes autofill-fix {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+/* start navbar */
+.nav.forum_nav {
+  /* position: fixed; */
+  left: 0;
+  top: 0;
+  width: 15%;
+  height: 100vh;
+  position: sticky;
+}
+@media (max-width: 600px) {
+  .nav.forum_nav {
+    display: none;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .nav.forum_nav {
+    margin-left: 8px;
+  }
+}
+@media (min-width: 1401px) {
+  .nav.forum_nav {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+}
+.forum_nav_item {
+  font-size: 14px;
+}
+
+@media (min-width: 1401px) {
+  .forum_nav_item {
+    /* font-size: 15px; */
+    margin-left: 5px;
+    letter-spacing: 1px;
+  }
+}
+
+.nav.forum_nav ul {
+  margin-top: 70px;
+}
+.forum_nav-bg {
+  background-color: #000;
+}
+.forum_navIcon_adjust {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px 0;
+}
+.forum_navIcon_adjust select {
+  border: 0px;
+  background-color: #000;
+  color: #fff;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.nav.forum_nav i {
+  display: block;
+  /* margin-bottom: 10px; */
+  font-size: 12px;
+  color: #808080;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  width: 30px;
+  height: 30px;
+  /* border:1px solid red; */
+}
+.nav.forum_nav a {
+  font-family: 'Noto Sans HK', sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.nav.forum_nav li p {
+  font-size: 12px;
+  color: #808080;
+}
+.forum_nav-search-bar {
+  background-color: #000;
+  width: 70%;
+  height: 25px;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid #05f2f2;
+}
+.forum-input-wrapper {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 10px;
+}
+.input-wrapper:after {
+  font-family: 'FontAwesome';
+  content: '\f002';
+  position: absolute;
+  top: 3.5px;
+  right: 40%;
+  font-size: 12px;
+  color: #05f2f2;
+}
+/* end navbar */
+
