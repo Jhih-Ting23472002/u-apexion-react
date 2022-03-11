@@ -33,11 +33,12 @@ function App() {
             <MemberLogin />
           </Route>
           <Route path="/member-signup"></Route>
+          <Route path="/member-forgot-pwd"></Route>
           <Route path="/member-person"></Route>
-          <Route path="/member-password"></Route>
+          <Route path="/member-password-edit"></Route>
           <Route path="/member-address"></Route>
           <Route path="/member-address-new"></Route>
-          <Route path="/member-love"></Route>
+          <Route path="/member-collect"></Route>
           <Route path="/member-history"></Route>
           <Route path="/member-history-detail"></Route>
           <Route path="/travel-index">
