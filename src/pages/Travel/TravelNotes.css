@@ -114,6 +114,12 @@ body {
   height: 90vh;
 }
 
+@media (max-width: 640px) {
+  .travelcarousel{
+    height: 25vh;
+  }
+}
+
 
 /* day card start */
 

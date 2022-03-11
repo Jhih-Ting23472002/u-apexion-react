@@ -239,9 +239,16 @@ html {
     margin-top: 2%;
     margin-bottom:3%;
     height: 90vh;
-    width: 70%;
+    width: 100%;
   }
 
+  @media (max-width: 640px) {
+    .travelcarousel{
+      margin: 0 auto;
+      margin-top: 2%;
+      margin-bottom:3%;
+    }
+}
   .carouselh4{
     font-size:32px;
   }
