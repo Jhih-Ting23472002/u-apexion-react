@@ -5,15 +5,22 @@ function CoustomizeMainPage() {
   return (
     <>
       <section>
-        <div className="main">
+        <div className="Coustom-main">
           <div className="movie-select">
-            <div className="suit-text-box">
-              <div className="suit-text-card"></div>
-            </div>
-            <div className="seat-text-box"></div>
-            <div className="suit">
+            <div className="Coustom-suit">
               <a href="#/">
+                <div className="suit-text-box">
+                  <h1>FALCON HEAVY</h1>
+                  <hr />
+                  <p>
+                    With more than 5 million pounds of thrust at liftoff, Falcon
+                    Heavy is the most capable rocket flying. By comparison, the
+                    liftoff thrust of the Falcon Heavy equals eighteen 747
+                    aircraft at full power.
+                  </p>
+                </div>
                 <video
+                  className="Coustom-suit-video"
                   src={require('./movies/suit.mp4')}
                   playsInline=""
                   loop="loop"
@@ -21,8 +28,31 @@ function CoustomizeMainPage() {
                 ></video>
               </a>
             </div>
-            <div className="craft-text-box">
-              <div className="craft-text-card">
+            <div className="Coustom-craft">
+              <a href="#/">
+                <div className="craft-text-box">
+                  <div className="craft-box-deshed"></div>
+                  <h1>FALCON HEAVY</h1>
+                  <hr />
+                  <p>
+                    With more than 5 million pounds of thrust at liftoff, Falcon
+                    Heavy is the most capable rocket flying. By comparison, the
+                    liftoff thrust of the Falcon Heavy equals eighteen 747
+                    aircraft at full power.
+                  </p>
+                </div>
+
+                <video
+                  className="Coustom-craft-video"
+                  src={require('./movies/spacecraft.webm')}
+                  playsInline=""
+                  loop="loop"
+                  autoPlay="autoplay"
+                ></video>
+              </a>
+            </div>
+            <div className="Coustom-seat">
+              <div className="seat-text-box">
                 <h1>FALCON HEAVY</h1>
                 <hr />
                 <p>
@@ -32,20 +62,9 @@ function CoustomizeMainPage() {
                   aircraft at full power.
                 </p>
               </div>
-            </div>
-            <div className="craft">
               <a href="#/">
                 <video
-                  src={require('./movies/spacecraft.webm')}
-                  playsInline=""
-                  loop="loop"
-                  autoPlay="autoplay"
-                ></video>
-              </a>
-            </div>
-            <div className="seat">
-              <a href="#/">
-                <video
+                  className="Coustom-seat-video"
                   src={require('./movies/seats3.mp4')}
                   playsInline=""
                   loop="loop"
@@ -55,7 +74,7 @@ function CoustomizeMainPage() {
             </div>
           </div>
           <div className="moon-box">
-            <div className="moon"></div>
+            <div className="Coustom-moon"></div>
           </div>
         </div>
       </section>
