@@ -6,8 +6,8 @@ const Footer = () => {
       <footer className="section bg-footer">
         <div className="footercontainer">
           <div className="footerrow row">
-            <div className="f1 col-lg-4">
-              <div className="">
+            <div className="f1 col-lg-3">
+              <div className="ooo">
                 <h6 className="footer-heading">U-APEXION</h6>
                 <ul className="list-unstyled footer-link mt-4 d-none d-xl-block">
                   <li>Copyright © 2022</li>
@@ -81,7 +81,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="f4 d-none d-xl-block">
+            <div className="f4 d-none d-xl-block ">
               <div className="">
                 <h6 className="footer-heading2">Follow Us</h6>
                 <ul className="list-unstyled footer-link mt-4">
