@@ -1,5 +1,5 @@
 
-@media (min-width: 1920px) {
+@media (min-width: 992px) {
   .footercontainer {
     max-width: 95rem;
   }
@@ -30,12 +30,16 @@
   margin-right: 40px;
 }
 
-/* .f2-p{
-  margin-left: 10px;
-} */
-
 .f4 {
   padding: 0px;
+}
+
+.f2-p, .f3-p, .f4-p{
+  font-size: 12px;
+}
+
+.f2-p, .f3-p{
+  margin-left: 17px;
 }
 
 .f5 {
