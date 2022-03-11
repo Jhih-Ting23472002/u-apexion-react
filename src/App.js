@@ -9,10 +9,11 @@ import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
 import Ticket from './pages/Ticket/Ticket';
 import TicketTrip from './pages/Ticket/TicketTrip';
+import TicketMeal from './pages/Ticket/TicketMeal';
 // 以下Travel領域
-import TravelIndex from './pages/Travel/TravelIndex';
-import TravelChoose from './pages/Travel/TravelChoose';
-import TravelNotes from './pages/Travel/TravelNotes';
+// import TravelIndex from './pages/Travel/TravelIndex';
+// import TravelChoose from './pages/Travel/TravelChoose';
+// import TravelNotes from './pages/Travel/TravelNotes';
 
 //頁面元件
 
@@ -36,15 +37,9 @@ function App() {
           <Route path="/member-love"></Route>
           <Route path="/member-history"></Route>
           <Route path="/member-history-detail"></Route>
-          <Route path="/travel-index">
-            <TravelIndex />
-          </Route>
-          <Route path="/travel-choose">
-            <TravelChoose />
-          </Route>
-          <Route path="/travel-notes">
-            <TravelNotes />
-          </Route>
+          <Route path="/travel-index">{/* <TravelIndex /> */}</Route>
+          <Route path="/travel-choose">{/* <TravelChoose /> */}</Route>
+          <Route path="/travel-notes">{/* <TravelNotes /> */}</Route>
           <Route path="/ticket-order">
             <Ticket />
           </Route>
@@ -53,7 +48,9 @@ function App() {
           </Route>
           <Route path="/ticket-date-choose"></Route>
           <Route path="/ticket-seat-choose"></Route>
-          <Route path="/ticket-meal-choose"></Route>
+          <Route path="/ticket-meal-choose">
+            <TicketMeal />
+          </Route>
           <Route path="/ticket-confirm"></Route>
           <Route path="/coustomize-mainpage">
             <CoustomizeMainPage />
