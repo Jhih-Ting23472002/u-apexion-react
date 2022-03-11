@@ -29,9 +29,6 @@
 .photo_8{
   background-image: url('/public/travelimg/day8.jpg');
 }
-body {
-  background: #000000;
-}
 
 .travelnotescontainer {
   margin: auto;
