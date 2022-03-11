@@ -111,7 +111,11 @@ body {
 
 /* day card start */
 
-.description>p {
+.blue-text{
+  color:white;
+}
+
+.descriptionp{
   letter-spacing: 2px;
   color:black;
 }
@@ -206,36 +210,17 @@ body {
   text-align: left;
 }
 
-.blog-card .description a {
-  color: #5ad67d;
-  display: inline-block;
-  position: relative;
-}
 
-.blog-card .description a:after {
-  content: "";
-  font-family: FontAwesome;
-  margin-left: -10px;
-  opacity: 0;
-  vertical-align: middle;
-  transition: margin 0.3s, opacity 0.3s;
-}
-
-.blog-card .description a:hover:after {
-  margin-left: 5px;
-  opacity: 1;
-}
-
-.blog-card p {
+.blog-card .descriptionp{
   position: relative;
   margin: 1rem 0 0;
 }
 
-.blog-card p:first-of-type {
+.blog-card .descriptionp:first-of-type {
   margin-top: 1.25rem;
 }
 
-.blog-card p:first-of-type:before {
+.blog-card .descriptionp:first-of-type:before {
   content: "";
   position: absolute;
   height: 5px;
@@ -294,12 +279,9 @@ body {
   padding-left:9%;
 }
 
-/*——————————————
-TimeLine CSS
-———————————————*/
-/* Base */
+/* Itinerary notes start */
 
-#content {
+.content {
   margin-top: 150px;
   text-align: center;
 }
@@ -308,12 +290,6 @@ section.timeline-outer {
   width: 80%;
   margin: 0 auto;
 }
-
-.descriptionh3.header {
-  color: white;
-}
-
-/* Timeline */
 
 .timeline {
   border-bottom-right-radius: 2px;
@@ -370,11 +346,6 @@ section.timeline-outer {
   top: 5px;
 }
 
-/**/
-/*——————————————
-Responsive Stuff
-———————————————*/
-
 @media (max-width: 945px) {
   .timeline .event::before {
     left: 0.5px;
@@ -405,23 +376,13 @@ Responsive Stuff
     font-size: 20px;
   }
 
-  .timeline .descriptionh3 {
+  .timeline .itinerarynotesh3 {
     font-size: 16px;
   }
 
-  .timeline p {
+  .timelinep {
     padding-top: 20px;
   }
-}
-
-/*——————————————
-others
-———————————————*/
-
-a.portfolio-link {
-  margin: 0 auto;
-  display: block;
-  text-align: center;
 }
 
 /* btn */
