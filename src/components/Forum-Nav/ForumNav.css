@@ -4,9 +4,9 @@
 }
 
 body {
-  font-family: 'Noto Sans HK', sans-serif;
-  font-family: 'Noto Sans TC', sans-serif;
-  color: #fff;
+  /* font-family: 'Noto Sans HK', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif; */
+  /* color: #fff; */
 }
 
 /* chrome的input樣式 */
@@ -49,6 +49,7 @@ body {
 }
 .forum_nav_item {
   font-size: 14px;
+  color: white;
 }
 
 @media (min-width: 1401px) {
@@ -97,9 +98,11 @@ body {
   color: #fff;
 }
 
-.nav.forum_nav li p {
+.forum_nav_title{
   font-size: 12px;
   color: #808080;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 .forum_nav-search-bar {
   background-color: #000;
@@ -124,4 +127,3 @@ body {
   color: #05f2f2;
 }
 /* end navbar */
-

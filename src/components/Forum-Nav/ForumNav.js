@@ -40,11 +40,12 @@ export default function ForumNav() {
           </div>
         </li>
         <li>
-          <p
-            style={{ marginTop: '15px', fontSize: '16px', fontWeight: 'bold' }}
+          <div
+            className="forum_nav_title"
+            style={{ marginTop: '15px', fontSize: '14px' }}
           >
             文章分類
-          </p>
+          </div>
           <div className="forum_nav_a-group">
             <ForunArticalAll
               to="/forum-home"
@@ -207,11 +208,12 @@ export default function ForumNav() {
           </div>
         </li>
         <li>
-          <p
-            style={{ marginTop: '15px', fontSize: '16px', fontWeight: 'bold' }}
+          <div
+            className="forum_nav_title"
+            style={{ marginTop: '15px', fontSize: '14px' }}
           >
             個人頁面
-          </p>
+          </div>
 
           <div className="a-group">
             <ForunArticalAll to="/#" $active={location.pathname === '/#'}>
