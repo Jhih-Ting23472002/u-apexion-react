@@ -1,7 +1,12 @@
 
-@media (min-width: 992px) {
+@media (min-width: 1920px) {
   .footercontainer {
     max-width: 90rem;
+  }
+}
+@media (min-width: 992px) {
+  .footercontainer {
+    max-width: 80rem;
   }
 }
 
