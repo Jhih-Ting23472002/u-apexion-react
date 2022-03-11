@@ -228,7 +228,7 @@
     margin-top: 2%;
     margin-bottom:3%;
     height: 90vh;
-    width: 80%;
+    width: 70%;
   }
 
   @media (max-width: 640px) {
@@ -246,6 +246,7 @@
 
   .carouselp{
     font-size:21px;
+    margin-top: 2%;
     margin-bottom: 3%;
   }
 
@@ -292,7 +293,7 @@
     height: 350px;
     border: 1px solid black;
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 
 
