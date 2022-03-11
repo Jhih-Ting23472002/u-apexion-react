@@ -1,5 +1,6 @@
 import React from 'react';
 import './TravelNotes.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 function TravelNotes() {
   return (
@@ -27,218 +28,45 @@ function TravelNotes() {
             </li>
           </ol>
         </div>
-        {/* <div className="grid">
-          <div className="column-xs-12">
-            <ul className="slider">
-              <li className="slider-item active">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">CABIN</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./travelimg/CABIN1.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">CABIN</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          普通艙
-                          <br />
-                          <br />
-                          普通艙面積達 160 至 182 平方英呎（4.5 至 5
-                          坪），精心配備各類精美高品質設施，為您帶來舒適的住宿享受。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="slider-item">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">CABIN</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./CABIN2.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">CABIN</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          尊爵艙
-                          <br />
-                          <br />
-                          尊爵艙面積為 232 至 274 平方英呎（6.5 至 7.7
-                          坪），內部設施一應俱全。47 平方英呎（1.3
-                          坪）讓您在艙房內盡情領略迷人太空景色。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="slider-item">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">FACIL</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./FACIL1.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">FACIL</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          爵士酒吧Take Five
-                          <br />
-                          <br />
-                          酒吧內的全天候服務餐廳，提供品種豐富的「太空上最佳披薩」和各種飲品酒類，一邊吃著美食一邊享受爵士樂。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="slider-item">
-                <div className="grid vertical">
-                  <div className="column-xs-12 column-md-2 hide-mobile">
-                    <div className="intro">
-                      <h1 className="title">
-                        <span className="underline">FACIL</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="column-xs-12 column-md-10">
-                    <div className="image-holder">
-                      <img src="./FACIL2.jpg" alt="" />
-                    </div>
-                    <div className="grid">
-                      <div className="column-xs-12 column-md-9">
-                        <div className="intro show-mobile">
-                          <h1 className="title">
-                            <span className="underline">FACIL</span>
-                          </h1>
-                        </div>
-                        <p className="desc">
-                          太空步道The SpaceWalk
-                          <br />
-                          <br />
-                          懸於國際站外39米、長達8.5米的全透明玻璃步道－漫步其中，如同懸浮於太空之間，飽覽令人驚嘆的美景之餘充分洗滌身心。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <li className="slider-item">
-              <div className="grid vertical">
-                <div className="column-xs-12 column-md-2 hide-mobile">
-                  <div className="intro">
-                    <h1 className="title">
-                      <span className="underline">DINING</span>
-                    </h1>
-                  </div>
-                </div>
-                <div className="column-xs-12 column-md-10">
-                  <div className="image-holder">
-                    <img src="./DINING2.jpg" alt="" />
-                  </div>
-                  <div className="grid">
-                    <div className="column-xs-12 column-md-9">
-                      <div className="intro show-mobile">
-                        <h1 className="title">
-                          <span className="underline">DINING</span>
-                        </h1>
-                      </div>
-                      <p className="desc">
-                        環球美食自助餐廳World Fresh Marketplace
-                        <br />
-                        <br />
-                        來自世界各地的美味，餐檯上從傳統中式料理到地中海菜式，多樣佳餚隨時變換菜色，中島區域的烘焙坊更專為各式經典麵包、西點等。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li className="slider-item">
-              <div className="grid vertical">
-                <div className="column-xs-12 column-md-2 hide-mobile">
-                  <div className="intro">
-                    <h1 className="title">
-                      <span className="underline">DINING</span>
-                    </h1>
-                  </div>
-                </div>
-                <div className="column-xs-12 column-md-10">
-                  <div className="image-holder">
-                    <img src="./DINING1.jpg" alt="" />
-                  </div>
-                  <div className="grid">
-                    <div className="column-xs-12 column-md-9">
-                      <div className="intro show-mobile">
-                        <h1 className="title">
-                          <span className="underline">DINING</span>
-                        </h1>
-                      </div>
-                      <p className="desc">
-                        太空國際點心吧International Cafe
-                        <br />
-                        <br />
-                        琳瑯滿目的口袋餅、英式馬芬、蛋糕與各式輕食鹹點，24小時全天候不間斷提供各類餐點，還有許多不同茶飲、義大利特調和其他特製咖啡等，在深夜隨時滿足您的需求。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <div className="grid">
-              <div className="column-xs-12">
-                <div className="controls">
-                  <button className="previous">
-                    <span className="visually-hidden">Previous</span>
-                    <span className="icon arrow-left" aria-hidden="true"></span>
-                  </button>
-                  <button className="next">
-                    <span className="visually-hidden">Next</span>
-                    <span
-                      className="icon arrow-right"
-                      aria-hidden="true"
-                    ></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="holder.js/800x400?text=First slide&bg=373940"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="holder.js/800x400?text=Second slide&bg=282c34"
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="holder.js/800x400?text=Third slide&bg=20232a"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
 
         {/* 1st group */}
 
