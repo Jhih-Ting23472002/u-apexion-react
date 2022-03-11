@@ -3,6 +3,7 @@ import './CartChoosePayment.css';
 import example from './img/example.png';
 import cartTicket from './img/cartTicket.png';
 import spaceSuit from './img/spaceSuit.png';
+import spaceSeat from './img/spaceSeat.png';
 
 const CartChoosePayment = () => {
   return (
@@ -120,12 +121,14 @@ const CartChoosePayment = () => {
                 <div className="content-detail-inside-top-suit">
                   <h5 className="cart-suit-name">個人宇航服</h5>
                   <div className="cart-ticket-country-badge">
-                    <select className="cart-select-country">
+                    <select className="cart-select-country-badge">
+                      <option defaultValue>請選擇國旗</option>
                       <option>日本</option>
                       <option>美國</option>
                       <option>台灣</option>
                     </select>
-                    <select className="cart-select-badge">
+                    <select className="cart-select-country-badge">
+                      <option defaultValue>請選擇徽章</option>
                       <option>日本</option>
                       <option>美國</option>
                       <option>台灣</option>
@@ -133,6 +136,30 @@ const CartChoosePayment = () => {
                   </div>
                 </div>
                 <div className="content-detail-inside-bottom-suit">
+                  <div className="cart-empty-place"></div>
+                  <button className="btn cart-remove-btn">remove</button>
+                  <div className="cart-order-money">$XXXXX</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="cart separated-line"></div>
+          <div className="cart cart-order-item d-flex">
+            <div className="cart cart-img-div col-4">
+              <img src={spaceSeat} alt="" />
+            </div>
+            <div className="cart content-detail col-8 d-flex">
+              <div className="content-detail-inside">
+                <div className="content-detail-inside-top">
+                  <h5 className="cart-product-seat">太空艙座位</h5>
+                  <select className="cart-select-color">
+                    <option defaultValue>請選擇顏色</option>
+                    <option>white</option>
+                    <option>orange</option>
+                    <option>blue</option>
+                  </select>
+                </div>
+                <div className="content-detail-inside-bottom">
                   <div className="cart-empty-place"></div>
                   <button className="btn cart-remove-btn">remove</button>
                   <div className="cart-order-money">$XXXXX</div>
