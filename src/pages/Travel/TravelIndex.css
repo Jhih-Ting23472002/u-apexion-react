@@ -3,7 +3,7 @@
     width: 120px;
     height: 40px;
     margin: 0 auto;
-    margin-top:18%;
+    margin-top:10%;
     margin-right:10px;
     color: #05F2F2;
     background-color: black;
@@ -41,7 +41,8 @@
     width: 100%;
     margin: 0 auto;
     border: 1px solid orange;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
 
@@ -295,6 +296,10 @@
 
 
   /* shop */
+
+  .shopHeaderh2{
+    font-size:40px;
+  }
 
   .travelrow {
     display: flex;
