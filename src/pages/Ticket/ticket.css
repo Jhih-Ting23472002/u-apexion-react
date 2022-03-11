@@ -479,6 +479,7 @@ img {
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 0.9rem;
+  padding-bottom: 2%;
 }
 
 .ticket-date-content {
@@ -502,7 +503,7 @@ img {
 }
 
 .ticket-date-selected {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   flex: 1;
 }
 
@@ -517,6 +518,7 @@ img {
   text-align: center;
   border-bottom: 1px solid white;
   width: 100%;
+  margin-bottom: 10%;
 }
 
 .ticket-date-days h2 {
@@ -537,7 +539,7 @@ img {
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
@@ -546,6 +548,28 @@ img {
   border: 1px solid rgb(255, 255, 255);
   width: 100%;
   text-align: center;
+  color: white;
+  padding: 15% 0;
+  color: var(--main-color-02);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-date-from-border h4,
+.ticket-date-to-border h4 {
+    color: white;
+    position: absolute;
+    top: -20px;
+    background-color: #313131;
+    padding: 0 5%;
+    /* border: 1px solid rgb(7, 7, 6); */
+}
+
+.ticket-date-from-border p:last-child,
+.ticket-date-to-border p:last-child {
+  font-size: 2.5rem;
+  color: white;
 }
 
 /* 出發日期選擇樣式結束 */

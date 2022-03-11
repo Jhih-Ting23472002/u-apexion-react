@@ -29,15 +29,19 @@ function TicketDate() {
                 <div className="ticket-date-selected ticket-date-from">
                   <div className="ticket-date-from-border">
                     <h4>From</h4>
-                    <p>2022.01.24</p>
-                    <p>9:00 AM</p>
+                    <div className="ticket-date-from-info">
+                      <p>2022.01.24</p>
+                      <p>9:00 AM</p>
+                    </div>
                   </div>
                 </div>
                 <div className="ticket-date-selected ticket-date-to">
                   <div className="ticket-date-to-border">
                     <h4>To</h4>
-                    <p>2022.01.28</p>
-                    <p>2:30 PM</p>
+                    <div className="ticket-date-to-info">
+                      <p>2022.01.28</p>
+                      <p>2:30 PM</p>
+                    </div>
                   </div>
                 </div>
               </div>
