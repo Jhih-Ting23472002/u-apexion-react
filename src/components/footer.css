@@ -1,4 +1,7 @@
 
+#root {
+  background-color: #000;
+}
 @media (min-width: 1920px) {
   .footercontainer {
     max-width: 95rem;
