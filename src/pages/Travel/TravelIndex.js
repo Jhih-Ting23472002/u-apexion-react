@@ -7,7 +7,6 @@ function TravelIndex() {
     <>
       <section>
         <div className="main-img">
-          {/* The img itself is a background image */}
           <div className="overlay">
             <h1>The Future is Here</h1>
             <h2>With U-APEXION you can teleport anywhere, any time.</h2>
@@ -30,9 +29,9 @@ function TravelIndex() {
       </section>
 
       <Carousel fade>
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block "
+            className="travelcarousel d-block w-100 "
             src="./travelimg/fun2.jpg"
             alt="First slide"
           />
@@ -44,9 +43,9 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block "
+            className="travelcarousel d-block w-100 "
             src="./travelimg/fun3.png"
             alt="Second slide"
           />
@@ -58,9 +57,9 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block "
+            className="travelcarousel d-block w-100 "
             src="./travelimg/fun4.jpg"
             alt="Second slide"
           />
@@ -72,10 +71,10 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block "
-            src="./travelimg/fun1.jpg"
+            className="travelcarousel d-block w-100 "
+            src="./travelimg/fun2.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -86,9 +85,9 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block "
+            className="travelcarousel d-block w-100 "
             src="./travelimg/fun5.png"
             alt="Second slide"
           />
