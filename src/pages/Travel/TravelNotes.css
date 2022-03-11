@@ -108,12 +108,12 @@
 /* carousel start */
 
 .travelcarousel {
-  height: 90vh;
+  height: auto;
 }
 
 @media (max-width: 640px) {
   .travelcarousel{
-    height: 25vh;
+    height: auto;
   }
 }
 
