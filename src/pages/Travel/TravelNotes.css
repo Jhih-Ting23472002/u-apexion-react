@@ -113,11 +113,13 @@ body {
 
 .blue-text{
   color:white;
+  font-size:64px;
 }
 
 .descriptionp{
   letter-spacing: 2px;
   color:black;
+  font-size:21px;
 }
 
 .blog-card {
@@ -193,12 +195,12 @@ body {
 .blog-card .description .descriptionh2 {
   line-height: 1;
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 40px;
 
 }
 
 .blog-card .description .descriptionh3 {
-  font-size: 1rem;
+  font-size: 21px;
   font-weight: 300;
   text-transform: uppercase;
   color: #000000;
@@ -281,14 +283,19 @@ body {
 
 /* Itinerary notes start */
 
+.itinerarynotesh2{
+  font-size:40px;
+  color:white;
+}
+
 .content {
   margin-top: 150px;
   text-align: center;
 }
 
 section.timeline-outer {
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 0px 0px 0px auto;
 }
 
 .timeline {
@@ -327,17 +334,17 @@ section.timeline-outer {
 }
 
 .timeline .event:before {
-  left: -177.5px;
+  left: -275px;
   color: #ffffff;
   content: attr(data-date);
   text-align: right;
-  font-size: 16px;
+  font-size: 28px;
   min-width: 120px;
 }
 
 .timeline .event:after {
   box-shadow: 0 0 0 8px #023E73;
-  left: -30px;
+  left: -25px;
   background: #000000;
   border-radius: 50%;
   height: 11px;
@@ -383,6 +390,10 @@ section.timeline-outer {
   .timelinep {
     padding-top: 20px;
   }
+}
+
+.timelinep {
+  font-size: 21px;
 }
 
 /* btn */

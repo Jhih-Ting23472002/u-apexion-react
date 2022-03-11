@@ -236,9 +236,9 @@ function TravelNotes() {
             <div className="content">
               <div className="row">
                 <div className="tinerarynotes col s12 m12 l12">
-                  <h3 className="itinerarynotesh3 blue-text lighten-1 header">
+                  <h2 className="itinerarynotesh2 blue-text lighten-1 header">
                     行程備註Itinerary notes
-                  </h3>
+                  </h2>
                   <ul className="timeline">
                     <li className="event" data-date="A. 團費與訂金說明">
                       <p className="timelinep">
