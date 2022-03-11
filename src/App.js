@@ -9,6 +9,7 @@ import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
 import Ticket from './pages/Ticket/Ticket';
+import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketMeal from './pages/Ticket/TicketMeal';
 // 以下Travel領域
@@ -53,7 +54,9 @@ function App() {
           <Route path="/ticket-trip-choose">
             <TicketTrip />
           </Route>
-          <Route path="/ticket-date-choose"></Route>
+          <Route path="/ticket-date-choose">
+            <TicketDate />
+          </Route>
           <Route path="/ticket-seat-choose"></Route>
           <Route path="/ticket-meal-choose">
             <TicketMeal />

@@ -1,579 +1,708 @@
 img {
-    width: 100%;
+  width: 100%;
 }
 
 /* 訂票輸入欄樣式開始 */
 .ticketWrap {
-    background: url(img/ticket-order-bg.jpg) no-repeat;
-    background-size: cover;
-    height: 100vh;
-
+  background: url(img/ticket-order-bg.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 .inputArea {
-    width: 30%;
-    height: 80vh;
-    background-color: rgba(0, 0, 0, 0.698);
-    margin-left: 10%;
-    position: absolute;
-    bottom: 5%;
-    text-align: center;
+  width: 30%;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.698);
+  margin-left: 10%;
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
 }
 
 .inputArea h2 {
-    color: white;
-    font-size: 3rem;
-    margin: 7% 0;
+  color: white;
+  font-size: 3rem;
+  margin: 7% 0;
 }
 
 .inputWrap {
-    /* border: 1px solid green; */
-    width: 85%;
-    margin: 5px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* border: 1px solid green; */
+  width: 85%;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .inputArea label {
-    font-size: 1.25rem;
-    color: white;
+  font-size: 1.25rem;
+  color: white;
 }
 
 .inputArea .inputGroup {
-    padding: 6px;
-    width: 75%;
-    border: #48EDE8 1px solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 6px;
+  width: 75%;
+  border: #48ede8 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .inputArea input {
-    background-color: transparent;
-    border: none;
-    color: white;
-    width: 80%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 80%;
 }
 
 .inputArea input:focus-visible {
-    outline: none;
+  outline: none;
 }
 
 .inputArea input::placeholder,
 .inputGroup p {
-    color: white;
-    font-size: .87rem;
-    margin: 0;
+  color: white;
+  font-size: 0.87rem;
+  margin: 0;
 }
 
 .inputArea i {
-    color: #48EDE8;
-    font-size: 20px;
-    border-left: #48EDE8 1px solid;
-    text-align: right;
-    padding-left: 6px;
+  color: #48ede8;
+  font-size: 20px;
+  border-left: #48ede8 1px solid;
+  text-align: right;
+  padding-left: 6px;
 }
 
 .inputArea i:first-child {
-    padding: 0 6px;
+  padding: 0 6px;
 }
 
 .inputPassport {
-    padding: 6px;
-    width: 60%;
-    border: #48EDE8 1px solid;
+  padding: 6px;
+  width: 60%;
+  border: #48ede8 1px solid;
 }
 
 .inputArea input#file-upload-button {
-    color: red;
+  color: red;
 }
 
 .uploadButton {
-    position: relative;
-    margin: 0;
-    /* border: 1px solid yellow; */
+  position: relative;
+  margin: 0;
+  /* border: 1px solid yellow; */
 }
 
 .tickitConfirmBtn {
-    background-color: #48EDE8;
-    color: #023E73;
-    width: 40%;
-    height: 30px;
-    border-radius: 15px;
-    border: none;
-    /* padding: 7px 0; */
-    position: absolute;
-    bottom: 5%;
-    left: 30%;
-    cursor: pointer;
+  background-color: #48ede8;
+  color: #023e73;
+  width: 40%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  /* padding: 7px 0; */
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+  cursor: pointer;
 }
 
 .tickitConfirmBtn::after {
-    content: "";
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    /* padding: 7px 0; */
-    position: absolute;
-    top: 4px;
-    right: 4px;
+  content: '';
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  /* padding: 7px 0; */
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
 
 /* 訂票輸入欄樣式結束 */
 /* 輪播牆樣式開始 */
 .sliderArea {
-    width: 20%;
-    height: 100vh;
-    position: absolute;
-    right: 0;
-    overflow: hidden;
-    margin-right: 5%;
+  width: 20%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  margin-right: 5%;
 
-    padding-left: 30px;
-    /* border: 1px solid rgb(0, 255, 42); */
+  padding-left: 30px;
+  /* border: 1px solid rgb(0, 255, 42); */
 }
 
 .sliderArea .sliderWrap {
-
-    height: 200vh;
-    padding-left: 30px;
-    /* border: 1px solid yellow; */
-    /* margin-top: -100vh; */
-    animation: img-slider 35s linear infinite;
-
+  height: 200vh;
+  padding-left: 30px;
+  /* border: 1px solid yellow; */
+  /* margin-top: -100vh; */
+  animation: img-slider 35s linear infinite;
 }
 
 .sliderArea div {
-    height: 25vh;
+  height: 25vh;
 }
 
 .sliderArea div:nth-child(odd) {
-    transform: translateX(-30px);
+  transform: translateX(-30px);
 }
 
 .sliderArea img {
-    height: 100%;
-    object-fit: cover;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes img-slider {
-    from {
-        margin-top: 0;
-    }
+  from {
+    margin-top: 0;
+  }
 
-    to {
-        margin-top: -200vh;
-    }
+  to {
+    margin-top: -200vh;
+  }
 }
-
-
 
 /* 輪播牆樣式結束 */
 
 .ticket-container {
-    background-color: black;
+  background-color: black;
 }
 
 img {
-    width: 100%;
-    max-height: 1050px;
+  width: 100%;
+  max-height: 1050px;
 }
 
 .step-circle {
-    width: auto;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
+  width: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+}
+
+.ticket-steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  right: -40px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.ticket-steps p {
+  margin: 0;
+}
+
+.ticket-steps p:last-child {
+  font-size: 1.5rem;
 }
 
 /* 行程選擇樣式開始 */
 .ticket-trip {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    border: 1px solid yellow;
-
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border: 1px solid yellow;
 }
 
 .ticket-trip-wrap {
-    width: 75%;
-    border: 1px solid rgb(13, 212, 39);
-    position: absolute;
-    right: 0;
-    margin: 0 5% 5% 0;
-    padding-top: 30px;
-    max-height: 1050px;
-    /* display: flex; */
+  width: 75%;
+  border: 1px solid rgb(13, 212, 39);
+  position: absolute;
+  right: 0;
+  margin: 0 5% 5% 0;
+  padding-top: 30px;
+  max-height: 1050px;
+  /* display: flex; */
 }
 
 .ticket-trip-wrap h2 {
-    text-align: center;
-    color: white;
-    font-size: 2rem;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
 }
 
-.ticket-trip-wrap>p {
-    text-align: center;
-    color: white;
-    font-size: .9rem;
+.ticket-trip-wrap > p {
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
 }
 
 .ticket-trip-list-btn {
-    margin: 2% 0;
-    text-align: left;
+  margin: 2% 0;
+  text-align: left;
 }
 
 .sign-list-btn {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-    width: 150px;
-    height: 30px;
-    border-radius: 15px;
-    border: 1px solid black;
-    /* padding: 7px 0; */
-    position: relative;
-    cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
 }
 
 .sign-list-btn::after {
-    content: "";
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
+  content: '';
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }
 
 .movie-list-btn {
-    background-color: #48EDE8;
-    color: #023E73;
-    width: 150px;
-    height: 30px;
-    border-radius: 15px;
-    /* padding: 7px 0; */
-    position: relative;
-    cursor: pointer;
+  background-color: #48ede8;
+  color: #023e73;
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
 }
 
 .movie-list-btn::after {
-    content: "";
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border: 1px solid #023E73;
-    border-radius: 15px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
+  content: '';
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border: 1px solid #023e73;
+  border-radius: 15px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }
 
 .ticket-trip-prev-btn {
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: calc(50% - 15px);
-    left: -15px;
-    text-align: center;
-    line-height: 30px;
-    z-index: 9;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: -15px;
+  text-align: center;
+  line-height: 50px;
+  z-index: 9;
+  box-shadow: 5px 5px 5ps gray;
 }
 
 .ticket-trip-next-btn {
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: calc(50% - 15px);
-    right: -15px;
-    text-align: center;
-    line-height: 30px;
-    z-index: 9;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 15px);
+  right: -15px;
+  text-align: center;
+  line-height: 50px;
+  z-index: 9;
+  box-shadow: 5px 5px 5ps gray;
 }
 
 .ticket-trip-card-area {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ticket-trip-card {
-    width: 32%;
-    position: relative;
+  width: 32%;
+  position: relative;
 }
 
 .ticket-trip-card-head {
-    height: 45vh;
-    overflow: hidden;
+  height: 45vh;
+  overflow: hidden;
+  border: 15px solid white;
 }
 
 .ticket-trip-card-head img {
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 }
 
 .ticket-trip-card-body {
-    padding: 6%;
-    background-color: white;
+  padding: 6%;
+  background-color: white;
 }
 
 .ticket-title {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.ticket-title h3 {
+  font-weight: bold;
 }
 
 .ticket-title h3:nth-child(2) {
-    color: #048ABF;
+  color: #048abf;
 }
 
 .ticket-trip-card-body p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .ticket-trip-card-footer {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 6% 6% 6%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6% 6% 6%;
 }
 
 .tickit-choose-btn {
-    background-color: #000000;
-    color: #ffffff;
-    width: 40%;
-    height: 30px;
-    border-radius: 15px;
-    border: none;
-    /* padding: 7px 0; */
-    position: relative;
-    cursor: pointer;
+  background-color: #000000;
+  color: #ffffff;
+  width: 40%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
 }
 
 .tickit-choose-btn::after {
-    content: "";
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 15px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
+  content: '';
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }
 
 .trip-detail-btn {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-    width: 40%;
-    height: 30px;
-    border-radius: 15px;
-    border: 1px solid black;
-    /* padding: 7px 0; */
-    position: relative;
-    cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  width: 40%;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
 }
 
 .trip-detail-btn::after {
-    content: "";
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
+  content: '';
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }
 
 .ticket-trip-days {
-    position: absolute;
-    background-color: #48EDE8;
-    color: #023E73;
-    padding: 10px;
-    border-radius: 0 0 10px 10px;
-    right: 5%;
+  position: absolute;
+  background-color: #48ede8;
+  color: #023e73;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  right: 5%;
+  font-weight: bold;
 }
 
 .ticket-next {
-    margin-top: 1%;
-    color: #48EDE8;
-    text-decoration: none;
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    font-size: 1.2rem;
+  margin-top: 1%;
+  color: #48ede8;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
 }
 
 .ticket-next i {
-    color: #48EDE8;
-    font-size: 20px;
+  color: #48ede8;
+  font-size: 20px;
 }
 
 /* 行程選擇樣式結束 */
-/* 餐點選擇樣式開始 */
-.ticket-menu {
-    height: 100vh;
+
+/* 出發日期選擇樣式開始 */
+.ticket-date {
+  height: 100vh;
+  background-color: #000000;
+  border: 5px solid yellow;
 }
 
+.ticket-date-wrap {
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  border: 1px solid rgb(15, 189, 53);
+  position: absolute;
+  right: 0;
+  margin: 30px 5% 30px 0;
+  height: calc(100vh - 60px);
+  /* background-color: white; */
+  border-radius: 10px;
+}
+
+.ticket-date-wrap .ticket-date-title h2 {
+  margin-top: 30px;
+  margin-bottom: 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+}
+
+.ticket-date-wrap .ticket-date-title p {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+}
+
+.ticket-date-content {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.ticket-date-content {
+  display: flex;
+}
+
+.ticket-date-selected-area {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  background-color: #313131;
+}
+
+.ticket-date-selected {
+  border: 1px solid yellow;
+  flex: 1;
+}
+
+.ticket-date-days {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ticket-date-days-underline {
+  text-align: center;
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+
+.ticket-date-days h2 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  color: var(--main-color-02);
+}
+
+.ticket-date-days h2:last-child {
+  margin-bottom: 20%;
+  /* border: 1px solid green; */
+  font-size: 3.5rem;
+}
+
+.ticket-date-to,
+.ticket-date-from {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ticket-date-from-border,
+.ticket-date-to-border {
+  border: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  text-align: center;
+}
+
+/* 出發日期選擇樣式結束 */
+
+/* 餐點選擇樣式開始 */
 .ticket-menu {
-    background-color: #000000;
+  height: 100vh;
+  background-color: #000000;
 }
 
 .ticket-menu-wrap {
-    width: 75%;
-    /* border: 1px solid white; */
-    position: absolute;
-    right: 0;
-    margin: 30px 5% 30px 0;
-    height: calc(100vh - 60px);
-    background-color: white;
-    border-radius: 10px;
-    /* padding: 0 5%; */
+  width: 75%;
+  /* border: 1px solid white; */
+  position: absolute;
+  right: 0;
+  margin: 30px 5% 30px 0;
+  height: calc(100vh - 60px);
+  background-color: white;
+  border-radius: 10px;
+  /* padding: 0 5%; */
 }
 
 .ticket-menu-wrap h2 {
-    margin-top: 30px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 2rem;
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
 }
 
-.ticket-menu-wrap>p {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: .9rem;
+.ticket-menu-wrap > p {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
 }
 
 .menu-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgb(9, 19, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(9, 19, 102);
 }
 
 .menu-list {
-    width: 40%;
-    margin-top: 2%;
-    padding: 3% 3% 5% 3%;
-    background-color: #000000;
-    color: white;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 250px;
-    /* max-height: 800px; */
-    height: 70vh;
-    /* border: 1px solid red; */
+  width: 40%;
+  margin-top: 2%;
+  padding: 3% 3% 5% 3%;
+  background-color: #000000;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  /* max-height: 800px; */
+  height: 65vh;
+  /* border: 1px solid red; */
 }
 
 .menu {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5%;
-    /* border: 1px solid yellow; */
-    /* flex: 1; */
-    height: 15vh;
-    /* margin-top: 5%; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  /* border: 1px solid yellow; */
+  /* flex: 1; */
+  height: 15vh;
+  /* margin-top: 5%; */
 }
 
 .menu:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .menu-img {
-    display: flex;
-    width: 50%;
-    margin-right: 3%;
-    /* border: 1px solid green; */
+  display: flex;
+  width: 50%;
+  margin-right: 3%;
+  /* border: 1px solid green; */
 }
 
 .menu-img img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .menu-detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.menu-detail h3 {
+  color: white;
 }
 
 .menu-detail p {
-    margin-top: 1rem;
-    font-size: .85rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
 }
 
 .menu-demo-area {
-    /* margin-left: -5%; */
-    width: 50%;
-    
-    /* display: inline-block; */
-    border: 1px solid gray;
+  /* margin-left: -5%; */
+  width: 50%;
 
+  /* display: inline-block; */
+  border: 1px solid gray;
 }
 
 .menu-demo-area img {
-    border: 10px solid white;
-    min-height: 55vh;;
-    box-shadow: 3px 3px 5px gray;
-    object-fit: cover;
+  border: 10px solid white;
+  min-height: 55vh;
+  box-shadow: 3px 3px 5px gray;
+  object-fit: cover;
 }
 
 .menu-select-area {
-    width: 60%;
-    border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1%;
-    position: absolute;
-    bottom: 5%;
-    right: 2%;
-    background-color: white;
-    min-height: 15vh;
+  width: 60%;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1%;
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  background-color: white;
+  min-height: 15vh;
 }
 
 .menu-select-area div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 49%;
-    /* height: 100%; */
-    background-color: #000000;
-    margin-bottom: 2%;
-    margin-right: 1%;
-    /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 49%;
+  /* height: 100%; */
+  background-color: #000000;
+  margin-bottom: 2%;
+  margin-right: 1%;
+  /* border: 1px solid red; */
 }
 
 .menu-select-area div:nth-child(3),
 .menu-select-area div:nth-child(4) {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .menu-select-area select {
-    width: 70%;
-    padding: 5px;
-    height: 100%;
+  width: 70%;
+  padding: 5px;
+  height: 100%;
 }
 
 .menu-select-area label {
-    background-color: #000000;
-    color: white;
-    height: 100%;
-    /* border: 1px solid red; */
-    flex-grow: 1;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+  background-color: #000000;
+  color: white;
+  height: 100%;
+  /* border: 1px solid red; */
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 /* 餐點選擇樣式結束 */
