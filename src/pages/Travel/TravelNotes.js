@@ -70,8 +70,8 @@ function TravelNotes() {
 
         {/* 1st group */}
 
-        <div className="content" id="content">
-          <h3 className="blue-text lighten-1 header">柴達星Xandar</h3>
+        <div className="content">
+          <h1 className="blue-text lighten-1 header">柴達星Xandar</h1>
         </div>
         <div className="blog-card">
           <div className="meta">
@@ -81,7 +81,7 @@ function TravelNotes() {
           <div className="description">
             <h2 className="descriptionh2">DAY 1</h2>
             <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p>
+            <p className="descriptionp">
               今日集合於USA太空發射站，專人協辦出境手續後，搭乘豪華客機飛往USA。抵達後，辦理入關手續，夜宿發射站。
               <br />
               <br />
@@ -104,7 +104,7 @@ function TravelNotes() {
             <h3 className="descriptionh3">
               Java is not the same as JavaScript
             </h3>
-            <p>
+            <p className="descriptionp">
               國際太空站
               <br />
               <br />
@@ -123,7 +123,7 @@ function TravelNotes() {
           <div className="description">
             <h2 className="descriptionh2">DAY 3</h2>
             <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p>
+            <p className="descriptionp">
               引人入勝的娛樂活動
               <br />
               <br />
@@ -142,7 +142,7 @@ function TravelNotes() {
             <h3 className="descriptionh3">
               Java is not the same as JavaScript
             </h3>
-            <p>
+            <p className="descriptionp">
               太空艙內的自由活動1
               <br />
               <br />
@@ -161,7 +161,7 @@ function TravelNotes() {
           <div className="description">
             <h2 className="descriptionh2">DAY 5</h2>
             <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p>
+            <p className="descriptionp">
               抵達柴達星h928-1區
               <br />
               <br />
@@ -185,7 +185,7 @@ function TravelNotes() {
             <h3 className="descriptionh3">
               Java is not the same as JavaScript
             </h3>
-            <p>
+            <p className="descriptionp">
               太空艙內的自由活動2
               <br />
               <br />
@@ -204,7 +204,7 @@ function TravelNotes() {
           <div className="description">
             <h2 className="descriptionh2">DAY 7</h2>
             <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p>
+            <p className="descriptionp">
               返航回國際太空站
               <br />
               <br />
@@ -223,7 +223,7 @@ function TravelNotes() {
             <h3 className="descriptionh3">
               Java is not the same as JavaScript
             </h3>
-            <p>
+            <p className="descriptionp">
               快樂賦歸
               <br />
               今日從USA機場登機返回台灣，航越過國際換日線於次日抵達國門，夜宿機上。
@@ -232,16 +232,16 @@ function TravelNotes() {
         </div>
 
         <div className="main-container">
-          <section id="timeline" className="timeline-outer">
-            <div className="content" id="content">
+          <section className="timeline-outer">
+            <div className="content">
               <div className="row">
                 <div className="tinerarynotes col s12 m12 l12">
-                  <h3 className="blue-text lighten-1 header">
+                  <h3 className="itinerarynotesh3 blue-text lighten-1 header">
                     行程備註Itinerary notes
                   </h3>
                   <ul className="timeline">
                     <li className="event" data-date="A. 團費與訂金說明">
-                      <p>
+                      <p className="timelinep">
                         Claromentis is an intranet software provider company. I
                         started working at the Brighton office as a Marketing
                         Designer while I was still attending my final year at
@@ -250,7 +250,7 @@ function TravelNotes() {
                         re-designed their website, and have created marketing
                         materials such as brochures.
                       </p>
-                      <p>
+                      <p className="timelinep">
                         Since graduating from university, I have also undertaken
                         responsibilities for designing a product for the
                         company. The roles I have been given have provided the
@@ -260,7 +260,7 @@ function TravelNotes() {
                       </p>
                     </li>
                     <li className="event" data-date="B. 住房權益小叮嚀">
-                      <p>
+                      <p className="timelinep">
                         Claromentis is an intranet software provider company. I
                         started working at the Brighton office as a Marketing
                         Designer while I was still attending my final year at
@@ -269,7 +269,7 @@ function TravelNotes() {
                         re-designed their website, and have created marketing
                         materials such as brochures.
                       </p>
-                      <p>
+                      <p className="timelinep">
                         Since graduating from university, I have also undertaken
                         responsibilities for designing a product for the
                         company. The roles I have been given have provided the
@@ -279,7 +279,7 @@ function TravelNotes() {
                       </p>
                     </li>
                     <li className="event" data-date="C. 注意事項&建議">
-                      <p>
+                      <p className="timelinep">
                         Throughout my degree I have gained expansive knowledge
                         of informatics areas including Human Computer
                         Interaction, Multimedia Design and Development, Program
@@ -289,7 +289,7 @@ function TravelNotes() {
                         and further develop it to add new levels and improve the
                         features.
                       </p>
-                      <p>
+                      <p className="timelinep">
                         Since graduating from university, I have also undertaken
                         responsibilities for designing a product for the
                         company. The roles I have been given have provided the
