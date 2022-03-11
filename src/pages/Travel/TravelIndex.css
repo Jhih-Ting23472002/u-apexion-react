@@ -1,14 +1,3 @@
-html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    min-width: 200px;
-    padding: 0px;
-    max-width: 1920px;
-    transition: 1s ease-in-out;
-    background-color: black;
-  }
 
   .travelitemBuyButton {
     width: 120px;

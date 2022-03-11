@@ -12,9 +12,9 @@ import Ticket from './pages/Ticket/Ticket';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketMeal from './pages/Ticket/TicketMeal';
 // 以下為Travel頁面
-import TravelIndex from './pages/Travel/TravelIndex';
+// import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
-import TravelNotes from './pages/Travel/TravelNotes';
+// import TravelNotes from './pages/Travel/TravelNotes';
 
 //頁面元件
 
@@ -41,13 +41,13 @@ function App() {
           <Route path="/member-history"></Route>
           <Route path="/member-history-detail"></Route>
           <Route path="/travel-index">
-            <TravelIndex />
+            {/* <TravelIndex /> */}
           </Route>
           <Route path="/travel-choose">
             <TravelChoose />
           </Route>
           <Route path="/travel-notes">
-            <TravelNotes />
+            {/* <TravelNotes /> */}
           </Route>
           <Route path="/ticket-order">
             <Ticket />
