@@ -3,7 +3,7 @@
     width: 120px;
     height: 40px;
     margin: 0 auto;
-    margin-top:18%;
+    margin-top:15%;
     margin-right:10px;
     color: #05F2F2;
     background-color: black;
@@ -41,7 +41,8 @@
     width: 100%;
     margin: 0 auto;
     border: 1px solid orange;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
 
@@ -227,7 +228,7 @@
     margin-top: 2%;
     margin-bottom:3%;
     height: 90vh;
-    width: 80%;
+    width: 70%;
   }
 
   @media (max-width: 640px) {
@@ -244,7 +245,9 @@
   }
 
   .carouselp{
-    font-size:1.5rem;
+    font-size:21px;
+    margin-top: 2%;
+    margin-bottom: 3%;
   }
 
   .tourOverlay {
@@ -290,11 +293,15 @@
     height: 350px;
     border: 1px solid black;
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 
 
   /* shop */
+
+  .shopHeaderh2{
+    font-size:40px;
+  }
 
   .travelrow {
     display: flex;
@@ -402,7 +409,7 @@
   .projectItemp{
     color:black;
     font-size:24px;
-    margin-top:1%;
+    margin-top:2.3%;
   }
 
   .projectItemDesc {
