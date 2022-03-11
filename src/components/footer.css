@@ -34,6 +34,14 @@
   padding: 0px;
 }
 
+.f2-p, .f3-p, .f4-p{
+  font-size: 12px;
+}
+
+.f2-p, .f3-p{
+  margin-left: 17px;
+}
+
 .f5 {
   text-align: right;
   padding: 30px 75px 0px 0px;
@@ -70,7 +78,7 @@ li {
 }
 
 .footer-heading2 {
-  font-size: 18px;
+  font-size: 21px;
   color: #05f2f2;
 }
 
