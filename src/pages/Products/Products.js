@@ -52,7 +52,7 @@ function Products() {
             <p className="pr-home-fashion-p">From U-APEXION</p>
           </div>
         </div>
-        <div class="slider_container2">
+        <div className="slider_container2">
           <div>
             <img src="./product_img/_CHA0912.jpg" alt="" />
           </div>
@@ -69,7 +69,7 @@ function Products() {
             <img src="./product_img/_CHA0448.jpg" alt="" />
           </div>
         </div>
-        <div class="slider_container3">
+        <div className="slider_container3">
           <div>
             <img src="./product_img/1488892689522.jpg" alt="" />
           </div>
@@ -90,11 +90,11 @@ function Products() {
       {/* 手機sp */}
       <div className="pr-pic-ctn">
         <div className="pic-ctn">
-          <img src="./product_img/_CHA0912.jpg" alt="" class="pic" />
-          <img src="./product_img/_LLL6122.jpg" alt="" class="pic" />
-          <img src="./product_img/_CHA0364.jpg" alt="" class="pic" />
-          <img src="./product_img/_CHA0849.jpg" alt="" class="pic" />
-          <img src="./product_img/_CHA0903.jpg" alt="" class="pic" />
+          <img src="./product_img/_CHA0912.jpg" alt="" className="pic" />
+          <img src="./product_img/_LLL6122.jpg" alt="" className="pic" />
+          <img src="./product_img/_CHA0364.jpg" alt="" className="pic" />
+          <img src="./product_img/_CHA0849.jpg" alt="" className="pic" />
+          <img src="./product_img/_CHA0903.jpg" alt="" className="pic" />
         </div>
       </div>
 
@@ -106,6 +106,34 @@ function Products() {
         </div>
         <div className="pr-home-new-list">
           <h3>NEW</h3>
+          <div className="pr-card-new">
+            <div className="wrapper">
+              <div className="product-card">
+                <a href="#/" className="product-link">
+                  <img src="./product_img/M021J_BK019.jpg" />
+                  <span className="overlay">太空飛行員外套</span>
+                  <span className="info">
+                    <span className="title">太空飛行員外套</span>
+                    <span className="price">
+                      <span className="woocommerce-Price-currencySymbol">
+                        $
+                      </span>
+                      1650
+                    </span>
+                  </span>
+                </a>
+
+                <div className="button-wrap">
+                  <a href="#/" className="cart button">
+                    ＋
+                  </a>
+                  <a href="#/" className="wish button">
+                    <i className="fa fa-heart"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="pr-h10rem"></div>

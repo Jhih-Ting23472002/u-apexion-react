@@ -506,12 +506,19 @@
     }
 
     >.pr-home-new-list {
-        width: 55%;
-
+        width: 57%;
         >h3 {
             text-align: center;
             color     : white;
             font-size : 36px;
+        }
+        >.pr-card-new{
+            margin:5%;
+            >.wrapper{
+                width: 300px;
+                margin: 0 auto;
+                // padding-top: 5rem;
+              }
         }
     }
 
