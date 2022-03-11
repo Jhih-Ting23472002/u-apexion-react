@@ -10,9 +10,25 @@ html {
     background-color: black;
   }
 
-  /* ::-webkit-scrollbar {
-display: none;
-} */
+  .travelitemBuyButton {
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top:18%;
+    margin-right:10px;
+    color: #05F2F2;
+    background-color: black;
+    border: 4px double #05F2F2;
+    border-radius: 200px;
+    font-size: 18px;
+  }
+
+  .travelitemBuyButton:hover {
+    background-color: #05F2F2;
+    color: black;
+    border: 4px double black;
+  }
+
   .main-img,
   .overlay,
   .trivia {
@@ -33,24 +49,13 @@ display: none;
   }
 
   .generalHrpart1 {
-    width: 40%;
-    margin: 0 auto;
-    border: 1px solid orange;
-    margin-bottom: 1%;
-  }
-
-  .generalHrpart2 {
     width: 100%;
     margin: 0 auto;
     border: 1px solid orange;
     margin-bottom: 1%;
   }
 
-  .row {
-    display: flex;
-    flex-direction: row;
-    margin-left: 5px;
-  }
+
 
   /* main-img */
   .main-img,
@@ -74,38 +79,20 @@ display: none;
 
   .overlay {
     background-size: cover;
-    color: white;
     width: 100%;
     margin: 0 auto;
     justify-content: center;
     text-align: center;
   }
 
-  f .overlay>h1 {
-    font-size: 100px;
+  .overlay>h1 {
+    font-size: 64px;
     margin-bottom: 1%;
+    color:white;
   }
 
   .overlay>h2 {
-    font-size: 30px;
-  }
-
-  /* carousel */
-  .carousel-item>img {
-    height: 50%;
-    margin: 0 auto;
-  }
-
-  .trivia {
-    text-align: center;
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 1%;
-  }
-
-  .trivia>h3 {
     font-size: 40px;
-    color: #05DBF2;
   }
 
   /* search */
@@ -232,26 +219,33 @@ display: none;
     }
   }
 
-  p {
-    color: black;
-    font-size: 22px;
-    padding: 10px;
-    line-height: 1.5;
-    margin-bottom: 0px;
-    letter-spacing: 2px;
-  }
-
-  #tour {
-    margin-bottom: 3%;
-  }
-
-  #tour-img {
+  /* carousel */
+  
+  .trivia {
     text-align: center;
-    background-image: url('/public/travelimg/48954138922_55008a2275_k.jpg');
-    height: 350px;
-    border: 1px solid black;
-    width: 90%;
+    width: 75%;
     margin: 0 auto;
+    margin-top: 1%;
+  }
+
+  .triviah2 {
+    font-size: 40px;
+    color: #05DBF2;
+    margin-top: 2%;
+  }
+
+  .travel_carousel{
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom:3%;
+  }
+
+  .carouselh4{
+    font-size:32px;
+  }
+
+  .carouselp{
+    font-size:1.5rem;
   }
 
   .tourOverlay {
@@ -261,7 +255,8 @@ display: none;
     margin-top: 4%;
   }
 
-  .tourOverlay>h2 {
+  .tourOverlayh2 {
+    font-size: 40px;
     color: white;
     text-shadow: 2px 2px black;
   }
@@ -286,17 +281,45 @@ display: none;
       0 0 25px #03e9f4;
   }
 
+  #tour {
+    margin-bottom: 3%;
+  }
+
+  #tour-img {
+    text-align: center;
+    background-image: url('/public/travelimg/48954138922_55008a2275_k.jpg');
+    height: 350px;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
   /* shop */
 
-  #shopSection,
-  .shopItem,
+  .travelrow {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 5px;
+  }
+
+  .shop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .shopSection,
   .informationShop {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
 
-  #shopSection {
+  .shopSection {
     background-color: #f4f5f7;
     height: relative;
   }
@@ -306,48 +329,31 @@ display: none;
     margin: 50px auto;
   }
 
-  .shopHeader>h3 {
-    font-size: 40px;
-  }
-
-  #shopSection>h2 {
-    margin-top: 2%;
-    font-size: 43px;
-  }
-
   .shopItem,
   .shopPackage {
     margin: 2%;
-    /*   border: 1px solid blue; */
   }
 
-  /* Shop --> packages */
-  .shopPackage {
-    width: 400px;
-    height: relative;
-  }
-
-  .shopPackage>img {
-    width: 400px;
-    height: 353px;
-  }
-
-  .informationPackage>h2 {
+  .informationShopItemh2{
+    margin-top: 5%;
     font-size: 40px;
   }
 
-  .informationPackage>p {
-    font-size: 20px;
+  .informationShopItemprice{
+    margin-top: 5%;
+    font-size: 40px;
+    color:rgb(255, 51, 51);
   }
 
-  /* Shop --> Items */
-  .informationShopItem>h3 {
-    font-size: 40px;
+  .informationShopItemhp{
+    font-size: 28px;
+    margin-top: 6%;
   }
 
   .informationShopItem {
     text-align: left;
     padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
     height: relative;
     background-color: white;
@@ -359,37 +365,12 @@ display: none;
     width: 400px;
   }
 
-  .itemBuyButton {
-    width: 120px;
-    height: 40px;
-    margin: 0 auto;
-    color: #05F2F2;
-    background-color: black;
-    border: 4px double #05F2F2;
-    border-radius: 200px;
-    font-size: 18px;
-  }
-
-  .itemBuyButton:hover {
-    background-color: #05F2F2;
-    color: black;
-    border: 4px double black;
-  }
-
   #smallItem>img {
     height: 345px;
     width: 400px;
   }
 
-  #shop {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  /* Projects */
+  /* locations */
 
   .projects {
     margin: 0 auto;
@@ -401,11 +382,7 @@ display: none;
     margin-bottom: 4%;
   }
 
-  #projectSection {
-    background: url("");
-  }
-
-  #projectSection>h2 {
+  .projectSectionh2 {
     font-size: 42px;
     text-align: center;
     margin-top: 2%;
@@ -421,6 +398,12 @@ display: none;
     width: 600px;
     z-index: 0;
     margin: 2%;
+  }
+
+  .projectItemp{
+    color:black;
+    font-size:24px;
+    margin-top:1%;
   }
 
   .projectItemDesc {
@@ -441,15 +424,6 @@ display: none;
   }
 
   /* sizing */
-
-  @media screen and (max-width: 1100px) {
-
-    p,
-    .informationPackage>p,
-    informationShopItem>p {
-      font-size: 19px;
-    }
-  }
 
   @media screen and (max-width: 1007px) {
     .projects {

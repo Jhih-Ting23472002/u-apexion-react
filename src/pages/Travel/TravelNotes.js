@@ -1,10 +1,11 @@
+import React from 'react';
 import './TravelNotes.css';
 
 function TravelNotes() {
   return (
     <>
       <div className="container">
-        <nav aria-label="breadcrumb">
+        <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item active" aria-current="page">
               柴達星
@@ -25,8 +26,8 @@ function TravelNotes() {
               <a href="#/">006星</a>
             </li>
           </ol>
-        </nav>
-        <div className="grid">
+        </div>
+        {/* <div className="grid">
           <div className="column-xs-12">
             <ul className="slider">
               <li className="slider-item active">
@@ -40,7 +41,7 @@ function TravelNotes() {
                   </div>
                   <div className="column-xs-12 column-md-10">
                     <div className="image-holder">
-                      <img src="./CABIN1.jpg" alt="" />
+                      <img src="./travelimg/CABIN1.jpg" alt="" />
                     </div>
                     <div className="grid">
                       <div className="column-xs-12 column-md-9">
@@ -237,7 +238,7 @@ function TravelNotes() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* 1st group */}
 
@@ -247,7 +248,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_1"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 1</h1>
@@ -268,7 +269,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_2"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 2</h1>
@@ -287,7 +288,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_3"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 3</h1>
@@ -304,7 +305,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_4"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 4</h1>
@@ -323,7 +324,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_5"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 5</h1>
@@ -345,7 +346,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_6"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 6</h1>
@@ -364,7 +365,7 @@ function TravelNotes() {
         <div className="blog-card">
           <div className="meta">
             <div className="photo photo_7"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 7</h1>
@@ -381,7 +382,7 @@ function TravelNotes() {
         <div className="blog-card alt">
           <div className="meta">
             <div className="photo photo_8"></div>
-            <ul class="details"></ul>
+            <ul className="details"></ul>
           </div>
           <div className="description">
             <h1>DAY 8</h1>
@@ -398,7 +399,7 @@ function TravelNotes() {
           <section id="timeline" className="timeline-outer">
             <div className="content" id="content">
               <div className="row">
-                <div className="col s12 m12 l12">
+                <div className="tinerarynotes col s12 m12 l12">
                   <h2 className="blue-text lighten-1 header">
                     行程備註Itinerary notes
                   </h2>

@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
 //頁面元件
+import MemberLogin from './pages/Member/MemberLogin';
 import Products from './pages/Products/Products';
 import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -14,6 +15,10 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 // import TravelIndex from './pages/Travel/TravelIndex';
 // import TravelChoose from './pages/Travel/TravelChoose';
 // import TravelNotes from './pages/Travel/TravelNotes';
+// 以下為Travel頁面
+import TravelIndex from './pages/Travel/TravelIndex';
+import TravelChoose from './pages/Travel/TravelChoose';
+import TravelNotes from './pages/Travel/TravelNotes';
 
 //頁面元件
 
@@ -28,7 +33,9 @@ function App() {
           <Route path="/forum-index"></Route>
           <Route path="/index-postPage"></Route>
           <Route path="/index-postPage"></Route>
-          <Route path="/member-login"></Route>
+          <Route path="/member-login">
+            <MemberLogin />
+          </Route>
           <Route path="/member-signup"></Route>
           <Route path="/member-person"></Route>
           <Route path="/member-password"></Route>

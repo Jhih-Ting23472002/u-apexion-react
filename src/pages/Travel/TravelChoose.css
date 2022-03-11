@@ -16,25 +16,25 @@ html {
   padding-left: 0px;
 }
 
-h1 {
+/* h1 {
   font-size: 3em;
   color: white;
-}
+} */
 
-h2 {
+.navbarh2 {
   font-size: 1.5em;
   color: white;
 }
 
-h4,
+/* h4,
 p {
   color: white;
   letter-spacing: 2px;
-}
+} */
 
-li {
+/* li {
   letter-spacing: 1px;
-}
+} */
 
 .filters {
   position: sticky;

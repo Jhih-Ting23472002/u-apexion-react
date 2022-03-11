@@ -1,3 +1,4 @@
+import React from 'react';
 import './TravelChoose.css';
 
 function TravelChoose() {
@@ -5,7 +6,7 @@ function TravelChoose() {
     <>
       <section className="py-5">
         <div className="container">
-          <h2>Navbar</h2>
+          <h2 className="navbarh2">Navbar</h2>
           <div id="menu" className="position-relative">
             <div className="text-white px-3 pt-3 my-4 sticky-top">
               <div className="row align-items-center filters">
@@ -19,20 +20,20 @@ function TravelChoose() {
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
                   <button
-                    className="sort btn btn-light w-100"
+                    className="sort itemBuyButton w-100"
                     data-sort="price"
                   >
                     價格排序
                   </button>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
-                  <button className="sort btn btn-light w-100" data-sort="day">
+                  <button className="sort itemBuyButton w-100" data-sort="day">
                     天數排序
                   </button>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
                   <input
-                    className="search form-control"
+                    className="searchchoose form-control"
                     placeholder="產品名稱/關鍵字/產品代碼"
                   />
                 </div>
@@ -68,7 +69,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./Oz.jpg"
+                      src="./travelimg/Oz.jpg"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -107,7 +108,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./s1.png"
+                      src="./travelimg/s1.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -146,7 +147,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./s9.png"
+                      src="./travelimg/s9.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -185,7 +186,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./s6.png"
+                      src="./travelimg/s6.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -224,7 +225,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./s7.png"
+                      src="./travelimg/s7.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -262,7 +263,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./titan.png"
+                      src="./travelimg/titan.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -300,7 +301,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./xandar.jpg"
+                      src="./travelimg/xandar.jpg"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
