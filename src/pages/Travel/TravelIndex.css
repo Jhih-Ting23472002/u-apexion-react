@@ -238,6 +238,8 @@ html {
     margin: 0 auto;
     margin-top: 2%;
     margin-bottom:3%;
+    height: 90vh;
+    width: 70%;
   }
 
   .carouselh4{
