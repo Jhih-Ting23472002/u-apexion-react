@@ -138,17 +138,16 @@
   font-weight: bold;
 }
 .cart-select {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; 字體大小控制在 @media 那邊 */
   appearance: none;
   background: url('./img/icons8-chevron-down-64.png') no-repeat right center
     transparent;
-  width: 6%;
+  /* width: 6%;  寬度大小控制在 @media 那邊*/
   /* height: 30%; */
   /* padding: 0px; */
   /* margin-top: 6.5%; */
   /* padding-right: 10px; */
-  background-size: 50%;
-  border: 0px;
+  border: 0px solid red;
 }
 .content-detail-inside-top-ticket {
   display: flex;
@@ -162,6 +161,7 @@
   display: flex;
   align-items: center;
   height: 30%;
+  margin-top: 2%;
 }
 .cart-ticket-destination {
   display: flex;
@@ -223,7 +223,7 @@
   height: 100%;
   width: 40%;
   justify-content: space-around;
-  border: 1px solid red;
+  border: 0px solid red;
 }
 .content-detail-inside-bottom-suit {
   display: flex;
@@ -231,8 +231,7 @@
   height: 30%;
 }
 .cart-select-country-badge {
-  font-size: 1.1rem;
-  font-weight: bold;
+  /* font-size: 1.1rem; 字體大小控制在 @media 那邊  */
   /* appearance: none; */
   /* background: url('./img/icons8-chevron-down-64.png') no-repeat right center; */
   width: 100%;
@@ -241,7 +240,7 @@
   /* margin-top: 6.5%; */
   /* padding-right: 10px; */
   /* background-size: 14%; */
-  border: 1px solid red;
+  border: 0px solid red;
 }
 .cart-product-seat {
   /* border: 1px solid red; */
@@ -251,8 +250,7 @@
   width: 60%;
 }
 .cart-select-color {
-  font-size: 1.2rem;
-  font-weight: bold;
+  /* font-size: 1.2rem; 字體大小控制在 @media 那邊 */
   /* appearance: none; */
   /* background: url('./img/icons8-chevron-down-64.png') no-repeat right center; */
   width: 40%;
@@ -261,7 +259,7 @@
   /* margin-top: 6.5%; */
   /* padding-right: 10px; */
   /* background-size: 13%; */
-  border: 1px solid red;
+  border: 0px solid red;
 }
 
 
@@ -300,6 +298,15 @@
   }
 }
 @media screen and (min-width: 576px) {
+  .cart-select{
+    font-size: 1rem;
+    width: 10%;
+    background-size: 50%;
+  }
+  .cart-product-name{
+    font-size: 1rem;
+    width: 50%;
+  }
   .cart-number-people{
     width: 40%;
   }
@@ -352,6 +359,15 @@
   }
 }
 @media screen and (min-width: 768px) {
+  .cart-select{
+    font-size: 1.1rem;
+    width: 10%;
+    background-size: 45%;
+  }
+  .cart-product-name{
+    font-size: 1.1rem;
+    width: 65%;
+  }
   .cart-trip-name{
     font-size: 1.1rem;
   }
@@ -404,6 +420,21 @@
   }
 }
 @media screen and (min-width: 992px) {
+  .cart-select{
+    font-size: 1.3rem;
+    width: 8%;
+    background-size: 40%;
+  }
+  .cart-product-name{
+    font-size: 1.3rem;
+    width: 65%;
+  }
+  .cart-select{
+    font-size: 1.3rem;
+  }
+  .cart-product-name{
+    font-size: 1.3rem;
+  }
   .cart-trip-name{
     font-size: 1.3rem;
   }
@@ -440,5 +471,25 @@
   }
   .cart-select-color {
     width: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cart-steps {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+  }
+  .step-one {
+    background-color: #05f2f2;
+    color: #000;
+  }
+  .step-text{
+    margin: 0px auto 20px auto;
+  }
+  .total-price-text{
+    font-size: 1.4rem;
+    text-align: center;
   }
 }

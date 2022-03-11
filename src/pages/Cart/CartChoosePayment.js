@@ -10,7 +10,7 @@ const CartChoosePayment = () => {
     <>
       <div className="cart-background container-fluid">
         <div className="cart container cart-container">
-          <div className="cart row d-flex justify-content-center">
+          <div className="cart row d-flex justify-content-center process-text">
             <div className="cart step-text cart-ml-6">付款方式</div>
             <div className="cart step-text cart-ml-6">訂購人資訊</div>
             <div className="cart step-text cart-ml-6">最後確認</div>
@@ -56,7 +56,7 @@ const CartChoosePayment = () => {
                 <div className="content-detail-inside-bottom">
                   <div className="cart-empty-place"></div>
                   <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">$888</div>
+                  <div className="cart-order-money">$xxxxx</div>
                 </div>
               </div>
             </div>
