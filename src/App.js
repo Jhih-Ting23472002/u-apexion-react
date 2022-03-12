@@ -5,9 +5,9 @@ import Navbar from './components/navbar';
 //頁面元件
 import MemberLogin from './pages/Member/MemberLogin';
 import Products from './pages/Products/Products';
-import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
+//
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
@@ -22,6 +22,9 @@ import ForumSinglePostPage from './pages/Forum/ForumSinglePostPage';
 import ForumPublishPage from './pages/Forum/ForumPublishPage';
 import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
+//Customize
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeSuit from './pages/Customize/CustomizeSuit';
 //頁面元件
 
 function App() {
@@ -84,13 +87,15 @@ function App() {
             <TicketMeal />
           </Route>
           <Route path="/ticket-confirm"></Route>
-          <Route path="/coustomize-mainpage">
-            <CoustomizeMainPage />
+          <Route path="/Customize-mainpage">
+            <CustomizeMainPage />
           </Route>
-          <Route path="/coustomize-suit"></Route>
-          <Route path="/coustomize-craft"></Route>
-          <Route path="/coustomize-seat"></Route>
-          <Route path="/coustomize-order"></Route>
+          <Route path="/Customize-suit">
+            <CustomizeSuit />
+          </Route>
+          <Route path="/Customize-craft"></Route>
+          <Route path="/Customize-seat"></Route>
+          <Route path="/Customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list"></Route>
