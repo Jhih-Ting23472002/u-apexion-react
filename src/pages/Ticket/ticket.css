@@ -495,7 +495,7 @@ img {
 }
 
 .ticket-date-selected-area {
-  padding: 5%;
+  padding: 10% 5%;
   display: flex;
   flex-direction: column;
   width: 25%;
@@ -522,7 +522,7 @@ img {
 }
 
 .ticket-date-days h2 {
-  font-size: 3rem;
+  font-size: 1.9rem;
   margin-bottom: 0;
   color: var(--main-color-02);
 }
@@ -530,7 +530,7 @@ img {
 .ticket-date-days h2:last-child {
   margin-bottom: 20%;
   /* border: 1px solid green; */
-  font-size: 3.5rem;
+  font-size: 2.2rem;
 }
 
 .ticket-date-to,
@@ -539,7 +539,7 @@ img {
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -560,17 +560,144 @@ img {
 .ticket-date-to-border h4 {
     color: white;
     position: absolute;
-    top: -20px;
+    top: -.75rem;
     background-color: #313131;
     padding: 0 5%;
-    /* border: 1px solid rgb(7, 7, 6); */
+    height: 1.5rem;
+    /* border: 1px solid rgb(127, 15, 131); */
 }
 
 .ticket-date-from-border p:last-child,
 .ticket-date-to-border p:last-child {
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   color: white;
 }
+
+/* 月曆樣式開始 */
+.ticket-calendar-content {
+  width: 100%;
+}
+
+.ticket-calender {
+  display: flex;
+  align-content: stretch;
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgb(36, 80, 32);
+  margin: auto;
+}
+
+.ticket-calender-title {
+  /* border: 1px solid red; */
+  text-align: center;
+}
+
+.ticket-calender h3 {
+  font-size: 2.2rem;
+}
+
+.ticket-calender>div:first-child {
+  flex:2;
+  padding: 5% 10%;
+  position: relative;
+  /* height: 100%; */
+  /* border: 5px solid rgb(191, 16, 207); */
+}
+
+.ticket-calender .ticket-calender-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.tbcal {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  height: 90%;
+  /* border: 1px solid red; */
+}
+
+.tbcal tr th {
+  border-bottom: 1px solid rgb(170, 170, 170);
+  width: 14%;
+  font-size: 1.5rem;
+  vertical-align: bottom;
+}
+
+.tbcal tr td {
+  border-bottom: 1px solid rgb(170, 170, 170);
+  width: 14%;
+  font-size: 2.2rem;
+  text-align: right;
+  padding: 2% 2% 0 0 ;
+  font-weight: bolder;
+  transition: .4s;
+}
+
+.tbcal tr td:hover {
+  background-color: var(--sub-color-01);
+  color: white;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.ticket-calender-month ul{
+  /* border: 1px solid rgb(50, 30, 228); */
+  display: flex;
+  align-items: center;
+ justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ticket-calender-month ul li{
+  /* flex: 1; */
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.ticket-calender-month ul li:hover {
+  color: var(--sub-color-01);
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.ticket-calender-month {
+  padding: 0 2%;
+  height: 100%;
+  /* border: 5px solid rgb(248, 185, 10); */
+}
+
+.ticket-date-next {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 3%;
+  font-size: 1.2rem;
+  padding-right: 10%;
+}
+
+.ticket-date-back {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 3%;
+  font-size: 1.2rem;
+  padding-left: 10%;
+}
+
+.ticket-date-next i,.ticket-date-back i {
+  color: #000000;
+  font-size: 20px;
+}
+/* 月曆樣式結束 */
 
 /* 出發日期選擇樣式結束 */
 
@@ -729,4 +856,39 @@ img {
   align-items: center;
 }
 
+.ticket-meal-next {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 2%;
+  font-size: 1.2rem;
+  padding-right: 5%;
+}
+
+.ticket-meal-back {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 2%;
+  font-size: 1.2rem;
+  padding-left: 6%;
+}
+
+.ticket-date-next i,.ticket-date-back i {
+  color: #000000;
+  font-size: 20px;
+}
+
 /* 餐點選擇樣式結束 */
+
+
+/* RWD */
+@media screen and (max-width:1500px){
+  html {
+    font-size: 62.5%;
+  }
+}

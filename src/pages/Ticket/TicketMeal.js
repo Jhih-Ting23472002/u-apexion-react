@@ -110,6 +110,12 @@ function TicketMeal() {
                 </select>
               </div>
             </div>
+            <a class="ticket-meal-back" href="/">
+              <i class="fa-solid fa-left-long"></i>Back
+            </a>
+            <a class="ticket-meal-next" href="/">
+              Next<i class="fa-solid fa-right-long"></i>
+            </a>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import stepCircle from './img/stepCircle.png';
+import TicketCalender from './TicketCalender';
 
 function TicketDate() {
   return (
@@ -8,7 +9,7 @@ function TicketDate() {
           <img src={stepCircle} alt="" />
           <div className="ticket-steps">
             <p>STEP</p>
-            <p>1</p>
+            <p>2</p>
           </div>
         </div>
         <div className="ticket-date">
@@ -45,7 +46,9 @@ function TicketDate() {
                   </div>
                 </div>
               </div>
-              <div className="ticket-calendar"></div>
+              <div className="ticket-calendar-content">
+                <TicketCalender />
+              </div>
             </div>
           </div>
         </div>
