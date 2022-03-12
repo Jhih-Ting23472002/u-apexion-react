@@ -222,9 +222,10 @@ img {
   border: 1px solid rgb(13, 212, 39);
   position: absolute;
   right: 0;
-  margin: 0 5% 5% 0;
-  padding-top: 30px;
-  max-height: 1050px;
+  margin: 0 5% 0 0;
+  height: 100vh;
+  padding: 2% 0;
+  /* padding-top: 30px; */
   /* display: flex; */
 }
 
@@ -321,17 +322,27 @@ img {
 .ticket-trip-card-area {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  /* border: 5px solid yellow; */
+  /* height: 100%; */
 }
 
 .ticket-trip-card {
   width: 32%;
+  height: 70vh;
   position: relative;
+  /* border: 5px solid rgb(255, 115, 0); */
+  display: flex;
+  flex-direction: column;
+
 }
 
 .ticket-trip-card-head {
-  height: 45vh;
+  /* height: 45vh; */
   overflow: hidden;
-  border: 15px solid white;
+  border: 10px solid white;
+  border-bottom: 0;
+  flex: 1;
 }
 
 .ticket-trip-card-head img {
@@ -461,14 +472,14 @@ img {
   border: 1px solid rgb(15, 189, 53);
   position: absolute;
   right: 0;
-  margin: 30px 5% 30px 0;
-  height: calc(100vh - 60px);
+  margin: 0 5% 0 0;
+  height: 100vh;
   /* background-color: white; */
   border-radius: 10px;
+  padding: 2% 0;
 }
 
 .ticket-date-wrap .ticket-date-title h2 {
-  margin-top: 30px;
   margin-bottom: 0;
   text-align: center;
   color: rgb(255, 255, 255);
@@ -479,7 +490,7 @@ img {
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 0.9rem;
-  padding-bottom: 2%;
+  /* padding-bottom: 2%; */
 }
 
 .ticket-date-content {
@@ -488,6 +499,7 @@ img {
   border: 1px solid red;
   background-color: white;
   border-radius: 10px;
+  margin-top: 2%;
 }
 
 .ticket-date-content {
@@ -701,6 +713,108 @@ img {
 
 /* 出發日期選擇樣式結束 */
 
+/* 座位選擇樣式開始 */
+
+.ticket-seat {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border: 1px solid yellow;
+}
+
+.ticket-seat-wrap {
+  width: 75%;
+  height: 100vh;
+  border: 1px solid rgb(13, 212, 39);
+  position: absolute;
+  padding: 2% 0;
+  right: 0;
+  margin: 0% 5% 0 0;
+  /* padding-top: 30px; */
+  /* display: flex; */
+}
+
+.ticket-seat-wrap h2 {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.ticket-seat-wrap > p {
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.ticket-seat-content {
+  margin: 2% auto 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  border: 1px solid red;
+  /* height: 70vh; */
+}
+
+.ticket-case-choose, .ticket-seat-choose {
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+}
+
+.ticket-case-choose img, .ticket-seat-choose img{
+  border: 1px solid rgb(255, 238, 0);
+  height: 100%;
+  object-fit: contain;
+}
+
+.ticket-seat-next {
+  color: var(--sub-color-01);
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 3%;
+  font-size: 1.2rem;
+  padding-right: 5%;
+}
+
+.ticket-seat-back {
+  color: var(--sub-color-01);
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 3%;
+  font-size: 1.2rem;
+  padding-left: 6%;
+}
+
+.ticket-seat-demo-area {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  /* border: 1px solid yellow; */
+  background-color: var(--main-color-02);
+  width: 18%;
+  border-radius: 10px;
+  padding: 1%;
+  text-align: center;
+}
+
+.ticket-seat-demo-area h3 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+.ticket-seat-demo-area>div {
+  display: flex;
+  justify-content: center;
+  line-height: 2rem;
+  /* border: 1px solid red; */
+}
+
+/* 座位選擇樣式結束 */
 /* 餐點選擇樣式開始 */
 .ticket-menu {
   height: 100vh;

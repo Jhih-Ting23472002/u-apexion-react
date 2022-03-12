@@ -24,6 +24,7 @@ import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
+import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
 
 // Travel
@@ -97,7 +98,9 @@ function App() {
           <Route path="/ticket-date-choose">
             <TicketDate />
           </Route>
-          <Route path="/ticket-seat-choose"></Route>
+          <Route path="/ticket-seat-choose">
+            <TicketSeat />
+          </Route>
           <Route path="/ticket-meal-choose">
             <TicketMeal />
           </Route>
