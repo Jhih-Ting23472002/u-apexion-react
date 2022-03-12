@@ -2,27 +2,43 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
-//頁面元件
-import MemberLogin from './pages/Member/MemberLogin';
-import Products from './pages/Products/Products';
-import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
-import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
+
+//----頁面元件----
+
+// Member
+import MemberLogin from './pages/Member/MemberLogin';
+import MemberSignUp from './pages/Member/MemberSignUp';
+
+// Products
+import Products from './pages/Products/Products';
+
+// Customize
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeSuit from './pages/Customize/CustomizeSuit';
+
+// Cart
+import CartChoosePayment from './pages/Cart/CartChoosePayment';
+
+// Ticket
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketMeal from './pages/Ticket/TicketMeal';
-// 以下為Travel頁面
+
+// Travel
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
-// forum
+
+// Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
 import ForumSinglePostPage from './pages/Forum/ForumSinglePostPage';
 import ForumPublishPage from './pages/Forum/ForumPublishPage';
 import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
-//頁面元件
+
+//----頁面元件----
 
 function App() {
   return (
@@ -52,7 +68,9 @@ function App() {
           <Route path="/member-login">
             <MemberLogin />
           </Route>
-          <Route path="/member-signup"></Route>
+          <Route path="/member-sign-up">
+            <MemberSignUp />
+          </Route>
           <Route path="/member-forgot-pwd"></Route>
           <Route path="/member-person"></Route>
           <Route path="/member-password-edit"></Route>
@@ -84,13 +102,15 @@ function App() {
             <TicketMeal />
           </Route>
           <Route path="/ticket-confirm"></Route>
-          <Route path="/coustomize-mainpage">
-            <CoustomizeMainPage />
+          <Route path="/customize-mainpage">
+            <CustomizeMainPage />
           </Route>
-          <Route path="/coustomize-suit"></Route>
-          <Route path="/coustomize-craft"></Route>
-          <Route path="/coustomize-seat"></Route>
-          <Route path="/coustomize-order"></Route>
+          <Route path="/customize-suit">
+            <CustomizeSuit />
+          </Route>
+          <Route path="/customize-craft"></Route>
+          <Route path="/customize-seat"></Route>
+          <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list"></Route>
