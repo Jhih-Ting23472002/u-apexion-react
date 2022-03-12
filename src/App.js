@@ -13,8 +13,9 @@ import MemberSignUp from './pages/Member/MemberSignUp';
 // Products
 import Products from './pages/Products/Products';
 
-// Coustomiz
-import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
+// Customize
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -101,13 +102,15 @@ function App() {
             <TicketMeal />
           </Route>
           <Route path="/ticket-confirm"></Route>
-          <Route path="/coustomize-mainpage">
-            <CoustomizeMainPage />
+          <Route path="/customize-mainpage">
+            <CustomizeMainPage />
           </Route>
-          <Route path="/coustomize-suit"></Route>
-          <Route path="/coustomize-craft"></Route>
-          <Route path="/coustomize-seat"></Route>
-          <Route path="/coustomize-order"></Route>
+          <Route path="/customize-suit">
+            <CustomizeSuit />
+          </Route>
+          <Route path="/customize-craft"></Route>
+          <Route path="/customize-seat"></Route>
+          <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list"></Route>
