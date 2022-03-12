@@ -2,27 +2,42 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
-//頁面元件
-import MemberLogin from './pages/Member/MemberLogin';
-import Products from './pages/Products/Products';
-import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
-import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
+
+//----頁面元件----
+
+// Member
+import MemberLogin from './pages/Member/MemberLogin';
+import MemberSignUp from './pages/Member/MemberSignUp';
+
+// Products
+import Products from './pages/Products/Products';
+
+// Coustomiz
+import CoustomizeMainPage from './pages/Coustomize/CoustomizeMainPage';
+
+// Cart
+import CartChoosePayment from './pages/Cart/CartChoosePayment';
+
+// Ticket
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketMeal from './pages/Ticket/TicketMeal';
-// 以下為Travel頁面
+
+// Travel
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
-// forum
+
+// Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
 import ForumSinglePostPage from './pages/Forum/ForumSinglePostPage';
 import ForumPublishPage from './pages/Forum/ForumPublishPage';
 import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
-//頁面元件
+
+//----頁面元件----
 
 function App() {
   return (
@@ -52,7 +67,9 @@ function App() {
           <Route path="/member-login">
             <MemberLogin />
           </Route>
-          <Route path="/member-signup"></Route>
+          <Route path="/member-sign-up">
+            <MemberSignUp />
+          </Route>
           <Route path="/member-forgot-pwd"></Route>
           <Route path="/member-person"></Route>
           <Route path="/member-password-edit"></Route>
