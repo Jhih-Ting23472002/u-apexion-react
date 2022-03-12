@@ -2,12 +2,24 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
-//頁面元件
-import MemberLogin from './pages/Member/MemberLogin';
-import Products from './pages/Products/Products';
-import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import { useState } from 'react';
-//
+
+//----頁面元件----
+
+// Member
+import MemberLogin from './pages/Member/MemberLogin';
+import MemberSignUp from './pages/Member/MemberSignUp';
+
+// Products
+import Products from './pages/Products/Products';
+
+// Customiz
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+
+// Cart
+import CartChoosePayment from './pages/Cart/CartChoosePayment';
+
+// Ticket
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
@@ -24,10 +36,8 @@ import ForumSinglePostPage from './pages/Forum/ForumSinglePostPage';
 import ForumPublishPage from './pages/Forum/ForumPublishPage';
 import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
-//Customize
-import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
-import CustomizeSuit from './pages/Customize/CustomizeSuit';
-//頁面元件
+
+//----頁面元件----
 
 function App() {
   return (
@@ -91,15 +101,13 @@ function App() {
             <TicketMeal />
           </Route>
           <Route path="/ticket-confirm"></Route>
-          <Route path="/Customize-mainpage">
+          <Route path="/customize-mainpage">
             <CustomizeMainPage />
           </Route>
-          <Route path="/Customize-suit">
-            <CustomizeSuit />
-          </Route>
-          <Route path="/Customize-craft"></Route>
-          <Route path="/Customize-seat"></Route>
-          <Route path="/Customize-order"></Route>
+          <Route path="/customize-suit"></Route>
+          <Route path="/customize-craft"></Route>
+          <Route path="/customize-seat"></Route>
+          <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list"></Route>
