@@ -1001,8 +1001,31 @@ img {
 
 
 /* RWD */
+/* 全部頁面 */
 @media screen and (max-width:1500px){
   html {
     font-size: 62.5%;
+  }
+}
+
+/* 訂票首頁手機版 */
+@media screen and (max-width:375px){
+   .sliderArea {
+    display: none;
+  }
+
+  .inputArea h2 {
+    text-align: center;
+  }
+
+  .inputArea {
+    width: 80%;
+    text-align: left;
+    border: 1px solid var(--main-color-02);
+    height: 70vh;
+  }
+
+  .ticketWrap {
+    background-position: -400px -60px;
   }
 }
