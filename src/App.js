@@ -12,11 +12,13 @@ import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketMeal from './pages/Ticket/TicketMeal';
-// 以下為Travel頁面
+
+// Travel
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
-// forum
+
+// Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
 import ForumSinglePostPage from './pages/Forum/ForumSinglePostPage';
 import ForumPublishPage from './pages/Forum/ForumPublishPage';
@@ -55,7 +57,9 @@ function App() {
           <Route path="/member-login">
             <MemberLogin />
           </Route>
-          <Route path="/member-signup"></Route>
+          <Route path="/member-sign-up">
+            <MemberSignUp />
+          </Route>
           <Route path="/member-forgot-pwd"></Route>
           <Route path="/member-person"></Route>
           <Route path="/member-password-edit"></Route>
