@@ -11,7 +11,7 @@ function Products() {
             <p className="pr-home-p1">autumn and winter series</p>
             <p className="pr-home-p2">Take you to space!</p>
           </div>
-          <img src="./product_img/product_01.jpg" alt="" />
+          <img src="./product_img/CaraDelevin.jpg" alt="" />
         </div>
         {/*----------------------------------------時裝照------------------------------------------*/}
         <div className="pr-home-fashion-img">
@@ -90,6 +90,27 @@ function Products() {
         </div>
         {/* 手機sp */}
         <div className="pr-pic-ctn">
+          <div className="pr-home-fashion-div">
+            <svg
+              width="296"
+              height="68"
+              viewBox="0 0 296 68"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M3.20181 0H0V67.8458H296V61.8386H3.20181V0Z"
+                fill="white"
+              />
+            </svg>
+
+            <div className="pr-home-fashion-txt">
+              <h2 className="pr-home-fashion-h2">Clothing Collection</h2>
+              <p className="pr-home-fashion-p">From U-APEXION</p>
+            </div>
+          </div>
           <div className="pic-ctn">
             <img src="./product_img/_CHA0912.jpg" alt="" className="pic" />
             <img src="./product_img/_LLL6122.jpg" alt="" className="pic" />
@@ -133,7 +154,7 @@ function Products() {
                 </div>
               </div>
               <div className="pr-card-list">
-                <a href="#/"className="pr-card-list-img">
+                <a href="#/" className="pr-card-list-img">
                   <img src="./product_img/M021J_BK019.jpg" alt="" />
                 </a>
                 <div className="pr-card-list-txt">
@@ -157,7 +178,7 @@ function Products() {
                 </div>
               </div>
               <div className="pr-card-list">
-                <a href="#/"className="pr-card-list-img">
+                <a href="#/" className="pr-card-list-img">
                   <img src="./product_img/M021J_BK019.jpg" alt="" />
                 </a>
                 <div className="pr-card-list-txt">
@@ -181,7 +202,7 @@ function Products() {
                 </div>
               </div>
               <div className="pr-card-list">
-                <a href="#/"className="pr-card-list-img">
+                <a href="#/" className="pr-card-list-img">
                   <img src="./product_img/M021J_BK019.jpg" alt="" />
                 </a>
                 <div className="pr-card-list-txt">
@@ -208,9 +229,17 @@ function Products() {
           </div>
         </div>
         <div className="pr-h9vh"></div>
- {/*-----------------------------------------------焦點推薦------------------------------------------------*/}
- 
+        {/*-----------------------------------------------焦點推薦------------------------------------------------*/}
+        <div className="pr-recommendation">
+        <h2>時尚推薦</h2>
+        <div className="pr-recommendation-a">
+          <a href="#/">男士精品</a>
+          <a href="#/">女士精品</a>
+          <a href="#/">鞋款</a>
+          <a href="#/">配件與腕錶</a>
+        </div>
 
+        </div>
       </div>
     </article>
   );

@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 // Member
 import MemberLogin from './pages/Member/MemberLogin';
-import MemberSignUp from './pages/Member/MemberSignUp';
+//import MemberSignUp from './pages/Member/MemberSignUp';
 
 // Products
 import Products from './pages/Products/Products';
@@ -70,7 +70,7 @@ function App() {
             <MemberLogin />
           </Route>
           <Route path="/member-sign-up">
-            <MemberSignUp />
+            {/* <MemberSignUp /> */}
           </Route>
           <Route path="/member-forgot-pwd"></Route>
           <Route path="/member-person"></Route>
