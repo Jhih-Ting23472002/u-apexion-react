@@ -51,17 +51,17 @@ function CustomizeMainPage() {
               </a>
             </div>
             <div className="Custom-seat">
-              <div className="seat-text-box">
-                <h1>FALCON HEAVY</h1>
-                <div className="Custom-box-line"></div>
-                <p>
-                  With more than 5 million pounds of thrust at liftoff, Falcon
-                  Heavy is the most capable rocket flying. By comparison, the
-                  liftoff thrust of the Falcon Heavy equals eighteen 747
-                  aircraft at full power.
-                </p>
-              </div>
               <a href="#/">
+                <div className="seat-text-box">
+                  <h1>FALCON HEAVY</h1>
+                  <div className="Custom-box-line"></div>
+                  <p>
+                    With more than 5 million pounds of thrust at liftoff, Falcon
+                    Heavy is the most capable rocket flying. By comparison, the
+                    liftoff thrust of the Falcon Heavy equals eighteen 747
+                    aircraft at full power.
+                  </p>
+                </div>
                 <video
                   className="Custom-seat-video"
                   src={require('./movies/seats3.mp4')}
