@@ -625,7 +625,7 @@
                                 color           : white;
                                 background-color: black;
                                 border-radius   : 100%;
-                                border:0;
+                                border          : 0;
                             }
                         }
 
@@ -701,6 +701,18 @@
                 color : black;
             }
         }
+
+        >.pr-card-a-div {
+            text-align: center;
+
+            >a {
+                color: black;
+
+                >i {
+                    margin: 0px 10px;
+                }
+            }
+        }
     }
 
     .pr-container {
@@ -721,14 +733,14 @@
             overflow        : hidden;
 
             >.pr-img {
-                width   : 100%;
-                height  : 350px;
+                width      : 100%;
+                height     : 350px;
                 // overflow: hidden;
 
                 >img {
-                    width          : 100%;
-                    height         : 85%;
-                    Object-fit     : cover;
+                    width             : 100%;
+                    height            : 85%;
+                    Object-fit        : cover;
                     // object-position: 50% 100%;
                 }
             }
@@ -740,7 +752,8 @@
                 bottom          : 0;
                 background-color: rgb(153, 153, 153);
                 transition      : 0.5s;
-                padding         : 10px;
+                padding-left    : 15px;
+                padding-top     : 10px;
 
 
                 >h4 {
@@ -780,7 +793,7 @@
                     color           : white;
                     background-color: black;
                     border-radius   : 100%;
-                    border:0;
+                    border          : 0;
                 }
             }
         }
@@ -795,5 +808,59 @@
             justify-content: center;
         }
     }
+
+    // --------文章推薦--------------------------------------------------------------------------------------------------------
+    .pr-article {
+        width: 100%;
+        margin: 5vh opx;
+        display: flex;
+        align-items: center;
+
+        >.pr-article-img {
+            width: 45%;
+        }
+
+        >.pr-article-p {
+            padding: 6vw;
+            width  : 55%;
+           
+            >p {
+                color: rgb(255, 255, 255);
+            }
+
+            >span {
+                color         : rgba(5, 242, 242, 1);
+                font-size     : 14px;
+                font-weight   : 400;
+                line-height   : 17px;
+                letter-spacing: 0.175em;
+                text-align    : left;
+
+            }
+
+            >h2 {
+                color         : rgb(255, 255, 255);
+                font-size     : 48px;
+                font-weight   : 500;
+                line-height   : 58px;
+                letter-spacing: 0em;
+                text-align    : left;
+                margin: 15px 0;
+            }
+
+            >.pr-article-p-div {
+                >p {
+                    margin: 15px 0;
+                    color         : rgb(255, 255, 255);
+                    font-size     : 16px;
+                    font-weight   : 400;
+                    line-height   : 30px;
+                    text-align    : left;
+
+                }
+            }
+        }
+    }
+
 
 }

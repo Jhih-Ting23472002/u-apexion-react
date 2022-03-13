@@ -149,7 +149,12 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <input type="button" value="+" name="" className="pr-card-list-button"/>
+                    <input
+                      type="button"
+                      value="+"
+                      name=""
+                      className="pr-card-list-button"
+                    />
                   </div>
                 </div>
               </div>
@@ -173,7 +178,12 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <input type="button" value="+" name="" className="pr-card-list-button"/>
+                    <input
+                      type="button"
+                      value="+"
+                      name=""
+                      className="pr-card-list-button"
+                    />
                   </div>
                 </div>
               </div>
@@ -197,7 +207,12 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <input type="button" value="+" name="" className="pr-card-list-button"/>
+                    <input
+                      type="button"
+                      value="+"
+                      name=""
+                      className="pr-card-list-button"
+                    />
                   </div>
                 </div>
               </div>
@@ -221,7 +236,12 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <input type="button" value="+" name="" className="pr-card-list-button"/>
+                    <input
+                      type="button"
+                      value="+"
+                      name=""
+                      className="pr-card-list-button"
+                    />
                   </div>
                 </div>
               </div>
@@ -248,9 +268,13 @@ function Products() {
                 <p className="pr-p">$</p>
                 <p>1650</p>
                 <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-                <input type="button" value="+" name="" className="pr-card-button"/>
+                <input
+                  type="button"
+                  value="+"
+                  name=""
+                  className="pr-card-button"
+                />
               </div>
-              
             </div>
             <div className="pr-card">
               <a href="#/" className="pr-img">
@@ -261,9 +285,13 @@ function Products() {
                 <p className="pr-p">$</p>
                 <p>1650</p>
                 <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-                <input type="button" value="+" name="" className="pr-card-button"/>
+                <input
+                  type="button"
+                  value="+"
+                  name=""
+                  className="pr-card-button"
+                />
               </div>
-              
             </div>
             <div className="pr-card">
               <a href="#/" className="pr-img">
@@ -274,9 +302,13 @@ function Products() {
                 <p className="pr-p">$</p>
                 <p>1650</p>
                 <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-                <input type="button" value="+" name="" className="pr-card-button"/>
+                <input
+                  type="button"
+                  value="+"
+                  name=""
+                  className="pr-card-button"
+                />
               </div>
-              
             </div>
             <div className="pr-card">
               <a href="#/" className="pr-img">
@@ -287,12 +319,40 @@ function Products() {
                 <p className="pr-p">$</p>
                 <p>1650</p>
                 <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-                <input type="button" value="+" name="" className="pr-card-button"/>
+                <input
+                  type="button"
+                  value="+"
+                  name=""
+                  className="pr-card-button"
+                />
               </div>
-              
+            </div>
+          </div>
+          <div className="pr-card-a-div">
+            <a href="#/">
+              View All<i className="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div className="pr-h9vh"></div>
+        {/*-----------------------------------------------文章推薦------------------------------------------------*/}
+        <div className="pr-article">
+          <div className="pr-article-img">
+            <img src="./product_img/Group 48095598.png" alt="" />
+          </div>
+          <div className="pr-article-p">
+            <span>Experiences</span>
+            <h2>50年紀念-PG3 籃球鞋</h2>
+            <p>NASA x Nike</p>
+            <div className="pr-article-p-div">
+              <p>
+                Nike 鞋款設計師 Tony Hardman 以 PG 3 帶領 Paul George
+                系列經典鞋款持續進化。本鞋款採用更為柔軟靈敏的緩震系統、彈性襯墊腳踝鞋領，以及可造就卓越多方向抓地力的外底鞋紋，設計靈感來自月球表面的隕石坑。
+              </p>
             </div>
           </div>
         </div>
+        <div className="pr-h9vh"></div>
       </div>
     </article>
   );
