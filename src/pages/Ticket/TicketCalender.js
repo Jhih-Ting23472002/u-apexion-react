@@ -12,7 +12,7 @@ function TicketCalender() {
   // 顯示日曆
   function show(e) {
     // console.log(e.target.value);
-    console.log('123');
+    // console.log('123');
     // 獲取滑鼠點選所選擇的年月值
     if (e) {
       setMonthSelected(e.target.value);
@@ -30,11 +30,11 @@ function TicketCalender() {
     dt.setDate(1);
     // 獲取date對應周幾
     const week = dt.getDay();
-    console.log(week);
+    // console.log(week);
     // 當月應該列印多少行
     const rows = Math.ceil((dayofmonth[dt.getMonth()] + week) / 7);
-    console.log(dayofmonth[dt.getMonth()]);
-    console.log(dt.getMonth());
+    // console.log(dayofmonth[dt.getMonth()]);
+    // console.log(dt.getMonth());
     let k = 0;
     // 如果表格中有除表頭外的資料,進行資料刪除,避免上次月份的資料對下次有影響
     const table = document.querySelector('.tbcal');
@@ -52,7 +52,7 @@ function TicketCalender() {
           cell.innerHTML = '';
         } else {
           cell.innerHTML = k - week;
-          console.log(k);
+          // console.log(k);
         }
       }
     }
@@ -74,6 +74,15 @@ function TicketCalender() {
   ];
 
   const monthTitle = monthsArray[monthSelected];
+  // const monthShows = [
+  //   monthsArray[monthSelected - 1],
+  //   monthsArray[monthSelected],
+  //   monthsArray[monthSelected + 1],
+  // ];
+
+  console.log(monthSelected);
+
+  // console.log(monthShows);
   return (
     <>
       <div className="ticket-calender">
@@ -201,6 +210,24 @@ function TicketCalender() {
             >
               Dec
             </li>
+          </ul>
+        </div>
+        <div className="ticket-calender-month-mb">
+          <ul>
+            {monthsArray.map((v, i) => {
+              return (
+                <>
+                  <li
+                    value={i}
+                    onClick={e => {
+                      show(e);
+                    }}
+                  >
+                    {v}
+                  </li>
+                </>
+              );
+            })}
           </ul>
         </div>
       </div>

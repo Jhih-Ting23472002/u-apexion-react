@@ -1,5 +1,6 @@
 import './ticket.css';
 import stepCircle from './img/stepCircle.png';
+import stepCircleMb from './img/stepCircle-mb.png';
 import menu01 from './img/menu01.jpg';
 import menu02 from './img/menu02.jpg';
 import menu03 from './img/menu03.jpg';
@@ -11,7 +12,8 @@ function TicketMeal() {
       (
       <div class="ticket-container">
         <div class="step-circle">
-          <img src={stepCircle} alt="" />
+          <img className="step-circle-img" src={stepCircle} alt="" />
+          <img className="step-circle-mb" src={stepCircleMb} alt="" />
           <div className="ticket-steps">
             <p>STEP</p>
             <p>4</p>
@@ -19,8 +21,10 @@ function TicketMeal() {
         </div>
         <div class="ticket-menu">
           <div class="ticket-menu-wrap">
-            <h2>請選擇 首日機上餐點</h2>
-            <p>Select your meal the first day on the rocket,please</p>
+            <div className="ticket-menu-title">
+              <h2>請選擇 首日機上餐點</h2>
+              <p>Select your meal the first day on the rocket,please</p>
+            </div>
             <div class="menu-main">
               <div class="menu-list">
                 <div class="menu">
