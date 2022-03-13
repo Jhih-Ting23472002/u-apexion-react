@@ -304,7 +304,81 @@
   justify-content: space-around;
 }
 
-
+.cart-user-option-should-pay{
+  /* border: 1px solid red; */
+  height: 250px;
+  margin-top: 3%;
+  display: flex;
+}
+.cart-user-option{
+  /* border: 1px solid blue; */
+  padding: 0% 5% 0 5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart-user-option-text{
+  /* background-color: rgb(220, 220, 220); */
+  height: 15%;
+  padding-left: 3%;
+  font-size: 1.3rem;
+  appearance: none;
+  background: url('./img/icons8-chevron-down-64.png') no-repeat right center rgb(220, 220, 220);
+  background-size: 4%;
+  border: 0px;
+}
+.cart-should-pay{
+  border-left: 1px solid black;
+  margin-left: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart-should-pay-text{
+  text-align: right;
+  width: 85%;
+  /* border: 1px solid red; */
+  margin: 0% 5%;
+}
+.cart-should-pay-separated-line {
+  width: 85%;
+  background-color: #000;
+  height: 1px;
+  margin: 0% 5%;
+}
+.cart-should-pay-total-price{
+  text-align: right;
+  /* border: 1px solid red; */
+  width: 85%;
+  margin: 0% 5%;
+  font-size: 1.3rem;
+}
+.cart-button{
+  /* border: 1px solid blue; */
+  width: 85%;
+  margin: 0% 5%;
+  display: flex;
+  justify-content: space-around;
+}
+.continue-btn{
+  width: 40%;
+  background-color: #023e73;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  /* border: 1px solid hotpink; */
+  font-weight: 600;
+}
+.next-btn{
+  width: 40%;
+  background-color: #023e73;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  /* border: 1px solid hotpink; */
+  font-weight: 600;
+}
 
 @media screen and (min-width: 375px) {
   .cart-select-country-badge{
