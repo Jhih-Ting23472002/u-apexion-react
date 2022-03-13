@@ -149,7 +149,7 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <button className="pr-card-list-button">+</button>
+                    <input type="button" value="+" name="" className="pr-card-list-button"/>
                   </div>
                 </div>
               </div>
@@ -173,7 +173,7 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <button className="pr-card-list-button">+</button>
+                    <input type="button" value="+" name="" className="pr-card-list-button"/>
                   </div>
                 </div>
               </div>
@@ -197,7 +197,7 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <button className="pr-card-list-button">+</button>
+                    <input type="button" value="+" name="" className="pr-card-list-button"/>
                   </div>
                 </div>
               </div>
@@ -221,7 +221,7 @@ function Products() {
                     <div className="pr-currencySymbol">
                       $ <p>2,599</p>
                     </div>
-                    <button className="pr-card-list-button">+</button>
+                    <input type="button" value="+" name="" className="pr-card-list-button"/>
                   </div>
                 </div>
               </div>
@@ -237,6 +237,60 @@ function Products() {
             <a href="#/">女士精品</a>
             <a href="#/">鞋款</a>
             <a href="#/">配件與腕錶</a>
+          </div>
+          <div className="pr-container">
+            <div className="pr-card">
+              <a href="#/" className="pr-img">
+                <img src="./product_img/M021J_BK019.jpg" alt="" />
+              </a>
+              <div className="pr-content">
+                <h4>太空飛行員外套</h4>
+                <p className="pr-p">$</p>
+                <p>1650</p>
+                <p className="pr-p-p">黑色科技棉防撕裂物料</p>
+                <input type="button" value="+" name="" className="pr-card-button"/>
+              </div>
+              
+            </div>
+            <div className="pr-card">
+              <a href="#/" className="pr-img">
+                <img src="./product_img/M021J_BK019.jpg" alt="" />
+              </a>
+              <div className="pr-content">
+                <h4>太空飛行員外套</h4>
+                <p className="pr-p">$</p>
+                <p>1650</p>
+                <p className="pr-p-p">黑色科技棉防撕裂物料</p>
+                <input type="button" value="+" name="" className="pr-card-button"/>
+              </div>
+              
+            </div>
+            <div className="pr-card">
+              <a href="#/" className="pr-img">
+                <img src="./product_img/M021J_BK019.jpg" alt="" />
+              </a>
+              <div className="pr-content">
+                <h4>太空飛行員外套</h4>
+                <p className="pr-p">$</p>
+                <p>1650</p>
+                <p className="pr-p-p">黑色科技棉防撕裂物料</p>
+                <input type="button" value="+" name="" className="pr-card-button"/>
+              </div>
+              
+            </div>
+            <div className="pr-card">
+              <a href="#/" className="pr-img">
+                <img src="./product_img/M021J_BK019.jpg" alt="" />
+              </a>
+              <div className="pr-content">
+                <h4>太空飛行員外套</h4>
+                <p className="pr-p">$</p>
+                <p>1650</p>
+                <p className="pr-p-p">黑色科技棉防撕裂物料</p>
+                <input type="button" value="+" name="" className="pr-card-button"/>
+              </div>
+              
+            </div>
           </div>
         </div>
       </div>
