@@ -26,3 +26,4 @@ yarn-error.log*
 package-lock.json
 .gitignore
 node_modules
+index_imgs
