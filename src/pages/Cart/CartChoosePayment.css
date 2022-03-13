@@ -24,15 +24,15 @@
 .process-line {
   position: relative;
 }
-.cart-ml-6 {
+/* .cart-ml-6 {
   margin: 0px 80px 20px 80px;
-}
-.cart-ml-7 {
+} */
+/* .cart-ml-7 { 整段移去 RWD 那邊修改了
   margin: 0px 8% 0px 8%;
   z-index: 2;
   text-align: center;
-  /* line-height: 1%; */
-}
+  line-height: 1%;
+} */
 .cart-step-line {
   background-color: #000;
   height: 5px;
@@ -381,6 +381,37 @@
 }
 
 @media screen and (min-width: 375px) {
+  .cart-ml-7 {
+    margin: 0px 5% 0px 5%;
+    z-index: 2;
+    text-align: center;
+    /* line-height: 1%; */
+  }
+  .cart-step-line {
+    background-color: #000;
+    height: 5px;
+    width: 50%;
+    /* margin: auto; */
+    position: absolute;
+    top: 50%;
+    left: 25%;
+  }
+  .cart-steps {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+  }
+  .step-one {
+    background-color: #05f2f2;
+    color: #000;
+  }
+  
+  .total-price-text{
+    font-size: 1.4rem;
+    text-align: center;
+  }
   .cart-select-country-badge{
     font-size: 0.8rem;
     width: 100%;
@@ -414,6 +445,35 @@
   }
 }
 @media screen and (min-width: 576px) {
+  .step-text{
+    margin: 0px 7% 20px 7%;
+  }
+  .cart-ml-7 {
+    margin: 0px 8% 0px 8%;
+    z-index: 2;
+    text-align: center;
+    /* line-height: 1%; */
+  }
+  .cart-step-line {
+    background-color: #000;
+    height: 5px;
+    width: 70%;
+    /* margin: auto; */
+    position: absolute;
+    top: 50%;
+    left: 17%;
+  }
+  .cart-steps {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+  }
+  .step-one {
+    background-color: #05f2f2;
+    color: #000;
+  }
   .cart-select{
     font-size: 1rem;
     width: 10%;
@@ -489,6 +549,18 @@
   }
 }
 @media screen and (min-width: 768px) {
+  .step-text{
+    margin: 0px 7.5% 20px 7.5%;
+  }
+  .cart-step-line {
+    background-color: #000;
+    height: 5px;
+    width: 64%;
+    /* margin: auto; */
+    position: absolute;
+    top: 50%;
+    left: 18%;
+  }
   .cart-select{
     font-size: 1.1rem;
     width: 10%;
@@ -619,22 +691,5 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .cart-steps {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: #fff;
-    background-color: #000;
-  }
-  .step-one {
-    background-color: #05f2f2;
-    color: #000;
-  }
-  .step-text{
-    margin: 0px auto 20px auto;
-  }
-  .total-price-text{
-    font-size: 1.4rem;
-    text-align: center;
-  }
+  
 }
