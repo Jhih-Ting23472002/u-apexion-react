@@ -7,7 +7,7 @@ function navbar() {
       <div className="topspace"></div>
       <nav>
         <div className="nav_container">
-          <a href="#/" className="nav_UA-logo"></a>
+          <a href="/" className="nav_UA-logo"></a>
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
@@ -20,7 +20,7 @@ function navbar() {
               <a href="#/">Shop</a>
             </li>
             <li>
-              <a href="#/">Forum</a>
+              <a href="/forum-home">Forum</a>
             </li>
             <li>
               <a href="#/">Login</a>
