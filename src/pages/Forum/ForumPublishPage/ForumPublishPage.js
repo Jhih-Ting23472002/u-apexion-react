@@ -72,26 +72,26 @@ export default function ForumPublishPage() {
     <Root>
       <AllDisplayFlex>
         <ForumNav />
-        <div class="forum_artical">
-          <div class="row">
-            <div class="col">
-              <div class="forum_card">
-                <div class="forum_card-user">
-                  <div class="forum_user-top-left">
-                    <div class="forum_user-logo">
+        <div className="forum_artical">
+          <div className="row">
+            <div className="col">
+              <div className="forum_card">
+                <div className="forum_card-user">
+                  <div className="forum_user-top-left">
+                    <div className="forum_user-logo">
                       <img
-                        class="forum_cover"
+                        className="forum_cover"
                         src="./forum_img/u-apexionLogo.png"
                         alt=""
                       />
                     </div>
-                    <div class="user-title">
-                      <div class="forum_user-name">U-Apexion</div>
-                      <div class="forum_post-time">2022/4/20 17:20pm</div>
+                    <div className="user-title">
+                      <div className="forum_user-name">U-Apexion</div>
+                      <div className="forum_post-time">2022/4/20 17:20pm</div>
                     </div>
                   </div>
-                  <div class="forum_user-top-right">
-                    <i class="fas fa-info"></i>
+                  <div className="forum_user-top-right">
+                    <i className="fas fa-info"></i>
                     <a href="/forum-home/posts/31">
                       <p>rules</p>
                     </a>
@@ -100,14 +100,18 @@ export default function ForumPublishPage() {
               </div>
 
               <form style={{ margin: '0 20px' }} onSubmit={handleFormSubmit}>
-                <label for="categories" class="form-label">
+                <label
+                  for="categories"
+                  className="form-label publish-page-label"
+                >
                   Categories 文章分類
                 </label>
                 <select
-                  class="form-select mb-3 col-12"
+                  className="form-select mb-4 col-12"
                   aria-label="Default select example"
                   onChange={handleCategoryChange}
                   value={categoryValue}
+                  style={{ height: '40px', borderRadius: '5px' }}
                 >
                   <option selected></option>
                   <option value="1">事前準備</option>
@@ -120,47 +124,56 @@ export default function ForumPublishPage() {
                   <option value="8">每月主打</option>
                   <option value="10">注意事項</option>
                 </select>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">
+                <div className="mb-4">
+                  <label
+                    for="exampleInputEmail1"
+                    className="form-label publish-page-label"
+                  >
                     Title 標題
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail1"
                     value={titleValue}
                     onChange={handleInputChange}
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">
+                <div className="mb-4">
+                  <label
+                    for="exampleInputEmail1"
+                    className="form-label publish-page-label"
+                  >
                     HashTag 1
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail1"
                     value={hashtagOneValue}
                     onChange={handleHashtagOneChange}
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">
+                <div className="mb-4">
+                  <label
+                    for="exampleInputEmail1"
+                    className="form-label publish-page-label"
+                  >
                     HashTag 2
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail1"
                     value={hashtagtwoValue}
                     onChange={handleHashtagTwoChange}
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="text" class="form-label">
+                <div className="mb-4">
+                  <label for="text" className="form-label publish-page-label">
                     Text 內文
                   </label>
-                  <div class="textarea">
+                  <div className="textarea">
                     <textarea
                       name="text"
                       id="text"
@@ -170,18 +183,18 @@ export default function ForumPublishPage() {
                     ></textarea>
                   </div>
                 </div>
-                <div class="forum_btn-group">
-                  <div class="btn-left">
-                    <button class="forum_btn">
-                      <i class="fas fa-image"></i>上傳照片
+                <div className="forum_btn-group">
+                  <div className="btn-left">
+                    <button className="forum_btn">
+                      <i className="fas fa-image"></i>上傳照片
                     </button>
                   </div>
-                  <div class="btn-right">
-                    <button type="submit" class="forum_btn forum_btn-white">
+                  <div className="btn-right">
+                    <button type="submit" className="forum_btn forum_btn-white">
                       儲存草稿
                     </button>
-                    <button type="submit" class="forum_btn">
-                      <i class="fas fa-paper-plane"></i>發佈貼文
+                    <button type="submit" className="forum_btn">
+                      <i className="fas fa-paper-plane"></i>發佈貼文
                     </button>
                   </div>
                 </div>
@@ -191,18 +204,18 @@ export default function ForumPublishPage() {
         </div>
 
         {/* col-right */}
-        <div class="forum-col-right">
-          <div class="col">
-            <div class="card-2">
-              <ul class="list-group forum-list-group">
-                <li class="list-group-item forum-list-group-item">
+        <div className="forum-col-right">
+          <div className="col">
+            <div className="card-2">
+              <ul className="list-group forum-list-group">
+                <li className="list-group-item forum-list-group-item">
                   <p style={{ fontSize: '16px' }}>
-                    {/* <i class="far fa-star"></i> */}
+                    {/* <i className="far fa-star"></i> */}
                     發文前必讀
                   </p>
                   <ul>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <Link
                         to="/forum-home/posts/31"
                         className="forum_link_item"
@@ -211,33 +224,33 @@ export default function ForumPublishPage() {
                       </Link>
                     </li>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         有任何疑問 請洽u-apexion客服
                       </a>
                     </li>
                   </ul>
                 </li>
-                <li class="list-group-item forum-list-group-item">
+                <li className="list-group-item forum-list-group-item">
                   <p style={{ fontSize: '16px' }}>
-                    {/* <i class="far fa-star"></i> */}
+                    {/* <i className="far fa-star"></i> */}
                     本月推薦
                   </p>
                   <ul>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         主打行程
                       </a>
                     </li>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         主打服裝＆飾品
                       </a>
                     </li>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         客製化推薦
                       </a>

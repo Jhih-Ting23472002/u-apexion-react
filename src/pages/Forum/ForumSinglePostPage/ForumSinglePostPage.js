@@ -55,7 +55,9 @@ const SinglePostName = styled.div`
   font-weight: bold;
   font-size: 16px;
   color: black;
-  font-weight: bold;
+  font-weight: 500;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
 `;
 const SinglePostTime = styled.div`
   font-size: 12px;
@@ -68,7 +70,7 @@ const SingleTopRight = styled.div`
 
 const SinglePostCat = styled(Link)`
   color: #05f2f2;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 14px;
 `;
 
@@ -76,6 +78,7 @@ const SinglePostTitle = styled.div`
   font-size: 18px;
   font-weight: bold;
   color: black;
+  margin-top: 20px;
   margin-bottom: 20px;
 `;
 const SinglePostContent = styled.div`
@@ -83,6 +86,7 @@ const SinglePostContent = styled.div`
   color: black;、
   white-space:pre-wrap;
   line-height: 30px;
+  letter-spacing:2px;
 `;
 const SinglePostResponses = styled.div``;
 
@@ -225,7 +229,7 @@ export default function ForumSinglePostPage() {
           </SinglePostResponses>
         </SinglePost>
         {/* col-right */}
-        <div className="col-right ">
+        <div className="forum-col-right ">
           <div className="col forum_right_colum">
             <div className="forum_right_card">
               <div className="forum_right__user_img">
