@@ -5,11 +5,59 @@ import './IndexMain.css';
 
 const IndexMain = () => (
   <>
-    {/* section1 */}
+    {/* section0 */}
     {/* <div className="index-section1">
       <img src="./index_img/index_section1.png" alt="" />
     </div> */}
-    {/* section1 end */}
+    {/* section0 end */}
+    {/* section2 */}
+    <div className="index_sec_two_bg">
+      <div className="index_sec_two_bg_img">
+        <div className="index_sec_two_bg_img_outer">
+          <img src="./index_img/index_milestone.png" alt="" />
+        </div>
+        <div className="index_sec_two_bg_img_outer">
+          <img src="./index_img/index__inner.png" alt="" />
+        </div>
+        <div className="index_sec_two_bg_img_outer">
+          <img src="./index_img/index_trainnee.png" alt="" />
+        </div>
+        <div className="index_sec_two_bg_img_outer">
+          <img src="./index_img/index_suveneer.png" alt="" />
+        </div>
+      </div>
+      <div className="index_sec_two_texts_outer">
+        <div className="index_sec_two_texts">
+          <div className="index_sec_two_texts_title">Apexion里程碑</div>
+          <div className="index_sec_two_texts_line"></div>
+          <div className="index_sec_two_texts_content">
+            團隊實際場刊、太空站設立，以及Apexion第一架火箭的誕生。
+          </div>
+        </div>
+        <div className="index_sec_two_texts">
+          <div className="index_sec_two_texts_title">火箭內部構造</div>
+          <div className="index_sec_two_texts_line"></div>
+          <div className="index_sec_two_texts_content">
+            2022艙內構造全新改版，氣墊座椅全面升級。
+          </div>
+        </div>
+        <div className="index_sec_two_texts">
+          <div className="index_sec_two_texts_title">行前訓練</div>
+          <div className="index_sec_two_texts_line"></div>
+          <div className="index_sec_two_texts_content">
+            為克服太空無重狀態，加強高強度間歇運動以及重量訓練，瑜珈則有助適量平衡力訓練。
+          </div>
+        </div>
+        <div className="index_sec_two_texts">
+          <div className="index_sec_two_texts_title">紀念照</div>
+          <div className="index_sec_two_texts_line"></div>
+          <div className="index_sec_two_texts_content">
+            簽下切結書、太空艙 內部合影....都格外值 得紀念。
+          </div>
+        </div>
+      </div>
+    </div>
+    {/* section2 end */}
     {/* section3 */}
     {/* <div class="index_section3">
       <div class="index_team">
@@ -64,8 +112,6 @@ const IndexMain = () => (
     </div> */}
 
     {/* section3 end */}
-
-
 
     {/* section4 */}
     <div className="index-section4">
