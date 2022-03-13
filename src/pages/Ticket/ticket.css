@@ -169,6 +169,8 @@ img {
 
 .ticket-container {
   background-color: black;
+  position: relative;
+  border: 1px solid rgb(197, 16, 197);
 }
 
 img {
@@ -179,11 +181,15 @@ img {
 .step-circle {
   width: auto;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   left: 0;
   border: 1px solid red;
   display: flex;
   align-items: center;
+}
+
+.step-circle-mb {
+  display: none;
 }
 
 .ticket-steps {
@@ -320,11 +326,17 @@ img {
 }
 
 .ticket-trip-card-area {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: stretch; */
+  /* border: 5px solid yellow; */
+  /* height: 100%; */
+}
+
+.ticket-trip-card-wrap {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  /* border: 5px solid yellow; */
-  /* height: 100%; */
 }
 
 .ticket-trip-card {
@@ -1014,8 +1026,8 @@ img {
   }
 }
 
-/* 訂票首頁手機版 */
-@media screen and (max-width:375px){
+@media screen and (max-width:390px){
+  /* 訂票首頁手機版 */
    .sliderArea {
     display: none;
   }
@@ -1034,4 +1046,120 @@ img {
   .ticketWrap {
     background-position: -400px -60px;
   }
+  
+  /* 步驟圓圈手機版 */
+  .step-circle-img {
+    display: none;
+  }
+
+  .step-circle-mb {
+    display: block;
+    width: 100%;
+    /* border: 1px solid yellow; */
+  }
+
+  .step-circle {
+    height: 15vh;
+    position: absolute;
+    bottom: 0;
+    /* border: 5px solid rgb(157, 255, 0); */
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+  }
+  
+  .ticket-steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 25px);
+    top: 0;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+  
+  /* 行程選擇手機版 */
+  .ticket-trip {
+    align-items: flex-start;
+  }
+
+  .ticket-trip-wrap {
+    height: 85vh;
+    padding: 10% 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .ticket-trip-card-area {
+    display: flex;
+    /* border: 5px solid yellow; */
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .ticket-trip-card-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    /* border: 6px solid blue; */
+    width: 300%;
+  }
+  
+  .ticket-trip-card {
+    width: 33%;
+    padding: 0 2%;
+    height: 60vh;
+    position: relative;
+    /* border: 5px solid rgb(255, 115, 0); */
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+  .ticket-trip-prev-btn {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 5px;
+    text-align: center;
+    line-height: 40px;
+    z-index: 9;
+    box-shadow: 5px 5px 5ps gray;
+  }
+  
+  .ticket-trip-next-btn {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 5px;
+    text-align: center;
+    line-height: 40px;
+    z-index: 9;
+    box-shadow: 5px 5px 5ps gray;
+  }
+
+  .ticket-trip-list-btn {
+    margin: 5% 0;
+    text-align: center;
+  }
+
+  .ticket-next {
+    padding-right: 10%;
+  }
+
+
 }
+
+
