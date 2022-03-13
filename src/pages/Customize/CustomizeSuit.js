@@ -24,8 +24,8 @@ function CustomizeSuit() {
         <div className="suit-circle">
           <svg
             className="suit-circle-step"
-            width="512"
-            height="675"
+            width="500"
+            height="600"
             viewBox="0 0 512 675"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ function CustomizeSuit() {
           </div>
         </div>
         <div className="suit-card">
-          <h1>請選擇您太空服外觀</h1>
+          <h1>請選擇太空服外觀</h1>
           <h3>Customize Your SpaceSuit</h3>
           <h2>25,000$</h2>
           <div className="suit-select-color">
