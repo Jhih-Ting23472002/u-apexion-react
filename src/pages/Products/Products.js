@@ -88,7 +88,7 @@ function Products() {
             </div>
           </div>
         </div>
-        {/* 手機sp */}
+        {/*-------手機sp-------------*/}
         <div className="pr-pic-ctn">
           <div className="pr-sp-fashion-div">
             <svg
@@ -332,6 +332,37 @@ function Products() {
             <a href="#/">
               View All<i className="fa-solid fa-arrow-right"></i>
             </a>
+          </div>
+        </div>
+        {/*-------手機sp-------------*/}
+        <div className="pr-sp-card">
+          <div className="pr-sp-card-img">
+          <h3>男士精品</h3>
+            <img src="./product_img/28b106.jpeg" alt="" />
+            <div>
+            <a href="#/">探索</a>
+          </div>
+          </div>
+          <div className="pr-sp-card-img">
+          <h3>女士精品</h3>
+            <img src="./product_img/cdc-1200.jpeg" alt="" />
+            <div>
+            <a href="#/">探索</a>
+          </div>
+          </div>
+          <div className="pr-sp-card-img">
+          <h3>鞋款</h3>
+            <img src="./product_img/2019071945540457.jpg" alt="" />
+            <div>
+            <a href="#/">探索</a>
+          </div>
+          </div>
+          <div className="pr-sp-card-img">
+          <h3>配件與腕錶</h3>
+            <img src="./product_img/Expe.jpeg" alt="" />
+            <div>
+            <a href="#/">探索</a>
+          </div>
           </div>
         </div>
         <div className="pr-h9vh"></div>
