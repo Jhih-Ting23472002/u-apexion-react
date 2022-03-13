@@ -40,15 +40,15 @@ const ForumSortNew = styled(Link)`
 function Post({ post }) {
   return (
     <>
-      <div class="card forum_card">
-        <div class="card-body forum_card_body">
-          <div class="card-user">
-            <div class="forum_user-top">
-              <div class="forum_user-logo">
-                {/* <img class="cover" src="" alt="" /> */}
+      <div className="card forum_card">
+        <div className="card-body forum_card_body">
+          <div className="card-user">
+            <div className="forum_user-top">
+              <div className="forum_user-logo">
+                {/* <img className="cover" src="" alt="" /> */}
               </div>
-              <div class="user-title">
-                <div class="user-name forum_user-name">
+              <div className="user-title">
+                <div className="user-name forum_user-name">
                   user_sid{post.user_sid}
                 </div>
                 <PostDate>
@@ -56,31 +56,36 @@ function Post({ post }) {
                 </PostDate>
               </div>
             </div>
-            <div class="article-title">
-              <PostTitle to={`/posts/${post.sid}`}>{post.art_title}</PostTitle>
+            <div className="article-title">
+              <PostTitle to={`/forum-home/posts/${post.sid}`}>
+                {post.art_title}
+              </PostTitle>
             </div>
-            <div class="article-text">
+            <div className="article-text">
               <p className="article-ellipsis">{post.art_content}</p>
             </div>
           </div>
-          <div class="article-hashtag">
-            <a href="#/" class="card-link forum_card-link">
+          <div className="article-hashtag">
+            <a href="#/" className="card-link forum_card-link">
               {post.hashtag1}
             </a>
-            <a href="#/" class="card-link forum_card-link">
+            <a href="#/" className="card-link forum_card-link">
               {post.hashtag2}
             </a>
           </div>
         </div>
-        <div class="article-like-box">
-          <div class="article-heart-group">
-            <i class="fas fa-heart"></i>
+        <div className="article-like-box">
+          <div className="article-like-box-group">
+            <i className="fas fa-heart"></i>
+            <div className="article-like-box-number">11</div>
           </div>
-          <div class="article-comments-group">
-            <i class="fas fa-comment"></i>
+          <div className="article-like-box-group">
+            <i className="fas fa-comment"></i>
+            <div className="article-like-box-number">11</div>
           </div>
-          <div class="article-save-group">
-            <i class="fas fa-bookmark"></i>
+          <div className="article-like-box-group">
+            <i className="fas fa-bookmark"></i>
+            <div className="article-like-box-number">11</div>
           </div>
         </div>
       </div>

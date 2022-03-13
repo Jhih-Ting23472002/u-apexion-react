@@ -1,0 +1,21 @@
+video::-webkit-media-controls-timeline {
+  display: none;
+}
+.index-vedio {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+#bg-video {
+  object-fit: cover;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.index_first_title {
+  width: 20%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+}

@@ -183,6 +183,29 @@ const CartChoosePayment = () => {
             </div>
           </div>
           <div className="cart separated-line"></div>
+          <div className="cart-user-option-should-pay">
+            <div className="cart-user-option col-7">
+              <select className="cart-user-option-text">
+                <option>選擇運送區域</option>
+              </select>
+              <select className="cart-user-option-text">
+                <option>選擇付款方式</option>
+              </select>
+              <select className="cart-user-option-text">
+                <option>選擇送貨方式</option>
+              </select>
+            </div>
+            <div className="cart-should-pay col-5">
+              <h5 className="cart-should-pay-text">共n件商品</h5>
+              <h5 className="cart-should-pay-text">小計:$xxxxx</h5>
+              <div className="cart-should-pay-separated-line"></div>
+              <h5 className="cart-should-pay-total-price">應付總金額:$xxxxx</h5>
+              <div className="cart-button">
+                <button className="btn continue-btn">繼續購物</button>
+                <button className="btn next-btn">下一步</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -46,11 +46,19 @@ function CustomizeSuit() {
             <img src={require('./images/spacesuit-white.png')} alt="" />
           </div>
         </div>
-        <div className="suit-text-card">
+        <div className="suit-card">
           <h1>請選擇您太空服外觀</h1>
           <h3>Customize Your SpaceSuit</h3>
           <h2>25,000$</h2>
+          <div className="suit-select-color">
+            <div className="white"></div>
+            <div className="orange"></div>
+            <div className="blue"></div>
+          </div>
+          <div className="country-select"></div>
+          <div className="mark-select"></div>
         </div>
+
         <svg
           className="right-page-svg"
           viewBox="0 0 913 1024"
@@ -62,8 +70,6 @@ function CustomizeSuit() {
             fill="#181818"
           />
         </svg>
-        
-        <button className="suit-circle-btn">完成送出</button>
       </section>
     </>
   );
