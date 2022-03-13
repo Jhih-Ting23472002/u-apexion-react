@@ -814,6 +814,12 @@ img {
   /* border: 1px solid red; */
 }
 
+/* 座位svg檔開始 */
+.seat {
+  fill: var(--main-color-02);
+}
+/* 座位svg檔結束 */
+
 /* 座位選擇樣式結束 */
 /* 餐點選擇樣式開始 */
 .ticket-menu {

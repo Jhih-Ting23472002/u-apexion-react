@@ -1,6 +1,9 @@
 import stepCircle from './img/stepCircle.png';
 import seat01 from './img/seat01.png';
+import seatsvg from './img/seat02.svg';
+import { ReactComponent as SeatSvg } from './img/seat02.svg';
 import seat02 from './img/seat02.png';
+import './ticket.css';
 
 function TicketSeat() {
   return (
@@ -22,7 +25,7 @@ function TicketSeat() {
                 <img src={seat01} alt="" />
               </div>
               <div className="ticket-seat-choose">
-                <img src={seat02} alt="" />
+                <img className="seat-svg" src={seatsvg} alt="" />
               </div>
             </div>
             <div className="ticket-seat-demo-area">
