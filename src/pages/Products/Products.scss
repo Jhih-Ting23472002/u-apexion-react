@@ -105,6 +105,7 @@
     /* 第2段時裝照--------------------------------------------------------------------------------------- */
     @media screen and (min-width:390px) {
         .pr-home-fashion-img {
+            margin-top     : 2vh;
             width          : 100%;
             display        : flex;
             position       : relative;
@@ -422,7 +423,7 @@
             }
         }
 
-        .pic-ctn {
+        .pr-pic-ctn {
             display: none;
         }
 
@@ -440,21 +441,21 @@
             margin  : 13px auto;
             overflow: hidden;
 
-            >.pr-home-fashion-div {
+            >.pr-sp-fashion-div {
                 display : flex;
                 position: relative;
 
-                >.pr-home-fashion-txt {
+                >.pr-sp-fashion-txt {
                     margin-left: 20px;
                     position   : absolute;
 
-                    >.pr-home-fashion-h2 {
+                    >.pr-sp-fashion-h2 {
                         color      : rgb(255, 255, 255);
                         font-size  : 30px;
                         line-height: 1.3em;
                     }
 
-                    >.pr-home-fashion-p {
+                    >.pr-sp-fashion-p {
                         color    : rgb(255, 255, 255);
                         font-size: 12px;
                     }
@@ -686,14 +687,17 @@
             padding   : 6vh 0px;
             font-size : 36px;
             text-align: center;
+            font-weight: 500;
         }
-        >.pr-recommendation-a{
-            text-align: center;
-            font-size : 20px;
+
+        >.pr-recommendation-a {
+            text-align : center;
+            font-size  : 20px;
             line-height: 1.3em;
-            >a{
+
+            >a {
                 margin: 0 4vw;
-                color:black;
+                color : black;
             }
         }
     }

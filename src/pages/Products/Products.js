@@ -90,7 +90,7 @@ function Products() {
         </div>
         {/* 手機sp */}
         <div className="pr-pic-ctn">
-          <div className="pr-home-fashion-div">
+          <div className="pr-sp-fashion-div">
             <svg
               width="296"
               height="68"
@@ -106,9 +106,9 @@ function Products() {
               />
             </svg>
 
-            <div className="pr-home-fashion-txt">
-              <h2 className="pr-home-fashion-h2">Clothing Collection</h2>
-              <p className="pr-home-fashion-p">From U-APEXION</p>
+            <div className="pr-sp-fashion-txt">
+              <h2 className="pr-sp-fashion-h2">Clothing Collection</h2>
+              <p className="pr-sp-fashion-p">From U-APEXION</p>
             </div>
           </div>
           <div className="pic-ctn">
@@ -231,14 +231,13 @@ function Products() {
         <div className="pr-h9vh"></div>
         {/*-----------------------------------------------焦點推薦------------------------------------------------*/}
         <div className="pr-recommendation">
-        <h2>時尚推薦</h2>
-        <div className="pr-recommendation-a">
-          <a href="#/">男士精品</a>
-          <a href="#/">女士精品</a>
-          <a href="#/">鞋款</a>
-          <a href="#/">配件與腕錶</a>
-        </div>
-
+          <h2>時尚推薦</h2>
+          <div className="pr-recommendation-a">
+            <a href="#/">男士精品</a>
+            <a href="#/">女士精品</a>
+            <a href="#/">鞋款</a>
+            <a href="#/">配件與腕錶</a>
+          </div>
         </div>
       </div>
     </article>
