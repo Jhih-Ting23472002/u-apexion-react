@@ -14,12 +14,12 @@
     box-shadow: 8px 0 20px black;
     background-color: #000000;
   }
-  .bagpig {
+  .three-line {
     width: 25px;
     height: 25px;
     filter: Contrast(.6);
   }
-  .bagpig:hover {
+  .three-line:hover {
     filter: Contrast(1);
     transition: 0.5s ease-out;
   }

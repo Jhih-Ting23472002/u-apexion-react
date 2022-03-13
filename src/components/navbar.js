@@ -41,7 +41,7 @@ function navbar() {
           </ul>
           <a href="#/" className="nav_menu">
             <svg
-              className="bagpig"
+              className="three-line"
               width="30"
               height="30"
               viewBox="0 0 30 30"
