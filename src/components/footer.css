@@ -12,7 +12,7 @@
   }
 }
 
-.row {
+.footercontainer .row {
   margin-left: 0;
   margin-right: 0;
 }
@@ -86,7 +86,7 @@
   text-align: center;
 }
 
-li {
+.list-unstyled li {
   color: white;
   letter-spacing: 1px;
 }
