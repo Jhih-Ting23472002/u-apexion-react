@@ -401,6 +401,11 @@ section.timeline-outer {
   .timelinep {
     padding-top: 20px;
   }
+
+  .breadcrumb{
+    background-color: #000000;
+    font-size:12px
+  }
 }
 
 .timelinep {
@@ -540,14 +545,6 @@ section.timeline-outer {
 
 .breadcrumb{
   background-color: #000000;
-}
-
-@media (max-width: 768px) {
- 
-  .breadcrumb{
-    background-color: #000000;
-    font-size:12px
-  }
 }
 
 .breadcrumb-item>a{
