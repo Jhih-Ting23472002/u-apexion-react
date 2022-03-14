@@ -1,0 +1,22 @@
+.Customcraft-page-view {
+    width: 100%;
+    /* navbar高的60px */
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+  }
+  .craft-tools{
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 300px;
+  }
+  .craft-tools img{
+      width: 50%;
+  }
+  .craft-img{
+      opacity: 0;
+  }
