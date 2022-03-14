@@ -1,6 +1,75 @@
 import React from 'react';
+import './CartInformation.css';
 
 const CartInformation = () => {
-  return <></>;
+  return (
+    <>
+      <div className="cart-background container-fluid">
+        <div className="cart-container container">
+          <div className="cart row d-flex justify-content-center process-text">
+            <div className="cart step-text">付款方式</div>
+            <div className="cart step-text">訂購人資訊</div>
+            <div className="cart step-text">最後確認</div>
+          </div>
+          <div className="cart row d-flex justify-content-around process-line">
+            <div className="cart cart-step-line"></div>
+            <div className="cart-steps step-one cart-ml-7 d-flex align-items-center justify-content-center">
+              1
+            </div>
+            <div className="cart-steps step-two cart-ml-7 d-flex align-items-center justify-content-center">
+              2
+            </div>
+            <div className="cart-steps step-three cart-ml-7 d-flex align-items-center justify-content-center">
+              3
+            </div>
+            <div className="cart-steps step-four cart-ml-7 d-flex align-items-center justify-content-center">
+              4
+            </div>
+          </div>
+          <div className="cart-chosen-way">
+            <div className="cart-delivery-area">運送區域：國內</div>
+            <div className="cart-payment-way">付款方式：信用卡</div>
+            <div className="cart-delivery-way">配送方式：宅配到府</div>
+          </div>
+          <div className="cart-consumer-information-part">
+            <div className="consumer-information-line">
+              <div className="consumer-information">訂購人資訊</div>
+            </div>
+            <div className="consumer-information-area">
+              <div className="consumer-information-name-mobile-email">
+                <label className="consumer-label-margin">姓名</label>
+                <input
+                  className="consumer-input"
+                  placeholder="請填寫真實姓名"
+                ></input>
+              </div>
+              <div className="consumer-information-name-mobile-email">
+                <label className="consumer-label-margin">手機</label>
+                <input
+                  className="consumer-input"
+                  placeholder="您的手機號碼"
+                ></input>
+                <div className="">手機市話可擇一填寫</div>
+              </div>
+              <div className="consumer-information-name-mobile-email">
+                <label className="consumer-label-margin">市話</label>
+                <input
+                  className="consumer-input"
+                  placeholder="您的市話號碼"
+                ></input>
+              </div>
+              <div className="consumer-information-name-mobile-email">
+                <label className="consumer-label-margin">email</label>
+                <input
+                  className="consumer-input"
+                  placeholder="您的email"
+                ></input>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 export default CartInformation;
