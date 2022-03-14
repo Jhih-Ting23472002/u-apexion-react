@@ -19,6 +19,7 @@ import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
+import CartInformation from './pages/Cart/CartInformation';
 
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
@@ -121,7 +122,9 @@ function App() {
           <Route exact path="/cart-payment">
             <CartChoosePayment />
           </Route>
-          <Route path="/cart-information"></Route>
+          <Route path="/cart-information">
+            <CartInformation />
+          </Route>
           <Route path="/cart-final-check"></Route>
           <Route path="/cart-credit-card"></Route>
           <Route path="/cart-complete"></Route>
