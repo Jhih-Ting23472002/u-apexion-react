@@ -5,13 +5,12 @@ function TravelChoose() {
   return (
     <>
       <section className="py-5">
-        <div className="container">
-          <h2 className="navbarh2">Navbar</h2>
-          <div id="menu" className="position-relative">
+        <div className="container choosecontainer">
+          <div className="position-relative">
             <div className="text-white px-3 pt-3 my-4 sticky-top">
               <div className="row align-items-center filters">
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <select id="itinerary" className="form-control w-100">
+                  <select className="form-control w-100 choosesearch">
                     <option value="all">全部行程</option>
                     <option value="planet">星球之旅</option>
                     <option value="starsign">星座之旅</option>
@@ -33,7 +32,7 @@ function TravelChoose() {
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
                   <input
-                    className="searchchoose form-control"
+                    className="choosesearch form-control"
                     placeholder="產品名稱/關鍵字/產品代碼"
                   />
                 </div>
@@ -45,12 +44,12 @@ function TravelChoose() {
                   <div className="col-sm-6 col-md-8">
                     <div className="row align-items-center">
                       <div className="col-md-8 info">
-                        <h4 className="name pb-1 border-bottom">奧茲</h4>
-                        <p className="description">
+                        <h4 className="chooseh4 pb-2 border-bottom">奧茲</h4>
+                        <p className="choosep">
                           Pistachio stuffed kofta balls served with a persian
                           style tomato sauce.
                         </p>
-                        <ul className="itinerary">
+                        <ul className="chooseitinerary">
                           <li>moviescene</li>
                           <li>產品代碼:003-UPX</li>
                           <li>綠野仙蹤</li>
@@ -58,9 +57,9 @@ function TravelChoose() {
                           <li>回程:2022/01/27(三)</li>
                         </ul>
                       </div>
-                      <div className="col-md-4 text-md-center">
+                      <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:10day</p>
-                        <p className="price">$49,999,999.77</p>
+                        <p className="price">$499,999</p>
                         <a href="#/" target="_self">
                           <button className="itemBuyButton">Details</button>
                         </a>
@@ -83,12 +82,12 @@ function TravelChoose() {
                   <div className="col-sm-6 col-md-8">
                     <div className="row align-items-center">
                       <div className="col-md-8 info">
-                        <h4 className="name pb-1 border-bottom">金牛座</h4>
-                        <p className="description">
+                        <h4 className="chooseh4 pb-2 border-bottom">金牛座</h4>
+                        <p className="choosep">
                           A stew of diced lamb with a blend of fresh herbs,
                           kidney beans and dried lime
                         </p>
-                        <ul className="itinerary">
+                        <ul className="chooseitinerary">
                           <li>starsign</li>
                           <li>產品代碼:001-UPX</li>
                           <li>土象星座</li>
@@ -97,9 +96,9 @@ function TravelChoose() {
                           <li>回程:2022/01/05(三)</li>
                         </ul>
                       </div>
-                      <div className="col-md-4 text-md-center">
+                      <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:5day</p>
-                        <p className="price">$69,999,999.77</p>
+                        <p className="price">$699,999</p>
                         <a href="#/" target="_self">
                           <button className="itemBuyButton">Details</button>
                         </a>
@@ -122,12 +121,12 @@ function TravelChoose() {
                   <div className="col-sm-6 col-md-8">
                     <div className="row align-items-center">
                       <div className="col-md-8 info">
-                        <h4 className="name pb-1 border-bottom">巨蟹座</h4>
-                        <p className="description">
+                        <h4 className="chooseh4 pb-2 border-bottom">巨蟹座</h4>
+                        <p className="choosep">
                           A stew of diced lamb with a blend of fresh herbs,
                           kidney beans and dried lime
                         </p>
-                        <ul className="itinerary">
+                        <ul className="chooseitinerary">
                           <li>starsign</li>
                           <li>產品代碼:006-UPX</li>
                           <li>水象星座</li>
@@ -136,9 +135,9 @@ function TravelChoose() {
                           <li>回程:2022/03/05(三)</li>
                         </ul>
                       </div>
-                      <div className="col-md-4 text-md-center">
+                      <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:5day</p>
-                        <p className="price">$19,999,999.77</p>
+                        <p className="price">$199,999</p>
                         <a href="#/" target="_self">
                           <button className="itemBuyButton">Details</button>
                         </a>
@@ -161,12 +160,12 @@ function TravelChoose() {
                   <div className="col-sm-6 col-md-8">
                     <div className="row align-items-center">
                       <div className="col-md-8 info">
-                        <h4 className="name pb-1 border-bottom">天秤座</h4>
-                        <p className="description">
+                        <h4 className="chooseh4 pb-2 border-bottom">天秤座</h4>
+                        <p className="choosep">
                           A stew of diced lamb with a blend of fresh herbs,
                           kidney beans and dried lime
                         </p>
-                        <ul className="itinerary">
+                        <ul className="chooseitinerary">
                           <li>starsign</li>
                           <li>產品代碼:007-UPX</li>
                           <li>風象星座</li>
@@ -175,9 +174,9 @@ function TravelChoose() {
                           <li>回程:2022/03/10(三)</li>
                         </ul>
                       </div>
-                      <div className="col-md-4 text-md-center">
+                      <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:5day</p>
-                        <p className="price">$59,999,999.77</p>
+                        <p className="price">$599,999</p>
                         <a href="#/" target="_self">
                           <button className="itemBuyButton">Details</button>
                         </a>
@@ -200,12 +199,12 @@ function TravelChoose() {
                   <div className="col-sm-6 col-md-8">
                     <div className="row align-items-center">
                       <div className="col-md-8 info">
-                        <h4 className="name pb-1 border-bottom">射手座</h4>
-                        <p className="description">
+                        <h4 className="chooseh4 pb-2 border-bottom">射手座</h4>
+                        <p className="choosep">
                           A skewer of thick slices of spring lamb fillet with a
                           skewer of grilled minced lamb meat
                         </p>
-                        <ul className="itinerary">
+                        <ul className="chooseitinerary">
                           <li>starsign</li>
                           <li>產品代碼:002-UPX</li>
                           <li>火象星座</li>
@@ -214,9 +213,9 @@ function TravelChoose() {
                           <li>回程:2022/01/17(三)</li>
                         </ul>
                       </div>
-                      <div className="col-md-4 text-md-center">
+                      <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:12day</p>
-                        <p className="price">$39,999,999.77</p>
+                        <p className="price">$399,999</p>
                         <a href="#/" target="_self">
                           <button className="itemBuyButton">Details</button>
                         </a>
@@ -238,12 +237,12 @@ function TravelChoose() {
                   <div className="col-sm-6 col-md-8">
                     <div className="row align-items-center">
                       <div className="col-md-8 info">
-                        <h4 className="name pb-1 border-bottom">泰坦星</h4>
-                        <p className="description">
+                        <h4 className="chooseh4 pb-2 border-bottom">泰坦星</h4>
+                        <p className="choosep">
                           A stew with blend of split peas, mushroom, tomato
                           sauce, dried lime and aubergine
                         </p>
-                        <ul className="itinerary">
+                        <ul className="chooseitinerary">
                           <li>planet</li>
                           <li>moviescene</li>
                           <li>產品代碼:005-UPX</li>
@@ -252,9 +251,9 @@ function TravelChoose() {
                           <li>回程:2022/02/02(三)</li>
                         </ul>
                       </div>
-                      <div className="col-md-4 text-md-center">
+                      <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:6day</p>
-                        <p className="price">$29,999,999.77</p>
+                        <p className="price">$299,999</p>
                         <a href="./page3.2.html" target="_self">
                           <button className="itemBuyButton">Details</button>
                         </a>
@@ -276,12 +275,12 @@ function TravelChoose() {
                   <div className="col-sm-6 col-md-8">
                     <div className="row align-items-center">
                       <div className="col-md-8 info">
-                        <h4 className="name pb-1 border-bottom">柴達星</h4>
-                        <p className="description">
+                        <h4 className="chooseh4 pb-2 border-bottom">柴達星</h4>
+                        <p className="choosep">
                           A stew with blend of split peas, mushroom, tomato
                           sauce, dried lime and aubergine
                         </p>
-                        <ul className="itinerary">
+                        <ul className="chooseitinerary">
                           <li>planet</li>
                           <li>moviescene</li>
                           <li>產品代碼:004-UPX</li>
@@ -290,9 +289,9 @@ function TravelChoose() {
                           <li>回程:2022/02/16(三)</li>
                         </ul>
                       </div>
-                      <div className="col-md-4 text-md-center">
+                      <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:15day</p>
-                        <p className="price">$19,999,999.77</p>
+                        <p className="price">$199,999</p>
                         <a href="./page3.html" target="_self">
                           <button className="itemBuyButton">Details</button>
                         </a>
@@ -313,6 +312,12 @@ function TravelChoose() {
           </div>
         </div>
       </section>
+      <div className="morechoose">
+        <a href="#/" target="_self">
+          <button className="itemBuyButton">更多行程</button>
+        </a>
+      </div>
+      <hr className="generalHr" />
     </>
   );
 }
