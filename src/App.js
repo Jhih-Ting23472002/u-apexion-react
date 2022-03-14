@@ -30,7 +30,7 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 
 // Travel
 import TravelIndex from './pages/Travel/TravelIndex';
-// import TravelChoose from './pages/Travel/TravelChoose';
+import TravelChoose from './pages/Travel/TravelChoose';
 // import TravelNotes from './pages/Travel/TravelNotes';
 
 // Forum
@@ -92,10 +92,10 @@ function App() {
           <Route path="/travel-index">
             <TravelIndex />
           </Route>
-          {/* <Route path="/travel-choose">
+          <Route path="/travel-choose">
             <TravelChoose />
           </Route>
-          <Route path="/travel-notes">
+          {/* <Route path="/travel-notes">
             <TravelNotes />
           </Route> */}
           <Route path="/ticket-order">

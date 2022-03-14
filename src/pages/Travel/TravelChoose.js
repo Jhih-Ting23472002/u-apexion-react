@@ -68,7 +68,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./travelimg/Oz.jpg"
+                      src="./travelimg/travelproductimg/oz.jpg"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -107,7 +107,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./travelimg/s1.png"
+                      src="./travelimg/travelproductimg/s1.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -146,7 +146,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./travelimg/s9.png"
+                      src="./travelimg/travelproductimg/s9.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -185,7 +185,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./travelimg/s6.png"
+                      src="./travelimg/travelproductimg/s6.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -224,7 +224,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./travelimg/s7.png"
+                      src="./travelimg/travelproductimg/s7.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -262,7 +262,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./travelimg/titan.png"
+                      src="./travelimg/travelproductimg/titan.png"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
@@ -300,7 +300,7 @@ function TravelChoose() {
                   </div>
                   <div className="col-sm-6 col-md-4 image">
                     <img
-                      src="./travelimg/xandar.jpg"
+                      src="./travelimg/travelproductimg/xandar.jpg"
                       loading="lazy"
                       className="img-fluid rounded"
                       alt=""
