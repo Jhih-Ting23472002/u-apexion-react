@@ -33,15 +33,72 @@ function ProductsList() {
         </div>
         <div className="pr-list-img-text">
           <p>
-            2021-2022 秋冬季高級時裝<br/>2021-2022 秋冬季高級訂製系列由 Maria Grazia
-            Chiuri 設計，展現獨特主題。<br/>
+            2021-2022 秋冬季高級時裝
+            <br />
+            2021-2022 秋冬季高級訂製系列由 Maria Grazia Chiuri
+            設計，展現獨特主題。
+            <br />
             重新「活在當下」的意思是將焦點轉向有形的物質。
           </p>
         </div>
-        <div className="pr-list-card">
-
+        
+        {/* 卡片開始 */}
+        <div className="pr-list-cards">
+          <div className="col-md-4">
+            <div className="card pr-card mb-4">
+              <img className="card-img-top" src="./product_img/M021J_BK019.jpg" alt="" />
+              <div className="card-body">
+                <p className="card-text mb-3">太空飛行員外套</p>
+                <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card pr-card mb-4">
+              <img src="./product_img/M021J_BK019.jpg" alt="" />
+              <div className="card-body">
+                <p className="card-text mb-3">太空飛行員外套</p>
+                <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card pr-card mb-4">
+              <img src="./product_img/M021J_BK019.jpg" alt="" />
+              <div className="card-body">
+                <p className="card-text mb-3">太空飛行員外套</p>
+                <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card pr-card mb-4">
+              <img src="./product_img/M021J_BK019.jpg" alt="" />
+              <div className="card-body">
+                <p className="card-text mb-3">太空飛行員外套</p>
+                <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card pr-card mb-4">
+              <img src="./product_img/M021J_BK019.jpg" alt="" />
+              <div className="card-body">
+                <p className="card-text mb-3">太空飛行員外套</p>
+                <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card pr-card mb-4">
+              <img src="./product_img/M021J_BK019.jpg" alt="" />
+              <div className="card-body">
+                <p className="card-text mb-3">太空飛行員外套</p>
+                <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
     </article>
   );

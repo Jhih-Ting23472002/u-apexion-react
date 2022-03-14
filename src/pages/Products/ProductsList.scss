@@ -106,20 +106,35 @@
     //------------------img--------------------------------
     >.pr-list-img {
         margin : 0px 4%;
-        padding: 8vh 0px;
+        padding-top: 8vh;
     }
 
     >.pr-list-img-text {
-        margin:4vh auto;
-        width         : 70vw;
-        >p{
-            font-size     : 24px;
-            font-style    : normal;
-            font-weight   : 300;
-            line-height   : 1.5em;
-            text-align    : center;
-            
+        margin: 9vh auto;
+        width : 70vw;
+
+        >p {
+            font-size  : 24px;
+            font-style : normal;
+            font-weight: 300;
+            line-height: 1.5em;
+            text-align : center;
+
         }
-        
+    }
+
+    >.pr-list-cards {
+        display: flex;
+        margin : 0px 4%;
+        flex-wrap: wrap;
+        // width: 100%;
+
+        >.col-md-4 {
+            >.pr-card {
+                border: 1px solid rgba(255, 255, 255, 0);
+            }
+
+        }
+
     }
 }
