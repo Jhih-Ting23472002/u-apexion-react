@@ -21,7 +21,7 @@ function CustomizeMainPage() {
                 </div>
                 <video
                   className="Custom-suit-video"
-                  src={require('./movies/suit.mp4')}
+                  // src={require('./movies/suit.mp4')}
                   playsInline=""
                   loop="loop"
                   autoPlay="autoplay"
@@ -43,7 +43,7 @@ function CustomizeMainPage() {
                 </div>
                 <video
                   className="Custom-craft-video"
-                  src={require('./movies/spacecraft.webm')}
+                  // src={require('./movies/spacecraft.webm')}
                   playsInline=""
                   loop="loop"
                   autoPlay="autoplay"
@@ -64,7 +64,7 @@ function CustomizeMainPage() {
                 </div>
                 <video
                   className="Custom-seat-video"
-                  src={require('./movies/seats3.mp4')}
+                  // src={require('./movies/seats3.mp4')}
                   playsInline=""
                   loop="loop"
                   autoPlay="autoplay"
