@@ -2,6 +2,9 @@ import { useState } from 'react';
 
 function TicketCalender() {
   const [monthSelected, setMonthSelected] = useState(0);
+  const [monthShow, setMonthShow] = useState([0, 1, 2]);
+  console.log('monthShow', monthShow);
+  console.log('monthSelected', monthSelected);
 
   window.onload = function () {
     //   initial();
@@ -19,6 +22,12 @@ function TicketCalender() {
     } else {
       setMonthSelected(new Date().getMonth());
     }
+
+    setMonthShow([
+      monthSelected - 1 <= -1 ? '' : monthSelected - 1,
+      monthSelected,
+      monthSelected + 1,
+    ]);
 
     // 判斷是否為閏年,以便確定2月的天數
     // var flag = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
@@ -80,8 +89,6 @@ function TicketCalender() {
   //   monthsArray[monthSelected + 1],
   // ];
 
-  console.log(monthSelected);
-
   // console.log(monthShows);
   return (
     <>
@@ -105,11 +112,11 @@ function TicketCalender() {
               </tr>
             </table>
           </div>
-          <a class="ticket-date-back" href="/">
-            <i class="fa-solid fa-left-long"></i>Back
+          <a className="ticket-date-back" href="/">
+            <i className="fa-solid fa-left-long"></i>Back
           </a>
-          <a class="ticket-date-next" href="/">
-            Next<i class="fa-solid fa-right-long"></i>
+          <a className="ticket-date-next" href="/">
+            Next<i className="fa-solid fa-right-long"></i>
           </a>
         </div>
         <div className="ticket-calender-month">
@@ -214,20 +221,39 @@ function TicketCalender() {
         </div>
         <div className="ticket-calender-month-mb">
           <ul>
-            {monthsArray.map((v, i) => {
-              return (
-                <>
-                  <li
-                    value={i}
-                    onClick={e => {
-                      show(e);
-                    }}
-                  >
-                    {v}
-                  </li>
-                </>
-              );
-            })}
+            <i className="fas fa-angle-left"></i>
+
+            <li
+              value={[monthShow[0]]}
+              onClick={e => {
+                show(e);
+              }}
+            >
+              {monthsArray[monthShow[0]]}
+            </li>
+            <li
+              value={[monthShow[1]]}
+              onClick={e => {
+                show(e);
+              }}
+            >
+              {monthsArray[monthShow[1]]}
+            </li>
+            <li
+              value={[monthShow[2]]}
+              onClick={e => {
+                show(e);
+              }}
+            >
+              {monthsArray[monthShow[2]]}
+            </li>
+            <i
+              onClick={e => {
+                setMonthSelected(monthSelected + 1);
+                show(e);
+              }}
+              className="fa-solid fa-angle-right"
+            ></i>
           </ul>
         </div>
       </div>

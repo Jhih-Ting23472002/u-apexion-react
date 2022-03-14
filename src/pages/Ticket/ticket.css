@@ -1215,22 +1215,25 @@ img {
     display: block;
     padding: 5% 10% 0 10%;
     height: auto;
+    border: 1px solid red;
   }
 
   .ticket-calender-month-mb ul{
     /* border: 1px solid rgb(50, 30, 228); */
     display: flex;
     align-items: center;
-   justify-content: space-around;
+   justify-content: center;
    flex-direction: row;
     height: 100%;
+    border: 1px solid red;
   }
   
   .ticket-calender-month-mb ul li{
     /* flex: 1; */
     color: black;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
+    margin: 0 5%;
   }
   
   .ticket-calender-month-mb ul li:hover {
