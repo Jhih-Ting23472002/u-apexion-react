@@ -5,11 +5,12 @@ import { useEffect, useState } from 'react';
 
 function TicketTrip() {
   const [tripData, setTripData] = useState([]);
+  const [distance, setDistance] = useState(0);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/ticket-trip-api/api/list'
+        'http://localhost:3001/ticket-trip/api/plant-list'
       );
       const tripDatas = await response.json();
       setTripData(tripDatas);
@@ -17,16 +18,38 @@ function TicketTrip() {
     })();
   }, []);
 
-  // const StarsingHandle = async function () {
-  //   const response = await fetch(
-  //     'http://localhost:3001/ticket-trip-api/api/list'
-  //   );
-  //   const tripDatas = await response.json();
-  //   setTripData(tripDatas);
-  //   console.log(tripDatas);
-  // };
+  const StarsingHandle = async function () {
+    const response = await fetch(
+      'http://localhost:3001/ticket-trip/api/starsing-list'
+    );
+    const tripDatas = await response.json();
+    setTripData(tripDatas);
+  };
 
-  useEffect(() => {}, [tripData]);
+  const PlantMovieHandle = async function () {
+    const response = await fetch(
+      'http://localhost:3001/ticket-trip/api/plant-list'
+    );
+    const tripDatas = await response.json();
+    setTripData(tripDatas);
+  };
+
+  let moveDistance = 0;
+  moveDistance = distance * -16;
+  //距離怎麼設定?
+
+  const toRight = function () {
+    setDistance(distance + 1);
+  };
+
+  const toLeft = function () {
+    setDistance(distance - 1);
+  };
+
+  console.log(moveDistance);
+  console.log(distance);
+
+  useEffect(() => {}, [tripData, distance]);
 
   console.log(tripData);
 
@@ -43,10 +66,20 @@ function TicketTrip() {
         </div>
         <div className="ticket-trip">
           <div className="ticket-trip-wrap">
-            <div className="ticket-trip-prev-btn">
+            <div
+              onClick={() => {
+                toLeft();
+              }}
+              className="ticket-trip-prev-btn"
+            >
               <i className="fas fa-angle-left"></i>
             </div>
-            <div className="ticket-trip-next-btn">
+            <div
+              onClick={() => {
+                toRight();
+              }}
+              className="ticket-trip-next-btn"
+            >
               <i className="fa-solid fa-angle-right"></i>
             </div>
             <h2>請選擇 旅遊行程</h2>
@@ -54,16 +87,26 @@ function TicketTrip() {
             <div className="ticket-trip-list-btn">
               <button
                 onClick={() => {
-                  // StarsingHandle();
+                  StarsingHandle();
                 }}
                 className="sign-list-btn"
               >
                 星座旅遊
               </button>
-              <button className="movie-list-btn">電影主題旅遊</button>
+              <button
+                onClick={() => {
+                  PlantMovieHandle();
+                }}
+                className="movie-list-btn"
+              >
+                電影主題旅遊
+              </button>
             </div>
             <div className="ticket-trip-card-area">
-              <div className="ticket-trip-card-wrap">
+              <div
+                className="ticket-trip-card-wrap"
+                style={{ transform: `translateX(${moveDistance}%)` }}
+              >
                 {tripData.map((v, i) => {
                   return (
                     <>
