@@ -91,6 +91,50 @@ const CartInformation = () => {
                   placeholder="請填寫真實姓名"
                 ></input>
               </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">
+                  聯絡電話
+                </label>
+                <input
+                  className="consumer-recipient-input"
+                  placeholder="您的手機號碼"
+                ></input>
+                <div className="mobile-or-telephone">
+                  宅配人員將以此資料聯繫
+                </div>
+              </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">email</label>
+                <input
+                  className="consumer-recipient-input"
+                  placeholder="您的email"
+                ></input>
+                <div className="mobile-or-telephone">
+                  交易通知將會發送到此email
+                </div>
+              </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">
+                  收件地址
+                </label>
+                <div className="select-consumer-recipient-input">
+                  <div className="select-consumer-recipient-input-top mb-3">
+                    <select className="mr-5 select-city">
+                      <option>請選擇縣市</option>
+                    </select>
+                    <select className="select-district">
+                      <option>請選擇鄉鎮市區</option>
+                    </select>
+                  </div>
+                  <div className="select-consumer-recipient-input-bottom">
+                    <input
+                      className="recipient-input-address"
+                      placeholder="您的地址"
+                    ></input>
+                  </div>
+                </div>
+                <div className="mobile-or-telephone">需專人簽收</div>
+              </div>
             </div>
           </div>
         </div>

@@ -45,10 +45,11 @@
     /* border: 1px solid red; */
     /* margin: 0 5% 0 3%; */
     margin-right: 3%;
-    width: 5%;
+    width: 7%;
     font-size: 1.1rem;
 }
 .consumer-recipient-input{
+    padding: 0.5% 0% 0.5% 1%;
     width: 40%;
     border: 1px solid #ccc;
 }
@@ -58,11 +59,14 @@
     color: rgb(152, 152, 152);
 }
 .recipient-information-name-mobile-email-address{
+    /* width: 100%; */
     margin-bottom: 3%;
+    display: flex;
+    align-items: center;
 }
 .cart-checkbox-label{
     /* border: 1px solid black; */
-    margin-left: 3%;
+    margin-left: 5%;
     display: block;
     position: relative;
     padding-left: 5%;
@@ -114,6 +118,29 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+.select-consumer-recipient-input{
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 40%;
+}
+.select-consumer-recipient-input-bottom{
+    width: 100%;
+}
+.recipient-input-address{
+    width: 100%;
+    padding: 0.5% 0% 0.5% 1%;
+    border: 1px solid #ccc;
+}
+.select-city{
+    width: 100%;
+    border: 1px solid #ccc;
+    color: rgb(123, 123, 123);
+}
+.select-district{
+    width: 100%;
+    border: 1px solid #ccc;
+    color: rgb(123, 123, 123);
 }
 
 @media screen and (min-width: 576px){
