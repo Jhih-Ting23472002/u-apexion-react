@@ -4,33 +4,55 @@
   flex-wrap: wrap-reverse;
 }
 
-/* h1 {
-  font-size: 3em;
-  color: white;
-} */
-
-.navbarh2 {
-  font-size: 1.5em;
-  color: white;
+.choosesearch{
+  font-size: 20px;
 }
 
-/* h4,
-p {
+.chooseh4{
+  font-size:32px;
   color: white;
   letter-spacing: 2px;
-} */
+  margin-bottom:1rem;
+}
 
-/* li {
+.choosep {
+  color: white;
   letter-spacing: 1px;
-} */
+  margin-bottom: 2rem;
+  font-size:16px;
+}
 
-.filters {
-  position: sticky;
+.chooseitinerary{
+  margin-left: 15px;
+}
+
+.chooseitinerary> li {
+  color: white;
+  letter-spacing: 1px;
+  list-style-type:disc;
+  font-size:16px;
+}
+
+.day, .price{
+  font-size: 21px;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.day{
+  color: white;
 }
 
 .price {
-  font-size: 1.25em;
   color: #f03742;
+}
+
+.choosedetails{
+  margin-top:13%;
+}
+
+.filters {
+  position: sticky;
 }
 
 .item {
@@ -62,4 +84,9 @@ p {
   background-color: #05F2F2;
   color: black;
   border: 4px double black;
+}
+
+.morechoose{
+  text-align: center;
+  margin-bottom:5%;
 }
