@@ -1,11 +1,35 @@
 import './ticket.css';
-import trip01 from './img/trip01.png';
-import trip02 from './img/trip02.jpeg';
-import trip03 from './img/trip03.jpg';
 import stepCircle from './img/stepCircle.png';
 import stepCircleMb from './img/stepCircle-mb.png';
+import { useEffect, useState } from 'react';
 
 function TicketTrip() {
+  const [tripData, setTripData] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/ticket-trip-api/api/list'
+      );
+      const tripDatas = await response.json();
+      setTripData(tripDatas);
+      console.log(tripDatas);
+    })();
+  }, []);
+
+  // const StarsingHandle = async function () {
+  //   const response = await fetch(
+  //     'http://localhost:3001/ticket-trip-api/api/list'
+  //   );
+  //   const tripDatas = await response.json();
+  //   setTripData(tripDatas);
+  //   console.log(tripDatas);
+  // };
+
+  useEffect(() => {}, [tripData]);
+
+  console.log(tripData);
+
   return (
     <>
       <div className="ticket-container">
@@ -28,12 +52,47 @@ function TicketTrip() {
             <h2>請選擇 旅遊行程</h2>
             <p>Select a travel destionation,please</p>
             <div className="ticket-trip-list-btn">
-              <button className="sign-list-btn">星座旅遊</button>
+              <button
+                onClick={() => {
+                  // StarsingHandle();
+                }}
+                className="sign-list-btn"
+              >
+                星座旅遊
+              </button>
               <button className="movie-list-btn">電影主題旅遊</button>
             </div>
             <div className="ticket-trip-card-area">
               <div className="ticket-trip-card-wrap">
-                <div className="ticket-trip-card">
+                {tripData.map((v, i) => {
+                  return (
+                    <>
+                      <div className="ticket-trip-card">
+                        <div className="ticket-trip-days">{v.travel_day}日</div>
+                        <div className="ticket-trip-card-head">
+                          <img src={'./travelimg/' + v.travel_image} alt="" />
+                        </div>
+                        <div className="ticket-trip-card-body">
+                          <div className="ticket-title">
+                            <h3>{v.travel_name}</h3>
+                            <h3>${v.travel_price}</h3>
+                          </div>
+                          <p>{v.travel_description}</p>
+                        </div>
+                        <div className="ticket-trip-card-footer">
+                          <button className="tickit-choose-btn">
+                            選擇行程
+                          </button>
+                          <button className="trip-detail-btn">
+                            查看詳細行程
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+
+                {/* <div className="ticket-trip-card">
                   <div className="ticket-trip-days">5日</div>
                   <div className="ticket-trip-card-head">
                     <img src={trip01} alt="" />
@@ -89,7 +148,7 @@ function TicketTrip() {
                     <button className="tickit-choose-btn">選擇行程</button>
                     <button className="trip-detail-btn">查看詳細行程</button>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <a className="ticket-next" href="/">
