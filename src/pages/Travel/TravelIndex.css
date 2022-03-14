@@ -64,7 +64,7 @@
   }
 
   .main-img {
-    background-image: url('/public/travelimg/Domedpark.png');
+    background-image: url('/public/travelimg/travelindex1.png');
   }
 
   .overlay {
@@ -296,7 +296,7 @@
 
   .tour-img {
     text-align: center;
-    background-image: url('/public/travelimg/48954138922_55008a2275_k.jpg');
+    background-image: url('/public/travelimg/travelindex2.jpg');
     height: 350px;
     border: 1px solid black;
     width: 90%;

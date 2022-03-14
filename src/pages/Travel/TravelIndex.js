@@ -32,7 +32,7 @@ function TravelIndex() {
         <Carousel.Item interval={2000}>
           <img
             className="travelcarousel d-block w-100 "
-            src="./travelimg/fun2.jpg"
+            src="./travelimg/indexcarouselimg/fun3.png"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -46,7 +46,7 @@ function TravelIndex() {
         <Carousel.Item interval={2000}>
           <img
             className="travelcarousel d-block w-100 "
-            src="./travelimg/fun3.png"
+            src="./travelimg/indexcarouselimg/fun2.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -60,7 +60,7 @@ function TravelIndex() {
         <Carousel.Item interval={2000}>
           <img
             className="travelcarousel d-block w-100 "
-            src="./travelimg/fun4.jpg"
+            src="./travelimg/indexcarouselimg/fun1.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -74,7 +74,7 @@ function TravelIndex() {
         <Carousel.Item interval={2000}>
           <img
             className="travelcarousel d-block w-100 "
-            src="./travelimg/fun2.jpg"
+            src="./travelimg/indexcarouselimg/fun4.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -88,7 +88,7 @@ function TravelIndex() {
         <Carousel.Item interval={2000}>
           <img
             className="travelcarousel d-block w-100 "
-            src="./travelimg/fun5.png"
+            src="./travelimg/indexcarouselimg/fun5.png"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -119,7 +119,7 @@ function TravelIndex() {
 
         <div className="shop">
           <div className="shopItem smallItem">
-            <img src="./travelimg/titan.png" alt="" />
+            <img src="./travelimg/travelproductimg/s12.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
               <div className="travelrow">
@@ -135,7 +135,7 @@ function TravelIndex() {
             </div>
           </div>
           <div className="shopItem smallItem">
-            <img src="./travelimg/xandar.jpg" alt="" />
+            <img src="./travelimg/travelproductimg/s1.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
               <div className="travelrow">
@@ -151,7 +151,7 @@ function TravelIndex() {
             </div>
           </div>
           <div className="shopItem smallItem">
-            <img src="./travelimg/mann.png" alt="" />
+            <img src="./travelimg/travelproductimg/s10.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
               <div className="travelrow d-flex ">
@@ -175,7 +175,7 @@ function TravelIndex() {
 
         <div className="shop">
           <div className="shopItem smallItem">
-            <img src="./travelimg/titan.png" alt="" />
+            <img src="./travelimg/travelproductimg/titan.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
               <div className="travelrow">
@@ -191,7 +191,7 @@ function TravelIndex() {
             </div>
           </div>
           <div className="shopItem smallItem">
-            <img src="./travelimg/xandar.jpg" alt="" />
+            <img src="./travelimg/travelproductimg/xandar.jpg" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
               <div className="travelrow">
@@ -207,7 +207,7 @@ function TravelIndex() {
             </div>
           </div>
           <div className="shopItem smallItem">
-            <img src="./travelimg/mann.png" alt="" />
+            <img src="./travelimg/travelproductimg/mann.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
               <div className="travelrow d-flex ">
@@ -230,7 +230,7 @@ function TravelIndex() {
         <hr className="generalHr" />
         <div className="projects">
           <div className="projectItem">
-            <img src="./travelimg/Taiwan.jpg" alt="" />
+            <img src="./travelimg/taiwan.jpg" alt="" />
             <a className="projectItemDesc" target="_blank" href="#/">
               <p className="projectItemp">
                 Taiwan (971花蓮縣新城鄉七星街79巷5號){' '}
@@ -238,7 +238,7 @@ function TravelIndex() {
             </a>
           </div>
           <div className="projectItem">
-            <img src="./travelimg/USA.jpg" alt="" />
+            <img src="./travelimg/usa.jpg" alt="" />
             <a className="projectItemDesc" target="_blank" href="#/">
               <p className="projectItemp">
                 USA (1601 U-PX Parkway Houston,TX,USA 77058)
