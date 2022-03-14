@@ -29,9 +29,9 @@ import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
 
 // Travel
-import TravelIndex from './pages/Travel/TravelIndex';
-import TravelChoose from './pages/Travel/TravelChoose';
-import TravelNotes from './pages/Travel/TravelNotes';
+// import TravelIndex from './pages/Travel/TravelIndex';
+// import TravelChoose from './pages/Travel/TravelChoose';
+// import TravelNotes from './pages/Travel/TravelNotes';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -89,7 +89,7 @@ function App() {
           <Route path="/member-collect"></Route>
           <Route path="/member-history"></Route>
           <Route path="/member-history-detail"></Route>
-          <Route path="/travel-index">
+          {/* <Route path="/travel-index">
             <TravelIndex />
           </Route>
           <Route path="/travel-choose">
@@ -97,7 +97,7 @@ function App() {
           </Route>
           <Route path="/travel-notes">
             <TravelNotes />
-          </Route>
+          </Route> */}
           <Route path="/ticket-order">
             <Ticket />
           </Route>
