@@ -18,7 +18,7 @@
   position: absolute;
   right: 0;
   width: 100%;
-  filter: drop-shadow(0px 0px 15px rgb(0, 0, 0));
+  filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
   opacity: 1;
 }
 .back-circle {
@@ -44,34 +44,35 @@
   overflow: hidden;
   box-shadow: inset -5px -5px 20px rgb(0, 0, 0);
   /* outline: 3px solid black; */
+  filter: brightness(.7);
 }
-/* 照片放大 */
+/*圓形照片放大圖 */
 .image-mirrow-img {
   position: absolute;
-  left: -60%;
+  left:-3%;
   top: -10%;
   max-height: 250%;
   width: auto;
   filter: drop-shadow(-50px 10px 15px rgba(0, 0, 0, 0.3));
+ 
 }
 
 .suit-circle {
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   top:5%;
-  right: 45%;
+  right: 50%;
   opacity: 1;
 }
 .suit-circle-step {
-  width: auto;
-  height: auto;
-  min-width: 100%;
+  width: 27vw;
+  min-width: 440px;
   filter: drop-shadow(-30px 10px 10px rgb(0, 0, 0));
 }
 .suit-circle-btn {
   position: absolute;
-  right: 3%;
-  bottom: 11%;
+  right: -2.5vw;
+  bottom: 12%;
   display: flex;
   background-color: #05f2f2;
   color: #121212;
@@ -81,6 +82,7 @@
   border: none;
   box-shadow: -30px 10px 20px #00000050;
   z-index: 2;
+ 
 }
 .suit-circle-btn:after {
   content: '';
@@ -91,22 +93,28 @@
   position: absolute;
   top: -4px;
   right: -4px;
-  box-shadow: 0 0 15px #05f2f281;
+  box-shadow: 0 0 20px #05f2f281;
+  transition: .3s ease-in-out;
 }
+.suit-circle-btn:hover:after{
+  box-shadow:0 0 25px  #05f2f2;
+}
+/* 模型照片 */
 .maybe-use-canvus img {
-  width: 100%;
-  height: auto;
+  z-index: 0;
+  width: 16vw;
+  min-width: 250px;
   position: absolute;
-  top: 4%;
-  right: -5%;
+  top: 3%;
+  right:12%;
   filter: drop-shadow(-40px 5px 15px rgba(0, 0, 0, 0.5));
 }
 .suit-card {
   z-index: 1;
   color: #05f2f2;
   position: absolute;
-  right: 10%;
-  top: 5%;
+  right: 12%;
+  top: 2%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -115,18 +123,21 @@
 .suit-card h1 {
   font-size: 36px;
   margin-bottom: 5px;
+  text-shadow:0 0 15px rgba(5, 242, 242, 0.8);
 }
 .suit-card h3 {
   font-size: 14px;
   margin-bottom: 30px;
+  text-shadow:0 0 15px rgba(5, 242, 242, 0.8);
 }
 .suit-card h2 {
   font-size: 24px;
   margin-bottom: 30px;
+  text-shadow:0 0 15px rgba(5, 242, 242, 0.8);
 }
 .suit-select-color {
-  width: 330px;
-  height: 90px;
+  width: 300px;
+  height: 60px;
   z-index: 2;
   display: flex;
   justify-content: space-evenly;
@@ -153,18 +164,64 @@
   background-color: #0072D6;
   border-radius: 50%;
 }
-.country-select {
-  width: 120%;
-  height: 100px;
-  border: 1px solid #05f2f2;
+.country-select  {
+  width: 380px;
+  padding: 15px;
   margin-bottom: 25px;
   border-radius: 10px;
   background-color: #323232;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center
+  
 }
 .mark-select {
   width: 120%;
   height: 200px;
-  border: 1px solid #05f2f2;
   background-color: #323232;
   border-radius: 10px;
+}
+.suit-flag{
+margin:10px ;
+position: relative;
+transition: .3s ease-in-out;
+}
+.suit-flag::before{
+  content: '';
+  width: 0px;
+  height: 3px;
+  transform: translateX(-50%);
+  /* background: linear-gradient(90deg,#323232 5%, #05f2f2 ,#323232 95%) ; */
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transition: 1s ease-in-out;
+  
+}
+.suit-flag:hover::before{
+  width: 60px;
+  background: linear-gradient(90deg,#323232 10%, #05f2f2 ,#323232 90%) ;
+  transition: .3s ease-in-out;
+
+}
+.suit-flag:hover{
+  filter: drop-shadow(4px 4px 2px rgb(0, 0, 0));
+  transition: .3s ease-in-out;
+}
+.suit-flag img{
+width: 50px;
+object-fit: cover;
+transition: .3s ease-in-out;
+}
+.mark-select{
+  width: 450px;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background-color: #323232;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center
 }
