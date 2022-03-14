@@ -24,9 +24,7 @@
 .process-line {
   position: relative;
 }
-/* .cart-ml-6 {
-  margin: 0px 80px 20px 80px;
-} */
+
 /* .cart-ml-7 { 整段移去 RWD 那邊修改了
   margin: 0px 8% 0px 8%;
   z-index: 2;
@@ -381,6 +379,10 @@
 }
 
 @media screen and (min-width: 375px) {
+  .step-text{
+    margin: 0px 4% 6px 4%;
+    font-size: 0.8rem;
+  }
   .cart-ml-7 {
     margin: 0px 5% 0px 5%;
     z-index: 2;
@@ -390,11 +392,11 @@
   .cart-step-line {
     background-color: #000;
     height: 5px;
-    width: 50%;
+    width: 80%;
     /* margin: auto; */
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 10%;
   }
   .cart-steps {
     width: 30px;
@@ -409,7 +411,7 @@
   }
   
   .total-price-text{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     text-align: center;
   }
   .cart-select-country-badge{
@@ -457,11 +459,11 @@
   .cart-step-line {
     background-color: #000;
     height: 5px;
-    width: 70%;
+    width: 75%;
     /* margin: auto; */
     position: absolute;
     top: 50%;
-    left: 17%;
+    left: 15%;
   }
   .cart-steps {
     width: 45px;
@@ -555,11 +557,11 @@
   .cart-step-line {
     background-color: #000;
     height: 5px;
-    width: 64%;
+    width: 75%;
     /* margin: auto; */
     position: absolute;
     top: 50%;
-    left: 18%;
+    left: 13%;
   }
   .cart-select{
     font-size: 1.1rem;
