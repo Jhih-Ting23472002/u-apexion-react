@@ -448,7 +448,7 @@
 }
 @media screen and (min-width: 576px) {
   .step-text{
-    margin: 0px 7% 20px 7%;
+    margin: 0px 7.5% 20px 7.5%;
   }
   .cart-ml-7 {
     margin: 0px 8% 0px 8%;
@@ -466,8 +466,8 @@
     left: 15%;
   }
   .cart-steps {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     color: #fff;
     background-color: #000;
@@ -690,6 +690,10 @@
   }
 }
 @media screen and (min-width: 1200px) {
+  .step-text{
+    margin: 0px 9.5% 20px 9.5%;
+    font-size: 1.5rem;
+  }
   .cart-select-country-badge{
     width: 50%;
   }
