@@ -42,13 +42,45 @@ function ProductsList() {
           </p>
         </div>
         <div className="pr-list-dropdowns">
-          <p>所有成衣作品</p>
+          <p>件商品</p>
+          <div className="primary-navigation">
+            <div role="navigation" className="primary-navigation">
+              <ul>
+              <li>
+                  <a href="#/">價格 <i className="fa-solid fa-angle-down"></i></a>
+                  <ul className="dropdown">
+                    <li>
+                      <a href="#/">由高到低</a>
+                    </li>
+                    <li>
+                      <a href="#/">由低到高</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#/">顏色 <i className="fa-solid fa-angle-down"></i></a>
+                  <ul className="dropdown">
+                    <li>
+                      <a href="#/">黑色</a>
+                    </li>
+                    <li>
+                      <a href="#/">白色</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         {/* 卡片開始 */}
         <div className="pr-list-cards">
           <div className="col-md-4">
-            <div className="card pr-card mb-4">
-              <img className="card-img-top" src="./product_img/M021J_BK019.jpg" alt="" />
+            <div className="card pr-card mb-5">
+              <img
+                className="card-img-top"
+                src="./product_img/M021J_BK019.jpg"
+                alt=""
+              />
               <div className="card-body">
                 <p className="card-text mb-3">太空飛行員外套</p>
                 <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
@@ -56,7 +88,7 @@ function ProductsList() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card pr-card mb-4">
+            <div className="card pr-card mb-5">
               <img src="./product_img/M021J_BK019.jpg" alt="" />
               <div className="card-body">
                 <p className="card-text mb-3">太空飛行員外套</p>
@@ -65,7 +97,7 @@ function ProductsList() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card pr-card mb-4">
+            <div className="card pr-card mb-5">
               <img src="./product_img/M021J_BK019.jpg" alt="" />
               <div className="card-body">
                 <p className="card-text mb-3">太空飛行員外套</p>
@@ -74,7 +106,7 @@ function ProductsList() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card pr-card mb-4">
+            <div className="card pr-card mb-5">
               <img src="./product_img/M021J_BK019.jpg" alt="" />
               <div className="card-body">
                 <p className="card-text mb-3">太空飛行員外套</p>
@@ -83,7 +115,7 @@ function ProductsList() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card pr-card mb-4">
+            <div className="card pr-card mb-5">
               <img src="./product_img/M021J_BK019.jpg" alt="" />
               <div className="card-body">
                 <p className="card-text mb-3">太空飛行員外套</p>
@@ -92,7 +124,7 @@ function ProductsList() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card pr-card mb-4">
+            <div className="card pr-card mb-5">
               <img src="./product_img/M021J_BK019.jpg" alt="" />
               <div className="card-body">
                 <p className="card-text mb-3">太空飛行員外套</p>
