@@ -33,7 +33,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/cabin1.jpg"
+              src="./travelimg/notescarouselimg/cabin1.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -46,7 +46,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/cabin2.jpg"
+              src="./travelimg/notescarouselimg/cabin2.jpg"
               alt="Second slide"
             />
 
@@ -60,7 +60,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/facil1.jpg"
+              src="./travelimg/notescarouselimg/facil1.jpg"
               alt="Third slide"
             />
 
@@ -74,7 +74,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/facil2.jpg"
+              src="./travelimg/notescarouselimg/facil2.jpg"
               alt="Third slide"
             />
 
@@ -88,7 +88,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/dining1.jpg"
+              src="./travelimg/notescarouselimg/dining4.png"
               alt="Third slide"
             />
 
@@ -102,7 +102,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/dining2.jpg"
+              src="./travelimg/notescarouselimg/dining2.jpg"
               alt="Third slide"
             />
 
@@ -110,6 +110,33 @@ function TravelNotes() {
               <h2 className="carouselh4">Third slide label</h2>
               <p className="carouselp">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/notescarouselimg/food1.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h2 className="carouselh4">First slide label</h2>
+              <p className="carouselp">
+                Nulla vitae elit libero, a pharetra augue mollis interdum.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/notescarouselimg/food3.jpg"
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h2 className="carouselh4">Second slide label</h2>
+              <p className="carouselp">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </Carousel.Caption>
           </Carousel.Item>

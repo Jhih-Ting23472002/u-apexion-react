@@ -31,7 +31,7 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 // Travel
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
-// import TravelNotes from './pages/Travel/TravelNotes';
+import TravelNotes from './pages/Travel/TravelNotes';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -95,9 +95,9 @@ function App() {
           <Route path="/travel-choose">
             <TravelChoose />
           </Route>
-          {/* <Route path="/travel-notes">
+          <Route path="/travel-notes">
             <TravelNotes />
-          </Route> */}
+          </Route>
           <Route path="/ticket-order">
             <Ticket />
           </Route>
