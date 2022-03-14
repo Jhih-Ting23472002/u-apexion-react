@@ -31,7 +31,7 @@ function TravelIndex() {
       <Carousel fade>
         <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block w-100 "
+            className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun3.png"
             alt="First slide"
           />
@@ -45,7 +45,7 @@ function TravelIndex() {
 
         <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block w-100 "
+            className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun2.jpg"
             alt="Second slide"
           />
@@ -59,7 +59,7 @@ function TravelIndex() {
 
         <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block w-100 "
+            className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun1.jpg"
             alt="Second slide"
           />
@@ -73,7 +73,7 @@ function TravelIndex() {
 
         <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block w-100 "
+            className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun4.jpg"
             alt="Second slide"
           />
@@ -87,7 +87,7 @@ function TravelIndex() {
 
         <Carousel.Item interval={2000}>
           <img
-            className="travelcarousel d-block w-100 "
+            className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun5.png"
             alt="Second slide"
           />
