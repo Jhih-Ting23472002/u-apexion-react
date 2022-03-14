@@ -8,7 +8,7 @@ function ProductsList() {
       <div className="pr-list">
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
-          <div>
+          <div className="pr-list-nbr-a">
             <a href="#/">男士精品</a>
             <a href="#/">女士精品</a>
             <a href="#/">鞋款</a>
@@ -28,6 +28,18 @@ function ProductsList() {
             </div>
           </div>
         </div>
+        {/* ------手機------------------*/}
+        <div className="sp-wrap">
+              <form action="" autoComplete="on">
+                <input
+                  id="search"
+                  name="search"
+                  type="text"
+                  placeholder="請輸入關鍵字?"
+                />
+                <input id="search_submit" value="" type="submit" />
+              </form>
+            </div>
         <div className="pr-list-img">
           <img src="./product_img/cover5_1440_1200.jpeg" alt="" />
         </div>
