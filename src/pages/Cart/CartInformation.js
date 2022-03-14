@@ -31,38 +31,64 @@ const CartInformation = () => {
             <div className="cart-payment-way">付款方式：信用卡</div>
             <div className="cart-delivery-way">配送方式：宅配到府</div>
           </div>
+
           <div className="cart-consumer-information-part">
-            <div className="consumer-information-line">
-              <div className="consumer-information">訂購人資訊</div>
+            <div className="cart-information-line">
+              <div className="consumer-recipient-information">訂購人資訊</div>
             </div>
             <div className="consumer-information-area">
               <div className="consumer-information-name-mobile-email">
-                <label className="consumer-label-margin">姓名</label>
+                <label className="consumer-recipient-label-margin">姓名</label>
                 <input
-                  className="consumer-input"
+                  className="consumer-recipient-input"
                   placeholder="請填寫真實姓名"
                 ></input>
               </div>
               <div className="consumer-information-name-mobile-email">
-                <label className="consumer-label-margin">手機</label>
+                <label className="consumer-recipient-label-margin">手機</label>
                 <input
-                  className="consumer-input"
+                  className="consumer-recipient-input"
                   placeholder="您的手機號碼"
                 ></input>
-                <div className="">手機市話可擇一填寫</div>
+                <div className="mobile-or-telephone">手機市話可擇一填寫</div>
               </div>
               <div className="consumer-information-name-mobile-email">
-                <label className="consumer-label-margin">市話</label>
+                <label className="consumer-recipient-label-margin">市話</label>
                 <input
-                  className="consumer-input"
+                  className="consumer-recipient-input"
                   placeholder="您的市話號碼"
                 ></input>
+                <div className="mobile-or-telephone">手機市話可擇一填寫</div>
               </div>
               <div className="consumer-information-name-mobile-email">
-                <label className="consumer-label-margin">email</label>
+                <label className="consumer-recipient-label-margin">email</label>
                 <input
-                  className="consumer-input"
+                  className="consumer-recipient-input"
                   placeholder="您的email"
+                ></input>
+              </div>
+            </div>
+          </div>
+
+          <div className="cart-recipient-information-part">
+            <div className="cart-information-line">
+              <div className="consumer-recipient-information">收件人資訊</div>
+            </div>
+            <div className="recipient-information-area">
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="cart-checkbox-label">
+                  同訂購人資料
+                  <input type="checkbox" className="cart-checkbox" />
+                  <span class="cart-checkmark"></span>
+                </label>
+              </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">
+                  收件人
+                </label>
+                <input
+                  className="consumer-recipient-input"
+                  placeholder="請填寫真實姓名"
                 ></input>
               </div>
             </div>

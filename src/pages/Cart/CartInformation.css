@@ -24,11 +24,11 @@
     background-color: #023e73;
     color: #fff;
 }
-.consumer-information-line{
+.cart-information-line{
     border-bottom: 1px solid #023e73;
     margin-bottom: 5%;
 }
-.consumer-information{
+.consumer-recipient-information{
     margin-top: 3%;
     padding: 1% 2%;
     width: 16%;
@@ -36,15 +36,11 @@
     color: #fff;
     text-align: center;
 }
-/* .consumer-information-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-} */
+
 .consumer-information-name-mobile-email{
     margin-bottom: 3%;
 }
-.consumer-label-margin{
+.consumer-recipient-label-margin{
     text-align: right;
     /* border: 1px solid red; */
     /* margin: 0 5% 0 3%; */
@@ -52,9 +48,72 @@
     width: 5%;
     font-size: 1.1rem;
 }
-.consumer-input{
+.consumer-recipient-input{
     width: 40%;
     border: 1px solid #ccc;
+}
+.mobile-or-telephone{
+    display: inline-block;
+    margin-left: 2%;
+    color: rgb(152, 152, 152);
+}
+.recipient-information-name-mobile-email-address{
+    margin-bottom: 3%;
+}
+.cart-checkbox-label{
+    /* border: 1px solid black; */
+    margin-left: 3%;
+    display: block;
+    position: relative;
+    padding-left: 5%;
+    font-size: 1.3rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.cart-checkbox{
+    border: 1px solid red;
+    /* margin: 0% 0% 0% 3%; */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; 
+    
+}
+.cart-checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2%;
+    background-color: #eee;
+}
+.cart-checkbox-label:hover input ~ .cart-checkmark {
+    background-color: #ccc;
+}
+.cart-checkbox-label input:checked ~ .cart-checkmark {
+    background-color: #2196F3;
+}
+.cart-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.cart-checkbox-label input:checked ~ .cart-checkmark:after {
+    display: block;
+}
+.cart-checkbox-label .cart-checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 @media screen and (min-width: 576px){
