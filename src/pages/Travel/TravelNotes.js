@@ -87,7 +87,7 @@ function TravelNotes() {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="travelcarousel d-block w-100"
+              className="travelcarousel d-block w-100 "
               src="./travelimg/notescarouselimg/dining4.png"
               alt="Third slide"
             />

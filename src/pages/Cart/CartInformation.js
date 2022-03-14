@@ -119,7 +119,7 @@ const CartInformation = () => {
                 </label>
                 <div className="select-consumer-recipient-input">
                   <div className="select-consumer-recipient-input-top mb-3">
-                    <select className="mr-5 select-city">
+                    <select className="select-city mb-3">
                       <option>請選擇縣市</option>
                     </select>
                     <select className="select-district">
@@ -136,6 +136,17 @@ const CartInformation = () => {
                 <div className="mobile-or-telephone">需專人簽收</div>
               </div>
             </div>
+          </div>
+          <div className="previous-next-btn">
+            <div className="col-3"></div>
+            <button className="btn next-btn position">
+              <i className="arrow left"></i>上一步
+            </button>
+            <div className="col-2"></div>
+            <button className="btn next-btn position">
+              下ㄧ步<i className="arrow right"></i>
+            </button>
+            <div className="col-3"></div>
           </div>
         </div>
       </div>

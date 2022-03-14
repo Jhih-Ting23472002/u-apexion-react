@@ -13,6 +13,7 @@ import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 
 // Products
 import Products from './pages/Products/Products';
+import ProductsList from './pages/Products/ProductsList';
 
 // Customiz
 import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
@@ -117,7 +118,9 @@ function App() {
           <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
-          <Route path="/products-list"></Route>
+          <Route path="/products-list">
+          <ProductsList/>
+          </Route>
           <Route path="/products-detail/:id"></Route>
           <Route path="/products" exact>
             <Products />
