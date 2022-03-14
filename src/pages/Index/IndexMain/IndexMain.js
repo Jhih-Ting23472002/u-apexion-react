@@ -1,10 +1,16 @@
 import React from 'react';
 import './IndexMain.css';
+import CameraController from './CameraController';
 // import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
 
 const IndexMain = () => (
   <>
+    {/* earth */}
+    <div>
+      <CameraController></CameraController>
+    </div>
+
     {/* section0 */}
     {/* <div className="index-section1">
       <img src="./index_img/index_section1.png" alt="" />
@@ -27,32 +33,40 @@ const IndexMain = () => (
         </div>
       </div>
       <div className="index_sec_two_texts_outer">
-        <div className="index_sec_two_texts">
-          <div className="index_sec_two_texts_title">Apexion里程碑</div>
-          <div className="index_sec_two_texts_line"></div>
-          <div className="index_sec_two_texts_content">
-            團隊實際場刊、太空站設立，以及Apexion第一架火箭的誕生。
+        <div className="index__sec_two_texts_outer1">
+          <div className="index_sec_two_texts">
+            <div className="index_sec_two_texts_title">Apexion里程碑</div>
+            <div className="index_sec_two_texts_line"></div>
+            <div className="index_sec_two_texts_content">
+              團隊實際場刊、太空站設立，以及Apexion第一架火箭的誕生。
+            </div>
           </div>
         </div>
-        <div className="index_sec_two_texts">
-          <div className="index_sec_two_texts_title">火箭內部構造</div>
-          <div className="index_sec_two_texts_line"></div>
-          <div className="index_sec_two_texts_content">
-            2022艙內構造全新改版，氣墊座椅全面升級。
+        <div className="index__sec_two_texts_outer1">
+          <div className="index_sec_two_texts">
+            <div className="index_sec_two_texts_title">火箭內部構造</div>
+            <div className="index_sec_two_texts_line"></div>
+            <div className="index_sec_two_texts_content">
+              2022艙內構造全新改版，氣墊座椅全面升級。
+            </div>
           </div>
         </div>
-        <div className="index_sec_two_texts">
-          <div className="index_sec_two_texts_title">行前訓練</div>
-          <div className="index_sec_two_texts_line"></div>
-          <div className="index_sec_two_texts_content">
-            為克服太空無重狀態，加強高強度間歇運動以及重量訓練，瑜珈則有助適量平衡力訓練。
+        <div className="index__sec_two_texts_outer1">
+          <div className="index_sec_two_texts">
+            <div className="index_sec_two_texts_title">行前訓練</div>
+            <div className="index_sec_two_texts_line"></div>
+            <div className="index_sec_two_texts_content">
+              為克服太空無重狀態，加強高強度間歇運動以及重量訓練，瑜珈則有助適量平衡力訓練。
+            </div>
           </div>
         </div>
-        <div className="index_sec_two_texts">
-          <div className="index_sec_two_texts_title">紀念照</div>
-          <div className="index_sec_two_texts_line"></div>
-          <div className="index_sec_two_texts_content">
-            簽下切結書、太空艙 內部合影....都格外值 得紀念。
+        <div className="index__sec_two_texts_outer1">
+          <div className="index_sec_two_texts">
+            <div className="index_sec_two_texts_title">紀念照</div>
+            <div className="index_sec_two_texts_line"></div>
+            <div className="index_sec_two_texts_content">
+              簽下切結書、太空艙 內部合影....都格外值 得紀念。
+            </div>
           </div>
         </div>
       </div>
