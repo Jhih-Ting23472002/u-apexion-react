@@ -1,33 +1,33 @@
 .photo_1{
-  background-image: url('/public/travelimg/day1.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day1-1.jpg');
 
 }
 .photo_2{
-  background-image: url('/public/travelimg/day2.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day2-1.jpg');
 
 }
 .photo_3{
-  background-image: url('/public/travelimg/day3.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day3-1.jpg');
 
 }
 .photo_4{
-  background-image: url('/public/travelimg/day4.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day4-1.jpg');
 
 }
 .photo_5{
-  background-image: url('/public/travelimg/day5.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day5-1.jpg');
 
 }
 .photo_6{
-  background-image: url('/public/travelimg/day6.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day6-1.jpg');
 
 }
 .photo_7{
-  background-image: url('/public/travelimg/day7.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day7-1.jpg');
 
 }
 .photo_8{
-  background-image: url('/public/travelimg/day8.jpg');
+  background-image: url('/public/travelimg/traveldaysimg/day8-1.jpg');
 }
 
 .travelnotescontainer {
@@ -285,9 +285,7 @@
   }
 }
 
-.tinerarynotes{
-  padding-left:9%;
-}
+
 
 /* Itinerary notes start */
 
@@ -300,6 +298,10 @@
 .content {
   margin-top: 90px;
   text-align: center;
+}
+
+.tinerarynotes{
+  padding-left:9%;
 }
 
 section.timeline-outer {
@@ -408,7 +410,7 @@ section.timeline-outer {
 /* btn */
 
 .price--1fAWe {
-  margin: 50px 10px;
+  margin: 20px 10px;
   font-size: 2rem;
   color: #f03742;
 }
@@ -431,7 +433,7 @@ section.timeline-outer {
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin: 40px 0 80px;
+  margin: 10px 0 10px;
   letter-spacing: 4px;
   
 }

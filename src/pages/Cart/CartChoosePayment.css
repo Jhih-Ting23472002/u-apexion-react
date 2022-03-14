@@ -33,7 +33,7 @@
 } */
 .cart-step-line {
   background-color: #000;
-  height: 5px;
+  height: 3px;
   width: 65%;
   /* margin: auto; */
   position: absolute;
@@ -391,7 +391,7 @@
   }
   .cart-step-line {
     background-color: #000;
-    height: 5px;
+    height: 3px;
     width: 80%;
     /* margin: auto; */
     position: absolute;
@@ -448,7 +448,7 @@
 }
 @media screen and (min-width: 576px) {
   .step-text{
-    margin: 0px 7% 20px 7%;
+    margin: 0px 7.5% 20px 7.5%;
   }
   .cart-ml-7 {
     margin: 0px 8% 0px 8%;
@@ -458,7 +458,7 @@
   }
   .cart-step-line {
     background-color: #000;
-    height: 5px;
+    height: 3px;
     width: 75%;
     /* margin: auto; */
     position: absolute;
@@ -466,8 +466,8 @@
     left: 15%;
   }
   .cart-steps {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     color: #fff;
     background-color: #000;
@@ -553,10 +553,11 @@
 @media screen and (min-width: 768px) {
   .step-text{
     margin: 0px 7.5% 20px 7.5%;
+    font-size: 1.6rem;
   }
   .cart-step-line {
     background-color: #000;
-    height: 5px;
+    height: 3px;
     width: 75%;
     /* margin: auto; */
     position: absolute;
@@ -636,6 +637,10 @@
   }
 }
 @media screen and (min-width: 992px) {
+  .step-text{
+    margin: 0px 8.5% 20px 8.5%;
+    font-size: 1.5rem;
+  }
   .cart-select{
     font-size: 1.3rem;
     width: 8%;
@@ -685,6 +690,10 @@
   }
 }
 @media screen and (min-width: 1200px) {
+  .step-text{
+    margin: 0px 9.5% 20px 9.5%;
+    font-size: 1.5rem;
+  }
   .cart-select-country-badge{
     width: 50%;
   }

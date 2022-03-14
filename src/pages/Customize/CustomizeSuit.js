@@ -24,8 +24,6 @@ function CustomizeSuit() {
         <div className="suit-circle">
           <svg
             className="suit-circle-step"
-            width="500"
-            height="600"
             viewBox="0 0 512 675"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -51,12 +49,72 @@ function CustomizeSuit() {
           <h3>Customize Your SpaceSuit</h3>
           <h2>25,000$</h2>
           <div className="suit-select-color">
-            <div className="white"></div>
-            <div className="orange"></div>
-            <div className="blue"></div>
+            <div className="white suit-flag"></div>
+            <div className="orange suit-flag"></div>
+            <div className="blue suit-flag"></div>
           </div>
-          <div className="country-select"></div>
-          <div className="mark-select"></div>
+          <div className="country-select">
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/taiwan.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <div className="no-select">
+                <img src={require('./images/noselect.png')} alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="mark-select">
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-01.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-02.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-03.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-04.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-05.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-06.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-07.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <img src={require('./images/space-mark-08.png')} alt="" />
+            </div>
+            <div className="suit-flag">
+              <div className="no-select">
+                <img src={require('./images/noselect.png')} alt="" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <svg
@@ -67,7 +125,7 @@ function CustomizeSuit() {
         >
           <path
             d="M918 1024L6.10352e-05 1900L410 -5.79779e-05L918 0.000244141L918 1024Z"
-            fill="#181818"
+            fill="#000000"
           />
         </svg>
       </section>
