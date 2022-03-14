@@ -285,9 +285,7 @@
   }
 }
 
-.tinerarynotes{
-  padding-left:9%;
-}
+
 
 /* Itinerary notes start */
 
@@ -300,6 +298,10 @@
 .content {
   margin-top: 90px;
   text-align: center;
+}
+
+.tinerarynotes{
+  padding-left:9%;
 }
 
 section.timeline-outer {
@@ -408,7 +410,7 @@ section.timeline-outer {
 /* btn */
 
 .price--1fAWe {
-  margin: 50px 10px;
+  margin: 20px 10px;
   font-size: 2rem;
   color: #f03742;
 }
@@ -431,7 +433,7 @@ section.timeline-outer {
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin: 40px 0 80px;
+  margin: 10px 0 10px;
   letter-spacing: 4px;
   
 }

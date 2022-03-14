@@ -289,21 +289,8 @@ function TravelNotes() {
                   <ul className="timeline">
                     <li className="event" data-date="A. 團費與訂金說明">
                       <p className="timelinep">
-                        Claromentis is an intranet software provider company. I
-                        started working at the Brighton office as a Marketing
-                        Designer while I was still attending my final year at
-                        the University of Sussex. My primary responsibilities
-                        included creating corporate identity for the company; I
-                        re-designed their website, and have created marketing
-                        materials such as brochures.
-                      </p>
-                      <p className="timelinep">
-                        Since graduating from university, I have also undertaken
-                        responsibilities for designing a product for the
-                        company. The roles I have been given have provided the
-                        perfect opportunity to implement the skills I have
-                        gained throughout my higher education, as well as
-                        experiencing the running of a successful business.
+                        太空站上配備多個場館，以震撼的視聽效果為您呈現最高水準的娛樂節目。
+                        您會發現自己深深受到美食與爵士樂完美結合的魅力吸引。或在夜空下欣賞最愛的電影，到我們的拉斯維加斯風賭場，提供適合各種場合的多種娛樂選項，讓您好好寵愛自己。
                       </p>
                     </li>
                     <li className="event" data-date="B. 住房權益小叮嚀">
@@ -367,6 +354,7 @@ function TravelNotes() {
           </a>
         </form>
       </div>
+      <hr className="generalHr" />
     </>
   );
 }
