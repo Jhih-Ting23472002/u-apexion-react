@@ -726,6 +726,12 @@
     width: 40%;
   }
 }
+@media screen and (min-width: 1500px){
+  .step-text{
+    margin: 0px 7.5% 20px 7.5%;
+    font-size: 1.5rem;
+  }
+}
 @media screen and (max-width: 768px) {
   
 }
