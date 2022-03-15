@@ -14,6 +14,7 @@ import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 // Products
 import Products from './pages/Products/Products';
 import ProductsList from './pages/Products/ProductsList';
+import ProductsDetail from './pages/Products/ProductsDetail';
 
 // Customiz
 import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
@@ -26,6 +27,7 @@ import CartInformation from './pages/Cart/CartInformation';
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
+import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
 
 // Travel
@@ -101,7 +103,9 @@ function App() {
           <Route path="/ticket-date-choose">
             <TicketDate />
           </Route>
-          <Route path="/ticket-seat-choose"></Route>
+          <Route path="/ticket-seat-choose">
+            <TicketSeat />
+          </Route>
           <Route path="/ticket-meal-choose">
             <TicketMeal />
           </Route>
@@ -116,9 +120,11 @@ function App() {
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list">
-          <ProductsList/>
+            <ProductsList />
           </Route>
-          <Route path="/products-detail/:id"></Route>
+          <Route path="/products-detail">
+            <ProductsDetail />
+          </Route>
           <Route path="/products" exact>
             <Products />
           </Route>
