@@ -4,10 +4,11 @@
 }
 .cart-list-line{
     border-bottom: 1px solid #023e73;
-    margin-bottom: 4%;
+    margin-bottom: 1%;
 }
 .cart-check-list{
     font-weight: bold;
+    padding: 5% 0% 2% 0%;
 }
 .list-detail-text{
     margin-top: 3%;

@@ -1,6 +1,7 @@
 import React from 'react';
 import './CartFinalCheck.css';
 import example from './img/example.png';
+import spaceSuit from './img/spaceSuit.png';
 
 const CartFinalCheck = () => {
   return (
@@ -30,7 +31,7 @@ const CartFinalCheck = () => {
               4
             </div>
           </div>
-          <div className="cart d-flex justify-content-center py-5 cart-check-list">
+          <div className="cart d-flex justify-content-center cart-check-list">
             準備好下達訂單嗎？請先確認所有資訊正確無誤 。
           </div>
 
@@ -50,6 +51,18 @@ const CartFinalCheck = () => {
               </div>
             </div>
             <div className="cart-list-detail-line"></div>
+
+            <div className="cart cart-order-item d-flex">
+              <div className="cart cart-img-div col-4">
+                <img src={spaceSuit} alt="" />
+              </div>
+              <div className="cart content-detail col-8">
+                <h5 className="">個人宇航服</h5>
+                <div className="">已選好的國旗</div>
+                <div className="">已選好的徽章</div>
+                <div className="">$XXXXX</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
