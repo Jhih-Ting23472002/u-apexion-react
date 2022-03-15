@@ -135,6 +135,19 @@ const CartInformation = () => {
                 </div>
                 <div className="mobile-or-telephone">需專人簽收</div>
               </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">
+                  配送時間
+                </label>
+                <input
+                  className="consumer-recipient-input"
+                  value="不限時"
+                  disabled
+                ></input>
+                <div className="mobile-or-telephone">
+                  因為疫情的關係，現在只有不限時。造成您的不便敬請見諒。
+                </div>
+              </div>
             </div>
           </div>
           <div className="previous-next-btn">

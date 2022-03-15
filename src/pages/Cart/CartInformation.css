@@ -109,8 +109,8 @@
     display: block;
 }
 .cart-checkbox-label .cart-checkmark:after {
-    left: 7px;
-    top: 1px;
+    left: 40%;
+    top: 18%;
     width: 5px;
     height: 10px;
     border: solid white;
@@ -148,6 +148,9 @@
     margin-top: 2%;
     display: flex;
     justify-content: space-around;
+}
+.next-btn:hover{
+    color: #fff;
 }
 .position{
     position: relative;
