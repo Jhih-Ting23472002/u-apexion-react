@@ -14,7 +14,7 @@ function ProductsList() {
             <a href="#/">鞋款</a>
             <a href="#/">配件與腕錶</a>
           </div>
-          <div>
+          <div className="div-wrap">
             <div className="wrap">
               <form action="" autoComplete="on">
                 <input
@@ -30,16 +30,16 @@ function ProductsList() {
         </div>
         {/* ------手機------------------*/}
         <div className="sp-wrap">
-              <form action="" autoComplete="on">
-                <input
-                  id="search"
-                  name="search"
-                  type="text"
-                  placeholder="請輸入關鍵字?"
-                />
-                <input id="search_submit" value="" type="submit" />
-              </form>
-            </div>
+          <form action="" autoComplete="on">
+            <input
+              id="search"
+              name="search"
+              type="text"
+              placeholder="請輸入關鍵字?"
+            />
+            <input id="search_submit" value="" type="submit" />
+          </form>
+        </div>
         <div className="pr-list-img">
           <img src="./product_img/cover5_1440_1200.jpeg" alt="" />
         </div>
@@ -58,8 +58,10 @@ function ProductsList() {
           <div className="primary-navigation">
             <div role="navigation" className="primary-navigation">
               <ul>
-              <li>
-                  <a href="#/">價格 <i className="fa-solid fa-angle-down"></i></a>
+                <li>
+                  <a href="#/">
+                    價格 <i className="fa-solid fa-angle-down"></i>
+                  </a>
                   <ul className="dropdown">
                     <li>
                       <a href="#/">由高到低</a>
@@ -70,7 +72,9 @@ function ProductsList() {
                   </ul>
                 </li>
                 <li>
-                  <a href="#/">顏色 <i className="fa-solid fa-angle-down"></i></a>
+                  <a href="#/">
+                    顏色 <i className="fa-solid fa-angle-down"></i>
+                  </a>
                   <ul className="dropdown">
                     <li>
                       <a href="#/">黑色</a>

@@ -25,6 +25,7 @@ import CustomizeSuit from './pages/Customize/CustomizeSuit';
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import CartInformation from './pages/Cart/CartInformation';
+import CartFinalCheck from './pages/Cart/CartFinalCheck';
 
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
@@ -46,8 +47,8 @@ import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexFirst from './pages/Index/IndexFirst';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -57,12 +58,12 @@ function App() {
       <>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <IndexFirst />
           </Route>
           <Route exact path="/u-apexion">
             <IndexMain />
-          </Route>
+          </Route> */}
           {/* <Route path="/index-video"></Route>
           <Route path="/index"></Route> */}
           <Route exact path="/forum-home">
@@ -153,7 +154,9 @@ function App() {
           <Route path="/cart-information">
             <CartInformation />
           </Route>
-          <Route path="/cart-final-check"></Route>
+          <Route path="/cart-final-check">
+            <CartFinalCheck />
+          </Route>
           <Route path="/cart-credit-card"></Route>
           <Route path="/cart-complete"></Route>
         </Switch>

@@ -337,32 +337,32 @@ function Products() {
         {/*-------手機sp-------------*/}
         <div className="pr-sp-card">
           <div className="pr-sp-card-img">
-          <h3>男士精品</h3>
+            <h3>男士精品</h3>
             <img src="./product_img/28b106.jpeg" alt="" />
             <div>
-            <a href="#/">探索</a>
-          </div>
+              <a href="#/">探索</a>
+            </div>
           </div>
           <div className="pr-sp-card-img">
-          <h3>女士精品</h3>
+            <h3>女士精品</h3>
             <img src="./product_img/cdc-1200.jpeg" alt="" />
             <div>
-            <a href="#/">探索</a>
-          </div>
+              <a href="#/">探索</a>
+            </div>
           </div>
           <div className="pr-sp-card-img">
-          <h3>鞋款</h3>
+            <h3>鞋款</h3>
             <img src="./product_img/2019071945540457.jpg" alt="" />
             <div>
-            <a href="#/">探索</a>
-          </div>
+              <a href="#/">探索</a>
+            </div>
           </div>
           <div className="pr-sp-card-img">
-          <h3>配件與腕錶</h3>
+            <h3>配件與腕錶</h3>
             <img src="./product_img/Expe.jpeg" alt="" />
             <div>
-            <a href="#/">探索</a>
-          </div>
+              <a href="#/">探索</a>
+            </div>
           </div>
         </div>
         <div className="pr-h9vh"></div>
