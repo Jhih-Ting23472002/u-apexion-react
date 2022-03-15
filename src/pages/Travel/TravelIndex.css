@@ -5,17 +5,17 @@
     margin: 0 auto;
     margin-top:15%;
     margin-right:10px;
-    color: #05F2F2;
-    background-color: black;
-    border: 4px double #05F2F2;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    border: 4px double #000000;
     border-radius: 200px;
     font-size: 18px;
   }
 
   .travelitemBuyButton:hover {
-    background-color: #05F2F2;
-    color: black;
-    border: 4px double black;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: 4px double rgb(255, 255, 255);
   }
 
   .main-img,
