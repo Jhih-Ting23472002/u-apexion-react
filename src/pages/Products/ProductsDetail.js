@@ -27,6 +27,24 @@ function ProductsDetail() {
             </div>
           </div>
         </div>
+        {/*---------------分類選單-----------------------------------------------------*/}
+        <div className="pr-detail-list">
+          <div className="pr-detail-list-img">
+            <img
+              className="pr-detail-img"
+              src="./product_img/M021J_BK019.jpg"
+              alt=""
+            />
+          </div>
+          <div className="pr-detail-p">
+            <ul>
+              <li>#最新款式</li>
+              <li className="li-h2">防風飛行夾克</li>
+              <li>灰色科技棉防撕裂物料</li>
+              <li>編號:M021J_BK025</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </article>
   );
