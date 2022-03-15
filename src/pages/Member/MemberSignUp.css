@@ -17,23 +17,27 @@
 }
 
 .signup-header {
-  width: 84%;
+  width: 88%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
   position: absolute;
   top: 0;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   /* color:white; */
 }
 .signup-header p {
   color: white;
 }
 
+.signup-header p > a{
+  color: #05f2f2;
+}
+
 .signup-form-container {
   display: flex;
   flex-direction: column;
-  
 }
 /* .signup-form-container {
   border: 1px solid red;
@@ -51,12 +55,15 @@
 .signup-form-title h1{
   font-size: 35px;
   font-weight: 500;
-  /* margin-bottom: 1rem; */
 }
 
 .signup-form-title p{
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.signup-form{
   margin-bottom: 1rem;
 }
 
@@ -68,14 +75,14 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: #fff;
 }
 
 .signup-label {
-  width: 100px;
+  width: 90px;
   /* border: 1px solid red; */
   text-align: right;
   margin-right: 20px;
@@ -110,12 +117,12 @@
 }
 
 .international-code-select{
-  width: 100px;
+  width: 92px;
   margin-right: 5px;
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid #fff;
   color: #fff;
-  padding: 0.27rem 1rem;
+  padding: 0.3rem 1rem;
   line-height: 1.2rem;
 }
 
@@ -124,7 +131,7 @@
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid #fff;
   color: #fff;
-  padding: 0.46rem 1rem;
+  padding: 0.47rem 1rem;
   line-height: 1.2rem;
 }
 

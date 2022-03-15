@@ -46,8 +46,8 @@ import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexFirst from './pages/Index/IndexFirst';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -57,12 +57,12 @@ function App() {
       <>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <IndexFirst />
           </Route>
           <Route exact path="/u-apexion">
             <IndexMain />
-          </Route>
+          </Route> */}
           {/* <Route path="/index-video"></Route>
           <Route path="/index"></Route> */}
           <Route exact path="/forum-home">
@@ -85,9 +85,9 @@ function App() {
           <Route path="/member-login">
             <MemberLogin />
           </Route>
-          {/* <Route path="/member-sign-up">
+          <Route path="/member-sign-up">
             <MemberSignUp />
-          </Route> */}
+          </Route>
           <Route path="/member-forgot-pwd">
             <MemberForgotPwd />
           </Route>
