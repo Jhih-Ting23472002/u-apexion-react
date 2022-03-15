@@ -30,8 +30,12 @@ const MemberForgotPwd = () => {
               </div>
             </form>
             <div className="forgotpwd-btn-container">
-              <div>
-                <input type="submit" className="forgotpwd-btn" value="返回" />
+              <div className="forgotpwd-wrap-return">
+                <input
+                  type="submit"
+                  className="forgotpwd-btn-return"
+                  value="返回"
+                />
               </div>
               <div>
                 <input

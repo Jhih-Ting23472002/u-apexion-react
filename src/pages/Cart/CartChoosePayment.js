@@ -5,6 +5,7 @@ import cartTicket from './img/cartTicket.png';
 import spaceSuit from './img/spaceSuit.png';
 import spaceSeat from './img/spaceSeat.png';
 import spaceShip from './img/spaceShip.png';
+import { Link } from 'react-router-dom';
 
 const CartChoosePayment = () => {
   return (
@@ -202,7 +203,12 @@ const CartChoosePayment = () => {
               <h5 className="cart-should-pay-total-price">應付總金額:$xxxxx</h5>
               <div className="cart-button">
                 <button className="btn continue-btn">繼續購物</button>
-                <button className="btn next-btn">下一步</button>
+                <Link
+                  className="btn next-btn cart-link"
+                  to={'/cart-information'}
+                >
+                  下一步
+                </Link>
               </div>
             </div>
           </div>

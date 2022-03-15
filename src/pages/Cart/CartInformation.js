@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartInformation.css';
+import { Link } from 'react-router-dom';
 
 const CartInformation = () => {
   return (
@@ -152,13 +153,19 @@ const CartInformation = () => {
           </div>
           <div className="previous-next-btn">
             <div className="col-3"></div>
-            <button className="btn next-btn position">
+            <Link
+              className="btn next-btn position cart-link"
+              to={'/cart-payment'}
+            >
               <i className="arrow left"></i>上一步
-            </button>
+            </Link>
             <div className="col-2"></div>
-            <button className="btn next-btn position">
+            <Link
+              className="btn next-btn position cart-link"
+              to={'/cart-final-check'}
+            >
               下ㄧ步<i className="arrow right"></i>
-            </button>
+            </Link>
             <div className="col-3"></div>
           </div>
         </div>
