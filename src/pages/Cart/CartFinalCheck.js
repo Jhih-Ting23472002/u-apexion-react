@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartFinalCheck.css';
+import example from './img/example.png';
 
 const CartFinalCheck = () => {
   return (
@@ -34,10 +35,21 @@ const CartFinalCheck = () => {
           </div>
 
           {/* 購物明細 */}
-          <div className="cart-list-detail">
-            <div className="cart-list-detail-line">
+          <div className="cart-list">
+            <div className="cart-list-line">
               <div className="list-detail-text">購物明細</div>
             </div>
+            <div className="cart-order-item cart-list-detail d-flex">
+              <div className="cart-img-div col-4">
+                <img src={example} alt="" />
+              </div>
+              <div className="cart-list-detail-inside col-8">
+                <h5 className="cart-product-list-group">商品名稱</h5>
+                <div className="cart-product-list-group">1111111</div>
+                <div className="cart-product-list-group">$xxxxx</div>
+              </div>
+            </div>
+            <div className="cart-list-detail-line"></div>
           </div>
         </div>
       </div>
