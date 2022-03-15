@@ -52,7 +52,7 @@ const IndexMain = () => {
           >
             <img
               className="index_swiper_titleimg"
-              src="./index_img/title1.png"
+              src="./index_img/gemeni.png"
               alt=""
             />
           </div>
@@ -74,7 +74,7 @@ const IndexMain = () => {
           <div
             className="index_swiper_date"
             style={{
-              top: isToggleOn === true ? '3%' : '0%',
+              right: isToggleOn === true ? '3%' : '0%',
             }}
           >
             <img
@@ -91,7 +91,7 @@ const IndexMain = () => {
           >
             <img
               className="index_swiper_titleimg"
-              src="./index_img/title3.png"
+              src="./index_img/mars.png"
               alt=""
             />
           </div>
@@ -104,15 +104,50 @@ const IndexMain = () => {
           >
             <img
               className="index_swiper_pimg"
-              src="./index_img/img3.png"
+              src="./index_img/c-img.png"
               alt=""
             />
           </div>
         </SwiperSlide>
-
+        <SwiperSlide className="swiper">
+          <img
+            className="index_swiper_img4"
+            src="./index_img/suit.png"
+            alt=""
+          />
+          <div
+            className="index_swiper_date4"
+            style={{
+              right: isToggleOn === true ? '-3%' : '0%',
+            }}
+          >
+            <img
+              className="index_swiper_dateimg"
+              src="./index_img/custom_pic2.png"
+              alt=""
+            />
+          </div>
+          <div
+            className="index_swiper_title4"
+            style={{
+              right: isToggleOn === true ? '3%' : '0%',
+            }}
+          >
+            <img
+              className="index_swiper_titleimg"
+              src="./index_img/custom_text.png"
+              alt=""
+            />
+          </div>
+        </SwiperSlide>
         <SwiperSlide className="swiper">
           <img className="index_swiper_img" src="./index_img/bg-3.png" alt="" />
-          <div className="index_swiper_date">
+          <div
+            className="index_swiper_date"
+            style={{
+              right: isToggleOn === true ? '3%' : '0%',
+            }}
+          >
             <img
               className="index_swiper_dateimg"
               src="./index_img/date3.png"
@@ -122,20 +157,20 @@ const IndexMain = () => {
           <div
             className="index_swiper_title"
             style={{
-              left: isToggleOn === true ? '0' : '3%',
+              left: isToggleOn === true ? '3%' : '0%',
             }}
           >
             <img
               className="index_swiper_titleimg"
-              src="./index_img/title2.png"
+              src="./index_img/spring.png"
               alt=""
             />
           </div>
           <div
             className="index_swiper_inner_img3"
             style={{
-              opacity: isToggleOn === true ? '0.3' : '1',
-              right: isToggleOn === true ? '21%' : '18%',
+              opacity: isToggleOn === true ? '1' : '0.3',
+              right: isToggleOn === true ? '18%' : '21%',
             }}
           >
             <img
@@ -145,6 +180,7 @@ const IndexMain = () => {
             />
           </div>
         </SwiperSlide>
+        
       </Swiper>
       {/* -------------section1 end-------------- */}
       <div className="index_sec_two_bg">
@@ -203,7 +239,7 @@ const IndexMain = () => {
       </div>
       {/* section2 end */}
       {/* section3 */}
-      <div class="index_section3" style={{ border: '1px solid red' }}>
+      {/* <div class="index_section3" style={{ border: '1px solid red' }}>
         <div class="index_team">
           <div class="index_team-left">
             <div class="index_active-img">
@@ -259,7 +295,7 @@ const IndexMain = () => {
         </div>
       </div>{' '}
       {/* */}
-      {/* section3 end
+      {/* section3 end */}
       {/* section4 */}
       <div className="index-section4">
         <div className="index-sec-container">
