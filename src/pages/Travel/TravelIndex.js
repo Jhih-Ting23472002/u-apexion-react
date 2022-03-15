@@ -124,9 +124,7 @@ function TravelIndex() {
               <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
               <div className="travelrow">
                 <h2 className="informationShopItemprice">$499,999起</h2>
-                <a href="#/" target="_blank">
-                  <button className="travelitemBuyButton">Details</button>
-                </a>
+                <button className="travelitemBuyButton">Details</button>
               </div>
               <hr className="generalHrpart1" />
               <p className="informationShopItemhp">
