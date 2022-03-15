@@ -16,8 +16,11 @@ import Products from './pages/Products/Products';
 import ProductsList from './pages/Products/ProductsList';
 import ProductsDetail from './pages/Products/ProductsDetail';
 
-// Customiz
+// Customize
 import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeSeat from './pages/Customize/CustomizeSeat';
+import CustomizeCraft from './pages/Customize/CustomizeCraft';
+import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -113,9 +116,15 @@ function App() {
           <Route path="/customize-mainpage">
             <CustomizeMainPage />
           </Route>
-          <Route path="/customize-suit"></Route>
-          <Route path="/customize-craft"></Route>
-          <Route path="/customize-seat"></Route>
+          <Route path="/customize-suit">
+            <CustomizeSuit />
+          </Route>
+          <Route path="/customize-craft">
+            <CustomizeCraft />
+          </Route>
+          <Route path="/customize-seat">
+            <CustomizeSeat />
+          </Route>
           <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>

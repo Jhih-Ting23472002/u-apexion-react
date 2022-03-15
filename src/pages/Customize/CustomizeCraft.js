@@ -13,6 +13,15 @@ function CustomizeCraft() {
             <img src={require('./images/spacecraft.png')} alt="" />
           </div>
         </div>
+        <div className="craft-main-area">
+          <div className="craft-area-view1">
+            <img src={require('./images/spacecraft.png')} alt="" />
+          </div>
+          <div className="craft-area-view2">
+            <img src={require('./images/spacecraft.png')} alt="" />
+          </div>
+          
+        </div>
         <svg
           className="left-page-svg"
           viewBox="0 0 913 1024"
