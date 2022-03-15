@@ -13,17 +13,24 @@ import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 
 // Products
 import Products from './pages/Products/Products';
+import ProductsList from './pages/Products/ProductsList';
+import ProductsDetail from './pages/Products/ProductsDetail';
 
-// Customiz
+// Customize
 import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeSeat from './pages/Customize/CustomizeSeat';
+import CustomizeCraft from './pages/Customize/CustomizeCraft';
+import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
+import CartInformation from './pages/Cart/CartInformation';
 
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketTrip from './pages/Ticket/TicketTrip';
+import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
 
 // Travel
@@ -109,7 +116,9 @@ function App() {
           <Route path="/ticket-date-choose">
             <TicketDate />
           </Route>
-          <Route path="/ticket-seat-choose"></Route>
+          <Route path="/ticket-seat-choose">
+            <TicketSeat />
+          </Route>
           <Route path="/ticket-meal-choose">
             <TicketMeal />
           </Route>
@@ -117,21 +126,33 @@ function App() {
           <Route path="/customize-mainpage">
             <CustomizeMainPage />
           </Route>
-          <Route path="/customize-suit"></Route>
-          <Route path="/customize-craft"></Route>
-          <Route path="/customize-seat"></Route>
+          <Route path="/customize-suit">
+            <CustomizeSuit />
+          </Route>
+          <Route path="/customize-craft">
+            <CustomizeCraft />
+          </Route>
+          <Route path="/customize-seat">
+            <CustomizeSeat />
+          </Route>
           <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
-          <Route path="/products-list"></Route>
-          <Route path="/products-detail/:id"></Route>
+          <Route path="/products-list">
+            <ProductsList />
+          </Route>
+          <Route path="/products-detail">
+            <ProductsDetail />
+          </Route>
           <Route path="/products" exact>
             <Products />
           </Route>
           <Route exact path="/cart-payment">
             <CartChoosePayment />
           </Route>
-          <Route path="/cart-information"></Route>
+          <Route path="/cart-information">
+            <CartInformation />
+          </Route>
           <Route path="/cart-final-check"></Route>
           <Route path="/cart-credit-card"></Route>
           <Route path="/cart-complete"></Route>

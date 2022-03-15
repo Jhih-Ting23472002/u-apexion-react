@@ -1,0 +1,96 @@
+.Customcraft-page-view {
+    width: 100%;
+    /* navbar高的60px */
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+  }
+  .craft-tools{
+      z-index: 1;
+      position: absolute;
+      top: 5%;
+      right: 33vw;
+      width: 50%;
+      min-width:50%;
+  }
+  .craft-step{
+      position: absolute;
+      right:4vw;
+      width: 46vw;
+      min-width:650px;
+      filter: drop-shadow(-15px 10px 8px black);
+  }
+  .craft-img{
+      position: absolute;
+      top:-5px;
+      right:22vw;
+      width: 7vw;
+      min-width:100px;
+      opacity: 1;
+      filter: drop-shadow(-50px 15px 20px rgba(0, 0, 0, 0.4));
+  }
+  .craft-main-area{
+      z-index: 1;
+      border-radius: 20px;
+      position: absolute;
+      top: 15%;
+      right: 64vw;
+      width: 30vw;
+      height: 30vw; 
+      min-width:400px;
+      min-height: 400px;
+      background-color: rgb(0, 0, 0,.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+  }
+  .craft-area-view1 {
+      position: relative;
+      /* border: 1px solid red; */
+      width: 350px;
+      height: 150px;
+      overflow: hidden;
+  }
+  .craft-area-view1 img {
+      width: 40%;
+      position: absolute;
+      top: -213%;
+      left: -33%;
+      transform: rotate(90deg);
+  }
+  .craft-area-view2 {
+      position: relative;
+      /* border: 1px solid red; */
+      width: 350px;
+      height: 150px;
+      overflow: hidden;
+    }
+    .craft-area-view2 img {
+        width: 40%;
+        position: absolute;
+        top: -213%;
+        left: 45%;
+        transform: rotate(90deg);
+    }
+    .craft-main-area::after {
+        position: absolute;
+        right:4%;
+        bottom: 3%;
+        content: '';
+        width: 3px;
+        height: 180px;
+        box-sizing: content-box;
+        background:linear-gradient(180deg,hsla(0, 0%, 0%, 0.3) , rgb(0, 255, 255) 50% , hsla(0, 0%, 0%, 0.3) );
+      }
+    .craft-main-area::before {
+        position: absolute;
+        left:4%;
+        top: 3%;
+        content: '';
+        width: 3px;
+        height: 180px;
+        box-sizing: content-box;
+        background:linear-gradient(180deg,hsla(0, 0%, 0%, 0.3) , rgb(0, 255, 255) 50% , hsla(0, 0%, 0%, 0.3) );
+      }

@@ -106,12 +106,20 @@
 
 /* carousel start */
 
-.travelcarousel {
-  height: auto;
+.travelcarousel{
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom:3%;
+  height: 85vh;
+  max-width: 70%;
 }
 
 @media (max-width: 640px) {
   .travelcarousel{
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom:3%;
+    max-width: 100%;
     height: auto;
   }
 }
@@ -203,7 +211,7 @@
 .blog-card .description .descriptionh2 {
   line-height: 1;
   margin: 0;
-  font-size: 40px;
+  font-size: 32px;
 
 }
 
@@ -349,7 +357,7 @@ section.timeline-outer {
   color: #ffffff;
   content: attr(data-date);
   text-align: right;
-  font-size: 25px;
+  font-size: 21px;
   min-width: 120px;
 }
 
@@ -401,10 +409,15 @@ section.timeline-outer {
   .timelinep {
     padding-top: 20px;
   }
+
+  .breadcrumb{
+    background-color: #000000;
+    font-size:12px
+  }
 }
 
 .timelinep {
-  font-size: 21px;
+  font-size: 16px;
 }
 
 /* btn */
@@ -542,14 +555,6 @@ section.timeline-outer {
   background-color: #000000;
 }
 
-@media (max-width: 768px) {
- 
-  .breadcrumb{
-    background-color: #000000;
-    font-size:12px
-  }
-}
-
 .breadcrumb-item>a{
   color:#03e9f4;
   text-decoration:none;
@@ -557,4 +562,5 @@ section.timeline-outer {
 
 .signup{
   justify-content: center;
+  margin-top: 5%;
 }

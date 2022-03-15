@@ -91,7 +91,75 @@ const CartInformation = () => {
                   placeholder="請填寫真實姓名"
                 ></input>
               </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">
+                  聯絡電話
+                </label>
+                <input
+                  className="consumer-recipient-input"
+                  placeholder="您的手機號碼"
+                ></input>
+                <div className="mobile-or-telephone">
+                  宅配人員將以此資料聯繫
+                </div>
+              </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">email</label>
+                <input
+                  className="consumer-recipient-input"
+                  placeholder="您的email"
+                ></input>
+                <div className="mobile-or-telephone">
+                  交易通知將會發送到此email
+                </div>
+              </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">
+                  收件地址
+                </label>
+                <div className="select-consumer-recipient-input">
+                  <div className="select-consumer-recipient-input-top mb-3">
+                    <select className="select-city mb-3">
+                      <option>請選擇縣市</option>
+                    </select>
+                    <select className="select-district">
+                      <option>請選擇鄉鎮市區</option>
+                    </select>
+                  </div>
+                  <div className="select-consumer-recipient-input-bottom">
+                    <input
+                      className="recipient-input-address"
+                      placeholder="您的地址"
+                    ></input>
+                  </div>
+                </div>
+                <div className="mobile-or-telephone">需專人簽收</div>
+              </div>
+              <div className="recipient-information-name-mobile-email-address">
+                <label className="consumer-recipient-label-margin">
+                  配送時間
+                </label>
+                <input
+                  className="consumer-recipient-input"
+                  value="不限時"
+                  disabled
+                ></input>
+                <div className="mobile-or-telephone">
+                  因為疫情的關係，現在只有不限時。造成您的不便敬請見諒。
+                </div>
+              </div>
             </div>
+          </div>
+          <div className="previous-next-btn">
+            <div className="col-3"></div>
+            <button className="btn next-btn position">
+              <i className="arrow left"></i>上一步
+            </button>
+            <div className="col-2"></div>
+            <button className="btn next-btn position">
+              下ㄧ步<i className="arrow right"></i>
+            </button>
+            <div className="col-3"></div>
           </div>
         </div>
       </div>

@@ -45,14 +45,14 @@
   font-weight: bold;
 }
 .cart-btn-check {
-  background-color: #023e73;
+  background-color: #000;
   color: #fff;
   width: 250px;
   border-radius: 20px;
   margin: auto;
 }
 .cart-btn-check:hover {
-  color: pink;
+  color: #fff;
 }
 .separated-line {
   width: 100%;
@@ -108,7 +108,7 @@
 
 .cart-remove-btn {
   width: 20%;
-  background-color: #023e73;
+  background-color: #000;
   color: #fff;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -118,7 +118,7 @@
 }
 
 .cart-remove-btn:hover {
-  color: pink;
+  color: #fff;
 }
 
 .cart-order-money {
@@ -361,7 +361,7 @@
 }
 .continue-btn{
   width: 40%;
-  background-color: #023e73;
+  background-color: #000;
   color: #fff;
   border-radius: 20px;
   font-size: 1.1rem;
@@ -370,7 +370,7 @@
 }
 .next-btn{
   width: 40%;
-  background-color: #023e73;
+  background-color: #000;
   color: #fff;
   border-radius: 20px;
   font-size: 1.1rem;

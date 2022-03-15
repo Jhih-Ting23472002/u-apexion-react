@@ -5,17 +5,17 @@
     margin: 0 auto;
     margin-top:15%;
     margin-right:10px;
-    color: #05F2F2;
-    background-color: black;
-    border: 4px double #05F2F2;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    border: 4px double #000000;
     border-radius: 200px;
     font-size: 18px;
   }
 
   .travelitemBuyButton:hover {
-    background-color: #05F2F2;
-    color: black;
-    border: 4px double black;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: 4px double rgb(255, 255, 255);
   }
 
   .main-img,
@@ -224,7 +224,7 @@
     margin-top: 2%;
   }
 
-  .travelcarousel{
+  .travelindexcarousel{
     margin: 0 auto;
     margin-top: 2%;
     margin-bottom:3%;
@@ -233,7 +233,7 @@
   }
 
   @media (max-width: 640px) {
-    .travelcarousel{
+    .travelindexcarousel{
       margin: 0 auto;
       margin-top: 2%;
       margin-bottom:3%;
@@ -268,6 +268,7 @@
     font-size: 40px;
     color: white;
     text-shadow: 2px 2px black;
+    margin-bottom: 2%;
   }
 
   .tourButton {
@@ -350,17 +351,17 @@
 
   .informationShopItemh2{
     margin-top: 5%;
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .informationShopItemprice{
     margin-top: 5%;
-    font-size: 39px;
+    font-size: 32px;
     color:rgb(255, 51, 51);
   }
 
   .informationShopItemhp{
-    font-size: 28px;
+    font-size: 21px;
     margin-top: 6%;
   }
 

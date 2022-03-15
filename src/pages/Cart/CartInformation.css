@@ -45,10 +45,11 @@
     /* border: 1px solid red; */
     /* margin: 0 5% 0 3%; */
     margin-right: 3%;
-    width: 5%;
+    width: 7%;
     font-size: 1.1rem;
 }
 .consumer-recipient-input{
+    padding: 0.5% 0% 0.5% 1%;
     width: 40%;
     border: 1px solid #ccc;
 }
@@ -58,11 +59,14 @@
     color: rgb(152, 152, 152);
 }
 .recipient-information-name-mobile-email-address{
+    /* width: 100%; */
     margin-bottom: 3%;
+    display: flex;
+    align-items: center;
 }
 .cart-checkbox-label{
     /* border: 1px solid black; */
-    margin-left: 3%;
+    margin-left: 5%;
     display: block;
     position: relative;
     padding-left: 5%;
@@ -86,8 +90,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 2%;
+    height: 110%;
+    width: 15%;
     background-color: #eee;
 }
 .cart-checkbox-label:hover input ~ .cart-checkmark {
@@ -105,8 +109,8 @@
     display: block;
 }
 .cart-checkbox-label .cart-checkmark:after {
-    left: 9px;
-    top: 5px;
+    left: 40%;
+    top: 18%;
     width: 5px;
     height: 10px;
     border: solid white;
@@ -114,6 +118,61 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+.select-consumer-recipient-input{
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 40%;
+}
+.select-consumer-recipient-input-bottom{
+    width: 100%;
+}
+.recipient-input-address{
+    width: 100%;
+    padding: 0.5% 0% 0.5% 2%;
+    border: 1px solid #ccc;
+}
+.select-city{
+    width: 100%;
+    padding: 0.5% 0% 0.5% 1%;
+    border: 1px solid #ccc;
+    color: rgb(123, 123, 123);
+}
+.select-district{
+    width: 100%;
+    padding: 0.5% 0% 0.5% 1%;
+    border: 1px solid #ccc;
+    color: rgb(123, 123, 123);
+}
+.previous-next-btn{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+.next-btn:hover{
+    color: #fff;
+}
+.position{
+    position: relative;
+}
+.arrow {
+    position: absolute;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.left {
+    top: 32%;
+    left: 10%;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+.right {
+    top: 32%;
+    right: 10%;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
 @media screen and (min-width: 576px){

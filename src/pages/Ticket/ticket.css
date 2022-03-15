@@ -170,7 +170,7 @@
 .ticket-container {
   background-color: black;
   position: relative;
-  border: 1px solid rgb(197, 16, 197);
+  /* border: 1px solid rgb(197, 16, 197); */
 }
 
 img {
@@ -183,7 +183,7 @@ img {
   height: 100vh;
   position: absolute;
   left: 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
 }
@@ -220,12 +220,12 @@ img {
   height: 100vh;
   display: flex;
   align-items: center;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 .ticket-trip-wrap {
   width: 75%;
-  border: 1px solid rgb(13, 212, 39);
+  /* border: 1px solid rgb(13, 212, 39); */
   position: absolute;
   right: 0;
   margin: 0 5% 0 0;
@@ -326,21 +326,21 @@ img {
 }
 
 .ticket-trip-card-area {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: stretch; */
-  /* border: 5px solid yellow; */
-  /* height: 100%; */
+  /* border: 2px solid rgb(250, 10, 230); */
+  width: 100%;
+  overflow: hidden;
 }
 
 .ticket-trip-card-wrap {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  /* border: 5px solid yellow; */
+  width: 200%; /* 隨著資料數量變更改變 */
 }
 
 .ticket-trip-card {
-  width: 32%;
+  width: 16%; /* 隨著資料數量變更改變 */
   height: 70vh;
   position: relative;
   /* border: 5px solid rgb(255, 115, 0); */
@@ -474,14 +474,14 @@ img {
 .ticket-date {
   height: 100vh;
   background-color: #000000;
-  border: 5px solid yellow;
+  /* border: 5px solid yellow; */
 }
 
 .ticket-date-wrap {
   display: flex;
   width: 75%;
   flex-direction: column;
-  border: 1px solid rgb(15, 189, 53);
+  /* border: 1px solid rgb(15, 189, 53); */
   position: absolute;
   right: 0;
   margin: 0 5% 0 0;
@@ -508,7 +508,7 @@ img {
 .ticket-date-content {
   width: 100%;
   height: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: white;
   border-radius: 10px;
   margin-top: 2%;
@@ -743,13 +743,13 @@ img {
   height: 100vh;
   display: flex;
   align-items: center;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 .ticket-seat-wrap {
   width: 75%;
   height: 100vh;
-  border: 1px solid rgb(13, 212, 39);
+  /* border: 1px solid rgb(13, 212, 39); */
   position: absolute;
   padding: 2% 0;
   right: 0;
@@ -776,18 +776,18 @@ img {
   justify-content: center;
   width: 100%;
   height: 90%;
-  border: 5px solid red;
+  /* border: 5px solid red; */
   /* height: 70vh; */
 }
 
 .ticket-case-choose, .ticket-seat-choose {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   align-items: center;
 }
 
 .ticket-case-choose img, .ticket-seat-choose img{
-  border: 1px solid rgb(255, 238, 0);
+  /* border: 1px solid rgb(255, 238, 0); */
   height: 100%;
   object-fit: contain;
 }
@@ -1119,7 +1119,7 @@ img {
 
   .ticket-trip-card-area {
     display: flex;
-    /* border: 5px solid yellow; */
+    /* border: 5px solid rgb(250, 10, 230); */
     width: 100%;
     overflow: hidden;
   }
@@ -1195,7 +1195,7 @@ img {
   .ticket-date-content {
     height: 75%;
     flex-direction: column-reverse;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin-top: 10%;
   }
 
@@ -1215,7 +1215,7 @@ img {
     display: block;
     padding: 5% 10% 0 10%;
     height: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
   .ticket-calender-month-mb ul{
@@ -1225,7 +1225,7 @@ img {
    justify-content: center;
    flex-direction: row;
     height: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   
   .ticket-calender-month-mb ul li{
