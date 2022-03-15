@@ -2,10 +2,6 @@ import React from 'react';
 import './MemberPerson.css';
 
 const MemberPerson = () => {
-  return (
-    <>
-      
-    </>
-  );
+  return <></>;
 };
 export default MemberPerson;
