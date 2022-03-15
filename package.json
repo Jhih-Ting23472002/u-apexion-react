@@ -25,6 +25,8 @@
     "react-scripts": "5.0.0",
     "sass": "^1.49.9",
     "styled-components": "^5.3.3",
+    "swiper": "^8.0.7",
+    "three-orbitcontrols": "^2.110.3",
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.17"
   },

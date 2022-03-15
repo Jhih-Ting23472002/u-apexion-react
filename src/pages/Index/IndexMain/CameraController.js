@@ -251,7 +251,18 @@ const CameraController = () => {
           </div>
         </div>
         <div className="index-taiwanstation">
-          <img src="./index_img/taiwanstation.png" alt="" />
+          <div className="index-taiwanstation_card_container">
+            <div className="index-taiwanstation_card">
+              <div className="index-taiwanstation_card_front">
+                <img src="./index_img/taiwanstation.png" alt="" />
+              </div>
+              <div className="index-taiwanstation_card_back">
+                <img src="./index_img/taiwanstation.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="index_button_container">
           <button
             className="taiwan-station-btn"
             onClick={handleStationBtnClick}
@@ -269,10 +280,6 @@ const CameraController = () => {
             太空站設立於台灣-台北，經過數年由多個模組在軌道上組裝而成，特點是多艙，積木式結構。
           </div>
         </div>
-        {/* <div class="earth-space-station">
-                <img src="./imgs/space-station.png" alt=""/>
-                <div class="earth-space-station-text">Space Station<br/>Based in TAIWAN TAIPEI.</div>
-            </div> */}
       </div>
       <div id="webgl"></div>
     </>
