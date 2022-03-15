@@ -1,0 +1,52 @@
+.step-three {
+    background-color: #05f2f2;
+    color: #000;
+}
+.cart-list-detail-line{
+    border-bottom: 1px solid #023e73;
+    margin-bottom: 4%;
+}
+.cart-check-list{
+    font-weight: bold;
+}
+.list-detail-text{
+    margin-top: 3%;
+    padding: 1% 1%;
+    width: 13%;
+    background-color: #023e73;
+    color: #fff;
+    text-align: center;
+}
+@media screen and (min-width: 576px){
+    .list-detail-text{
+        width: 16%;
+    }
+    .cart-check-list{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 768px){
+    .list-detail-text{
+        width: 14%;
+    }
+    .cart-check-list{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: 992px){
+    .list-detail-text{
+        width: 13%;
+    }
+    .cart-check-list{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (min-width: 1200px){
+    .list-detail-text{
+        width: 12%;
+    }
+    .cart-check-list{
+        font-size: 2rem;
+    }
+}

@@ -1,3 +1,9 @@
+.cart-link{
+  color: #fff;
+}
+.cart-link:hover{
+  color: #fff;
+}
 .cart-background {
   background-color: #fff;
   /* height: 100vh; */
@@ -368,6 +374,9 @@
   /* border: 1px solid hotpink; */
   font-weight: 600;
 }
+.continue-btn:hover{
+  color: #fff;
+}
 .next-btn{
   width: 40%;
   background-color: #000;
@@ -411,7 +420,7 @@
   }
   
   .total-price-text{
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
   }
   .cart-select-country-badge{
@@ -449,6 +458,10 @@
 @media screen and (min-width: 576px) {
   .step-text{
     margin: 0px 7.5% 20px 7.5%;
+  }
+  .total-price-text{
+    font-size: 1.2rem;
+    text-align: center;
   }
   .cart-ml-7 {
     margin: 0px 8% 0px 8%;
@@ -555,6 +568,10 @@
     margin: 0px 7.5% 20px 7.5%;
     font-size: 1.6rem;
   }
+  .total-price-text{
+    font-size: 1.5rem;
+    text-align: center;
+  }
   .cart-step-line {
     background-color: #000;
     height: 3px;
@@ -641,6 +658,10 @@
     margin: 0px 8.5% 20px 8.5%;
     font-size: 1.5rem;
   }
+  .total-price-text{
+    font-size: 1.7rem;
+    text-align: center;
+  }
   .cart-select{
     font-size: 1.3rem;
     width: 8%;
@@ -693,6 +714,10 @@
   .step-text{
     margin: 0px 9.5% 20px 9.5%;
     font-size: 1.5rem;
+  }
+  .total-price-text{
+    font-size: 2rem;
+    text-align: center;
   }
   .cart-select-country-badge{
     width: 50%;
