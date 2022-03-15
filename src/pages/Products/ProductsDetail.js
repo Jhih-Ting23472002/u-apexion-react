@@ -1,12 +1,11 @@
 import React from 'react';
 import './productsDetail.scss';
 
-
-function ProductsDetail(){
-    return(
-        <article>
-        <div className="pr-detail">
-                    {/*---------------分類選單-----------------------------------------------------*/}
+function ProductsDetail() {
+  return (
+    <article>
+      <div className="pr-detail">
+        {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
             <a href="#/">男士精品</a>
@@ -28,8 +27,8 @@ function ProductsDetail(){
             </div>
           </div>
         </div>
-        </div>
-        </article>
-    )
+      </div>
+    </article>
+  );
 }
 export default ProductsDetail;
