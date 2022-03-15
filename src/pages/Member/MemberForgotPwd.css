@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #fff;
 }
 
@@ -73,21 +73,31 @@
   justify-content: center;
 }
 
-.forgotpwd-btn {
+.forgotpwd-btn,.forgotpwd-btn-return{
   width: 100%;
   padding: 0.3rem 1rem;
   line-height: 1.2rem;
   display: block;
   border-radius: 50px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.6rem;
   border: 1px solid #05f2f2;
   background: #05f2f2;
   color: #000;
   text-decoration: none;
   text-align: center;
-  transition: all 0.5s;
+  transition: all 0.5s; 
 }
+
+.forgotpwd-btn-return{
+  background: #fff;
+  border: 1px solid #fff;
+}
+
 .forgotpwd-btn:hover {
   background-color: #4ff3f3;
+}
+
+.forgotpwd-wrap-return{
+  margin-right: 20px;
 }
