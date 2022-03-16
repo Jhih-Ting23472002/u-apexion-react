@@ -82,7 +82,8 @@
         width: 3px;
         height: 180px;
         box-sizing: content-box;
-        background:linear-gradient(180deg,hsla(0, 0%, 0%, 0.3) , rgb(0, 255, 255) 50% , hsla(0, 0%, 0%, 0.3) );
+        background:linear-gradient(180deg,hsla(0, 0%, 0%, 0.1) , rgb(0, 255, 255) 50% , hsla(0, 0%, 0%, 0.1) );
+        
       }
     .craft-main-area::before {
         position: absolute;
@@ -92,7 +93,7 @@
         width: 3px;
         height: 180px;
         box-sizing: content-box;
-        background:linear-gradient(180deg,hsla(0, 0%, 0%, 0.3) , rgb(0, 255, 255) 50% , hsla(0, 0%, 0%, 0.3) );
+        background:linear-gradient(180deg,hsla(0, 0%, 0%, 0.1) , rgb(0, 255, 255) 50% , hsla(0, 0%, 0%, 0.1) );
       }
       .craft-lorem{
           position: absolute;
@@ -177,7 +178,7 @@
       }
       .craft-in-label label{
         position: absolute;
-        top: 22%;
+        top: 35%;
         left: 26%;
         color: #048abf70;
         font-size: 12px;
