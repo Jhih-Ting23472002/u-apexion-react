@@ -1,5 +1,7 @@
 import React from 'react';
 import './Products.scss';
+import NewProducts from './components/NewProducts';
+import Recommend from './components/Recommend';
 
 function Products() {
   return (
@@ -128,122 +130,7 @@ function Products() {
         <div className="pr-home-new-list">
           <h3>NEW</h3>
           <div className="pr-card-new">
-            <div className="pr-card-list">
-              <a href="#/" className="pr-card-list-img">
-                <img src="./product_img/M021J_BK019.jpg" alt="" />
-              </a>
-              <div className="pr-card-list-txt">
-                <div>
-                  <h3>太空飛行員外套</h3>
-                  <p>黑色科技棉防撕裂物料</p>
-                </div>
-                <div className="pr-fas fa-star-div">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </div>
-                <div className="price">
-                  <div className="pr-currencySymbol">
-                    $ <p>2,599</p>
-                  </div>
-                  <input
-                    type="button"
-                    value="+"
-                    name=""
-                    className="pr-card-list-button"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="pr-card-list">
-              <a href="#/" className="pr-card-list-img">
-                <img src="./product_img/M021J_BK019.jpg" alt="" />
-              </a>
-              <div className="pr-card-list-txt">
-                <div>
-                  <h3>太空飛行員外套</h3>
-                  <p>黑色科技棉防撕裂物料</p>
-                </div>
-                <div className="pr-fas fa-star-div">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </div>
-                <div className="price">
-                  <div className="pr-currencySymbol">
-                    $ <p>2,599</p>
-                  </div>
-                  <input
-                    type="button"
-                    value="+"
-                    name=""
-                    className="pr-card-list-button"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="pr-card-list">
-              <a href="#/" className="pr-card-list-img">
-                <img src="./product_img/M021J_BK019.jpg" alt="" />
-              </a>
-              <div className="pr-card-list-txt">
-                <div>
-                  <h3>太空飛行員外套</h3>
-                  <p>黑色科技棉防撕裂物料</p>
-                </div>
-                <div className="pr-fas fa-star-div">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </div>
-                <div className="price">
-                  <div className="pr-currencySymbol">
-                    $ <p>2,599</p>
-                  </div>
-                  <input
-                    type="button"
-                    value="+"
-                    name=""
-                    className="pr-card-list-button"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="pr-card-list">
-              <a href="#/" className="pr-card-list-img">
-                <img src="./product_img/M021J_BK019.jpg" alt="" />
-              </a>
-              <div className="pr-card-list-txt">
-                <div>
-                  <h3>太空飛行員外套</h3>
-                  <p>黑色科技棉防撕裂物料</p>
-                </div>
-                <div className="pr-fas fa-star-div">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </div>
-                <div className="price">
-                  <div className="pr-currencySymbol">
-                    $ <p>2,599</p>
-                  </div>
-                  <input
-                    type="button"
-                    value="+"
-                    name=""
-                    className="pr-card-list-button"
-                  />
-                </div>
-              </div>
-            </div>
+            <NewProducts />
           </div>
         </div>
       </div>
@@ -258,74 +145,7 @@ function Products() {
           <a href="#/">配件與腕錶</a>
         </div>
         <div className="pr-container">
-          <div className="pr-card">
-            <a href="#/" className="pr-img">
-              <img src="./product_img/M021J_BK019.jpg" alt="" />
-            </a>
-            <div className="pr-content">
-              <h4>太空飛行員外套</h4>
-              <p className="pr-p">$</p>
-              <p>1650</p>
-              <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-              <input
-                type="button"
-                value="+"
-                name=""
-                className="pr-card-button"
-              />
-            </div>
-          </div>
-          <div className="pr-card">
-            <a href="#/" className="pr-img">
-              <img src="./product_img/M021J_BK019.jpg" alt="" />
-            </a>
-            <div className="pr-content">
-              <h4>太空飛行員外套</h4>
-              <p className="pr-p">$</p>
-              <p>1650</p>
-              <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-              <input
-                type="button"
-                value="+"
-                name=""
-                className="pr-card-button"
-              />
-            </div>
-          </div>
-          <div className="pr-card">
-            <a href="#/" className="pr-img">
-              <img src="./product_img/M021J_BK019.jpg" alt="" />
-            </a>
-            <div className="pr-content">
-              <h4>太空飛行員外套</h4>
-              <p className="pr-p">$</p>
-              <p>1650</p>
-              <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-              <input
-                type="button"
-                value="+"
-                name=""
-                className="pr-card-button"
-              />
-            </div>
-          </div>
-          <div className="pr-card">
-            <a href="#/" className="pr-img">
-              <img src="./product_img/M021J_BK019.jpg" alt="" />
-            </a>
-            <div className="pr-content">
-              <h4>太空飛行員外套</h4>
-              <p className="pr-p">$</p>
-              <p>1650</p>
-              <p className="pr-p-p">黑色科技棉防撕裂物料</p>
-              <input
-                type="button"
-                value="+"
-                name=""
-                className="pr-card-button"
-              />
-            </div>
-          </div>
+          <Recommend />
         </div>
         <div className="pr-card-a-div">
           <a href="/products-list">
