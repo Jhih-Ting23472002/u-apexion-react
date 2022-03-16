@@ -7,7 +7,45 @@ function CustomizeCraft() {
       <section className="Customcraft-page-view">
         <div className="craft-tools">
           <div className="craft-step">
-            <img src={require('./images/spacecraft-step.png')} alt="" />
+            <svg
+              viewBox="0 0 859 707"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M412.669 6.28442H6.23389V62.3875"
+                stroke="#595959"
+                strokeWidth="2"
+              />
+              <path
+                d="M346.592 700.716H6.23389V657.08"
+                stroke="#595959"
+                strokeWidth="2"
+              />
+              <path
+                d="M418.903 6.28445C418.903 9.72722 416.112 12.5181 412.669 12.5181C409.226 12.5181 406.436 9.72722 406.436 6.28445C406.436 2.84169 409.226 0.0507812 412.669 0.0507812C416.112 0.0507812 418.903 2.84169 418.903 6.28445Z"
+                fill="#595959"
+              />
+              <path
+                d="M12.4673 62.3875C12.4673 65.8302 9.67643 68.6212 6.23367 68.6212C2.79091 68.6212 0 65.8302 0 62.3875C0 58.9447 2.79091 56.1538 6.23367 56.1538C9.67643 56.1538 12.4673 58.9447 12.4673 62.3875Z"
+                fill="#595959"
+              />
+              <circle cx="346.592" cy="700.716" r="6.23367" fill="#595959" />
+              <circle cx="6.23367" cy="657.08" r="6.23367" fill="#595959" />
+              <path d="M569.758 700.716H854.013" stroke="#595959" />
+              <ellipse
+                rx="4.98694"
+                ry="6.23367"
+                transform="matrix(-1 0 0 1 854.013 700.716)"
+                fill="#595959"
+              />
+              <ellipse
+                rx="4.98694"
+                ry="6.23367"
+                transform="matrix(-1 0 0 1 569.758 700.716)"
+                fill="#595959"
+              />
+            </svg>
           </div>
           <div className="craft-img">
             <img src={require('./images/spacecraft.png')} alt="" />
@@ -17,10 +55,14 @@ function CustomizeCraft() {
           <div className="craft-area-view1">
             <img src={require('./images/spacecraft.png')} alt="" />
           </div>
+          <div className="craft-lorem">
+            <p>
+              高貴的太空船，搭配高貴的貴賓所設計的高貴外觀，再加上高貴的行程，配上同行高貴旅遊夥伴，一起進入高貴的宇宙，一切都變得特別的高貴了。
+            </p>
+          </div>
           <div className="craft-area-view2">
             <img src={require('./images/spacecraft.png')} alt="" />
           </div>
-          
         </div>
         <svg
           className="left-page-svg"
@@ -31,11 +73,15 @@ function CustomizeCraft() {
           <path d="M-5 0L420 0L200 1024L-5 1024L-5 0Z" fill="#323232" />
         </svg>
 
-        <div className="suit-card">
+        <div className="craft-card">
           <h1>請選擇太空船外觀</h1>
           <h3>Customize Your SpaceCraft</h3>
           <h2>20,000$</h2>
-          <input type="text" />
+          <div className="craft-in-label">
+            <input type="text" />
+            <label>請輸入名稱(8個字元內)</label>
+          </div>
+          
           <div className="country-select">
             <div className="suit-flag">
               <img src={require('./images/taiwan.png')} alt="" />
@@ -67,6 +113,7 @@ function CustomizeCraft() {
               </div>
             </div>
           </div>
+          <button className="craft-circle-btn">完成送出</button>
         </div>
 
         <svg

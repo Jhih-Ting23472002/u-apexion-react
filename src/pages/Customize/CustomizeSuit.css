@@ -69,6 +69,8 @@
   min-width: 440px;
   filter: drop-shadow(-30px 10px 10px rgb(0, 0, 0));
 }
+
+/* 按鈕類型 */
 .suit-circle-btn {
   position: absolute;
   right: -2.5vw;
