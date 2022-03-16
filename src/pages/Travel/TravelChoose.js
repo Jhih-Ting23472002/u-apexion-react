@@ -313,9 +313,7 @@ function TravelChoose() {
         </div>
       </section>
       <div className="morechoose">
-        <a href="#/" target="_self">
-          <button className="itemBuyButton">更多行程</button>
-        </a>
+        <button className="tourButton">更多行程</button>
       </div>
       <hr className="generalHr" />
     </>

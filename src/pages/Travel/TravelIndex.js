@@ -15,7 +15,10 @@ function TravelIndex() {
           <div className="search">
             <section className="webdesigntuts-workshop">
               <form action="" method="">
-                <input type="search" placeholder="What are you looking for?" />
+                <input
+                  type="search"
+                  placeholder="請輸入產品名/關鍵字/產品代碼 ex.巨蟹座 or 火星 or UAT-001"
+                />
                 <button>Search</button>
               </form>
             </section>
@@ -104,16 +107,14 @@ function TravelIndex() {
         <div className="tour-img">
           <div className="tourOverlay">
             <h2 className="tourOverlayh2">U-APEXION站內論壇</h2>
-            <a href="#/" target="_blank">
-              <button className="tourButton">let's go</button>
-            </a>
+            <button className="tourButton">let's go</button>
           </div>
         </div>
       </section>
 
       <section className="shopSection">
         <div className="shopHeader">
-          <h2 className="shopHeaderh2">主打星球熱門行程</h2>
+          <h2 className="shopHeaderh2">主打星座熱門行程</h2>
           <hr className="generalHr" />
         </div>
 
@@ -138,9 +139,7 @@ function TravelIndex() {
               <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
               <div className="travelrow">
                 <h2 className="informationShopItemprice">$599,999起</h2>
-                <a href="./page3.html" target="_self">
-                  <button className="travelitemBuyButton">Details</button>
-                </a>
+                <button className="travelitemBuyButton">Details</button>
               </div>
               <hr className="generalHrpart1" />
               <p className="informationShopItemhp">
@@ -154,9 +153,7 @@ function TravelIndex() {
               <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
               <div className="travelrow d-flex ">
                 <h2 className="informationShopItemprice">$699,999起</h2>
-                <a href="#/" target="_blank">
-                  <button className="travelitemBuyButton">Details</button>
-                </a>
+                <button className="travelitemBuyButton">Details</button>
               </div>
               <hr className="generalHrpart1" />
               <p className="informationShopItemhp">
@@ -167,7 +164,7 @@ function TravelIndex() {
         </div>
 
         <div className="shopHeader">
-          <h2 className="shopHeaderh2">主打星座熱門行程</h2>
+          <h2 className="shopHeaderh2">主打星球熱門行程</h2>
           <hr className="generalHr" />
         </div>
 
@@ -178,9 +175,7 @@ function TravelIndex() {
               <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
               <div className="travelrow">
                 <h2 className="informationShopItemprice">$499,999起</h2>
-                <a href="#/" target="_blank">
-                  <button className="travelitemBuyButton">Details</button>
-                </a>
+                <button className="travelitemBuyButton">Details</button>
               </div>
               <hr className="generalHrpart1" />
               <p className="informationShopItemhp">
@@ -194,9 +189,7 @@ function TravelIndex() {
               <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
               <div className="travelrow">
                 <h2 className="informationShopItemprice">$599,999起</h2>
-                <a href="./page3.html" target="_self">
-                  <button className="travelitemBuyButton">Details</button>
-                </a>
+                <button className="travelitemBuyButton">Details</button>
               </div>
               <hr className="generalHrpart1" />
               <p className="informationShopItemhp">
@@ -210,9 +203,7 @@ function TravelIndex() {
               <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
               <div className="travelrow d-flex ">
                 <h2 className="informationShopItemprice">$699,999起</h2>
-                <a href="#/" target="_blank">
-                  <button className="travelitemBuyButton">Details</button>
-                </a>
+                <button className="travelitemBuyButton">Details</button>
               </div>
               <hr className="generalHrpart1" />
               <p className="informationShopItemhp">
@@ -220,6 +211,9 @@ function TravelIndex() {
               </p>
             </div>
           </div>
+        </div>
+        <div className="morechoose">
+          <button className="tourButton">更多行程</button>
         </div>
       </section>
 
