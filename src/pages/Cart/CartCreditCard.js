@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartCreditCard.css';
+import { Link } from 'react-router-dom';
 
 const CartCreditCard = () => {
   return (
@@ -63,9 +64,12 @@ const CartCreditCard = () => {
 
               {/* 確認付款 */}
               <div className="d-flex my-5 pl-4 align-items-center">
-                <button className="btn card-confirm cart-link col-4">
+                <Link
+                  to={'/cart-complete'}
+                  className="btn card-confirm cart-link col-4"
+                >
                   確認付款 (Confirm)
-                </button>
+                </Link>
                 <div className="col-4 card-trade">交易金額 $xxxxxx</div>
                 <div className=""></div>
                 <div className="col-4 d-flex justify-content-around">

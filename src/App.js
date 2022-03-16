@@ -28,6 +28,7 @@ import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import CartInformation from './pages/Cart/CartInformation';
 import CartFinalCheck from './pages/Cart/CartFinalCheck';
 import CartCreditCard from './pages/Cart/CartCreditCard';
+import CardComplete from './pages/Cart/CardComplete';
 
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
@@ -164,7 +165,9 @@ function App() {
           <Route path="/cart-credit-card">
             <CartCreditCard />
           </Route>
-          <Route path="/cart-complete"></Route>
+          <Route path="/cart-complete">
+            <CardComplete />
+          </Route>
         </Switch>
         <Footer />
       </>
