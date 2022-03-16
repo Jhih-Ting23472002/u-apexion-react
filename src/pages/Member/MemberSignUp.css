@@ -18,13 +18,15 @@
 
 .signup-header {
   width: 88%;
+  height: 5vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
+  align-items: center;
   position: absolute;
   top: 0;
   margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
   /* color:white; */
 }
 .signup-header p {
@@ -36,6 +38,7 @@
 }
 
 .signup-form-container {
+  width: 40%;
   display: flex;
   flex-direction: column;
 }
@@ -47,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: #fff;
   line-height: 1.5;
 }
@@ -64,7 +67,7 @@
 }
 
 .signup-form{
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .input-container {
@@ -82,7 +85,7 @@
 }
 
 .signup-label {
-  width: 90px;
+  width: 70px;
   /* border: 1px solid red; */
   text-align: right;
   margin-right: 20px;
@@ -127,7 +130,7 @@
 }
 
 .signup-mobile-input{
-  width: 71%;
+  width: 77%;
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid #fff;
   color: #fff;
