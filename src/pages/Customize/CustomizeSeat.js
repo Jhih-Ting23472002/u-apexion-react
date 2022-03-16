@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CustomizeSeat.css';
+import CustomizeOrder from './CustomizeOrder';
+
 function CustomizeSeat() {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <>
-     
       <section className="Customseat-page-view">
         <div className="seat-backcolor">
           <img src={require('./images/seat-backimg.png')} alt="" />
@@ -25,9 +27,14 @@ function CustomizeSeat() {
               這是一個高級的座位，經由高級的大師以高級的手法所打造，給予高級的貴賓享受高級的旅程。
             </p>
           </div>
-          <button className="seat-circle-btn">完成送出</button>
+          <button
+            className="seat-circle-btn"
+            onClick={() => setModalShow(true)}
+          >
+            完成送出
+          </button>
         </div>
-        
+
         <svg
           className="right-page-svg"
           viewBox="0 0 913 1024"
@@ -40,6 +47,7 @@ function CustomizeSeat() {
           />
         </svg>
       </section>
+      <CustomizeOrder show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }
