@@ -8,27 +8,9 @@ import menu04 from './img/menu04.jpg';
 import { useState, useEffect } from 'react';
 
 function TicketMeal() {
-  const [demoImg, setDemoImg] = useState(menu01);
-  const [active, setActive] = useState([true, false, false, false]);
+  const [demoImg, setDemoImg] = useState('menu01');
 
-  useEffect(() => {
-    switch (demoImg) {
-      case menu01:
-        setActive([true, false, false, false]);
-        break;
-      case menu02:
-        setActive([false, true, false, false]);
-        break;
-      case menu03:
-        setActive([false, false, true, false]);
-        break;
-      case menu04:
-        setActive([false, false, false, true]);
-        break;
-      default:
-        console.log(`nothing!`);
-    }
-  }, [demoImg]);
+  useEffect(() => {}, [demoImg]);
 
   const getDemoImg = function (e) {
     setDemoImg(e.currentTarget.dataset.value);
@@ -59,7 +41,7 @@ function TicketMeal() {
             <div className="menu-main">
               <div className="menu-list">
                 <div
-                  className={active[0] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu01' ? 'menu-clicked' : 'menu'}
                   data-value="menu01"
                   onClick={e => {
                     getDemoImg(e);
@@ -76,7 +58,7 @@ function TicketMeal() {
                   </div>
                 </div>
                 <div
-                  className={active[1] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu02' ? 'menu-clicked' : 'menu'}
                   data-value="menu02"
                   onClick={e => {
                     getDemoImg(e);
@@ -93,7 +75,7 @@ function TicketMeal() {
                   </div>
                 </div>
                 <div
-                  className={active[2] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu03' ? 'menu-clicked' : 'menu'}
                   data-value="menu03"
                   onClick={e => {
                     getDemoImg(e);
@@ -110,7 +92,7 @@ function TicketMeal() {
                   </div>
                 </div>
                 <div
-                  className={active[3] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu04' ? 'menu-clicked' : 'menu'}
                   data-value="menu04"
                   onClick={e => {
                     getDemoImg(e);
