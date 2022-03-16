@@ -210,7 +210,7 @@
 
   @media (max-width: 640px) {
     .webdesigntuts-workshop input {
-      width: 250px;
+      width: 69%;
     }
   }
 
@@ -309,6 +309,7 @@
     margin: 50px auto;
   }
 
+  
 
   /* shop */
 
@@ -328,7 +329,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 5%;
   }
 
@@ -383,12 +384,18 @@
   .smallItem {
     background-color: white;
     height: relative;
-    width: 400px;
+    width: 26%;
   }
 
   .smallItem>img {
     height: 345px;
     width:100%;
+  }
+
+  @media (max-width: 640px) {
+    .smallItem {
+      width: 100%;
+    }
   }
 
   /* locations */
