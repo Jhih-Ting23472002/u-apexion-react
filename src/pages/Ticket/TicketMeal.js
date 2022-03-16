@@ -8,21 +8,21 @@ import menu04 from './img/menu04.jpg';
 import { useState, useEffect } from 'react';
 
 function TicketMeal() {
-  const [demoImg, setDemoImg] = useState(menu01);
+  const [demoImg, setDemoImg] = useState('menu01');
   const [active, setActive] = useState([true, false, false, false]);
 
   useEffect(() => {
     switch (demoImg) {
-      case menu01:
+      case 'menu01':
         setActive([true, false, false, false]);
         break;
-      case menu02:
+      case 'menu02':
         setActive([false, true, false, false]);
         break;
-      case menu03:
+      case 'menu03':
         setActive([false, false, true, false]);
         break;
-      case menu04:
+      case 'menu04':
         setActive([false, false, false, true]);
         break;
       default:

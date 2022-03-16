@@ -1,0 +1,12 @@
+.back-view{
+    backdrop-filter: blur(10px);
+    transition: 1s ease-in-out;
+    
+}
+.modal-content{
+    width: 30vw;
+    height: 30vw;
+    background:url('./img/modal.png' )center center /cover no-repeat;
+    border-radius: 20px;
+    position: relative;
+}
