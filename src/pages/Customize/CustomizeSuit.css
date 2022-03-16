@@ -74,15 +74,15 @@
   right: -2.5vw;
   bottom: 12%;
   display: flex;
-  background-color: #05f2f2;
-  color: #121212;
+  background-color: #000000;
+  color: #05f2f2;
   padding: 7px 14px;
-  font-size: 14px;
+  font-size: 14px;    
   border-radius: 20px;
   border: none;
   box-shadow: -30px 10px 20px #00000050;
   z-index: 2;
- 
+  transition: .3s ease-in-out;
 }
 .suit-circle-btn:after {
   content: '';
@@ -98,6 +98,15 @@
 }
 .suit-circle-btn:hover:after{
   box-shadow:0 0 25px  #05f2f2;
+}
+.suit-circle-btn:hover{
+  background-color: #05f2f2;
+  color: #000000;
+}
+
+/* :focus */
+.suit-circle-btn:focus{
+  outline:none;
 }
 /* 模型照片 */
 .maybe-use-canvus img {
@@ -195,18 +204,15 @@ transition: .3s ease-in-out;
   /* background: linear-gradient(90deg,#323232 5%, #05f2f2 ,#323232 95%) ; */
   position: absolute;
   left: 50%;
-  bottom: -8px;
-  transition: 1s ease-in-out;
-  
+  bottom: -11px;
 }
 .suit-flag:hover::before{
   width: 60px;
   background: linear-gradient(90deg,#323232 10%, #05f2f2 ,#323232 90%) ;
-  transition: .3s ease-in-out;
-
+  transition: .2s ease-in-out;
 }
-.suit-flag:hover{
-  filter: drop-shadow(4px 4px 2px rgb(0, 0, 0));
+.suit-flag:hover img{
+  filter: drop-shadow(4px 4px 5px rgb(0, 0, 0));
   transition: .3s ease-in-out;
 }
 .suit-flag img{
