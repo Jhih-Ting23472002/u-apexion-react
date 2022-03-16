@@ -25,7 +25,6 @@
 
 
 .forgotpwd-form-title {
-  /* width: 50%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +45,6 @@
 }
 
 .forgotpwd-form {
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   margin-bottom: 1.2rem;

@@ -41,9 +41,6 @@
   display: flex;
   flex-direction: column;
 }
-/* .signup-form-container {
-  border: 1px solid red;
-} */
 
 .signup-form-title {
   display: flex;
@@ -66,58 +63,13 @@
 }
 
 .signup-form{
-  /* width: 100%; */
   margin-bottom: 1.2rem;
 }
-
-/* .member-label {
-  width: 70px;
-  border: 1px solid red;
-  text-align: right;
-  margin-right: 20px;
-} */
-
-/* .member-input {
-  width: 70%;
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  line-height: 1.2rem;
-} */
 
 .member-gender {
   /* border: 1px solid #11c5bc; */
   display: flex;
   width: 70%;
-}
-
-.mobile-input-wrap{
-  width: 70%;
-  display: flex;
-  flex-direction: row;
-
-}
-
-/* .member-date-input{
-  width: 70%;
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  line-height: 1.2rem;
-} */
-
-
-
-.international-code-select{
-  
-  margin-right: 5px;
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  line-height: 1.2rem;
 }
 
 .member-mobile-input{

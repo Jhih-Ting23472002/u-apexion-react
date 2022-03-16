@@ -25,16 +25,8 @@ const MemberPerson = () => {
                   <label for="" className="member-label">
                     手機
                   </label>
-                  <div className="mobile-input-wrap">
-                    {/* <select className="international-code-select">
-                      <option> +886 </option>
-                    </select> */}
-                    <input
-                      type="text"
-                      placeholder=""
-                      className="member-mobile-input"
-                    />
-                  </div>
+
+                  <input type="text" placeholder="" className="member-input" />
                 </div>
 
                 <div className="member-input-container">
