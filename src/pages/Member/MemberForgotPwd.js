@@ -12,35 +12,35 @@ const MemberForgotPwd = () => {
               <p>請輸入註冊新會員時的電子郵件及電話號碼後送出</p>
             </div>
             <form className="forgotpwd-form">
-              <div className="input-container ">
-                <label for="" className="forgotpwd-label">
+              <div className="member-input-container ">
+                <label for="" className="member-label">
                   電子郵件
                 </label>
                 <input
                   type="email"
                   placeholder="youremail@email.com"
-                  className="forgotpwd-input"
+                  className="member-input"
                 />
               </div>
-              <div className="input-container ">
-                <label for="" className="forgotpwd-label">
+              <div className="member-input-container ">
+                <label for="" className="member-label">
                   手機號碼
                 </label>
-                <input type="text" placeholder="" className="forgotpwd-input" />
+                <input type="text" placeholder="" className="member-input" />
               </div>
             </form>
-            <div className="forgotpwd-btn-container">
-              <div className="forgotpwd-wrap-return">
+            <div className="member-btn-container">
+              <div className="member-btn-return-wrap">
                 <input
                   type="submit"
-                  className="forgotpwd-btn-return"
+                  className="member-btn-return"
                   value="返回"
                 />
               </div>
               <div>
                 <input
                   type="submit"
-                  className="forgotpwd-btn"
+                  className="member-btn-confirm"
                   value="確認送出"
                 />
               </div>

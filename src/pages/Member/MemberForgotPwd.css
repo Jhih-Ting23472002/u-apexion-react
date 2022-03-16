@@ -17,7 +17,7 @@
 }
 
 .forgotpwd-form-container{
-  width: 40%;
+  width: 33%;
   display: flex;
   flex-direction: column;
 }
@@ -46,29 +46,31 @@
 }
 
 .forgotpwd-form {
-  /* width: 40%; */
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   margin-bottom: 1.2rem;
 
 }
 
-/* .input-container {
+.member-input-container {
   width: 100%;
   display: flex;
   flex-direction: row;
+  /* justify-content: center; */
   align-items: center;
   margin-bottom: 1rem;
-} */
+  color: #fff;
+}
 
-.forgotpwd-label {
+.member-label {
   width: 70px;
   /* border: 1px solid red; */
   text-align: right;
   margin-right: 20px;
 }
 
-.forgotpwd-input {
+.member-input {
   width: 70%;
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid #fff;
@@ -79,7 +81,7 @@
 
 
 
-.forgotpwd-btn-container {
+.member-btn-container {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -87,7 +89,7 @@
   
 }
 
-.forgotpwd-btn,.forgotpwd-btn-return{
+.member-btn-confirm,.member-btn-return{
   width: 100%;
   padding: 0.3rem 1rem;
   line-height: 1.2rem;
@@ -103,15 +105,15 @@
   transition: all 0.5s; 
 }
 
-.forgotpwd-btn-return{
+.member-btn-return{
   background: #fff;
   border: 1px solid #fff;
 }
 
-.forgotpwd-btn:hover {
+.member-btn-confirm:hover {
   background-color: #4ff3f3;
 }
 
-.forgotpwd-wrap-return{
+.member-btn-return-wrap{
   margin-right: 20px;
 }

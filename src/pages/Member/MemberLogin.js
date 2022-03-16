@@ -5,8 +5,6 @@ const MemberLogin = () => {
   return (
     <>
       <div className="login-container">
-        <div className="login-shadow-container"></div>
-
         <div className="login-group">
           <div className="login-header">
             <h1>Hello,friend!</h1>
@@ -18,7 +16,7 @@ const MemberLogin = () => {
               <div>
                 <input
                   type="password"
-                  className="text-input input-pwd"
+                  className="text-input"
                   placeholder="Password"
                 />
               </div>
