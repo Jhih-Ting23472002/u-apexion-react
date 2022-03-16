@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+.ticket-trip-prev-btn.disabled,
+.ticket-trip-next-btn.disabled {
+  background-color: rgb(216, 216, 216);
+  color: white;
+}
+
 /* 訂票輸入欄樣式開始 */
 .ticketWrap {
   background: url(img/ticket-order-bg.jpg) no-repeat;
@@ -253,48 +259,36 @@ img {
 }
 
 .sign-list-btn {
-  background-color: rgb(255, 255, 255);
-  color: #000000;
   width: 150px;
   height: 30px;
-  border-radius: 15px;
-  border: 1px solid black;
-  /* padding: 7px 0; */
-  position: relative;
+  margin: 0 auto;
+  color: #05f2f2;
+  background-color: black;
+  border: 4px double #05f2f2;
+  border-radius: 200px;
+  /* font-size: 18px; */
   cursor: pointer;
-}
-
-.sign-list-btn::after {
-  content: '';
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 15px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
+  position: relative;
 }
 
 .movie-list-btn {
-  background-color: #48ede8;
-  color: #023e73;
   width: 150px;
   height: 30px;
-  border-radius: 15px;
-  /* padding: 7px 0; */
-  position: relative;
+  margin: 0 auto;
+  color: #05f2f2;
+  background-color: black;
+  border: 4px double #05f2f2;
+  border-radius: 200px;
+  /* font-size: 18px; */
   cursor: pointer;
+  position: relative;
 }
 
-.movie-list-btn::after {
-  content: '';
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
-  border: 1px solid #023e73;
-  border-radius: 15px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
+.sign-list-btn:hover,
+.movie-list-btn:hover {
+  background-color: #05f2f2;
+  color: black;
+  border: 4px double black;
 }
 
 .ticket-trip-prev-btn {
@@ -346,7 +340,6 @@ img {
   /* border: 5px solid rgb(255, 115, 0); */
   display: flex;
   flex-direction: column;
-
 }
 
 .ticket-trip-card-head {
@@ -411,13 +404,29 @@ img {
 
 .tickit-choose-btn::after {
   content: '';
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 15px;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 2px;
+  left: 2px;
+}
+
+.tickit-choose-btn:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.tickit-choose-btn:hover::after {
+  content: '';
+  width: calc(100%);
+  height: calc(100%);
+  border: 4px double rgb(0, 0, 0);
+  border-radius: 15px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
 }
 
 .trip-detail-btn {
@@ -426,21 +435,16 @@ img {
   width: 40%;
   height: 30px;
   border-radius: 15px;
-  border: 1px solid black;
+  border: 4px double black;
   /* padding: 7px 0; */
   position: relative;
   cursor: pointer;
 }
 
-.trip-detail-btn::after {
-  content: '';
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 15px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
+.trip-detail-btn:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  border: 4px double rgb(255, 255, 255);
 }
 
 .ticket-trip-days {
@@ -582,13 +586,13 @@ img {
 
 .ticket-date-from-border h4,
 .ticket-date-to-border h4 {
-    color: white;
-    position: absolute;
-    top: -.75rem;
-    background-color: #313131;
-    padding: 0 5%;
-    height: 1.5rem;
-    /* border: 1px solid rgb(127, 15, 131); */
+  color: white;
+  position: absolute;
+  top: -0.75rem;
+  background-color: #313131;
+  padding: 0 5%;
+  height: 1.5rem;
+  /* border: 1px solid rgb(127, 15, 131); */
 }
 
 .ticket-date-from-border p:last-child,
@@ -620,8 +624,8 @@ img {
   font-size: 2.2rem;
 }
 
-.ticket-calender>div:first-child {
-  flex:2;
+.ticket-calender > div:first-child {
+  flex: 2;
   padding: 5% 10%;
   position: relative;
   /* height: 100%; */
@@ -655,9 +659,9 @@ img {
   width: 14%;
   font-size: 2.2rem;
   text-align: right;
-  padding: 2% 2% 0 0 ;
+  padding: 2% 2% 0 0;
   font-weight: bolder;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .tbcal tr td:hover {
@@ -667,16 +671,16 @@ img {
   cursor: pointer;
 }
 
-.ticket-calender-month ul{
+.ticket-calender-month ul {
   /* border: 1px solid rgb(50, 30, 228); */
   display: flex;
   align-items: center;
- justify-content: space-around;
+  justify-content: space-around;
   flex-direction: column;
   height: 100%;
 }
 
-.ticket-calender-month ul li{
+.ticket-calender-month ul li {
   /* flex: 1; */
   color: black;
   font-size: 1.2rem;
@@ -729,7 +733,8 @@ img {
   display: none;
 }
 
-.ticket-date-next i,.ticket-date-back i {
+.ticket-date-next i,
+.ticket-date-back i {
   color: #000000;
   font-size: 20px;
 }
@@ -780,13 +785,15 @@ img {
   /* height: 70vh; */
 }
 
-.ticket-case-choose, .ticket-seat-choose {
+.ticket-case-choose,
+.ticket-seat-choose {
   /* border: 1px solid blue; */
   display: flex;
   align-items: center;
 }
 
-.ticket-case-choose img, .ticket-seat-choose img{
+.ticket-case-choose img,
+.ticket-seat-choose img {
   /* border: 1px solid rgb(255, 238, 0); */
   height: 100%;
   object-fit: contain;
@@ -831,7 +838,7 @@ img {
   margin-bottom: 1rem;
 }
 
-.ticket-seat-demo-area>div {
+.ticket-seat-demo-area > div {
   display: flex;
   justify-content: center;
   line-height: 2rem;
@@ -902,10 +909,17 @@ img {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5%;
-  /* border: 1px solid yellow; */
-  /* flex: 1; */
+  border: 1px solid yellow;
   height: 15vh;
-  /* margin-top: 5%; */
+}
+
+.menu-clicked {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  border: 1px solid rgb(99, 99, 99);
+  height: 15vh;
+  background-color: rgb(73, 73, 73);
 }
 
 .menu:last-child {
@@ -1022,29 +1036,29 @@ img {
   padding-left: 6%;
 }
 
-.ticket-date-next i,.ticket-date-back i {
+.ticket-date-next i,
+.ticket-date-back i {
   color: #000000;
   font-size: 20px;
 }
 
 /* 餐點選擇樣式結束 */
 
-
 /* RWD */
 /* 全部頁面 */
-@media screen and (max-width:1500px){
+@media screen and (max-width: 1500px) {
   html {
     font-size: 62.5%;
   }
 }
 
-@media screen and (max-width:390px){
+@media screen and (max-width: 390px) {
   html {
     font-size: 40%;
   }
 
   /* 訂票首頁手機版 */
-   .sliderArea {
+  .sliderArea {
     display: none;
   }
 
@@ -1062,7 +1076,7 @@ img {
   .ticketWrap {
     background-position: -400px -60px;
   }
-  
+
   /* 步驟圓圈手機版 */
   .step-circle-img {
     display: none;
@@ -1083,7 +1097,7 @@ img {
     align-items: flex-end;
     width: 100%;
   }
-  
+
   .ticket-steps {
     display: flex;
     flex-direction: column;
@@ -1099,7 +1113,7 @@ img {
     font-weight: bold;
     vertical-align: middle;
   }
-  
+
   /* 行程選擇手機版 */
   .ticket-trip {
     align-items: flex-start;
@@ -1111,7 +1125,6 @@ img {
     margin: 0;
     width: 100%;
   }
-
 
   .ticket-trip-wrap h2 {
     font-size: 4rem;
@@ -1131,7 +1144,7 @@ img {
     /* border: 6px solid blue; */
     width: 300%;
   }
-  
+
   .ticket-trip-card {
     width: 33%;
     padding: 0 2%;
@@ -1140,7 +1153,6 @@ img {
     /* border: 5px solid rgb(255, 115, 0); */
     display: flex;
     flex-direction: column;
-  
   }
 
   .ticket-trip-prev-btn {
@@ -1156,7 +1168,7 @@ img {
     z-index: 9;
     box-shadow: 5px 5px 5ps gray;
   }
-  
+
   .ticket-trip-next-btn {
     width: 40px;
     height: 40px;
@@ -1184,13 +1196,13 @@ img {
   .ticket-date {
     align-items: flex-start;
   }
-  
+
   .ticket-date-wrap {
     height: 85vh;
     padding: 10%;
     margin: 0;
     width: 100%;
-  }   
+  }
 
   .ticket-date-content {
     height: 75%;
@@ -1218,24 +1230,24 @@ img {
     /* border: 1px solid red; */
   }
 
-  .ticket-calender-month-mb ul{
+  .ticket-calender-month-mb ul {
     /* border: 1px solid rgb(50, 30, 228); */
     display: flex;
     align-items: center;
-   justify-content: center;
-   flex-direction: row;
+    justify-content: center;
+    flex-direction: row;
     height: 100%;
     /* border: 1px solid red; */
   }
-  
-  .ticket-calender-month-mb ul li{
+
+  .ticket-calender-month-mb ul li {
     /* flex: 1; */
     color: black;
     font-size: 1rem;
     font-weight: bold;
     margin: 0 5%;
   }
-  
+
   .ticket-calender-month-mb ul li:hover {
     color: var(--sub-color-01);
     cursor: pointer;
@@ -1245,14 +1257,14 @@ img {
   .ticket-calender > div:first-child {
     flex-grow: 1;
   }
-  
+
   .ticket-date-selected-area {
     width: 100%;
     flex-direction: row;
   }
 
   .tbcal tr th {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .ticket-date-days-underline {
@@ -1269,7 +1281,7 @@ img {
   .ticket-date-next {
     display: none;
   }
-  
+
   .ticket-date-back {
     display: none;
   }
@@ -1284,7 +1296,7 @@ img {
     font-size: 1.2rem;
     padding-right: 10%;
   }
-  
+
   .ticket-date-back-mb {
     color: var(--sub-color-01);
     text-decoration: none;
@@ -1305,152 +1317,149 @@ img {
   }
 
   /* 座位選擇手機版 */
-.ticket-seat {
-  align-items: flex-start;
+  .ticket-seat {
+    align-items: flex-start;
+  }
+
+  .ticket-seat-content {
+    flex-direction: column;
+  }
+
+  .ticket-seat-wrap {
+    height: 85vh;
+    padding: 10% 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .ticket-seat-wrap h2 {
+    font-size: 4rem;
+  }
+
+  .ticket-case-choose,
+  .ticket-seat-choose {
+    height: 50%;
+  }
+
+  .ticket-seat-demo-area {
+    right: 5%;
+    top: 50%;
+    width: 35%;
+  }
+
+  /* 餐點選擇手機版 */
+  .ticket-menu {
+    align-items: flex-start;
+  }
+
+  .ticket-menu-wrap {
+    height: 85vh;
+    padding: 10%;
+    margin: 0;
+    width: 100%;
+    background-color: black;
+  }
+
+  .ticket-menu-wrap .ticket-menu-title h2,
+  .ticket-menu-wrap .ticket-menu-title p {
+    margin: 0;
+    color: white;
+  }
+
+  .ticket-menu-wrap .ticket-menu-title h2 {
+    font-size: 4rem;
+  }
+
+  .menu-main {
+    flex-direction: column-reverse;
+    background-color: white;
+    height: 50vh;
+    padding: 7%;
+    justify-content: flex-end;
+    margin-top: 5%;
+  }
+
+  .menu-main > div {
+    width: 100%;
+  }
+
+  .menu-demo-area {
+    height: 60%;
+  }
+
+  .menu-list {
+    flex-direction: row;
+    height: auto;
+    min-height: auto;
+    background-color: white;
+    padding: 7% 0;
+  }
+
+  .menu-list .menu-detail {
+    display: none;
+  }
+
+  .menu {
+    margin: 0;
+    height: 100%;
+    border: 1px solid gray;
+  }
+
+  .menu-img {
+    width: 100%;
+  }
+
+  .menu-demo-area img {
+    min-height: auto;
+    object-fit: cover;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .menu-select-area {
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 3%;
+    position: absolute;
+    right: 10%;
+    bottom: auto;
+    background-color: #131313;
+    min-height: 15vh;
+  }
+
+  .menu-select-area > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 49%;
+    height: 100%;
+    background-color: #000000;
+    margin-bottom: 2%;
+    margin-right: 1%;
+  }
+
+  .ticket-meal-next {
+    color: var(--sub-color-01);
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+    font-size: 1.2rem;
+    padding-right: 5%;
+  }
+
+  .ticket-meal-back {
+    color: var(--sub-color-01);
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    left: 10%;
+    bottom: 5%;
+    font-size: 1.2rem;
+    padding-left: 6%;
+  }
 }
-  
-.ticket-seat-content {
-  flex-direction: column;
-}
-
-.ticket-seat-wrap {
-  height: 85vh;
-  padding: 10% 0;
-  margin: 0;
-  width: 100%;
-}
-
-.ticket-seat-wrap h2 {
-  font-size: 4rem;
-}
-
-.ticket-case-choose, .ticket-seat-choose  {
-  height: 50%;
-}
-
-.ticket-seat-demo-area {
-  right: 5%;
-  top: 50%;
-  width: 35%;
-}
-
-/* 餐點選擇手機版 */
-.ticket-menu {
-  align-items: flex-start;
-}
-
-.ticket-menu-wrap {
-  height: 85vh;
-  padding: 10%;
-  margin: 0;
-  width: 100%;
-  background-color: black;
-}
-
-.ticket-menu-wrap .ticket-menu-title h2,
-.ticket-menu-wrap .ticket-menu-title p {
-  margin: 0;
-  color: white;
-}
-
-.ticket-menu-wrap .ticket-menu-title h2 {
-  font-size: 4rem;
-}
-
-.menu-main {
-  flex-direction: column-reverse;
-  background-color: white;
-  height: 50vh;
-  padding: 7%;
-  justify-content: flex-end;
-  margin-top: 5%;
-}
-
-.menu-main>div {
-  width: 100%;
-}
-
-.menu-demo-area{
-  height: 60%;
-}
-
-.menu-list {
-  flex-direction: row;
-  height: auto;
-  min-height: auto;
-  background-color: white;
-  padding: 7% 0;
-}
-
-.menu-list .menu-detail {
-  display: none;
-}
-
-.menu {
-  margin: 0;
-  height: 100%;
-  border: 1px solid gray;
-}
-
-.menu-img {
-  width: 100%;
-}
-
-.menu-demo-area img {
-  min-height: auto;
-  object-fit: cover;
-  height: 100%;
-  object-fit: cover;
-}
-
-.menu-select-area {
-  width: 80%;
-  border: 1px solid black;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  padding: 3%;
-  position: absolute;
-  right: 10%;
-  bottom: auto;
-  background-color: #131313;
-  min-height: 15vh;
-}
-
-.menu-select-area>div {
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 49%;
-height: 100%;
-background-color: #000000;
-margin-bottom: 2%;
-margin-right: 1%;
-}
-
-.ticket-meal-next {
-  color: var(--sub-color-01);
-  text-decoration: none;
-  display: inline-block;
-  position: absolute;
-  right: 10%;
-  bottom: 5%;
-  font-size: 1.2rem;
-  padding-right: 5%;
-}
-
-.ticket-meal-back {
-  color: var(--sub-color-01);
-  text-decoration: none;
-  display: inline-block;
-  position: absolute;
-  left: 10%;
-  bottom: 5%;
-  font-size: 1.2rem;
-  padding-left: 6%;
-}
-
-}
-
-
-
