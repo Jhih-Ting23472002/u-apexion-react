@@ -59,7 +59,7 @@ function TicketMeal() {
             <div className="menu-main">
               <div className="menu-list">
                 <div
-                  className={active[0] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu01' ? 'menu-clicked' : 'menu'}
                   data-value="menu01"
                   onClick={e => {
                     getDemoImg(e);
@@ -76,7 +76,7 @@ function TicketMeal() {
                   </div>
                 </div>
                 <div
-                  className={active[1] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu02' ? 'menu-clicked' : 'menu'}
                   data-value="menu02"
                   onClick={e => {
                     getDemoImg(e);
@@ -93,7 +93,7 @@ function TicketMeal() {
                   </div>
                 </div>
                 <div
-                  className={active[2] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu03' ? 'menu-clicked' : 'menu'}
                   data-value="menu03"
                   onClick={e => {
                     getDemoImg(e);
@@ -110,7 +110,7 @@ function TicketMeal() {
                   </div>
                 </div>
                 <div
-                  className={active[3] ? 'menu-clicked' : 'menu'}
+                  className={demoImg === 'menu04' ? 'menu-clicked' : 'menu'}
                   data-value="menu04"
                   onClick={e => {
                     getDemoImg(e);

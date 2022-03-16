@@ -909,7 +909,7 @@ img {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5%;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   height: 15vh;
 }
 
@@ -917,7 +917,7 @@ img {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5%;
-  border: 1px solid rgb(99, 99, 99);
+  /* border: 1px solid rgb(99, 99, 99); */
   height: 15vh;
   background-color: rgb(73, 73, 73);
 }
