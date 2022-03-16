@@ -39,7 +39,7 @@ function navbar() {
               </a>
             </li>
           </ul>
-          
+
           <a href="#/" className="nav_menu">
             <svg
               className="three-line"
