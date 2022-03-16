@@ -10,6 +10,7 @@ import { useState } from 'react';
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+import MemberPerson from './pages/Member/MemberPerson';
 
 // Products
 import Products from './pages/Products/Products';
@@ -92,7 +93,9 @@ function App() {
           <Route path="/member-forgot-pwd">
             <MemberForgotPwd />
           </Route>
-          <Route path="/member-person"></Route>
+          <Route path="/member-person">
+            <MemberPerson />
+          </Route>
           <Route path="/member-password-edit"></Route>
           <Route path="/member-address"></Route>
           <Route path="/member-address-new"></Route>
