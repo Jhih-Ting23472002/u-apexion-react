@@ -169,7 +169,7 @@ export default function ForumSinglePostPage() {
             <SinglePostTopLeft>
               <SinglePostTopImg></SinglePostTopImg>
               <SinglePostTopUser>
-                <SinglePostName>ID:{post && post.sid}</SinglePostName>
+                <SinglePostName>{post && post.name}</SinglePostName>
                 <SinglePostTime>
                   {post && new Date(post.art_create_time).toLocaleString()}
                 </SinglePostTime>
@@ -192,7 +192,9 @@ export default function ForumSinglePostPage() {
           <SinglePostResponses>
             <div>
               <div className="forum_responses">
-                <div className="forum_responses_number">15 Responses</div>
+                <div className="forum_responses_number">
+                  {(response && response.length) || 0} Responses
+                </div>
 
                 {response &&
                   response.map((v, i) => {

@@ -58,9 +58,7 @@ function Post({ post }) {
                 {/* <img className="cover" src="" alt="" /> */}
               </div>
               <div className="user-title">
-                <div className="user-name forum_user-name">
-                  user_sid{post.user_sid}
-                </div>
+                <div className="user-name forum_user-name">{post.name}</div>
                 <PostDate>
                   {new Date(post.art_create_time).toLocaleString()}
                 </PostDate>

@@ -5,7 +5,7 @@
     >.pr-list-nbr {
         margin         : 0px 4%;
         display        : flex;
-        height         : calc(3.75rem + 0.125rem);
+        height         : 60px;
         align-items    : center;
         border-bottom  : 1.5px solid rgba(128, 128, 128);
         justify-content: space-between;
@@ -14,6 +14,7 @@
             display    : flex;
             text-align : center;
             align-items: center;
+
 
             >a {
                 text-decoration: none;
@@ -30,12 +31,12 @@
             }
         }
 
-        >div {
-            height  : calc(3.75rem + 0.125rem);
+        >.div-wrap {
+            height  : 60px;
             position: relative;
 
             .wrap {
-                //display : inline-block;
+                display : inline-block;
                 height  : 60px;
                 padding : 0;
                 position: absolute;

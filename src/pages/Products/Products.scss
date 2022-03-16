@@ -105,11 +105,13 @@
     /* 第2段時裝照--------------------------------------------------------------------------------------- */
     @media screen and (min-width:390px) {
         .pr-home-fashion-img {
-            margin-top     : 2vh;
+            padding        : 0 2vh;
+            margin         : 3vh 0px;
             width          : 100%;
             display        : flex;
             position       : relative;
             justify-content: space-between;
+            align-items    : stretch;
 
             >.pr-home-fashion-div {
                 display       : flex;
@@ -235,14 +237,14 @@
             }
 
             .slider_container2 {
-                top       : 24%;
-                left      : 35%;
-                width     : 26%;
-                position  : absolute;
-                box-shadow: #666 0 0 5px;
+                top     : 24%;
+                left    : 35%;
+                width   : 26%;
+                height  : 73vh;
+                position: absolute;
             }
 
-            .slider_container2 div {
+            .slider_container2>div {
                 position    : absolute;
                 border      : 10px solid;
                 border-color: #fff;
@@ -251,9 +253,13 @@
                 left        : 0;
                 opacity     : 0;
                 filter      : alpha(opacity=0);
+                overflow    : hidden;
+                box-shadow  : #666 0 0 5px;
 
                 >img {
-                    width: 100%;
+                    width     : 100%;
+                    height    : 100%;
+                    Object-fit: contain;
                 }
             }
 
@@ -330,11 +336,11 @@
             }
 
             .slider_container3 {
-                top       : 20%;
+                top       : 23%;
                 right     : 7%;
-                width     : 29%;
+                width     : 28%;
+                height    : 38vh;
                 position  : absolute;
-                box-shadow: #666 0 0 5px;
             }
 
             .slider_container3 div {
@@ -346,7 +352,9 @@
                 filter  : alpha(opacity=0);
 
                 >img {
-                    width: 100%;
+                    width     : 100%;
+                    height    : 100%;
+                    Object-fit: contain;
                 }
             }
 
