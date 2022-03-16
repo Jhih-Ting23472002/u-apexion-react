@@ -46,7 +46,12 @@
     font-size: 1.5rem;
     font-weight: 600;
 }
-
+.recipient-final-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
 @media screen and (min-width: 576px){
     .list-detail-text{
         width: 16%;
@@ -56,7 +61,7 @@
         text-align: center;
     }
     .cart-product-list-group{
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 @media screen and (min-width: 768px){
@@ -67,7 +72,7 @@
         font-size: 1.5rem;
     }
     .cart-product-list-group{
-font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 }
 @media screen and (min-width: 992px){
@@ -76,6 +81,12 @@ font-size: 1.2rem;
     }
     .cart-check-list{
         font-size: 1.7rem;
+    }
+    .cart-product-list-group{
+        font-size: 1.6rem;
+    }
+    .recipient-final-info{
+        font-size: 1.4rem;
     }
 }
 @media screen and (min-width: 1200px){
