@@ -33,10 +33,10 @@
     height: 1px;
     margin-top: 10px;
 }
-.limit-width{
-    /* width: 50%; 這個改不動的原因是下了 col-8 寬度已被bootstrap限制了，改成 col-6 col-3 都會動 */
+/* .limit-width{
+    width: 50%; 這個改不動的原因是下了 col-8 寬度已被bootstrap限制了，改成 col-6 col-3 都會動
     
-}
+} */
 .need-width{
     width: 100%;
 }
