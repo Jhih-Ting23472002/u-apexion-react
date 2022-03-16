@@ -6,12 +6,12 @@ const MemberForgotPwd = () => {
     <>
       <div className="forgotpwd-container">
         <div className="forgotpwd-group">
-          <div className="forgotpwd-form">
+          <div className="forgotpwd-form-container">
             <div className="forgotpwd-form-title">
               <h1>再次設定密碼</h1>
               <p>請輸入註冊新會員時的電子郵件及電話號碼後送出</p>
             </div>
-            <form>
+            <form className="forgotpwd-form">
               <div className="input-container ">
                 <label for="" className="forgotpwd-label">
                   電子郵件

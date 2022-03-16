@@ -40,6 +40,7 @@ function ProductsList() {
             <input id="search_submit" value="" type="submit" />
           </form>
         </div>
+         {/* ------------------------*/}
         <div className="pr-list-img">
           <img src="./product_img/cover5_1440_1200.jpeg" alt="" />
         </div>

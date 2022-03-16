@@ -10,7 +10,7 @@
       z-index: 1;
       position: absolute;
       top: 5%;
-      right: 33vw;
+      right: 30vw;
       width: 50%;
       min-width:50%;
   }
@@ -18,7 +18,7 @@
       position: absolute;
       right:4vw;
       width: 46vw;
-      min-width:650px;
+      min-width:690px;
       filter: drop-shadow(-15px 10px 8px black);
   }
   .craft-img{
@@ -26,7 +26,7 @@
       top:-5px;
       right:22vw;
       width: 7vw;
-      min-width:100px;
+      min-width:105px;
       opacity: 1;
       filter: drop-shadow(-50px 15px 20px rgba(0, 0, 0, 0.4));
   }
@@ -76,8 +76,8 @@
     }
     .craft-main-area::after {
         position: absolute;
-        right:4%;
-        bottom: 3%;
+        right:8%;
+        bottom: 5%;
         content: '';
         width: 3px;
         height: 180px;
@@ -86,11 +86,123 @@
       }
     .craft-main-area::before {
         position: absolute;
-        left:4%;
-        top: 3%;
+        left:8%;
+        top: 5%;
         content: '';
         width: 3px;
         height: 180px;
         box-sizing: content-box;
         background:linear-gradient(180deg,hsla(0, 0%, 0%, 0.3) , rgb(0, 255, 255) 50% , hsla(0, 0%, 0%, 0.3) );
+      }
+      .craft-lorem{
+          position: absolute;
+          right: 5%;
+          top: 35%;
+        width: 250px;
+        height: 100px;
+        color: #939393;
+        text-align: left;
+        font-size: 14px;
+        line-height: 150%;
+      }
+      /* BTN */
+      .craft-circle-btn {
+        position: relative;
+        display: flex;
+        background-color: #000000;
+        color: #05f2f2;
+        padding: 7px 14px;
+        font-size: 14px;
+        border-radius: 20px;
+        border: none;
+        box-shadow: -30px 10px 20px #00000050;
+        z-index: 2;
+        margin-top:30%;
+        transition: .3s ease-in-out;
+      }
+      .craft-circle-btn:after {
+        content: '';
+        width: 92px;
+        height: 36px;
+        border: 2px solid #05f2f2;
+        border-radius: 30px;
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        box-shadow: 0 0 20px #05f2f281;
+        transition: .3s ease-in-out;
+      }
+      .craft-circle-btn:hover:after{
+        box-shadow:0 0 25px  #05f2f2;
+      }
+      .craft-circle-btn:hover{
+        background-color: #05f2f2;
+        color: #000000;
+      }
+      .craft-circle-btn:focus{
+        outline:none;
+      }
+      .craft-card{
+        z-index: 1;
+        color: #05f2f2;
+        position: absolute;
+        right: 18%;
+        top: 12%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .craft-card h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        text-shadow:0 0 15px rgba(5, 242, 242, 0.8);
+      }
+      .craft-card h3 {
+        font-size: 14px;
+        margin-bottom: 30px;
+        text-shadow:0 0 15px rgba(5, 242, 242, 0.8);
+      }
+      .craft-card h2 {
+        font-size: 24px;
+        margin-bottom: 55px;
+        text-shadow:0 0 15px rgba(5, 242, 242, 0.8);
+      }
+     
+
+      .craft-in-label{
+          position: relative;
+          display: flex;
+          margin: 0 0 7% 0;
+      }
+      .craft-in-label label{
+        position: absolute;
+        top: 22%;
+        left: 26%;
+        color: #048abf70;
+        font-size: 12px;
+        opacity: 1;
+        transition: .5s ease-in-out;
+      }
+      .craft-in-label input{
+          background: none;
+          width: 250px;
+          height: 40px;
+          text-align: center;
+          color: #05f2f2;
+          border: 1px solid #05f2f2;
+          position: relative;
+          z-index: 2;
+          transition: .5s ease-in-out;
+      }
+      .craft-in-label input:focus + label{
+        opacity: 0;
+        transition: .5s ease-in-out;
+      }
+      .craft-in-label input:focus{
+        outline:none;
+        box-shadow: 0 0 25px #05f2f270;
+        border: 1px solid #05f2f2;
+        -webkit-stroke: 3px aliceblue;
+        transition: .5s ease-in-out;
       }

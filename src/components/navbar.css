@@ -1,6 +1,69 @@
 /* 還差字體跟手機板的目錄 */
 
 @media screen and (max-width: 950px) {
+  .phone-menu{
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -50%;
+    top: 0;
+    height:100vh;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Noto Sans TC', sans-serif;
+    transition: .5s ease-in-out;
+    opacity: 0;
+  }
+  .nav_menu{
+    z-index: 999;
+  }
+  .nav_menu:focus + .phone-menu{
+    right: -5%;
+    opacity: 1;
+    transition: .5s ease-in-out;
+  }
+  .nav_menu:focus ~ .phone-menu ul li a::before{
+    color: rgb(255, 255, 255);
+    animation: navbar-right 1.2s  ease-in-out .2s ;
+  }
+
+  .phone-menu ul{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 30px;
+}
+.phone-menu ul li{
+    position: relative;
+    list-style: none;
+}
+.phone-menu ul li a{
+    position: relative;
+    font-size: 3rem;
+    text-decoration: none;
+    line-height: 3rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #048abf50;
+    /* -webkit-text-stroke: 1px rgba(255, 255, 255,0.1);   */
+}
+.phone-menu ul li a::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #05f2f2;
+    width: 0%;
+    overflow: hidden;
+    transition: .8s;
+    border-right: 2px solid #05f2f2;
+    -webkit-text-stroke: 1px #05f2f2;
+}
+.phone-menu ul li a:hover::before{
+    width: 100%;
+    -webkit-text-stroke: 1px #fff;
+    filter: drop-shadow(0 0 25px #05f2f2);
+}
+
   .topspace{
     height: 60px;
     width: 100%;
@@ -18,10 +81,13 @@
     width: 25px;
     height: 25px;
     filter: Contrast(.6);
+    transition: 0.3s ease-out;
   }
   .three-line:hover {
     filter: Contrast(1);
-    transition: 0.5s ease-out;
+    width: 26px;
+    height: 26px;
+    transition: 0.3s ease-out;
   }
   .nav_container {
     height: 60px;
@@ -47,6 +113,9 @@
 }
 
 @media screen and (min-width: 950px) {
+  .phone-menu{
+    display: none;
+  }
   .topspace{
     height: 60px;
     width: 100%;
@@ -196,5 +265,22 @@
   }
   to {
     background-position: 0% 0%;
+  }
+}
+@keyframes navbar-right {
+  0% {
+    width:0%;
+    -webkit-text-stroke: 1px #fff;
+    filter: drop-shadow(0 0 25px #05f2f2);
+  }
+  50% {
+    width:100%;
+    -webkit-text-stroke: 1px #fff;
+    filter: drop-shadow(0 0 25px #05f2f2);
+  }
+  100%{
+    width:0%;
+    -webkit-text-stroke: 1px #fff;
+    filter: drop-shadow(0 0 25px #05f2f2);
   }
 }
