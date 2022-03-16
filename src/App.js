@@ -18,7 +18,7 @@ import ProductsList from './pages/Products/ProductsList';
 import ProductsDetail from './pages/Products/ProductsDetail';
 
 // Customize
-// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
@@ -129,9 +129,9 @@ function App() {
             <TicketMeal />
           </Route>
           <Route path="/ticket-confirm"></Route>
-          {/* <Route path="/customize-mainpage">
+          <Route path="/customize-mainpage">
             <CustomizeMainPage />
-          </Route> */}
+          </Route>
           <Route path="/customize-suit">
             <CustomizeSuit />
           </Route>

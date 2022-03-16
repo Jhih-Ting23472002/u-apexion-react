@@ -12,12 +12,14 @@ function CustomizeOrder(props) {
         centered
         backdrop="static"
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="customorder-header">
           <h1>客製化商品&nbsp;&nbsp;|&nbsp;&nbsp;訂單明細 </h1>
         </Modal.Header>
-        <Modal.Body style={{ color: '#00002D' }}>
-          <h1>訂單確認</h1>
-          <p>你確定? 要確定耶~</p>
+        <Modal.Body>
+          <div className="customorder-body">
+            <h2>太空服：</h2>
+            
+          </div>
         </Modal.Body>
         <Modal.Footer className="customorder-footer">
           <button className="customorder-circle-btn" onClick={props.onHide}>
