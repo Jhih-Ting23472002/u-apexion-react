@@ -2,6 +2,9 @@ import React from 'react';
 import './CartFinalCheck.css';
 import example from './img/example.png';
 import spaceSuit from './img/spaceSuit.png';
+import spaceSeat from './img/spaceSeat.png';
+import spaceShip from './img/spaceShip.png';
+import cartTicket from './img/cartTicket.png';
 
 const CartFinalCheck = () => {
   return (
@@ -40,6 +43,8 @@ const CartFinalCheck = () => {
             <div className="cart-list-line">
               <div className="list-detail-text">購物明細</div>
             </div>
+
+            {/* 衣服褲子 */}
             <div className="cart-order-item cart-list-detail d-flex">
               <div className="cart-img-div col-4">
                 <img src={example} alt="" />
@@ -52,16 +57,80 @@ const CartFinalCheck = () => {
             </div>
             <div className="cart-list-detail-line"></div>
 
-            <div className="cart cart-order-item d-flex">
-              <div className="cart cart-img-div col-4">
+            {/* 個人宇航服 */}
+            <div className="cart-order-item cart-list-detail d-flex">
+              <div className="cart-img-div col-4">
                 <img src={spaceSuit} alt="" />
               </div>
-              <div className="cart content-detail col-8">
-                <h5 className="">個人宇航服</h5>
-                <div className="">已選好的國旗</div>
-                <div className="">已選好的徽章</div>
-                <div className="">$XXXXX</div>
+              <div className="cart-list-detail-inside col-8">
+                <h5 className="cart-product-list-group">個人宇航服</h5>
+                <div className="cart-product-list-group">已選好的國旗</div>
+                <div className="cart-product-list-group">已選好的徽章</div>
+                <div className="cart-product-list-group">$XXXXX</div>
               </div>
+            </div>
+            <div className="cart-list-detail-line"></div>
+
+            {/* 太空艙座位 */}
+            <div className="cart-order-item cart-list-detail d-flex">
+              <div className="cart-img-div col-4">
+                <img src={spaceSeat} alt="" />
+              </div>
+              <div className="cart-list-detail-inside col-8">
+                <h5 className="cart-product-list-group">太空艙座位</h5>
+                <div className="cart-product-list-group">顏色</div>
+                <div className="cart-product-list-group">$XXXXX</div>
+              </div>
+            </div>
+            <div className="cart-list-detail-line"></div>
+
+            {/* 太空船 spacecraft */}
+            <div className="cart-order-item cart-list-detail d-flex">
+              <div className="cart-img-div col-4">
+                <img src={spaceShip} alt="" className="spaceship-height" />
+              </div>
+              <div className="cart-list-detail-inside col-8">
+                <h5 className="cart-product-list-group">spacecraft</h5>
+                <div className="cart-product-list-group">鐫刻文字</div>
+                <div className="cart-product-list-group">已選好的國旗</div>
+                <div className="cart-product-list-group">$XXXXX</div>
+              </div>
+            </div>
+            <div className="cart-list-detail-line"></div>
+
+            {/* 票券 ticket */}
+            <div className="cart-order-item cart-list-detail d-flex">
+              <div className="cart-img-div col-4">
+                <img src={cartTicket} alt="" />
+              </div>
+
+              <div className="cart-list-detail-inside col-8 flex-column limit-width">
+                <div className="d-flex justify-content-between need-width">
+                  <div className="cart-product-list-group">行程：泰坦星</div>
+                  <div className="cart-product-list-group">餐點</div>
+                </div>
+                <div className="d-flex justify-content-between need-width">
+                  <div className="cart-product-list-group">日程</div>
+                  <div className="cart-product-list-group">
+                    2022/4/1 - 2022/5/1
+                  </div>
+                </div>
+                <div className="d-flex justify-content-between need-width">
+                  <div className="cart-product-list-group">人數5</div>
+                  <div className="cart-product-list-group">$XXXXX</div>
+                </div>
+              </div>
+            </div>
+            <div className="d-flex flex-column align-items-end final-total-price">
+              <div className="mb-4">共n件商品，總金額$xxxxx</div>
+              <div>本訂單需付款金額為$xxxxxx</div>
+            </div>
+          </div>
+
+          {/* 收件人資訊 */}
+          <div className="cart-list">
+            <div className="cart-list-line">
+              <div className="list-detail-text">收件人資訊</div>
             </div>
           </div>
         </div>
