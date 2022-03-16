@@ -208,6 +208,12 @@
     }
   }
 
+  @media (max-width: 640px) {
+    .webdesigntuts-workshop input {
+      width: 250px;
+    }
+  }
+
   /* carousel */
   
   .trivia {
@@ -450,7 +456,7 @@
 
   /* sizing */
 
-  @media screen and (max-width: 1007px) {
+  @media screen and (max-width: 912px) {
     .projects {
       width: 87%;
     }
@@ -470,30 +476,6 @@
 
     .generalHr {
       width: 50%;
-    }
-  }
-
-  @media screen and (max-width: 900px) {
-    .logo {
-      margin: 0 auto;
-    }
-
-    .main-img {
-      height: 100vh;
-    }
-
-    .navbar>li>a {
-      display: none;
-    }
-
-    footer>h2,
-    footer>h3 {
-      font-size: 15px;
-      margin-bottom: -3%;
-    }
-
-    footer {
-      line-height: 0.5;
     }
   }
 
