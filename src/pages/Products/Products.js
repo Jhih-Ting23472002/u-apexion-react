@@ -3,8 +3,8 @@ import './Products.scss';
 
 function Products() {
   return (
-    <article>
-      <div className="pr">
+    <article className="pr">
+      
         <div className="pr-home-mv-img">
           <div className="pr-home-mv-p">
             <h2 className="pr-home-h2">2022</h2>
@@ -249,7 +249,7 @@ function Products() {
           </div>
         </div>
         <div className="pr-h9vh"></div>
-        {/*-----------------------------------------------焦點推薦------------------------------------------------*/}
+        {/*-----------------------------------------------時尚推薦------------------------------------------------*/}
         <div className="pr-recommendation">
           <h2>時尚推薦</h2>
           <div className="pr-recommendation-a">
@@ -329,7 +329,7 @@ function Products() {
             </div>
           </div>
           <div className="pr-card-a-div">
-            <a href="#/">
+            <a href="/products-list">
               View All<i className="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -384,7 +384,7 @@ function Products() {
           </div>
         </div>
         <div className="pr-h9vh"></div>
-      </div>
+      
     </article>
   );
 }

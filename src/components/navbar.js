@@ -17,7 +17,7 @@ function navbar() {
               <a href="#/">Booking</a>
             </li>
             <li>
-              <a href="#/">Shop</a>
+              <a href="/products">Shop</a>
             </li>
             <li>
               <a href="/forum-home">Forum</a>
