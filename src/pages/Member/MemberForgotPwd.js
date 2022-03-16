@@ -22,7 +22,7 @@ const MemberForgotPwd = () => {
                   className="forgotpwd-input"
                 />
               </div>
-              <div className="input-container ">
+              <div className="input-container mobile-container">
                 <label for="" className="forgotpwd-label">
                   手機號碼
                 </label>

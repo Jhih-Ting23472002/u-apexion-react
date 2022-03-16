@@ -8,6 +8,7 @@ const MemberSignUp = () => {
         <div className="signup-group">
           <div className="signup-header">
             <p>Welcome to U-APEXION!</p>
+
             <p>
               已經有帳號?<a href="#/">登入</a>
             </p>

@@ -7,7 +7,7 @@ function navbar() {
       <div className="topspace"></div>
       <nav>
         <div className="nav_container">
-          <a href="/" className="nav_UA-logo"></a>
+          <a className="nav_UA-logo" href="#/"></a>
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
@@ -39,6 +39,7 @@ function navbar() {
               </a>
             </li>
           </ul>
+          
           <a href="#/" className="nav_menu">
             <svg
               className="three-line"
@@ -68,6 +69,45 @@ function navbar() {
               </defs>
             </svg>
           </a>
+          <div className="phone-menu">
+            <ul>
+              <li>
+                <a href="#/" data-text="&nbsp;Schedule">
+                  &nbsp;Schedule
+                </a>
+              </li>
+              <li>
+                <a href="#/" data-text="&nbsp;Booking">
+                  &nbsp;Booking
+                </a>
+              </li>
+              <li>
+                <a href="#/" data-text="&nbsp;Customize">
+                  &nbsp;Customize
+                </a>
+              </li>
+              <li>
+                <a href="#/" data-text="&nbsp;Member">
+                  &nbsp;Member
+                </a>
+              </li>
+              <li>
+                <a href="#/" data-text="&nbsp;Forum">
+                  &nbsp;Forum
+                </a>
+              </li>
+              <li>
+                <a href="#/" data-text="&nbsp;Product">
+                  &nbsp;Product
+                </a>
+              </li>
+              <li>
+                <a href="#/" data-text="&nbsp;Cart">
+                  &nbsp;Cart
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </>
