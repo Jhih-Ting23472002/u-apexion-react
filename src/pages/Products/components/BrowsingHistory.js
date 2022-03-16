@@ -1,7 +1,6 @@
 import React from 'react';
 import '../productsDetail.scss';
-
-function DetailRecommend() {
+function BrowsingHistory() {
   return (
     <>
       <div className="col-md-4">
@@ -20,4 +19,4 @@ function DetailRecommend() {
     </>
   );
 }
-export default DetailRecommend;
+export default BrowsingHistory;
