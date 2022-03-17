@@ -2,3 +2,62 @@
     background-color: #05f2f2;
     color: #000;
 }
+.deal-receipt{
+    font-weight: bold;
+    flex-direction: column;
+    
+}
+
+.deal-receipt-title{
+    background-color: #E2E2E2;
+    height: 40px;
+}
+
+.payed-list-detail-head{
+    border-bottom: 1px solid #023e73;
+}
+
+.quantity-detail-border-right{
+    border-right: 2px solid #A9A8A8;
+    padding: 13px 0;
+}
+
+.product-trip-custom{
+    height: 40px;
+}
+.remind-money{
+    background-color: #E2E2E2;
+    height: 40px;
+}
+.remind-money-again{
+    background-color: #000;
+    color: #fff;
+    font-size: 1.4rem;
+    height: 40px;
+}
+
+@media screen and (min-width: 375px){
+    .deal-receipt{
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 576px){
+    .deal-receipt{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (min-width: 768px){
+    .deal-receipt{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: 992px){
+    .deal-receipt{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (min-width: 1200px){
+    .deal-receipt{
+        font-size: 1.9rem;
+    }
+}
