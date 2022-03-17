@@ -30,11 +30,20 @@
     height: 40px;
 }
 .remind-money-again{
-    background-color: #000;
+    background-color: #023E73;
     color: #fff;
     font-size: 1.4rem;
     height: 40px;
 }
+.to-other-page{
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    /* border: 1px solid hotpink; */
+    font-weight: 600;
+}
+
 
 @media screen and (min-width: 375px){
     .deal-receipt{

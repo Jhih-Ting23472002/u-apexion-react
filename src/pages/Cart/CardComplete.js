@@ -1,5 +1,6 @@
 import React from 'react';
 import './CardComplete.css';
+import { Link } from 'react-router-dom';
 
 const CardComplete = () => {
   return (
@@ -77,6 +78,23 @@ const CardComplete = () => {
                 <div className="col-3 text-center">$500</div>
               </div>
             </div>
+          </div>
+          <div className="d-flex justify-content-between">
+            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+              回首頁
+            </Link>
+            <div className="col-1"></div>
+            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+              回購物車
+            </Link>
+            <div className="col-1"></div>
+            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+              登出
+            </Link>
+            <div className="col-1"></div>
+            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+              會員專區
+            </Link>
           </div>
         </div>
       </div>
