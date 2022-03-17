@@ -2,8 +2,10 @@ import React from 'react';
 import './Products.scss';
 import NewProducts from './components/NewProducts';
 import Recommend from './components/Recommend';
+import {useState} from 'react';
 
 function Products() {
+  const [activeNav,setActiveNav]=useState('#')
   return (
     <article className="pr">
       <div className="pr-home-mv-img">
