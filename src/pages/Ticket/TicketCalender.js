@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function TicketCalender() {
   const [monthSelected, setMonthSelected] = useState(0);
@@ -6,10 +6,34 @@ function TicketCalender() {
   console.log('monthShow', monthShow);
   console.log('monthSelected', monthSelected);
 
+  // useEffect(() => {
+  //   (async function () {
+  //     const response = await fetch(
+  //       'http://localhost:3001/ticket-date/api/date-list',
+  //       {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-type': 'application/json',
+  //         },
+  //         body: JSON.stringify(monthSelected),
+  //       }
+  //     );
+  //     const dateListDatas = await response.json();
+  //     console.log(dateListDatas);
+  //   })();
+  // }, []);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/ticket-date/api/date-list'
+      );
+      const dateListDatas = await response.json();
+      console.log(dateListDatas);
+    })();
+  }, []);
+
   window.onload = function () {
-    //   initial();
-    //   document.querySelector('.selyear').onchange = show;
-    //       document.querySelector('.selmonth').onchange = show;
     show();
   };
   // 顯示日曆
@@ -61,7 +85,8 @@ function TicketCalender() {
           cell.innerHTML = '';
         } else {
           cell.innerHTML = k - week;
-          // console.log(k);
+          cell.classList.add('trip-date');
+          cell.dataset.date = '1';
         }
       }
     }
