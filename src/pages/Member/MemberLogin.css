@@ -95,6 +95,12 @@
   margin-bottom: 1.5rem;
 }
 
+.login-google-btn i{
+  margin-right: 10px;
+  color: #fff;
+}
+
+
 .login-notyet {
   margin-bottom: 0.8rem;
 }
