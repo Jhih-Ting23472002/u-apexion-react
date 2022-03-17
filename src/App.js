@@ -18,7 +18,6 @@ import MemberOrderHistory from './pages/Member/MemberOrderHistory';
 import MemberOrderDetails from './pages/Member/MemberOrderDetails';
 import MemberCollect from './pages/Member/MemberCollect';
 
-
 // Products
 import Products from './pages/Products/Products';
 import ProductsList from './pages/Products/ProductsList';
