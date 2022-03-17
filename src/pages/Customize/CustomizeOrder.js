@@ -18,10 +18,66 @@ function CustomizeOrder(props) {
         <Modal.Body>
           <div className="customorder-body">
             <h2>太空服：</h2>
-            
+            <div className="custombody-list">
+              <table>
+                <tr>
+                  <th>顏色：</th>
+                  <td>Blue</td>
+                </tr>
+                <tr>
+                  <th>國家：</th>
+                  <td>Canada</td>
+                </tr>
+                <tr>
+                  <th>徽章：</th>
+                  <td>NASA 50years</td>
+                </tr>
+              </table>
+              <h3>25,000$</h3>
+              <div className="custombody-btn">
+                <button className="customorder-circle-btn">更改</button>
+              </div>
+            </div>
+          </div>
+          <div className="customorder-body">
+            <h2>太空船：</h2>
+            <div className="custombody-list">
+              <table>
+                <tr>
+                  <th>字樣：</th>
+                  <td>AKB-50</td>
+                </tr>
+                <tr>
+                  <th>國家：</th>
+                  <td>Canada</td>
+                </tr>
+              </table>
+              <h3>20,000$</h3>
+              <div className="custombody-btn">
+                <button className="customorder-circle-btn">更改</button>
+              </div>
+            </div>
+          </div>
+          <div className="customorder-body">
+            <h2>太空椅：</h2>
+            <div className="custombody-list">
+              <table>
+                <tr>
+                  <th>顏色：</th>
+                  <td>Blue</td>
+                </tr>
+              </table>
+              <h3>15,000$</h3>
+              <div className="custombody-btn">
+                <button className="customorder-circle-btn">更改</button>
+              </div>
+            </div>
+          </div>
+          <div className="custombody-totalprice">
+            <h3>總價：</h3><h2>60,000$</h2>
           </div>
         </Modal.Body>
-        <Modal.Footer className="customorder-footer">
+        <div className="customorder-footer">
           <button className="customorder-circle-btn" onClick={props.onHide}>
             確定送出
           </button>
@@ -31,7 +87,7 @@ function CustomizeOrder(props) {
           >
             取消
           </button>
-        </Modal.Footer>
+        </div>
       </Modal>
     </>
   );
