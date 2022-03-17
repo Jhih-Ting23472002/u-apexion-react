@@ -1,26 +1,71 @@
 import React, { useState } from 'react';
 import './CustomizeSeat.css';
 import CustomizeOrder from './CustomizeOrder';
+import whiteSeat from './images/spaceseat-white.png';
+import orangeSeat from './images/spaceseat-orange.png';
+import blueSeat from './images/spaceseat-blue.png';
 
 function CustomizeSeat() {
   const [modalShow, setModalShow] = useState(false);
+  const [color, setColor] = useState({});
+  const [seatImg, setSeatImg] = useState('');
+  const [opa, setOpa] = useState('');
+
   return (
     <>
       <section className="Customseat-page-view">
-        <div className="seat-backcolor">
+        <div className="seat-backcolor" style={color}>
           <img src={require('./images/seat-backimg.png')} alt="" />
         </div>
         <div className="seat-box-img">
-          <img src={require('./images/spaceseat-white.png')} alt="" />
+        {/* 想讓他變換時  先讓他歸0 再變成1 */}
+          <img src={seatImg} alt="" style={{ opacity: { opa } }} />
         </div>
         <div className="seat-card">
           <h1>請選擇太空椅外觀</h1>
           <h3>Customize Your Seat</h3>
           <h2>15,000$</h2>
           <div className="seat-select-color">
-            <div className="white suit-flag"></div>
-            <div className="orange suit-flag"></div>
-            <div className="blue suit-flag"></div>
+            <div
+              className="white suit-flag"
+              onClick={() => {
+                const newColor = { ...color, background: 'white' };
+                setColor(newColor);
+                // console.log('color', color);
+                const newImg = whiteSeat;
+                setSeatImg(newImg);
+                // console.log('color', seatImg);
+                const newOpa = '1';
+                setOpa(newOpa);
+                console.log('opa', opa);
+              }}
+            ></div>
+            <div
+              className="orange suit-flag"
+              onClick={() => {
+                const newColor = { ...color, background: '#EE6A26' };
+                setColor(newColor);
+                // console.log('color', color);
+                const newImg = orangeSeat;
+                setSeatImg(newImg);
+                // console.log('color', seatImg);
+                const newOpa = '1';
+                setOpa(newOpa);
+              }}
+            ></div>
+            <div
+              className="blue suit-flag"
+              onClick={() => {
+                const newColor = { ...color, background: '#0072D6' };
+                setColor(newColor);
+                // console.log('color', color);
+                const newImg = blueSeat;
+                setSeatImg(newImg);
+                // console.log('color', seatImg);
+                const newOpa = '1';
+                setOpa(newOpa);
+              }}
+            ></div>
           </div>
           <div className="seat-lorem">
             <p>
