@@ -48,16 +48,14 @@ function Post({ post }) {
                 {/* <img className="cover" src="" alt="" /> */}
               </div>
               <div className="user-title">
-                <div className="user-name forum_user-name">
-                  user_sid{post.user_sid}
-                </div>
+                <div className="user-name forum_user-name">{post.name}</div>
                 <PostDate>
                   {new Date(post.art_create_time).toLocaleString()}
                 </PostDate>
               </div>
             </div>
             <div className="article-title">
-              <PostTitle to={`/forum-home/posts/${post.sid}`}>
+              <PostTitle to={`/forum-home/posts/${post.forum_sid}`}>
                 {post.art_title}
               </PostTitle>
             </div>
@@ -77,15 +75,21 @@ function Post({ post }) {
         <div className="article-like-box">
           <div className="article-like-box-group">
             <i className="fas fa-heart"></i>
-            <div className="article-like-box-number">11</div>
+            <div className="article-like-box-number">
+              {post && post.article_likes}
+            </div>
           </div>
           <div className="article-like-box-group">
             <i className="fas fa-comment"></i>
-            <div className="article-like-box-number">11</div>
+            <div className="article-like-box-number">
+              {post && post.article_likes}
+            </div>
           </div>
           <div className="article-like-box-group">
             <i className="fas fa-bookmark"></i>
-            <div className="article-like-box-number">11</div>
+            <div className="article-like-box-number">
+              {post && post.article_save}
+            </div>
           </div>
         </div>
       </div>

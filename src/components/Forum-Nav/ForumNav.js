@@ -27,7 +27,7 @@ export default function ForumNav() {
       className="nav forum_nav-bg d-flex flex-column flex-shrink-0 p-3 forum_nav"
       id="navbar"
     >
-      <ul className="nav nav-pills flex-column mb-auto">
+      <ul className="nav nav-pills flex-column mb-auto forum_nav_ul">
         <li>
           <div className="forum-input-wrapper">
             <input

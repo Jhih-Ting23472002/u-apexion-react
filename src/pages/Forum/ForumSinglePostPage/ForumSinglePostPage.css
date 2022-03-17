@@ -1,3 +1,7 @@
+.SinglePostTopRightFlexBtn{
+  border:0;
+  background:transparent;
+}
 .forum_responses {
   width: 95%;
   background: #000;

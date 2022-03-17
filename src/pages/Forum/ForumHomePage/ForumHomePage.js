@@ -54,18 +54,28 @@ function Post({ post }) {
         <div className="card-body forum_card_body">
           <div className="card-user">
             <div className="forum_user-top">
-              <div className="forum_user-logo">
-                {/* <img className="cover" src="" alt="" /> */}
+              <div className="forum_user_top_left">
+                <div className="forum_user-logo">
+                  {/* <img className="cover" src="" alt="" /> */}
+                </div>
+                <div className="user-title">
+                  <div className="user-name forum_user-name">{post.name}</div>
+                  <PostDate>
+                    {new Date(post.art_create_time).toLocaleString()}
+                  </PostDate>
+                </div>
               </div>
-              <div className="user-title">
-                <div className="user-name forum_user-name">{post.name}</div>
-                <PostDate>
-                  {new Date(post.art_create_time).toLocaleString()}
-                </PostDate>
+              <div className="forum_user_top_right">
+                <button className="forum_user_top_right_btn">
+                  <i class=" fa-solid fa-pen-to-square"></i>
+                </button>
+                <button className="forum_user_top_right_btn">
+                  <i class="fa-regular fa-trash-can"></i>
+                </button>
               </div>
             </div>
             <div className="article-title">
-              <PostTitle to={`/forum-home/posts/${post.sid}`}>
+              <PostTitle to={`/forum-home/posts/${post.forum_sid}`}>
                 {post.art_title}
               </PostTitle>
             </div>

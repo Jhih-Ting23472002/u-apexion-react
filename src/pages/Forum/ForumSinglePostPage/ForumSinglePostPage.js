@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useHistory } from 'react-router-dom';
 import { getPost, getResponse } from '../../../data/WebApi';
 import './ForumSinglePostPage.css';
 import ForumNav from '../../../components/Forum-Nav';
+import * as ReactBootstrap from 'react-bootstrap';
 // import PropTypes from 'prop-types'
 
 // import ForumNav from '../../components/Forum-Nav'
@@ -31,11 +32,18 @@ const SinglePostContainer = styled.div`
   margin-right: auto;
 `;
 const SinglePostTopLeft = styled.div`
-  ${'' /* border: 1px solid red; */}
-  ${'' /* display: flex; */}
-  ${'' /* justify-content: space-between; */}
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 15px;
   display: flex;
+`;
+const SinglePostTopLeftFlex = styled.div`
+  display: flex;
+`;
+const SinglePostTopRightFlex = styled.div`
+  ${'' /* border: 1px solid pink; */}
+  display: flex;
+  padding: 5px;
 `;
 const SinglePostTopImg = styled.div`
   border: 1px solid black;
@@ -88,6 +96,7 @@ const SinglePostContent = styled.div`
   line-height: 30px;
   letter-spacing:2px;
 `;
+
 const SinglePostResponses = styled.div``;
 
 export default function ForumSinglePostPage() {
@@ -95,8 +104,9 @@ export default function ForumSinglePostPage() {
   const [response, setResponse] = useState(null);
   const [value, setValue] = useState();
   const [messages, setMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const { sid } = useParams();
-  console.log(useParams(sid));
+  const history = useHistory();
 
   function SinglePostResponsesArea({ name, res_content, res_time }) {
     return (
@@ -138,6 +148,13 @@ export default function ForumSinglePostPage() {
     setValue(e.target.value);
   };
 
+  const handleDeletePost = e => {
+    fetch(`http://localhost:3000/forum_index/list-delete/${sid}`).then(res =>
+      res.json()
+    );
+    setLoading(true);
+  };
+
   const handleFormSubmit = e => {
     // e.preventDefault()
     fetch(`http://localhost:3000/forum_index/res-list/${sid}`, {
@@ -166,14 +183,26 @@ export default function ForumSinglePostPage() {
         <ForumNav />
         <SinglePost>
           <SinglePostContainer>
+            {loading ? (
+              history.push('/forum-home')
+            ) : (
+              <ReactBootstrap.Spinner animation="grow" />
+            )}
             <SinglePostTopLeft>
-              <SinglePostTopImg></SinglePostTopImg>
-              <SinglePostTopUser>
-                <SinglePostName>{post && post.name}</SinglePostName>
-                <SinglePostTime>
-                  {post && new Date(post.art_create_time).toLocaleString()}
-                </SinglePostTime>
-              </SinglePostTopUser>
+              <SinglePostTopLeftFlex>
+                <SinglePostTopImg></SinglePostTopImg>
+                <SinglePostTopUser>
+                  <SinglePostName>{post && post.name}</SinglePostName>
+                  <SinglePostTime>
+                    {post && new Date(post.art_create_time).toLocaleString()}
+                  </SinglePostTime>
+                </SinglePostTopUser>
+              </SinglePostTopLeftFlex>
+              <SinglePostTopRightFlex onClick={handleDeletePost}>
+                <button className="SinglePostTopRightFlexBtn">
+                  <i class="fa-regular fa-trash-can"></i>
+                </button>
+              </SinglePostTopRightFlex>
             </SinglePostTopLeft>
             <SingleTopRight></SingleTopRight>
             <SinglePostCat>

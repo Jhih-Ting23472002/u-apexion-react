@@ -57,7 +57,7 @@ function Post({ post }) {
               </div>
             </div>
             <div className="article-title">
-              <PostTitle to={`/forum-home/posts/${post.sid}`}>
+              <PostTitle to={`/forum-home/posts/${post.forum_sid}`}>
                 {post.art_title}
               </PostTitle>
             </div>

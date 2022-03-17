@@ -65,7 +65,7 @@ export default function ForumPublishPage() {
           .then(res => res.json())
           .then(posts => setPosts(posts));
       });
-    history.push('/');
+    history.push('/forum-home');
   };
 
   return (
