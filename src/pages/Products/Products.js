@@ -2,10 +2,23 @@ import React from 'react';
 import './Products.scss';
 import NewProducts from './components/NewProducts';
 import Recommend from './components/Recommend';
-import {useState} from 'react';
+import ProductsConfig from './ProductsConfig';
+import { useState, useEffect } from 'react';
 
 function Products() {
-  const [activeNav,setActiveNav]=useState('#')
+  const [ProductsNew, setProductsNew] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        ProductsConfig.NEW_Products
+      );
+      const ProductsNew = await response.json();
+      setProductsNew(ProductsNew);
+      console.log(ProductsNew);
+    })();
+  }, []);
+
   return (
     <article className="pr">
       <div className="pr-home-mv-img">
@@ -132,7 +145,27 @@ function Products() {
         <div className="pr-home-new-list">
           <h3>NEW</h3>
           <div className="pr-card-new">
-            <NewProducts />
+            {ProductsNew.map((newProduct, i) => {
+              const {
+                sid,
+                product_name,
+                material,
+                product_img,
+                image_photo,
+                price,
+              } = newProduct;
+              return (
+                <NewProducts
+                  key={sid}
+                  sid={sid}
+                  product_name={product_name}
+                  material={material}
+                  product_img={product_img}
+                  image_photo={image_photo}
+                  price={price}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

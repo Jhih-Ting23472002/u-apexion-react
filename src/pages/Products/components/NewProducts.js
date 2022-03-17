@@ -1,35 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Products.scss';
+import ProductsConfig from '../ProductsConfig';
 
-function NewProducts() {
+function NewProducts(post) {
+  
   return (
     <>
       <div className="pr-card-list">
         <a href="#/" className="pr-card-list-img">
-          <img src="./product_img/M021J_BK019.jpg" alt="" />
+          <img src={ProductsConfig.IMG_PATH+'/'+ (post.product_img)} alt="" />
         </a>
         <div className="pr-card-list-txt">
           <div>
-            <h3>太空飛行員外套</h3>
-            <p>黑色科技棉防撕裂物料</p>
+            <h3>{post.product_name}</h3>
+            <p>{post.material}</p>
           </div>
           <div className="pr-fas fa-star-div">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
             <i className="fas fa-star"></i>
           </div>
           <div className="price">
             <div className="pr-currencySymbol">
-              $ <p>2,599</p>
+              $ <p>{post.price}</p>
             </div>
-            <input
-              type="button"
-              value="+"
-              name=""
-              className="pr-card-list-button"
-            />
+            <i class="fa-solid fa-circle-plus fa-2xl"></i>
           </div>
         </div>
       </div>
