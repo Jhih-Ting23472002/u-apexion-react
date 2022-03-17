@@ -3,7 +3,7 @@
     width: 120px;
     height: 40px;
     margin: 0 auto;
-    margin-top:15%;
+    margin-top:5%;
     margin-right:10px;
     color: #000000;
     background-color: rgb(255, 255, 255);
@@ -89,7 +89,7 @@
 
   .search {
     text-align: center;
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 1%;
   }
@@ -125,12 +125,11 @@
     float: left;
     font-family: 'Cabin', helvetica, arial, sans-serif;
     font-size: 13px;
-    font-weight: 400;
     height: 40px;
     margin: 0;
     padding: 0 10px;
     text-shadow: 0 -1px 0 #000;
-    width: 200px;
+    width: 500px;
   }
 
   .webdesigntuts-workshop input::-webkit-input-placeholder {
@@ -206,6 +205,12 @@
     100% {
       border-color: #6f6;
       box-shadow: 0 0 20px rgba(0, 255, 0, .6), inset 0 0 10px rgba(0, 255, 0, .4), 0 2px 0 #000;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .webdesigntuts-workshop input {
+      width: 69%;
     }
   }
 
@@ -287,8 +292,8 @@
     background-color: #05F2F2;
     color: black;
     border: 4px double black;
-    box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4, 0 0 20px #03e9f4,
-      0 0 25px #03e9f4;
+    box-shadow: 0 0 4px #03e9f4, 0 0 6px #03e9f4, 0 0 8px #03e9f4,
+      0 0 10px #03e9f4;
   }
 
   .tour {
@@ -304,6 +309,7 @@
     margin: 50px auto;
   }
 
+  
 
   /* shop */
 
@@ -323,7 +329,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 5%;
   }
 
@@ -369,6 +375,7 @@
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 50px;
     width: 100%;
     height: relative;
     background-color: white;
@@ -377,12 +384,18 @@
   .smallItem {
     background-color: white;
     height: relative;
-    width: 400px;
+    width: 26%;
   }
 
   .smallItem>img {
     height: 345px;
     width:100%;
+  }
+
+  @media (max-width: 640px) {
+    .smallItem {
+      width: 100%;
+    }
   }
 
   /* locations */
@@ -450,7 +463,7 @@
 
   /* sizing */
 
-  @media screen and (max-width: 1007px) {
+  @media screen and (max-width: 912px) {
     .projects {
       width: 87%;
     }
@@ -470,30 +483,6 @@
 
     .generalHr {
       width: 50%;
-    }
-  }
-
-  @media screen and (max-width: 900px) {
-    .logo {
-      margin: 0 auto;
-    }
-
-    .main-img {
-      height: 100vh;
-    }
-
-    .navbar>li>a {
-      display: none;
-    }
-
-    footer>h2,
-    footer>h3 {
-      font-size: 15px;
-      margin-bottom: -3%;
-    }
-
-    footer {
-      line-height: 0.5;
     }
   }
 

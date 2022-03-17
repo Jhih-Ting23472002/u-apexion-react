@@ -16,24 +16,26 @@
   position: relative;
 }
 
-.forgotpwd-form {
+.forgotpwd-form-container{
+  width: 33%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
+
+
 
 .forgotpwd-form-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   color: #fff;
+  line-height: 1.5;
 }
 
 .forgotpwd-form-title h1 {
   font-size: 35px;
   font-weight: 500;
-  margin-bottom: 1rem;
 }
 
 .forgotpwd-form-title p {
@@ -42,38 +44,50 @@
   margin-bottom: 1rem;
 }
 
-.input-container {
+.forgotpwd-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+
+}
+
+.member-input-container {
   width: 100%;
   display: flex;
   flex-direction: row;
+  /* justify-content: center; */
   align-items: center;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
-.forgotpwd-label {
-  width: 100px;
+.member-label {
+  width: 70px;
   /* border: 1px solid red; */
   text-align: right;
   margin-right: 20px;
 }
 
-.forgotpwd-input {
-  width: 100%;
+.member-input {
+  width: 70%;
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid #fff;
   color: #fff;
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1rem;
   line-height: 1.2rem;
 }
 
-.forgotpwd-btn-container {
+
+
+.member-btn-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  
 }
 
-.forgotpwd-btn,.forgotpwd-btn-return{
+.member-btn-confirm,.member-btn-return{
   width: 100%;
   padding: 0.3rem 1rem;
   line-height: 1.2rem;
@@ -89,15 +103,15 @@
   transition: all 0.5s; 
 }
 
-.forgotpwd-btn-return{
+.member-btn-return{
   background: #fff;
   border: 1px solid #fff;
 }
 
-.forgotpwd-btn:hover {
+.member-btn-confirm:hover {
   background-color: #4ff3f3;
 }
 
-.forgotpwd-wrap-return{
+.member-btn-return-wrap{
   margin-right: 20px;
 }

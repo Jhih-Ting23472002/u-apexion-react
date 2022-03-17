@@ -7,7 +7,7 @@ function TravelChoose() {
       <section className="py-5">
         <div className="container choosecontainer">
           <div className="position-relative">
-            <div className="text-white px-3 pt-3 my-4 sticky-top">
+            <div className="text-white px-3 pt-3 my-4">
               <div className="row align-items-center filters">
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
                   <select className="form-control w-100 choosesearch">
@@ -17,23 +17,24 @@ function TravelChoose() {
                     <option value="moviescene">電影場景</option>
                   </select>
                 </div>
-                <div className="col-12 col-sm-6 col-md-3 mb-3">
-                  <button
-                    className="sort itemBuyButton w-100"
-                    data-sort="price"
-                  >
-                    價格排序
-                  </button>
+                <div className="col-12 col-sm-12 col-md-3 mb-3">
+                  <select className="form-control w-100 choosesearch">
+                    <option>價格排序</option>
+                    <option>價格由少至多</option>
+                    <option>價格由多至少</option>
+                  </select>
                 </div>
-                <div className="col-12 col-sm-6 col-md-3 mb-3">
-                  <button className="sort itemBuyButton w-100" data-sort="day">
-                    天數排序
-                  </button>
+                <div className="col-12 col-sm-12 col-md-3 mb-3">
+                  <select className="form-control w-100 choosesearch">
+                    <option>天數排序</option>
+                    <option>天數由少至多</option>
+                    <option>天數由多至少</option>
+                  </select>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mb-3">
                   <input
                     className="choosesearch form-control"
-                    placeholder="產品名稱/關鍵字/產品代碼"
+                    placeholder="產品名/關鍵字/產品代碼"
                   />
                 </div>
               </div>
@@ -60,9 +61,7 @@ function TravelChoose() {
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:10day</p>
                         <p className="price">$499,999</p>
-                        <a href="#/" target="_self">
-                          <button className="itemBuyButton">Details</button>
-                        </a>
+                        <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
                   </div>
@@ -99,9 +98,7 @@ function TravelChoose() {
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:5day</p>
                         <p className="price">$699,999</p>
-                        <a href="#/" target="_self">
-                          <button className="itemBuyButton">Details</button>
-                        </a>
+                        <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
                   </div>
@@ -138,9 +135,7 @@ function TravelChoose() {
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:5day</p>
                         <p className="price">$199,999</p>
-                        <a href="#/" target="_self">
-                          <button className="itemBuyButton">Details</button>
-                        </a>
+                        <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
                   </div>
@@ -177,9 +172,7 @@ function TravelChoose() {
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:5day</p>
                         <p className="price">$599,999</p>
-                        <a href="#/" target="_self">
-                          <button className="itemBuyButton">Details</button>
-                        </a>
+                        <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
                   </div>
@@ -216,9 +209,7 @@ function TravelChoose() {
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:12day</p>
                         <p className="price">$399,999</p>
-                        <a href="#/" target="_self">
-                          <button className="itemBuyButton">Details</button>
-                        </a>
+                        <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
                   </div>
@@ -254,9 +245,7 @@ function TravelChoose() {
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:6day</p>
                         <p className="price">$299,999</p>
-                        <a href="./page3.2.html" target="_self">
-                          <button className="itemBuyButton">Details</button>
-                        </a>
+                        <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
                   </div>
@@ -292,9 +281,7 @@ function TravelChoose() {
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:15day</p>
                         <p className="price">$199,999</p>
-                        <a href="./page3.html" target="_self">
-                          <button className="itemBuyButton">Details</button>
-                        </a>
+                        <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
                   </div>
@@ -313,9 +300,7 @@ function TravelChoose() {
         </div>
       </section>
       <div className="morechoose">
-        <a href="#/" target="_self">
-          <button className="itemBuyButton">更多行程</button>
-        </a>
+        <button className="tourButton">更多行程</button>
       </div>
       <hr className="generalHr" />
     </>

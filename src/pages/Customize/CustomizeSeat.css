@@ -72,11 +72,12 @@
       font-size: 14px;
       line-height: 150%;
   }
+  
   .seat-circle-btn {
     position: relative;
     display: flex;
-    background-color: #05f2f2;
-    color: #121212;
+    background-color: #000000;
+    color: #05f2f2;
     padding: 7px 14px;
     font-size: 14px;
     border-radius: 20px;
@@ -84,7 +85,7 @@
     box-shadow: -30px 10px 20px #00000050;
     z-index: 2;
     margin-top:30%;
-   
+    transition: .3s ease-in-out;
   }
   .seat-circle-btn:after {
     content: '';
@@ -100,5 +101,12 @@
   }
   .seat-circle-btn:hover:after{
     box-shadow:0 0 25px  #05f2f2;
+  }
+  .seat-circle-btn:hover{
+    background-color: #05f2f2;
+    color: #000000;
+  }
+  .seat-circle-btn:focus{
+    outline:none;
   }
   

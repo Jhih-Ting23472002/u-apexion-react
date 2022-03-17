@@ -9,14 +9,14 @@ const MemberLogin = () => {
           <div className="login-header">
             <h1>Hello,friend!</h1>
 
-            <div className="login-form">
+            <form className="login-form">
               <div>
                 <input type="text" className="text-input" placeholder="Email" />
               </div>
               <div>
                 <input
                   type="password"
-                  className="text-input input-pwd"
+                  className="text-input"
                   placeholder="Password"
                 />
               </div>
@@ -25,7 +25,7 @@ const MemberLogin = () => {
                   <small>忘記密碼</small>
                 </a>
               </div>
-            </div>
+            </form>
 
             <div className="login-btn-container">
               <input type="submit" className="login-primary-btn" value="登入" />

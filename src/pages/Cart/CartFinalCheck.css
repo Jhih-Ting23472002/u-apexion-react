@@ -20,7 +20,7 @@
 }
 .cart-list-detail-inside{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .cart-product-list-group{
@@ -33,6 +33,25 @@
     height: 1px;
     margin-top: 10px;
 }
+/* .limit-width{
+    width: 50%; 這個改不動的原因是下了 col-8 寬度已被bootstrap限制了，改成 col-6 col-3 都會動
+    
+} */
+.need-width{
+    width: 100%;
+}
+.final-total-price{
+    padding-right: 5%;
+    padding-top: 3%;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.recipient-final-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
 @media screen and (min-width: 576px){
     .list-detail-text{
         width: 16%;
@@ -40,6 +59,9 @@
     .cart-check-list{
         font-size: 1.2rem;
         text-align: center;
+    }
+    .cart-product-list-group{
+        font-size: 1.2rem;
     }
 }
 @media screen and (min-width: 768px){
@@ -49,6 +71,9 @@
     .cart-check-list{
         font-size: 1.5rem;
     }
+    .cart-product-list-group{
+        font-size: 1.4rem;
+    }
 }
 @media screen and (min-width: 992px){
     .list-detail-text{
@@ -57,12 +82,15 @@
     .cart-check-list{
         font-size: 1.7rem;
     }
+    .cart-product-list-group{
+        font-size: 1.6rem;
+    }
+    .recipient-final-info{
+        font-size: 1.4rem;
+    }
 }
 @media screen and (min-width: 1200px){
     .list-detail-text{
         width: 12%;
-    }
-    .cart-check-list{
-        font-size: 2rem;
     }
 }

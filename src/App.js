@@ -10,6 +10,7 @@ import { useState } from 'react';
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+import MemberPerson from './pages/Member/MemberPerson';
 
 // Products
 import Products from './pages/Products/Products';
@@ -26,6 +27,8 @@ import CustomizeSuit from './pages/Customize/CustomizeSuit';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import CartInformation from './pages/Cart/CartInformation';
 import CartFinalCheck from './pages/Cart/CartFinalCheck';
+import CartCreditCard from './pages/Cart/CartCreditCard';
+import CardComplete from './pages/Cart/CardComplete';
 
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
@@ -86,13 +89,15 @@ function App() {
           <Route path="/member-login">
             <MemberLogin />
           </Route>
-          {/* <Route path="/member-sign-up">
+          <Route path="/member-sign-up">
             <MemberSignUp />
-          </Route> */}
+          </Route>
           <Route path="/member-forgot-pwd">
             <MemberForgotPwd />
           </Route>
-          <Route path="/member-person"></Route>
+          <Route path="/member-person">
+            <MemberPerson />
+          </Route>
           <Route path="/member-password-edit"></Route>
           <Route path="/member-address"></Route>
           <Route path="/member-address-new"></Route>
@@ -157,8 +162,12 @@ function App() {
           <Route path="/cart-final-check">
             <CartFinalCheck />
           </Route>
-          <Route path="/cart-credit-card"></Route>
-          <Route path="/cart-complete"></Route>
+          <Route path="/cart-credit-card">
+            <CartCreditCard />
+          </Route>
+          <Route path="/cart-complete">
+            <CardComplete />
+          </Route>
         </Switch>
         <Footer />
       </>

@@ -1,0 +1,79 @@
+.cart-card-shape{
+    border: 3px solid #A3A3A3;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    
+}
+.cart-card-top{
+    display: flex;
+    padding: 2% 2% 2% 2%;
+    border-bottom: 2px solid #A3A3A3;
+    align-items: center;
+}
+.cart-credit-card-icon{
+    font-size: 2rem;
+}
+.cart-card-top-inside{
+    font-size: 1.3rem;
+}
+.card-number-area{
+    display: flex;
+    align-items: center;
+}
+
+.card-dash-line{
+    /* background-color: #A3A3A3; */
+    width: 2%;
+    /* margin: 0% 2%; */
+    font-size: 1.5rem;
+    text-align: center;
+}
+.card-input-border{
+    border: 1px solid #A3A3A3;
+    border-radius: 10px;
+    height: 35px;
+    width: 20%;
+}
+.card-expiration-area{
+    display: flex;
+    align-items: center;
+}
+.month-year{
+    margin: 0% 2%;
+}
+.card-confirm{
+    width: 25%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    /* border: 1px solid hotpink; */
+    font-weight: 600;
+}
+@media screen and (min-width: 375px){
+    .card-input-border{
+        height: 20px;
+    }
+}
+@media screen and (min-width: 576px){
+    .card-trade{
+        font-size: 0.8rem;
+    }
+    .card-input-border{
+        height: 25px;
+    }
+}
+@media screen and (min-width: 768px){
+    .card-trade{
+        font-size: 1.3rem;
+    }
+    .card-input-border{
+        height: 35px;
+    }
+}
+@media screen and (min-width: 992px){
+    .card-trade{
+        font-size: 1.5rem;
+    }
+}

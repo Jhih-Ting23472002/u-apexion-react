@@ -1,7 +1,7 @@
 import './ticket.css';
 import stepCircle from './img/stepCircle.png';
 import stepCircleMb from './img/stepCircle-mb.png';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function TicketTrip() {
   const [tripData, setTripData] = useState([]);
@@ -35,19 +35,25 @@ function TicketTrip() {
   };
 
   let moveDistance = 0;
-  moveDistance = distance * -16;
-  //距離怎麼設定?
+  moveDistance = distance * -16.8;
 
   const toRight = function () {
     setDistance(distance + 1);
+    if (distance >= tripData.length - 3) {
+      setDistance(tripData.length - 3);
+    }
   };
 
   const toLeft = function () {
     setDistance(distance - 1);
+    if (distance <= 0) {
+      setDistance(0);
+    }
   };
 
   console.log(moveDistance);
   console.log(distance);
+  console.log(tripData.length - 3);
 
   useEffect(() => {}, [tripData, distance]);
 
@@ -70,7 +76,11 @@ function TicketTrip() {
               onClick={() => {
                 toLeft();
               }}
-              className="ticket-trip-prev-btn"
+              className={
+                distance === 0
+                  ? 'ticket-trip-prev-btn disabled'
+                  : 'ticket-trip-prev-btn'
+              }
             >
               <i className="fas fa-angle-left"></i>
             </div>
@@ -78,7 +88,11 @@ function TicketTrip() {
               onClick={() => {
                 toRight();
               }}
-              className="ticket-trip-next-btn"
+              className={
+                distance === tripData.length - 3
+                  ? 'ticket-trip-next-btn disabled'
+                  : 'ticket-trip-next-btn'
+              }
             >
               <i className="fa-solid fa-angle-right"></i>
             </div>
@@ -109,7 +123,7 @@ function TicketTrip() {
               >
                 {tripData.map((v, i) => {
                   return (
-                    <>
+                    <React.Fragment key={i}>
                       <div className="ticket-trip-card">
                         <div className="ticket-trip-days">{v.travel_day}日</div>
                         <div className="ticket-trip-card-head">
@@ -131,67 +145,9 @@ function TicketTrip() {
                           </button>
                         </div>
                       </div>
-                    </>
+                    </React.Fragment>
                   );
                 })}
-
-                {/* <div className="ticket-trip-card">
-                  <div className="ticket-trip-days">5日</div>
-                  <div className="ticket-trip-card-head">
-                    <img src={trip01} alt="" />
-                  </div>
-                  <div className="ticket-trip-card-body">
-                    <div className="ticket-title">
-                      <h3>泰坦星</h3>
-                      <h3>$1,000</h3>
-                    </div>
-                    <p>
-                      我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們...
-                    </p>
-                  </div>
-                  <div className="ticket-trip-card-footer">
-                    <button className="tickit-choose-btn">選擇行程</button>
-                    <button className="trip-detail-btn">查看詳細行程</button>
-                  </div>
-                </div>
-                <div className="ticket-trip-card">
-                  <div className="ticket-trip-days">5日</div>
-                  <div className="ticket-trip-card-head">
-                    <img src={trip02} alt="" />
-                  </div>
-                  <div className="ticket-trip-card-body">
-                    <div className="ticket-title">
-                      <h3>潘朵拉星球</h3>
-                      <h3>$1,000</h3>
-                    </div>
-                    <p>
-                      我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們...
-                    </p>
-                  </div>
-                  <div className="ticket-trip-card-footer">
-                    <button className="tickit-choose-btn">選擇行程</button>
-                    <button className="trip-detail-btn">查看詳細行程</button>
-                  </div>
-                </div>
-                <div className="ticket-trip-card">
-                  <div className="ticket-trip-days">5日</div>
-                  <div className="ticket-trip-card-head">
-                    <img src={trip03} alt="" />
-                  </div>
-                  <div className="ticket-trip-card-body">
-                    <div className="ticket-title">
-                      <h3>絕地救援</h3>
-                      <h3>$1,000</h3>
-                    </div>
-                    <p>
-                      我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。謹慎地來說，我們...
-                    </p>
-                  </div>
-                  <div className="ticket-trip-card-footer">
-                    <button className="tickit-choose-btn">選擇行程</button>
-                    <button className="trip-detail-btn">查看詳細行程</button>
-                  </div>
-                </div> */}
               </div>
             </div>
             <a className="ticket-next" href="/">
