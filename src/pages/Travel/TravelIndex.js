@@ -121,18 +121,23 @@ function TravelIndex() {
         <div className="shop">
           <div className="shopItem smallItem">
             <img src="./travelimg/travelproductimg/s12.png" alt="" />
+            {/* <img src={"./travelimg/travelproductimg/s12.png" + v.travel_image} alt="" /> */}
             <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
+              <h2 className="informationShopItemh2">Titan</h2>
+              {/* <h2 className="informationShopItemh2">{v.travel_name}</h2> */}
               <div className="travelrow">
                 <h2 className="informationShopItemprice">$499,999起</h2>
+                {/* <h2 className="informationShopItemprice">${v.travel_price}起</h2> */}
                 <button className="travelitemBuyButton">Details</button>
               </div>
               <hr className="generalHrpart1" />
               <p className="informationShopItemhp">
                 在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
               </p>
+              {/* <p className="informationShopItemhp">{v.travel_description}</p> */}
             </div>
           </div>
+
           <div className="shopItem smallItem">
             <img src="./travelimg/travelproductimg/s1.png" alt="" />
             <div className="informationShopItem">

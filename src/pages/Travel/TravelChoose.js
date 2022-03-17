@@ -51,16 +51,21 @@ function TravelChoose() {
                           style tomato sauce.
                         </p>
                         <ul className="chooseitinerary">
-                          <li>moviescene</li>
+                          <li>類別:星球</li>
                           <li>產品代碼:003-UPX</li>
-                          <li>綠野仙蹤</li>
                           <li>去程:2022/01/18(六)共10日</li>
                           <li>回程:2022/01/27(三)</li>
+                          {/* <li>類別:{v.travel_tags}</li>
+                          <li>產品代碼:{v.travel_number}</li>
+                          <li>去程:{v.travel_outbound}</li>
+                          <li>回程:{v.travel_inbound}</li> */}
                         </ul>
                       </div>
                       <div className="col-md-4 text-md-center choosedetails">
                         <p className="day">旅遊天數:10day</p>
                         <p className="price">$499,999</p>
+                        {/* <p className="day">{v.travel_day}</p>
+                        <p className="price">${v.travel_price}</p> */}
                         <button className="itemBuyButton">Details</button>
                       </div>
                     </div>
@@ -72,6 +77,12 @@ function TravelChoose() {
                       className="img-fluid rounded"
                       alt=""
                     />
+                    {/* <img
+                      src={"./travelimg/travelproductimg/oz.jpg" + v.travel_image}
+                      loading="lazy"
+                      className="img-fluid rounded"
+                      alt=""
+                    /> */}
                   </div>
                 </div>
               </div>

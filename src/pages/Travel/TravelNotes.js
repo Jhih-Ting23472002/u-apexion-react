@@ -319,6 +319,16 @@ function TravelNotes() {
                         太空站上配備多個場館，以震撼的視聽效果為您呈現最高水準的娛樂節目。
                         您會發現自己深深受到美食與爵士樂完美結合的魅力吸引。或在夜空下欣賞最愛的電影，到我們的拉斯維加斯風賭場，提供適合各種場合的多種娛樂選項，讓您好好寵愛自己。
                       </p>
+                      <p className="timelinep">
+                        太空站上配備多個場館，以震撼的視聽效果為您呈現最高水準的娛樂節目。
+                        您會發現自己深深受到美食與爵士樂完美結合的魅力吸引。或在夜空下欣賞最愛的電影，到我們的拉斯維加斯風賭場，提供適合各種場合的多種娛樂選項，讓您好好寵愛自己。
+                      </p>
+                      {/* <p className="timelinep">
+                        {v.notes1}
+                      </p>
+                      <p className="timelinep">
+                      {v.notes1_1}
+                      </p> */}
                     </li>
                     <li className="event" data-date="B. 住房權益小叮嚀">
                       <p className="timelinep">
@@ -338,6 +348,12 @@ function TravelNotes() {
                         gained throughout my higher education, as well as
                         experiencing the running of a successful business.
                       </p>
+                      {/* <p className="timelinep">
+                        {v.notes2}
+                      </p>
+                      <p className="timelinep">
+                      {v.notes2_1}
+                      </p> */}
                     </li>
                     <li className="event" data-date="C. 注意事項&建議">
                       <p className="timelinep">
@@ -358,6 +374,12 @@ function TravelNotes() {
                         gained throughout my higher education, as well as
                         experiencing the running of a successful business.
                       </p>
+                      {/* <p className="timelinep">
+                        {v.notes3}
+                      </p>
+                      <p className="timelinep">
+                      {v.notes3_1}
+                      </p> */}
                     </li>
                   </ul>
                 </div>
@@ -370,7 +392,7 @@ function TravelNotes() {
       <div className="login-box">
         <form className="signup d-flex">
           <div className="price--1fAWe">
-            <span>$499,999</span>起
+            <span>$499,999</span>起{/* <span>${v.travel_price}</span>起 */}
           </div>
           <a href="#/">
             <span></span>
