@@ -18,8 +18,8 @@ function CustomizeSeat() {
           <img src={require('./images/seat-backimg.png')} alt="" />
         </div>
         <div className="seat-box-img">
-        {/* 想讓他變換時  先讓他歸0 再變成1 */}
-          <img src={seatImg} alt="" style={{ opacity: { opa } }} />
+          {/* 想讓他變換時  先讓他歸0 再變成1 */}
+          <img src={seatImg} alt="" style={{ opacity: opa }} />
         </div>
         <div className="seat-card">
           <h1>請選擇太空椅外觀</h1>
@@ -29,41 +29,51 @@ function CustomizeSeat() {
             <div
               className="white suit-flag"
               onClick={() => {
+                const newOpaClose = '0';
+                setOpa(newOpaClose);
+                // 讓seat-box-img 圖片淡出
                 const newColor = { ...color, background: 'white' };
                 setColor(newColor);
-                // console.log('color', color);
-                const newImg = whiteSeat;
-                setSeatImg(newImg);
-                // console.log('color', seatImg);
-                const newOpa = '1';
-                setOpa(newOpa);
-                console.log('opa', opa);
+                // 改變.seat-backcolor的背景顏色
+                setTimeout(() => {
+                  // 設置延遲
+                  const newOpaOpen = '1';
+                  setOpa(newOpaOpen);
+                  // 讓圖片淡入
+                  const newImg = whiteSeat;
+                  setSeatImg(newImg);
+                  // 載入圖片
+                }, 600);
               }}
             ></div>
             <div
               className="orange suit-flag"
               onClick={() => {
+                const newOpaClose = '0';
+                setOpa(newOpaClose);
                 const newColor = { ...color, background: '#EE6A26' };
                 setColor(newColor);
-                // console.log('color', color);
-                const newImg = orangeSeat;
-                setSeatImg(newImg);
-                // console.log('color', seatImg);
-                const newOpa = '1';
-                setOpa(newOpa);
+                setTimeout(() => {
+                  const newOpaOpen = '1';
+                  setOpa(newOpaOpen);
+                  const newImg = orangeSeat;
+                  setSeatImg(newImg);
+                }, 700);
               }}
             ></div>
             <div
               className="blue suit-flag"
               onClick={() => {
+                const newOpaClose = '0';
+                setOpa(newOpaClose);
                 const newColor = { ...color, background: '#0072D6' };
                 setColor(newColor);
-                // console.log('color', color);
-                const newImg = blueSeat;
-                setSeatImg(newImg);
-                // console.log('color', seatImg);
-                const newOpa = '1';
-                setOpa(newOpa);
+                setTimeout(() => {
+                  const newOpaOpen = '1';
+                  setOpa(newOpaOpen);
+                  const newImg = blueSeat;
+                  setSeatImg(newImg);
+                }, 500);
               }}
             ></div>
           </div>

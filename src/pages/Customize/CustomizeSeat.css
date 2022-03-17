@@ -14,7 +14,7 @@
   height: 100%;
   background: #fff;
   filter: brightness(0.9);
-  transition: .5s ease-in-out;
+  transition: 2s ease-in-out;
 }
 .seat-backcolor img{
   width: 100%;
@@ -28,10 +28,9 @@
   z-index: 1;
   width: 500px;
   filter:drop-shadow(-15px 10px 15px rgb(0, 0, 0));
-  transition: 2s ease-in-out;
 }
 .seat-box-img img{
-  transition: 1s ease-in-out;
+  transition: .8s ease-in-out;
   /* background-image: url(./images/spaceseat-white.png); */
 }
 .seat-card {
@@ -114,12 +113,4 @@
   }
   .seat-circle-btn:focus{
     outline:none;
-  }
-  @keyframes seatImg{
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
   }
