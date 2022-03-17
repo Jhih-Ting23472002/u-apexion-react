@@ -66,6 +66,10 @@
   flex-direction: column;
 }
 
+.country-wrap{
+  margin-bottom:2.4rem;
+}
+
 .member-line-wrap {
   width: 10%;
   display: flex;

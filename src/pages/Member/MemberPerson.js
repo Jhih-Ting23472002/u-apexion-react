@@ -66,7 +66,7 @@ const MemberPerson = () => {
                   <input type="date" placeholder="" className="member-input" />
                 </div>
 
-                <div className="member-input-container">
+                <div className="member-input-container country-wrap">
                   <label for="" className="member-label">
                     國籍
                   </label>
@@ -78,6 +78,13 @@ const MemberPerson = () => {
                   </select>
                 </div>
                 <div className="member-btn-container">
+                  <div className="member-btn-return-wrap">
+                    <input
+                      type="submit"
+                      className="member-btn-return"
+                      value="取消更改"
+                    />
+                  </div>
                   <div>
                     <input
                       type="submit"
