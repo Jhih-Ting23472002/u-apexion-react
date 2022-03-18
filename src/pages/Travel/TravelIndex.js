@@ -1,8 +1,21 @@
 import React from 'react';
 import './TravelIndex.css';
 import Carousel from 'react-bootstrap/Carousel';
+import { useEffect, useState } from 'react';
 
 function TravelIndex() {
+  const [TravelCard, setTravelCard] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/travel-index/api/travel-index'
+      );
+      const TravelCard = await response.json();
+      setTravelCard(TravelCard);
+      console.log(TravelCard);
+    })();
+  }, []);
   return (
     <>
       <section>
@@ -117,55 +130,35 @@ function TravelIndex() {
           <h2 className="shopHeaderh2">主打星座熱門行程</h2>
           <hr className="generalHr" />
         </div>
-
         <div className="shop">
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/s12.png" alt="" />
-            {/* <img src={"./travelimg/travelproductimg/s12.png" + v.travel_image} alt="" /> */}
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Titan</h2>
-              {/* <h2 className="informationShopItemh2">{v.travel_name}</h2> */}
-              <div className="travelrow">
-                <h2 className="informationShopItemprice">$499,999起</h2>
-                {/* <h2 className="informationShopItemprice">${v.travel_price}起</h2> */}
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-              {/* <p className="informationShopItemhp">{v.travel_description}</p> */}
-            </div>
-          </div>
+          {TravelCard.map((t, i) => {
+            return (
+              <React.Fragment key={i}>
+                <div className="shopItem smallItem">
+                  <img
+                    src={
+                      './travelimg/travelproductimg/s12.png' + t.travel_image
+                    }
+                    alt=""
+                  />
+                  <div className="informationShopItem">
+                    <h2 className="informationShopItemh2">{t.travel_name}</h2>
+                    <div className="travelrow">
+                      <h2 className="informationShopItemprice">
+                        ${t.travel_price}起
+                      </h2>
+                      <button className="travelitemBuyButton">Details</button>
+                    </div>
+                    <hr className="generalHrpart1" />
 
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/s1.png" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
-              <div className="travelrow">
-                <h2 className="informationShopItemprice">$599,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/s10.png" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
-              <div className="travelrow d-flex ">
-                <h2 className="informationShopItemprice">$699,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
+                    <p className="informationShopItemhp">
+                      {t.travel_description}
+                    </p>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
         </div>
 
         <div className="shopHeader">
@@ -174,7 +167,7 @@ function TravelIndex() {
         </div>
 
         <div className="shop">
-          <div className="shopItem smallItem">
+          {/* <div className="shopItem smallItem">
             <img src="./travelimg/travelproductimg/titan.png" alt="" />
             <div className="informationShopItem">
               <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
@@ -215,7 +208,7 @@ function TravelIndex() {
                 在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="morechoose">
           <button className="tourButton">更多行程</button>
