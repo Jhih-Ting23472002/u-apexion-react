@@ -232,7 +232,7 @@
     margin: 0 auto;
     margin-top: 2%;
     margin-bottom:3%;
-    height: auto;
+    height: 85vh;
     max-width: 60%;
   }
 
@@ -375,13 +375,14 @@
   .informationShopItemhp{
     font-size: 21px;
     margin-top: 6%;
+    line-height:30px;
   }
 
   .informationShopItem {
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     width: 100%;
     height: relative;
     background-color: white;
