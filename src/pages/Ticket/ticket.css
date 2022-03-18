@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.disabled {
+  background-color: rgb(216, 216, 216);
+  color: white;
+}
+
 .ticket-trip-prev-btn.disabled,
 .ticket-trip-next-btn.disabled {
   background-color: rgb(216, 216, 216);

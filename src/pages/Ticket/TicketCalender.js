@@ -3,39 +3,47 @@ import { useState, useEffect } from 'react';
 function TicketCalender() {
   const [monthSelected, setMonthSelected] = useState(0);
   const [monthShow, setMonthShow] = useState([0, 1, 2]);
+  const [date, setDate] = useState([]);
+
+  const [pickDate, setPickDate] = useState('');
   console.log('monthShow', monthShow);
   console.log('monthSelected', monthSelected);
-
-  // useEffect(() => {
-  //   (async function () {
-  //     const response = await fetch(
-  //       'http://localhost:3001/ticket-date/api/date-list',
-  //       {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-type': 'application/json',
-  //         },
-  //         body: JSON.stringify(monthSelected),
-  //       }
-  //     );
-  //     const dateListDatas = await response.json();
-  //     console.log(dateListDatas);
-  //   })();
-  // }, []);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/ticket-date/api/date-list'
+        `http://localhost:3001/ticket-date/api/date-list/${monthSelected}`,
+        {
+          method: 'GET',
+        }
       );
       const dateListDatas = await response.json();
+      setDate(dateListDatas);
       console.log(dateListDatas);
+      console.log(date);
+      //init
+      if (monthSelected === 0) show();
     })();
-  }, []);
+  }, [monthSelected]);
+
+  // useEffect(() => {
+  //   (async function () {
+  //     const response = await fetch(
+  //       'http://localhost:3001/ticket-date/api/date-list'
+  //     );
+  //     const dateListDatas = await response.json();
+  //     console.log(dateListDatas);
+  //   })();
+  // }, [monthSelected]);
 
   window.onload = function () {
     show();
   };
+
+  // useEffect(() => {
+  //   show();
+  // }, []);
+
   // 顯示日曆
   function show(e) {
     // console.log(e.target.value);
@@ -86,7 +94,17 @@ function TicketCalender() {
         } else {
           cell.innerHTML = k - week;
           cell.classList.add('trip-date');
-          cell.dataset.date = '1';
+          cell.dataset.date = date[k - week].departure_date;
+          if (
+            !date[k - week].trip_available ||
+            !date[k - week].seat_available
+          ) {
+            cell.classList.add('disabled');
+          }
+          console.log(document.querySelectorAll('td'));
+          cell.addEventListener('click', function (e) {
+            setPickDate(e.target.dataset.date);
+          });
         }
       }
     }
