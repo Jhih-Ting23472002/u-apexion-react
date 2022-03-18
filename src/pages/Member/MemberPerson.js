@@ -77,20 +77,12 @@ const MemberPerson = () => {
                     <option>美國</option>
                   </select>
                 </div>
-                <div className="member-btn-container">
+                <div className="member-btn-container person-btn-container">
                   <div className="member-btn-return-wrap">
-                    <input
-                      type="submit"
-                      className="member-btn-return"
-                      value="取消更改"
-                    />
+                    <button className="member-circle-btn">取消更改</button>
                   </div>
                   <div>
-                    <input
-                      type="submit"
-                      className="member-btn-confirm"
-                      value="確認送出"
-                    />
+                    <button className="member-circle-btn">確認送出</button>
                   </div>
                 </div>
               </form>
@@ -100,12 +92,8 @@ const MemberPerson = () => {
               <div className="person-avatar-container">
                 <div className="person-avatar-img"></div>
                 <div className="person-avatar-upload">
-                  <div>
-                    <input
-                      type="submit"
-                      className="member-btn-confirm"
-                      value="選擇圖片"
-                    />
+                  <div className="member-btn-container">
+                    <button className="member-circle-btn">選擇圖片</button>
                   </div>
                 </div>
                 <div className="person-avatar-txt">

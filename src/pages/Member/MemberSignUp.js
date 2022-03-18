@@ -112,13 +112,7 @@ const MemberSignUp = () => {
             </form>
 
             <div className="member-btn-container">
-              <div>
-                <input
-                  type="submit"
-                  className="member-btn-confirm"
-                  value="確認送出"
-                />
-              </div>
+              <button className="member-circle-btn">確認送出</button>
             </div>
           </div>
         </div>

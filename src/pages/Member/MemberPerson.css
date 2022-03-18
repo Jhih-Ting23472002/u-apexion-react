@@ -66,8 +66,10 @@
   flex-direction: column;
 }
 
-.country-wrap{
-  margin-bottom:2.4rem;
+
+
+.person-btn-container{
+  margin-top:3%;
 }
 
 .member-line-wrap {
