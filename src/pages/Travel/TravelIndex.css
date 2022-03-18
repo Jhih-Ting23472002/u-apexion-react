@@ -60,7 +60,6 @@
     text-transform: none;
     margin: 0 auto;
     justify-content: center;
-    background-color: #254984;
   }
 
   .main-img {
@@ -271,6 +270,13 @@
 
   .tourOverlayh2 {
     font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px black;
+    margin-bottom: 2%;
+  }
+
+  .tourOverlayp{
+    font-size: 22px;
     color: white;
     text-shadow: 2px 2px black;
     margin-bottom: 2%;

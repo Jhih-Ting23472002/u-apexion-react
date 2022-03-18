@@ -131,7 +131,10 @@ function TravelIndex() {
       <section className="tour">
         <div className="tour-img">
           <div className="tourOverlay">
-            <h2 className="tourOverlayh2">U-APEXION站內論壇</h2>
+            <h2 className="tourOverlayh2">U-APEXION行程論壇區</h2>
+            <div className="tourOverlayp">
+              <p>快來看看關於行程旅程的文章感想吧</p>
+            </div>
             <button className="tourButton">let's go</button>
           </div>
         </div>
