@@ -4,12 +4,12 @@ import './MemberPerson.css';
 const MemberPerson = () => {
   return (
     <>
-      <div className="person-container">
-        <div className="person-shadow-container">
-          <div className="person-sidebar"></div>
-          <div className="person-wrap">
-            <div className="person-title-wrap">
-              <div className="person-title">
+      <div className="member-container">
+        <div className="member-shadow-container">
+          <div className="member-sidebar"></div>
+          <div className="member-right-wrap">
+            <div className="member-title-wrap">
+              <div className="member-title">
                 <h1>個人檔案</h1>
               </div>
             </div>
