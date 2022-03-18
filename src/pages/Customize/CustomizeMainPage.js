@@ -77,7 +77,7 @@ function CustomizeMainPage() {
                   src={craftMovie}
                   playsInline=""
                   loop="loop"
-                  autoPlay="autoplay"
+                  autoPlay=""
                   muted
                 ></video>
               </a>
@@ -109,7 +109,7 @@ function CustomizeMainPage() {
                   src={seatMovie}
                   playsInline=""
                   loop="loop"
-                  autoPlay="autoplay"
+                  autoPlay=""
                   muted
                 ></video>
               </a>
