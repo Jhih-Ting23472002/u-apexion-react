@@ -22,7 +22,7 @@ function NewProducts(post) {
             <div className="pr-currencySymbol">
               $ <p>{post.price}</p>
             </div>
-            <i class="fa-solid fa-circle-plus fa-2xl"></i>
+            <i className="fa-solid fa-circle-plus fa-2xl"></i>
           </div>
         </div>
       </div>

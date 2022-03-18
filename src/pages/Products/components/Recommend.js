@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Products.scss';
+import ProductsConfig from '../ProductsConfig';
 
-function Recommend() {
+function Recommend(post) {
   return (
     <>
     <div className="pr-card">
       <a href="#/" className="pr-img">
-        <img src="./product_img/M021J_BK019.jpg" alt="" />
+        <img src={ProductsConfig.IMG_PATH+'/'+ (post.product_img)} alt="" />
       </a>
       <div className="pr-content">
-        <h4>太空飛行員外套</h4>
+        <h4>{post.product_name}</h4>
         <p className="pr-p">$</p>
-        <p>1650</p>
-        <p className="pr-p-p">黑色科技棉防撕裂物料</p>
+        <p>{post.price}</p>
+        <p className="pr-p-p">{post.material}</p>
         <input type="button" value="+" name="" className="pr-card-button" />
       </div>
     </div>
