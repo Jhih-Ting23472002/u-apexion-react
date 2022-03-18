@@ -12,7 +12,7 @@ import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPasswordEdit from './pages/Member/MemberPasswordEdit';
-// import MemberAddress from './pages/Member/MemberAddress';
+import MemberAddress from './pages/Member/MemberAddress';
 import MemberAddressNew from './pages/Member/MemberAddressNew';
 import MemberOrderHistory from './pages/Member/MemberOrderHistory';
 import MemberOrderDetails from './pages/Member/MemberOrderDetails';
@@ -107,9 +107,9 @@ function App() {
           <Route path="/member-password-edit">
             <MemberPasswordEdit />
           </Route>
-          {/* <Route path="/member-address">
+          <Route path="/member-address">
             <MemberAddress />
-          </Route> */}
+          </Route>
           <Route path="/member-address-new">
             <MemberAddressNew />
           </Route>
