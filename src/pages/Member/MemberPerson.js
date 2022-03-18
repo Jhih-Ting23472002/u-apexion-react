@@ -78,7 +78,7 @@ const MemberPerson = () => {
                   </select>
                 </div>
                 <div className="member-btn-container person-btn-container">
-                  <div className="member-btn-return-wrap">
+                  <div className="member-return-btn-wrap">
                     <button className="member-circle-btn">取消更改</button>
                   </div>
                   <div>

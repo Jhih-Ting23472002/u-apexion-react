@@ -30,7 +30,7 @@ const MemberForgotPwd = () => {
               </div>
             </form>
             <div className="member-btn-container">
-              <div className="member-btn-return-wrap">
+              <div className="member-return-btn-wrap">
                 <button className="member-circle-btn member-cancel-btn">
                   返回
                 </button>
