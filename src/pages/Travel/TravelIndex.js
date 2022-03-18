@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
 
 function TravelIndex() {
-  const [TravelStarsign, setTravelStarsign] = useState([]);
+  const [TravelStarSign, setTravelStarSign] = useState([]);
   const [TravelPlanet, setTravelPlanet] = useState([]);
 
   useEffect(() => {
@@ -12,9 +12,9 @@ function TravelIndex() {
       const response = await fetch(
         'http://localhost:3001/travel-index/api/travel-starsign'
       );
-      const TravelStarsign = await response.json();
-      setTravelStarsign(TravelStarsign);
-      console.log(TravelStarsign);
+      const TravelStarSign = await response.json();
+      setTravelStarSign(TravelStarSign);
+      console.log(TravelStarSign);
     })();
   }, []);
 
@@ -144,7 +144,7 @@ function TravelIndex() {
         </div>
 
         <div className="shop">
-          {TravelStarsign.map((t, i) => {
+          {TravelStarSign.map((t, i) => {
             return (
               <React.Fragment key={i}>
                 <div className="shopItem smallItem">
