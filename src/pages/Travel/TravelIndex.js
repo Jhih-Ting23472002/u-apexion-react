@@ -208,7 +208,12 @@ function TravelIndex() {
           })}
         </div>
         <div className="morechoose">
-          <button className="tourButton">更多行程</button>
+          <button
+            className="tourButton"
+            onclick="location.href='http://localhost:3000/travel-choose'"
+          >
+            更多行程
+          </button>
         </div>
       </section>
 
