@@ -4,6 +4,10 @@
   flex-wrap: wrap-reverse;
 }
 
+.choosecardmb{
+  margin-bottom:60px;
+}
+
 .choosesearch{
   font-size: 20px;
 }

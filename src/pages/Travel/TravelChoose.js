@@ -57,7 +57,7 @@ function TravelChoose() {
                 return (
                   <React.Fragment key={i}>
                     <div className="item pl-4">
-                      <div className="d-flex align-items-stretch mb-5">
+                      <div className="d-flex choosecardmb align-items-stretch">
                         <div className="col-sm-6 col-md-8">
                           <div className="row align-items-center">
                             <div className="col-md-8 info">
