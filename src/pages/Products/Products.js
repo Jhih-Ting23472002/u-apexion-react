@@ -204,7 +204,7 @@ function Products() {
           <a
             href="#men"
             onClick={() => {setProductNavbar('#men');MenProduct()}}
-            className={ProductNavbar === '/men' ? 'active' : ''}
+            className={ProductNavbar === '#men' ? 'active' : ''}
           >
             男士精品
           </a>
