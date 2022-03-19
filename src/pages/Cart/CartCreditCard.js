@@ -65,7 +65,7 @@ const CartCreditCard = () => {
           </form>
           <div className="d-flex justify-content-center align-items-center mt-5">
             <Link to={'/cart-complete'} className="mx-3">
-              <button type="button" className="btn card-confirm">
+              <button type="button" className="btn card-confirm cart-link">
                 確認付款 (Confirm)
               </button>
             </Link>
