@@ -60,7 +60,6 @@
     text-transform: none;
     margin: 0 auto;
     justify-content: center;
-    background-color: #254984;
   }
 
   .main-img {
@@ -233,7 +232,7 @@
     margin: 0 auto;
     margin-top: 2%;
     margin-bottom:3%;
-    height: auto;
+    height: 85vh;
     max-width: 60%;
   }
 
@@ -276,8 +275,15 @@
     margin-bottom: 2%;
   }
 
+  .tourOverlayp{
+    font-size: 22px;
+    color: white;
+    text-shadow: 2px 2px black;
+    margin-bottom: 2%;
+  }
+
   .tourButton {
-    width: 120px;
+    width: 150px;
     height: 40px;
     margin: 0 auto;
     color: #05F2F2;
@@ -369,13 +375,14 @@
   .informationShopItemhp{
     font-size: 21px;
     margin-top: 6%;
+    line-height:30px;
   }
 
   .informationShopItem {
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     width: 100%;
     height: relative;
     background-color: white;

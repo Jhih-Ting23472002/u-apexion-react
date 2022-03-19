@@ -23,7 +23,6 @@
 }
 
 
-
 .forgotpwd-form-title {
   display: flex;
   flex-direction: column;
@@ -77,8 +76,6 @@
   line-height: 1.2rem;
 }
 
-
-
 .member-btn-container {
   width: 100%;
   display: flex;
@@ -87,31 +84,6 @@
   
 }
 
-.member-btn-confirm,.member-btn-return{
-  width: 100%;
-  padding: 0.3rem 1rem;
-  line-height: 1.2rem;
-  display: block;
-  border-radius: 50px;
-  font-weight: 400;
-  font-size: 0.6rem;
-  border: 1px solid #05f2f2;
-  background: #05f2f2;
-  color: #000;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.5s; 
-}
-
-.member-btn-return{
-  background: #fff;
-  border: 1px solid #fff;
-}
-
-.member-btn-confirm:hover {
-  background-color: #4ff3f3;
-}
-
-.member-btn-return-wrap{
-  margin-right: 20px;
+.member-return-btn-wrap{
+  margin-right: 25px;
 }

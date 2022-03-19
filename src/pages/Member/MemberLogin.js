@@ -28,7 +28,7 @@ const MemberLogin = () => {
             </form>
 
             <div className="login-btn-container">
-              <input type="submit" className="login-primary-btn" value="登入" />
+              <button className="login-primary-btn">登入</button>
             </div>
             <div className="login-or">
               <hr className="bar" />
@@ -36,11 +36,7 @@ const MemberLogin = () => {
               <hr className="bar" />
             </div>
             <div className="login-btn-container">
-              <input
-                type="submit"
-                className="login-google-btn"
-                value="Google"
-              />
+              <button className="login-google-btn">Google</button>
             </div>
             <div className="login-notyet">
               <a href="#/">
@@ -48,7 +44,7 @@ const MemberLogin = () => {
               </a>
             </div>
             <div className="login-btn-container">
-              <input type="submit" className="login-signup-btn" value="註冊" />
+              <button className="login-signup-btn">註冊</button>
             </div>
           </div>
         </div>

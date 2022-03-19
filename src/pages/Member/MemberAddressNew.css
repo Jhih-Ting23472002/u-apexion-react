@@ -1,0 +1,105 @@
+.member-footer {
+    /* position: relative; */
+    display: flex;
+    justify-content:center;
+    padding-bottom: 70px;
+    gap:60px;
+  }
+  .member-view {
+    backdrop-filter: blur(10px);
+    transition: 1s ease-in-out;
+  }
+  .modal-content {
+    width: 600px;
+    height: 600px;
+    background: url('../../../public/member_img/modal.png') center center / cover no-repeat;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: -5px 5px 20px black;
+  }
+  .member-modal-circle-btn {
+    position: relative;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.11);
+    color: #05f2f2;
+    padding: 7px 14px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: -30px 10px 20px #00000050;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+  }
+  .member-modal-circle-btn:after {
+    content: '';
+    width: 92px;
+    height: 36px;
+    border: 2px solid #05f2f2;
+    border-radius: 30px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    box-shadow: 0 0 20px #05f2f281;
+    transition: 0.3s ease-in-out;
+  }
+  .member-modal-circle-btn:hover:after {
+    box-shadow: 0 0 25px #05f2f2;
+  }
+  .member-modal-circle-btn:hover {
+    background-color: #05f2f2;
+    color: #000000;
+  }
+  /* :focus */
+  .member-modal-circle-btn:focus {
+    outline: none;
+  }
+  .member-cancel-btn {
+    padding: 7px 28px 7px 28px;
+    margin-left: 7px;
+  }
+  .member-modal-header{
+    position: relative;
+    border-bottom: 1px dashed white;
+  }
+  .member-modal-header .close{
+    margin:  0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .member-modal-header .close:focus{
+    outline: none;
+  }
+  .member-modal-header h1{
+    margin: 5px auto;
+    font-size: 30px;
+    color: aliceblue;
+  }
+  /* ---------------------------------------------------------------- */
+.member-modal-form {
+    display: flex;
+    flex-direction: column;
+    margin-top:3%;
+  }
+
+  .modal-input-wrap{
+      justify-content:center;
+  }
+  
+  .member-label {
+    width: 70px;
+    /* border: 1px solid red; */
+    text-align: right;
+    margin-right: 20px;
+  }
+  
+  .member-input {
+    width: 70%;
+    background: rgba(0, 0, 0, 0.0);
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    line-height: 1.2rem;
+  }
+  
+  

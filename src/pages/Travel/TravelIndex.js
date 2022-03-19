@@ -1,8 +1,33 @@
 import React from 'react';
 import './TravelIndex.css';
 import Carousel from 'react-bootstrap/Carousel';
+import { useEffect, useState } from 'react';
 
 function TravelIndex() {
+  const [TravelStarSign, setTravelStarSign] = useState([]);
+  const [TravelPlanet, setTravelPlanet] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/travel-index/api/travel-starsign'
+      );
+      const TravelStarSign = await response.json();
+      setTravelStarSign(TravelStarSign);
+      console.log(TravelStarSign);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/travel-index/api/travel-planet'
+      );
+      const TravelPlanet = await response.json();
+      setTravelPlanet(TravelPlanet);
+      console.log(TravelPlanet);
+    })();
+  }, []);
   return (
     <>
       <section>
@@ -106,8 +131,13 @@ function TravelIndex() {
       <section className="tour">
         <div className="tour-img">
           <div className="tourOverlay">
-            <h2 className="tourOverlayh2">U-APEXION站內論壇</h2>
-            <button className="tourButton">let's go</button>
+            <h2 className="tourOverlayh2">U-APEXION行程論壇區</h2>
+            <div className="tourOverlayp">
+              <p>快來看看關於行程旅程的文章感想吧</p>
+            </div>
+            <a href="/posts-category/2">
+              <button className="tourButton">Let's go</button>
+            </a>
           </div>
         </div>
       </section>
@@ -119,48 +149,33 @@ function TravelIndex() {
         </div>
 
         <div className="shop">
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/s12.png" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
-              <div className="travelrow">
-                <h2 className="informationShopItemprice">$499,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/s1.png" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
-              <div className="travelrow">
-                <h2 className="informationShopItemprice">$599,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/s10.png" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
-              <div className="travelrow d-flex ">
-                <h2 className="informationShopItemprice">$699,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
+          {TravelStarSign.map((t, i) => {
+            return (
+              <React.Fragment key={i}>
+                <div className="shopItem smallItem">
+                  <img
+                    src={
+                      './travelimg/travelproductimg/s12.png' + t.travel_image
+                    }
+                    alt=""
+                  />
+                  <div className="informationShopItem">
+                    <h2 className="informationShopItemh2">{t.travel_name}</h2>
+                    <div className="travelrow">
+                      <h2 className="informationShopItemprice">
+                        ${t.travel_price}起
+                      </h2>
+                      <button className="travelitemBuyButton">Details</button>
+                    </div>
+                    <hr className="generalHrpart1" />
+                    <p className="informationShopItemhp">
+                      {t.travel_description}
+                    </p>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
         </div>
 
         <div className="shopHeader">
@@ -169,51 +184,38 @@ function TravelIndex() {
         </div>
 
         <div className="shop">
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/titan.png" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Titan(二月啟程)</h2>
-              <div className="travelrow">
-                <h2 className="informationShopItemprice">$499,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/xandar.jpg" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Xandar(四月啟程)</h2>
-              <div className="travelrow">
-                <h2 className="informationShopItemprice">$599,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
-          <div className="shopItem smallItem">
-            <img src="./travelimg/travelproductimg/mann.png" alt="" />
-            <div className="informationShopItem">
-              <h2 className="informationShopItemh2">Mann(六月啟程)</h2>
-              <div className="travelrow d-flex ">
-                <h2 className="informationShopItemprice">$699,999起</h2>
-                <button className="travelitemBuyButton">Details</button>
-              </div>
-              <hr className="generalHrpart1" />
-              <p className="informationShopItemhp">
-                在柴達星上有一片彷彿熱帶雨林般的魔幻森林，熱帶氣候造就了園區獨特的植物相，各式各樣的榕屬植物...
-              </p>
-            </div>
-          </div>
+          {TravelPlanet.map((t, i) => {
+            return (
+              <React.Fragment key={i}>
+                <div className="shopItem smallItem">
+                  <img
+                    src={
+                      './travelimg/travelproductimg/s12.png' + t.travel_image
+                    }
+                    alt=""
+                  />
+                  <div className="informationShopItem">
+                    <h2 className="informationShopItemh2">{t.travel_name}</h2>
+                    <div className="travelrow">
+                      <h2 className="informationShopItemprice">
+                        ${t.travel_price}起
+                      </h2>
+                      <button className="travelitemBuyButton">Details</button>
+                    </div>
+                    <hr className="generalHrpart1" />
+                    <p className="informationShopItemhp">
+                      {t.travel_description}
+                    </p>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
         </div>
         <div className="morechoose">
-          <button className="tourButton">更多行程</button>
+          <a href="/travel-choose">
+            <button className="tourButton">觀看更多行程</button>
+          </a>
         </div>
       </section>
 

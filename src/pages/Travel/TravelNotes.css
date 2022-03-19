@@ -353,7 +353,7 @@ section.timeline-outer {
 }
 
 .timeline .event:before {
-  left: -250px;
+  left: -210px;
   color: #ffffff;
   content: attr(data-date);
   text-align: right;
@@ -370,6 +370,12 @@ section.timeline-outer {
   width: 11px;
   content: "";
   top: 5px;
+}
+
+@media (max-width: 640px) {
+  .timeline .event:after {
+    top: -15px;
+  }
 }
 
 @media (max-width: 945px) {
@@ -408,6 +414,12 @@ section.timeline-outer {
 
   .timelinep {
     padding-top: 20px;
+    line-height: 30px;
+  }
+
+  .covid-19{
+    padding-top: 20px;
+    line-height: 30px;
   }
 
   .breadcrumb{
@@ -418,6 +430,13 @@ section.timeline-outer {
 
 .timelinep {
   font-size: 16px;
+  line-height: 30px;
+}
+
+.covid-19{
+  font-size: 16px;
+  line-height: 30px;
+  color:red;
 }
 
 /* btn */
@@ -449,6 +468,15 @@ section.timeline-outer {
   margin: 10px 0 10px;
   letter-spacing: 4px;
   
+}
+
+@media (max-width: 768px) {
+  .login-box form a {
+    font-size: 3rem;
+  }
+  .price--1fAWe {
+    font-size: 4rem;
+  }
 }
 
 .login-box a:hover {

@@ -11,7 +11,7 @@ function navbar() {
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
-              <a href="#/">Schedule</a>
+              <a href="/travel-index">Schedule</a>
             </li>
             <li>
               <a href="#/">Booking</a>

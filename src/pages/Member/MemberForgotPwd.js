@@ -30,19 +30,13 @@ const MemberForgotPwd = () => {
               </div>
             </form>
             <div className="member-btn-container">
-              <div className="member-btn-return-wrap">
-                <input
-                  type="submit"
-                  className="member-btn-return"
-                  value="返回"
-                />
+              <div className="member-return-btn-wrap">
+                <button className="member-circle-btn member-cancel-btn">
+                  返回
+                </button>
               </div>
               <div>
-                <input
-                  type="submit"
-                  className="member-btn-confirm"
-                  value="確認送出"
-                />
+                <button className="member-circle-btn">確認送出</button>
               </div>
             </div>
           </div>

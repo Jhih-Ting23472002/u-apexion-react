@@ -11,6 +11,12 @@ import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
+import MemberPasswordEdit from './pages/Member/MemberPasswordEdit';
+import MemberAddress from './pages/Member/MemberAddress';
+import MemberAddressNew from './pages/Member/MemberAddressNew';
+import MemberOrderHistory from './pages/Member/MemberOrderHistory';
+import MemberOrderDetails from './pages/Member/MemberOrderDetails';
+import MemberCollect from './pages/Member/MemberCollect';
 
 // Products
 import Products from './pages/Products/Products';
@@ -33,6 +39,8 @@ import CardComplete from './pages/Cart/CardComplete';
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
+import TicketDateOld from './pages/Ticket/TicketDateOld';
+import TicketTest from './pages/Ticket/TicketTest';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
@@ -103,12 +111,20 @@ function App() {
           <Route path="/member-person">
             <MemberPerson />
           </Route>
-          <Route path="/member-password-edit"></Route>
-          <Route path="/member-address"></Route>
-          <Route path="/member-address-new"></Route>
-          <Route path="/member-collect"></Route>
-          <Route path="/member-history"></Route>
-          <Route path="/member-history-detail"></Route>
+          <Route path="/member-password-edit">
+            <MemberPasswordEdit />
+          </Route>
+          <Route path="/member-address"><MemberAddress /></Route>
+          <Route path="/member-address-new"><MemberAddressNew /></Route>
+          <Route path="/member-order-history">
+            <MemberOrderHistory />
+          </Route>
+          <Route path="/member-order-detail">
+            <MemberOrderDetails />
+          </Route>
+          <Route path="/member-collect">
+            <MemberCollect />
+          </Route>
           <Route path="/travel-index">
             <TravelIndex />
           </Route>
@@ -121,11 +137,17 @@ function App() {
           <Route path="/ticket-order">
             <Ticket />
           </Route>
+          <Route path="/ticket-test">
+            <TicketTest />
+          </Route>
           <Route path="/ticket-trip-choose">
             <TicketTrip />
           </Route>
           <Route path="/ticket-date-choose">
             <TicketDate />
+          </Route>
+          <Route path="/ticket-date-choose-old">
+            <TicketDateOld />
           </Route>
           <Route path="/ticket-seat-choose">
             <TicketSeat />

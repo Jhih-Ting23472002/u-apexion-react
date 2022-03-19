@@ -2,8 +2,50 @@ import React from 'react';
 import './Products.scss';
 import NewProducts from './components/NewProducts';
 import Recommend from './components/Recommend';
+import ProductsConfig from './ProductsConfig';
+import { useState, useEffect } from 'react';
 
 function Products() {
+  const [ProductsNew, setProductsNew] = useState([]);
+  const [ProductRecommend, setProductRecommend] = useState([]);
+  const [ProductNavbar, setProductNavbar] = useState('/men');
+
+  useEffect(() => {
+    // 新品推薦
+    (async function () {
+      const response = await fetch(ProductsConfig.NEW_Products);
+      const ProductsNew = await response.json();
+      setProductsNew(ProductsNew);
+      console.log(ProductsNew);
+    })();
+    // 分類推薦
+    (async function () {
+      const responseMen = await fetch(ProductsConfig.MEN_Products);
+      const ProductMen = await responseMen.json();
+      setProductRecommend(ProductMen);
+      console.log(ProductMen);
+    })();
+  }, []);
+
+  const WomanProduct = async function () {
+    const responseWoman = await fetch(ProductsConfig.Woman_Products);
+    const ProductWoman = await responseWoman.json();
+    setProductRecommend(ProductWoman);
+    console.log(ProductWoman);
+  };
+
+  const MenProduct = async function () {
+    const responseMen = await fetch(ProductsConfig.MEN_Products);
+    const ProductMen = await responseMen.json();
+    setProductRecommend(ProductMen);
+  };
+
+  const ShoesProduct = async function () {
+    const responseShoes = await fetch(ProductsConfig.Shoes_Products);
+    const ProductShoes = await responseShoes.json();
+    setProductRecommend(ProductShoes);
+  };
+
   return (
     <article className="pr">
       <div className="pr-home-mv-img">
@@ -130,7 +172,27 @@ function Products() {
         <div className="pr-home-new-list">
           <h3>NEW</h3>
           <div className="pr-card-new">
-            <NewProducts />
+            {ProductsNew.map((newProduct, i) => {
+              const {
+                sid,
+                product_name,
+                material,
+                product_img,
+                image_photo,
+                price,
+              } = newProduct;
+              return (
+                <NewProducts
+                  key={sid}
+                  sid={sid}
+                  product_name={product_name}
+                  material={material}
+                  product_img={product_img}
+                  image_photo={image_photo}
+                  price={price}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -139,13 +201,50 @@ function Products() {
       <div className="pr-recommendation">
         <h2>時尚推薦</h2>
         <div className="pr-recommendation-a">
-          <a href="#/">男士精品</a>
-          <a href="#/">女士精品</a>
-          <a href="#/">鞋款</a>
-          <a href="#/">配件與腕錶</a>
+          <a
+            href="#men"
+            onClick={() => {setProductNavbar('#men');MenProduct()}}
+            className={ProductNavbar === '/men' ? 'active' : ''}
+          >
+            男士精品
+          </a>
+          <a
+            href="#woman"
+            onClick={() => {setProductNavbar('#woman');
+            WomanProduct()}}
+            className={ProductNavbar === '#woman' ? 'active' : ''}
+          >
+            女士精品
+          </a>
+          <a
+            href="#Shoes"
+            onClick={() => {setProductNavbar('#Shoes');ShoesProduct()}}
+            className={ProductNavbar === '#Shoes' ? 'active' : ''}
+          >
+            鞋款
+          </a>
+          <a
+            href="#watch"
+            onClick={() => setProductNavbar('#watch')}
+            className={ProductNavbar === '#watch' ? 'active' : ''}
+          >
+            配件與腕錶
+          </a>
         </div>
         <div className="pr-container">
-          <Recommend />
+          {ProductRecommend.map((Product, i) => {
+            const { sid, product_name, material, product_img, price } = Product;
+            return (
+              <Recommend
+                key={sid}
+                sid={sid}
+                product_name={product_name}
+                material={material}
+                product_img={product_img}
+                price={price}
+              />
+            );
+          })}
         </div>
         <div className="pr-card-a-div">
           <a href="/products-list">

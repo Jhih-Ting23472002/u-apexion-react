@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CustomizeMainPage.css';
+// import suitMovie from './movies/suit.mp4';
+// import craftMovie from './movies/spacecraft.webm';
+// import seatMovie from './movies/seats3.mp4';
 
 function CustomizeMainPage() {
+  const [start, setStart] = useState(false);
+
   return (
     <>
       <section>
@@ -20,11 +25,22 @@ function CustomizeMainPage() {
                   </p>
                 </div>
                 <video
+                  onMouseEnter={e => {
+                    const newStart = true;
+                    setStart(e.currentTarget.play(newStart));
+                    console.log(e.currentTarget.play());
+                  }}
+                  onMouseLeave={e => {
+                    const newStart = false;
+                    setStart(e.currentTarget.pause(newStart));
+                    console.log(e.currentTarget.pause());
+                  }}
                   className="Custom-suit-video"
-                  // src={require('./movies/suit.mp4')}
+                  // src={suitMovie}
                   playsInline=""
                   loop="loop"
-                  autoPlay="autoplay"
+                  autoPlay=""
+                  muted
                 ></video>
               </a>
             </div>
@@ -42,11 +58,22 @@ function CustomizeMainPage() {
                   </p>
                 </div>
                 <video
+                  onMouseEnter={e => {
+                    const newStart = true;
+                    setStart(e.currentTarget.play(newStart));
+                    console.log(e.currentTarget.play());
+                  }}
+                  onMouseLeave={e => {
+                    const newStart = false;
+                    setStart(e.currentTarget.pause(newStart));
+                    console.log(e.currentTarget.pause());
+                  }}
                   className="Custom-craft-video"
-                  // src={require('./movies/spacecraft.webm')}
+                  // src={craftMovie}
                   playsInline=""
                   loop="loop"
-                  autoPlay="autoplay"
+                  autoPlay=""
+                  muted
                 ></video>
               </a>
             </div>
@@ -63,11 +90,22 @@ function CustomizeMainPage() {
                   </p>
                 </div>
                 <video
+                  onMouseEnter={e => {
+                    const newStart = true;
+                    setStart(e.currentTarget.play(newStart));
+                    console.log(e.currentTarget.play());
+                  }}
+                  onMouseLeave={e => {
+                    const newStart = false;
+                    setStart(e.currentTarget.pause(newStart));
+                    console.log(e.currentTarget.pause());
+                  }}
                   className="Custom-seat-video"
-                  // src={require('./movies/seats3.mp4')}
+                  // src={seatMovie}
                   playsInline=""
                   loop="loop"
-                  autoPlay="autoplay"
+                  autoPlay=""
+                  muted
                 ></video>
               </a>
             </div>

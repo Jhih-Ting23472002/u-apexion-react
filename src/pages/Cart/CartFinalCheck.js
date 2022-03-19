@@ -182,7 +182,7 @@ const CartFinalCheck = () => {
             <div className="col-2"></div>
             <Link
               className="btn next-btn position cart-link"
-              to={''}
+              to={'/cart-credit-card'}
             >
               下ㄧ步<i className="arrow right"></i>
             </Link>

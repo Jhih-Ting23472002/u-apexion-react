@@ -4,12 +4,12 @@ import './MemberPerson.css';
 const MemberPerson = () => {
   return (
     <>
-      <div className="person-container">
-        <div className="person-shadow-container">
-          <div className="person-sidebar"></div>
-          <div className="person-wrap">
-            <div className="person-title-wrap">
-              <div className="person-title">
+      <div className="member-container">
+        <div className="member-shadow-container">
+          <div className="member-sidebar"></div>
+          <div className="member-right-wrap">
+            <div className="member-title-wrap">
+              <div className="member-title">
                 <h1>個人檔案</h1>
               </div>
             </div>
@@ -34,21 +34,31 @@ const MemberPerson = () => {
                     性別
                   </label>
 
-                  <div class="member-gender">
-                    <input type="radio" id="gender-female" name="gender" />
-                    <label for="gender-female" className="member-label">
-                      女性
-                    </label>
-                    <input type="radio" id="gender-male" name="gender" />
-                    <label for="gender-male" className="member-label">
-                      男性
-                    </label>
-                    <input type="radio" id="gender-other" name="gender" />
-                    <label for="gender-other" className="member-label">
-                      其他
-                    </label>
+                  <div class="member-gender-container">
+                    <div class="member-gender">
+                      <input type="radio" id="gender-female" name="gender" />
+                      <label
+                        for="gender-female"
+                        className="member-gender-label"
+                      >
+                        女性
+                      </label>
+                    </div>
+                    <div class="member-gender">
+                      <input type="radio" id="gender-male" name="gender" />
+                      <label for="gender-male" className="member-gender-label">
+                        男性
+                      </label>
+                    </div>
+                    <div className="member-gender">
+                      <input type="radio" id="gender-other" name="gender" />
+                      <label for="gender-other" className="member-gender-label">
+                        其他
+                      </label>
+                    </div>
                   </div>
                 </div>
+
                 <div className="member-input-container">
                   <label for="" className="member-label">
                     生日
@@ -56,7 +66,7 @@ const MemberPerson = () => {
                   <input type="date" placeholder="" className="member-input" />
                 </div>
 
-                <div className="member-input-container">
+                <div className="member-input-container country-wrap">
                   <label for="" className="member-label">
                     國籍
                   </label>
@@ -67,13 +77,12 @@ const MemberPerson = () => {
                     <option>美國</option>
                   </select>
                 </div>
-                <div className="member-btn-container">
+                <div className="member-btn-container person-btn-container">
+                  <div className="member-return-btn-wrap">
+                    <button className="member-circle-btn">取消更改</button>
+                  </div>
                   <div>
-                    <input
-                      type="submit"
-                      className="member-btn-confirm"
-                      value="確認送出"
-                    />
+                    <button className="member-circle-btn">確認送出</button>
                   </div>
                 </div>
               </form>
@@ -83,12 +92,8 @@ const MemberPerson = () => {
               <div className="person-avatar-container">
                 <div className="person-avatar-img"></div>
                 <div className="person-avatar-upload">
-                  <div>
-                    <input
-                      type="submit"
-                      className="member-btn-confirm"
-                      value="選擇圖片"
-                    />
+                  <div className="member-btn-container">
+                    <button className="member-circle-btn">選擇圖片</button>
                   </div>
                 </div>
                 <div className="person-avatar-txt">
