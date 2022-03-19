@@ -38,11 +38,13 @@ const IndexMain = () => {
               top: isToggleOn === true ? '0' : '3%',
             }}
           >
-            <img
-              className="index_swiper_dateimg"
-              src="./index_img/date2.png"
-              alt=""
-            />
+            <div className="index_swiper_date_text">
+              <p>JUNE.</p>
+              <p>11</p>
+              <p>/</p>
+              <p>JUNE.</p>
+              <p>16</p>
+            </div>
           </div>
           <div
             className="index_swiper_title"
@@ -50,11 +52,10 @@ const IndexMain = () => {
               left: isToggleOn === true ? '0' : '3%',
             }}
           >
-            <img
-              className="index_swiper_titleimg"
-              src="./index_img/gemeni.png"
-              alt=""
-            />
+            <div className="index_swiper_title_text">
+              <p>Gemini</p>
+              <p>12星座之旅</p>
+            </div>
           </div>
           <div
             className="index_swiper_inner_img1"
@@ -62,12 +63,11 @@ const IndexMain = () => {
               opacity: isToggleOn === true ? '0.3' : '1',
             }}
           >
-            <img
-              className="index_swiper_pimg"
-              src="./index_img/img1.png"
-              alt=""
-            />
+            <div className="index_swiper_inner_img_text">
+              <div className="index_swiper_inner_img_text_inner"></div>
+            </div>
           </div>
+          <button className="index_swiper_btn">查看更多</button>
         </SwiperSlide>
         <SwiperSlide className="swiper">
           <img className="index_swiper_img" src="./index_img/bg-1.png" alt="" />
@@ -77,11 +77,13 @@ const IndexMain = () => {
               right: isToggleOn === true ? '3%' : '0%',
             }}
           >
-            <img
-              className="index_swiper_dateimg"
-              src="./index_img/date1.png"
-              alt=""
-            />
+            <div className="index_swiper_date_text">
+              <p>MARCH.</p>
+              <p>12</p>
+              <p>/</p>
+              <p>MARCH.</p>
+              <p>18</p>
+            </div>
           </div>
           <div
             className="index_swiper_title"
@@ -89,11 +91,10 @@ const IndexMain = () => {
               left: isToggleOn === true ? '3%' : '0%',
             }}
           >
-            <img
-              className="index_swiper_titleimg"
-              src="./index_img/mars.png"
-              alt=""
-            />
+            <div className="index_swiper_title_text">
+              <p>MARS-The Martian</p>
+              <p>電影場景旅遊</p>
+            </div>
           </div>
           <div
             className="index_swiper_inner_img2"
@@ -108,6 +109,7 @@ const IndexMain = () => {
               alt=""
             />
           </div>
+          <button className="index_swiper_btn">查看更多</button>
         </SwiperSlide>
         <SwiperSlide className="swiper">
           <img
@@ -139,6 +141,12 @@ const IndexMain = () => {
               alt=""
             />
           </div>
+          <button
+            className="index_swiper_btn"
+            style={{ right: '6%', bottom: '8%' }}
+          >
+            查看更多
+          </button>
         </SwiperSlide>
         <SwiperSlide className="swiper">
           <img className="index_swiper_img" src="./index_img/bg-3.png" alt="" />
@@ -148,11 +156,13 @@ const IndexMain = () => {
               right: isToggleOn === true ? '3%' : '0%',
             }}
           >
-            <img
-              className="index_swiper_dateimg"
-              src="./index_img/date3.png"
-              alt=""
-            />
+            <div className="index_swiper_date_text">
+              <p>APRIL.</p>
+              <p>10</p>
+              <p>/</p>
+              <p>MAY.</p>
+              <p>18</p>
+            </div>
           </div>
           <div
             className="index_swiper_title"
@@ -160,11 +170,10 @@ const IndexMain = () => {
               left: isToggleOn === true ? '3%' : '0%',
             }}
           >
-            <img
-              className="index_swiper_titleimg"
-              src="./index_img/spring.png"
-              alt=""
-            />
+            <div className="index_swiper_title_text">
+              <p>SPRING</p>
+              <p>春季服飾熱賣中</p>
+            </div>
           </div>
           <div
             className="index_swiper_inner_img3"
@@ -179,6 +188,7 @@ const IndexMain = () => {
               alt=""
             />
           </div>
+          <button className="index_swiper_btn">查看更多</button>
         </SwiperSlide>
       </Swiper>
       {/* -------------section1 end-------------- */}
