@@ -135,7 +135,9 @@ function TravelIndex() {
             <div className="tourOverlayp">
               <p>快來看看關於行程旅程的文章感想吧</p>
             </div>
-            <button className="tourButton">let's go</button>
+            <a href="/posts-category/2">
+              <button className="tourButton">Let's go</button>
+            </a>
           </div>
         </div>
       </section>
@@ -211,12 +213,9 @@ function TravelIndex() {
           })}
         </div>
         <div className="morechoose">
-          <button
-            className="tourButton"
-            onclick="location.href='/travel-choose'"
-          >
-            觀看更多行程
-          </button>
+          <a href="/travel-choose">
+            <button className="tourButton">觀看更多行程</button>
+          </a>
         </div>
       </section>
 
