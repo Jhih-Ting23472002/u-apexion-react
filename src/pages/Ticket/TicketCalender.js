@@ -4,9 +4,9 @@ import _ from 'lodash';
 function TicketCalender() {
   const [monthSelected, setMonthSelected] = useState(0);
   const [monthShow, setMonthShow] = useState([0, 1, 2]);
-  const [date, setDate] = useState([]);
 
   const [pickDate, setPickDate] = useState('');
+  const [date, setDate] = useState([]);
 
   //   初始畫面
   useEffect(() => {
