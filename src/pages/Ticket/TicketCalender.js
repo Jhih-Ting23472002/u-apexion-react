@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import _ from 'lodash';
 
-function TicketCalender() {
+function TicketCalender(props) {
   const [monthSelected, setMonthSelected] = useState(0);
   const [monthShow, setMonthShow] = useState([0, 1, 2]);
 
@@ -20,6 +20,7 @@ function TicketCalender() {
       const dateListDatas = await response.json();
       setDate(dateListDatas);
       console.log(dateListDatas);
+      console.log(dateListDatas[0].departure_date);
       console.log(date);
     })();
   }, []);
@@ -37,20 +38,29 @@ function TicketCalender() {
       setDate(dateListDatas);
       console.log(dateListDatas);
       console.log(date);
+      console.log(date[0].departure_date);
     })();
   }, [monthSelected]);
 
-  // 顯示日曆
+  // 改變月份
   function monthHandler(e) {
-    // console.log(e.target.value);
-    // console.log('123');
-    // 獲取滑鼠點選所選擇的年月值
     setMonthSelected(e.target.value);
     setMonthShow([
       monthSelected - 1 <= -1 ? '' : monthSelected - 1,
       monthSelected,
       monthSelected + 1,
     ]);
+  }
+
+  //   改變出發日期
+  function dateHandler(e) {
+    const dateSelected = new Date(2022, monthSelected, e.target.innerText)
+      .toISOString()
+      .slice(0, 10);
+    props.setDate(dateSelected);
+    console.log(e.target.innerText);
+    console.log(e);
+    console.log(monthSelected + 1);
   }
 
   const now = new Date();
@@ -112,8 +122,13 @@ function TicketCalender() {
                       {v.map((item, idx) => (
                         <td
                           key={idx}
-                          data-date={item ? date[item - 1].departure_date : ''}
-                          onClick={() => {}}
+                          //   data-date={
+                          //     item ? date[item - 1].departure_date : ''
+                          //   }
+                          data-date={item ? '1' : ''}
+                          onClick={e => {
+                            dateHandler(e);
+                          }}
                         >
                           {item}
                         </td>

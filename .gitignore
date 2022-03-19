@@ -35,3 +35,8 @@ product_img
 travelimg
 # 影片暫不上傳...區
 movies
+
+// cart 區域
+z_CartCreditCard.css
+z_CartCreditCard.js
+cart_sql資料庫

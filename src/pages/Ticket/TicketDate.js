@@ -1,8 +1,17 @@
 import stepCircle from './img/stepCircle.png';
 import stepCircleMb from './img/stepCircle-mb.png';
 import TicketCalender from './TicketCalender';
+import { useState } from 'react';
 
-function TicketDate() {
+function TicketDate(props) {
+  const [date, setDate] = useState(
+    new Date(2022, new Date().getMonth(), new Date().getDate())
+      .toISOString()
+      .slice(0, 10)
+  );
+
+  console.log(props.tripSelected);
+  console.log(props.tripDays);
   return (
     <>
       <div class="ticket-container">
@@ -25,15 +34,15 @@ function TicketDate() {
               <div className="ticket-date-selected-area">
                 <div className="ticket-date-selected ticket-date-days">
                   <div className="ticket-date-days-underline">
-                    <h2>泰坦星</h2>
-                    <h2>5 Days</h2>
+                    <h2>{props.tripSelected}</h2>
+                    <h2>{props.tripDays} Days</h2>
                   </div>
                 </div>
                 <div className="ticket-date-selected ticket-date-from">
                   <div className="ticket-date-from-border">
                     <h4>From</h4>
                     <div className="ticket-date-from-info">
-                      <p>2022.01.24</p>
+                      <p>{date}</p>
                       <p>9:00 AM</p>
                     </div>
                   </div>
@@ -49,7 +58,7 @@ function TicketDate() {
                 </div>
               </div>
               <div className="ticket-calendar-content">
-                <TicketCalender />
+                <TicketCalender setDate={setDate} />
               </div>
             </div>
 

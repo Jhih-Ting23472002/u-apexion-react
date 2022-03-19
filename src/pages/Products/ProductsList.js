@@ -1,18 +1,60 @@
 import React from 'react';
 import './ProductsList.scss';
 import ListCards from './components/ListCards';
+import ProductsConfig from './ProductsConfig';
+import { useState, useEffect } from 'react';
 
 function ProductsList() {
+  const [ProductList, setProductList] = useState([]);
+  const [ProductNavbar, setProductNavbar] = useState('/men');
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(ProductsConfig.MEN_List);
+      const menList = await response.json();
+      setProductList(menList);
+    })();
+  }, []);
+
+  const ProductMenList = async function () {
+    const responseMen = await fetch(ProductsConfig.Woman_List);
+    const menList = await responseMen.json();
+    setProductList(menList);
+  };
+  const ProductWomanList = async function () {
+    const responseWoman = await fetch(ProductsConfig.Woman_List);
+    const WomanList = await responseWoman.json();
+    setProductList(WomanList);
+  };
+
   return (
     <article>
       <div className="pr-list">
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
-            <a href="#/">男士精品</a>
-            <a href="#/">女士精品</a>
-            <a href="#/">鞋款</a>
-            <a href="#/">配件與腕錶</a>
+            <a
+              href="#men"
+              onClick={() => {
+                setProductNavbar('#men');
+                ProductMenList();
+              }}
+              className={ProductNavbar === '#men' ? 'active' : ''}
+            >
+              男士精品
+            </a>
+            <a
+              href="#woman"
+              onClick={() => {
+                setProductNavbar('#woman');
+                ProductWomanList();
+              }}
+              className={ProductNavbar === '#woman' ? 'active' : ''}
+            >
+              女士精品
+            </a>
+            <a href="#Shoes">鞋款</a>
+            <a href="#watch">配件與腕錶</a>
           </div>
           <div className="div-wrap">
             <div className="wrap">
@@ -40,7 +82,7 @@ function ProductsList() {
             <input id="search_submit" value="" type="submit" />
           </form>
         </div>
-         {/* ------------------------*/}
+        {/* ------------------------*/}
         <div className="pr-list-img">
           <img src="./product_img/cover5_1440_1200.jpeg" alt="" />
         </div>
@@ -91,20 +133,27 @@ function ProductsList() {
         </div>
         {/* 卡片開始 */}
         <div className="pr-list-cards">
-          <div className="col-md-4">
-            <div className="card pr-card mb-5">
-              <img
-                className="card-img-top"
-                src="./product_img/M021J_BK019.jpg"
-                alt=""
+          {ProductList.map((newProduct, i) => {
+            const {
+              sid,
+              product_name,
+              material,
+              product_img,
+              image_photo,
+              price,
+            } = newProduct;
+            return (
+              <ListCards
+                key={sid}
+                sid={sid}
+                product_name={product_name}
+                material={material}
+                product_img={product_img}
+                image_photo={image_photo}
+                price={price}
               />
-              <div className="card-body">
-                <p className="card-text mb-3">太空飛行員外套</p>
-                <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
-              </div>
-            </div>
-          </div>
-          <ListCards/>
+            );
+          })}
         </div>
       </div>
     </article>

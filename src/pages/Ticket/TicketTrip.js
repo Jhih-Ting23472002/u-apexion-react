@@ -3,7 +3,7 @@ import stepCircle from './img/stepCircle.png';
 import stepCircleMb from './img/stepCircle-mb.png';
 import React, { useEffect, useState } from 'react';
 
-function TicketTrip() {
+function TicketTrip(props) {
   const [tripData, setTripData] = useState([]);
   const [distance, setDistance] = useState(0);
 
@@ -17,6 +17,8 @@ function TicketTrip() {
       console.log(tripDatas);
     })();
   }, []);
+
+  useEffect(() => {}, []);
 
   const StarsingHandle = async function () {
     const response = await fetch(
@@ -55,9 +57,38 @@ function TicketTrip() {
   console.log(distance);
   console.log(tripData.length - 3);
 
-  useEffect(() => {}, [tripData, distance]);
+  useEffect(() => {}, [
+    tripData,
+    distance,
+    props.setTripSelected,
+    props.setTripDays,
+    props.setTripPrice,
+  ]);
 
   console.log(tripData);
+
+  function tripHandler(e) {
+    console.log(
+      e.target.parentNode.previousSibling.firstChild.firstChild.innerHTML
+    );
+    console.log(
+      e.target.parentNode.previousSibling.firstChild.lastChild.innerHTML
+    );
+    console.log(
+      e.target.parentNode.parentNode.firstChild.innerHTML.slice(0, 1)
+    );
+    props.setTripSelected(
+      e.target.parentNode.previousSibling.firstChild.firstChild.innerHTML
+    );
+
+    props.setTripDays(
+      e.target.parentNode.parentNode.firstChild.innerHTML.slice(0, 1)
+    );
+
+    props.setTripPrice(
+      e.target.parentNode.previousSibling.firstChild.lastChild.innerHTML
+    );
+  }
 
   return (
     <>
@@ -137,7 +168,12 @@ function TicketTrip() {
                           <p>{v.travel_description}</p>
                         </div>
                         <div className="ticket-trip-card-footer">
-                          <button className="tickit-choose-btn">
+                          <button
+                            onClick={e => {
+                              tripHandler(e);
+                            }}
+                            className="tickit-choose-btn"
+                          >
                             選擇行程
                           </button>
                           <button className="trip-detail-btn">
