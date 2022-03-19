@@ -180,7 +180,6 @@ const IndexMain = () => {
             />
           </div>
         </SwiperSlide>
-        
       </Swiper>
       {/* -------------section1 end-------------- */}
       <div className="index_sec_two_bg">

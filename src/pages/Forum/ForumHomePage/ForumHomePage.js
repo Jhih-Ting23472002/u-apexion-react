@@ -36,18 +36,23 @@ const PostDate = styled.div`
 const ForumSortNew = styled(Link)`
   display: flex;
   align-items: center;
+  background-color: black;
   padding-right: 10px;
-  border-radius: 10px;
+  border-radius: 30px;
+  border: 4px double #05f2f2;
   ${props =>
     props.$active &&
     `
-    border: 1px solid #05f2f2; 
-    background-color:#05f2f2;
     text-decoration: none;
-  `}
+    background-color: #05f2f2;
+    color: black;
+    border: 4px double black;
+  `};
 `;
 
 function Post({ post }) {
+  const [likes, setLikes] = useState(post.article_likes);
+  const [save, setSave] = useState(post.article_save);
   return (
     <>
       <div className="card forum_card">
@@ -64,14 +69,6 @@ function Post({ post }) {
                     {new Date(post.art_create_time).toLocaleString()}
                   </PostDate>
                 </div>
-              </div>
-              <div className="forum_user_top_right">
-                <button className="forum_user_top_right_btn">
-                  <i class=" fa-solid fa-pen-to-square"></i>
-                </button>
-                <button className="forum_user_top_right_btn">
-                  <i class="fa-regular fa-trash-can"></i>
-                </button>
               </div>
             </div>
             <div className="article-title">
@@ -93,17 +90,23 @@ function Post({ post }) {
           </div>
         </div>
         <div className="article-like-box">
-          <div className="article-like-box-group">
+          <div
+            className="article-like-box-group"
+            onClick={() => setLikes(likes + 1)}
+          >
             <i className="fas fa-heart"></i>
-            <div className="article-like-box-number">{post.article_likes}</div>
+            <div className="article-like-box-number">{likes}</div>
           </div>
           <div className="article-like-box-group">
             <i className="fas fa-comment"></i>
-            <div className="article-like-box-number">{post.article_likes}</div>
+            <div className="article-like-box-number">{post.res_count}</div>
           </div>
-          <div className="article-like-box-group">
+          <div
+            className="article-like-box-group"
+            onClick={() => setSave(save + 1)}
+          >
             <i className="fas fa-bookmark"></i>
-            <div className="article-like-box-number">{post.article_save}</div>
+            <div className="article-like-box-number">{save}</div>
           </div>
         </div>
       </div>
@@ -118,9 +121,11 @@ Post.propTypes = {
 export default function ForumHomePage() {
   const location = useLocation();
   const [posts, setPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/forum-list-connectTry')
+    // fetch('http://localhost:3000/forum-list-connectTry')
+    fetch('http://localhost:3000/forum_index/getAll')
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);
@@ -136,7 +141,7 @@ export default function ForumHomePage() {
                 <div className="forum-sort-icon">
                   <a href="#/" className="forum_justify">
                     <i className="fas fa-sort"> </i>
-                    <div className="forum_sort_text">SORT</div>
+                    <div className="forum_sort_text ">SORT</div>
                   </a>
                 </div>
                 <div className="sort-new">
@@ -146,7 +151,7 @@ export default function ForumHomePage() {
                     // className="forum_justify"
                   >
                     <i className="fas fa-clock"></i>
-                    <div className="forum_sort_text">NEW</div>
+                    <div className="forum_sort_new">NEW</div>
                   </ForumSortNew>
                 </div>
                 <div className="sort-hot">
@@ -170,85 +175,130 @@ export default function ForumHomePage() {
               </div>
             </div>
           </div>
+          <div className="searchOutline">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="searchInput"
+              onChange={event => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+            <a href="#/" class="search-btn">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
           <div
             className="row"
-            style={{ marginLeft: '5px', marginRight: '5px' }}
+            style={{
+              marginLeft: '5px',
+              marginRight: '5px',
+            }}
           >
             <div className="col">
-              <div className="card forum_card card-fixed">
-                <div className="card-body forum_card_body">
-                  <div className="card-user forum-card-user">
-                    <div className="forum_user-top">
-                      <div className="forum_user-logo">
-                        <img
-                          className="forum_user_logo_cover"
-                          src="./forum_img/u-apexionLogo.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="forum-user-title">
-                        <div className="user-name forum_user-name">
-                          U-Apexion
+              {posts
+                .filter(v => {
+                  if (v.forum_sid === 31 && searchTerm === '') {
+                    return v;
+                  } else if (
+                    v.forum_sid === 31 &&
+                    v.art_title.includes(searchTerm)
+                  ) {
+                    return v;
+                  }
+                })
+                .map(post => (
+                  <div className="card forum_card card-fixed">
+                    <div className="card-body forum_card_body">
+                      <div className="card-user forum-card-user">
+                        <div className="forum_user-top">
+                          <div className="forum_user-logo">
+                            <img
+                              className="forum_user_logo_cover"
+                              src="./forum_img/u-apexionLogo.png"
+                              alt=""
+                            />
+                          </div>
+                          <div className="forum-user-title">
+                            <div className="user-name forum_user-name">
+                              {post && post.name}
+                            </div>
+                            <div
+                              className="forum-post-time"
+                              style={{ color: 'white' }}
+                            >
+                              {new Date(post.art_create_time).toLocaleString()}
+                            </div>
+                          </div>
                         </div>
-                        <div
-                          className="forum-post-time"
-                          style={{ color: 'white' }}
-                        >
-                          5 min ago
+                        <div className="article-title">
+                          <PostTitle to={`/forum-home/posts/${post.forum_sid}`}>
+                            {post.art_title}
+                          </PostTitle>
+                        </div>
+                        <div className="article-text">
+                          <p className="article-ellipsis">{post.art_content}</p>
+                        </div>
+                      </div>
+                      <div className="article-hashtag">
+                        <a href="#/" className="card-link forum_card-link">
+                          {post && post.hashtag1}
+                        </a>
+                        <a href="#/" className="card-link forum_card-link">
+                          {post && post.hashtag2}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="article-like-box">
+                      <div className="article-like-box-group">
+                        <i className="fas fa-heart"></i>
+                        <div className="article-like-box-number">
+                          {post && post.article_likes}
+                        </div>
+                      </div>
+                      <div className="article-like-box-group">
+                        <i className="fas fa-comment"></i>
+                        <div className="article-like-box-number">
+                          {post && post.res_count}
+                        </div>
+                      </div>
+                      <div className="article-like-box-group">
+                        <i className="fas fa-bookmark"></i>
+                        <div className="article-like-box-number">
+                          {post && post.article_save}
                         </div>
                       </div>
                     </div>
-                    <div className="article-title">
-                      <h6>U-Apaxion板規-發文注意事項</h6>
-                    </div>
-                    <div className="article-text">
-                      <p>
-                        一、 禁止使用不雅字眼、中傷、歧視、挑釁或謾罵他人。 二、
-                        為了創造更佳的內容體驗，全面禁止在文章與留言內留下個人聯絡方式或ID。三、
-                        請勿...
+                    <div className="forum-fixed-box">
+                      <p
+                        style={{
+                          width: '40px',
+                          marginBottom: '0',
+                          marginLeft: 'auto',
+                          marginRight: 'auto',
+                        }}
+                      >
+                        FIXED
                       </p>
+                      <i className="fas fa-thumbtack"></i>
                     </div>
                   </div>
-                  <div className="article-hashtag">
-                    <a href="#/" className="card-link forum_card-link">
-                      #板規
-                    </a>
-                    <a href="#/" className="card-link forum_card-link">
-                      #請查明後再發文
-                    </a>
-                  </div>
-                </div>
-                <div className="article-like-box">
-                  <div className="article-like-box-group">
-                    <i className="fas fa-heart"></i>
-                    <div className="article-like-box-number">30</div>
-                  </div>
-                  <div className="article-like-box-group">
-                    <i className="fas fa-comment"></i>
-                    <div className="article-like-box-number">11</div>
-                  </div>
-                  <div className="article-like-box-group">
-                    <i className="fas fa-bookmark"></i>
-                    <div className="article-like-box-number">8</div>
-                  </div>
-                </div>
-                <div className="forum-fixed-box">
-                  <p
-                    style={{
-                      width: '40px',
-                      marginBottom: '0',
-                      marginLeft: 'auto',
-                      marginRight: 'auto',
-                    }}
-                  >
-                    FIXED
-                  </p>
-                  <i className="fas fa-thumbtack"></i>
-                </div>
-              </div>
-              {posts.map(post => (
-                <Post post={post} />
-              ))}
+                ))}
+
+              {posts
+                .filter(v => {
+                  if (v.forum_sid !== 31 && searchTerm === '') {
+                    return v;
+                  } else if (
+                    v.forum_sid !== 31 &&
+                    v.art_title.includes(searchTerm)
+                  ) {
+                    return v;
+                  }
+                })
+                .map(post => (
+                  <Post post={post} />
+                ))}
               {/* <nav aria-label="Page navigation example">
                 <ul className="pagination forum-pagination">
                   <li className="page-item forum-page-item">

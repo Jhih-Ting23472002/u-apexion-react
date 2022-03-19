@@ -27,33 +27,39 @@ const PostDate = styled.div`
 const ForumSortNew = styled(Link)`
   display: flex;
   align-items: center;
+  background-color: black;
   padding-right: 10px;
-  border-radius: 10px;
-  text-decoration: none;
+  border-radius: 30px;
+  border: 4px double #05f2f2;
   ${props =>
     props.$active &&
     `
-    border: 1px solid #05f2f2; 
-    background-color:#05f2f2;
     text-decoration: none;
-  `}
+    background-color: #05f2f2;
+    color: black;
+    border: 4px double black;
+  `};
 `;
 
 function Post({ post }) {
+  const [likes, setLikes] = useState(post.article_likes);
+  const [save, setSave] = useState(post.article_save);
   return (
     <>
       <div className="card forum_card">
         <div className="card-body forum_card_body">
           <div className="card-user">
             <div className="forum_user-top">
-              <div className="forum_user-logo">
-                {/* <img className="cover" src="" alt="" /> */}
-              </div>
-              <div className="user-title">
-                <div className="user-name forum_user-name">{post.name}</div>
-                <PostDate>
-                  {new Date(post.art_create_time).toLocaleString()}
-                </PostDate>
+              <div className="forum_user_top_left">
+                <div className="forum_user-logo">
+                  {/* <img className="cover" src="" alt="" /> */}
+                </div>
+                <div className="user-title">
+                  <div className="user-name forum_user-name">{post.name}</div>
+                  <PostDate>
+                    {new Date(post.art_create_time).toLocaleString()}
+                  </PostDate>
+                </div>
               </div>
             </div>
             <div className="article-title">
@@ -75,17 +81,23 @@ function Post({ post }) {
           </div>
         </div>
         <div className="article-like-box">
-          <div className="article-like-box-group">
+          <div
+            className="article-like-box-group"
+            onClick={() => setLikes(likes + 1)}
+          >
             <i className="fas fa-heart"></i>
-            <div className="article-like-box-number">11</div>
+            <div className="article-like-box-number">{likes}</div>
           </div>
           <div className="article-like-box-group">
             <i className="fas fa-comment"></i>
-            <div className="article-like-box-number">11</div>
+            <div className="article-like-box-number">{post.res_count}</div>
           </div>
-          <div className="article-like-box-group">
+          <div
+            className="article-like-box-group"
+            onClick={() => setSave(save + 1)}
+          >
             <i className="fas fa-bookmark"></i>
-            <div className="article-like-box-number">11</div>
+            <div className="article-like-box-number">{save}</div>
           </div>
         </div>
       </div>
@@ -100,9 +112,10 @@ Post.propTypes = {
 export default function ForumUArticlePage() {
   const location = useLocation();
   const [posts, setPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/forum_index/UApexion-article')
+    fetch('http://localhost:3000/forum_index/getAll')
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);
@@ -128,7 +141,7 @@ export default function ForumUArticlePage() {
                     // class="forum_justify"
                   >
                     <i class="fas fa-clock"></i>
-                    <div className="forum_sort_text">NEW</div>
+                    <div className="forum_sort_new">NEW</div>
                   </ForumSortNew>
                 </div>
                 <div class="sort-hot">
@@ -152,11 +165,34 @@ export default function ForumUArticlePage() {
               </div>
             </div>
           </div>
+          <div className="searchOutline">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="searchInput"
+              onChange={event => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+            <a href="#/" class="search-btn">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
           <div class="row" style={{ marginLeft: '5px', marginRight: '5px' }}>
             <div class="col">
-              {posts.map(post => (
-                <Post post={post} />
-              ))}
+              {posts
+                .filter(v => {
+                  if ((v.forum_user_sid = 2 && searchTerm === '')) {
+                    return v;
+                  } else if (
+                    (v.forum_user_sid = 2 && v.art_title.includes(searchTerm))
+                  ) {
+                    return v;
+                  }
+                })
+                .map(post => (
+                  <Post post={post} />
+                ))}
               {/* <nav aria-label="Page navigation example">
                 <ul class="pagination forum-pagination">
                   <li class="page-item forum-page-item">

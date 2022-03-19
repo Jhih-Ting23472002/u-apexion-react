@@ -44,6 +44,7 @@ const SinglePostTopRightFlex = styled.div`
   ${'' /* border: 1px solid pink; */}
   display: flex;
   padding: 5px;
+  font-size: 16px;
 `;
 const SinglePostTopImg = styled.div`
   border: 1px solid black;
@@ -96,6 +97,17 @@ const SinglePostContent = styled.div`
   line-height: 30px;
   letter-spacing:2px;
 `;
+const SinglePostHashtag = styled.div`
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+const SinglePostTopRightEDIT = styled(Link)`
+  padding-right: 10px;
+`;
+const SinglePostTopRightDELETE = styled.div``;
 
 const SinglePostResponses = styled.div``;
 
@@ -149,6 +161,7 @@ export default function ForumSinglePostPage() {
   };
 
   const handleDeletePost = e => {
+    alert('確認刪除嗎？');
     fetch(`http://localhost:3000/forum_index/list-delete/${sid}`).then(res =>
       res.json()
     );
@@ -177,17 +190,48 @@ export default function ForumSinglePostPage() {
     fetchMessage();
   }, []);
 
+  const spinner = () => {
+    if (loading) {
+      setTimeout(() => history.push('/forum-home'), 2000);
+      return (
+        <div
+          classname="spinner_bg"
+          style={{
+            width: '100%',
+            height: '100%',
+            zIndex: 999,
+            backgroundColor: 'black',
+            position: 'relative',
+            textAlign: 'center',
+            color: 'white',
+            fontSize: '16px',
+          }}
+        >
+          Loading....
+          <ReactBootstrap.Spinner
+            animation="grow"
+            style={{
+              // backgroundColor: '#fff',
+              position: 'absolute',
+              top: '7%',
+              left: '50%',
+              transform: 'translate(-50%,-50%)',
+              width: '60px',
+              height: '60px',
+            }}
+          ></ReactBootstrap.Spinner>
+        </div>
+      );
+    }
+  };
+
   return (
     <Root>
       <AllDisplayFlex>
         <ForumNav />
         <SinglePost>
+          {spinner()}
           <SinglePostContainer>
-            {loading ? (
-              history.push('/forum-home')
-            ) : (
-              <ReactBootstrap.Spinner animation="grow" />
-            )}
             <SinglePostTopLeft>
               <SinglePostTopLeftFlex>
                 <SinglePostTopImg></SinglePostTopImg>
@@ -198,10 +242,17 @@ export default function ForumSinglePostPage() {
                   </SinglePostTime>
                 </SinglePostTopUser>
               </SinglePostTopLeftFlex>
-              <SinglePostTopRightFlex onClick={handleDeletePost}>
-                <button className="SinglePostTopRightFlexBtn">
-                  <i class="fa-regular fa-trash-can"></i>
-                </button>
+              <SinglePostTopRightFlex>
+                <SinglePostTopRightEDIT to={`/publish-edit/${sid}`}>
+                  <button className="SinglePostTopRightFlexBtn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </SinglePostTopRightEDIT>
+                <SinglePostTopRightDELETE onClick={handleDeletePost}>
+                  <button className="SinglePostTopRightFlexBtn">
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </SinglePostTopRightDELETE>
               </SinglePostTopRightFlex>
             </SinglePostTopLeft>
             <SingleTopRight></SingleTopRight>
@@ -217,6 +268,10 @@ export default function ForumSinglePostPage() {
                 }}
               />
             </SinglePostContent>
+            <SinglePostHashtag>
+              {post && post.hashtag1}&nbsp;&nbsp; &nbsp; &nbsp;
+              {post && post.hashtag2}
+            </SinglePostHashtag>
           </SinglePostContainer>
           <SinglePostResponses>
             <div>

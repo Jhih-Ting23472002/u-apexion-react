@@ -29,17 +29,6 @@ export default function ForumNav() {
     >
       <ul className="nav nav-pills flex-column mb-auto forum_nav_ul">
         <li>
-          <div className="forum-input-wrapper">
-            <input
-              className="forum_nav-search-bar form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              required
-            />
-          </div>
-        </li>
-        <li>
           <div
             className="forum_nav_title"
             style={{ marginTop: '15px', fontSize: '14px' }}
