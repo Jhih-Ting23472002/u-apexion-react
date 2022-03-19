@@ -4,30 +4,30 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
 
 function TravelNotes() {
-  const [JourneySingle, setJourneySingle] = useState([]);
-  const [JourneyDouble, setJourneyDouble] = useState([]);
+  const [JourneyNotes, setJourneySingle] = useState([]);
+  // const [JourneyDouble, setJourneyDouble] = useState([]);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-notes/api/travel-journeysingle'
+        'http://localhost:3001/travel-notes/api/travel-journeynotes'
       );
-      const JourneySingle = await response.json();
-      setJourneySingle(JourneySingle);
-      console.log(JourneySingle);
+      const JourneyNotes = await response.json();
+      setJourneySingle(JourneyNotes);
+      console.log(JourneyNotes);
     })();
   }, []);
 
-  useEffect(() => {
-    (async function () {
-      const response = await fetch(
-        'http://localhost:3001/travel-notes/api/travel-journeydouble'
-      );
-      const JourneyDouble = await response.json();
-      setJourneyDouble(JourneyDouble);
-      console.log(JourneyDouble);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async function () {
+  //     const response = await fetch(
+  //       'http://localhost:3001/travel-notes/api/travel-journeydouble'
+  //     );
+  //     const JourneyDouble = await response.json();
+  //     setJourneyDouble(JourneyDouble);
+  //     console.log(JourneyDouble);
+  //   })();
+  // }, []);
   return (
     <>
       <div className="container travelnotescontainer">
@@ -173,38 +173,108 @@ function TravelNotes() {
           </Carousel.Item>
         </Carousel>
 
-        {/* 1st group */}
-
-        {JourneySingle.map((n, i) => {
+        {JourneyNotes.map((n, i) => {
           return (
             <React.Fragment key={i}>
+              {/* 1st group */}
               <div className="blog-card">
                 <div className="meta">
                   <div className="photo photo_1"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
-                  <h2 className="descriptionh2">{n.travel_day}</h2>
-                  <h3 className="descriptionh3">{n.day_introduction}</h3>
-                  <p className="descriptionp">{n.day_details}</p>
+                  <h2 className="descriptionh2">Day1</h2>
+                  <h3 className="descriptionh3">
+                    OPENING A DOOR TO THE FUTURE
+                  </h3>
+                  <p className="descriptionp">{n.day1}</p>
                 </div>
               </div>
-            </React.Fragment>
-          );
-        })}
 
-        {JourneyDouble.map((n, i) => {
-          return (
-            <React.Fragment key={i}>
               <div className="blog-card alt">
                 <div className="meta">
                   <div className="photo photo_2"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
-                  <h2 className="descriptionh2">{n.travel_day}</h2>
-                  <h3 className="descriptionh3">{n.day_introduction}</h3>
-                  <p className="descriptionp">{n.day_details}</p>
+                  <h2 className="descriptionh2">Day2</h2>
+                  <h3 className="descriptionh3">國際太空站</h3>
+                  <p className="descriptionp">{n.day2}</p>
+                </div>
+              </div>
+
+              {/* 2st group */}
+              <div className="blog-card">
+                <div className="meta">
+                  <div className="photo photo_3"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">Day3</h2>
+                  <h3 className="descriptionh3">引人入勝的娛樂活動</h3>
+                  <p className="descriptionp">{n.day3}</p>
+                </div>
+              </div>
+
+              <div className="blog-card alt">
+                <div className="meta">
+                  <div className="photo photo_4"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">Day4</h2>
+                  <h3 className="descriptionh3">太空艙內的自由活動1</h3>
+                  <p className="descriptionp">{n.day4}</p>
+                </div>
+              </div>
+
+              {/* 3st group */}
+              <div className="blog-card">
+                <div className="meta">
+                  <div className="photo photo_5"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">Day5</h2>
+                  <h3 className="descriptionh3">抵達柴達星h928-1區</h3>
+                  <p className="descriptionp">{n.day5}</p>
+                </div>
+              </div>
+
+              <div className="blog-card alt">
+                <div className="meta">
+                  <div className="photo photo_6"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">Day6</h2>
+                  <h3 className="descriptionh3">太空艙內的自由活動2</h3>
+                  <p className="descriptionp">{n.day6}</p>
+                </div>
+              </div>
+
+              {/* 4st group */}
+              <div className="blog-card">
+                <div className="meta">
+                  <div className="photo photo_7"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">Day7</h2>
+                  <h3 className="descriptionh3">返航回國際太空站</h3>
+                  <p className="descriptionp">{n.day7}</p>
+                </div>
+              </div>
+
+              <div className="blog-card alt">
+                <div className="meta">
+                  <div className="photo photo_8"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">Day8</h2>
+                  <h3 className="descriptionh3">快樂賦歸</h3>
+                  <p className="descriptionp">{n.day8}</p>
                 </div>
               </div>
             </React.Fragment>
