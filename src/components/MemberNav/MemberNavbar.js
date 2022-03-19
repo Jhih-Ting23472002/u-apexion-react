@@ -58,7 +58,10 @@ export default function MemberNavbar() {
                 </a>
               </div>
             </UserArticalAll>
-            <UserArticalAll to="/#" $active={location.pathname === '/#'}>
+            <UserArticalAll
+              to="/member-password-edit"
+              $active={location.pathname === '/member-password-edit'}
+            >
               <div className="user_navIcon_adjust">
                 <i class="fa-solid fa-key"></i>
                 <a href="/#" className="user_nav_item">

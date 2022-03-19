@@ -1,8 +1,8 @@
 import React from 'react';
-import './MemberPasswordEdit.css';
+import './MemberPwdEdit.css';
 import MemberNavbar from '../../components/MemberNav';
 
-function MemberPasswordEdit() {
+function MemberPwdEdit() {
   return (
     <>
       <div className="member-container">
@@ -59,4 +59,4 @@ function MemberPasswordEdit() {
   );
 }
 
-export default MemberPasswordEdit;
+export default MemberPwdEdit;

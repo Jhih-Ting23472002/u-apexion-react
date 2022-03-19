@@ -34,7 +34,7 @@ body {
 @media (max-width: 600px) {
   .nav.user_nav {
     display: none;
-    width:0;
+    width: 0;
   }
 }
 @media (min-width: 1200px) and (max-width: 1400px) {

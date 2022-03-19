@@ -11,7 +11,7 @@ import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
-import MemberPasswordEdit from './pages/Member/MemberPasswordEdit';
+import MemberPwdEdit from './pages/Member/MemberPwdEdit';
 import MemberAddress from './pages/Member/MemberAddress';
 import MemberAddressNew from './pages/Member/MemberAddressNew';
 import MemberOrderHistory from './pages/Member/MemberOrderHistory';
@@ -117,7 +117,7 @@ function App() {
             <MemberPerson />
           </Route>
           <Route path="/member-password-edit">
-            <MemberPasswordEdit />
+            <MemberPwdEdit />
           </Route>
           <Route path="/member-address">
             <MemberAddress />
