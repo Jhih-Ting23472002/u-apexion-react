@@ -27,14 +27,18 @@ const PostDate = styled.div`
 const ForumSortNew = styled(Link)`
   display: flex;
   align-items: center;
+  background-color: black;
   padding-right: 10px;
-  border-radius: 10px;
+  border-radius: 30px;
+  border: 4px double #05f2f2;
   ${props =>
     props.$active &&
     `
-    border: 1px solid #05f2f2; 
-    background-color:#05f2f2;
-  `}
+    text-decoration: none;
+    background-color: #05f2f2;
+    color: black;
+    border: 4px double black;
+  `};
 `;
 
 function Post({ post }) {
@@ -82,7 +86,7 @@ function Post({ post }) {
           <div className="article-like-box-group">
             <i className="fas fa-comment"></i>
             <div className="article-like-box-number">
-              {post && post.article_likes}
+              {post && post.res_count}
             </div>
           </div>
           <div className="article-like-box-group">
@@ -125,14 +129,17 @@ export default function ForumPostCategoryPage() {
                     <div className="forum_sort_text">SORT</div>
                   </a>
                 </div>
-                <div class="sort-new">
+                <div className="sort-new">
                   <ForumSortNew
-                    to="/"
-                    $active={location.pathname === '/'}
-                    // class="forum_justify"
+                    to="/forum-home"
+                    $active={
+                      location.pathname ===
+                      `/posts-category/${art_category_sid}`
+                    }
+                    // className="forum_justify"
                   >
-                    <i class="fas fa-clock"></i>
-                    <div className="forum_sort_text">NEW</div>
+                    <i className="fas fa-clock"></i>
+                    <div className="forum_sort_new">NEW</div>
                   </ForumSortNew>
                 </div>
                 <div class="sort-hot">

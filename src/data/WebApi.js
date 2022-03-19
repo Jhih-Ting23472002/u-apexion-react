@@ -4,6 +4,7 @@ const BASE_URL = 'http://localhost:3000/forum_index/list/';
 
 const Response_URL = 'http://localhost:3000/forum_index/res-list/';
 
+
 export const getPost = sid => {
   return fetch(`${BASE_URL}${sid}`).then(res => res.json());
 };

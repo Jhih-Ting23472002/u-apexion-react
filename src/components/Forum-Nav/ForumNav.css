@@ -34,7 +34,7 @@ body {
 @media (max-width: 600px) {
   .nav.forum_nav {
     display: none;
-    width:0;
+    width: 0;
   }
 }
 @media (min-width: 1200px) and (max-width: 1400px) {
@@ -65,7 +65,16 @@ body {
     letter-spacing: 1px;
   }
 }
-
+.dropdown-item {
+  padding: 5px;
+}
+.dropdown-item:hover {
+  background-color: black;
+  color: #05f2f2 !important;
+}
+.show > .btn-success.dropdown-toggle:active {
+  outline: 0 !important;
+}
 .nav.forum_nav ul {
   margin-top: 70px;
 }

@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link, useHistory } from 'react-router-dom';
-import './ForumPublishPage.css';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import { Link, useHistory, useParams } from 'react-router-dom';
+import './ForumPublishUpdatePage.css';
 import ForumNav from '../../../components/Forum-Nav';
+import { getPost } from '../../../data/WebApi';
 // import PropTypes from 'prop-types'
 
 const Root = styled.div`
@@ -17,16 +16,19 @@ const Root = styled.div`
 const AllDisplayFlex = styled.div`
   display: flex;
 `;
-
 export default function ForumPublishPage() {
+  const [post, setPost] = useState({
+    mem_pwd: '',
+  });
   const [posts, setPosts] = useState([]);
-  const [titleValue, setTitleValue] = useState(null);
-  const [contentValue, setContentValue] = useState(null);
-  const [categoryValue, setCategoryValue] = useState(null);
-  const [hashtagOneValue, setHashtagOneValue] = useState(null);
-  const [hashtagtwoValue, setHashTagTwoValue] = useState(null);
-  const [modalShow, setModalShow] = useState(false);
-  let history = useHistory();
+  const [titleValue, setTitleValue] = useState();
+  const [contentValue, setContentValue] = useState();
+  const [categoryValue, setCategoryValue] = useState();
+  const [hashtagOneValue, setHashtagOneValue] = useState();
+  const [hashtagtwoValue, setHashTagTwoValue] = useState();
+
+  const { sid } = useParams();
+  const history = useHistory();
 
   const handleInputChange = e => {
     setTitleValue(e.target.value);
@@ -45,36 +47,10 @@ export default function ForumPublishPage() {
   const handleHashtagTwoChange = e => {
     setHashTagTwoValue(e.target.value);
   };
-  // const handleFormSubmitModal = () => {
-  //   return (
-  //     <Modal
-  //       className="back-view"
-  //       size="md"
-  //       aria-labelledby="contained-modal-title-vcenter"
-  //       centered
-  //     >
-  //       <Modal.Body style={{ color: '#00002D' }}>
-  //         <h4>確認送出文章嗎？</h4>
-  //       </Modal.Body>
-  //       <Modal.Footer style={{ color: '#ffff2D' }}>
-  //         <Button
-  //           onClick={handleFormSubmit}
-  //           style={{
-  //             backgroundColor: '#05DBF2',
-  //             color: '#00002D',
-  //           }}
-  //         >
-  //           確定
-  //         </Button>
-  //       </Modal.Footer>
-  //     </Modal>
-  //   );
-  // };
+
   const handleFormSubmit = e => {
     // e.preventDefault()
-    alert('確認送出嗎？');
-    fetch('http://localhost:3000/forum_index/forumArticle_insert', {
-      // 修改
+    fetch(`http://localhost:3000/forum_index/forumArticle_update/${sid}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -95,6 +71,18 @@ export default function ForumPublishPage() {
       });
     history.push('/forum-home');
   };
+
+  useEffect(() => {
+    getPost(sid).then(post => {
+      setTitleValue(post.art_title);
+      setContentValue(post.art_content);
+      setCategoryValue(post.art_category_sid);
+      setHashtagOneValue(post.hashtag1);
+      setHashTagTwoValue(post.hashtag2);
+    });
+  }, []);
+
+  // console.log(titleValue);
 
   return (
     <Root>
@@ -137,16 +125,18 @@ export default function ForumPublishPage() {
                 <select
                   className="form-select mb-4 col-12"
                   aria-label="Default select example"
-                  onChange={handleCategoryChange}
+                  // ????
                   value={categoryValue}
+                  onChange={handleCategoryChange}
                   style={{ height: '40px', borderRadius: '5px' }}
+                  name=""
                 >
                   <option selected></option>
                   <option value="1">事前準備</option>
                   <option value="2">旅遊心得</option>
                   <option value="3">太空冷知識</option>
                   <option value="4">星球介紹</option>
-                  <option value="5">音樂推薦</option>
+                  <option value="5">音樂薦推</option>
                   <option value="6">星座</option>
                   <option value="7">太空美食</option>
                   <option value="8">每月主打</option>
@@ -163,6 +153,7 @@ export default function ForumPublishPage() {
                     type="text"
                     className="form-control"
                     id="exampleInputEmail1"
+                    // defaultValue={titleValue}
                     value={titleValue}
                     onChange={handleInputChange}
                   />
@@ -206,6 +197,7 @@ export default function ForumPublishPage() {
                       name="text"
                       id="text"
                       style={{ width: '100%', height: '200px' }}
+                      // defaultValue={post && post.art_content}
                       value={contentValue}
                       onChange={handleTextareaChange}
                     ></textarea>

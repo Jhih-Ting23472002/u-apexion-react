@@ -20,7 +20,7 @@ function TicketOrderModal(props) {
       >
         <Modal.Title id="contained-modal-title-vcenter">輸入錯誤</Modal.Title>
       </Modal.Header> */}
-      <Modal.Body  style={{ color: '#00002D' }}>
+      <Modal.Body style={{ color: '#00002D' }}>
         <h4>輸入錯誤</h4>
         <p>人數上限為4人，請重新輸入。</p>
       </Modal.Body>

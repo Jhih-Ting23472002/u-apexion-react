@@ -48,10 +48,11 @@ import ForumSinglePostPage from './pages/Forum/ForumSinglePostPage';
 import ForumPublishPage from './pages/Forum/ForumPublishPage';
 import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
+import ForumPublishUpdatePage from './pages/Forum/ForumPublishUpdatePage';
 
 // Index
-// import IndexFirst from './pages/Index/IndexFirst';
-// import IndexMain from './pages/Index/IndexMain';
+import IndexFirst from './pages/Index/IndexFirst';
+import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -61,12 +62,12 @@ function App() {
       <>
         <Navbar />
         <Switch>
-          {/* <Route exact path="/">
+          <Route exact path="/">
             <IndexFirst />
           </Route>
           <Route exact path="/u-apexion">
             <IndexMain />
-          </Route> */}
+          </Route>
           {/* <Route path="/index-video"></Route>
           <Route path="/index"></Route> */}
           <Route exact path="/forum-home">
@@ -75,8 +76,12 @@ function App() {
           <Route path="/forum-home/posts/:sid">
             <ForumSinglePostPage />
           </Route>
+
           <Route path="/publish">
             <ForumPublishPage />
+          </Route>
+          <Route path="/publish-edit/:sid">
+            <ForumPublishUpdatePage />
           </Route>
           <Route path="/forum-apexion-articles">
             <ForumUArticlePage />
