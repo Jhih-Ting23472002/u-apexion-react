@@ -9,6 +9,8 @@ function Products() {
   const [ProductsNew, setProductsNew] = useState([]);
   const [ProductRecommend, setProductRecommend] = useState([]);
   const [ProductNavbar, setProductNavbar] = useState('/men');
+  const [NewProductImg, setNewProductImg] = useState("./product_img/M021J_BK019_1.jpg");
+
 
   useEffect(() => {
     // 新品推薦
@@ -167,7 +169,7 @@ function Products() {
       <div className="pr-h9vh"></div>
       <div className="pr-home-new">
         <div className="pr-home-new-img-photo">
-          <img src="./product_img/M021J_BK019_1.jpg" alt="" />
+          <img src={NewProductImg} alt="" />
         </div>
         <div className="pr-home-new-list">
           <h3>NEW</h3>
@@ -190,6 +192,7 @@ function Products() {
                   product_img={product_img}
                   image_photo={image_photo}
                   price={price}
+                  setNewProductImg={setNewProductImg}
                 />
               );
             })}

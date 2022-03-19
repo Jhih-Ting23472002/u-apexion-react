@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 function ProductsList() {
   const [ProductList, setProductList] = useState([]);
   const [ProductNavbar, setProductNavbar] = useState('/men');
+  const [ListImg, setListImg] = useState("./product_img/cover5_1440_1200.jpeg");
 
   useEffect(() => {
     (async function () {
@@ -17,7 +18,7 @@ function ProductsList() {
   }, []);
 
   const ProductMenList = async function () {
-    const responseMen = await fetch(ProductsConfig.Woman_List);
+    const responseMen = await fetch(ProductsConfig.MEN_List);
     const menList = await responseMen.json();
     setProductList(menList);
   };
@@ -38,6 +39,8 @@ function ProductsList() {
               onClick={() => {
                 setProductNavbar('#men');
                 ProductMenList();
+                const newImg = "./product_img/cover5_1440_1200.jpeg";
+                setListImg(newImg);
               }}
               className={ProductNavbar === '#men' ? 'active' : ''}
             >
@@ -47,7 +50,9 @@ function ProductsList() {
               href="#woman"
               onClick={() => {
                 setProductNavbar('#woman');
-                ProductWomanList();
+                ProductWomanList()
+                const newImg = "./product_img/624946556.jpeg";
+                setListImg(newImg);
               }}
               className={ProductNavbar === '#woman' ? 'active' : ''}
             >
@@ -84,7 +89,7 @@ function ProductsList() {
         </div>
         {/* ------------------------*/}
         <div className="pr-list-img">
-          <img src="./product_img/cover5_1440_1200.jpeg" alt="" />
+          <img src={ListImg} alt="" />
         </div>
         <div className="pr-list-img-text">
           <p>
