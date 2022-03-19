@@ -39,6 +39,8 @@ import CardComplete from './pages/Cart/CardComplete';
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
+import TicketDateOld from './pages/Ticket/TicketDateOld';
+import TicketTest from './pages/Ticket/TicketTest';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
@@ -107,12 +109,8 @@ function App() {
           <Route path="/member-password-edit">
             <MemberPasswordEdit />
           </Route>
-          <Route path="/member-address">
-            <MemberAddress />
-          </Route>
-          <Route path="/member-address-new">
-            <MemberAddressNew />
-          </Route>
+          <Route path="/member-address"><MemberAddress /></Route>
+          <Route path="/member-address-new"><MemberAddressNew /></Route>
           <Route path="/member-order-history">
             <MemberOrderHistory />
           </Route>
@@ -134,11 +132,17 @@ function App() {
           <Route path="/ticket-order">
             <Ticket />
           </Route>
+          <Route path="/ticket-test">
+            <TicketTest />
+          </Route>
           <Route path="/ticket-trip-choose">
             <TicketTrip />
           </Route>
           <Route path="/ticket-date-choose">
             <TicketDate />
+          </Route>
+          <Route path="/ticket-date-choose-old">
+            <TicketDateOld />
           </Route>
           <Route path="/ticket-seat-choose">
             <TicketSeat />
