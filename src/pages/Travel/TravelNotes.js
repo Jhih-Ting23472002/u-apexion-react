@@ -12,19 +12,25 @@ function TravelNotes() {
               柴達星
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">002星</a>
+              <a href="#/">米勒星</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">003星</a>
+              <a href="#/">曼恩星</a>
             </li>
             <li className="breadcrumb-item">
               <a href="./page3.2.html">泰坦星</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">005星</a>
+              <a href="#/">拉曼提斯</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">006星</a>
+              <a href="#/">火星</a>
+            </li>
+            <li className="breadcrumb-item">
+              <a href="#/">奧茲</a>
+            </li>
+            <li className="breadcrumb-item">
+              <a href="#/">蓋亞花園</a>
             </li>
           </ol>
         </div>
@@ -314,15 +320,31 @@ function TravelNotes() {
                     行程備註Itinerary notes
                   </h2>
                   <ul className="timeline">
-                    <li className="event" data-date="A. 團費與訂金說明">
+                    <li className="event" data-date="A. 繳費與退款說明">
                       <p className="timelinep">
-                        太空站上配備多個場館，以震撼的視聽效果為您呈現最高水準的娛樂節目。
-                        您會發現自己深深受到美食與爵士樂完美結合的魅力吸引。或在夜空下欣賞最愛的電影，到我們的拉斯維加斯風賭場，提供適合各種場合的多種娛樂選項，讓您好好寵愛自己。
+                        1.當您繳付金額即表示旅遊契約產生效力，本公司將依各協力商之要求，為您預付此趟旅程的旅館、遊輪或機票等費用。若您因故取消，本公司將依「太空旅遊定型化契約書」之相關條款或估算已實付的費用，向您收取超支費用。多數外籍航空公司一經開立機票，旅客需付全額票款，且不接受調整名單。
+                        <br />
+                        2.如遇有不可抗拒情況，本公司保有變更航空公司，飛行航班及交通工具旅行方式之權利。
+                        <br />
+                        3.因受限於國際太空航行位預訂時付款條件、取消、變更及退款等規定極為嚴格，就觀光局所規定之國外團體旅遊定型化契約中，第十三條有關《出發前旅客任意解除契約》之條規款定，「雙方同意就本定型化契約第十三條（出發前旅客任意解除契約及其責任）之內容，另簽立「太空航行合約書」取代之，並視為本定型化契約之一部；兩者解釋上有衝突之部分，均以「太空航行合約書」為準。」
+                        <br />
+                        4.太空行程之訂位變更、取消及罰則：
+                        <br />
+                        出發前90天以上取消者，全額退款（已產生之費用除外，如證照辦理費用）；
+                        <br />
+                        出發前56-29天取消者，取消費為全額團費之50%；
+                        <br />
+                        出發前28-15天取消者，取消費為全額團費之75%；
+                        <br />
+                        出發前14天（含14天內）取消者，取消費為全額團費之100%。
+                        <br />
+                        5.根據【太空航行合約書條款】，旅遊公司基於環境之不可抗拒因素或基於旅客安全考量，可於未事先通知的情況下，對行程中登船、抵/離港時間及停泊港口，做出必要的變更。若有上述的情況發生，本公司不負任何退款和賠償責任。
+                        <br />
+                        6.根據遊輪公司的規定：『禁止在行程中懷孕滿24周的婦女及未滿6個月之嬰兒登船』。
+                        <br />
+                        7.太空旅遊行程中，每次太空梭的開航時間都是準時的，且太空梭是不等人的，故旅客如果在返航時間未能準時到達，之後旅客所衍生的所有費用（交通費、住宿費...等）請旅客自行負擔。
                       </p>
-                      <p className="timelinep">
-                        太空站上配備多個場館，以震撼的視聽效果為您呈現最高水準的娛樂節目。
-                        您會發現自己深深受到美食與爵士樂完美結合的魅力吸引。或在夜空下欣賞最愛的電影，到我們的拉斯維加斯風賭場，提供適合各種場合的多種娛樂選項，讓您好好寵愛自己。
-                      </p>
+
                       {/* <p className="timelinep">
                         {v.notes1}
                       </p>
@@ -330,23 +352,25 @@ function TravelNotes() {
                       {v.notes1_1}
                       </p> */}
                     </li>
-                    <li className="event" data-date="B. 住房權益小叮嚀">
+                    <li className="event" data-date="B. 住房與飲食說明">
                       <p className="timelinep">
-                        Claromentis is an intranet software provider company. I
-                        started working at the Brighton office as a Marketing
-                        Designer while I was still attending my final year at
-                        the University of Sussex. My primary responsibilities
-                        included creating corporate identity for the company; I
-                        re-designed their website, and have created marketing
-                        materials such as brochures.
-                      </p>
-                      <p className="timelinep">
-                        Since graduating from university, I have also undertaken
-                        responsibilities for designing a product for the
-                        company. The roles I have been given have provided the
-                        perfect opportunity to implement the skills I have
-                        gained throughout my higher education, as well as
-                        experiencing the running of a successful business.
+                        1.根據旅遊公司的規定：訂太空艙需要使用護照上的正確名字，一經訂位完成後，每間艙房只可以更改一位旅客名字限一次。如出發前90天內欲更改，需要取消並重新訂位，如此便有取消費產生。請各位貴賓在報名繳訂金的時候，請一併繳交正確的護照影本。
+                        <br />
+                        2.在遊輪上，艙房內禁止使用所有非太空旅遊公司提供的電器用品，故如需要冷/熱開水，請自備容器，可前往太空站上的自助餐廳取用。
+                        <br />
+                        3.太空站住宿為兩人一室太空艙。
+                        <br />
+                        4.陸地房間清潔費：建議每房每天歐元10元或英磅10元，請置於枕頭上（以床計算）。
+                        <br />
+                        5.在遊輪旅遊時，適時給予服務人員些許小費，是一種國際禮儀，亦是一種實質性鼓勵與讚許。
+                        <br />
+                        6.如貴賓們有機位及太空站上住房之需求可洽詢您的服務人員。
+                        <br />
+                        7.素食：因各地風俗民情不同，國外的素食習慣大多是可以食用蔥、薑、蒜、蛋、奶等，除華僑開設的中華料理餐廳外，多數僅能以蔬菜、豆腐等食材料理為主；若為餐廳內用餐或一般餐廳使用自助餐，亦多數以蔬菜、漬物、水果等佐以白飯或麵食類。故建議素食貴賓能多多見諒並自行準備素食罐頭或泡麵等，以備不時之需。如機上餐食有特殊飲食請於出發前14天告知您的業務專員，本公司將盡力協助貴賓達成需求，但機上特殊餐食須以航空公司確認之結果為準。
+                        <br />
+                        8.太空站上的早餐，可以到主餐廳或是自助餐廳享用豐盛的早點，或是選用艙房服務，在房間內享受。
+                        <br />
+                        9.太空站上精緻的午、晚餐，無論是主菜或是開胃菜、甜點，皆可隨心所欲。每天的菜色都有不同的變化。
                       </p>
                       {/* <p className="timelinep">
                         {v.notes2}
@@ -356,24 +380,37 @@ function TravelNotes() {
                       </p> */}
                     </li>
                     <li className="event" data-date="C. 注意事項&建議">
-                      <p className="timelinep">
-                        Throughout my degree I have gained expansive knowledge
-                        of informatics areas including Human Computer
-                        Interaction, Multimedia Design and Development, Program
-                        Analysis and Design For my final year project, I created
-                        a 2D Puzzler Game for iOS called 'Flat Ball' and
-                        received a first. I therefore hope to release this game
-                        and further develop it to add new levels and improve the
-                        features.
+                      <p className="covid-19">
+                        ※新冠病毒（COVID-19）防疫規範＜2022年11月更新＞：
+                        <br />
+                        ．旅客必須完整接種WHO緊急使用授權或美國食藥署
+                        （FDA）核准的COVID-19疫苗才能入境（且最後一劑需接種完14天以上方可登船）。獲得承認的疫苗包括AZ、莫德納、輝瑞BNT、嬌生、中國國藥以及科興。
+                        <br />
+                        ．提供登船前2天內的陰性新冠病毒（COVID-19）檢測報告（PCR
+                        或 antigen）。
+                        <br />
+                        ．如果無法保持社交距離，或當公共衛生當局的強制要求，於船上、私人島嶼上以及岸上觀光期間，都將需配戴口罩。當在碼頭、登船和離船期間時，則必須配戴口罩。
                       </p>
+                      <br />
+                      <br />
                       <p className="timelinep">
-                        Since graduating from university, I have also undertaken
-                        responsibilities for designing a product for the
-                        company. The roles I have been given have provided the
-                        perfect opportunity to implement the skills I have
-                        gained throughout my higher education, as well as
-                        experiencing the running of a successful business.
+                        1.請於出發半年前繳交所有行程費用。
+                        <br />
+                        2.含太空梭燃油費。
+                        <br />
+                        3.旅遊責任險(航行期間)：200萬美金責任險/20萬美金意外醫療(實支實付)。若旅客想獲得更多保險的保障，可自行投保旅行平安保險或旅遊綜合保險。
+                        <br />
+                        4.不含機票及機場稅金及燃油附加費用,機場與居住地間之接駁,陸上交通等費用。
+                        <br />
+                        5.不含特殊禦寒裝備之租金費用。
+                        <br />
+                        6.不含個人新辦護照工本費用與簽證申請費。
+                        <br />
+                        7.不含行程表上未標明之各項開支、自選建議行程交通及應付費用。
+                        <br />
+                        8.不含私人消費：如礦泉水、飲料汽水酒類、洗衣、電話、電報及私人交通費。
                       </p>
+
                       {/* <p className="timelinep">
                         {v.notes3}
                       </p>
