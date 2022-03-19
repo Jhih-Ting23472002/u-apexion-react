@@ -60,7 +60,7 @@ import ForumPublishUpdatePage from './pages/Forum/ForumPublishUpdatePage';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -78,9 +78,9 @@ function App() {
           <Route exact path="/">
             <IndexFirst />
           </Route>
-          <Route exact path="/u-apexion">
+          {/* <Route exact path="/u-apexion">
             <IndexMain />
-          </Route>
+          </Route> */}
           {/* <Route path="/index-video"></Route>
           <Route path="/index"></Route> */}
           <Route exact path="/forum-home">

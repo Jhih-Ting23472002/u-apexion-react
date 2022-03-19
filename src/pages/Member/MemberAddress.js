@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './MemberAddress.css';
 import MemberAddressNew from './MemberAddressNew';
+import MemberNavbar from '../../components/MemberNav';
 
 function MemberAddress() {
   const [modalShow, setModalShow] = useState(false);
@@ -9,20 +10,51 @@ function MemberAddress() {
     <>
       <div className="member-container">
         <div className="member-shadow-container">
-          <div className="member-sidebar"></div>
+          {/* <div className="member-sidebar"></div> */}
+          <MemberNavbar />
+
           <div className="member-right-wrap">
             <div className="member-title-wrap">
               <div className="member-title">
                 <h1>收件地址</h1>
               </div>
             </div>
-            <div className="member-field-name-wrap">
-              <div className="member-field-name">
-                <p>地點名稱</p>
-                <p>姓名</p>
-                <p>地址</p>
-                <p>電話號碼</p>
-              </div>
+            <div className="member-information-container">
+              <table className="table table-borderless table-dark alert-dismissible  member-information-form">
+                <thead className="member-information-field-name">
+                  <tr>
+                    <th scope="col">地點名稱</th>
+                    <th scope="col">姓名</th>
+                    <th scope="col">地址</th>
+                    <th scope="col">電話號碼</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">公司</th>
+                    <td>Michael</td>
+                    <td>106台北市大安區復興南路一段390號2樓</td>
+                    <td>02-6631-6588</td>
+                    <td>
+                      <button className="" onClick={() => setModalShow(true)}>
+                        輸入地址
+                      </button>
+                    </td>
+                  </tr>
+                  {/* <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr> */}
+                </tbody>
+              </table>
             </div>
             <div className="member-btn-container">
               <button

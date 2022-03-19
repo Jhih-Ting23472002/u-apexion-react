@@ -13,13 +13,6 @@
   flex-direction: row;
 }
 
-.member-sidebar {
-  width: 30%;
-  height: 100vh;
-  background-color: #fff;
-  margin-top: 1rem;
-}
-
 .member-right-wrap {
   width: 100%;
   display: flex;
@@ -37,14 +30,13 @@
 }
 
 .member-title {
-  width: 90%;
+  width: 91%;
   height: 7vh;
   background-color: #05f2f2;
   display: flex;
   /* flex-direction: row; */
   justify-content: center;
   align-items: center;
-  
 }
 
 .member-title h1 {
@@ -53,7 +45,7 @@
 }
 
 .person-form-container {
-  width: 70%;
+  width: 75%;
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -66,10 +58,8 @@
   flex-direction: column;
 }
 
-
-
-.person-btn-container{
-  margin-top:3.5%;
+.person-btn-container {
+  margin-top: 3.5%;
 }
 
 .member-line-wrap {
