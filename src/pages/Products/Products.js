@@ -34,6 +34,18 @@ function Products() {
     console.log(ProductWoman);
   };
 
+  const MenProduct = async function () {
+    const responseMen = await fetch(ProductsConfig.MEN_Products);
+    const ProductMen = await responseMen.json();
+    setProductRecommend(ProductMen);
+  };
+
+  const ShoesProduct = async function () {
+    const responseShoes = await fetch(ProductsConfig.Shoes_Products);
+    const ProductShoes = await responseShoes.json();
+    setProductRecommend(ProductShoes);
+  };
+
   return (
     <article className="pr">
       <div className="pr-home-mv-img">
@@ -191,7 +203,7 @@ function Products() {
         <div className="pr-recommendation-a">
           <a
             href="#men"
-            onClick={() => setProductNavbar('#men')}
+            onClick={() => {setProductNavbar('#men');MenProduct()}}
             className={ProductNavbar === '/men' ? 'active' : ''}
           >
             男士精品
@@ -201,16 +213,12 @@ function Products() {
             onClick={() => {setProductNavbar('#woman');
             WomanProduct()}}
             className={ProductNavbar === '#woman' ? 'active' : ''}
-            // value="woman"
-            // onClick={() => {
-            //   WomanProduct();
-            // }}
           >
             女士精品
           </a>
           <a
             href="#Shoes"
-            onClick={() => setProductNavbar('#Shoes')}
+            onClick={() => {setProductNavbar('#Shoes');ShoesProduct()}}
             className={ProductNavbar === '#Shoes' ? 'active' : ''}
           >
             鞋款

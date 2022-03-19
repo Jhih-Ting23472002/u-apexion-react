@@ -71,7 +71,7 @@ function MemberAddressNew(props) {
             className="member-modal-circle-btn member-cancel-btn"
             onClick={props.onHide}
           >
-            取消
+            返回
           </button>
         </div>
       </Modal>
