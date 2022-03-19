@@ -1,8 +1,33 @@
 import React from 'react';
 import './TravelNotes.css';
 import Carousel from 'react-bootstrap/Carousel';
+import { useEffect, useState } from 'react';
 
 function TravelNotes() {
+  const [JourneySingle, setJourneySingle] = useState([]);
+  const [JourneyDouble, setJourneyDouble] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/travel-notes/api/travel-journeysingle'
+      );
+      const JourneySingle = await response.json();
+      setJourneySingle(JourneySingle);
+      console.log(JourneySingle);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/travel-notes/api/travel-journeydouble'
+      );
+      const JourneyDouble = await response.json();
+      setJourneyDouble(JourneyDouble);
+      console.log(JourneyDouble);
+    })();
+  }, []);
   return (
     <>
       <div className="container travelnotescontainer">
@@ -150,166 +175,41 @@ function TravelNotes() {
 
         {/* 1st group */}
 
-        <div className="content">
-          <h1 className="blue-text lighten-1 header">柴達星Xandar</h1>
-        </div>
-        <div className="blog-card">
-          <div className="meta">
-            <div className="photo photo_1"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 1</h2>
-            <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p className="descriptionp">
-              今日集合於USA太空發射站，專人協辦出境手續後，搭乘豪華客機飛往USA。抵達後，辦理入關手續，夜宿發射站。
-              <br />
-              <br />
-              貼心提醒
-              <br />
-              1.第一天搭飛機，建議您穿著寬鬆的衣物及舒適的鞋子。
-              <br />
-              2.由於航程關係，須在飛機上過夜，請攜帶口罩、眼罩、空水瓶、保暖外套，睡個好眠，培養體力。
-            </p>
-          </div>
-        </div>
+        {JourneySingle.map((n, i) => {
+          return (
+            <React.Fragment key={i}>
+              <div className="blog-card">
+                <div className="meta">
+                  <div className="photo photo_1"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">{n.travel_day}</h2>
+                  <h3 className="descriptionh3">{n.day_introduction}</h3>
+                  <p className="descriptionp">{n.day_details}</p>
+                </div>
+              </div>
+            </React.Fragment>
+          );
+        })}
 
-        <div className="blog-card alt">
-          <div className="meta">
-            <div className="photo photo_2"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 2</h2>
-            <h3 className="descriptionh3">
-              Java is not the same as JavaScript
-            </h3>
-            <p className="descriptionp">
-              國際太空站
-              <br />
-              <br />
-              太空中的休息地，遨遊在太空上的建築物，有許多獨特的主題商店、酒吧及餐廳，是一處規劃完善的購物及娛樂地區，在此可以一起漫遊太空銀河。
-            </p>
-          </div>
-        </div>
-
-        {/* 2nd group */}
-
-        <div className="blog-card">
-          <div className="meta">
-            <div className="photo photo_3"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 3</h2>
-            <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p className="descriptionp">
-              引人入勝的娛樂活動
-              <br />
-              <br />
-              太空站上配備多個場館，以震撼的視聽效果為您呈現最高水準的娛樂節目。
-              您會發現自己深深受到美食與爵士樂完美結合的魅力吸引。或在夜空下欣賞最愛的電影，到我們的拉斯維加斯風賭場，提供適合各種場合的多種娛樂選項，讓您好好寵愛自己。
-            </p>
-          </div>
-        </div>
-        <div className="blog-card alt">
-          <div className="meta">
-            <div className="photo photo_4"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 4</h2>
-            <h3 className="descriptionh3">
-              Java is not the same as JavaScript
-            </h3>
-            <p className="descriptionp">
-              太空艙內的自由活動1
-              <br />
-              <br />
-              一趟與宇宙銀河近距離接觸的知性與感性之旅。您會對眼前這已經歷好幾光年的銀河，升起一份對大自然的崇敬，非常值得觀賞。
-            </p>
-          </div>
-        </div>
-
-        {/* 3rd group */}
-
-        <div className="blog-card">
-          <div className="meta">
-            <div className="photo photo_5"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 5</h2>
-            <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p className="descriptionp">
-              抵達柴達星h928-1區
-              <br />
-              <br />
-              柴達星上有豐富的動植物生態與瀑布地形景觀，海拔在230~800公尺之間，加上h928-1區內被內洞溪流貫，整體氣溫潮濕而溫暖，從h928-1區大門口進入後第一條觀瀑步道的短短數百公尺內，就能發現將近60-70種蕨類。
-              <br />
-              <br />
-              h928-1區內最重要的主角就是在位於觀瀑步道終點的內洞瀑布，上下層不同的風貌帶給遊人不同的多元享受!
-              <br />
-              <br />
-              這一片生氣盎然的森林世界，比起原先想像的靜謐來得熱鬧豐富，難得一見的草原曠世美景令人畢生難忘。
-            </p>
-          </div>
-        </div>
-        <div className="blog-card alt">
-          <div className="meta">
-            <div className="photo photo_6"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 6</h2>
-            <h3 className="descriptionh3">
-              Java is not the same as JavaScript
-            </h3>
-            <p className="descriptionp">
-              太空艙內的自由活動2
-              <br />
-              <br />
-              一趟與宇宙銀河近距離接觸的知性與感性之旅。您會對眼前這已經歷好幾光年的銀河，升起一份對大自然的崇敬，非常值得觀賞。
-            </p>
-          </div>
-        </div>
-
-        {/* 4th group */}
-
-        <div className="blog-card">
-          <div className="meta">
-            <div className="photo photo_7"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 7</h2>
-            <h3 className="descriptionh3">Opening a door to the future</h3>
-            <p className="descriptionp">
-              返航回國際太空站
-              <br />
-              <br />
-              太空站上配備多個場館，以震撼的視聽效果為您呈現最高水準的娛樂節目。
-              您會發現自己深深受到美食與爵士樂完美結合的魅力吸引。或在夜空下欣賞最愛的電影，到我們的拉斯維加斯風賭場，提供適合各種場合的多種娛樂選項，讓您好好寵愛自己。
-            </p>
-          </div>
-        </div>
-        <div className="blog-card alt">
-          <div className="meta">
-            <div className="photo photo_8"></div>
-            <ul className="details"></ul>
-          </div>
-          <div className="description">
-            <h2 className="descriptionh2">DAY 8</h2>
-            <h3 className="descriptionh3">
-              Java is not the same as JavaScript
-            </h3>
-            <p className="descriptionp">
-              快樂賦歸
-              <br />
-              今日從USA機場登機返回台灣，航越過國際換日線於次日抵達國門，夜宿機上。
-            </p>
-          </div>
-        </div>
+        {JourneyDouble.map((n, i) => {
+          return (
+            <React.Fragment key={i}>
+              <div className="blog-card alt">
+                <div className="meta">
+                  <div className="photo photo_2"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">{n.travel_day}</h2>
+                  <h3 className="descriptionh3">{n.day_introduction}</h3>
+                  <p className="descriptionp">{n.day_details}</p>
+                </div>
+              </div>
+            </React.Fragment>
+          );
+        })}
 
         <div className="main-container">
           <section className="timeline-outer">
@@ -344,14 +244,8 @@ function TravelNotes() {
                         <br />
                         7.太空旅遊行程中，每次太空梭的開航時間都是準時的，且太空梭是不等人的，故旅客如果在返航時間未能準時到達，之後旅客所衍生的所有費用（交通費、住宿費...等）請旅客自行負擔。
                       </p>
-
-                      {/* <p className="timelinep">
-                        {v.notes1}
-                      </p>
-                      <p className="timelinep">
-                      {v.notes1_1}
-                      </p> */}
                     </li>
+
                     <li className="event" data-date="B. 住房與飲食說明">
                       <p className="timelinep">
                         1.根據旅遊公司的規定：訂太空艙需要使用護照上的正確名字，一經訂位完成後，每間艙房只可以更改一位旅客名字限一次。如出發前90天內欲更改，需要取消並重新訂位，如此便有取消費產生。請各位貴賓在報名繳訂金的時候，請一併繳交正確的護照影本。
@@ -372,13 +266,8 @@ function TravelNotes() {
                         <br />
                         9.太空站上精緻的午、晚餐，無論是主菜或是開胃菜、甜點，皆可隨心所欲。每天的菜色都有不同的變化。
                       </p>
-                      {/* <p className="timelinep">
-                        {v.notes2}
-                      </p>
-                      <p className="timelinep">
-                      {v.notes2_1}
-                      </p> */}
                     </li>
+
                     <li className="event" data-date="C. 注意事項&建議">
                       <p className="covid-19">
                         ※新冠病毒（COVID-19）防疫規範＜2022年11月更新＞：
@@ -410,13 +299,6 @@ function TravelNotes() {
                         <br />
                         8.不含私人消費：如礦泉水、飲料汽水酒類、洗衣、電話、電報及私人交通費。
                       </p>
-
-                      {/* <p className="timelinep">
-                        {v.notes3}
-                      </p>
-                      <p className="timelinep">
-                      {v.notes3_1}
-                      </p> */}
                     </li>
                   </ul>
                 </div>
