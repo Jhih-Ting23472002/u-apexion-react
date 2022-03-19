@@ -64,6 +64,11 @@ import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
 //----頁面元件----
 
 function App() {
+  const [tripSelected, setTripSelected] = useState('');
+  const [tripDays, setTripDays] = useState('');
+  const [tripPrice, setTripPrice] = useState('');
+
+  console.log(tripSelected, tripDays);
   return (
     <Router>
       <>
@@ -109,8 +114,12 @@ function App() {
           <Route path="/member-password-edit">
             <MemberPasswordEdit />
           </Route>
-          <Route path="/member-address"><MemberAddress /></Route>
-          <Route path="/member-address-new"><MemberAddressNew /></Route>
+          <Route path="/member-address">
+            <MemberAddress />
+          </Route>
+          <Route path="/member-address-new">
+            <MemberAddressNew />
+          </Route>
           <Route path="/member-order-history">
             <MemberOrderHistory />
           </Route>
@@ -136,10 +145,14 @@ function App() {
             <TicketTest />
           </Route>
           <Route path="/ticket-trip-choose">
-            <TicketTrip />
+            <TicketTrip
+              setTripSelected={setTripSelected}
+              setTripDays={setTripDays}
+              setTripPrice={setTripPrice}
+            />
           </Route>
           <Route path="/ticket-date-choose">
-            <TicketDate />
+            <TicketDate tripSelected={tripSelected} tripDays={tripDays} />
           </Route>
           <Route path="/ticket-date-choose-old">
             <TicketDateOld />
