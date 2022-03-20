@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './productsDetail.scss';
 import DetailRecommend from './components/DetailRecommend';
 import BrowsingHistory from './components/BrowsingHistory';
 import DetailList from './components/DetailList';
+import { useParams, Link } from 'react-router-dom';
+import ProductsConfig from './ProductsConfig';
 
 function ProductsDetail() {
+  const { sid } = useParams();
+
+  // useEffect(() => {
+  //   (async function products() {
+  //     const response = await fetch(ProductsConfig.Product);
+  //     const menList = await response.json();
+  //     console.log(menList);
+  //   })();
+  // }, []);
+
+  const Products = async function () {
+    const responseWoman = await fetch(ProductsConfig.Product);
+    const menList = await responseWoman.json();
+    console.log(menList);
+  };
+  const product = Products.find((v, i) => v.sid === sid)
+  console.log(product)
+  
   return (
     <article>
       <div className="pr-detail">

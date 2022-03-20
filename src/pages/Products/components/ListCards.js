@@ -1,23 +1,23 @@
 import React from 'react';
 import '../ProductsList.scss';
 import ProductsConfig from '../ProductsConfig';
+import { Link } from 'react-router-dom';
 
-
-function ListCards(post) {
+function ListCards(props) {
   return (
     <>
       <div className="col-md-4">
-        <div className="card pr-card mb-5">
+        <Link to={'/product-list/product-detail/:sid' + props.sid} className="card pr-card mb-5">
           <img
             className="card-img-top"
-            src={ProductsConfig.IMG_PATH+'/'+ (post.product_img)}
+            src={ProductsConfig.IMG_PATH+'/'+ (props.product_img)}
             alt=""
           />
           <div className="card-body">
-            <p className="card-text mb-3">{post.product_name}</p>
-            <p className="card-text">{post.material}</p>
+            <p className="card-text mb-3">{props.product_name}</p>
+            <p className="card-text">{props.material}</p>
           </div>
-        </div>
+        </Link>
       </div>
     </>
   );

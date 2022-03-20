@@ -166,15 +166,17 @@
                     font-family    : arvo;
                 }
 
-                li a {
+                li option {
                     color: rgb(116, 116, 116);
+                    display        : inline-block;
+                    margin-right: 5px;
                 }
 
-                li a:hover {
+                li option:hover {
                     color: #000000;
                 }
 
-                li:hover {
+                option:hover {
                     cursor: pointer;
                 }
 
@@ -207,7 +209,7 @@
                     border-style : none;
                 }
 
-                ul li ul li a:hover {
+                ul li ul li option:hover {
                     padding-left: 10px;
                     border-left : 2px solid #000000;
                     transition  : all 0.3s ease;
@@ -241,6 +243,10 @@
         >.col-md-4 {
             >.pr-card {
                 border: 1px solid rgba(255, 255, 255, 0);
+                text-decoration:none;
+            }
+            .card-body{
+                color:#000000;
             }
 
         }

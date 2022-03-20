@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './ProductsList.scss';
 import ListCards from './components/ListCards';
 import ProductsConfig from './ProductsConfig';
@@ -134,28 +135,27 @@ function ProductsList() {
             <div role="navigation" className="primary-navigation">
               <ul>
                 <li>
-                  <a href="#/">
+                <option value="">價格排序</option><i className="fa-solid fa-angle-down"></i>
+                  {/* <a>
                     價格 <i className="fa-solid fa-angle-down"></i>
-                  </a>
+                  </a> */}
                   <ul className="dropdown">
                     <li>
-                      <a href="#/">由高到低</a>
+                    <option value="1">由低至高</option>
                     </li>
                     <li>
-                      <a href="#/">由低到高</a>
+                    <option value="2">由高至低</option>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="#/">
-                    顏色 <i className="fa-solid fa-angle-down"></i>
-                  </a>
+                <option value="">顏色</option><i className="fa-solid fa-angle-down"></i>
                   <ul className="dropdown">
                     <li>
-                      <a href="#/">黑色</a>
+                    <option value="3">黑色</option>
                     </li>
                     <li>
-                      <a href="#/">白色</a>
+                    <option value="ˋ">白色</option>
                     </li>
                   </ul>
                 </li>
