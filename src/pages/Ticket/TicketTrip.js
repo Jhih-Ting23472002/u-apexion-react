@@ -2,6 +2,7 @@ import './ticket.css';
 import stepCircle from './img/stepCircle.png';
 import stepCircleMb from './img/stepCircle-mb.png';
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 function TicketTrip(props) {
   const [tripData, setTripData] = useState([]);
@@ -68,6 +69,7 @@ function TicketTrip(props) {
   console.log(tripData);
 
   function tripHandler(e) {
+    console.log(e.target.parentNode.parentNode);
     console.log(
       e.target.parentNode.previousSibling.firstChild.firstChild.innerHTML
     );
@@ -88,6 +90,11 @@ function TicketTrip(props) {
     props.setTripPrice(
       e.target.parentNode.previousSibling.firstChild.lastChild.innerHTML
     );
+    document.querySelectorAll('.ticket-trip-card').forEach(v => {
+      v.style.border = 'none';
+    });
+
+    e.target.parentNode.parentNode.style.border = '5px solid #05F2F2';
   }
 
   return (
@@ -186,9 +193,9 @@ function TicketTrip(props) {
                 })}
               </div>
             </div>
-            <a className="ticket-next" href="/">
+            <Link to="/ticket-date-choose" className="ticket-next">
               Next<i className="fa-solid fa-right-long"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

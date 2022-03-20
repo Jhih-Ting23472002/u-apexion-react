@@ -5,6 +5,7 @@ import seatsvg from './img/seat02.svg';
 import { ReactComponent as SeatSvg } from './img/seat02.svg';
 import seat02 from './img/seat02.png';
 import './ticket.css';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 function TicketSeat() {
   return (
@@ -47,12 +48,12 @@ function TicketSeat() {
                 </div>
               </div>
             </div>
-            <a class="ticket-seat-back" href="/">
+            <Link to="ticket-date-choose" class="ticket-seat-back">
               <i class="fa-solid fa-left-long"></i>Back
-            </a>
-            <a class="ticket-seat-next" href="/">
+            </Link>
+            <Link to="ticket-meal-choose" class="ticket-seat-next">
               Next<i class="fa-solid fa-right-long"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
