@@ -12,7 +12,7 @@ function MemberCollect() {
     ${props =>
       props.$active &&
       `
-    background-color:#fff;
+    ${'' /* background-color:#fff; */}
     
     text-decoration:none;
   `}
@@ -33,18 +33,18 @@ function MemberCollect() {
                   to="/member-collect"
                   $active={location.pathname === '/member-collect'}
                 >
-                  <a href="/#" className="">
-                    <h1>商品收藏</h1>
-                  </a>
+                  {/* <a href="/#" className=""> */}
+                  <h1>商品收藏</h1>
+                  {/* </a> */}
                 </CollectTitle>
-                <CollectTitle
+                {/* <CollectTitle
                   to="/member-collect"
                   $active={location.pathname === '/member-collect'}
                 >
                   <a href="/#" className="">
                     <h1>行程收藏</h1>
                   </a>
-                </CollectTitle>
+                </CollectTitle> */}
               </div>
             </div>
             {/* <div className="member-information-container">
