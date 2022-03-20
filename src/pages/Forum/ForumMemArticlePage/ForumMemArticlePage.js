@@ -1,12 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
-// import { getPost } from '../../data/WebApi'
 import PropTypes from 'prop-types';
-import './ForumHomePage.css';
 import ForumNav from '../../../components/Forum-Nav';
-
-// import PublishPage from '../PublishPage'
 
 const Root = styled.div`
   ${'' /* border: 1px solid red; */}
@@ -19,20 +15,14 @@ const AllDisplayFlex = styled.div`
 `;
 const PostTitle = styled(Link)`
   font-size: 15px;
-  font-weight: 600;
+  font-weight: bold;
   color: black;
   text-decoration: none;
-  letter-spacing: 1px;
-  &:hover {
-    color: #05f2f2;
-    text-decoration: none;
-  }
 `;
 
 const PostDate = styled.div`
   color: black;
   font-size: 12px;
-  padding-top: 3px;
 `;
 const ForumSortNew = styled(Link)`
   display: flex;
@@ -119,13 +109,12 @@ Post.propTypes = {
   post: PropTypes.object,
 };
 
-export default function ForumHomePage() {
+export default function ForumUArticlePage() {
   const location = useLocation();
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // fetch('http://localhost:3000/forum-list-connectTry')
     fetch('http://localhost:3000/forum_index/getAll')
       .then(res => res.json())
       .then(posts => setPosts(posts));
@@ -135,40 +124,40 @@ export default function ForumHomePage() {
     <Root>
       <AllDisplayFlex>
         <ForumNav />
-        <div className="artical">
-          <div className="forum-sort-and-post">
-            <div className="forum-sort">
-              <div className="forum-sort-group">
-                <div className="forum-sort-icon">
-                  <a href="#/" className="forum_justify">
-                    <i className="fas fa-sort"> </i>
-                    <div className="forum_sort_text ">SORT</div>
+        <div class="artical">
+          <div class="forum-sort-and-post">
+            <div class="forum-sort">
+              <div class="forum-sort-group">
+                <div class="forum-sort-icon">
+                  <a href="#/" class="forum_justify">
+                    <i class="fas fa-sort"> </i>
+                    <div className="forum_sort_text">SORT</div>
                   </a>
                 </div>
-                <div className="sort-new">
+                <div class="sort-new">
                   <ForumSortNew
-                    to="/forum-home"
-                    $active={location.pathname === '/forum-home'}
-                    // className="forum_justify"
+                    to="/forum-apexion-articles"
+                    $active={location.pathname === '/forum-member-posts'}
+                    // class="forum_justify"
                   >
-                    <i className="fas fa-clock"></i>
+                    <i class="fas fa-clock"></i>
                     <div className="forum_sort_new">NEW</div>
                   </ForumSortNew>
                 </div>
-                <div className="sort-hot">
-                  <Link to="/forum-hot-posts" className="forum_justify">
-                    <i className="fas fa-burn"></i>
+                <div class="sort-hot">
+                  <a href="#/" class="forum_justify">
+                    <i class="fas fa-burn"></i>
                     <div className="forum_sort_text"> HOT</div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
-            <div className="forum-post">
-              <div className="forum-post-group">
-                <div className="forum-post">
+            <div class="forum-post">
+              <div class="forum-post-group">
+                <div class="forum-post">
                   <Link to="/publish">
-                    <a href="#/" className="forum_justify">
-                      <i className="fas fa-pen"></i>
+                    <a href="#/" class="forum_justify">
+                      <i class="fas fa-pen"></i>
                       <div className="forum_sort_text"> POST</div>
                     </a>
                   </Link>
@@ -189,109 +178,14 @@ export default function ForumHomePage() {
               <i class="fas fa-search"></i>
             </a>
           </div>
-          <div
-            className="row"
-            style={{
-              marginLeft: '5px',
-              marginRight: '5px',
-            }}
-          >
-            <div className="col">
+          <div class="row" style={{ marginLeft: '5px', marginRight: '5px' }}>
+            <div class="col">
               {posts
                 .filter(v => {
-                  if (v.forum_sid === 31 && searchTerm === '') {
+                  if (v.forum_user_sid !== 2 && searchTerm === '') {
                     return v;
                   } else if (
-                    v.forum_sid === 31 &&
-                    v.art_title.includes(searchTerm)
-                  ) {
-                    return v;
-                  }
-                })
-                .map(post => (
-                  <div className="card forum_card card-fixed">
-                    <div className="card-body forum_card_body">
-                      <div className="card-user forum-card-user">
-                        <div className="forum_user-top">
-                          <div className="forum_user-logo">
-                            <img
-                              className="forum_user_logo_cover"
-                              src="./forum_img/u-apexionLogo.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="forum-user-title">
-                            <div className="user-name forum_user-name">
-                              {post && post.name}
-                            </div>
-                            <div
-                              className="forum-post-time"
-                              style={{ color: 'white' }}
-                            >
-                              {new Date(post.art_create_time).toLocaleString()}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="article-title">
-                          <PostTitle to={`/forum-home/posts/${post.forum_sid}`}>
-                            {post.art_title}
-                          </PostTitle>
-                        </div>
-                        <div className="article-text">
-                          <p className="article-ellipsis">{post.art_content}</p>
-                        </div>
-                      </div>
-                      <div className="article-hashtag">
-                        <a href="#/" className="card-link forum_card-link">
-                          {post && post.hashtag1}
-                        </a>
-                        <a href="#/" className="card-link forum_card-link">
-                          {post && post.hashtag2}
-                        </a>
-                      </div>
-                    </div>
-                    <div className="article-like-box">
-                      <div className="article-like-box-group">
-                        <i className="fas fa-heart"></i>
-                        <div className="article-like-box-number">
-                          {post && post.article_likes}
-                        </div>
-                      </div>
-                      <div className="article-like-box-group">
-                        <i className="fas fa-comment"></i>
-                        <div className="article-like-box-number">
-                          {post && post.res_count}
-                        </div>
-                      </div>
-                      <div className="article-like-box-group">
-                        <i className="fas fa-bookmark"></i>
-                        <div className="article-like-box-number">
-                          {post && post.article_save}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="forum-fixed-box">
-                      <p
-                        style={{
-                          width: '40px',
-                          marginBottom: '0',
-                          marginLeft: 'auto',
-                          marginRight: 'auto',
-                        }}
-                      >
-                        FIXED
-                      </p>
-                      <i className="fas fa-thumbtack"></i>
-                    </div>
-                  </div>
-                ))}
-
-              {posts
-                .filter(v => {
-                  if (v.forum_sid !== 31 && searchTerm === '') {
-                    return v;
-                  } else if (
-                    v.forum_sid !== 31 &&
+                    v.forum_user_sid !== 2 &&
                     v.art_title.includes(searchTerm)
                   ) {
                     return v;
@@ -301,47 +195,47 @@ export default function ForumHomePage() {
                   <Post post={post} />
                 ))}
               {/* <nav aria-label="Page navigation example">
-                <ul className="pagination forum-pagination">
-                  <li className="page-item forum-page-item">
+                <ul class="pagination forum-pagination">
+                  <li class="page-item forum-page-item">
                     <a
                       style={{ color: '#808080' }}
-                      className="page-link forum-page-link"
+                      class="page-link forum-page-link"
                       href="#/"
                     >
-                      <i className="fas fa-angle-double-left"></i>
+                      <i class="fas fa-angle-double-left"></i>
                       Previous
                     </a>
                   </li>
-                  <li className="page-item forum-page-item">
+                  <li class="page-item forum-page-item">
                     <a
                       style={{ color: '#05F2F2' }}
-                      className="page-link forum-page-link"
+                      class="page-link forum-page-link"
                       href="#/"
                     >
                       1
                     </a>
                   </li>
-                  <li className="page-item forum-page-item">
-                    <a className="page-link forum-page-link" href="#/">
+                  <li class="page-item forum-page-item">
+                    <a class="page-link forum-page-link" href="#/">
                       2
                     </a>
                   </li>
-                  <li className="page-item forum-page-item">
-                    <a className="page-link forum-page-link" href="#/">
+                  <li class="page-item forum-page-item">
+                    <a class="page-link forum-page-link" href="#/">
                       3
                     </a>
                   </li>
-                  <li className="page-item forum-page-item">
+                  <li class="page-item forum-page-item">
                     <a
                       style={{ display: 'inline' }}
-                      className="page-link forum-page-link"
+                      class="page-link forum-page-link"
                       href="#/"
                     >
                       Next
                     </a>
                     <i
                       style={{ fontSize: '10px' }}
-                      className="fas fa-angle-double-right"
+                      class="fas fa-angle-double-right"
                     ></i>
                   </li>
                 </ul>
@@ -350,18 +244,18 @@ export default function ForumHomePage() {
           </div>
         </div>
         {/* col-right */}
-        <div className="forum-col-right">
-          <div className="col">
-            <div className="card-2">
-              <ul className="list-group forum-list-group">
-                <li className="list-group-item forum-list-group-item">
+        <div class="forum-col-right">
+          <div class="col">
+            <div class="card-2">
+              <ul class="list-group forum-list-group">
+                <li class="list-group-item forum-list-group-item">
                   <p style={{ fontSize: '16px' }}>
-                    {/* <i className="far fa-star"></i> */}
+                    {/* <i class="far fa-star"></i> */}
                     發文前必讀
                   </p>
                   <ul>
                     <li>
-                      <i className="fas fa-link forum_link"></i>
+                      <i class="fas fa-link forum_link"></i>
                       <Link
                         to="/forum-home/posts/31"
                         className="forum_link_item"
@@ -370,33 +264,33 @@ export default function ForumHomePage() {
                       </Link>
                     </li>
                     <li>
-                      <i className="fas fa-link forum_link"></i>
+                      <i class="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         有任何疑問 請洽u-apexion客服
                       </a>
                     </li>
                   </ul>
                 </li>
-                <li className="list-group-item forum-list-group-item">
+                <li class="list-group-item forum-list-group-item">
                   <p style={{ fontSize: '16px' }}>
-                    {/* <i className="far fa-star"></i> */}
+                    {/* <i class="far fa-star"></i> */}
                     本月推薦
                   </p>
                   <ul>
                     <li>
-                      <i className="fas fa-link forum_link"></i>
+                      <i class="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         主打行程
                       </a>
                     </li>
                     <li>
-                      <i className="fas fa-link forum_link"></i>
+                      <i class="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         主打服裝＆飾品
                       </a>
                     </li>
                     <li>
-                      <i className="fas fa-link forum_link"></i>
+                      <i class="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         客製化推薦
                       </a>

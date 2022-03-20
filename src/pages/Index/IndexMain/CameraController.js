@@ -7,26 +7,6 @@ import { motion } from 'framer-motion';
 
 // import { Stats } from 'three/examples/jsm/libs/stats.module'
 const CameraController = () => {
-  // // svg animation
-  // const svgVariants = {
-  //   hidden: { rotate: 180 },
-  //   visible: { rotate: 0, transition: { duration: 1 } },
-  // };
-  // const pathVarients = {
-  //   hidden: {
-  //     opacity: 0,
-  //     pathLength: 0,
-  //   },
-  //   visible: {
-  //     opacity: 1,
-  //     pathLength: 1,
-  //     transition: {
-  //       duration: 2,
-  //       ease: 'easeInout',
-  //     },
-  //   },
-  // };
-  // const [text, setText] = useState();
   const [isToggleOn, setIsToggleOn] = useState(false);
 
   const handleStationBtnClick = () => {

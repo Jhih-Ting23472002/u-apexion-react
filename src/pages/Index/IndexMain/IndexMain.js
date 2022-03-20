@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Navigation } from 'swiper';
+import { LightBox } from 'react-lightbox-pack';
+import { data } from './image_data';
 
 const IndexMain = () => {
   const [isToggleOn, setIsToggleOn] = useState(false);
@@ -15,6 +17,9 @@ const IndexMain = () => {
       setIsToggleOn(false);
     }
   };
+  const [image_toggle, setImageToggle] = React.useState(false);
+  const [index, setIndex] = React.useState(0);
+
   // {
   /* earth */
   // }
@@ -64,7 +69,8 @@ const IndexMain = () => {
             }}
           >
             <div className="index_swiper_inner_img_text">
-              <div className="index_swiper_inner_img_text_inner"></div>
+              <img src="./index_img/geminipic.png" alt="" />
+              {/* <div className="index_swiper_inner_img_text_inner"></div> */}
             </div>
           </div>
           <button className="index_swiper_btn">查看更多</button>
@@ -248,64 +254,77 @@ const IndexMain = () => {
       </div>
       {/* section2 end */}
       {/* section3 */}
-      {/* <div class="index_section3" style={{ border: '1px solid red' }}>
+      <div class="index_section3">
         <div class="index_team">
-          <div class="index_team-left">
-            <div class="index_active-img">
-              <div class="index_active-img-box">
-                <img
-                  class="index_bg-img"
-                  src="./index_img/person6.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="index_active-text">
-              <div class="index_active-text-box">
-                <div class="index_active-text-box-left"></div>
-                <div class="index_active-text-box-right">
-                  <h2>CEO - AMANDA</h2>
-                  <h2 class="animate__animated animate__bounce">
-                    MILEAGE - 2000KM{' '}
-                  </h2>
-                  <h2>LEVEL - 5</h2>
+          {data
+            .filter((v, i) => {
+              if (i === index) {
+                return v;
+              }
+            })
+            .map((v, i) => (
+              <div class="index_team-left">
+                <div class="index_active-img">
+                  <div class="index_active-img-box">
+                    <img
+                      className="index_bg-img"
+                      alt=""
+                      src={`./index_img/${v.image}`}
+                      style={{
+                        opacity: image_toggle === true ? '1' : '0.3',
+                      }}
+                    />
+                  </div>
+                </div>
+                <div class="index_active-text">
+                  <div class="index_active-text-box">
+                    <div class="index_active-text-box-left"></div>
+                    <div class="index_active-text-box-right">
+                      <h2
+                        // className={
+                        //   image_toggle === true
+                        //     ? 'index_bg-img'
+                        //     : 'index_bg-img do-animation'
+                        // }
+                        className="index_bg-img do-animation"
+                      >
+                        {v.name}
+                      </h2>
+                      <h2 className="index_bg-img">{v.description}</h2>
+                      <h2 className="index_bg-img">{v.level}</h2>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            ))}
           <div class="index_team-right">
             <div class="index_right-member">
-              <div class="index_member col-4">
-                <img class="sm-img" src="./index_img/person1.png" alt="" />
-                <p>NAME 1</p>
-              </div>
-              <div class="index_member col-4">
-                <img class="sm-img" src="./index_img/person2.png" alt="" />
-                <p>NAME 2</p>
-              </div>
-              <div class="index_member col-4">
-                <img class="sm-img" src="./index_img/person3.png" alt="" />
-                <p>NAME 3</p>
-              </div>
-              <div class="index_member col-4">
-                <img class="sm-img" src="./index_img/person4.png" alt="" />
-                <p>NAME 4</p>
-              </div>
-              <div class="index_member col-4">
-                <img class="sm-img" src="./index_img/person5.png" alt="" />
-                <p>NAME 5</p>
-              </div>
-              <div class="index_member col-4">
-                <img class="sm-img" src="./index_img/person6.png" alt="" />
-                <p>NAME 6</p>
-              </div>
+              {data.map((v, i) => (
+                <div class="index_member col-3">
+                  <img
+                    class="sm-img"
+                    alt=""
+                    src={`./index_img/${v.image}`}
+                    onClick={v => {
+                      setIndex(i);
+                      setImageToggle(true);
+                      console.log(index);
+                      if (image_toggle === true) {
+                        setImageToggle(false);
+                      }
+                    }}
+                  />
+                  <p>{v.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>{' '}
-      {/* */}
+      </div>
+      {/*
       {/* section3 end */}
       {/* section4 */}
+      {/* <LazyLoad offset={50} height={100}> */}
       <div className="index-section4">
         <div className="index-sec-container">
           <div className="index-sec-container-top">
@@ -355,6 +374,7 @@ const IndexMain = () => {
           </div>
         </div>
       </div>
+      {/* </LazyLoad> */}
     </>
   );
 };

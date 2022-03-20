@@ -57,6 +57,8 @@ import ForumPublishPage from './pages/Forum/ForumPublishPage';
 import ForumUArticlePage from './pages/Forum/ForumUArticlePage';
 import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
 import ForumPublishUpdatePage from './pages/Forum/ForumPublishUpdatePage';
+import ForumMemArticlePage from './pages/Forum/ForumMemArticlePage';
+import ForumHotPage from './pages/Forum/ForumHotPage';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
@@ -89,7 +91,6 @@ function App() {
           <Route path="/forum-home/posts/:sid">
             <ForumSinglePostPage />
           </Route>
-
           <Route path="/publish">
             <ForumPublishPage />
           </Route>
@@ -102,8 +103,12 @@ function App() {
           <Route path="/posts-category/:art_category_sid">
             <ForumPostCategoryPage />
           </Route>
-          <Route path="/index-postPage"></Route>
-          <Route path="/index-postPage"></Route>
+          <Route path="/forum-member-posts">
+            <ForumMemArticlePage />
+          </Route>
+          <Route path="/forum-hot-posts">
+            <ForumHotPage />
+          </Route>
           <Route path="/member-login">
             <MemberLogin />
           </Route>

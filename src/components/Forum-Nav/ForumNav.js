@@ -38,7 +38,9 @@ export default function ForumNav() {
           <div className="forum_nav_a-group">
             <ForunArticalAll
               to="/forum-home"
-              $active={location.pathname === '/forum-home'}
+              $active={
+                location.pathname === '/forum-home' && '/forum-hot-posts'
+              }
             >
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-border-all"> </i>
@@ -58,7 +60,10 @@ export default function ForumNav() {
                 </a>
               </div>
             </ForunArticalAll>
-            <ForunArticalAll to="#" $active={location.pathname === '#'}>
+            <ForunArticalAll
+              to="/forum-member-posts"
+              $active={location.pathname === '/forum-member-posts'}
+            >
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-users"> </i>
                 <a href="/#" className="forum_nav_item">

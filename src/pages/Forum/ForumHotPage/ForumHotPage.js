@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 // import { getPost } from '../../data/WebApi'
 import PropTypes from 'prop-types';
-import './ForumHomePage.css';
+import './ForumHotPage.css';
 import ForumNav from '../../../components/Forum-Nav';
-
 // import PublishPage from '../PublishPage'
 
 const Root = styled.div`
@@ -35,6 +34,23 @@ const PostDate = styled.div`
   padding-top: 3px;
 `;
 const ForumSortNew = styled(Link)`
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding-right: 10px;
+  border-radius: 30px;
+  border: 4px double #05f2f2;
+  ${props =>
+    props.$active &&
+    `
+    text-decoration: none;
+    background-color: #05f2f2;
+    color: black;
+    border: 4px double black;
+  `};
+`;
+
+const ForumSortHOT = styled(Link)`
   display: flex;
   align-items: center;
   background-color: black;
@@ -126,7 +142,7 @@ export default function ForumHomePage() {
 
   useEffect(() => {
     // fetch('http://localhost:3000/forum-list-connectTry')
-    fetch('http://localhost:3000/forum_index/getAll')
+    fetch('http://localhost:3000/forum_index/getSort-hot-posts')
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);
@@ -151,15 +167,26 @@ export default function ForumHomePage() {
                     $active={location.pathname === '/forum-home'}
                     // className="forum_justify"
                   >
-                    <i className="fas fa-clock"></i>
-                    <div className="forum_sort_new">NEW</div>
+                    <i
+                      className="fas fa-clock"
+                      style={{ color: '#05f2f2' }}
+                    ></i>
+                    <div
+                      className="forum_sort_new"
+                      style={{ color: '#05f2f2' }}
+                    >
+                      NEW
+                    </div>
                   </ForumSortNew>
                 </div>
-                <div className="sort-hot">
-                  <Link to="/forum-hot-posts" className="forum_justify">
-                    <i className="fas fa-burn"></i>
-                    <div className="forum_sort_text"> HOT</div>
-                  </Link>
+                <div>
+                  <ForumSortHOT
+                    to="/forum-hot-posts"
+                    $active={location.pathname === '/forum-hot-posts'}
+                  >
+                    <i className="fas fa-burn forum_sort_hot_icon"></i>
+                    <div className="forum_sort_hot_text"> HOT</div>
+                  </ForumSortHOT>
                 </div>
               </div>
             </div>
