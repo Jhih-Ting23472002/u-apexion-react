@@ -1,17 +1,17 @@
-.member-field-name-wrap{
+.member-information-container{
     width: 95%;
   display: flex;
   /* flex-direction: row; */
   align-self: end;
 }
 
-.member-field-name{
-    width: 90%;
-    height: 6vh;
-    background-color: #023E73;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
+.member-information-form{
+    width: 91%;
+    background: rgba(0, 0, 0, 0.0)
+}
+
+.member-information-field-name{
+  background-color: #023E73;
 }
 
 /* ------------------------------------------------- */

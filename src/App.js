@@ -6,12 +6,15 @@ import { useState } from 'react';
 
 //----頁面元件----
 
+//找不到頁面
+import NotFoundPage from './pages/NotFoundPage';
+
 // Member
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
-import MemberPasswordEdit from './pages/Member/MemberPasswordEdit';
+import MemberPwdEdit from './pages/Member/MemberPwdEdit';
 import MemberAddress from './pages/Member/MemberAddress';
 import MemberAddressNew from './pages/Member/MemberAddressNew';
 import MemberOrderHistory from './pages/Member/MemberOrderHistory';
@@ -62,7 +65,7 @@ import ForumHotPage from './pages/Forum/ForumHotPage';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -80,9 +83,9 @@ function App() {
           <Route exact path="/">
             <IndexFirst />
           </Route>
-          <Route exact path="/u-apexion">
+          {/* <Route exact path="/u-apexion">
             <IndexMain />
-          </Route>
+          </Route> */}
           {/* <Route path="/index-video"></Route>
           <Route path="/index"></Route> */}
           <Route exact path="/forum-home">
@@ -122,7 +125,7 @@ function App() {
             <MemberPerson />
           </Route>
           <Route path="/member-password-edit">
-            <MemberPasswordEdit />
+            <MemberPwdEdit />
           </Route>
           <Route path="/member-address">
             <MemberAddress />
@@ -189,11 +192,11 @@ function App() {
           <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
-          <Route path="/products-list">
-            <ProductsList />
-          </Route>
-          <Route path="/products-detail">
+          <Route path="/product-list/product-detail/:sid">
             <ProductsDetail />
+          </Route>
+          <Route path="/products-list" exact>
+            <ProductsList />
           </Route>
           <Route path="/products" exact>
             <Products />
@@ -212,6 +215,9 @@ function App() {
           </Route>
           <Route path="/cart-complete">
             <CardComplete />
+          </Route>
+          <Route path="*">
+            <NotFoundPage />
           </Route>
         </Switch>
         <Footer />

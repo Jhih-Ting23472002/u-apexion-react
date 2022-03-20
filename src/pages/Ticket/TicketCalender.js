@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import _ from 'lodash';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 function TicketCalender(props) {
+  console.log(props.tripDays);
   const [monthSelected, setMonthSelected] = useState(0);
   const [monthShow, setMonthShow] = useState([0, 1, 2]);
 
   const [pickDate, setPickDate] = useState('');
-  const [date, setDate] = useState([]);
+  const [dateList, setDateList] = useState([]);
 
   //   初始畫面
   useEffect(() => {
@@ -18,10 +20,10 @@ function TicketCalender(props) {
         }
       );
       const dateListDatas = await response.json();
-      setDate(dateListDatas);
+      setDateList(dateListDatas);
       console.log(dateListDatas);
       console.log(dateListDatas[0].departure_date);
-      console.log(date);
+      // console.log(date);
     })();
   }, []);
 
@@ -35,10 +37,10 @@ function TicketCalender(props) {
         }
       );
       const dateListDatas = await response.json();
-      setDate(dateListDatas);
+      setDateList(dateListDatas);
       console.log(dateListDatas);
-      console.log(date);
-      console.log(date[0].departure_date);
+      // console.log(date);
+      console.log(dateList[0].departure_date);
     })();
   }, [monthSelected]);
 
@@ -54,10 +56,30 @@ function TicketCalender(props) {
 
   //   改變出發日期
   function dateHandler(e) {
-    const dateSelected = new Date(2022, monthSelected, e.target.innerText)
+    const dateSelected = new Date(
+      2022,
+      monthSelected,
+      parseInt(e.target.innerText) + 1
+    )
       .toISOString()
       .slice(0, 10);
-    props.setDate(dateSelected);
+    props.setDateDeperature(dateSelected);
+
+    // const dateOfDeperature = dateSelected.split('-')[2];
+    // const monthOfDeperature = dateSelected.split('-')[1];
+    // const dateOfReturn = parseInt(dateOfDeperature) + parseInt(props.tripDays);
+    const returnDate = new Date(
+      2022,
+      monthSelected,
+      parseInt(e.target.innerText) + parseInt(props.tripDays)
+    )
+      .toISOString()
+      .slice(0, 10);
+    props.setDateBack(returnDate);
+
+    // console.log(returnDate);
+    console.log(props.tripDays);
+
     console.log(e.target.innerText);
     console.log(e);
     console.log(monthSelected + 1);
@@ -122,10 +144,9 @@ function TicketCalender(props) {
                       {v.map((item, idx) => (
                         <td
                           key={idx}
-                          //   data-date={
-                          //     item ? date[item - 1].departure_date : ''
-                          //   }
-                          data-date={item ? '1' : ''}
+                          data-date={
+                            item && (dateList[item - 1]?.departure_date ?? '0')
+                          }
                           onClick={e => {
                             dateHandler(e);
                           }}
@@ -139,12 +160,12 @@ function TicketCalender(props) {
               </tbody>
             </table>
           </div>
-          <a className="ticket-date-back" href="/">
+          <Link to="/ticket-trip-choose" className="ticket-date-back">
             <i className="fa-solid fa-left-long"></i>Back
-          </a>
-          <a className="ticket-date-next" href="/">
+          </Link>
+          <Link to="/ticket-seat-choose" className="ticket-date-next">
             Next<i className="fa-solid fa-right-long"></i>
-          </a>
+          </Link>
         </div>
         <div className="ticket-calender-month">
           <ul>

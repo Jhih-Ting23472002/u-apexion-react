@@ -26,7 +26,6 @@
   position: absolute;
   top: 0;
   margin-top: 1.2rem;
-  margin-bottom: 2.5rem;
 }
 .signup-header p {
   color: white;
@@ -37,9 +36,11 @@
 }
 
 .signup-form-container {
-  width: 33%;
+  width: 35%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .signup-form-title {

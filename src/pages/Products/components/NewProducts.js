@@ -7,9 +7,14 @@ function NewProducts(post) {
   return (
     <>
       <div className="pr-card-list">
-        <a href="#/" className="pr-card-list-img">
-          <img src={ProductsConfig.IMG_PATH+'/'+ (post.product_img)} alt="" />
-        </a>
+        <div  
+          onClick={() =>
+            post.setNewProductImg(ProductsConfig.IMG_PATH + '/' + post.image_photo)
+          }
+          className="pr-card-list-img"
+        >
+          <img src={ProductsConfig.IMG_PATH + '/' + post.product_img} alt="" />
+        </div>
         <div className="pr-card-list-txt">
           <div>
             <h3>{post.product_name}</h3>

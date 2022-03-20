@@ -1,0 +1,15 @@
+.change-pwd-form-container {
+    width: 45%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content:center;
+  }
+  
+  .change-pwd-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+  }
+  

@@ -1,12 +1,13 @@
 import React from 'react';
 import './MemberPerson.css';
+import MemberNavbar from '../../components/MemberNav';
 
 const MemberPerson = () => {
   return (
     <>
       <div className="member-container">
         <div className="member-shadow-container">
-          <div className="member-sidebar"></div>
+          <MemberNavbar />
           <div className="member-right-wrap">
             <div className="member-title-wrap">
               <div className="member-title">
@@ -93,7 +94,8 @@ const MemberPerson = () => {
                 <div className="person-avatar-img"></div>
                 <div className="person-avatar-upload">
                   <div className="member-btn-container">
-                    <button className="member-circle-btn">選擇圖片</button>
+                    {/* <button className="member-circle-btn">選擇圖片</button> */}
+                    <input type="file" id="file-uploader" className=""></input>
                   </div>
                 </div>
                 <div className="person-avatar-txt">
