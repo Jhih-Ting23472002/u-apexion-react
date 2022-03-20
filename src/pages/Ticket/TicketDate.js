@@ -2,16 +2,49 @@ import stepCircle from './img/stepCircle.png';
 import stepCircleMb from './img/stepCircle-mb.png';
 import TicketCalender from './TicketCalender';
 import { useState } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
+const now = new Date();
 function TicketDate(props) {
-  const [date, setDate] = useState(
-    new Date(2022, new Date().getMonth(), new Date().getDate())
-      .toISOString()
-      .slice(0, 10)
-  );
+  const [tripDays, setTripDays] = useState(props.tripDays);
+  const [dateDeperature, setDateDeperature] = useState('----------');
 
-  console.log(props.tripSelected);
-  console.log(props.tripDays);
+  // const [dateDeperature, setDateDeperature] = useState(
+  //   new Date(2022, now.getMonth(), now.getDate()).toISOString().slice(0, 10)
+  // );
+
+  const [dateBack, setDateBack] = useState('----------');
+
+  // const [dateBack, setDateBack] = useState(
+  //   new Date(
+  //     2022,
+  //     now.getMonth(),
+  //     // new Date().getDate()
+  //     now.getDate() + props.tripDays ?? '0'
+  //   )
+  //     .toISOString()
+  //     .slice(0, 10)
+  // );
+
+  console.log(dateBack);
+  console.log(now.getDate());
+
+  // const dateOfDeperature = date.split('-')[2];
+  // const monthOfDeperature = date.split('-')[1];
+  // const dateOfReturn = parseInt(dateOfDeperature) + parseInt(props.tripDays);
+  // const returnDate = new Date(2022, monthOfDeperature - 1, dateOfReturn)
+  //   .toISOString()
+  //   .slice(0, 10);
+
+  // console.log(dateOfDeperature);
+  // console.log(dateOfReturn);
+  // console.log(returnDate);
+
+  console.log(dateDeperature);
+  // console.log(monthOfDeperature);
+
+  // console.log(props.tripSelected);
+  // console.log(props.tripDays);
   return (
     <>
       <div class="ticket-container">
@@ -42,7 +75,7 @@ function TicketDate(props) {
                   <div className="ticket-date-from-border">
                     <h4>From</h4>
                     <div className="ticket-date-from-info">
-                      <p>{date}</p>
+                      <p>{dateDeperature}</p>
                       <p>9:00 AM</p>
                     </div>
                   </div>
@@ -51,23 +84,27 @@ function TicketDate(props) {
                   <div className="ticket-date-to-border">
                     <h4>To</h4>
                     <div className="ticket-date-to-info">
-                      <p>2022.01.28</p>
+                      {dateBack}
                       <p>2:30 PM</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="ticket-calendar-content">
-                <TicketCalender setDate={setDate} />
+                <TicketCalender
+                  setDateDeperature={setDateDeperature}
+                  setDateBack={setDateBack}
+                  tripDays={tripDays}
+                />
               </div>
             </div>
 
-            <a class="ticket-date-back-mb" href="/">
+            <Link to="/ticket-trip-choose" class="ticket-date-back-mb">
               <i class="fa-solid fa-left-long"></i>Back
-            </a>
-            <a class="ticket-date-next-mb" href="/">
+            </Link>
+            <Link to="/ticket-seat-choose" class="ticket-date-next-mb">
               Next<i class="fa-solid fa-right-long"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
