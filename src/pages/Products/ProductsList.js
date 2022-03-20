@@ -6,26 +6,36 @@ import { useState, useEffect } from 'react';
 
 function ProductsList() {
   const [ProductList, setProductList] = useState([]);
+  const [AllList, setAllList] = useState('');
   const [ProductNavbar, setProductNavbar] = useState('/men');
-  const [ListImg, setListImg] = useState("./product_img/cover5_1440_1200.jpeg");
+  const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');
 
   useEffect(() => {
     (async function () {
       const response = await fetch(ProductsConfig.MEN_List);
       const menList = await response.json();
-      setProductList(menList);
+      setProductList(menList.allMen);
+      const a='COUNT(1)';
+      setAllList(menList.allRows[a]);
+      console.log(menList.allRows);
     })();
   }, []);
 
   const ProductMenList = async function () {
     const responseMen = await fetch(ProductsConfig.MEN_List);
     const menList = await responseMen.json();
-    setProductList(menList);
+    setProductList(menList.allMen);
+    
   };
   const ProductWomanList = async function () {
     const responseWoman = await fetch(ProductsConfig.Woman_List);
     const WomanList = await responseWoman.json();
     setProductList(WomanList);
+  };
+  const ProductShoesList = async function () {
+    const responseShoes = await fetch(ProductsConfig.Shoes_List);
+    const ShoesList = await responseShoes.json();
+    setProductList(ShoesList);
   };
 
   return (
@@ -39,7 +49,7 @@ function ProductsList() {
               onClick={() => {
                 setProductNavbar('#men');
                 ProductMenList();
-                const newImg = "./product_img/cover5_1440_1200.jpeg";
+                const newImg = './product_img/cover5_1440_1200.jpeg';
                 setListImg(newImg);
               }}
               className={ProductNavbar === '#men' ? 'active' : ''}
@@ -50,15 +60,26 @@ function ProductsList() {
               href="#woman"
               onClick={() => {
                 setProductNavbar('#woman');
-                ProductWomanList()
-                const newImg = "./product_img/624946556.jpeg";
+                ProductWomanList();
+                const newImg = './product_img/624946556.jpeg';
                 setListImg(newImg);
               }}
               className={ProductNavbar === '#woman' ? 'active' : ''}
             >
               女士精品
             </a>
-            <a href="#Shoes">鞋款</a>
+            <a
+              href="#Shoes"
+              onClick={() => {
+                setProductNavbar('#Shoes');
+                ProductShoesList();
+                const newImg = './product_img/sneaker-release.jpg';
+                setListImg(newImg);
+              }}
+              className={ProductNavbar === '#Shoes' ? 'active' : ''}
+            >
+              鞋款
+            </a>
             <a href="#watch">配件與腕錶</a>
           </div>
           <div className="div-wrap">
@@ -102,7 +123,7 @@ function ProductsList() {
           </p>
         </div>
         <div className="pr-list-dropdowns">
-          <p>件商品</p>
+          <p>{AllList}件商品</p>
           <div className="primary-navigation">
             <div role="navigation" className="primary-navigation">
               <ul>
