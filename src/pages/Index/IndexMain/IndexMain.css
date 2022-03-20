@@ -8,26 +8,39 @@
   /* border: 1px solid red; */
 }
 .index-sec1-title {
+  font-family: 'Arsenal';
+  font-weight: bold;
   position: absolute;
   top: 58%;
   left: 51%;
   transform: translate(-50%, -50%);
   color: #05f2f2;
-  font-size: 40px;
+  font-size: 45px;
   letter-spacing: 30px;
   font-weight: bold;
   /* text-shadow: 1px 1px rgb(201, 201, 201), -1px -1px rgb(106, 106, 106);
   opacity: 0.6; */
   background-image: linear-gradient(
     90deg,
-    #05f2f2 0%,
-    rgba(0, 0, 0, 0.407) 27%
+    #05f2f2 20%,
+    rgba(0, 0, 0, 0.407) 25%
   );
   background-size: 500%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: glace-2 2s ease-out;
   animation-iteration-count: 2;
+}
+.index_sec1-icon {
+  position: absolute;
+  bottom: calc(66% + 100px);
+  right: calc(66% + 100px);
+}
+.index_img_shape {
+  position: absolute;
+  width: 3%;
+  top: calc(34% - 100px);
+  left: calc(34% - 100px);
 }
 
 /* .index-sec1-title {
@@ -40,6 +53,7 @@
   bottom: 12%;
   right: 8%;
   border: 2px solid white;
+  font-family: 'Arsenal';
 }
 .index-earth-speed {
   padding: 20px 40px;
@@ -83,24 +97,24 @@
 }
 .index_button_container {
   position: absolute;
-  width: 18%;
-  top: 40%;
-  left: 10%;
+  width: 250px;
+  top: calc(39% - 100px);
+  left: calc(9% - 100px);
   text-align: center;
 }
 .index-taiwanstation {
   position: absolute;
   width: 18%;
-  top: 15%;
-  left: 10%;
+  top: calc(21% - 100px);
+  left: calc(8% - 100px);
   text-align: center;
 }
 .index-taiwanstation_card_container {
   -webkit-perspective: 700;
   -moz-perspective: 700;
   perspective: 700;
-  /* border:1px solid orange; */
   position: relative;
+  width: 300px;
 }
 .index-taiwanstation_card {
   transition: all 1s ease;
@@ -132,16 +146,20 @@
   margin-bottom: 10px;
   padding: 5px;
   border: 0;
-  /* background-color: rgb(192, 185, 185, 10%);
-  backdrop-filter: invert(80%); */
   background-color: transparent;
   width: 70%;
   border-radius: 10px;
 }
+.taiwan-station-btn-text {
+  color: White;
+  font-family: 'Arsenal';
+  letter-spacing: 3px;
+  line-height: 2;
+}
 .taiwan-station-text {
   color: white;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   transition: 0.6s ease-in-out;
 }
@@ -658,11 +676,20 @@
   transform: translateY(-50%);
 }
 .index_swiper_date {
-  width: 10%;
+  width: 7%;
   position: absolute;
   top: 3%;
   right: 2%;
   transition: 1.5s ease-in-out;
+}
+.index_swiper_date_text p {
+  font-family: 'Arsenal', sans-serif;
+  color: #fff;
+  /* border: 1px solid pink; */
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 15px;
+  letter-spacing: 3px;
 }
 .index_swiper_date4 {
   position: absolute;
@@ -672,11 +699,22 @@
   transition: 1.5s ease-in-out;
 }
 .index_swiper_title {
-  width: 28%;
   position: absolute;
   left: 2%;
-  bottom: 2%;
+  bottom: 3%;
   transition: 1.5s ease-in-out;
+}
+.index_swiper_title_text p {
+  font-family: 'Arsenal', sans-serif;
+  color: #fff;
+  font-size: 20px;
+  padding: 15px;
+  letter-spacing: 3px;
+}
+.index_swiper_title_text p:nth-child(1) {
+  font-size: 40px;
+  letter-spacing: 10px;
+  border-bottom: 1px solid white;
 }
 .index_swiper_title4 {
   width: 35%;
@@ -687,15 +725,47 @@
 }
 .index_swiper_inner_img1 {
   position: absolute;
-  width: 15%;
-  bottom: 15%;
+  width: 13%;
+  bottom: 2%;
   left: 18%;
   transition: 1.5s ease-in-out;
+}
+.index_swiper_inner_img_text {
+  width: 230px;
+  height: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.332);
+  background-color: rgba(255, 255, 255, 0.332);
+  border-radius: 5px;
+}
+.index_swiper_inner_img_text_inner {
+  width: calc(100%-20px);
+  height: 280px;
+  background-color: black;
+  margin: 10px 10px 30px 10px;
+  border-radius: 5px;
+  background-image: url('./index_imgs/choose-journey.GIF');
+  background-size: cover;
+  background-position: center center;
+}
+.index_swiper_btn {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  border: 4px double #05f2f2;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+}
+.index_swiper_btn:hover {
+  background-color: white;
+  color: black;
 }
 .index_swiper_inner_img2 {
   position: absolute;
   bottom: 15%;
-  right: 18%;
+  right: 25%;
   transition: 1.5s ease-in-out;
 }
 .index_swiper_inner_img3 {

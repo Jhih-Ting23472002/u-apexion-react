@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
-function DetailList() {
+import { Link, useParams } from 'react-router-dom';
+
+function DetailList(props) {
+
   return (
     <>
       <div className="pr-detail-list">

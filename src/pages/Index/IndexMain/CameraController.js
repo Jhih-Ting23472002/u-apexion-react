@@ -3,9 +3,29 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
 // import { Canvas, useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
+import { motion } from 'framer-motion';
 
 // import { Stats } from 'three/examples/jsm/libs/stats.module'
 const CameraController = () => {
+  // // svg animation
+  // const svgVariants = {
+  //   hidden: { rotate: 180 },
+  //   visible: { rotate: 0, transition: { duration: 1 } },
+  // };
+  // const pathVarients = {
+  //   hidden: {
+  //     opacity: 0,
+  //     pathLength: 0,
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     pathLength: 1,
+  //     transition: {
+  //       duration: 2,
+  //       ease: 'easeInout',
+  //     },
+  //   },
+  // };
   // const [text, setText] = useState();
   const [isToggleOn, setIsToggleOn] = useState(false);
 
@@ -242,6 +262,32 @@ const CameraController = () => {
     <>
       <div class="index-earth-container">
         <div class="index-sec1-title">APEXING SOON</div>
+        <div class="index_sec1-icon">
+          <motion.svg
+            className="index-svg"
+            width="118"
+            height="36"
+            viewBox="0 0 31 9"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            // animate={{ rotate: 360 }}
+            // transition={{ duration: 2 }}
+            animate={{ y: 100, x: 100 }}
+            transition={{ ease: 'easeOut', duration: 2 }}
+          >
+            <motion.path
+              d="M24.176 2L24.3897 1.77488C24.332 1.72012 24.2555 1.68959 24.176 1.68959V2ZM0.655109 2L2.44727 3.79216L4.23942 2L2.44727 0.207843L0.655109 2ZM2.44727 2.31041H3.05084V1.68959H2.44727V2.31041ZM4.25799 2.31041H5.46515V1.68959H4.25799V2.31041ZM6.6723 2.31041H7.87945V1.68959H6.6723V2.31041ZM9.0866 2.31041H10.2938V1.68959H9.0866V2.31041ZM11.5009 2.31041H12.7081V1.68959H11.5009V2.31041ZM13.9152 2.31041H15.1224V1.68959H13.9152V2.31041ZM16.3295 2.31041H17.5367V1.68959H16.3295V2.31041ZM18.7438 2.31041H19.951V1.68959H18.7438V2.31041ZM21.1581 2.31041H22.3653V1.68959H21.1581V2.31041ZM23.5724 2.31041H24.176V1.68959H23.5724V2.31041ZM23.9623 2.22512L24.4796 2.71627L24.9071 2.26604L24.3897 1.77488L23.9623 2.22512ZM25.5143 3.69859L26.549 4.6809L26.9765 4.23066L25.9418 3.24835L25.5143 3.69859ZM27.5837 5.66321L28.6185 6.64552L29.0459 6.19529L28.0112 5.21297L27.5837 5.66321ZM29.6532 7.62783L30.1705 8.11899L30.5979 7.66875L30.0806 7.1776L29.6532 7.62783Z"
+              fill="white"
+            />
+          </motion.svg>
+        </div>
+        <motion.img
+          className="index_img_shape"
+          src="./index_img/shape.png"
+          alt=""
+          animate={{ y: 100, x: 100 }}
+          transition={{ ease: 'easeOut', duration: 2 }}
+        />
         <div class="index-earth">
           <div class="index-earth-speed">
             <div class="index-earth-speed-title">Earth</div>
@@ -250,24 +296,44 @@ const CameraController = () => {
             <div class="index-earth-speed-text">YEAR____ 365.3</div>
           </div>
         </div>
-        <div className="index-taiwanstation">
+        <motion.div
+          className="index-taiwanstation"
+          animate={{ y: 100, x: 100 }}
+          transition={{ ease: 'easeOut', duration: 2 }}
+        >
           <div className="index-taiwanstation_card_container">
             <div className="index-taiwanstation_card">
               <div className="index-taiwanstation_card_front">
-                <img src="./index_img/taiwanstation.png" alt="" />
+                <img
+                  src="./index_img/SpaceX BFR lander on Mars.jpg"
+                  alt=""
+                  style={{ borderRadius: '10px' }}
+                />
               </div>
               <div className="index-taiwanstation_card_back">
-                <img src="./index_img/taiwanstation.png" alt="" />
+                <img
+                  src="./index_img/blue-origin-first-human-flight-l0-new-shepard-launch.jpg"
+                  alt=""
+                  style={{ borderRadius: '10px' }}
+                />
               </div>
             </div>
           </div>
-        </div>
-        <div className="index_button_container">
+        </motion.div>
+        <motion.div
+          className="index_button_container"
+          animate={{ y: 100, x: 100 }}
+          transition={{ ease: 'easeOut', duration: 2 }}
+        >
           <button
             className="taiwan-station-btn"
             onClick={handleStationBtnClick}
           >
-            <img src="./index_img/watchmore.png" alt="" />
+            <div className="taiwan-station-btn-text">
+              BASED IN TAIWAN
+              <br />
+              --CLICK MORE--
+            </div>
           </button>
           <div
             className="taiwan-station-text"
@@ -279,7 +345,7 @@ const CameraController = () => {
           >
             太空站設立於台灣-台北，經過數年由多個模組在軌道上組裝而成，特點是多艙，積木式結構。
           </div>
-        </div>
+        </motion.div>
       </div>
       <div id="webgl"></div>
     </>

@@ -1,21 +1,23 @@
 import React from 'react';
 import '../ProductsList.scss';
+import ProductsConfig from '../ProductsConfig';
+import { Link } from 'react-router-dom';
 
-function ListCards() {
+function ListCards(props) {
   return (
     <>
       <div className="col-md-4">
-        <div className="card pr-card mb-5">
+        <Link to={'/product-list/product-detail/:sid' + props.sid} className="card pr-card mb-5">
           <img
             className="card-img-top"
-            src="./product_img/M021J_BK019.jpg"
+            src={ProductsConfig.IMG_PATH+'/'+ (props.product_img)}
             alt=""
           />
           <div className="card-body">
-            <p className="card-text mb-3">太空飛行員外套</p>
-            <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+            <p className="card-text mb-3">{props.product_name}</p>
+            <p className="card-text">{props.material}</p>
           </div>
-        </div>
+        </Link>
       </div>
     </>
   );
