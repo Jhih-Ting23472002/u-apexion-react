@@ -200,7 +200,10 @@ export default function MemberNavbar() {
                 </Dropdown>
               </div>
             </UserArticalCat> */}
-            <UserArticalAll to="/#" $active={location.pathname === '/#'}>
+            <UserArticalAll
+              to="/member-order-history"
+              $active={location.pathname === '/member-order-history'}
+            >
               <div className="user_navIcon_adjust">
                 <i class="fa-solid fa-clipboard-list"></i>
                 <a href="/#" className="user_nav_item">
@@ -208,15 +211,18 @@ export default function MemberNavbar() {
                 </a>
               </div>
             </UserArticalAll>
+            <UserArticalAll
+              to="/member-collect"
+              $active={location.pathname === '/member-collect'}
+            >
+              <div className="user_navIcon_adjust">
+                <i className="fa-solid fa-heart"> </i>
+                <a href="/#" className="user_nav_item">
+                  我的收藏
+                </a>
+              </div>
+            </UserArticalAll>
           </div>
-          <UserArticalAll to="/#" $active={location.pathname === '/#'}>
-            <div className="user_navIcon_adjust">
-              <i className="fa-solid fa-heart"> </i>
-              <a href="/#" className="user_nav_item">
-                我的收藏
-              </a>
-            </div>
-          </UserArticalAll>
         </li>
         {/* <li>
           <div

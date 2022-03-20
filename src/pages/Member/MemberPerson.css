@@ -34,22 +34,29 @@
   height: 7vh;
   background-color: #05f2f2;
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
 .member-title h1 {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 500; 
+  height: 7vh;
+  /* margin: 0 20px; */
+  display: flex;
+  align-items: center;
+  /* background-color: #05f2f2; */
+  /* color: #000; */
 }
 
 .person-form-container {
-  width: 75%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-self: center;
-  /* justify-content: center; */
+  height: 50vh;
+  align-items: center;
 }
 
 .person-form {

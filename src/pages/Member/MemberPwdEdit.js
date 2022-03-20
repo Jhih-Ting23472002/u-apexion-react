@@ -22,11 +22,7 @@ function MemberPwdEdit() {
                   <label for="" className="member-label">
                     現在的密碼
                   </label>
-                  <input
-                    type="email"
-                    placeholder="youremail@email.com"
-                    className="member-input"
-                  />
+                  <input type="text" placeholder="" className="member-input" />
                 </div>
                 <div className="member-input-container ">
                   <label for="" className="member-label">
