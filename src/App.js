@@ -6,6 +6,9 @@ import { useState } from 'react';
 
 //----頁面元件----
 
+//找不到頁面
+import NotFoundPage from './pages/NotFoundPage';
+
 // Member
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
@@ -207,6 +210,9 @@ function App() {
           </Route>
           <Route path="/cart-complete">
             <CardComplete />
+          </Route>
+          <Route path="*">
+            <NotFoundPage />
           </Route>
         </Switch>
         <Footer />
