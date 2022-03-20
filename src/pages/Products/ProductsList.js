@@ -15,9 +15,9 @@ function ProductsList() {
       const response = await fetch(ProductsConfig.MEN_List);
       const menList = await response.json();
       setProductList(menList.allMen);
-      const a='COUNT(1)';
+      const a = 'COUNT(1)';
       setAllList(menList.allRows[a]);
-      console.log(menList.allRows);
+      // console.log(menList.allRows);
     })();
   }, []);
 
@@ -25,17 +25,23 @@ function ProductsList() {
     const responseMen = await fetch(ProductsConfig.MEN_List);
     const menList = await responseMen.json();
     setProductList(menList.allMen);
-    
+    const a = 'COUNT(1)';
+    setAllList(menList.allRows[a]);
   };
   const ProductWomanList = async function () {
     const responseWoman = await fetch(ProductsConfig.Woman_List);
     const WomanList = await responseWoman.json();
-    setProductList(WomanList);
+    setProductList(WomanList.allWoman);
+    const a = 'COUNT(1)';
+    setAllList(WomanList.allRows[a]);
+
   };
   const ProductShoesList = async function () {
     const responseShoes = await fetch(ProductsConfig.Shoes_List);
     const ShoesList = await responseShoes.json();
-    setProductList(ShoesList);
+    setProductList(ShoesList.allShoes);
+    const a = 'COUNT(1)';
+    setAllList(ShoesList.allRows[a]);
   };
 
   return (
