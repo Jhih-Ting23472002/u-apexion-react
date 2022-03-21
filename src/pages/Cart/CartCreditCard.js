@@ -49,6 +49,7 @@ const CartCreditCard = () => {
               name="expiry"
               placeholder="MM/YY Expiry"
               value={expiry}
+              maxLength="4"
               onChange={e => setExpiry(e.target.value)}
               onFocus={e => setFocus(e.target.name)}
             ></input>
@@ -57,6 +58,7 @@ const CartCreditCard = () => {
               className="cart-creditcard-input mx-2"
               type="tel"
               name="cvc"
+              maxLength="3"
               placeholder="CVC"
               value={cvc}
               onChange={e => setCvc(e.target.value)}
