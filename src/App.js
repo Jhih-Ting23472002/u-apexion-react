@@ -192,7 +192,7 @@ function App() {
           <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
-          <Route path="/product-list/product-detail/:sid">
+          <Route path="/products-list/product-detail/:sid">
             <ProductsDetail />
           </Route>
           <Route path="/products-list" exact>
