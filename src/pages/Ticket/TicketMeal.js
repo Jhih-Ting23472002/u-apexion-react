@@ -6,8 +6,12 @@ import menu02 from './img/menu02.jpg';
 import menu03 from './img/menu03.jpg';
 import menu04 from './img/menu04.jpg';
 import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import TicketConfirmModal from './TicketConfirmModal';
 
 function TicketMeal() {
+  const [modalShow, setModalShow] = useState(false);
   const [demoImg, setDemoImg] = useState('menu01');
   const [active, setActive] = useState([true, false, false, false]);
 
@@ -172,12 +176,13 @@ function TicketMeal() {
             <a className="ticket-meal-back" href="/">
               <i className="fa-solid fa-left-long"></i>Back
             </a>
-            <a className="ticket-meal-next" href="/">
+            <p className="ticket-meal-next" onClick={() => setModalShow(true)}>
               Next<i className="fa-solid fa-right-long"></i>
-            </a>
+            </p>
           </div>
         </div>
       </div>
+      <TicketConfirmModal show={modalShow} onHide={() => setModalShow(false)} />
       )
     </>
   );

@@ -36,7 +36,7 @@ import CustomizeSuit from './pages/Customize/CustomizeSuit';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import CartInformation from './pages/Cart/CartInformation';
 import CartFinalCheck from './pages/Cart/CartFinalCheck';
-import CartCreditCard from './pages/Cart/CartCreditCard';
+// import CartCreditCard from './pages/Cart/CartCreditCard';
 import CardComplete from './pages/Cart/CardComplete';
 
 // Ticket
@@ -210,9 +210,9 @@ function App() {
           <Route path="/cart-final-check">
             <CartFinalCheck />
           </Route>
-          <Route path="/cart-credit-card">
+          {/* <Route path="/cart-credit-card">
             <CartCreditCard />
-          </Route>
+          </Route> */}
           <Route path="/cart-complete">
             <CardComplete />
           </Route>
