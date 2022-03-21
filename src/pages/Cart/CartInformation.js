@@ -17,7 +17,7 @@ const CartInformation = () => {
             <div className="cart-steps step-one cart-ml-7 d-flex align-items-center justify-content-center">
               1
             </div>
-            <div className="cart-steps step-two cart-ml-7 d-flex align-items-center justify-content-center">
+            <div className="cart-steps step-two-on cart-ml-7 d-flex align-items-center justify-content-center">
               2
             </div>
             <div className="cart-steps step-three cart-ml-7 d-flex align-items-center justify-content-center">
