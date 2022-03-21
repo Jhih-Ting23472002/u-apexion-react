@@ -72,20 +72,22 @@ export default function ForumPublishPage() {
   // };
   const handleFormSubmit = e => {
     // e.preventDefault()
+    const fd = new FormData(document.form1);
     alert('確認送出嗎？');
     fetch('http://localhost:3000/forum_index/forumArticle_insert', {
       // 修改
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        art_category_sid: categoryValue,
-        art_title: titleValue,
-        art_content: contentValue,
-        hashtag1: hashtagOneValue,
-        hashtag2: hashtagtwoValue,
-      }),
+      // headers: {
+      //   'Content-Type': 'multipart/form-data',
+      // },
+      // body: JSON.stringify({
+      //   art_category_sid: categoryValue,
+      //   art_title: titleValue,
+      //   art_content: contentValue,
+      //   hashtag1: hashtagOneValue,
+      //   hashtag2: hashtagtwoValue,
+      // }),
+      body: fd,
     })
       .then(res => res.jon())
       .then(data => {
@@ -126,8 +128,12 @@ export default function ForumPublishPage() {
                   </div>
                 </div>
               </div>
-
-              <form style={{ margin: '0 20px' }} onSubmit={handleFormSubmit}>
+              {/* form表單開始 */}
+              <form
+                style={{ margin: '0 20px' }}
+                onSubmit={handleFormSubmit}
+                name="form1"
+              >
                 <label
                   for="categories"
                   className="form-label publish-page-label"
@@ -139,6 +145,7 @@ export default function ForumPublishPage() {
                   aria-label="Default select example"
                   onChange={handleCategoryChange}
                   value={categoryValue}
+                  name="art_category_sid"
                   style={{ height: '40px', borderRadius: '5px' }}
                 >
                   <option selected></option>
@@ -164,6 +171,7 @@ export default function ForumPublishPage() {
                     className="form-control"
                     id="exampleInputEmail1"
                     value={titleValue}
+                    name="art_title"
                     onChange={handleInputChange}
                   />
                 </div>
@@ -179,6 +187,7 @@ export default function ForumPublishPage() {
                     className="form-control"
                     id="exampleInputEmail1"
                     value={hashtagOneValue}
+                    name="hashtagone"
                     onChange={handleHashtagOneChange}
                   />
                 </div>
@@ -194,6 +203,7 @@ export default function ForumPublishPage() {
                     className="form-control"
                     id="exampleInputEmail1"
                     value={hashtagtwoValue}
+                    name="hashtagtwo"
                     onChange={handleHashtagTwoChange}
                   />
                 </div>
@@ -203,7 +213,7 @@ export default function ForumPublishPage() {
                   </label>
                   <div className="textarea">
                     <textarea
-                      name="text"
+                      name="art_content"
                       id="text"
                       style={{ width: '100%', height: '200px' }}
                       value={contentValue}
@@ -213,9 +223,21 @@ export default function ForumPublishPage() {
                 </div>
                 <div className="forum_btn-group">
                   <div className="btn-left">
-                    <button className="forum_btn">
+                    <div
+                      className="forum_btn"
+                      onClick={e => {
+                        document.querySelector('#avatar').click();
+                      }}
+                    >
+                      <input
+                        type="file"
+                        id="avatar"
+                        name="avatar"
+                        accept="image/*"
+                        style={{ display: 'none' }}
+                      />
                       <i className="fas fa-image"></i>上傳照片
-                    </button>
+                    </div>
                   </div>
                   <div className="btn-right">
                     <button type="submit" className="forum_btn forum_btn-white">

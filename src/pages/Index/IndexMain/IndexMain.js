@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './IndexMain.css';
 import CameraController from './CameraController';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,7 +18,29 @@ const IndexMain = () => {
     }
   };
   const [image_toggle, setImageToggle] = React.useState(false);
+  const [animation, setAnimation] = React.useState(false);
   const [index, setIndex] = React.useState(0);
+
+  const imagehandler = e => {
+    setIndex(e.target.dataset.value);
+    setImageToggle(true);
+    setAnimation(true);
+    setAnimation(!animation);
+    if (image_toggle === true) {
+      setImageToggle(false);
+      setAnimation(false);
+      console.log(image_toggle);
+      console.log(e);
+    }
+    console.log(index);
+    console.log(e.target.dataset.value);
+  };
+
+  useEffect(() => {
+    // document.querySelector('.index_bg-img').style.opacity = '1';
+    // document.querySelector('.index_bg-img').style.opacity = '0.3';
+    // document.querySelector('.index_bg-img').style.border = '10px solid red';
+  }, [animation]);
 
   // {
   /* earth */
@@ -258,7 +280,9 @@ const IndexMain = () => {
         <div class="index_team">
           {data
             .filter((v, i) => {
-              if (i === index) {
+              console.log(i);
+              if (i == index) {
+                console.log(index);
                 return v;
               }
             })
@@ -271,8 +295,17 @@ const IndexMain = () => {
                       alt=""
                       src={`./index_img/${v.image}`}
                       style={{
-                        opacity: image_toggle === true ? '1' : '0.3',
+                        opacity: image_toggle === true ? '0.3' : '1',
                       }}
+                      onTransitionEnd={
+                        v =>
+                          //     if (image_toggle === true) {
+                          //       console.log(v.target.style.opacity);
+                          v.target.style.opacity === 0.3
+
+                        // }
+                        //   // console.log((v.target.style.opacity = 0.3))
+                      }
                     />
                   </div>
                 </div>
@@ -282,10 +315,10 @@ const IndexMain = () => {
                     <div class="index_active-text-box-right">
                       <h2
                         // className={
-                        //   image_toggle === true
-                        //     ? 'index_bg-img'
-                        //     : 'index_bg-img do-animation'
-                        // }
+                        // image_toggle === true
+                        //   ? 'index_bg-img'
+                        //   : 'index_bg-img do-animation'
+
                         className="index_bg-img do-animation"
                       >
                         {v.name}
@@ -302,17 +335,23 @@ const IndexMain = () => {
               {data.map((v, i) => (
                 <div class="index_member col-3">
                   <img
+                    data-value={i}
                     class="sm-img"
                     alt=""
                     src={`./index_img/${v.image}`}
-                    onClick={v => {
-                      setIndex(i);
-                      setImageToggle(true);
-                      console.log(index);
-                      if (image_toggle === true) {
-                        setImageToggle(false);
-                      }
-                    }}
+                    // onClick={v => {
+                    //   setIndex(i);
+                    //   setImageToggle(true);
+                    //   setAnimation(true);
+                    //   setAnimation(!animation);
+                    //   if (image_toggle === true) {
+                    //     setImageToggle(false);
+                    //     setAnimation(false);
+                    //     console.log(image_toggle);
+                    //     console.log(v);
+                    //   }
+                    // }}
+                    onClick={imagehandler}
                   />
                   <p>{v.name}</p>
                 </div>

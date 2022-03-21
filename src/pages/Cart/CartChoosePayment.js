@@ -2,10 +2,10 @@ import React from 'react';
 import './CartChoosePayment.css';
 import ProcessLine from './components/ProcessLine'
 import ProductCard from './components/choosePayment/ProductCard'
-import cartTicket from './img/cartTicket.png';
-import spaceSuit from './img/spaceSuit.png';
-import spaceSeat from './img/spaceSeat.png';
-import spaceShip from './img/spaceShip.png';
+import TripCard from './components/choosePayment/TripCard';
+import SuitCard from './components/choosePayment/SuitCard'
+import SeatCard from './components/choosePayment/SeatCard'
+import ShipCard from './components/choosePayment/ShipCard'
 import { Link } from 'react-router-dom';
 
 const CartChoosePayment = (props) => {
@@ -25,101 +25,15 @@ const CartChoosePayment = (props) => {
 
           <ProductCard />
           
-          <div className="cart separated-line"></div>
-          <div className="cart cart-order-item d-flex">
-            <div className="cart cart-img-div col-4 cart-ticket-margin-y">
-              <img src={cartTicket} alt="" />
-            </div>
-            <div className="cart content-detail col-8 d-flex">
-              <div className="content-detail-inside">
-                <div className="content-detail-inside-top-ticket">
-                  <div className="cart-ticket-destination">
-                    <h5 className="cart-trip-name">行程:泰坦星</h5>
-                    <h5 className="cart-trip-food">太空餐點</h5>
-                  </div>
-                  <div className="cart-ticket-during">
-                    <h5 className="cart-start-time">啟航 2022/03/10 </h5>
-                    <h5 className="cart-gohome-time">回程 2022/03/15 </h5>
-                  </div>
-                </div>
-                <div className="content-detail-inside-bottom-ticket">
-                  <h5 className="cart-number-people">人數 5</h5>
-                  <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">${props.tripPrice}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="cart separated-line"></div>
-          <div className="cart cart-order-item d-flex">
-            <div className="cart cart-img-div col-4">
-              <img src={spaceSuit} alt="" />
-            </div>
-            <div className="cart content-detail col-8 d-flex">
-              <div className="content-detail-inside">
-                <div className="content-detail-inside-top-suit">
-                  <h5 className="cart-suit-name">個人宇航服</h5>
-                  <div className="cart-ticket-country-badge">
-                    <div className="cart-select-country-badge">
-                      已選好的國旗
-                    </div>
-                    <div className="cart-select-country-badge">
-                      已選好的徽章
-                    </div>
-                  </div>
-                </div>
-                <div className="content-detail-inside-bottom-suit">
-                  <div className="cart-empty-place"></div>
-                  <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">$XXXXX</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="cart separated-line"></div>
-          <div className="cart cart-order-item d-flex">
-            <div className="cart cart-img-div col-4">
-              <img src={spaceSeat} alt="" />
-            </div>
-            <div className="cart content-detail col-8 d-flex">
-              <div className="content-detail-inside">
-                <div className="content-detail-inside-top">
-                  <h5 className="cart-product-seat">太空艙座位</h5>
-                  <div className="cart-select-color">已選好的顏色</div>
-                </div>
-                <div className="content-detail-inside-bottom">
-                  <div className="cart-empty-place"></div>
-                  <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">$XXXXX</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="cart separated-line"></div>
-          <div className="cart cart-order-item d-flex">
-            <div className="cart cart-img-div col-4">
-              <img src={spaceShip} alt="" className="spaceship-height" />
-            </div>
-            <div className="cart content-detail col-8 d-flex">
-              <div className="content-detail-inside">
-                <div className="content-detail-inside-top-spaceship">
-                  <div className="cart-spaceship">
-                    <h5 className="cart-spaceship-name">spacecraft</h5>
-                    <h5 className="cart-spaceship-text">鐫刻文字</h5>
-                  </div>
-                  <div className="cart-country-flag">
-                    <div className="cart-empty-flag"></div>
-                    <h5 className="cart-country-flag-text">已選好的國旗</h5>
-                  </div>
-                </div>
-                <div className="content-detail-inside-bottom-spaceship">
-                  <div className="cart-number-people"></div>
-                  <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">$XXXXX</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <TripCard tripPrice={props.tripPrice}/>
+
+          <SuitCard />
+
+          <SeatCard />
+
+          <ShipCard />
+
+          
           <div className="cart separated-line"></div>
           <div className="cart-user-option-should-pay">
             <div className="cart-user-option col-7">
