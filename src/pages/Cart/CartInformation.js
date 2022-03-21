@@ -1,8 +1,18 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import './CartInformation.css';
 import { Link } from 'react-router-dom';
+import { set } from 'lodash';
 
 const CartInformation = () => {
+  const [name, setName] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [email, setEmail] = useState('');
+  const [afterName, setAfterName] = useState('');
+  const [afterMobile, setAfterMobile] = useState('');
+  const [afterEmail, setAfterEmail] = useState('');
+  const [agree, setAgree] = useState(false);
+
+
   return (
     <>
       <div className="cart-background container-fluid">
@@ -33,7 +43,7 @@ const CartInformation = () => {
             <div className="cart-delivery-way">配送方式：宅配到府</div>
           </div>
 
-          <div className="cart-consumer-information-part">
+          <form className="cart-consumer-information-part">
             <div className="cart-information-line">
               <div className="consumer-recipient-information">訂購人資訊</div>
             </div>
@@ -42,6 +52,10 @@ const CartInformation = () => {
                 <label className="consumer-recipient-label-margin">姓名</label>
                 <input
                   className="consumer-recipient-input"
+                  defaultValue={name}
+                  onChange={(e)=>{setName(
+                    e.target.value
+                  )}}
                   placeholder="請填寫真實姓名"
                 ></input>
               </div>
@@ -49,6 +63,10 @@ const CartInformation = () => {
                 <label className="consumer-recipient-label-margin">手機</label>
                 <input
                   className="consumer-recipient-input"
+                  defaultValue={mobile}
+                  onChange={(e)=>{setMobile(
+                    e.target.value
+                  )}}
                   placeholder="您的手機號碼"
                 ></input>
                 <div className="mobile-or-telephone">手機市話可擇一填寫</div>
@@ -65,13 +83,17 @@ const CartInformation = () => {
                 <label className="consumer-recipient-label-margin">email</label>
                 <input
                   className="consumer-recipient-input"
+                  defaultValue={email}
+                  onChange={(e)=>{setEmail(
+                    e.target.value
+                  )}}
                   placeholder="您的email"
                 ></input>
               </div>
             </div>
-          </div>
+          </form>
 
-          <div className="cart-recipient-information-part">
+          <form className="cart-recipient-information-part">
             <div className="cart-information-line">
               <div className="consumer-recipient-information">收件人資訊</div>
             </div>
@@ -79,8 +101,34 @@ const CartInformation = () => {
               <div className="recipient-information-name-mobile-email-address">
                 <label className="cart-checkbox-label">
                   同訂購人資料
-                  <input type="checkbox" className="cart-checkbox" />
-                  <span class="cart-checkmark"></span>
+                  <input type="checkbox" 
+                    checked={agree}
+                    onChange={(e) => {
+                      setAgree(e.target.checked)
+                      if(!agree){
+                        setAfterName(name)
+                      }else{
+                        setAfterName('')
+                      }
+
+                      if(!agree){
+                        setAfterMobile(mobile)
+                      }else{
+                        setAfterMobile('')
+                      }
+
+                      if(!agree){
+                        setAfterEmail(email)
+                      }else{
+                        setAfterEmail('')
+                      }
+                    }}
+                    className="cart-checkbox" />
+                  {/* <input type="checkbox" onClick={()=>{
+                    console.log('fuck~~~~~~')
+                    setAfterName(name)
+                  }} className="cart-checkbox" /> */}
+                  <span className="cart-checkmark"></span>
                 </label>
               </div>
               <div className="recipient-information-name-mobile-email-address">
@@ -90,26 +138,33 @@ const CartInformation = () => {
                 <input
                   className="consumer-recipient-input"
                   placeholder="請填寫真實姓名"
+                  defaultValue={afterName}
                 ></input>
               </div>
               <div className="recipient-information-name-mobile-email-address">
                 <label className="consumer-recipient-label-margin">
                   聯絡電話
                 </label>
+
                 <input
                   className="consumer-recipient-input"
                   placeholder="您的手機號碼"
+                  defaultValue={afterMobile}
                 ></input>
+                
                 <div className="mobile-or-telephone">
                   宅配人員將以此資料聯繫
                 </div>
               </div>
               <div className="recipient-information-name-mobile-email-address">
                 <label className="consumer-recipient-label-margin">email</label>
+                
                 <input
                   className="consumer-recipient-input"
                   placeholder="您的email"
+                  defaultValue={afterEmail}
                 ></input>
+
                 <div className="mobile-or-telephone">
                   交易通知將會發送到此email
                 </div>
@@ -150,7 +205,7 @@ const CartInformation = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </form>
           <div className="previous-next-btn">
             <div className="col-3"></div>
             <Link
