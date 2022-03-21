@@ -9,7 +9,9 @@ function TravelChoose() {
   const [data, setData] = useState({});
 
   const getData = async page => {
-    const obj = await (await fetch(config.AB_LIST + `?page=${page}`)).json();
+    const obj = await (
+      await fetch(config.CHOOSE_LIST + `?page=${page}`)
+    ).json();
     console.log(obj);
     setData(obj);
   };
@@ -109,7 +111,9 @@ function TravelChoose() {
           <div aria-label="Page navigation example">
             <ul className="pagination">
               <li
-                className={data.page === 1 ? 'page-item disabled' : 'page-item'}
+                className={
+                  data.page === 1 ? 'page-item-c disabled' : 'page-item-c'
+                }
               >
                 <button
                   className="page-link"
@@ -117,7 +121,7 @@ function TravelChoose() {
                     history.push(`?page=${data.page - 1}`);
                   }}
                 >
-                  Previous
+                  <span aria-hidden="true">&laquo;</span>
                 </button>
               </li>
               {Array(data.totalPages)
@@ -125,7 +129,9 @@ function TravelChoose() {
                 .map((el, i) => (
                   <li
                     className={
-                      data.page === i + 1 ? 'page-item active' : 'page-item'
+                      data.page === i + 1
+                        ? 'page-item-c active-c'
+                        : 'page-item-c'
                     }
                     key={'pageLi' + i}
                   >
@@ -142,8 +148,8 @@ function TravelChoose() {
               <li
                 className={
                   data.page === data.totalPages
-                    ? 'page-item disabled'
-                    : 'page-item'
+                    ? 'page-item-c disabled'
+                    : 'page-item-c'
                 }
               >
                 <button
@@ -153,7 +159,7 @@ function TravelChoose() {
                     history.push(`?page=${data.page + 1}`);
                   }}
                 >
-                  Next
+                  <span aria-hidden="true">&raquo;</span>
                 </button>
               </li>
             </ul>

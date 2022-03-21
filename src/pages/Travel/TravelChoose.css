@@ -36,6 +36,7 @@
   letter-spacing: 1px;
   list-style-type:disc;
   font-size:16px;
+  line-height: 30px;
 }
 
 .day, .price{
@@ -97,6 +98,29 @@
 }
 .pagination{
   justify-content: center;
+}
+
+.page-item-c{
+  background-color:black;
+}
+
+.page-link{
+  color:#05F2F2;
+  background-color:black;
+  border:2px solid #05F2F2;
+  
+}
+.page-link:hover{
+  color: black;
+  background-color:#05F2F2;
+  border:2px solid #05F2F2;
+}
+
+.page-item-c.active-c .page-link {
+  z-index: 3;
+  color: rgb(0, 0, 0);
+  background-color: #05F2F2;
+  border-color: #05F2F2;
 }
 
 
