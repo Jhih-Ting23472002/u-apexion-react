@@ -1,20 +1,68 @@
-import React from 'react';
 import './TravelChoose.css';
 import { useEffect, useState } from 'react';
+import config from './Config';
+import { useHistory, useLocation } from 'react-router-dom';
 
 function TravelChoose() {
-  const [TravelProduct, setTravelProduct] = useState([]);
+  const history = useHistory();
+  const location = useLocation();
+  const [data, setData] = useState({});
+
+  const getData = async page => {
+    const obj = await (await fetch(config.AB_LIST + `?page=${page}`)).json();
+    console.log(obj);
+    setData(obj);
+  };
 
   useEffect(() => {
-    (async function () {
-      const response = await fetch(
-        'http://localhost:3001/travel-choose/api/travel-product'
-      );
-      const TravelProduct = await response.json();
-      setTravelProduct(TravelProduct);
-      console.log(TravelProduct);
-    })();
-  }, []);
+    const usp = new URLSearchParams(location.search);
+    const page = parseInt(usp.get('page'));
+    console.log({ page });
+    getData(page || 1);
+  }, [location.search]);
+
+  const renderMe = data => {
+    if (data.rows && data.rows.length) {
+      return data.rows.map(el => (
+        <div className="item pl-4" key={'test' + el.sid}>
+          <div className="d-flex choosecardmb align-items-stretch">
+            <div className="col-sm-6 col-md-8">
+              <div className="row align-items-center">
+                <div className="col-md-8 info">
+                  <h4 className="chooseh4 pb-2 border-bottom">
+                    {el.travel_name}
+                  </h4>
+                  <p className="choosep">{el.travel_description}</p>
+                  <ul className="chooseitinerary">
+                    <li>類別:{el.travel_tags}</li>
+                    <li>產品代碼:{el.travel_number}</li>
+                    <li>去程:{el.travel_outbound}</li>
+                    <li>回程:{el.travel_inbound}</li>
+                  </ul>
+                </div>
+                <div className="col-md-4 text-md-center choosedetails">
+                  <p className="day">{el.travel_day}</p>
+                  <p className="price">${el.travel_price}</p>
+                  <button className="itemBuyButton">Details</button>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-6 col-md-4 image">
+              <img
+                src={'./travelimg/travelproductimg/oz.jpg' + el.travel_image}
+                loading="lazy"
+                className="img-fluid rounded"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      ));
+    } else {
+      return null;
+    }
+  };
+
   return (
     <>
       <section className="py-5">
@@ -52,59 +100,68 @@ function TravelChoose() {
                 </div>
               </div>
             </div>
-            <div className="list">
-              {TravelProduct.map((c, i) => {
-                return (
-                  <React.Fragment key={i}>
-                    <div className="item pl-4">
-                      <div className="d-flex choosecardmb align-items-stretch">
-                        <div className="col-sm-6 col-md-8">
-                          <div className="row align-items-center">
-                            <div className="col-md-8 info">
-                              <h4 className="chooseh4 pb-2 border-bottom">
-                                {c.travel_name}
-                              </h4>
-                              <p className="choosep">{c.travel_description}</p>
-                              <ul className="chooseitinerary">
-                                <li>類別:{c.travel_tags}</li>
-                                <li>產品代碼:{c.travel_number}</li>
-                                <li>去程:{c.travel_outbound}</li>
-                                <li>回程:{c.travel_inbound}</li>
-                              </ul>
-                            </div>
-                            <div className="col-md-4 text-md-center choosedetails">
-                              <p className="day">{c.travel_day}</p>
-                              <p className="price">${c.travel_price}</p>
-                              <button className="itemBuyButton">Details</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-sm-6 col-md-4 image">
-                          <img
-                            src={
-                              './travelimg/travelproductimg/oz.jpg' +
-                              c.travel_image
-                            }
-                            loading="lazy"
-                            className="img-fluid rounded"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </React.Fragment>
-                );
-              })}
-            </div>
+            <div className="list">{renderMe(data)}</div>
           </div>
         </div>
       </section>
       <div className="morechoose">
-        <button className="tourButton">更多行程</button>
+        {data.rows && data.rows.length ? (
+          <div aria-label="Page navigation example">
+            <ul className="pagination">
+              <li
+                className={data.page === 1 ? 'page-item disabled' : 'page-item'}
+              >
+                <button
+                  className="page-link"
+                  onClick={() => {
+                    history.push(`?page=${data.page - 1}`);
+                  }}
+                >
+                  Previous
+                </button>
+              </li>
+              {Array(data.totalPages)
+                .fill(1)
+                .map((el, i) => (
+                  <li
+                    className={
+                      data.page === i + 1 ? 'page-item active' : 'page-item'
+                    }
+                    key={'pageLi' + i}
+                  >
+                    <button
+                      className="page-link"
+                      onClick={() => {
+                        history.push(`?page=${i + 1}`);
+                      }}
+                    >
+                      {i + 1}
+                    </button>
+                  </li>
+                ))}
+              <li
+                className={
+                  data.page === data.totalPages
+                    ? 'page-item disabled'
+                    : 'page-item'
+                }
+              >
+                <button
+                  className="page-link"
+                  href="#/"
+                  onClick={() => {
+                    history.push(`?page=${data.page + 1}`);
+                  }}
+                >
+                  Next
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : null}
       </div>
       <hr className="generalHr" />
     </>
   );
 }
-
 export default TravelChoose;

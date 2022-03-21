@@ -92,6 +92,11 @@
 }
 
 .morechoose{
-  text-align: center;
+  font-size:20px;
   margin-bottom:5%;
 }
+.pagination{
+  justify-content: center;
+}
+
+
