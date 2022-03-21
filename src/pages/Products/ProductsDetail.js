@@ -10,6 +10,7 @@ function ProductsDetail(props) {
   const { sid } = useParams();
   console.log(sid);
   const [ProductDetail, setProductDetail] = useState([]);
+  //找到網址列的sid
   const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
   console.log(product);
 
@@ -22,23 +23,15 @@ function ProductsDetail(props) {
     })();
   }, []);
 
-  // const Products = async function () {
-  //   const responseWoman = await fetch(ProductsConfig.Product);
-  //   const allDetail = await responseWoman.json();
-  //   console.log(allDetail);
-  //   setProductDetail(allDetail);
-  // };
-  // const product = ProductDetail.find((v, i) => v.sid === sid);
-  // console.log(product);
   return (
     <article>
       <div className="pr-detail">
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
-            <a href="#/">男士精品</a>
-            <a href="#/">女士精品</a>
-            <a href="#/">鞋款</a>
+            <a href="http://localhost:3000/products-list#men">男士精品</a>
+            <a href="http://localhost:3000/products-list">女士精品</a>
+            <a href="http://localhost:3000/products-list">鞋款</a>
             <a href="#/">配件與腕錶</a>
           </div>
           <div className="div-wrap">

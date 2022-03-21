@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
-import { Link, useParams } from 'react-router-dom';
 import ProductsConfig from '../ProductsConfig';
 
 function DetailList(props) {
-console.log(props.product)
+
   return (
     <>
       <div className="pr-detail-list">
@@ -19,22 +18,29 @@ console.log(props.product)
           <i className="pr-detail-p-i fa-regular fa-heart"></i>
           <ul>
             <li>#最新款式</li>
-            <li className="li-h2">防風飛行夾克</li>
-            <li>灰色科技棉防撕裂物料</li>
-            <li>編號:M021J_BK025</li>
+            <li className="li-h2">{props.product?.product_name??"重新整理"}</li>
+            <li>{props.product?.material??'灰色科技棉防撕裂物料'}</li>
+            <li>{props.product?.material_code??'編號:M021J_BK025'}</li>
           </ul>
           <div>
             <div className="primary-navigation">
               <p>尺寸 :</p>
               <div role="navigation" className="primary-navigation">
-                <ul>
+                <select class="form-control info-select">
+                <option value="請選擇">請選擇</option>
+                <option value="Small">Small</option>
+                <option value="Middle">Middle</option>
+                <option value="Large">Large</option>
+                </select>
+
+                {/* <ul>
                   <li>
                     <a href="#/">
                       請選擇 <i className="fa-solid fa-angle-down"></i>
                     </a>
                     <ul className="dropdown">
                       <li>
-                        <a href="#/">Small</a>
+                        <a href="#/" >Small</a>
                       </li>
                       <li>
                         <a href="#/">Middle</a>
@@ -44,8 +50,9 @@ console.log(props.product)
                       </li>
                     </ul>
                   </li>
-                </ul>
+                </ul> */}
               </div>
+              <p className="pr-price">售價:   {props.product?.price??'7584'}</p>
             </div>
             <div className="pr-detail-quantity">
               <span>
@@ -114,10 +121,7 @@ console.log(props.product)
               前胸綴以「CD Heart」貼布
               <br />
               棱紋圓領配 V 領縫線
-              <br />
-              100% 棉
-              <br />
-              意大利製造
+
             </p>
           </span>
         </div>

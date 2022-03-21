@@ -11,7 +11,7 @@ function ProductsList() {
   // 2. 用於網頁上經過各種處理(排序、搜尋、過濾)後的資料
   const [displayProducts, setDisplayProducts] = useState([])
   const [AllList, setAllList] = useState('');
-  const [ProductNavbar, setProductNavbar] = useState('/men');
+  const [ProductNavbar, setProductNavbar] = useState('#men');
   const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');
 
   useEffect(() => {
@@ -138,13 +138,10 @@ function ProductsList() {
         <div className="pr-list-dropdowns">
           <p>{AllList}件商品</p>
           <div className="primary-navigation">
-            <div role="navigation" className="primary-navigation">
+            {/* <div role="navigation" className="primary-navigation">
               <ul>
                 <li>
                 <option value="">價格排序</option><i className="fa-solid fa-angle-down"></i>
-                  {/* <a>
-                    價格 <i className="fa-solid fa-angle-down"></i>
-                  </a> */}
                   <ul className="dropdown">
                     <li>
                     <option value="1">由低至高</option>
@@ -166,8 +163,26 @@ function ProductsList() {
                   </ul>
                 </li>
               </ul>
-            </div>
+    
+            </div> */}
+            <div>
+            <select class="form-control info-select">
+                <option value="">價格排序</option>
+                <option value="1">由低至高</option>
+                <option value="2">由高至低</option>
+
+                </select>
+                </div>
           </div>
+          <div>
+            <select class="form-control info-select">
+                <option value="">顏色</option>
+                <option value="BK">黑色</option>
+                <option value="WH">白色</option>
+                <option value="GR">綠色</option>
+                </select>
+                </div>
+          
         </div>
         {/* 卡片開始 */}
         <div className="pr-list-cards">
