@@ -111,6 +111,8 @@ const SinglePostTopRightDELETE = styled.div``;
 
 const SinglePostResponses = styled.div``;
 
+const SinglePostImg = styled.div``;
+
 export default function ForumSinglePostPage() {
   const [post, setPost] = useState(null);
   const [response, setResponse] = useState(null);
@@ -119,6 +121,7 @@ export default function ForumSinglePostPage() {
   const [loading, setLoading] = useState(false);
   const { sid } = useParams();
   const history = useHistory();
+  const [imgSrc, setImgSrc] = useState();
 
   function SinglePostResponsesArea({ name, res_content, res_time }) {
     return (
@@ -144,7 +147,11 @@ export default function ForumSinglePostPage() {
   }
 
   useEffect(() => {
-    getPost(sid).then(post => setPost(post));
+    getPost(sid).then(post => {
+      setPost(post);
+      console.log(post.art_photo);
+      setImgSrc('http://localhost:3000/img/' + post.art_photo);
+    });
     getResponse(sid).then(response => setResponse(response));
   }, []);
 
@@ -272,6 +279,10 @@ export default function ForumSinglePostPage() {
               {post && post.hashtag1}&nbsp;&nbsp; &nbsp; &nbsp;
               {post && post.hashtag2}
             </SinglePostHashtag>
+            <SinglePostImg>
+              <img src={imgSrc} />
+              {/* {post && post.art_photo} */}
+            </SinglePostImg>
           </SinglePostContainer>
           <SinglePostResponses>
             <div>
