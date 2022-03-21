@@ -69,6 +69,7 @@ function TicketTrip(props) {
   console.log(tripData);
 
   function tripHandler(e) {
+    console.log(e);
     console.log(e.target.parentNode.parentNode);
     console.log(
       e.target.parentNode.previousSibling.firstChild.firstChild.innerHTML
