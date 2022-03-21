@@ -11,7 +11,11 @@ const MemberLogin = () => {
 
             <form className="login-form">
               <div>
-                <input type="text" className="text-input" placeholder="Email" />
+                <input
+                  type="text"
+                  className="text-input  "
+                  placeholder="Email"
+                />
               </div>
               <div>
                 <input
@@ -36,7 +40,9 @@ const MemberLogin = () => {
               <hr className="bar" />
             </div>
             <div className="login-btn-container">
-              <button className="login-google-btn">Google</button>
+              <button className="login-google-btn">
+                <i class="fa-brands fa-google"></i>Google
+              </button>
             </div>
             <div className="login-notyet">
               <a href="#/">

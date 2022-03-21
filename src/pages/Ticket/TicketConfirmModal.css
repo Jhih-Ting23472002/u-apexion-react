@@ -1,0 +1,54 @@
+element.style {
+  background-color: none;
+}
+
+.back-view {
+  backdrop-filter: blur(10px);
+  transition: 1s ease-in-out;
+}
+
+.modal-content {
+  width: 1000px;
+  height: 600px;
+  background: url('./img/modal.png') center center / cover no-repeat;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: -5px 5px 20px black;
+  padding: 3%;
+}
+
+.modal-header.ticket-confirm-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border: none;
+}
+
+.modal-header.ticket-confirm-title h2 {
+  font-size: 2rem;
+}
+
+.modal-header.ticket-confirm-title p {
+  font-size: 0.9rem;
+}
+
+.close {
+  display: none;
+}
+
+.ticket-confirm-wrap {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+}
+
+.ticket-confirm-content {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  border-bottom: 1px solid white;
+  padding: 10px 0;
+}

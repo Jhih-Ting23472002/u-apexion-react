@@ -6,25 +6,30 @@ import DetailList from './components/DetailList';
 import { useParams, Link } from 'react-router-dom';
 import ProductsConfig from './ProductsConfig';
 
-function ProductsDetail() {
+function ProductsDetail(props) {
   const { sid } = useParams();
+  console.log(sid);
+  const [ProductDetail, setProductDetail] = useState([]);
+  const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
+  console.log(product);
 
-  // useEffect(() => {
-  //   (async function products() {
-  //     const response = await fetch(ProductsConfig.Product);
-  //     const menList = await response.json();
-  //     console.log(menList);
-  //   })();
-  // }, []);
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(ProductsConfig.Product);
+      const allDetail = await response.json();
+      // console.log(allDetail);
+      setProductDetail(allDetail);
+    })();
+  }, []);
 
-  const Products = async function () {
-    const responseWoman = await fetch(ProductsConfig.Product);
-    const menList = await responseWoman.json();
-    console.log(menList);
-  };
-  const product = Products.find((v, i) => v.sid === sid)
-  console.log(product)
-  
+  // const Products = async function () {
+  //   const responseWoman = await fetch(ProductsConfig.Product);
+  //   const allDetail = await responseWoman.json();
+  //   console.log(allDetail);
+  //   setProductDetail(allDetail);
+  // };
+  // const product = ProductDetail.find((v, i) => v.sid === sid);
+  // console.log(product);
   return (
     <article>
       <div className="pr-detail">
@@ -51,7 +56,7 @@ function ProductsDetail() {
           </div>
         </div>
         {/*---------------商品資訊-----------------------------------------------------*/}
-        <DetailList />
+        <DetailList product={product}/>
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>

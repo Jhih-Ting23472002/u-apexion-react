@@ -9,7 +9,7 @@ function Recommend(post) {
   return (
     <>
       <div className="pr-card">
-        <Link to={'/products-detail/:id' + post.sid} className="pr-img">
+        <Link to={'/products-list/product-detail/' + post.sid} className="pr-img">
           <img src={ProductsConfig.IMG_PATH + '/' + post.product_img} alt="" />
         </Link>
         <div className="pr-content">

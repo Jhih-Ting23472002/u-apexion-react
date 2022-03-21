@@ -6,7 +6,10 @@ import ProductsConfig from './ProductsConfig';
 import { useState, useEffect } from 'react';
 
 function ProductsList() {
+  // 1. 從伺服器來的原始資料
   const [ProductList, setProductList] = useState([]);
+  // 2. 用於網頁上經過各種處理(排序、搜尋、過濾)後的資料
+  const [displayProducts, setDisplayProducts] = useState([])
   const [AllList, setAllList] = useState('');
   const [ProductNavbar, setProductNavbar] = useState('/men');
   const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');
@@ -26,6 +29,7 @@ function ProductsList() {
     const responseMen = await fetch(ProductsConfig.MEN_List);
     const menList = await responseMen.json();
     setProductList(menList.allMen);
+    setDisplayProducts(menList.allMen);
     const a = 'COUNT(1)';
     setAllList(menList.allRows[a]);
   };
@@ -33,6 +37,7 @@ function ProductsList() {
     const responseWoman = await fetch(ProductsConfig.Woman_List);
     const WomanList = await responseWoman.json();
     setProductList(WomanList.allWoman);
+    setDisplayProducts(WomanList.allWoman);
     const a = 'COUNT(1)';
     setAllList(WomanList.allRows[a]);
 
@@ -41,6 +46,7 @@ function ProductsList() {
     const responseShoes = await fetch(ProductsConfig.Shoes_List);
     const ShoesList = await responseShoes.json();
     setProductList(ShoesList.allShoes);
+    setDisplayProducts(ShoesList.allShoes);
     const a = 'COUNT(1)';
     setAllList(ShoesList.allRows[a]);
   };

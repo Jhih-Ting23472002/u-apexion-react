@@ -18,14 +18,14 @@ function Products() {
       const response = await fetch(ProductsConfig.NEW_Products);
       const ProductsNew = await response.json();
       setProductsNew(ProductsNew);
-      console.log(ProductsNew);
+      // console.log(ProductsNew);
     })();
     // 分類推薦
     (async function () {
       const responseMen = await fetch(ProductsConfig.MEN_Products);
       const ProductMen = await responseMen.json();
       setProductRecommend(ProductMen);
-      console.log(ProductMen);
+      console.log(setProductRecommend);
     })();
   }, []);
 
@@ -33,7 +33,7 @@ function Products() {
     const responseWoman = await fetch(ProductsConfig.Woman_Products);
     const ProductWoman = await responseWoman.json();
     setProductRecommend(ProductWoman);
-    console.log(ProductWoman);
+    // console.log(ProductWoman);
   };
 
   const MenProduct = async function () {

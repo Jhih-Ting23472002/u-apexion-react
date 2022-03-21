@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import { Link, useParams } from 'react-router-dom';
+import ProductsConfig from '../ProductsConfig';
 
 function DetailList(props) {
-
+console.log(props.product)
   return (
     <>
       <div className="pr-detail-list">
         <div className="pr-detail-list-img">
           <img
             className="pr-detail-img"
-            src="./product_img/M021J_BK019.jpg"
+            src={`http://localhost:3001/img/product_img/${props.product?.product_img??'M021S_BK004.jpeg'}`}
             alt=""
           />
         </div>

@@ -1,7 +1,6 @@
-/* 測試 */
-.calender-test {
-  color: white;
-}
+/* {
+  text-decoration:none;
+} */
 
 .sliderWrap img {
   width: 100%;
@@ -183,11 +182,11 @@
 
 @keyframes step-circle-rotate {
   from {
-    transform:  translateX(-80%) rotate(70deg);
+    transform: translateX(-80%) rotate(70deg);
   }
 
   to {
-    transform:  translateX(-80%) rotate(0deg);
+    transform: translateX(-80%) rotate(0deg);
   }
 }
 
@@ -213,7 +212,7 @@ img {
   align-items: center;
   /* border: 5px solid rgb(255, 81, 0); */
   animation: step-circle-rotate 1s 1;
-  /* rotate(-70deg) */ 
+  /* rotate(-70deg) */
 }
 
 .step-circle-mb {
@@ -910,7 +909,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(9, 19, 102);
+  /* border: 1px solid rgb(9, 19, 102); */
 }
 
 .menu-list {
@@ -1046,6 +1045,7 @@ img {
   bottom: 2%;
   font-size: 1.2rem;
   padding-right: 5%;
+  text-decoration: none;
 }
 
 .ticket-meal-back {
@@ -1057,6 +1057,7 @@ img {
   bottom: 2%;
   font-size: 1.2rem;
   padding-left: 6%;
+  text-decoration: none;
 }
 
 .ticket-date-next i,
