@@ -54,7 +54,7 @@ function CustomizeSuit() {
             <div className="blue suit-flag"></div>
           </div>
           <div className="country-select">
-            <div className="suit-flag">
+            {/* <div className="suit-flag">
               <img src={require('./images/taiwan.png')} alt="" />
             </div>
             <div className="suit-flag">
@@ -82,10 +82,10 @@ function CustomizeSuit() {
               <div className="no-select">
                 <img src={require('./images/noselect.png')} alt="" />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="mark-select">
-            <div className="suit-flag">
+            {/* <div className="suit-flag">
               <img src={require('./images/space-mark-01.png')} alt="" />
             </div>
             <div className="suit-flag">
@@ -108,7 +108,7 @@ function CustomizeSuit() {
             </div>
             <div className="suit-flag">
               <img src={require('./images/space-mark-08.png')} alt="" />
-            </div>
+            </div> */}
             <div className="suit-flag">
               <div className="no-select">
                 <img src={require('./images/noselect.png')} alt="" />

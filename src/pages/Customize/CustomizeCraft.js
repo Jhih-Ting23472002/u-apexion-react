@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CustomizeCraft.css';
+import spaceCraft from './images/spacecraft.png';
+
+const allCountry = [
+  '/customize_img/america.png',
+  '/customize_img/canada.png',
+  '/customize_img/china.png',
+  '/customize_img/england.png',
+  '/customize_img/japan.png',
+  '/customize_img/korea.png',
+  '/customize_img/spain.png',
+  '/customize_img/taiwan.png',
+  '/customize_img/ukraine.png',
+];
 
 function CustomizeCraft() {
+  const [country, setCountry] = useState();
+  const [craftString, setCraftString] = useState('');
+
   return (
     <>
       <section className="Customcraft-page-view">
@@ -48,12 +64,12 @@ function CustomizeCraft() {
             </svg>
           </div>
           <div className="craft-img">
-            <img src={require('./images/spacecraft.png')} alt="" />
+            <img src={spaceCraft} alt="" />
           </div>
         </div>
         <div className="craft-main-area">
           <div className="craft-area-view1">
-            <img src={require('./images/spacecraft.png')} alt="" />
+            <img src={spaceCraft} alt="" />
           </div>
           <div className="craft-lorem">
             <p>
@@ -61,7 +77,7 @@ function CustomizeCraft() {
             </p>
           </div>
           <div className="craft-area-view2">
-            <img src={require('./images/spacecraft.png')} alt="" />
+            <img src={spaceCraft} alt="" />
           </div>
         </div>
         <svg
@@ -76,37 +92,27 @@ function CustomizeCraft() {
         <div className="craft-card">
           <h1>請選擇太空船外觀</h1>
           <h3>Customize Your SpaceCraft</h3>
-          <h2>20,000$</h2>
+          <h2>20,000${craftString}</h2>
           <div className="craft-in-label">
-            <input type="text" />
+            <input
+              type="text"
+              value={craftString}
+              onChange={e => {
+                setCraftString(e.target.value);
+                console.log(e.target.value) 
+              }}
+            />
             <label>請輸入名稱(8個字元內)</label>
           </div>
-          
+
           <div className="country-select">
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
+            {allCountry.map((v, i) => {
+              return (
+                <div className="suit-flag" key={i}>
+                  <img src={v} alt="" />
+                </div>
+              );
+            })}
             <div className="suit-flag">
               <div className="no-select">
                 <img src={require('./images/noselect.png')} alt="" />
