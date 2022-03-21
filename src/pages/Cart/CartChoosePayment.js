@@ -7,7 +7,7 @@ import spaceSeat from './img/spaceSeat.png';
 import spaceShip from './img/spaceShip.png';
 import { Link } from 'react-router-dom';
 
-const CartChoosePayment = () => {
+const CartChoosePayment = (props) => {
   return (
     <>
       <div className="cart-background container-fluid">
@@ -106,7 +106,7 @@ const CartChoosePayment = () => {
                 <div className="content-detail-inside-bottom-ticket">
                   <h5 className="cart-number-people">人數 5</h5>
                   <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">$XXXXX</div>
+                  <div className="cart-order-money">${props.tripPrice}</div>
                 </div>
               </div>
             </div>

@@ -30,7 +30,7 @@ function navbar() {
               <a href="#/">Register</a>
             </li>
             <li>
-              <a href="#/">
+              <a href="/cart-payment">
                 <img
                   className="nav_nav-bar-img"
                   src={require('./tools/Bag.png')}
@@ -102,7 +102,7 @@ function navbar() {
                 </a>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Cart">
+                <a href="/cart-payment" data-text="&nbsp;Cart">
                   &nbsp;Cart
                 </a>
               </li>
