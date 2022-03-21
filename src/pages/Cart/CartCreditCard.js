@@ -29,6 +29,7 @@ const CartCreditCard = () => {
               name="number"
               placeholder="Card Number"
               value={number}
+
               onChange={e => setNumber(e.target.value)}
               onFocus={e => setFocus(e.target.name)}
             ></input>
