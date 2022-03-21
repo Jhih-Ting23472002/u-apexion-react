@@ -202,7 +202,7 @@ function App() {
             <Products />
           </Route>
           <Route exact path="/cart-payment">
-            <CartChoosePayment />
+            <CartChoosePayment tripPrice={tripPrice} />
           </Route>
           <Route path="/cart-information">
             <CartInformation />
