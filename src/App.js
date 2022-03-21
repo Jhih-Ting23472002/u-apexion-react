@@ -37,7 +37,7 @@ import CustomizeSuit from './pages/Customize/CustomizeSuit';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import CartInformation from './pages/Cart/CartInformation';
 import CartFinalCheck from './pages/Cart/CartFinalCheck';
-// import CartCreditCard from './pages/Cart/CartCreditCard';
+import CartCreditCard from './pages/Cart/CartCreditCard';
 import CardComplete from './pages/Cart/CardComplete';
 
 // Ticket
@@ -65,8 +65,8 @@ import ForumMemArticlePage from './pages/Forum/ForumMemArticlePage';
 import ForumHotPage from './pages/Forum/ForumHotPage';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexFirst from './pages/Index/IndexFirst';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -81,12 +81,12 @@ function App() {
       <>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <IndexFirst />
           </Route>
           <Route exact path="/u-apexion">
             <IndexMain />
-          </Route>
+          </Route> */}
           {/* <Route path="/index-video"></Route>
           <Route path="/index"></Route> */}
           <Route exact path="/forum-home">
@@ -212,9 +212,9 @@ function App() {
           <Route path="/cart-final-check">
             <CartFinalCheck />
           </Route>
-          {/* <Route path="/cart-credit-card">
+          <Route path="/cart-credit-card">
             <CartCreditCard />
-          </Route> */}
+          </Route>
           <Route path="/cart-complete">
             <CardComplete />
           </Route>
