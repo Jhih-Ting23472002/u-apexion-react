@@ -17,6 +17,16 @@ element.style {
   padding: 3%;
 }
 
+.ticket-confirm-modal-body {
+  display: flex;
+  align-items: center;
+}
+
+.ticket-confirm-wrap {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
 .modal-header.ticket-confirm-title {
   display: flex;
   flex-direction: column;
@@ -50,5 +60,76 @@ element.style {
   justify-content: space-between;
   color: white;
   border-bottom: 1px solid white;
-  padding: 10px 0;
+  padding: 15px 0;
+}
+
+.ticket-confirm-content.ticket-confirm-price {
+  border: none;
+  justify-content: flex-end;
+  font-size: 2rem;
+  color: var(--main-color-02);
+}
+
+.ticket-confirm-modal-footer {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket-confirm-btn  {
+  background-color: var(--main-color-02);
+  color: #000000;
+  width: fit-content;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.ticket-confirm-btn::after {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 1px solid #093866;
+  border-radius: 15px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.ticket-confirm-btn:not(.ticket-confirm-btn:last-child)  {
+  background-color: white;
+  color: #000000;
+  width: fit-content;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.ticket-confirm-btn:not(.ticket-confirm-btn:last-child)::after {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 1px solid #10365a;
+  border-radius: 15px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+
+
+.ticket-confirm-modal-footer>div {
+  display: flex;
 }
