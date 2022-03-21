@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
 import { useState } from 'react';
+import ScrollToTop from './pages/Cart/components/ScrollToTop'
 
 //----頁面元件----
 
@@ -201,6 +202,7 @@ function App() {
           <Route path="/products" exact>
             <Products />
           </Route>
+          <ScrollToTop>
           <Route exact path="/cart-payment">
             <CartChoosePayment tripPrice={tripPrice} />
           </Route>
@@ -216,6 +218,7 @@ function App() {
           <Route path="/cart-complete">
             <CardComplete />
           </Route>
+          </ScrollToTop>
           <Route path="*">
             <NotFoundPage />
           </Route>
