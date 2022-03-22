@@ -8,6 +8,7 @@ import cartTicket from './img/cartTicket.png';
 import { Link } from 'react-router-dom';
 
 const CartFinalCheck = (props) => {
+  // cartUserInfo
   return (
     <>
       <div className="cart-background container-fluid">
@@ -52,7 +53,7 @@ const CartFinalCheck = (props) => {
               </div>
               <div className="cart-list-detail-inside col-8">
                 <h5 className="cart-product-list-group">商品名稱</h5>
-                <div className="cart-product-list-group">1111111</div>
+                <div className="cart-product-list-group">1</div>
                 <div className="cart-product-list-group">$xxxxx</div>
               </div>
             </div>
@@ -146,22 +147,22 @@ const CartFinalCheck = (props) => {
               </div>
               <div className="d-flex mt-5">
                 <p className="col-3">收件者：</p>
-                <p className="col-6">某某某</p>
+                <p className="col-6">{props.cartUserInfo.name}</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">
                 <p className="col-3">聯絡電話：</p>
-                <p className="col-6">0911222333</p>
+                <p className="col-6">{props.cartUserInfo.mobile}</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">
                 <p className="col-3">email：</p>
-                <p className="col-6">aaabbb@ccc.com</p>
+                <p className="col-6">{props.cartUserInfo.email}</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">
                 <p className="col-3">寄送地址：</p>
-                <p className="col-6">台北市某某區</p>
+                <p className="col-6">{props.cartUserInfo.addressCity}{props.cartUserInfo.addressDist}{props.cartUserInfo.address}</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex my-5">

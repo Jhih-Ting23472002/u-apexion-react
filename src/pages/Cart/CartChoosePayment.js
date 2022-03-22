@@ -22,7 +22,7 @@ const CartChoosePayment = (props) => {
     const options = {... props.userOption}
     options[type] = value
     props.setUserOption(options)
-    console.log(options);
+    // 除錯檢查用 console.log(options);
   }
 
   return (

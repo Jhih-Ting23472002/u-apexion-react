@@ -84,6 +84,15 @@ function App() {
     paymentMethod: '',
     deliveryWay: ''
   })
+
+  const [cartUserInfo, setCartUserInfo] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+    addressCity: '',
+    addressDist: '',
+    address: ''
+  })
   // 以上是cart的部分
 
 
@@ -218,22 +227,28 @@ function App() {
             <Route exact path="/cart-payment">
               <CartChoosePayment 
                 tripPrice={tripPrice} //from 采諭
-                // setCartDeliveryArea={setCartDeliveryArea} // from me
+                
                 setUserOption={setUserOption}
                 userOption={userOption}
                 />
             </Route>
             <Route path="/cart-information">
               <CartInformation  
-                // cartDeliveryArea={cartDeliveryArea}
-                // cartPaymentMethod={cartPaymentMethod}
-                // cartDeliveryWay={cartDeliveryWay}
+
                 setUserOption={setUserOption}
                 userOption={userOption}
+
+                setCartUserInfo={setCartUserInfo}  //第二頁送到第三頁：送
+                cartUserInfo={cartUserInfo}
               />
             </Route>
             <Route path="/cart-final-check">
-              <CartFinalCheck userOption={userOption}/>
+              <CartFinalCheck 
+                userOption={userOption}
+
+                setCartUserInfo={setCartUserInfo}
+                cartUserInfo={cartUserInfo}  //第二頁送到第三頁：收
+                />
             </Route>
             <Route path="/cart-credit-card">
               <CartCreditCard />
