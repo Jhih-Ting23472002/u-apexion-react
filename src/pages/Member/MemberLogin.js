@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './MemberLogin.css';
 // import { login } from './WebApi';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const MemberLogin = () => {
   const [account, setAccount] = useState('');
@@ -88,7 +88,14 @@ const MemberLogin = () => {
                 </a>
               </div>
               <div className="login-btn-container">
-                <button className="login-signup-btn">註冊</button>
+                <Link
+                  to="/member-sign-up"
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  <button className="login-signup-btn">註冊</button>
+                </Link>
               </div>
             </form>
             {/* <div className="login-btn-container">
