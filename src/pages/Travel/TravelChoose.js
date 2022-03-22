@@ -96,13 +96,27 @@ function TravelChoose() {
                 </div>
                 <div className="search">
                   <section className="webdesigntuts-workshop">
-                    <form action="" method="">
+                    <form
+                      onSubmit={e => {
+                        e.preventDefault();
+                        fetch(
+                          config.CHOOSE_LIST +
+                            '?search=' +
+                            e.target.search.value
+                        )
+                          .then(r => r.json())
+                          .then(obj => {
+                            console.log(obj);
+                          });
+                      }}
+                    >
                       <input
                         type="search"
                         placeholder="請輸入產品名/關鍵字/產品代碼 ex.巨蟹座 or 火星 or UAT-001"
+                        aria-label="Search"
                         name="search"
                       />
-                      <button>Search</button>
+                      <button type="submit">Search</button>
                     </form>
                   </section>
                 </div>
