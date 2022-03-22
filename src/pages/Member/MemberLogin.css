@@ -57,6 +57,7 @@
 .login-forgot-pwd {
   width: 100%;
   align-self: end;
+  margin-bottom: 2.4rem;
 }
 
 .login-forgot-pwd a {
@@ -68,7 +69,8 @@
 }
 
 .login-btn-container {
-  width: 90%;
+  width: 100%;
+
 }
 
 .login-or {
@@ -76,6 +78,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 .login-or .bar {
@@ -103,6 +107,7 @@
 
 .login-notyet {
   margin-bottom: 0.8rem;
+  text-align: center;
 }
 
 .login-notyet a {

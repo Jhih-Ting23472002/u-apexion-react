@@ -4,7 +4,7 @@ import './MemberNavbar.css';
 import { Link, useLocation } from 'react-router-dom';
 // import { Dropdown } from 'react-bootstrap';
 
-const UserArticalAll = styled(Link)`
+const MemberNavLinkAll = styled(Link)`
   display: block;
   ${props =>
     props.$active &&
@@ -28,17 +28,11 @@ export default function MemberNavbar() {
       id="navbar"
     >
       <ul className="nav nav-pills flex-column mb-auto user_nav_ul">
-        {/* <li>
-          <div className="user-input-wrapper">
-            <input
-              className="user_nav-search-bar form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              required
-            />
-          </div>
-        </li> */}
+        <li className="user-avatar-li">
+          <div className="user-avatar-wrapper"></div>
+
+          <div className="user-account">使用者帳號</div>
+        </li>
         <li>
           <div
             className="user_nav_title"
@@ -47,7 +41,7 @@ export default function MemberNavbar() {
             會員資料
           </div>
           <div className="user_nav_a-group">
-            <UserArticalAll
+            <MemberNavLinkAll
               to="/member-person"
               $active={location.pathname === '/member-person'}
             >
@@ -57,8 +51,8 @@ export default function MemberNavbar() {
                   個人檔案
                 </a>
               </div>
-            </UserArticalAll>
-            <UserArticalAll
+            </MemberNavLinkAll>
+            <MemberNavLinkAll
               to="/member-password-edit"
               $active={location.pathname === '/member-password-edit'}
             >
@@ -68,8 +62,8 @@ export default function MemberNavbar() {
                   更改密碼
                 </a>
               </div>
-            </UserArticalAll>
-            <UserArticalAll
+            </MemberNavLinkAll>
+            <MemberNavLinkAll
               to="/member-address"
               $active={location.pathname === '/member-address'}
             >
@@ -79,7 +73,7 @@ export default function MemberNavbar() {
                   收件地址
                 </a>
               </div>
-            </UserArticalAll>
+            </MemberNavLinkAll>
             {/* <UserArticalCat>
               <div className="user_navIcon_adjust">
                 <i className="fa-solid fa-sort"></i>
@@ -200,7 +194,7 @@ export default function MemberNavbar() {
                 </Dropdown>
               </div>
             </UserArticalCat> */}
-            <UserArticalAll
+            <MemberNavLinkAll
               to="/member-order-history"
               $active={location.pathname === '/member-order-history'}
             >
@@ -210,8 +204,8 @@ export default function MemberNavbar() {
                   歷史訂單
                 </a>
               </div>
-            </UserArticalAll>
-            <UserArticalAll
+            </MemberNavLinkAll>
+            <MemberNavLinkAll
               to="/member-collect"
               $active={location.pathname === '/member-collect'}
             >
@@ -221,7 +215,7 @@ export default function MemberNavbar() {
                   我的收藏
                 </a>
               </div>
-            </UserArticalAll>
+            </MemberNavLinkAll>
           </div>
         </li>
         {/* <li>
@@ -233,30 +227,30 @@ export default function MemberNavbar() {
           </div>
 
           <div className="a-group">
-            <UserArticalAll to="/#" $active={location.pathname === '/#'}>
+            <MemberNavLinkAll to="/#" $active={location.pathname === '/#'}>
               <div className="user_navIcon_adjust">
                 <i className="fa-solid fa-address-card"> </i>
                 <a href="/#" className="user_nav_item">
                   個人貼文
                 </a>
               </div>
-            </UserArticalAll>
-            <UserArticalAll to="/#" $active={location.pathname === '/#'}>
+            </MemberNavLinkAll>
+            <MemberNavLinkAll to="/#" $active={location.pathname === '/#'}>
               <div className="user_navIcon_adjust">
                 <i className="fa-solid fa-heart"> </i>
                 <a href="/#" className="user_nav_item">
                   按讚貼文
                 </a>
               </div>
-            </UserArticalAll>
-            <UserArticalAll to="/#" $active={location.pathname === '/#'}>
+            </MemberNavLinkAll>
+            <MemberNavLinkAll to="/#" $active={location.pathname === '/#'}>
               <div className="user_navIcon_adjust">
                 <i className="fa-solid fa-bookmark"> </i>
                 <a href="/#" className="user_nav_item">
                   個人珍藏
                 </a>
               </div>
-            </UserArticalAll>
+            </MemberNavLinkAll>
           </div>
         </li> */}
       </ul>

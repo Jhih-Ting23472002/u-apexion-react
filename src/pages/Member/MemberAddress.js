@@ -21,7 +21,7 @@ function MemberAddress() {
             </div>
             <div className="member-information-container">
               <table className="table table-borderless table-dark alert-dismissible  member-information-form">
-                <thead className="member-information-field-name">
+                <thead className="member-information-thead">
                   <tr>
                     <th scope="col">地點名稱</th>
                     <th scope="col">姓名</th>
@@ -30,15 +30,18 @@ function MemberAddress() {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="">
                   <tr>
                     <th scope="row">公司</th>
                     <td>Michael</td>
                     <td>106台北市大安區復興南路一段390號2樓</td>
                     <td>02-6631-6588</td>
                     <td>
-                      <button className="" onClick={() => setModalShow(true)}>
-                        輸入地址
+                      <button
+                        className="editordelete-btn"
+                        onClick={() => setModalShow(true)}
+                      >
+                        修改或刪除
                       </button>
                     </td>
                   </tr>
@@ -55,15 +58,23 @@ function MemberAddress() {
                   </tr> */}
                 </tbody>
               </table>
+              <div className="member-btn-container create-btn-container">
+                <button
+                  className="member-circle-btn"
+                  onClick={() => setModalShow(true)}
+                >
+                  輸入地址
+                </button>
+              </div>
             </div>
-            <div className="member-btn-container">
+            {/* <div className="member-btn-container">
               <button
                 className="member-circle-btn"
                 onClick={() => setModalShow(true)}
               >
                 輸入地址
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

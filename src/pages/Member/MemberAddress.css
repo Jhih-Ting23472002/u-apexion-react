@@ -1,18 +1,21 @@
 .member-information-container{
     width: 95%;
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: column;
   align-self: end;
 }
 
 .member-information-form{
     width: 91%;
-    background: rgba(0, 0, 0, 0.0)
+    background: rgba(0, 0, 0, 0.0);
+    
 }
 
-.member-information-field-name{
+.member-information-thead{
   background-color: #023E73;
+  
 }
+
 
 /* ------------------------------------------------- */
 
@@ -51,4 +54,17 @@
 }
 .member-circle-btn:focus{
   outline:none;
+}
+
+.create-btn-container{
+  width: 91%;
+  margin-top: auto;
+}
+
+.editordelete-btn{
+  background-color: #000;
+  color: #05f2f2;
+  border: 1px solid #05f2f2;
+  padding: 4px 8px;
+  border-radius: 5px;
 }
