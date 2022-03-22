@@ -6,7 +6,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 function TravelChoose() {
   const history = useHistory();
   const location = useLocation();
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
 
   const getData = async page => {
     const obj = await (
@@ -94,8 +94,8 @@ function TravelChoose() {
                     <option>天數由多至少</option>
                   </select>
                 </div>
-                <div className="search">
-                  <section className="webdesigntuts-workshop">
+                <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">
+                  <div className="webdesigntuts-workshopchoose">
                     <form
                       onSubmit={e => {
                         e.preventDefault();
@@ -105,8 +105,9 @@ function TravelChoose() {
                             e.target.search.value
                         )
                           .then(r => r.json())
-                          .then(obj => {
-                            console.log(obj);
+                          .then(travelobj => {
+                            console.log(travelobj);
+                            setData(travelobj);
                           });
                       }}
                     >
@@ -118,7 +119,7 @@ function TravelChoose() {
                       />
                       <button type="submit">Search</button>
                     </form>
-                  </section>
+                  </div>
                 </div>
               </div>
             </div>
