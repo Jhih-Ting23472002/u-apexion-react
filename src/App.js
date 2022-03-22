@@ -213,7 +213,12 @@ function App() {
           </Route>
           <ScrollToTop>
             <Route exact path="/cart-payment">
-              <CartChoosePayment tripPrice={tripPrice} />
+              <CartChoosePayment 
+                tripPrice={tripPrice} //from 采諭
+                cartDeliveryArea={cartDeliveryArea} // from me
+                cartPaymentMethod={cartPaymentMethod} // from me
+                cartDeliveryWay={cartDeliveryWay}  // from me
+                />
             </Route>
             <Route path="/cart-information">
               <CartInformation />
