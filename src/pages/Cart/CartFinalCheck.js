@@ -7,7 +7,7 @@ import spaceShip from './img/spaceShip.png';
 import cartTicket from './img/cartTicket.png';
 import { Link } from 'react-router-dom';
 
-const CartFinalCheck = () => {
+const CartFinalCheck = (props) => {
   return (
     <>
       <div className="cart-background container-fluid">
@@ -136,12 +136,12 @@ const CartFinalCheck = () => {
             <div className="recipient-final-info">
               <div className="d-flex mt-4">
                 <p className="col-3">配送方式：</p>
-                <p className="col-6">宅配到府</p>
+                <p className="col-6">{props.userOption.deliveryWay}</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">
                 <p className="col-3">付款方式：</p>
-                <p className="col-6">信用卡</p>
+                <p className="col-6">{props.userOption.paymentMethod}</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">
@@ -150,13 +150,13 @@ const CartFinalCheck = () => {
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">
-                <p className="col-3">email：</p>
-                <p className="col-6">aaabbb@ccc.com</p>
+                <p className="col-3">聯絡電話：</p>
+                <p className="col-6">0911222333</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">
-                <p className="col-3">聯絡電話：</p>
-                <p className="col-6">0911222333</p>
+                <p className="col-3">email：</p>
+                <p className="col-6">aaabbb@ccc.com</p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex mt-5">

@@ -78,15 +78,12 @@ function App() {
 
 
   // 以下是cart的部分
-  // const [cartDeliveryArea, setCartDeliveryArea] = useState('');
-  // const [cartPaymentMethod, setCartPaymentMethod] = useState('');
-  // const [cartDeliveryWay, setCartDeliveryWay] = useState('');
+  // 第一頁傳『userOption』資料到第二頁、第三頁
   const [userOption, setUserOption] = useState({
     deliveryArea: '',
     paymentMethod: '',
     deliveryWay: ''
   })
-  console.log(userOption);
   // 以上是cart的部分
 
 
@@ -236,7 +233,7 @@ function App() {
               />
             </Route>
             <Route path="/cart-final-check">
-              <CartFinalCheck />
+              <CartFinalCheck userOption={userOption}/>
             </Route>
             <Route path="/cart-credit-card">
               <CartCreditCard />

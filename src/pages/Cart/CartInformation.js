@@ -12,6 +12,8 @@ const CartInformation = (props) => {
   const [afterEmail, setAfterEmail] = useState('');
   const [agree, setAgree] = useState(false);
 
+  
+
 
   return (
     <>
@@ -131,6 +133,11 @@ const CartInformation = (props) => {
                   <span className="cart-checkmark"></span>
                 </label>
               </div>
+
+
+              {/* 收件人資訊欄 */}
+
+
               <div className="recipient-information-name-mobile-email-address">
                 <label className="consumer-recipient-label-margin">
                   收件人
@@ -177,9 +184,12 @@ const CartInformation = (props) => {
                   <div className="select-consumer-recipient-input-top mb-3">
                     <select className="select-city mb-3">
                       <option>請選擇縣市</option>
+                      <option>台北市</option>
                     </select>
                     <select className="select-district">
                       <option>請選擇鄉鎮市區</option>
+                      <option>大安區</option>
+                      <option>文山區</option>
                     </select>
                   </div>
                   <div className="select-consumer-recipient-input-bottom">
