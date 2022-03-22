@@ -24,14 +24,13 @@ function DetailRecommend(props) {
   //  const d = c.slice(0, 3);
   //   console.log(d);
   const c = b.sort(() => Math.random() - 0.5).slice(0, 3);
-  console.log(c);
+  // console.log(c);
 
   return (
     <>
       {c.map(v => (
         <div className="col-md-4">
-          <a
-            href={'/products-list/product-detail/' + v.sid}
+          <Link to={'/products-list/product-detail/' + v.sid}
             className="card pr-card mb-5"
           >
             <img
@@ -43,7 +42,7 @@ function DetailRecommend(props) {
               <p className="card-text mb-3">{v.product_name}</p>
               <p className="card-text">{v.material}</p>
             </div>
-          </a>
+          </Link>
         </div>
       ))}
     </>

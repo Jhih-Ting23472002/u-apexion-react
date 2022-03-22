@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 
+
 function DetailList(props) {
 
   return (

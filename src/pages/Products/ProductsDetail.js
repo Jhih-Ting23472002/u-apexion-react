@@ -6,13 +6,21 @@ import DetailList from './components/DetailList';
 import { useParams, Link } from 'react-router-dom';
 import ProductsConfig from './ProductsConfig';
 
+
 function ProductsDetail(props) {
   const { sid } = useParams();
 
   const [ProductDetail, setProductDetail] = useState([]);
   //找到網址列的sid
   const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
-  //console.log(product);
+  // const newData = [...product]
+//  console.log(product);
+
+  //歷史紀錄
+localStorage.setItem(`${product?.material_code??'M021J_BK001'}`,`${product?.sid??'1'}`);
+
+  // 把剛剛存進去的字串用 key 名取出來
+// localStorage.getItem();
 
   useEffect(() => {
     (async function () {
@@ -64,7 +72,7 @@ function ProductsDetail(props) {
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>瀏覽紀錄</h4>
-          <BrowsingHistory />
+          <BrowsingHistory ProductDetail={ProductDetail}/>
         </div>
       </div>
     </article>

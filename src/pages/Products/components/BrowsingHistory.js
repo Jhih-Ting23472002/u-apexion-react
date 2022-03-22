@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
-function BrowsingHistory() {
+import ProductsConfig from '../ProductsConfig';
+import { Link } from 'react-router-dom';
+
+
+function BrowsingHistory(props) {
+  const { ProductDetail } = props;
   return (
     <>
       <div className="col-md-4">
