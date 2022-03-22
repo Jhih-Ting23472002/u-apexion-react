@@ -154,9 +154,7 @@ function TravelIndex() {
               <React.Fragment key={i}>
                 <div className="shopItem smallItem">
                   <img
-                    src={
-                      './travelimg/travelproductimg/s12.png' + t.travel_image
-                    }
+                    src={'./travelimg/travelproductimg/' + t.travel_image}
                     alt=""
                   />
                   <div className="informationShopItem">
@@ -189,9 +187,7 @@ function TravelIndex() {
               <React.Fragment key={i}>
                 <div className="shopItem smallItem">
                   <img
-                    src={
-                      './travelimg/travelproductimg/s12.png' + t.travel_image
-                    }
+                    src={'./travelimg/travelproductimg/' + t.travel_image}
                     alt=""
                   />
                   <div className="informationShopItem">

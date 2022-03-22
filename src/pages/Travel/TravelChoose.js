@@ -51,7 +51,7 @@ function TravelChoose() {
             </div>
             <div className="col-sm-6 col-md-4 image">
               <img
-                src={'./travelimg/travelproductimg/oz.jpg' + el.travel_image}
+                src={'./travelimg/travelproductimg/' + el.travel_image}
                 loading="lazy"
                 className="img-fluid rounded"
                 alt=""
