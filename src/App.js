@@ -75,6 +75,11 @@ function App() {
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
 
+  // 以下是cart的部分
+  const [cartDeliveryArea, setCartDeliveryArea] = useState('');
+  const [cartPaymentMethod, setCartPaymentMethod] = useState('');
+  const [cartDeliveryWay, setCartDeliveryWay] = useState('');
+  // 以上是cart的部分
   console.log(tripSelected, tripDays);
   return (
     <Router>

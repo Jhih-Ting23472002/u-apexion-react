@@ -39,12 +39,18 @@ const CartChoosePayment = (props) => {
             <div className="cart-user-option col-7">
               <select className="cart-user-option-text">
                 <option>選擇運送區域</option>
+                <option>運送區域：國內</option>
+                <option>運送區域：國外</option>
               </select>
               <select className="cart-user-option-text">
                 <option>選擇付款方式</option>
+                <option>信用卡</option>
+                <option>ATM轉帳</option>
               </select>
               <select className="cart-user-option-text">
                 <option>選擇送貨方式</option>
+                <option>宅配到府</option>
+                <option>自取</option>
               </select>
             </div>
             <div className="cart-should-pay col-5">
@@ -53,7 +59,7 @@ const CartChoosePayment = (props) => {
               <div className="cart-should-pay-separated-line"></div>
               <h5 className="cart-should-pay-total-price">應付總金額:$xxxxx</h5>
               <div className="cart-button">
-                <button className="btn continue-btn">繼續購物</button>
+                <Link to={'/products'} className="btn continue-btn">繼續購物</Link>
                 <Link
                   className="btn next-btn cart-link"
                   to={'/cart-information'}
