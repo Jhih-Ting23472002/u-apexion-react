@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './ProductsList.scss';
 import ListCards from './components/ListCards';
 import ProductsConfig from './ProductsConfig';
@@ -9,10 +9,11 @@ function ProductsList() {
   // 1. 從伺服器來的原始資料
   const [ProductList, setProductList] = useState([]);
   // 2. 用於網頁上經過各種處理(排序、搜尋、過濾)後的資料
-  const [displayProducts, setDisplayProducts] = useState([])
+  const [displayProducts, setDisplayProducts] = useState([]);
   const [AllList, setAllList] = useState('');
   const [ProductNavbar, setProductNavbar] = useState('#men');
   const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     (async function () {
@@ -40,7 +41,6 @@ function ProductsList() {
     setDisplayProducts(WomanList.allWoman);
     const a = 'COUNT(1)';
     setAllList(WomanList.allRows[a]);
-
   };
   const ProductShoesList = async function () {
     const responseShoes = await fetch(ProductsConfig.Shoes_List);
@@ -102,7 +102,11 @@ function ProductsList() {
                   id="search"
                   name="search"
                   type="text"
-                  placeholder="請輸入關鍵字?"
+                  placeholder="請輸商品關鍵字..."
+                  onChange={event => {
+                    setSearchTerm(event.target.value);
+                    console.log(event.target.value);
+                  }}
                 />
                 <input id="search_submit" value="" type="submit" />
               </form>
@@ -166,27 +170,29 @@ function ProductsList() {
     
             </div> */}
             <div>
-            <select class="form-control info-select">
+              <select class="form-control info-select">
                 <option value="">價格排序</option>
                 <option value="1">由低至高</option>
                 <option value="2">由高至低</option>
-
-                </select>
-                </div>
+              </select>
+            </div>
           </div>
           <div>
             <select class="form-control info-select">
-                <option value="">顏色</option>
-                <option value="BK">黑色</option>
-                <option value="WH">白色</option>
-                <option value="GR">綠色</option>
-                </select>
-                </div>
-          
+              <option value="">顏色</option>
+              <option value="BK">黑色</option>
+              <option value="WH">白色</option>
+              <option value="GR">綠色</option>
+            </select>
+          </div>
         </div>
         {/* 卡片開始 */}
         <div className="pr-list-cards">
-          {ProductList.map((newProduct, i) => {
+          {ProductList.filter(v => {
+            if (v.product_name.includes(searchTerm)) {
+              return v;
+            }
+          }).map((newProduct, i) => {
             const {
               sid,
               product_name,

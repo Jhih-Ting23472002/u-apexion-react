@@ -8,11 +8,11 @@ import ProductsConfig from './ProductsConfig';
 
 function ProductsDetail(props) {
   const { sid } = useParams();
-  console.log(sid);
+
   const [ProductDetail, setProductDetail] = useState([]);
   //找到網址列的sid
   const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
-  console.log(product);
+  //console.log(product);
 
   useEffect(() => {
     (async function () {
@@ -49,11 +49,17 @@ function ProductsDetail(props) {
           </div>
         </div>
         {/*---------------商品資訊-----------------------------------------------------*/}
-        <DetailList product={product}/>
+        <DetailList product={product} />
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>
-          <DetailRecommend />
+          {/* {product.filter((v, i) => {
+            if (v.category.includes(v.category) && v.class.includes(v.class)) {
+              return v;
+            }
+            console.log(v);
+          })} */}
+          <DetailRecommend product={product} ProductDetail={ProductDetail}/>
         </div>
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">
