@@ -78,9 +78,15 @@ function App() {
 
 
   // 以下是cart的部分
-  const [cartDeliveryArea, setCartDeliveryArea] = useState('');
-  const [cartPaymentMethod, setCartPaymentMethod] = useState('');
-  const [cartDeliveryWay, setCartDeliveryWay] = useState('');
+  // const [cartDeliveryArea, setCartDeliveryArea] = useState('');
+  // const [cartPaymentMethod, setCartPaymentMethod] = useState('');
+  // const [cartDeliveryWay, setCartDeliveryWay] = useState('');
+  const [userOption, setUserOption] = useState({
+    deliveryArea: '',
+    paymentMethod: '',
+    deliveryWay: ''
+  })
+  console.log(userOption);
   // 以上是cart的部分
 
 
@@ -215,13 +221,19 @@ function App() {
             <Route exact path="/cart-payment">
               <CartChoosePayment 
                 tripPrice={tripPrice} //from 采諭
-                cartDeliveryArea={cartDeliveryArea} // from me
-                cartPaymentMethod={cartPaymentMethod} // from me
-                cartDeliveryWay={cartDeliveryWay}  // from me
+                // setCartDeliveryArea={setCartDeliveryArea} // from me
+                setUserOption={setUserOption}
+                userOption={userOption}
                 />
             </Route>
             <Route path="/cart-information">
-              <CartInformation />
+              <CartInformation  
+                // cartDeliveryArea={cartDeliveryArea}
+                // cartPaymentMethod={cartPaymentMethod}
+                // cartDeliveryWay={cartDeliveryWay}
+                setUserOption={setUserOption}
+                userOption={userOption}
+              />
             </Route>
             <Route path="/cart-final-check">
               <CartFinalCheck />

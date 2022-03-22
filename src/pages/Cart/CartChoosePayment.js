@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './CartChoosePayment.css';
 import ProcessLine from './components/ProcessLine'
 import ProductCard from './components/choosePayment/ProductCard'
@@ -9,6 +9,22 @@ import ShipCard from './components/choosePayment/ShipCard'
 import { Link } from 'react-router-dom';
 
 const CartChoosePayment = (props) => {
+
+  // const [userOption, setUserOption] = useState({
+  //   a: '',
+  //   b: '',
+  //   c: ''
+  // })
+
+  function doSetUserOption(type='delivery-area', value){
+
+    // props.setCartDeliveryArea(userOption)
+    const options = {... props.userOption}
+    options[type] = value
+    props.setUserOption(options)
+    console.log(options);
+  }
+
   return (
     <>
       <div className="cart-background container-fluid">
@@ -37,17 +53,23 @@ const CartChoosePayment = (props) => {
           <div className="cart separated-line"></div>
           <div className="cart-user-option-should-pay">
             <div className="cart-user-option col-7">
-              <select className="cart-user-option-text">
-                <option>選擇運送區域</option>
-                <option>運送區域：國內</option>
-                <option>運送區域：國外</option>
+              <select className="cart-user-option-text" onChange={(e)=>{
+                doSetUserOption('deliveryArea', e.target.value);
+              }}>
+                <option value="">選擇運送區域</option>
+                <option value="國內">運送區域：國內</option>
+                <option value="國外">運送區域：國外</option>
               </select>
-              <select className="cart-user-option-text">
+              <select className="cart-user-option-text" onChange={(e)=>{
+                doSetUserOption('paymentMethod', e.target.value);
+              }}>
                 <option>選擇付款方式</option>
                 <option>信用卡</option>
                 <option>ATM轉帳</option>
               </select>
-              <select className="cart-user-option-text">
+              <select className="cart-user-option-text" onChange={(e)=>{
+                doSetUserOption('deliveryWay', e.target.value);
+              }}>
                 <option>選擇送貨方式</option>
                 <option>宅配到府</option>
                 <option>自取</option>

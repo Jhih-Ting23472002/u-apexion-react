@@ -3,7 +3,7 @@ import './CartInformation.css';
 import { Link } from 'react-router-dom';
 import { set } from 'lodash';
 
-const CartInformation = () => {
+const CartInformation = (props) => {
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [email, setEmail] = useState('');
@@ -38,9 +38,9 @@ const CartInformation = () => {
             </div>
           </div>
           <div className="cart-chosen-way">
-            <div className="cart-delivery-area">運送區域：國內</div>
-            <div className="cart-payment-way">付款方式：信用卡</div>
-            <div className="cart-delivery-way">配送方式：宅配到府</div>
+            <div className="cart-delivery-area">運送區域：{props.userOption.deliveryArea}</div>
+            <div className="cart-payment-way">付款方式：{props.userOption.paymentMethod}</div>
+            <div className="cart-delivery-way">配送方式：{props.userOption.deliveryWay}</div>
           </div>
 
           <form className="cart-consumer-information-part">
