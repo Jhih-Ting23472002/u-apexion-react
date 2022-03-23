@@ -86,7 +86,7 @@ function Post({ post }) {
           <div className="article-like-box-group">
             <i className="fas fa-comment"></i>
             <div className="article-like-box-number">
-              {post && post.res_count}
+              {post && post.article_comments}
             </div>
           </div>
           <div className="article-like-box-group">

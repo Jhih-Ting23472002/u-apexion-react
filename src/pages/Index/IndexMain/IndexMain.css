@@ -207,6 +207,7 @@
   height: 100%;
   border-radius: 150px;
   background-color: black;
+  opacity: 1;
 }
 .index_steps_circle-one {
   width: 100%;
@@ -221,6 +222,19 @@
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
+  animation-name: show;
+  animation-duration: 4s;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .index_steps_circle-three {
@@ -229,13 +243,40 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  animation-name: show;
+  animation-duration: 8s;
 }
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .index_steps_circle-four {
   width: 100%;
   background-image: url('./index_imgs/up.GIF');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  animation-name: show;
+  animation-duration: 12s;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .index_step_words {
@@ -280,12 +321,15 @@
   margin: 0 auto;
   overflow: hidden;
 }
-.index_section4_bottom_fixed .fixed_image {
+.index_section4_bottom_fixed .sec4fixed {
+  margin-top: 20%;
+}
+.index_section4_bottom_fixed .sec4fixed.fixed_image {
   /* border: 1px solid orange; */
   margin-top: 20%;
   transition-timing-function: cubic-bezier(0.2, 0.4, 0.7, 0.8);
   animation-name: MoveAround;
-  animation-duration: 12s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
 }
 @keyframes MoveAround {
