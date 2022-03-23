@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
 import { useState } from 'react';
+import ScrollToTop from './pages/Cart/components/ScrollToTop';
 
 //----頁面元件----
 
@@ -36,7 +37,7 @@ import CustomizeSuit from './pages/Customize/CustomizeSuit';
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
 import CartInformation from './pages/Cart/CartInformation';
 import CartFinalCheck from './pages/Cart/CartFinalCheck';
-// import CartCreditCard from './pages/Cart/CartCreditCard';
+import CartCreditCard from './pages/Cart/CartCreditCard';
 import CardComplete from './pages/Cart/CardComplete';
 
 // Ticket
@@ -64,8 +65,8 @@ import ForumMemArticlePage from './pages/Forum/ForumMemArticlePage';
 import ForumHotPage from './pages/Forum/ForumHotPage';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexFirst from './pages/Index/IndexFirst';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -73,19 +74,40 @@ function App() {
   const [tripSelected, setTripSelected] = useState('');
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
-
   console.log(tripSelected, tripDays);
+
+
+  // 以下是cart的部分
+  // 第一頁傳『userOption』資料到第二頁、第三頁
+  const [userOption, setUserOption] = useState({
+    deliveryArea: '',
+    paymentMethod: '',
+    deliveryWay: ''
+  })
+
+  const [cartUserInfo, setCartUserInfo] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+    addressCity: '',
+    addressDist: '',
+    address: ''
+  })
+  // 以上是cart的部分
+
+
+
   return (
     <Router>
       <>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <IndexFirst />
           </Route>
           <Route exact path="/u-apexion">
             <IndexMain />
-          </Route>
+          </Route> */}
           {/* <Route path="/index-video"></Route>
           <Route path="/index"></Route> */}
           <Route exact path="/forum-home">
@@ -201,21 +223,40 @@ function App() {
           <Route path="/products" exact>
             <Products />
           </Route>
-          <Route exact path="/cart-payment">
-            <CartChoosePayment tripPrice={tripPrice} />
-          </Route>
-          <Route path="/cart-information">
-            <CartInformation />
-          </Route>
-          <Route path="/cart-final-check">
-            <CartFinalCheck />
-          </Route>
-          {/* <Route path="/cart-credit-card">
-            <CartCreditCard />
-          </Route> */}
-          <Route path="/cart-complete">
-            <CardComplete />
-          </Route>
+          <ScrollToTop>
+            <Route exact path="/cart-payment">
+              <CartChoosePayment 
+                tripPrice={tripPrice} //from 采諭
+                
+                setUserOption={setUserOption}
+                userOption={userOption}
+                />
+            </Route>
+            <Route path="/cart-information">
+              <CartInformation  
+
+                setUserOption={setUserOption}
+                userOption={userOption}
+
+                setCartUserInfo={setCartUserInfo}  //第二頁送到第三頁：送
+                cartUserInfo={cartUserInfo}
+              />
+            </Route>
+            <Route path="/cart-final-check">
+              <CartFinalCheck 
+                userOption={userOption}
+
+                setCartUserInfo={setCartUserInfo}
+                cartUserInfo={cartUserInfo}  //第二頁送到第三頁：收
+                />
+            </Route>
+            <Route path="/cart-credit-card">
+              <CartCreditCard />
+            </Route>
+            <Route path="/cart-complete">
+              <CardComplete />
+            </Route>
+          </ScrollToTop>
           <Route path="*">
             <NotFoundPage />
           </Route>

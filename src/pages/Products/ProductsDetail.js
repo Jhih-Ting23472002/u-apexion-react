@@ -6,12 +6,25 @@ import DetailList from './components/DetailList';
 import { useParams, Link } from 'react-router-dom';
 import ProductsConfig from './ProductsConfig';
 
+
 function ProductsDetail(props) {
   const { sid } = useParams();
-  console.log(sid);
+
   const [ProductDetail, setProductDetail] = useState([]);
+  //找到網址列的sid
   const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
-  console.log(product);
+  // const newData = [...product]
+//  console.log(product);
+
+  //歷史紀錄
+//localStorage.setItem('productStorage',`${product?.sid??'1'}`);
+
+const data = (localStorage.getItem('productStorage')) ? JSON.parse(localStorage.getItem('productStorage')):{
+  productLocalStorage: []
+};
+
+data.productLocalStorage.push(product);
+localStorage.setItem('productStorage', JSON.stringify(data));
 
   useEffect(() => {
     (async function () {
@@ -22,23 +35,15 @@ function ProductsDetail(props) {
     })();
   }, []);
 
-  // const Products = async function () {
-  //   const responseWoman = await fetch(ProductsConfig.Product);
-  //   const allDetail = await responseWoman.json();
-  //   console.log(allDetail);
-  //   setProductDetail(allDetail);
-  // };
-  // const product = ProductDetail.find((v, i) => v.sid === sid);
-  // console.log(product);
   return (
     <article>
       <div className="pr-detail">
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
-            <a href="#/">男士精品</a>
-            <a href="#/">女士精品</a>
-            <a href="#/">鞋款</a>
+            <a href="http://localhost:3000/products-list#men">男士精品</a>
+            <a href="http://localhost:3000/products-list">女士精品</a>
+            <a href="http://localhost:3000/products-list">鞋款</a>
             <a href="#/">配件與腕錶</a>
           </div>
           <div className="div-wrap">
@@ -56,16 +61,22 @@ function ProductsDetail(props) {
           </div>
         </div>
         {/*---------------商品資訊-----------------------------------------------------*/}
-        <DetailList product={product}/>
+        <DetailList product={product} />
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>
-          <DetailRecommend />
+          {/* {product.filter((v, i) => {
+            if (v.category.includes(v.category) && v.class.includes(v.class)) {
+              return v;
+            }
+            console.log(v);
+          })} */}
+          <DetailRecommend product={product} ProductDetail={ProductDetail}/>
         </div>
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>瀏覽紀錄</h4>
-          <BrowsingHistory />
+          <BrowsingHistory ProductDetail={ProductDetail}/>
         </div>
       </div>
     </article>

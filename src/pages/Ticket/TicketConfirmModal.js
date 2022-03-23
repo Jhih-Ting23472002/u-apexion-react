@@ -20,7 +20,7 @@ function TicketOrderModal(props) {
         <p>Confirm the details of your travel,please</p>
         {/* <Modal.Title id="contained-modal-title-vcenter">輸入錯誤</Modal.Title> */}
       </Modal.Header>
-      <Modal.Body >
+      <Modal.Body className="ticket-confirm-modal-body">
         <div className="ticket-confirm-wrap">
           <div className="ticket-confirm-content">
             <p>行程</p>
@@ -34,7 +34,7 @@ function TicketOrderModal(props) {
             <p>艙位</p>
             <div>
               <p>USE1 FD.3 /</p>
-              <p>USE2 FD.4</p>
+              <p>USE2 FD.4 /</p>
               <p>USE3 FD.5 /</p>
               <p>USE4 FD.6</p>
             </div>
@@ -43,24 +43,28 @@ function TicketOrderModal(props) {
             <p>餐點</p>
             <div>
               <p>USE1 太空炒麵 /</p>
-              <p>USE2 太空咖哩</p>
+              <p>USE2 太空咖哩 /</p>
               <p>USE3 太空咖哩 /</p>
               <p>USE4 太空咖哩</p>
             </div>
           </div>
+          <div className="ticket-confirm-content ticket-confirm-price">
+            $4,000
+          </div>
         </div>
       </Modal.Body>
-      <Modal.Footer style={{ color: '#ffff2D' }}>
-        <Button
-          onClick={props.onHide}
-          style={{
-            backgroundColor: '#05DBF2',
-            color: '#00002D',
-            // filter: 'blur(2px)',
-          }}
-        >
-          關閉
+      <Modal.Footer className="ticket-confirm-modal-footer">
+        <Button onClick={props.onHide} className="ticket-confirm-btn">
+          修改
         </Button>
+        <div>
+          <Button onClick={props.onHide} className="ticket-confirm-btn">
+            加購客製化服務
+          </Button>
+          <Button onClick={props.onHide} className="ticket-confirm-btn">
+            確認送出
+          </Button>
+        </div>
       </Modal.Footer>
     </Modal>
   );

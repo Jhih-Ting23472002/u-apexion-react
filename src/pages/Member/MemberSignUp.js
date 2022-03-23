@@ -23,7 +23,12 @@ const MemberSignUp = () => {
                 <label for="" className="member-label">
                   姓名
                 </label>
-                <input type="text" placeholder="" className="member-input" />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="member-input"
+                  name="name"
+                />
               </div>
               <div className="member-input-container completed">
                 <label for="" className="member-label">
@@ -33,6 +38,7 @@ const MemberSignUp = () => {
                   type="email"
                   placeholder="youremail@email.com"
                   className="member-input"
+                  name="account"
                 />
               </div>
               <div className="member-input-container">
@@ -44,6 +50,7 @@ const MemberSignUp = () => {
                   id="txtNewPassword"
                   placeholder=""
                   className="member-input"
+                  name="password"
                 />
               </div>
               <div className="member-input-container">
@@ -55,6 +62,7 @@ const MemberSignUp = () => {
                   id="txtConfirmPassword"
                   placeholder=""
                   className="member-input"
+                  name="password"
                 />
               </div>
               <div className="member-input-container ">
@@ -62,7 +70,12 @@ const MemberSignUp = () => {
                   手機
                 </label>
 
-                <input type="text" placeholder="" className="member-input" />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="member-input"
+                  name="mobile"
+                />
               </div>
 
               <div className="member-input-container">
@@ -95,7 +108,12 @@ const MemberSignUp = () => {
                 <label for="" className="member-label">
                   生日
                 </label>
-                <input type="date" placeholder="" className="member-input" />
+                <input
+                  type="date"
+                  placeholder=""
+                  className="member-input"
+                  name="birthday"
+                />
               </div>
 
               <div className="member-input-container">
@@ -109,11 +127,14 @@ const MemberSignUp = () => {
                   <option>美國</option>
                 </select>
               </div>
+              <div className="member-btn-container">
+                <button className="member-circle-btn">確認送出</button>
+              </div>
             </form>
 
-            <div className="member-btn-container">
+            {/* <div className="member-btn-container">
               <button className="member-circle-btn">確認送出</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

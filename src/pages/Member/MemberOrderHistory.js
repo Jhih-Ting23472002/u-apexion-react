@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 // import './MemberOrderHistory.css';
 import MemberNavbar from '../../components/MemberNav';
 
@@ -18,7 +18,7 @@ function MemberOrderHistory() {
             </div>
             <div className="member-information-container">
               <table className="table table-borderless table-dark alert-dismissible  member-information-form">
-                <thead className="member-information-field-name">
+                <thead className="member-information-thead">
                   <tr>
                     <th scope="col">訂單編號</th>
                     <th scope="col">訂單日期</th>

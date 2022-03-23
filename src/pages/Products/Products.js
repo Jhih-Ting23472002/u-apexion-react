@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 function Products() {
   const [ProductsNew, setProductsNew] = useState([]);
   const [ProductRecommend, setProductRecommend] = useState([]);
-  const [ProductNavbar, setProductNavbar] = useState('/men');
+  const [ProductNavbar, setProductNavbar] = useState('#men');
   const [NewProductImg, setNewProductImg] = useState("./product_img/M021J_BK019_1.jpg");
 
 
