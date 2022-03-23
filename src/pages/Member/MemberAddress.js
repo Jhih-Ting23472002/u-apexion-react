@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './MemberAddress.css';
 import MemberAddressNew from './MemberAddressNew';
 import MemberNavbar from '../../components/MemberNav';
 
 function MemberAddress() {
   const [modalShow, setModalShow] = useState(false);
+  const [address, setAddress] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/user/user-address-api')
+      .then(r => r.json())
+      .then(obj => {
+        setAddress(obj);
+      });
+  }, []);
 
   return (
     <>
@@ -30,10 +39,11 @@ function MemberAddress() {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody className="">
+                {/* {address.map(address => ( */}
+                <tbody>
                   <tr>
-                    <th scope="row">公司</th>
-                    <td>Michael</td>
+                    <th scope="row">{address && address.place_name}</th>
+                    <td>{address.recipient_name}</td>
                     <td>106台北市大安區復興南路一段390號2樓</td>
                     <td>02-6631-6588</td>
                     <td>
@@ -57,6 +67,7 @@ function MemberAddress() {
                     <td>@twitter</td>
                   </tr> */}
                 </tbody>
+                {/* ))} */}
               </table>
               <div className="member-btn-container create-btn-container">
                 <button
