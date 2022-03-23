@@ -1,8 +1,44 @@
 import React from 'react';
 import './MemberPerson.css';
 import MemberNavbar from '../../components/MemberNav';
+import { useEffect, useState } from 'react';
+import { reviseMem, findMem } from '../../data/UserWebApi';
 
 const MemberPerson = () => {
+  const [memInfo, setMemInfo] = useState({
+    name: '',
+    mobile: '',
+    gender: '',
+    birthday: '',
+    country: '',
+  });
+
+  //先從localStorage拿id (你們的user_id)
+  const sid = localStorage.getItem('user_id');
+  // const mem_id = getMemId('mem_id');
+
+  //這個步驟先把資料丟到欄位裡
+  useEffect(() => {
+    findMem(sid).then(obj => {
+      setMemInfo(obj[0]);
+    });
+  }, []);
+
+  const handleRevise = e => {
+    e.preventDefault();
+    reviseMem(memInfo, sid).then(obj => {
+      console.log(obj);
+      if (obj.success) {
+        alert('修改成功');
+      }
+      // history.push('/member-login'); //登入成功後導入會員頁
+    });
+  };
+  const handleChange = e => {
+    const newData = { ...memInfo, [e.target.name]: e.target.value };
+    setMemInfo(newData);
+  };
+
   return (
     <>
       <div className="member-container">
@@ -15,22 +51,46 @@ const MemberPerson = () => {
               </div>
             </div>
             <div className="person-form-container">
-              <form className="person-form">
+              <form className="person-form" onSubmit={handleRevise}>
                 <div className="member-input-container ">
-                  <label for="" className="member-label">
-                    姓名
-                  </label>
-                  <input type="text" placeholder="" className="member-input" />
+                  <label className="member-label">姓名</label>
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="member-input"
+                    value={memInfo.name}
+                    name="name"
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="member-input-container ">
-                  <label for="" className="member-label">
-                    手機
-                  </label>
+                  <label className="member-label">手機</label>
 
-                  <input type="text" placeholder="" className="member-input" />
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="member-input"
+                    value={memInfo.mobile}
+                    name="mobile"
+                    onChange={handleChange}
+                  />
                 </div>
-
                 <div className="member-input-container">
+                  <label className="member-label">性別</label>
+                  <select
+                    className="member-select"
+                    value={memInfo.gender}
+                    name="gender"
+                    onChange={handleChange}
+                  >
+                    <option id="dropdown">請選擇</option>
+                    <option>女性</option>
+                    <option>男性</option>
+                    <option>其他</option>
+                  </select>
+                </div>
+
+                {/* <div className="member-input-container">
                   <label for="" className="member-label">
                     性別
                   </label>
@@ -58,23 +118,32 @@ const MemberPerson = () => {
                       </label>
                     </div>
                   </div>
+                </div> */}
+
+                <div className="member-input-container">
+                  <label className="member-label">生日</label>
+                  <input
+                    type="date"
+                    placeholder=""
+                    className="member-input"
+                    value={memInfo.birthday}
+                    name="birthday"
+                    onChange={handleChange}
+                  />
                 </div>
 
                 <div className="member-input-container">
-                  <label for="" className="member-label">
-                    生日
-                  </label>
-                  <input type="date" placeholder="" className="member-input" />
-                </div>
-
-                <div className="member-input-container country-wrap">
-                  <label for="" className="member-label">
-                    國籍
-                  </label>
-                  <select className="member-country-select">
+                  <label className="member-label">國籍</label>
+                  <select
+                    className="member-select"
+                    value={memInfo.country}
+                    name="country"
+                    onChange={handleChange}
+                  >
                     <option id="dropdown">請選擇</option>
                     <option>台灣</option>
                     <option>日本</option>
+                    <option>韓國</option>
                     <option>美國</option>
                   </select>
                 </div>
