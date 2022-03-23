@@ -216,9 +216,8 @@ function App() {
           <Route path="/trans-order"></Route>
           <Route
             path="/products-list/product-detail/:sid"
-            setProductDetail={setProductDetail}
           >
-            <ProductsDetail />
+            <ProductsDetail setProductDetail={setProductDetail}/>
           </Route>
           <Route path="/products-list" exact>
             <ProductsList />
