@@ -100,7 +100,9 @@ function Post({ post }) {
           </div>
           <div className="article-like-box-group">
             <i className="fas fa-comment"></i>
-            <div className="article-like-box-number">{post.res_count}</div>
+            <div className="article-like-box-number">
+              {post && post.article_comments}
+            </div>
           </div>
           <div
             className="article-like-box-group"
@@ -260,7 +262,7 @@ export default function ForumHomePage() {
                       <div className="article-like-box-group">
                         <i className="fas fa-comment"></i>
                         <div className="article-like-box-number">
-                          {post && post.res_count}
+                          {post && post.article_comments}
                         </div>
                       </div>
                       <div className="article-like-box-group">
