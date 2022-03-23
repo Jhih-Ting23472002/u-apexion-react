@@ -201,13 +201,33 @@
   text-align: center;
   position: relative;
 }
-.index_steps_circle {
+.index_steps_circle_one {
   border: 1px solid white;
   width: 100%;
   height: 100%;
   border-radius: 150px;
   background-color: black;
   opacity: 1;
+}
+.index_steps_circle {
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+  border-radius: 150px;
+  background-color: black;
+  animation-name: show;
+  animation-duration: 4s;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .index_steps_circle-one {
   width: 100%;
@@ -229,8 +249,8 @@
   0% {
     opacity: 0;
   }
-  80% {
-    opacity: 0.3;
+  90% {
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
@@ -250,8 +270,8 @@
   0% {
     opacity: 0;
   }
-  80% {
-    opacity: 0.3;
+  90% {
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
@@ -265,13 +285,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation-name: show;
-  animation-duration: 12s;
+  animation-duration: 13s;
 }
 @keyframes show {
   0% {
     opacity: 0;
   }
-  80% {
+  90% {
     opacity: 0.3;
   }
   100% {
@@ -306,9 +326,51 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.index_next_icon:hover {
-  animation: glace-2 0.5s ease-out;
+.index_next_animate_icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #05f2f2;
+  background-image: linear-gradient(90deg, #05f2f2 0%, #000 27%);
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glace-2 1s ease-out;
+  animation-iteration-count: 4;
+  animation-delay: 3s;
 }
+.index_next_animate_icon2 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #05f2f2;
+  background-image: linear-gradient(90deg, #05f2f2 0%, #000 27%);
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glace-2 1s ease-out;
+  animation-iteration-count: 4;
+  animation-delay: 6s;
+}
+.index_next_animate_icon3 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #05f2f2;
+  background-image: linear-gradient(90deg, #05f2f2 0%, #000 27%);
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glace-2 1s ease-out;
+  animation-iteration-count: 4;
+  animation-delay: 10s;
+}
+/* .index_next_icon:hover {
+  animation: glace-2 0.5s ease-out;
+} */
 .index-sec-container-bottom {
   width: 100%;
   height: 30%;

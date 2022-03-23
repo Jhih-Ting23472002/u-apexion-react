@@ -67,9 +67,9 @@ const IndexMain = () => {
   return (
     <>
       <div className="indexContainer" onScroll={handleSectionScroll}>
-        <div>
+        {/* <div>
           <CameraController></CameraController>
-        </div>
+        </div> */}
         {/* -------------section1-------------- */}
         <Swiper
           onSlideChange={handleSlideChange}
@@ -403,8 +403,8 @@ const IndexMain = () => {
                 <div
                   className={
                     sec4Animate
-                      ? 'index_steps_circle index_steps_circle-one'
-                      : 'index_steps_circle'
+                      ? 'index_steps_circle_one index_steps_circle-one'
+                      : 'index_steps_circle_one'
                   }
                 ></div>
                 <a href="#/" className="index_step_words">
@@ -412,7 +412,13 @@ const IndexMain = () => {
                   選擇行程
                 </a>
               </div>
-              <i className="fa-solid fa-angles-right index_next_icon"></i>
+              <i
+                className={
+                  sec4Animate
+                    ? 'fa-solid fa-angles-right index_next_animate_icon'
+                    : 'fa-solid fa-angles-right index_next_icon'
+                }
+              ></i>
               <div className="index_steps">
                 <div
                   className={
@@ -426,7 +432,13 @@ const IndexMain = () => {
                   開始訂票
                 </a>
               </div>
-              <i className="fa-solid fa-angles-right index_next_icon"></i>
+              <i
+                className={
+                  sec4Animate
+                    ? 'fa-solid fa-angles-right index_next_animate_icon2'
+                    : 'fa-solid fa-angles-right index_next_icon'
+                }
+              ></i>
               <div className="index_steps">
                 <div
                   className={
@@ -442,7 +454,11 @@ const IndexMain = () => {
               </div>
               <i
                 href="#/"
-                className="fa-solid fa-angles-right index_next_icon"
+                className={
+                  sec4Animate
+                    ? 'fa-solid fa-angles-right index_next_animate_icon3'
+                    : 'fa-solid fa-angles-right index_next_icon'
+                }
               ></i>
               <div className="index_steps">
                 <div
