@@ -18,18 +18,13 @@ function DetailRecommend(props) {
       return v;
     }
   });
-
-  //   const c = b.sort(()=> Math.random()- 0.5);
-  //   console.log(c);
-  //  const d = c.slice(0, 3);
-  //   console.log(d);
   const c = b.sort(() => Math.random() - 0.5).slice(0, 3);
   // console.log(c);
 
   return (
     <>
       {c.map(v => (
-        <div className="col-md-4">
+        <div key={v.sid} className="col-md-4">
           <Link to={'/products-list/product-detail/' + v.sid}
             className="card pr-card mb-5"
           >

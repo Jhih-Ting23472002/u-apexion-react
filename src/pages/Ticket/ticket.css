@@ -11,6 +11,13 @@
   color: white;
 }
 
+.tbcal tr td.disabled:hover {
+  background-color: rgb(216, 216, 216);
+  color: white;
+  transform: scale(1);
+  cursor:auto;
+}
+
 .ticket-trip-prev-btn.disabled,
 .ticket-trip-next-btn.disabled {
   background-color: rgb(216, 216, 216);
@@ -693,6 +700,13 @@ img {
   cursor: pointer;
 }
 
+.tbcal tr td.seat-avalible:hover {
+  background-color: var(--sub-color-01);
+  color: white;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 .ticket-calender-month ul {
   /* border: 1px solid rgb(50, 30, 228); */
   display: flex;
@@ -759,6 +773,31 @@ img {
 .ticket-date-back i {
   color: #000000;
   font-size: 20px;
+}
+
+/* 月曆座位呈現 */
+.data tr {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.data tr td {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* flex: 1; */
+}
+
+.seat-count {
+  font-size: .7rem;
+  font-weight: 400;
+}
+
+.no-seat {
+  font-size: .7rem;
+  font-weight: 400;
+  opacity: 0;
 }
 /* 月曆樣式結束 */
 

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
+import { Link } from 'react-router-dom';
+
 
 
 function DetailList(props) {
+
+  const [total, setTotal] = useState(1)
 
   return (
     <>
@@ -57,14 +61,13 @@ function DetailList(props) {
             </div>
             <div className="pr-detail-quantity">
               <span>
-                <label className="v_middle">數量 :</label>
-                <input type="text" maxLength="2" defaultValue="1" />
-                <a className="minus" href="#/">
-                  <svg
-                    width="15"
-                    height="15"
+                <label className="v_middle">數量</label>
+                <input type="text" maxLength="2" Value={total} />
+                <div className="minus" onClick={() => {
+                if (total - 1 >= 1) setTotal(total - 1)
+              }}>
+                  <svg className="plus-svg"
                     viewBox="0 0 15 15"
-                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -80,13 +83,11 @@ function DetailList(props) {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </a>
-                <a className="plus" href="#/">
-                  <svg
-                    width="15"
-                    height="15"
+                </div>
+                <div className="plus" onClick={() => setTotal(total + 1)}>
+                  <svg className="plus-svg"
                     viewBox="0 0 15 15"
-                    fill="none"
+                    
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -108,7 +109,7 @@ function DetailList(props) {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </a>
+                </div>
               </span>
             </div>
           </div>

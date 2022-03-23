@@ -1,14 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import _ from 'lodash';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 function TicketCalender(props) {
+  const didMountRef = useRef(false);
   console.log(props.tripDays);
   const [monthSelected, setMonthSelected] = useState(0);
   const [monthShow, setMonthShow] = useState([0, 1, 2]);
 
-  const [pickDate, setPickDate] = useState('');
+  // const [pickDate, setPickDate] = useState('');
   const [dateList, setDateList] = useState([]);
+  const [seatList, setSeatList] = useState({});
+
+  console.log('座位設為狀態1', dateList);
+  console.log('座位設為狀態2', seatList);
+  // console.log('座位數量', seatList.seat_ordered_count);
 
   //   初始畫面
   useEffect(() => {
@@ -20,13 +26,47 @@ function TicketCalender(props) {
         }
       );
       const dateListDatas = await response.json();
-      setDateList(dateListDatas);
+
+      const myDateListDatas = [...dateListDatas[0]];
+      console.log(myDateListDatas);
+      if (dateListDatas[0] && dateListDatas[0].length) {
+        myDateListDatas.forEach(v => {
+          v.timestamp = new Date(v.departure_date).getTime();
+        });
+      }
+      console.log(myDateListDatas);
+      setDateList(myDateListDatas);
+
+      const mySeatList = {};
+      if (dateListDatas[1] && dateListDatas[1].length) {
+        dateListDatas[1].forEach(v => {
+          const t = new Date(v.deperature_date).getTime();
+          mySeatList[t] = v.seat_ordered_count;
+        });
+      }
+      console.log(mySeatList);
+      setSeatList(mySeatList);
+
       console.log(dateListDatas);
       console.log(dateListDatas[0].departure_date);
       // console.log(date);
-    })();
-  }, []);
 
+      if (didMountRef.current) {
+        // didUpdate
+        document.querySelectorAll('.seat-avalible').forEach(v => {
+          v.style.backgroundColor = 'white';
+          v.style.color = 'black';
+        });
+        document.querySelectorAll('.disabled').forEach(v => {
+          v.style.backgroundColor = 'rgb(216, 216, 216)';
+          v.style.color = 'white';
+        });
+      } else {
+        didMountRef.current = true;
+      }
+    })();
+  }, [monthSelected]);
+  /*
   //   更新畫面
   useEffect(() => {
     (async function () {
@@ -37,13 +77,17 @@ function TicketCalender(props) {
         }
       );
       const dateListDatas = await response.json();
-      setDateList(dateListDatas);
-      console.log(dateListDatas);
+      setDateList(dateListDatas[0]);
+      console.log('日期', dateListDatas[0]);
+      console.log('座位', dateListDatas[1]);
+      // console.log('座位', seatList);
+      console.log('all', dateListDatas);
+
       // console.log(date);
       console.log(dateList[0].departure_date);
     })();
   }, [monthSelected]);
-
+*/
   // 改變月份
   function monthHandler(e) {
     setMonthSelected(e.target.value);
@@ -56,33 +100,43 @@ function TicketCalender(props) {
 
   //   改變出發日期
   function dateHandler(e) {
-    const dateSelected = new Date(
-      2022,
-      monthSelected,
-      parseInt(e.target.innerText) + 1
-    )
-      .toISOString()
-      .slice(0, 10);
-    props.setDateDeperature(dateSelected);
-
-    // const dateOfDeperature = dateSelected.split('-')[2];
-    // const monthOfDeperature = dateSelected.split('-')[1];
-    // const dateOfReturn = parseInt(dateOfDeperature) + parseInt(props.tripDays);
-    const returnDate = new Date(
-      2022,
-      monthSelected,
-      parseInt(e.target.innerText) + parseInt(props.tripDays)
-    )
-      .toISOString()
-      .slice(0, 10);
-    props.setDateBack(returnDate);
-
-    // console.log(returnDate);
-    console.log(props.tripDays);
-
-    console.log(e.target.innerText);
-    console.log(e);
-    console.log(monthSelected + 1);
+    console.log('日期的e', e);
+    //判斷td不包含disbled的className
+    if (!e.currentTarget.classList.contains('disabled')) {
+      const dateSelected = new Date(
+        2022,
+        monthSelected,
+        parseInt(e.target.innerText) + 1
+      )
+        .toISOString()
+        .slice(0, 10);
+      props.setDateDeperature(dateSelected);
+      const returnDate = new Date(
+        2022,
+        monthSelected,
+        parseInt(e.target.innerText) + parseInt(props.tripDays)
+      )
+        .toISOString()
+        .slice(0, 10);
+      props.setDateBack(returnDate);
+      //點擊時全部的td樣式還原
+      document.querySelectorAll('.seat-avalible').forEach(v => {
+        v.style.backgroundColor = 'white';
+        v.style.color = 'black';
+      });
+      document.querySelectorAll('.disabled').forEach(v => {
+        v.style.backgroundColor = 'rgb(216, 216, 216)';
+        v.style.color = 'white';
+      });
+      //被點擊的td變換顏色
+      e.currentTarget.style.backgroundColor = '#05F2F2';
+      e.currentTarget.style.color = 'white';
+      // console.log(returnDate);
+      console.log(props.tripDays);
+      console.log(e.target.innerText);
+      console.log(e);
+      console.log(monthSelected + 1);
+    }
   }
 
   const now = new Date();
@@ -101,6 +155,7 @@ function TicketCalender(props) {
   }
 
   const daysDisplayArray = _.chunk(daysDataArray, 7);
+  console.log('月曆', daysDisplayArray);
 
   const weekDayList = ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat'];
 
@@ -143,15 +198,53 @@ function TicketCalender(props) {
                     <tr key={i}>
                       {v.map((item, idx) => (
                         <td
+                          className={
+                            dateList[item - 1]?.trip_available ?? ''
+                              ? 'seat-avalible'
+                              : 'disabled'
+                          }
                           key={idx}
                           data-date={
+                            // item && (dateList[item - 1]?.departure_date ?? '0')
                             item && (dateList[item - 1]?.departure_date ?? '0')
                           }
                           onClick={e => {
                             dateHandler(e);
                           }}
                         >
-                          {item}
+                          <p>{item}</p>
+
+                          {/* {dateList[item - 1]?.trip_available?? '' &&
+                            seatList[dateList[item - 1]?.timestamp ?? '']
+                              ? 'SEAT:' +
+                                seatList[dateList[item - 1]?.timestamp ?? '']
+                              : 'SEAT:0'} */}
+                          {dateList[item - 1]?.trip_available ?? '' ? (
+                            <span className="seat-count">
+                              {seatList[dateList[item - 1]?.timestamp ?? '']
+                                ? 'SEAT:' +
+                                  (30 -
+                                    parseInt(
+                                      seatList[
+                                        dateList[item - 1]?.timestamp ?? ''
+                                      ]
+                                    ))
+                                : 'SEAT:30'}
+                            </span>
+                          ) : (
+                            <span className="no-seat">SEAT:0</span>
+                          )}
+
+                          {/* {seatList.map((v, i) => {
+                            if (
+                              item & dateList[item - 1]?.departure_date ??
+                              '' === v.departure_date ??
+                              ''
+                            ) {
+                              return
+                              v.seat_ordered_count ?? '';
+                            }
+                          })} */}
                         </td>
                       ))}
                     </tr>

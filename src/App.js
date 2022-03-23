@@ -76,14 +76,13 @@ function App() {
   const [tripPrice, setTripPrice] = useState('');
   console.log(tripSelected, tripDays);
 
-
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
   const [userOption, setUserOption] = useState({
     deliveryArea: '',
     paymentMethod: '',
-    deliveryWay: ''
-  })
+    deliveryWay: '',
+  });
 
   const [cartUserInfo, setCartUserInfo] = useState({
     name: '',
@@ -91,11 +90,12 @@ function App() {
     email: '',
     addressCity: '',
     addressDist: '',
-    address: ''
-  })
+    address: '',
+  });
   // 以上是cart的部分
 
-
+  //周邊商品區
+  const [ProductDetailList, setProductDetailList] = useState([]);
 
   return (
     <Router>
@@ -215,7 +215,7 @@ function App() {
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list/product-detail/:sid">
-            <ProductsDetail />
+            <ProductsDetail setProductDetailList={setProductDetailList} />
           </Route>
           <Route path="/products-list" exact>
             <ProductsList />
@@ -225,30 +225,26 @@ function App() {
           </Route>
           <ScrollToTop>
             <Route exact path="/cart-payment">
-              <CartChoosePayment 
+              <CartChoosePayment
                 tripPrice={tripPrice} //from 采諭
-                
                 setUserOption={setUserOption}
                 userOption={userOption}
-                />
+              />
             </Route>
             <Route path="/cart-information">
-              <CartInformation  
-
+              <CartInformation
                 setUserOption={setUserOption}
                 userOption={userOption}
-
-                setCartUserInfo={setCartUserInfo}  //第二頁送到第三頁：送
+                setCartUserInfo={setCartUserInfo} //第二頁送到第三頁：送
                 cartUserInfo={cartUserInfo}
               />
             </Route>
             <Route path="/cart-final-check">
-              <CartFinalCheck 
+              <CartFinalCheck
                 userOption={userOption}
-
                 setCartUserInfo={setCartUserInfo}
-                cartUserInfo={cartUserInfo}  //第二頁送到第三頁：收
-                />
+                cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
+              />
             </Route>
             <Route path="/cart-credit-card">
               <CartCreditCard />
