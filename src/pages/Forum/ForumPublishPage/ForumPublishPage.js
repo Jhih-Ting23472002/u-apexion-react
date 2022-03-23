@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
 import './ForumPublishPage.css';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal';
+// import Button from 'react-bootstrap/Button';
 import ForumNav from '../../../components/Forum-Nav';
 // import PropTypes from 'prop-types'
 
@@ -18,6 +18,11 @@ const AllDisplayFlex = styled.div`
   display: flex;
 `;
 
+const ErrorMessage = styled.div`
+  font-size: 16px;
+  color: red;
+`;
+
 export default function ForumPublishPage() {
   const [posts, setPosts] = useState([]);
   const [titleValue, setTitleValue] = useState(null);
@@ -25,7 +30,8 @@ export default function ForumPublishPage() {
   const [categoryValue, setCategoryValue] = useState(null);
   const [hashtagOneValue, setHashtagOneValue] = useState(null);
   const [hashtagtwoValue, setHashTagTwoValue] = useState(null);
-  const [modalShow, setModalShow] = useState(false);
+  const [fileSrc, setFileSrc] = useState(null);
+  const [postApiError, setPostApiError] = useState(null);
   let history = useHistory();
 
   const handleInputChange = e => {
@@ -44,6 +50,14 @@ export default function ForumPublishPage() {
   };
   const handleHashtagTwoChange = e => {
     setHashTagTwoValue(e.target.value);
+  };
+  const imgChangeHandler = e => {
+    const file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onload = function () {
+      setFileSrc(fileReader.result);
+    };
+    fileReader.readAsDataURL(file);
   };
   // const handleFormSubmitModal = () => {
   //   return (
@@ -94,6 +108,9 @@ export default function ForumPublishPage() {
         return fetch('http://localhost:3000/forum-list-connectTry')
           .then(res => res.json())
           .then(posts => setPosts(posts));
+      })
+      .catch(error => {
+        setPostApiError(error.message);
       });
     history.push('/forum-home');
   };
@@ -147,6 +164,7 @@ export default function ForumPublishPage() {
                   value={categoryValue}
                   name="art_category_sid"
                   style={{ height: '40px', borderRadius: '5px' }}
+                  required
                 >
                   <option selected></option>
                   <option value="1">事前準備</option>
@@ -173,6 +191,7 @@ export default function ForumPublishPage() {
                     value={titleValue}
                     name="art_title"
                     onChange={handleInputChange}
+                    required
                   />
                 </div>
                 <div className="mb-4">
@@ -189,6 +208,7 @@ export default function ForumPublishPage() {
                     value={hashtagOneValue}
                     name="hashtagone"
                     onChange={handleHashtagOneChange}
+                    required
                   />
                 </div>
                 <div className="mb-4">
@@ -205,6 +225,7 @@ export default function ForumPublishPage() {
                     value={hashtagtwoValue}
                     name="hashtagtwo"
                     onChange={handleHashtagTwoChange}
+                    required
                   />
                 </div>
                 <div className="mb-4">
@@ -222,22 +243,29 @@ export default function ForumPublishPage() {
                   </div>
                 </div>
                 <div className="forum_btn-group">
-                  <div className="btn-left">
+                  <div className="btn-left" style={{ width: '180px' }}>
                     <div
                       className="forum_btn"
+                      style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        marginBottom: '15px',
+                      }}
                       onClick={e => {
                         document.querySelector('#avatar').click();
                       }}
                     >
+                      <i className="fas fa-image"></i>上傳照片/照片預覽
                       <input
                         type="file"
                         id="avatar"
                         name="avatar"
                         accept="image/*"
+                        onChange={imgChangeHandler}
                         style={{ display: 'none' }}
                       />
-                      <i className="fas fa-image"></i>上傳照片
                     </div>
+                    <img style={{ width: '180px' }} src={fileSrc} alt="" />
                   </div>
                   <div className="btn-right">
                     <button type="submit" className="forum_btn forum_btn-white">
@@ -249,6 +277,8 @@ export default function ForumPublishPage() {
                   </div>
                 </div>
               </form>
+              {/* <ErrorMessage>{postApiError.toString()}</ErrorMessage> */}
+              <div>{postApiError}</div>
             </div>
           </div>
         </div>

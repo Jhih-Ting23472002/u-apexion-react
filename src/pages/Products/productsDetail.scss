@@ -153,22 +153,34 @@
                     font-size: 14px;
                 }
 
-                &.primary-navigation {
+                .primary-navigation {
+                    // justify-content:space-between;
                     margin       : 1.5vh 0;
+                    // margin-right : 2.5vw;
                     display      : flex;
-                    // display   : block;
                     font-size    : 14px;
 
-                    ul li {
-                        list-style        : none;
-                        margin            : 0 auto;
-                        // border-left    : 2px solid rgb(116, 116, 116);
-                        display           : inline-block;
-                        padding           : 0 20px;
-                        position          : relative;
-                        text-decoration   : none;
-                        text-align        : center;
+
+                    .form-control {
+                        display: block;
+                        width: 100%;
+                        // height: 34px;
+                        // padding: 6px 12px;
+                        font-size: 14px;
+                        line-height: 1.42857143;
+                        color: #555;
+                        // background-color: #fff;
+                        // border: 1px solid #ccc;
+                        border-radius: 4px;
+                        // -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                        // box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+                        outline      : none;
+                        border: none;
+                        
+                    
                     }
+              
 
                     li a {
                         color: #000000;
@@ -217,6 +229,9 @@
                         transition  : all 0.3s ease;
                     }
                 }
+                .pr-price{
+                    margin-left : 2.5vw;
+                   }
             }
 
             a {
@@ -317,6 +332,9 @@
         }
 
         >.col-md-4 {
+            >a{
+                color:black;
+            }
             >.pr-card {
                 border: 1px solid rgba(255, 255, 255, 0);
             }
@@ -335,14 +353,17 @@
         .pr-list-nbr {
             display: none;
         }
-        >.pr-detail-list{
+
+        >.pr-detail-list {
             flex-wrap: wrap;
-            >.pr-detail-list-img{
-                width: 100%;
+
+            >.pr-detail-list-img {
+                width     : 100%;
                 margin-top: 2vh;
             }
-            >.pr-detail-p{
-                width: 100%;
+
+            >.pr-detail-p {
+                width     : 100%;
                 margin-top: 2vh;
             }
         }

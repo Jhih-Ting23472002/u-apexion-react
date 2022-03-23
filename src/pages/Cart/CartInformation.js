@@ -1,16 +1,21 @@
 import React,{ useState } from 'react';
 import './CartInformation.css';
 import { Link } from 'react-router-dom';
-import { set } from 'lodash';
 
-const CartInformation = () => {
+const CartInformation = (props) => {
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [email, setEmail] = useState('');
-  const [afterName, setAfterName] = useState('');
-  const [afterMobile, setAfterMobile] = useState('');
-  const [afterEmail, setAfterEmail] = useState('');
-  const [agree, setAgree] = useState(false);
+  // const [afterName, setAfterName] = useState('');
+  // const [afterMobile, setAfterMobile] = useState('');
+  // const [afterEmail, setAfterEmail] = useState('');
+  // const [disagree, setDisagree] = useState(false);
+
+  function getInfo (type = '', value){
+    const info = {...props.cartUserInfo}
+    info[type] = value
+    props.setCartUserInfo(info)    
+  }
 
 
   return (
@@ -38,9 +43,9 @@ const CartInformation = () => {
             </div>
           </div>
           <div className="cart-chosen-way">
-            <div className="cart-delivery-area">運送區域：國內</div>
-            <div className="cart-payment-way">付款方式：信用卡</div>
-            <div className="cart-delivery-way">配送方式：宅配到府</div>
+            <div className="cart-delivery-area">運送區域：{props.userOption.deliveryArea}</div>
+            <div className="cart-payment-way">付款方式：{props.userOption.paymentMethod}</div>
+            <div className="cart-delivery-way">配送方式：{props.userOption.deliveryWay}</div>
           </div>
 
           <form className="cart-consumer-information-part">
@@ -99,38 +104,33 @@ const CartInformation = () => {
             </div>
             <div className="recipient-information-area">
               <div className="recipient-information-name-mobile-email-address">
-                <label className="cart-checkbox-label">
+                {/* <label className="cart-checkbox-label">
                   同訂購人資料
                   <input type="checkbox" 
-                    checked={agree}
+                    checked={disagree}
                     onChange={(e) => {
-                      setAgree(e.target.checked)
-                      if(!agree){
+                      setDisagree(e.target.checked)
+                      if(!disagree){
                         setAfterName(name)
-                      }else{
-                        setAfterName('')
-                      }
-
-                      if(!agree){
                         setAfterMobile(mobile)
-                      }else{
-                        setAfterMobile('')
-                      }
-
-                      if(!agree){
                         setAfterEmail(email)
                       }else{
+                        setAfterName('')
+                        setAfterMobile('')
                         setAfterEmail('')
                       }
+
+
                     }}
                     className="cart-checkbox" />
-                  {/* <input type="checkbox" onClick={()=>{
-                    console.log('fuck~~~~~~')
-                    setAfterName(name)
-                  }} className="cart-checkbox" /> */}
                   <span className="cart-checkmark"></span>
-                </label>
+                </label> */}
               </div>
+
+
+              {/* 收件人資訊欄 */}{/* 收件人資訊欄 */}{/* 收件人資訊欄 */}
+
+
               <div className="recipient-information-name-mobile-email-address">
                 <label className="consumer-recipient-label-margin">
                   收件人
@@ -138,7 +138,9 @@ const CartInformation = () => {
                 <input
                   className="consumer-recipient-input"
                   placeholder="請填寫真實姓名"
-                  defaultValue={afterName}
+                  onChange={(e) => {
+                      getInfo('name', e.target.value)
+                    }}
                 ></input>
               </div>
               <div className="recipient-information-name-mobile-email-address">
@@ -149,7 +151,9 @@ const CartInformation = () => {
                 <input
                   className="consumer-recipient-input"
                   placeholder="您的手機號碼"
-                  defaultValue={afterMobile}
+                  onChange={(e) => {
+                      getInfo('mobile', e.target.value)
+                    }}
                 ></input>
                 
                 <div className="mobile-or-telephone">
@@ -161,8 +165,10 @@ const CartInformation = () => {
                 
                 <input
                   className="consumer-recipient-input"
-                  placeholder="您的email"
-                  defaultValue={afterEmail}
+                  placeholder="您的email"                  
+                  onChange={(e) => {
+                      getInfo('email', e.target.value)
+                    }}
                 ></input>
 
                 <div className="mobile-or-telephone">
@@ -175,17 +181,27 @@ const CartInformation = () => {
                 </label>
                 <div className="select-consumer-recipient-input">
                   <div className="select-consumer-recipient-input-top mb-3">
-                    <select className="select-city mb-3">
+                    <select className="select-city mb-3" onChange={(e) => {
+                      getInfo('addressCity', e.target.value)
+                    }}>
                       <option>請選擇縣市</option>
+                      <option>台北市</option>
                     </select>
-                    <select className="select-district">
+                    <select className="select-district" onChange={(e) => {
+                      getInfo('addressDist', e.target.value)
+                    }}>
                       <option>請選擇鄉鎮市區</option>
+                      <option>大安區</option>
+                      <option>文山區</option>
                     </select>
                   </div>
                   <div className="select-consumer-recipient-input-bottom">
                     <input
                       className="recipient-input-address"
                       placeholder="您的地址"
+                      onChange={(e) => {
+                      getInfo('address', e.target.value)
+                    }}
                     ></input>
                   </div>
                 </div>

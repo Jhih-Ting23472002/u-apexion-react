@@ -36,8 +36,18 @@ function MemberPwdEdit() {
                   </label>
                   <input type="text" placeholder="" className="member-input" />
                 </div>
+                <div className="member-btn-container">
+                  <div className="member-return-btn-wrap">
+                    <button className="member-circle-btn member-cancel-btn">
+                      返回
+                    </button>
+                  </div>
+                  <div>
+                    <button className="member-circle-btn">確認送出</button>
+                  </div>
+                </div>
               </form>
-              <div className="member-btn-container">
+              {/* <div className="member-btn-container">
                 <div className="member-return-btn-wrap">
                   <button className="member-circle-btn member-cancel-btn">
                     返回
@@ -46,7 +56,7 @@ function MemberPwdEdit() {
                 <div>
                   <button className="member-circle-btn">確認送出</button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

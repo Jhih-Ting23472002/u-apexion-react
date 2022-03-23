@@ -111,7 +111,9 @@ const SinglePostTopRightDELETE = styled.div``;
 
 const SinglePostResponses = styled.div``;
 
-const SinglePostImg = styled.div``;
+const SinglePostImg = styled.div`
+  width: 50%;
+`;
 
 export default function ForumSinglePostPage() {
   const [post, setPost] = useState(null);
@@ -241,7 +243,6 @@ export default function ForumSinglePostPage() {
           <SinglePostContainer>
             <SinglePostTopLeft>
               <SinglePostTopLeftFlex>
-                <SinglePostTopImg></SinglePostTopImg>
                 <SinglePostTopUser>
                   <SinglePostName>{post && post.name}</SinglePostName>
                   <SinglePostTime>
@@ -280,7 +281,7 @@ export default function ForumSinglePostPage() {
               {post && post.hashtag2}
             </SinglePostHashtag>
             <SinglePostImg>
-              <img src={imgSrc} />
+              <img src={imgSrc} alt="" />
               {/* {post && post.art_photo} */}
             </SinglePostImg>
           </SinglePostContainer>
