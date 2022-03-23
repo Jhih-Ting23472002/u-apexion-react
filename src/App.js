@@ -95,7 +95,7 @@ function App() {
   // 以上是cart的部分
 
   //周邊商品區
-  const [ProductDetail, setProductDetail] = useState([]);
+  const [ProductDetailList, setProductDetailList] = useState([]);
 
   return (
     <Router>
@@ -214,10 +214,8 @@ function App() {
           <Route path="/customize-order"></Route>
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
-          <Route
-            path="/products-list/product-detail/:sid"
-          >
-            <ProductsDetail setProductDetail={setProductDetail}/>
+          <Route path="/products-list/product-detail/:sid">
+            <ProductsDetail setProductDetailList={setProductDetailList} />
           </Route>
           <Route path="/products-list" exact>
             <ProductsList />
