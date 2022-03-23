@@ -17,10 +17,14 @@ function ProductsDetail(props) {
 //  console.log(product);
 
   //歷史紀錄
-localStorage.setItem(`${product?.material_code??'M021J_BK001'}`,`${product?.sid??'1'}`);
+//localStorage.setItem('productStorage',`${product?.sid??'1'}`);
 
-  // 把剛剛存進去的字串用 key 名取出來
-// localStorage.getItem();
+const data = (localStorage.getItem('productStorage')) ? JSON.parse(localStorage.getItem('productStorage')):{
+  productLocalStorage: []
+};
+
+data.productLocalStorage.push(product);
+localStorage.setItem('productStorage', JSON.stringify(data));
 
   useEffect(() => {
     (async function () {
