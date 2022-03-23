@@ -6,25 +6,15 @@ import DetailList from './components/DetailList';
 import { useParams, Link } from 'react-router-dom';
 import ProductsConfig from './ProductsConfig';
 
-
 function ProductsDetail(props) {
   const { sid } = useParams();
 
   const [ProductDetail, setProductDetail] = useState([]);
+  const [Storages, setStorage] = useState([]);
+
+
   //找到網址列的sid
   const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
-  // const newData = [...product]
-//  console.log(product);
-
-  //歷史紀錄
-//localStorage.setItem('productStorage',`${product?.sid??'1'}`);
-
-const data = (localStorage.getItem('productStorage')) ? JSON.parse(localStorage.getItem('productStorage')):{
-  productLocalStorage: []
-};
-
-data.productLocalStorage.push(product);
-localStorage.setItem('productStorage', JSON.stringify(data));
 
   useEffect(() => {
     (async function () {
@@ -34,6 +24,18 @@ localStorage.setItem('productStorage', JSON.stringify(data));
       setProductDetail(allDetail);
     })();
   }, []);
+
+   //歷史紀錄
+  useEffect(() => {
+    const data = localStorage.getItem('productStorage')
+      ? JSON.parse(localStorage.getItem('productStorage'))
+      : {
+          productLocalStorage: [],
+        };
+    data.productLocalStorage.push(product);
+    localStorage.setItem('productStorage', JSON.stringify(data));
+    setStorage(data);
+  }, [product]);
 
   return (
     <article>
@@ -71,12 +73,16 @@ localStorage.setItem('productStorage', JSON.stringify(data));
             }
             console.log(v);
           })} */}
-          <DetailRecommend product={product} ProductDetail={ProductDetail}/>
+          <DetailRecommend product={product} ProductDetail={ProductDetail} />
         </div>
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>瀏覽紀錄</h4>
-          <BrowsingHistory ProductDetail={ProductDetail}/>
+            {/* {Storages.filter(el => el)
+            .map(post => (
+                  <BrowsingHistory props={props} />
+                ))} */}
+          <BrowsingHistory Storages={Storages}/>
         </div>
       </div>
     </article>
