@@ -59,31 +59,7 @@ export default function ForumPublishPage() {
     };
     fileReader.readAsDataURL(file);
   };
-  // const handleFormSubmitModal = () => {
-  //   return (
-  //     <Modal
-  //       className="back-view"
-  //       size="md"
-  //       aria-labelledby="contained-modal-title-vcenter"
-  //       centered
-  //     >
-  //       <Modal.Body style={{ color: '#00002D' }}>
-  //         <h4>確認送出文章嗎？</h4>
-  //       </Modal.Body>
-  //       <Modal.Footer style={{ color: '#ffff2D' }}>
-  //         <Button
-  //           onClick={handleFormSubmit}
-  //           style={{
-  //             backgroundColor: '#05DBF2',
-  //             color: '#00002D',
-  //           }}
-  //         >
-  //           確定
-  //         </Button>
-  //       </Modal.Footer>
-  //     </Modal>
-  //   );
-  // };
+
   const handleFormSubmit = e => {
     // e.preventDefault()
     const fd = new FormData(document.form1);

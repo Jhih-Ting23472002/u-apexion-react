@@ -17,15 +17,13 @@ const AllDisplayFlex = styled.div`
   display: flex;
 `;
 export default function ForumPublishPage() {
-  const [post, setPost] = useState({
-    mem_pwd: '',
-  });
   const [posts, setPosts] = useState([]);
   const [titleValue, setTitleValue] = useState();
   const [contentValue, setContentValue] = useState();
   const [categoryValue, setCategoryValue] = useState();
   const [hashtagOneValue, setHashtagOneValue] = useState();
   const [hashtagtwoValue, setHashTagTwoValue] = useState();
+  const [fileSrc, setFileSrc] = useState(null);
 
   const { sid } = useParams();
   const history = useHistory();
@@ -47,21 +45,32 @@ export default function ForumPublishPage() {
   const handleHashtagTwoChange = e => {
     setHashTagTwoValue(e.target.value);
   };
+  const imgChangeHandler = e => {
+    const file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onload = function () {
+      setFileSrc(fileReader.result);
+    };
+    fileReader.readAsDataURL(file);
+  };
 
   const handleFormSubmit = e => {
     // e.preventDefault()
+    const fd = new FormData(document.form1);
+    alert('確認修改嗎？');
     fetch(`http://localhost:3000/forum_index/forumArticle_update/${sid}`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        art_category_sid: categoryValue,
-        art_title: titleValue,
-        art_content: contentValue,
-        hashtag1: hashtagOneValue,
-        hashtag2: hashtagtwoValue,
-      }),
+      // headers: {
+      //   'Content-Type': 'application/json',
+      // },
+      // body: JSON.stringify({
+      //   art_category_sid: categoryValue,
+      //   art_title: titleValue,
+      //   art_content: contentValue,
+      //   hashtag1: hashtagOneValue,
+      //   hashtag2: hashtagtwoValue,
+      // }),
+      body: fd,
     })
       .then(res => res.jon())
       .then(data => {
@@ -81,6 +90,7 @@ export default function ForumPublishPage() {
       setHashTagTwoValue(post.hashtag2);
     });
   }, []);
+  // 照片加入？？
 
   // console.log(titleValue);
 
@@ -115,7 +125,11 @@ export default function ForumPublishPage() {
                 </div>
               </div>
 
-              <form style={{ margin: '0 20px' }} onSubmit={handleFormSubmit}>
+              <form
+                style={{ margin: '0 20px' }}
+                onSubmit={handleFormSubmit}
+                name="form1"
+              >
                 <label
                   for="categories"
                   className="form-label publish-page-label"
@@ -128,8 +142,9 @@ export default function ForumPublishPage() {
                   // ????
                   value={categoryValue}
                   onChange={handleCategoryChange}
+                  name="art_category_sid"
                   style={{ height: '40px', borderRadius: '5px' }}
-                  name=""
+                  required
                 >
                   <option selected></option>
                   <option value="1">事前準備</option>
@@ -155,6 +170,7 @@ export default function ForumPublishPage() {
                     id="exampleInputEmail1"
                     // defaultValue={titleValue}
                     value={titleValue}
+                    name="art_title"
                     onChange={handleInputChange}
                   />
                 </div>
@@ -170,7 +186,9 @@ export default function ForumPublishPage() {
                     className="form-control"
                     id="exampleInputEmail1"
                     value={hashtagOneValue}
+                    name="hashtagone"
                     onChange={handleHashtagOneChange}
+                    required
                   />
                 </div>
                 <div className="mb-4">
@@ -186,6 +204,8 @@ export default function ForumPublishPage() {
                     id="exampleInputEmail1"
                     value={hashtagtwoValue}
                     onChange={handleHashtagTwoChange}
+                    name="hashtagtwo"
+                    required
                   />
                 </div>
                 <div className="mb-4">
@@ -194,10 +214,9 @@ export default function ForumPublishPage() {
                   </label>
                   <div className="textarea">
                     <textarea
-                      name="text"
+                      name="art_content"
                       id="text"
                       style={{ width: '100%', height: '200px' }}
-                      // defaultValue={post && post.art_content}
                       value={contentValue}
                       onChange={handleTextareaChange}
                     ></textarea>
@@ -205,9 +224,29 @@ export default function ForumPublishPage() {
                 </div>
                 <div className="forum_btn-group">
                   <div className="btn-left">
-                    <button className="forum_btn">
-                      <i className="fas fa-image"></i>上傳照片
-                    </button>
+                    <div
+                      className="forum_btn"
+                      style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        marginBottom: '15px',
+                      }}
+                      onClick={e => {
+                        document.querySelector('#avatar').click();
+                      }}
+                    >
+                      <i className="fas fa-image"></i>上傳照片/照片預覽
+                      <input
+                        type="file"
+                        id="avatar"
+                        name="avatar"
+                        accept="image/*"
+                        onChange={imgChangeHandler}
+                        // value={fileSrc}
+                        style={{ display: 'none' }}
+                      />
+                    </div>
+                    <img style={{ width: '180px' }} src={fileSrc} alt="" />
                   </div>
                   <div className="btn-right">
                     <button type="submit" className="forum_btn forum_btn-white">
