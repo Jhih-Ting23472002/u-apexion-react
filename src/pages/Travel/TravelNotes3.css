@@ -371,6 +371,15 @@
     .timeline .event:after {
       top: -15px;
     }
+    breadcrumb-item{
+      font-size:20px;
+    }
+    .blue-text{
+      font-size:50px;
+    }
+    .itinerarynotesh2{
+      font-size:34px;
+    }
   }
   
   @media (max-width: 945px) {
@@ -576,6 +585,7 @@
   
   .breadcrumb{
     background-color: #000000;
+    justify-content: flex-end;
   }
   
   .breadcrumb-item>a{
