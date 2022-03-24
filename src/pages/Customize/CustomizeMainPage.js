@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './CustomizeMainPage.css';
-// import suitMovie from './movies/suit.mp4';
-// import craftMovie from './movies/spacecraft.webm';
-// import seatMovie from './movies/seats3.mp4';
+import suitMovie from './movies/suit.mp4';
+import craftMovie from './movies/spacecraft.webm';
+import seatMovie from './movies/seats3.mp4';
 
 function CustomizeMainPage() {
   const [start, setStart] = useState(false);
@@ -36,7 +36,7 @@ function CustomizeMainPage() {
                     console.log(e.currentTarget.pause());
                   }}
                   className="Custom-suit-video"
-                  // src={suitMovie}
+                  src={suitMovie}
                   playsInline=""
                   loop="loop"
                   autoPlay=""
@@ -69,7 +69,7 @@ function CustomizeMainPage() {
                     console.log(e.currentTarget.pause());
                   }}
                   className="Custom-craft-video"
-                  // src={craftMovie}
+                  src={craftMovie}
                   playsInline=""
                   loop="loop"
                   autoPlay=""
@@ -101,7 +101,7 @@ function CustomizeMainPage() {
                     console.log(e.currentTarget.pause());
                   }}
                   className="Custom-seat-video"
-                  // src={seatMovie}
+                  src={seatMovie}
                   playsInline=""
                   loop="loop"
                   autoPlay=""

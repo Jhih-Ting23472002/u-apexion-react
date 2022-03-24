@@ -10,6 +10,7 @@ function ProductsList() {
   const [ProductList, setProductList] = useState([]);
   // 2. 用於網頁上經過各種處理(排序、搜尋、過濾)後的資料
   const [displayProducts, setDisplayProducts] = useState([]);
+
   const [AllList, setAllList] = useState('');
   const [ProductNavbar, setProductNavbar] = useState('#men');
   const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');
@@ -105,7 +106,7 @@ function ProductsList() {
                   placeholder="請輸商品關鍵字..."
                   onChange={event => {
                     setSearchTerm(event.target.value);
-                    console.log(event.target.value);
+                    // console.log(event.target.value);
                   }}
                 />
                 <input id="search_submit" value="" type="submit" />
@@ -140,7 +141,7 @@ function ProductsList() {
           </p>
         </div>
         <div className="pr-list-dropdowns">
-          <p>{AllList}件商品</p>
+          <p>商品{AllList}項</p>
           <div className="primary-navigation">
             {/* <div role="navigation" className="primary-navigation">
               <ul>
@@ -169,13 +170,13 @@ function ProductsList() {
               </ul>
     
             </div> */}
-            <div>
+            {/* <div>
               <select class="form-control info-select">
                 <option value="">價格排序</option>
                 <option value="1">由低至高</option>
                 <option value="2">由高至低</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <div>
             <select class="form-control info-select">

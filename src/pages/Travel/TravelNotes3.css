@@ -1,0 +1,606 @@
+.mphoto_1{
+    background-image: url('/public/travelimg/traveldaysimg/day1-3.jpg');
+  
+  }
+  .mphoto_2{
+    background-image: url('/public/travelimg/traveldaysimg/day6-3.jpg');
+  
+  }
+  .mphoto_3{
+    background-image: url('/public/travelimg/traveldaysimg/day5-2.jpg');
+  
+  }
+  .mphoto_4{
+    background-image: url('/public/travelimg/traveldaysimg/day6-1.jpg');
+  
+  }
+  .mphoto_5{
+    background-image: url('/public/travelimg/traveldaysimg/day7-3.jpg');
+  
+  }
+  .mphoto_6{
+    background-image: url('/public/travelimg/traveldaysimg/day8-3.jpg');
+  
+  }
+  /* .mphoto_7{
+    background-image: url('/public/travelimg/traveldaysimg/day.jpg');
+  
+  }
+  .mphoto_8{
+    background-image: url('/public/travelimg/traveldaysimg/day.jpg');
+  } */
+  
+  .travelnotescontainer {
+    margin: auto;
+    max-width: 85%;
+    padding: 0px;
+  }
+  
+  .nav2 {
+    position: relative;
+    z-index: 2;
+    padding: 1.25rem 0 1.25rem 0;
+  }
+  
+  .nav2 ul {
+    line-height: 2.2;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .nav2 ul li {
+    margin: 0.325rem 0;
+    color: white;
+  }
+  
+  .active {
+    display: block;
+    display: none;
+    display: flex;
+  }
+  
+  .active .show-mobile {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  
+  @media (min-width: 62rem) {
+    .nav2 ul {
+      justify-content: flex-end;
+    }
+  
+    .active {
+      display: block;
+    }
+  
+    .active .show-mobile {
+      display: none;
+    }
+  
+    .nav2 {
+      padding: 2rem 0 1.75rem 0;
+    }
+  
+    .nav2 ul {
+      line-height: 2.2;
+      display: flex;
+      justify-content: flex-start;
+    }
+  
+    .nav2 ul li {
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: 0 2rem 0 0;
+    }
+  
+    .nav2 ul li:nth-child(3) {
+      margin: 0;
+    }
+  }
+  
+  /* carousel start */
+  
+  .travelcarousel{
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom:3%;
+    height: 85vh;
+    max-width: 70%;
+  }
+  
+  @media (max-width: 640px) {
+    .travelcarousel{
+      margin: 0 auto;
+      margin-top: 2%;
+      margin-bottom:3%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  
+  /* day card start */
+  
+  .blue-text{
+    color:white;
+    font-size:64px;
+  }
+  
+  .descriptionp{
+    letter-spacing: 2px;
+    color:black;
+    font-size:21px;
+  }
+  
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.6%;
+    background: #fff;
+    line-height: 1.4;
+    font-family: sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .blog-card a {
+    color: inherit;
+  }
+  
+  .blog-card a:hover {
+    color: #5ad67d;
+  }
+  
+  .blog-card:hover .mphoto {
+    transform: scale(1.3) rotate(3deg);
+  }
+  
+  .blog-card .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+  
+  .blog-card .mphoto {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+  }
+  
+  .blog-card .details {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    margin: auto;
+    transition: left 0.2s;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  .blog-card .description {
+    padding: 1rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    color: black;
+  }
+  
+  .blog-card .description .descriptionh2,
+  .blog-card .description .descriptionh3 {
+    font-family: sans-serif;
+  }
+  
+  .blog-card .description .descriptionh2 {
+    line-height: 1;
+    margin: 0;
+    font-size: 32px;
+  
+  }
+  
+  .blog-card .description .descriptionh3 {
+    font-size: 21px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 5px;
+  
+  }
+  
+  .blog-card .description {
+    text-align: left;
+  }
+  
+  
+  .blog-card .descriptionp{
+    position: relative;
+    margin: 1rem 0 0;
+  }
+  
+  .blog-card .descriptionp:first-of-type {
+    margin-top: 1.25rem;
+  }
+  
+  .blog-card .descriptionp:first-of-type:before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    background: #023E73;
+    width: 35px;
+    top: -0.75rem;
+    border-radius: 3px;
+  }
+  
+  .blog-card:hover .details {
+    left: 0%;
+  }
+  
+  @media (min-width: 640px) {
+    .blog-card {
+      flex-direction: row;
+    }
+  
+    .blog-card .meta {
+      flex-basis: 40%;
+      height: auto;
+    }
+  
+    .blog-card .description {
+      flex-basis: 60%;
+    }
+  
+    .blog-card .description:before {
+      transform: skewX(-3deg);
+      content: "";
+      background: #fff;
+      width: 30px;
+      position: absolute;
+      left: -10px;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  
+    .blog-card.alt {
+      flex-direction: row-reverse;
+    }
+  
+    .blog-card.alt .description:before {
+      left: inherit;
+      right: -10px;
+      transform: skew(3deg);
+    }
+  
+    .blog-card.alt .details {
+      padding-left: 25px;
+    }
+  }
+  
+  
+  
+  /* Itinerary notes start */
+  
+  .itinerarynotesh2{
+    font-size:40px;
+    color:white;
+    margin-right: 15%;
+  }
+  
+  .content {
+    margin-top: 90px;
+    text-align: center;
+  }
+  
+  .tinerarynotes{
+    padding-left:9%;
+  }
+  
+  section.timeline-outer {
+    width: 90%;
+    margin: 0px 0px 0px auto;
+  }
+  
+  .timeline {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    color: rgb(255, 255, 255);
+    margin: 35px auto;
+    position: relative;
+    line-height: 1.4em;
+    padding: 20px;
+    list-style: none;
+    text-align: left;
+  }
+  
+  
+  
+  .timeline .event {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+  }
+  
+  .timeline .event:before,
+  .timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+  }
+  
+  .timeline .event:before {
+    left: -210px;
+    color: #ffffff;
+    content: attr(data-date);
+    text-align: right;
+    font-size: 21px;
+    min-width: 120px;
+  }
+  
+  .timeline .event:after {
+    box-shadow: 0 0 0 8px #023E73;
+    left: -25px;
+    background: #000000;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+    top: 5px;
+  }
+  
+  @media (max-width: 640px) {
+    .timeline .event:after {
+      top: -15px;
+    }
+    breadcrumb-item{
+      font-size:20px;
+    }
+    .blue-text{
+      font-size:50px;
+    }
+    .itinerarynotesh2{
+      font-size:34px;
+    }
+  }
+  
+  @media (max-width: 945px) {
+    .timeline .event::before {
+      left: 0.5px;
+      top: -15px;
+      min-width: 0;
+      font-size: 25px;
+    }
+  
+    .timeline .descriptionh3 {
+      font-size: 16px;
+    }
+  
+    .timeline p {
+      padding-top: 20px;
+    }
+  
+    section.lab .descriptionh3.card-title {
+      padding: 5px;
+      font-size: 16px
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .timeline .event::before {
+      left: 0.5px;
+      top: -15px;
+      min-width: 0;
+      font-size: 20px;
+    }
+  
+    .timeline .itinerarynotesh3 {
+      font-size: 16px;
+    }
+  
+    .timelinep {
+      padding-top: 20px;
+      line-height: 30px;
+    }
+  
+    .covid-19{
+      padding-top: 20px;
+      line-height: 30px;
+    }
+  
+    .breadcrumb{
+      background-color: #000000;
+      font-size:12px
+    }
+  }
+  
+  .timelinep {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  
+  .covid-19{
+    font-size: 16px;
+    line-height: 30px;
+    color:red;
+  }
+  
+  /* btn */
+  
+  .price--1fAWe {
+    margin: 20px 10px;
+    font-size: 2rem;
+    color: #f03742;
+  }
+  
+  .login-box input:focus~label,
+  .login-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 33px;
+    color: #03e9f4;
+    font-size: 1.6rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 10px 0 10px;
+    letter-spacing: 4px;
+    
+  }
+  
+  @media (max-width: 768px) {
+    .login-box form a {
+      font-size: 3rem;
+    }
+    .price--1fAWe {
+      font-size: 4rem;
+    }
+  }
+  
+  .login-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+      0 0 100px #03e9f4;
+    color: black;
+    
+  }
+  
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+  
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+  
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+  
+    50%,
+    100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+  
+    50%,
+    100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+  
+    50%,
+    100% {
+      bottom: 100%;
+    }
+  }
+  
+  
+  .breadcrumb{
+    background-color: #000000;
+    justify-content: flex-end;
+  }
+  
+  .breadcrumb-item>a{
+    color:#03e9f4;
+    text-decoration:none;
+  }
+
+  .breadcrumb-item>a:hover{
+    border-bottom:3px solid #03e9f4;
+    transition: 0.1s;
+
+  }
+  
+  .signup{
+    justify-content: center;
+    margin-top: 5%;
+  }
+  

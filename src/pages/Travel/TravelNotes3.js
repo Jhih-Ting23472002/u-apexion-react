@@ -1,19 +1,19 @@
 import React from 'react';
-import './TravelNotes.css';
+import './TravelNotes3.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
 
 function TravelNotes() {
-  const [JourneyTitan, setJourneyTitan] = useState([]);
+  const [JourneyMann, setJourneyMann] = useState([]);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-notes/api/travel-journeytitan'
+        'http://localhost:3001/travel-notes/api/travel-Journeymann'
       );
-      const JourneyTitan = await response.json();
-      setJourneyTitan(JourneyTitan);
-      console.log(JourneyTitan);
+      const JourneyMann = await response.json();
+      setJourneyMann(JourneyMann);
+      console.log(JourneyMann);
     })();
   }, []);
   return (
@@ -21,14 +21,14 @@ function TravelNotes() {
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item active" aria-current="page">
-              泰坦星
+            <li className="breadcrumb-item">
+              <a href="/travel-titan">泰坦星</a>
             </li>
             <li className="breadcrumb-item">
               <a href="#/">米勒星</a>
             </li>
-            <li className="breadcrumb-item">
-              <a href="/travel-mann">曼恩星</a>
+            <li className="breadcrumb-item active " aria-current="page">
+              曼恩星
             </li>
             <li className="breadcrumb-item">
               <a href="/travel-xandar">柴達星</a>
@@ -52,90 +52,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/cabin1.jpg"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h2 className="carouselh4">First slide label</h2>
-              <p className="carouselp">
-                Nulla vitae elit libero, a pharetra augue mollis interdum.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/cabin2.jpg"
-              alt="Second slide"
-            />
-
-            <Carousel.Caption>
-              <h2 className="carouselh4">Second slide label</h2>
-              <p className="carouselp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/facil1.jpg"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
-              <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/facil2.jpg"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
-              <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="travelcarousel d-block w-100 "
-              src="./travelimg/notescarouselimg/dining4.png"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
-              <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/dining2.jpg"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
-              <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/food1.jpg"
+              src="./travelimg/notescarouselimg/food4.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -159,19 +76,102 @@ function TravelNotes() {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/notescarouselimg/facil2.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/notescarouselimg/facil3.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100 "
+              src="./travelimg/notescarouselimg/dining1.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/notescarouselimg/dining3.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h2 className="carouselh4">Third slide label</h2>
+              <p className="carouselp">
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/notescarouselimg/CABIN1.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h2 className="carouselh4">First slide label</h2>
+              <p className="carouselp">
+                Nulla vitae elit libero, a pharetra augue mollis interdum.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="travelcarousel d-block w-100"
+              src="./travelimg/notescarouselimg/CABIN2.jpg"
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h2 className="carouselh4">Second slide label</h2>
+              <p className="carouselp">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
         </Carousel>
 
         <div className="content">
-          <h1 className="blue-text lighten-1 header">泰坦星Titan</h1>
+          <h1 className="blue-text lighten-1 header">曼恩星Mann</h1>
         </div>
 
-        {JourneyTitan.map((n, i) => {
+        {JourneyMann.map((n, i) => {
           return (
             <React.Fragment key={i}>
               {/* 1st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="tphoto tphoto_1"></div>
+                  <div className="mphoto mphoto_1"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
@@ -185,12 +185,12 @@ function TravelNotes() {
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="tphoto tphoto_2"></div>
+                  <div className="mphoto mphoto_2"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day2</h2>
-                  <h3 className="descriptionh3">拜訪國際太空站</h3>
+                  <h3 className="descriptionh3">太空艙內的自由活動1</h3>
                   <p className="descriptionp">{n.day2}</p>
                 </div>
               </div>
@@ -198,24 +198,24 @@ function TravelNotes() {
               {/* 2st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="tphoto tphoto_3"></div>
+                  <div className="mphoto mphoto_3"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day3</h2>
-                  <h3 className="descriptionh3">引人入勝的娛樂活動</h3>
+                  <h3 className="descriptionh3">抵達曼恩星a04p-2區</h3>
                   <p className="descriptionp">{n.day3}</p>
                 </div>
               </div>
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="tphoto tphoto_4"></div>
+                  <div className="mphoto mphoto_4"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day4</h2>
-                  <h3 className="descriptionh3">太空艙內的自由活動1</h3>
+                  <h3 className="descriptionh3">太空艙內的自由活動2</h3>
                   <p className="descriptionp">{n.day4}</p>
                 </div>
               </div>
@@ -223,50 +223,25 @@ function TravelNotes() {
               {/* 3st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="tphoto tphoto_5"></div>
+                  <div className="mphoto mphoto_5"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day5</h2>
-                  <h3 className="descriptionh3">抵達泰坦星w94w03-3區</h3>
+                  <h3 className="descriptionh3">返航國際太空站</h3>
                   <p className="descriptionp">{n.day5}</p>
                 </div>
               </div>
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="tphoto tphoto_6"></div>
+                  <div className="mphoto mphoto_6"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day6</h2>
-                  <h3 className="descriptionh3">太空艙內的自由活動2</h3>
-                  <p className="descriptionp">{n.day6}</p>
-                </div>
-              </div>
-
-              {/* 4st group */}
-              <div className="blog-card">
-                <div className="meta">
-                  <div className="tphoto tphoto_7"></div>
-                  <ul className="details"></ul>
-                </div>
-                <div className="description">
-                  <h2 className="descriptionh2">Day7</h2>
-                  <h3 className="descriptionh3">返航國際太空站</h3>
-                  <p className="descriptionp">{n.day7}</p>
-                </div>
-              </div>
-
-              <div className="blog-card alt">
-                <div className="meta">
-                  <div className="tphoto tphoto_8"></div>
-                  <ul className="details"></ul>
-                </div>
-                <div className="description">
-                  <h2 className="descriptionh2">Day8</h2>
                   <h3 className="descriptionh3">快樂賦歸</h3>
-                  <p className="descriptionp">{n.day8}</p>
+                  <p className="descriptionp">{n.day6}</p>
                 </div>
               </div>
             </React.Fragment>
@@ -373,7 +348,7 @@ function TravelNotes() {
       <div className="login-box">
         <form className="signup d-flex">
           <div className="price--1fAWe">
-            <span>$599,999</span>起
+            <span>$399,999</span>起
           </div>
           <a href="/ticket-order">
             <span></span>

@@ -3,11 +3,14 @@ import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 import { Link } from 'react-router-dom';
 
-
-
 function DetailList(props) {
+  const [total, setTotal] = useState(1);
 
-  const [total, setTotal] = useState(1)
+  function onTotal(e) {
+    setTotal(e.target.value);
+  }
+
+  function addCart() {}
 
   return (
     <>
@@ -15,7 +18,9 @@ function DetailList(props) {
         <div className="pr-detail-list-img">
           <img
             className="pr-detail-img"
-            src={`http://localhost:3001/img/product_img/${props.product?.product_img??'M021S_BK004.jpeg'}`}
+            src={`http://localhost:3001/img/product_img/${
+              props.product?.product_img ?? 'www.jpg'
+            }`}
             alt=""
           />
         </div>
@@ -23,50 +28,42 @@ function DetailList(props) {
           <i className="pr-detail-p-i fa-regular fa-heart"></i>
           <ul>
             <li>#最新款式</li>
-            <li className="li-h2">{props.product?.product_name??"重新整理"}</li>
-            <li>{props.product?.material??'灰色科技棉防撕裂物料'}</li>
-            <li>{props.product?.material_code??'編號:M021J_BK025'}</li>
+            <li className="li-h2">
+              {props.product?.product_name ?? '重新整理'}
+            </li>
+            <li>{props.product?.material ?? '灰色科技棉防撕裂物料'}</li>
+            <li>{props.product?.material_code ?? '編號:M021J_BK025'}</li>
           </ul>
           <div>
             <div className="primary-navigation">
               <p>尺寸 :</p>
               <div role="navigation" className="primary-navigation">
                 <select class="form-control info-select">
-                <option value="請選擇">請選擇</option>
-                <option value="Small">Small</option>
-                <option value="Middle">Middle</option>
-                <option value="Large">Large</option>
+                  <option value="請選擇">請選擇</option>
+                  <option value="Small">Small</option>
+                  <option value="Middle">Middle</option>
+                  <option value="Large">Large</option>
                 </select>
-
-                {/* <ul>
-                  <li>
-                    <a href="#/">
-                      請選擇 <i className="fa-solid fa-angle-down"></i>
-                    </a>
-                    <ul className="dropdown">
-                      <li>
-                        <a href="#/" >Small</a>
-                      </li>
-                      <li>
-                        <a href="#/">Middle</a>
-                      </li>
-                      <li>
-                        <a href="#/">Large</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul> */}
               </div>
-              <p className="pr-price">售價:   {props.product?.price??'7584'}</p>
+              <p className="pr-price">售價:{props.product?.price ?? '7584'}</p>
             </div>
             <div className="pr-detail-quantity">
               <span>
                 <label className="v_middle">數量</label>
-                <input type="text" maxLength="2" Value={total} />
-                <div className="minus" onClick={() => {
-                if (total - 1 >= 1) setTotal(total - 1)
-              }}>
-                  <svg className="plus-svg"
+                <input
+                  type="text"
+                  maxLength="2"
+                  value={total}
+                  onChange={onTotal}
+                />
+                <div
+                  className="minus"
+                  onClick={() => {
+                    if (total - 1 >= 1) setTotal(total - 1);
+                  }}
+                >
+                  <svg
+                    className="plus-svg"
                     viewBox="0 0 15 15"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -85,9 +82,9 @@ function DetailList(props) {
                   </svg>
                 </div>
                 <div className="plus" onClick={() => setTotal(total + 1)}>
-                  <svg className="plus-svg"
+                  <svg
+                    className="plus-svg"
                     viewBox="0 0 15 15"
-                    
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -113,7 +110,9 @@ function DetailList(props) {
               </span>
             </div>
           </div>
-          <button className="pr-detail-button">加入購物車</button>
+          <button className="pr-detail-button" onClick={addCart}>
+            加入購物車
+          </button>
           <span className="pr-detail-list-detail">
             <p>
               <label className="p_middle">描述</label>
@@ -123,7 +122,6 @@ function DetailList(props) {
               前胸綴以「CD Heart」貼布
               <br />
               棱紋圓領配 V 領縫線
-
             </p>
           </span>
         </div>

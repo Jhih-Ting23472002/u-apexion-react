@@ -4,6 +4,7 @@ import NewProducts from './components/NewProducts';
 import Recommend from './components/Recommend';
 import ProductsConfig from './ProductsConfig';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Products() {
   const [ProductsNew, setProductsNew] = useState([]);

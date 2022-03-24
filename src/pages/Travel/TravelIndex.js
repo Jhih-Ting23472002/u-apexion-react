@@ -126,6 +126,34 @@ function TravelIndex() {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
+
+        <Carousel.Item interval={2000}>
+          <img
+            className="travelindexcarousel d-block w-100 "
+            src="./travelimg/indexcarouselimg/fun6.jpg"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h4 className="carouselh4">Second slide label</h4>
+            <p className="carouselp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item interval={2000}>
+          <img
+            className="travelindexcarousel d-block w-100 "
+            src="./travelimg/indexcarouselimg/fun7.jpg"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h4 className="carouselh4">Second slide label</h4>
+            <p className="carouselp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
       </Carousel>
 
       <section className="tour">

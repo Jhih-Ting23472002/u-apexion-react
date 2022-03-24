@@ -34,7 +34,10 @@ function TicketCalender(props) {
           v.timestamp = new Date(v.departure_date).getTime();
         });
       }
-      console.log(myDateListDatas);
+      console.log(
+        '抓到的資料',
+        myDateListDatas[0].departure_date.toLocaleString()
+      );
       setDateList(myDateListDatas);
 
       const mySeatList = {};
@@ -48,7 +51,10 @@ function TicketCalender(props) {
       setSeatList(mySeatList);
 
       console.log(dateListDatas);
-      console.log(dateListDatas[0].departure_date);
+      // console.log(
+      //   '第一筆日期',
+      //   new Date(dateListDatas[0][0].departure_date).toISOString()
+      // );
       // console.log(date);
 
       if (didMountRef.current) {
@@ -129,8 +135,68 @@ function TicketCalender(props) {
         v.style.color = 'white';
       });
       //被點擊的td變換顏色
-      e.currentTarget.style.backgroundColor = '#05F2F2';
+      e.currentTarget.style.backgroundColor = '#023e73';
       e.currentTarget.style.color = 'white';
+      console.log(
+        '目前點擊的datadate',
+        e.currentTarget.dataset.date.slice(0, 10)
+      );
+      console.log('我到這裡了');
+      console.log(
+        '我要抓的人',
+        document.querySelector(
+          `td[data-date='${e.currentTarget.dataset.date}']`
+        )
+      );
+      let abc = e.currentTarget.dataset.date.split('-');
+      // let abc = '2022-04-12'.split('-');
+      abc.splice(
+        2,
+        1,
+        (parseInt(e.currentTarget.dataset.date.split('-')[2]) + 1).toString()
+      );
+      const def = abc.join('-');
+      console.log('揮手揮手!!!!!!!!!!!!!!!!', abc);
+      console.log('揮手揮手!!!!!!!!!!!!!!!!', def);
+      console.log('我要看到的人', '2022-04-12'.split('-').splice(1, 1, '5'));
+      console.log('我要看到的人', abc);
+      console.log('我要看到的人', '2022-04-12'.split('-'));
+
+      // '2022-04-12'.split('-').splice(2, 1, '2022-04-12'.split('-')[2] + 1)
+
+      for (let i = 1; i < parseInt(props.tripDays); i++) {
+        const tdClicked = e.currentTarget.dataset.date.split('-');
+        tdClicked.splice(
+          2,
+          1,
+          (parseInt(e.currentTarget.dataset.date.split('-')[2]) + i).toString()
+        );
+        const siblingsdataClicked = tdClicked.join('-');
+        document.querySelector(
+          `td[data-date='${siblingsdataClicked}']`
+        ).style.backgroundColor = '#05F2F2';
+        document.querySelector(
+          `td[data-date='${siblingsdataClicked}']`
+        ).style.color = 'white';
+
+        const toFindLastTd = e.currentTarget.dataset.date.split('-');
+        toFindLastTd.splice(
+          2,
+          1,
+          (
+            parseInt(e.currentTarget.dataset.date.split('-')[2]) +
+            parseInt(props.tripDays) -
+            1
+          ).toString()
+        );
+        const lastdataClicked = toFindLastTd.join('-');
+        document.querySelector(
+          `td[data-date='${lastdataClicked}']`
+        ).style.backgroundColor = '#023e73';
+        document.querySelector(
+          `td[data-date='${lastdataClicked}']`
+        ).style.color = 'white';
+      }
       // console.log(returnDate);
       console.log(props.tripDays);
       console.log(e.target.innerText);
@@ -203,6 +269,7 @@ function TicketCalender(props) {
                               ? 'seat-avalible'
                               : 'disabled'
                           }
+                          value={idx}
                           key={idx}
                           data-date={
                             // item && (dateList[item - 1]?.departure_date ?? '0')

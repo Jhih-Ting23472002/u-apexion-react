@@ -15,7 +15,7 @@
   background-color: rgb(216, 216, 216);
   color: white;
   transform: scale(1);
-  cursor:auto;
+  cursor: auto;
 }
 
 .ticket-trip-prev-btn.disabled,
@@ -790,12 +790,12 @@ img {
 }
 
 .seat-count {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 400;
 }
 
 .no-seat {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 400;
   opacity: 0;
 }
@@ -840,6 +840,7 @@ img {
   margin: 2% auto 0 auto;
   display: flex;
   justify-content: center;
+  /* align-items: center; */
   width: 100%;
   height: 90%;
   /* border: 5px solid red; */
@@ -853,11 +854,44 @@ img {
   align-items: center;
 }
 
+.ticket-case-choose {
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .ticket-case-choose img,
 .ticket-seat-choose img {
   /* border: 1px solid rgb(255, 238, 0); */
   height: 100%;
   object-fit: contain;
+}
+
+.ticket-case-choose img {
+  /* border: 1px solid rgb(255, 238, 0); */
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.ticket-case {
+  /* border: 5px solid yellow; */
+  position: absolute;
+  top: 22%;
+  right: 15%;
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.ticket-case p {
+  padding-bottom: 8%;
+}
+
+.ticket-case p:hover {
+  color: var(--main-color-02);
+  cursor: pointer;
 }
 
 .ticket-seat-next {
@@ -904,6 +938,10 @@ img {
   justify-content: center;
   line-height: 2rem;
   /* border: 1px solid red; */
+}
+
+.case-selected {
+  color: var(--main-color-02);
 }
 
 /* 座位svg檔開始 */

@@ -62,6 +62,7 @@ const CartInformation = (props) => {
                     e.target.value
                   )}}
                   placeholder="請填寫真實姓名"
+                  required
                 ></input>
               </div>
               <div className="consumer-information-name-mobile-email">
@@ -93,6 +94,7 @@ const CartInformation = (props) => {
                     e.target.value
                   )}}
                   placeholder="您的email"
+                  required
                 ></input>
               </div>
             </div>
@@ -137,6 +139,7 @@ const CartInformation = (props) => {
                 </label>
                 <input
                   className="consumer-recipient-input"
+                  required
                   placeholder="請填寫真實姓名"
                   onChange={(e) => {
                       getInfo('name', e.target.value)
@@ -150,6 +153,7 @@ const CartInformation = (props) => {
 
                 <input
                   className="consumer-recipient-input"
+                  required
                   placeholder="您的手機號碼"
                   onChange={(e) => {
                       getInfo('mobile', e.target.value)
@@ -221,8 +225,7 @@ const CartInformation = (props) => {
                 </div>
               </div>
             </div>
-          </form>
-          <div className="previous-next-btn">
+            <div className="previous-next-btn">
             <div className="col-3"></div>
             <Link
               className="btn next-btn position cart-link"
@@ -239,6 +242,8 @@ const CartInformation = (props) => {
             </Link>
             <div className="col-3"></div>
           </div>
+          </form>
+          
         </div>
       </div>
     </>

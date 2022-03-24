@@ -2,37 +2,44 @@ import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 import { Link } from 'react-router-dom';
+import { object } from 'prop-types';
 
-function BrowsingHistory() {
-//  console.log(props.Storages);
-// const newStorages=[...props];
-// console.log(newStorages);
+function BrowsingHistory(props) {
+  const { Storages } = props;
+  const [Storage, setStorage] = useState([]);
 
-// const a=function getStorageValue(defaultValue) {
+  //console.log(typeof options)
+  //console.log(props.Storages.productLocalStorage);
 
-//   if (typeof window !== "undefined") {
-//     const saved = localStorage.getItem('productStorage');
-//     const initial = saved !== null ? JSON.parse(saved) : defaultValue;
-//     return initial;
-//   }
-// }
-// console.log(a);
+  // const sliceThree = Storage.slice(-3);
+  //console.log(sliceThree);
+
+  useEffect(() => {
+    if (Storages.length !== 0) {
+      const sliceThree = Storages.productLocalStorage.slice(-3);
+      console.log(sliceThree);
+      setStorage(sliceThree);
+    }
+  }, [Storages.productLocalStorage]);
 
   return (
     <>
+    {Storage.map(v => (
       <div className="col-md-4">
         <div className="card pr-card mb-5">
           <img
             className="card-img-top"
-            //src={`http://localhost:3001/img/product_img/${props.Storages?.productLocalStorage??'M021S_BK004.jpeg'}`}
+            src={ProductsConfig.IMG_PATH + '/' + v.product_img}
             alt=""
           />
           <div className="card-body">
-            <p className="card-text mb-3"></p>
-            <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+            <p className="card-text mb-3">{v.product_name}</p>
+            <p className="card-text">{v.material}</p>
           </div>
         </div>
       </div>
+    ))}
+     
     </>
   );
 }

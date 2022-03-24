@@ -4,7 +4,7 @@ import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Link } from 'react-router-dom';
 
-const CartCreditCard = () => {
+const CartCreditCard = (props) => {
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
   const [expiry, setExpiry] = useState('');
@@ -71,7 +71,7 @@ const CartCreditCard = () => {
                 確認付款 (Confirm)
               </button>
             </Link>
-            <div className="card-trade mx-3">交易金額 $xxxxxx</div>
+            <div className="card-trade mx-3">交易金額 {props.tripPrice}</div>
           </div>
         </div>
       </div>

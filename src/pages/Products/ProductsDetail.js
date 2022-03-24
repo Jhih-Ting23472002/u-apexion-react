@@ -6,15 +6,16 @@ import DetailList from './components/DetailList';
 import { useParams, Link } from 'react-router-dom';
 import ProductsConfig from './ProductsConfig';
 
-function ProductsDetail(props) {
+function ProductsDetail({ setProductDetailList }) {
   const { sid } = useParams();
 
   const [ProductDetail, setProductDetail] = useState([]);
   const [Storages, setStorage] = useState([]);
-
+  const [product, setProduct] = useState({});
+  // console.log(typeof Storages)
 
   //找到網址列的sid
-  const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
+  //const product = ProductDetail.find((v, i) => v.sid === parseInt(sid));
 
   useEffect(() => {
     (async function () {
@@ -22,20 +23,51 @@ function ProductsDetail(props) {
       const allDetail = await response.json();
       // console.log(allDetail);
       setProductDetail(allDetail);
+
+      const newProduct = allDetail.find((v, i) => v.sid === parseInt(sid));
+      setProduct(newProduct);
+      const data = localStorage.getItem('productStorage')
+        ? JSON.parse(localStorage.getItem('productStorage'))
+        : {
+            productLocalStorage: [],
+          };
+
+      data.productLocalStorage.push(newProduct);
+      localStorage.setItem('productStorage', JSON.stringify(data));
+
+      setStorage(data);
     })();
   }, []);
 
-   //歷史紀錄
   useEffect(() => {
+    if (ProductDetail.length === 0) return;
+
+    const newProduct = ProductDetail.find((v, i) => v.sid === parseInt(sid));
+    setProduct(newProduct);
     const data = localStorage.getItem('productStorage')
       ? JSON.parse(localStorage.getItem('productStorage'))
       : {
           productLocalStorage: [],
         };
-    data.productLocalStorage.push(product);
+
+    data.productLocalStorage.push(newProduct);
     localStorage.setItem('productStorage', JSON.stringify(data));
+
     setStorage(data);
-  }, [product]);
+  }, [sid]);
+  //歷史紀錄
+  //useEffect(() => {
+  // if (!product.sid) return;
+
+  // const data = localStorage.getItem('productStorage')
+  //   ? JSON.parse(localStorage.getItem('productStorage'))
+  //   : {
+  //       productLocalStorage: [],
+  //     };
+  // data.productLocalStorage.push(product);
+  // localStorage.setItem('productStorage', JSON.stringify(data));
+  // setStorage(data);
+  //}, [product]);
 
   return (
     <article>
@@ -67,22 +99,12 @@ function ProductsDetail(props) {
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>
-          {/* {product.filter((v, i) => {
-            if (v.category.includes(v.category) && v.class.includes(v.class)) {
-              return v;
-            }
-            console.log(v);
-          })} */}
           <DetailRecommend product={product} ProductDetail={ProductDetail} />
         </div>
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>瀏覽紀錄</h4>
-            {/* {Storages.filter(el => el)
-            .map(post => (
-                  <BrowsingHistory props={props} />
-                ))} */}
-          <BrowsingHistory Storages={Storages}/>
+          <BrowsingHistory Storages={Storages} />
         </div>
       </div>
     </article>
