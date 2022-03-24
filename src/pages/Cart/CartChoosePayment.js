@@ -9,7 +9,6 @@ import ShipCard from './components/choosePayment/ShipCard'
 import { Link } from 'react-router-dom';
 
 const CartChoosePayment = (props) => {
-
   // const [userOption, setUserOption] = useState({
   //   a: '',
   //   b: '',

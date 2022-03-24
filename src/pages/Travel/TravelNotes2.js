@@ -1,19 +1,19 @@
 import React from 'react';
-import './TravelNotes.css';
+import './TravelNotes2.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
 
 function TravelNotes() {
-  const [JourneyTitan, setJourneyTitan] = useState([]);
+  const [JourneyXandar, setJourneyXandar] = useState([]);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-notes/api/travel-journeytitan'
+        'http://localhost:3001/travel-notes/api/travel-Journeyxandar'
       );
-      const JourneyTitan = await response.json();
-      setJourneyTitan(JourneyTitan);
-      console.log(JourneyTitan);
+      const JourneyXandar = await response.json();
+      setJourneyXandar(JourneyXandar);
+      console.log(JourneyXandar);
     })();
   }, []);
   return (
@@ -21,8 +21,8 @@ function TravelNotes() {
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item active" aria-current="page">
-              泰坦星
+            <li className="breadcrumb-item">
+              <a href="/travel-titan">泰坦星</a>
             </li>
             <li className="breadcrumb-item">
               <a href="#/">米勒星</a>
@@ -30,8 +30,8 @@ function TravelNotes() {
             <li className="breadcrumb-item">
               <a href="/travel-mann">曼恩星</a>
             </li>
-            <li className="breadcrumb-item">
-              <a href="/travel-xandar">柴達星</a>
+            <li className="breadcrumb-item active " aria-current="page">
+              柴達星
             </li>
             <li className="breadcrumb-item">
               <a href="#/">拉曼提斯</a>
@@ -52,7 +52,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/cabin1.jpg"
+              src="./travelimg/notescarouselimg/dining4.png"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -65,7 +65,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/cabin2.jpg"
+              src="./travelimg/notescarouselimg/dining3.jpg"
               alt="Second slide"
             />
 
@@ -79,7 +79,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/facil1.jpg"
+              src="./travelimg/notescarouselimg/food2.jpg"
               alt="Third slide"
             />
 
@@ -93,7 +93,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/facil2.jpg"
+              src="./travelimg/notescarouselimg/food4.jpg"
               alt="Third slide"
             />
 
@@ -107,7 +107,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100 "
-              src="./travelimg/notescarouselimg/dining4.png"
+              src="./travelimg/notescarouselimg/CABIN2.jpg"
               alt="Third slide"
             />
 
@@ -121,7 +121,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/dining2.jpg"
+              src="./travelimg/notescarouselimg/CABIN1.jpg"
               alt="Third slide"
             />
 
@@ -135,7 +135,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/food1.jpg"
+              src="./travelimg/notescarouselimg/facil3.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -148,7 +148,7 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/food3.jpg"
+              src="./travelimg/notescarouselimg/facil1.jpg"
               alt="Second slide"
             />
 
@@ -162,16 +162,16 @@ function TravelNotes() {
         </Carousel>
 
         <div className="content">
-          <h1 className="blue-text lighten-1 header">泰坦星Titan</h1>
+          <h1 className="blue-text lighten-1 header">柴達星Xandar</h1>
         </div>
 
-        {JourneyTitan.map((n, i) => {
+        {JourneyXandar.map((n, i) => {
           return (
             <React.Fragment key={i}>
               {/* 1st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="tphoto tphoto_1"></div>
+                  <div className="xphoto xphoto_1"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
@@ -185,7 +185,7 @@ function TravelNotes() {
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="tphoto tphoto_2"></div>
+                  <div className="xphoto xphoto_2"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
@@ -198,24 +198,24 @@ function TravelNotes() {
               {/* 2st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="tphoto tphoto_3"></div>
+                  <div className="xphoto xphoto_3"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day3</h2>
-                  <h3 className="descriptionh3">引人入勝的娛樂活動</h3>
+                  <h3 className="descriptionh3">太空艙內的自由活動1</h3>
                   <p className="descriptionp">{n.day3}</p>
                 </div>
               </div>
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="tphoto tphoto_4"></div>
+                  <div className="xphoto xphoto_4"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day4</h2>
-                  <h3 className="descriptionh3">太空艙內的自由活動1</h3>
+                  <h3 className="descriptionh3">抵達柴達星h96286-1區</h3>
                   <p className="descriptionp">{n.day4}</p>
                 </div>
               </div>
@@ -223,24 +223,24 @@ function TravelNotes() {
               {/* 3st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="tphoto tphoto_5"></div>
+                  <div className="xphoto xphoto_5"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day5</h2>
-                  <h3 className="descriptionh3">抵達泰坦星w94w03-3區</h3>
+                  <h3 className="descriptionh3">太空艙內的自由活動2</h3>
                   <p className="descriptionp">{n.day5}</p>
                 </div>
               </div>
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="tphoto tphoto_6"></div>
+                  <div className="xphoto xphoto_6"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day6</h2>
-                  <h3 className="descriptionh3">太空艙內的自由活動2</h3>
+                  <h3 className="descriptionh3">返航國際太空站</h3>
                   <p className="descriptionp">{n.day6}</p>
                 </div>
               </div>
@@ -248,25 +248,13 @@ function TravelNotes() {
               {/* 4st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="tphoto tphoto_7"></div>
+                  <div className="xphoto xphoto_7"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day7</h2>
-                  <h3 className="descriptionh3">返航國際太空站</h3>
-                  <p className="descriptionp">{n.day7}</p>
-                </div>
-              </div>
-
-              <div className="blog-card alt">
-                <div className="meta">
-                  <div className="tphoto tphoto_8"></div>
-                  <ul className="details"></ul>
-                </div>
-                <div className="description">
-                  <h2 className="descriptionh2">Day8</h2>
                   <h3 className="descriptionh3">快樂賦歸</h3>
-                  <p className="descriptionp">{n.day8}</p>
+                  <p className="descriptionp">{n.day7}</p>
                 </div>
               </div>
             </React.Fragment>
@@ -373,7 +361,7 @@ function TravelNotes() {
       <div className="login-box">
         <form className="signup d-flex">
           <div className="price--1fAWe">
-            <span>$599,999</span>起
+            <span>$499,999</span>起
           </div>
           <a href="/ticket-order">
             <span></span>

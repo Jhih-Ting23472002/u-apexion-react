@@ -1,5 +1,45 @@
 import React from 'react';
 import './CustomizeSuit.css';
+
+const allCountry = [
+  '/customize_img/america.png',
+  '/customize_img/canada.png',
+  '/customize_img/china.png',
+  '/customize_img/england.png',
+  '/customize_img/japan.png',
+  '/customize_img/korea.png',
+  '/customize_img/spain.png',
+  '/customize_img/taiwan.png',
+  '/customize_img/ukraine.png',
+];
+const allMark = [
+  '/customize_img/space-mark-01.png',
+  '/customize_img/space-mark-02.png',
+  '/customize_img/space-mark-03.png',
+  '/customize_img/space-mark-04.png',
+  '/customize_img/space-mark-05.png',
+  '/customize_img/space-mark-06.png',
+  '/customize_img/space-mark-07.png',
+  '/customize_img/space-mark-08.png',
+  '/customize_img/space-mark-09.png',
+  '/customize_img/space-mark-10.png',
+  '/customize_img/space-mark-11.png',
+  '/customize_img/space-mark-12.png',
+  '/customize_img/space-mark-13.png',
+  '/customize_img/space-mark-14.png',
+  '/customize_img/space-mark-15.png',
+  '/customize_img/space-mark-16.png',
+  '/customize_img/space-mark-17.png',
+  '/customize_img/space-mark-18.png',
+  '/customize_img/space-mark-19.png',
+  '/customize_img/space-mark-20.png',
+  '/customize_img/space-mark-21.png',
+  '/customize_img/space-mark-22.png',
+  '/customize_img/space-mark-23.png',
+];
+
+
+
 function CustomizeSuit() {
   return (
     <>
@@ -54,61 +94,27 @@ function CustomizeSuit() {
             <div className="blue suit-flag"></div>
           </div>
           <div className="country-select">
-            {/* <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/taiwan.png')} alt="" />
-            </div>
+          {allCountry.map((v, i) => {
+              return (
+                <div className="suit-flag" key={i}>
+                  <img src={v} alt="" />
+                </div>
+              );
+            })}
             <div className="suit-flag">
               <div className="no-select">
                 <img src={require('./images/noselect.png')} alt="" />
               </div>
-            </div> */}
+            </div>
           </div>
           <div className="mark-select">
-            {/* <div className="suit-flag">
-              <img src={require('./images/space-mark-01.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/space-mark-02.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/space-mark-03.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/space-mark-04.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/space-mark-05.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/space-mark-06.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/space-mark-07.png')} alt="" />
-            </div>
-            <div className="suit-flag">
-              <img src={require('./images/space-mark-08.png')} alt="" />
-            </div> */}
+          {allMark.map((v, i) => {
+              return (
+                <div className="suit-mark" key={i}>
+                  <img src={v} alt="" />
+                </div>
+              );
+            })}
             <div className="suit-flag">
               <div className="no-select">
                 <img src={require('./images/noselect.png')} alt="" />

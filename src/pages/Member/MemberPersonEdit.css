@@ -1,0 +1,117 @@
+.member-container {
+    width: 100%;
+    height: 100vh;
+    background: url('/public/member_img/gettyimages-590286833-2048x2048 1.png')
+      center center/cover no-repeat;
+  }
+  
+  .member-shadow-container {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .member-right-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content:space-between; */
+  }
+  
+  .member-title-wrap {
+    width: 95%;
+    display: flex;
+    /* flex-direction: row; */
+    align-self: end;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .member-title {
+    width: 91%;
+    height: 7vh;
+    background-color: #05f2f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .member-title h1 {
+    font-size: 20px;
+    font-weight: 400; 
+    height: 7vh;
+    /* margin: 0 20px; */
+    display: flex;
+    align-items: center;
+    /* background-color: #05f2f2; */
+    /* color: #000; */
+  }
+  
+  .person-form-container {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    height: 50vh;
+    align-items: center;
+  }
+  
+  .person-form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* .person-btn-container {
+    margin-top: 3.5%;
+  } */
+  
+  .member-line-wrap {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .person-line {
+    width: 1px;
+    height: 33vh;
+    background-color: #fff;
+    opacity: 0.1;
+  }
+  
+  .person-avatar-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .person-avatar-img {
+    width: 130px;
+    height: 130px;
+    background-color: #aaa;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+  
+  .person-avatar-img,
+  .person-avatar-upload,
+  .person-avatar-txt {
+    margin-bottom: 1rem;
+  }
+  
+  .person-avatar-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .person-avatar-txt p {
+    color: #fff;
+    opacity: 0.5;
+  }
+  
