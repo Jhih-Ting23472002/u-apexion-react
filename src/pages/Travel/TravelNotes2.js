@@ -1,19 +1,19 @@
 import React from 'react';
-import './TravelNotes.css';
+import './TravelNotes2.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
 
 function TravelNotes() {
-  const [JourneyTitan, setJourneyTitan] = useState([]);
+  const [JourneyXandar, setJourneyXandar] = useState([]);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-notes/api/travel-journeytitan'
+        'http://localhost:3001/travel-notes/api/travel-Journeyxandar'
       );
-      const JourneyTitan = await response.json();
-      setJourneyTitan(JourneyTitan);
-      console.log(JourneyTitan);
+      const JourneyXandar = await response.json();
+      setJourneyXandar(JourneyXandar);
+      console.log(JourneyXandar);
     })();
   }, []);
   return (
@@ -21,8 +21,8 @@ function TravelNotes() {
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item active" aria-current="page">
-              泰坦星
+            <li className="breadcrumb-item">
+              <a href="/travel-titan">泰坦星</a>
             </li>
             <li className="breadcrumb-item">
               <a href="#/">米勒星</a>
@@ -30,8 +30,8 @@ function TravelNotes() {
             <li className="breadcrumb-item">
               <a href="#/">曼恩星</a>
             </li>
-            <li className="breadcrumb-item">
-              <a href="/travel-xandar">柴達星</a>
+            <li className="breadcrumb-item active" aria-current="page">
+              柴達星
             </li>
             <li className="breadcrumb-item">
               <a href="#/">拉曼提斯</a>
@@ -162,10 +162,10 @@ function TravelNotes() {
         </Carousel>
 
         <div className="content">
-          <h1 className="blue-text lighten-1 header">泰坦星Titan</h1>
+          <h1 className="blue-text lighten-1 header">柴達星Xandar</h1>
         </div>
 
-        {JourneyTitan.map((n, i) => {
+        {JourneyXandar.map((n, i) => {
           return (
             <React.Fragment key={i}>
               {/* 1st group */}

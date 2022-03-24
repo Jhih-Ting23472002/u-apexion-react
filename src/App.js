@@ -29,17 +29,17 @@ import ProductsList from './pages/Products/ProductsList';
 import ProductsDetail from './pages/Products/ProductsDetail';
 
 // Customize
-import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
-import CustomizeSeat from './pages/Customize/CustomizeSeat';
-import CustomizeCraft from './pages/Customize/CustomizeCraft';
-import CustomizeSuit from './pages/Customize/CustomizeSuit';
+// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+// import CustomizeSeat from './pages/Customize/CustomizeSeat';
+// import CustomizeCraft from './pages/Customize/CustomizeCraft';
+// import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
-import CartChoosePayment from './pages/Cart/CartChoosePayment';
-import CartInformation from './pages/Cart/CartInformation';
-import CartFinalCheck from './pages/Cart/CartFinalCheck';
-import CartCreditCard from './pages/Cart/CartCreditCard';
-import CardComplete from './pages/Cart/CardComplete';
+// import CartChoosePayment from './pages/Cart/CartChoosePayment';
+// import CartInformation from './pages/Cart/CartInformation';
+// import CartFinalCheck from './pages/Cart/CartFinalCheck';
+// import CartCreditCard from './pages/Cart/CartCreditCard';
+// import CardComplete from './pages/Cart/CardComplete';
 
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
@@ -54,6 +54,7 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
+import TravelNotes2 from './pages/Travel/TravelNotes2';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -174,8 +175,11 @@ function App() {
           <Route path="/travel-choose">
             <TravelChoose />
           </Route>
-          <Route path="/travel-notes">
+          <Route path="/travel-titan">
             <TravelNotes />
+          </Route>
+          <Route path="/travel-xandar">
+            <TravelNotes2 />
           </Route>
           <Route path="/ticket-order">
             <Ticket />
@@ -203,7 +207,7 @@ function App() {
             <TicketMeal />
           </Route>
           <Route path="/ticket-confirm"></Route>
-          <Route path="/customize-mainpage">
+          {/* <Route path="/customize-mainpage">
             <CustomizeMainPage />
           </Route>
           <Route path="/customize-suit">
@@ -215,7 +219,7 @@ function App() {
           <Route path="/customize-seat">
             <CustomizeSeat />
           </Route>
-          <Route path="/customize-order"></Route>
+          <Route path="/customize-order"></Route> */}
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list/product-detail/:sid">
@@ -228,7 +232,7 @@ function App() {
             <Products />
           </Route>
           <ScrollToTop>
-            <Route exact path="/cart-payment">
+            {/* <Route exact path="/cart-payment">
               <CartChoosePayment
                 tripPrice={tripPrice} //from 采諭
                 setUserOption={setUserOption}
@@ -255,7 +259,7 @@ function App() {
             </Route>
             <Route path="/cart-complete">
               <CardComplete />
-            </Route>
+            </Route> */}
           </ScrollToTop>
           <Route path="*">
             <NotFoundPage />
