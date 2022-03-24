@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Navigation } from 'swiper';
-import { LightBox } from 'react-lightbox-pack';
 import { data } from './image_data';
 
 const IndexMain = () => {
@@ -40,7 +39,7 @@ const IndexMain = () => {
   const handleSectionScroll = () => {
     const scrollY = window.scrollY;
     console.log(scrollY);
-    if (scrollY >= 2800) {
+    if (scrollY >= 3850) {
       // console.log('>3700-');
       setsec4Animate(true);
       setCircle4(true);
@@ -56,9 +55,6 @@ const IndexMain = () => {
     // setInterval(() => {
     //   setCircle2(true);
     // }, 10000);
-    if (circle4 === true) {
-      setInterval(() => {}, 10000);
-    }
   }, []);
 
   // {
@@ -67,9 +63,9 @@ const IndexMain = () => {
   return (
     <>
       <div className="indexContainer" onScroll={handleSectionScroll}>
-        {/* <div>
+        <div>
           <CameraController></CameraController>
-        </div> */}
+        </div>
         {/* -------------section1-------------- */}
         <Swiper
           onSlideChange={handleSlideChange}
@@ -307,6 +303,7 @@ const IndexMain = () => {
           </div>
         </div>
         {/* section2 end */}
+
         {/* section3 */}
         <div class="index_section3">
           <div class="index_team">
@@ -352,10 +349,17 @@ const IndexMain = () => {
                           //   : 'index_bg-img do-animation'
 
                           className="index_bg-img do-animation"
+                          style={{
+                            color: '#05f2f2',
+                            fontSize: '20px',
+                            marginLeft: 0,
+                          }}
                         >
                           {v.name}
                         </h2>
                         <h2 className="index_bg-img">{v.description}</h2>
+                        <h2 className="index_bg-img">{v.description2}</h2>
+                        <h2 className="index_bg-img">{v.description3}</h2>
                         <h2 className="index_bg-img">{v.level}</h2>
                       </div>
                     </div>
@@ -364,6 +368,15 @@ const IndexMain = () => {
               ))}
             <div class="index_team-right">
               <div class="index_right-member">
+                <div class="index_member col-3">
+                  <img
+                    class="sm-img"
+                    alt=""
+                    style={{ objectFit: 'contain' }}
+                    src="./index_img/Mask-Grouplogo.png"
+                  />
+                  <p style={{ color: '#05f2f2' }}>Apexion Team</p>
+                </div>
                 {data.map((v, i) => (
                   <div class="index_member col-3">
                     <img
@@ -394,8 +407,8 @@ const IndexMain = () => {
         </div>
         {/*
       {/* section3 end */}
-        {/* section4 */}
         {/* <LazyLoad offset={50} height={100}> */}
+        {/* section4 */}
         <div className="index-section4">
           <div className="index-sec-container">
             <div className="index-sec-container-top">
