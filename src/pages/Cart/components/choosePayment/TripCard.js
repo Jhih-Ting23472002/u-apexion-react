@@ -13,7 +13,7 @@ const TripCard = (props)=>{
                     <div className="content-detail-inside">
                         <div className="content-detail-inside-top-ticket">
                             <div className="cart-ticket-destination">
-                                <h5 className="cart-trip-name">行程:泰坦星</h5>
+                                <h5 className="cart-trip-name">{props.tripSelected}行程:泰坦星</h5>
                                 <h5 className="cart-trip-food">太空餐點</h5>
                             </div>
                             <div className="cart-ticket-during">

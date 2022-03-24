@@ -100,7 +100,7 @@ const CartInformation = (props) => {
             </div>
           </form>
 
-          <form  className="cart-recipient-information-part">
+          <form className="cart-recipient-information-part">
             <div className="cart-information-line">
               <div className="consumer-recipient-information">收件人資訊</div>
             </div>
@@ -225,8 +225,7 @@ const CartInformation = (props) => {
                 </div>
               </div>
             </div>
-          </form>
-          <div className="previous-next-btn">
+            <div className="previous-next-btn">
             <div className="col-3"></div>
             <Link
               className="btn next-btn position cart-link"
@@ -243,6 +242,8 @@ const CartInformation = (props) => {
             </Link>
             <div className="col-3"></div>
           </div>
+          </form>
+          
         </div>
       </div>
     </>
