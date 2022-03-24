@@ -4,10 +4,49 @@ import seat01 from './img/seat01.png';
 import seatsvg from './img/seat02.svg';
 import { ReactComponent as SeatSvg } from './img/seat02.svg';
 import seat02 from './img/seat02.png';
+import seat03 from './img/seat03.png';
 import './ticket.css';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function TicketSeat() {
+  const [isSeatA, setIsSeatA] = useState(false);
+  const [isSeatB, setIsSeatB] = useState(false);
+  const [isSeatC, setIsSeatC] = useState(false);
+
+  useEffect(() => {}, [isSeatA, isSeatB, isSeatC]);
+
+  function colorHandler(e) {
+    console.log('abc');
+    console.log(e.target.dataset.value);
+
+    switch (e.target.dataset.value) {
+      case 'A':
+        setIsSeatA(true);
+        setIsSeatB(false);
+        setIsSeatC(false);
+        console.log('A');
+        break;
+      case 'B':
+        setIsSeatA(false);
+        setIsSeatB(true);
+        setIsSeatC(false);
+        console.log('B');
+        break;
+      case 'C':
+        setIsSeatA(false);
+        setIsSeatB(false);
+        setIsSeatC(true);
+        console.log('C');
+        break;
+      default:
+        setIsSeatA(false);
+        setIsSeatB(false);
+        setIsSeatC(false);
+        break;
+    }
+  }
+
   return (
     <>
       <div class="ticket-container">
@@ -25,7 +64,30 @@ function TicketSeat() {
             <p>Select your seats,please</p>
             <div className="ticket-seat-content">
               <div className="ticket-case-choose">
-                <img src={seat01} alt="" />
+                <img src={seat03} alt="" />
+                <div className="ticket-case">
+                  <p
+                    className={isSeatA && 'case-selected'}
+                    onClick={e => colorHandler(e)}
+                    data-value="A"
+                  >
+                    ・　A艙
+                  </p>
+                  <p
+                    className={isSeatB && 'case-selected'}
+                    onClick={e => colorHandler(e)}
+                    data-value="B"
+                  >
+                    ・　B艙
+                  </p>
+                  <p
+                    className={isSeatC && 'case-selected'}
+                    onClick={e => colorHandler(e)}
+                    data-value="C"
+                  >
+                    ・　C艙
+                  </p>
+                </div>
               </div>
               <div className="ticket-seat-choose">
                 <img className="seat-svg" src={seatsvg} alt="" />
