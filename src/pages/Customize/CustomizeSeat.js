@@ -43,7 +43,7 @@ function CustomizeSeat() {
                   const newImg = whiteSeat;
                   setSeatImg(newImg);
                   // 載入圖片
-                }, 600);
+                },700);
               }}
             ></div>
             <div
@@ -73,7 +73,7 @@ function CustomizeSeat() {
                   setOpa(newOpaOpen);
                   const newImg = blueSeat;
                   setSeatImg(newImg);
-                }, 500);
+                }, 700);
               }}
             ></div>
           </div>
