@@ -105,7 +105,7 @@ function ProductsList() {
                   placeholder="請輸商品關鍵字..."
                   onChange={event => {
                     setSearchTerm(event.target.value);
-                    console.log(event.target.value);
+                    // console.log(event.target.value);
                   }}
                 />
                 <input id="search_submit" value="" type="submit" />
@@ -140,7 +140,7 @@ function ProductsList() {
           </p>
         </div>
         <div className="pr-list-dropdowns">
-          <p>{AllList}件商品</p>
+          <p>商品{AllList}項</p>
           <div className="primary-navigation">
             {/* <div role="navigation" className="primary-navigation">
               <ul>
@@ -169,13 +169,13 @@ function ProductsList() {
               </ul>
     
             </div> */}
-            <div>
+            {/* <div>
               <select class="form-control info-select">
                 <option value="">價格排序</option>
                 <option value="1">由低至高</option>
                 <option value="2">由高至低</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <div>
             <select class="form-control info-select">
