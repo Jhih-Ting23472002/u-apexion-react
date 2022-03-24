@@ -43,7 +43,7 @@ function TravelNotes() {
               <a href="#/">曼恩星</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="./page3.2.html">泰坦星</a>
+              <a href="#/">泰坦星</a>
             </li>
             <li className="breadcrumb-item">
               <a href="#/">拉曼提斯</a>
@@ -172,6 +172,10 @@ function TravelNotes() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+
+        <div className="content">
+          <h1 className="blue-text lighten-1 header">柴達星Xandar</h1>
+        </div>
 
         {JourneyNotes.map((n, i) => {
           return (
