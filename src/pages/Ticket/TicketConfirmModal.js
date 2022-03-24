@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import styled from 'styled-components';
 import './ticket.css';
 import './TicketConfirmModal.css';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 function TicketOrderModal(props) {
   return (
@@ -61,9 +62,13 @@ function TicketOrderModal(props) {
           <Button onClick={props.onHide} className="ticket-confirm-btn">
             加購客製化服務
           </Button>
-          <Button onClick={props.onHide} className="ticket-confirm-btn">
+          <Link
+            to="/cart-payment"
+            onClick={props.onHide}
+            className="ticket-confirm-btn"
+          >
             確認送出
-          </Button>
+          </Link>
         </div>
       </Modal.Footer>
     </Modal>
