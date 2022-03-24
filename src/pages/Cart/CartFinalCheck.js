@@ -108,7 +108,7 @@ const CartFinalCheck = (props) => {
 
               <div className="cart-list-detail-inside col-8 flex-column limit-width">
                 <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">行程：泰坦星</div>
+                  <div className="cart-product-list-group">行程：{props.tripSelected}</div>
                   <div className="cart-product-list-group">餐點</div>
                 </div>
                 <div className="d-flex justify-content-between need-width">
@@ -119,13 +119,13 @@ const CartFinalCheck = (props) => {
                 </div>
                 <div className="d-flex justify-content-between need-width">
                   <div className="cart-product-list-group">人數5</div>
-                  <div className="cart-product-list-group">$XXXXX</div>
+                  <div className="cart-product-list-group">{props.tripPrice}</div>
                 </div>
               </div>
             </div>
             <div className="d-flex flex-column align-items-end final-total-price">
-              <div className="mb-4">共n件商品，總金額$xxxxx</div>
-              <div>本訂單需付款金額為$xxxxxx</div>
+              <div className="mb-4">共n件商品，總金額{props.tripPrice}</div>
+              <div>本訂單需付款金額為{props.tripPrice}</div>
             </div>
           </div>
 

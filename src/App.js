@@ -259,13 +259,17 @@ function App() {
               </Route>
               <Route path="/cart-final-check">
                 <CartFinalCheck
+                  tripSelected={tripSelected} //from 采諭
+                  tripPrice={tripPrice} //from 采諭
+
+                  
                   userOption={userOption}
                   setCartUserInfo={setCartUserInfo}
                   cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
                 />
               </Route>
               <Route path="/cart-credit-card">
-                <CartCreditCard />
+                <CartCreditCard tripPrice={tripPrice}/>
               </Route>
               <Route path="/cart-complete">
                 <CardComplete />

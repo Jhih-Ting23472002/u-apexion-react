@@ -40,7 +40,7 @@ const CartChoosePayment = (props) => {
 
           <ProductCard />
           
-          <TripCard tripPrice={props.tripPrice}/>
+          <TripCard tripSelected={props.tripSelected} tripPrice={props.tripPrice}/>
 
           <SuitCard />
 
