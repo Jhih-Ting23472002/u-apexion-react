@@ -230,6 +230,7 @@ function App() {
             <Route path="/customize-order"></Route> */}
             <Route path="/trans-mainpage"></Route>
             <Route path="/trans-order"></Route>
+            <ScrollToTop>
             <Route path="/products-list/product-detail/:sid">
               <ProductsDetail setProductDetailList={setProductDetailList} />
             </Route>
@@ -239,7 +240,7 @@ function App() {
             <Route path="/products" exact>
               <Products />
             </Route>
-            <ScrollToTop>
+            
               <Route exact path="/cart-payment">
                 <CartChoosePayment
                   tripSelected={tripSelected} //from 采諭

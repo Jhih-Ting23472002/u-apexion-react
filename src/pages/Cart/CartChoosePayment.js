@@ -76,9 +76,9 @@ const CartChoosePayment = (props) => {
             </div>
             <div className="cart-should-pay col-5">
               <h5 className="cart-should-pay-text">共n件商品</h5>
-              <h5 className="cart-should-pay-text">小計:$xxxxx</h5>
+              <h5 className="cart-should-pay-text">小計:{props.tripPrice}</h5>
               <div className="cart-should-pay-separated-line"></div>
-              <h5 className="cart-should-pay-total-price">應付總金額:$xxxxx</h5>
+              <h5 className="cart-should-pay-total-price">應付總金額:{props.tripPrice}</h5>
               <div className="cart-button">
                 <Link to={'/products'} className="btn continue-btn">繼續購物</Link>
                 <Link
