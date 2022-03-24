@@ -41,7 +41,7 @@ export default function MemberNavbar() {
             會員資料
           </div>
           <div className="user_nav_a-group">
-            <MemberNavLinkAll
+          <MemberNavLinkAll
               to="/member-person"
               $active={location.pathname === '/member-person'}
             >
@@ -49,6 +49,17 @@ export default function MemberNavbar() {
                 <i class="fa-solid fa-user"></i>
                 <a href="/#" className="user_nav_item">
                   個人檔案
+                </a>
+              </div>
+            </MemberNavLinkAll>
+            <MemberNavLinkAll
+              to="/member-person-edit"
+              $active={location.pathname === '/member-person-edit'}
+            >
+              <div className="user_navIcon_adjust">
+              <i class="fa-solid fa-user-pen"></i>
+                <a href="/#" className="user_nav_item">
+                  修改檔案
                 </a>
               </div>
             </MemberNavLinkAll>

@@ -15,6 +15,7 @@ import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
+import MemberPersonEdit from './pages/Member/MemberPersonEdit';
 import MemberPwdEdit from './pages/Member/MemberPwdEdit';
 import MemberAddress from './pages/Member/MemberAddress';
 import MemberAddressNew from './pages/Member/MemberAddressNew';
@@ -28,10 +29,10 @@ import ProductsList from './pages/Products/ProductsList';
 import ProductsDetail from './pages/Products/ProductsDetail';
 
 // Customize
-import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
-import CustomizeSeat from './pages/Customize/CustomizeSeat';
-import CustomizeCraft from './pages/Customize/CustomizeCraft';
-import CustomizeSuit from './pages/Customize/CustomizeSuit';
+// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+// import CustomizeSeat from './pages/Customize/CustomizeSeat';
+// import CustomizeCraft from './pages/Customize/CustomizeCraft';
+// import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -53,6 +54,8 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
+import TravelNotes2 from './pages/Travel/TravelNotes2';
+import TravelNotes3 from './pages/Travel/TravelNotes3';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -74,7 +77,7 @@ function App() {
   const [tripSelected, setTripSelected] = useState('');
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
-  console.log(tripSelected, tripDays);
+  console.log(tripSelected, tripDays, tripPrice);
 
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
@@ -146,6 +149,9 @@ function App() {
           <Route path="/member-person">
             <MemberPerson />
           </Route>
+          <Route path="/member-person-edit">
+            <MemberPersonEdit />
+          </Route>
           <Route path="/member-password-edit">
             <MemberPwdEdit />
           </Route>
@@ -170,8 +176,14 @@ function App() {
           <Route path="/travel-choose">
             <TravelChoose />
           </Route>
-          <Route path="/travel-notes">
+          <Route path="/travel-titan">
             <TravelNotes />
+          </Route>
+          <Route path="/travel-xandar">
+            <TravelNotes2 />
+          </Route>
+          <Route path="/travel-mann">
+            <TravelNotes3 />
           </Route>
           <Route path="/ticket-order">
             <Ticket />
@@ -199,7 +211,7 @@ function App() {
             <TicketMeal />
           </Route>
           <Route path="/ticket-confirm"></Route>
-          <Route path="/customize-mainpage">
+          {/* <Route path="/customize-mainpage">
             <CustomizeMainPage />
           </Route>
           <Route path="/customize-suit">
@@ -211,7 +223,7 @@ function App() {
           <Route path="/customize-seat">
             <CustomizeSeat />
           </Route>
-          <Route path="/customize-order"></Route>
+          <Route path="/customize-order"></Route> */}
           <Route path="/trans-mainpage"></Route>
           <Route path="/trans-order"></Route>
           <Route path="/products-list/product-detail/:sid">
@@ -226,7 +238,9 @@ function App() {
           <ScrollToTop>
             <Route exact path="/cart-payment">
               <CartChoosePayment
+                tripSelected={tripSelected} //from 采諭
                 tripPrice={tripPrice} //from 采諭
+
                 setUserOption={setUserOption}
                 userOption={userOption}
               />
