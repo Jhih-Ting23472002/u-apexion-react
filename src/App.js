@@ -63,6 +63,7 @@ import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
 import ForumPublishUpdatePage from './pages/Forum/ForumPublishUpdatePage';
 import ForumMemArticlePage from './pages/Forum/ForumMemArticlePage';
 import ForumHotPage from './pages/Forum/ForumHotPage';
+import ForumPersonalPage from './pages/Forum/ForumPersonalPage';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
@@ -133,6 +134,9 @@ function App() {
           </Route>
           <Route path="/forum-hot-posts">
             <ForumHotPage />
+          </Route>
+          <Route path="/forum-personal">
+            <ForumPersonalPage />
           </Route>
           <Route path="/member-login">
             <MemberLogin />

@@ -210,7 +210,10 @@ export default function ForumNav() {
           </div>
 
           <div className="a-group">
-            <ForunArticalAll to="/#" $active={location.pathname === '/#'}>
+            <ForunArticalAll
+              to="/forum-personal"
+              $active={location.pathname === '/'}
+            >
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-address-card"> </i>
                 <a href="/#" className="forum_nav_item">
