@@ -1,5 +1,6 @@
 import React from 'react';
 import example from '../../img/example.png'
+import {useCart} from '../../utils/useCart'
 
 const ProductCard = ()=>{
     return (
