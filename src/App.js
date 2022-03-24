@@ -55,6 +55,7 @@ import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
 import TravelNotes2 from './pages/Travel/TravelNotes2';
+import TravelNotes3 from './pages/Travel/TravelNotes3';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -180,6 +181,9 @@ function App() {
           </Route>
           <Route path="/travel-xandar">
             <TravelNotes2 />
+          </Route>
+          <Route path="/travel-mann">
+            <TravelNotes3 />
           </Route>
           <Route path="/ticket-order">
             <Ticket />

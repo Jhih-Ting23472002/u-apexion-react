@@ -28,7 +28,7 @@ function TravelNotes() {
               <a href="#/">米勒星</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">曼恩星</a>
+              <a href="/travel-mann">曼恩星</a>
             </li>
             <li className="breadcrumb-item active " aria-current="page">
               柴達星
@@ -171,7 +171,7 @@ function TravelNotes() {
               {/* 1st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="photo photo_1"></div>
+                  <div className="xphoto xphoto_1"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
@@ -185,12 +185,12 @@ function TravelNotes() {
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="photo photo_2"></div>
+                  <div className="xphoto xphoto_2"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day2</h2>
-                  <h3 className="descriptionh3">太空艙內的自由活動1</h3>
+                  <h3 className="descriptionh3">拜訪國際太空站</h3>
                   <p className="descriptionp">{n.day2}</p>
                 </div>
               </div>
@@ -198,24 +198,24 @@ function TravelNotes() {
               {/* 2st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="photo photo_3"></div>
+                  <div className="xphoto xphoto_3"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day3</h2>
-                  <h3 className="descriptionh3">抵達柴達星h928-1區</h3>
+                  <h3 className="descriptionh3">太空艙內的自由活動1</h3>
                   <p className="descriptionp">{n.day3}</p>
                 </div>
               </div>
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="photo photo_4"></div>
+                  <div className="xphoto xphoto_4"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day4</h2>
-                  <h3 className="descriptionh3">太空艙內的自由活動2</h3>
+                  <h3 className="descriptionh3">抵達柴達星h96286-1區</h3>
                   <p className="descriptionp">{n.day4}</p>
                 </div>
               </div>
@@ -223,25 +223,38 @@ function TravelNotes() {
               {/* 3st group */}
               <div className="blog-card">
                 <div className="meta">
-                  <div className="photo photo_5"></div>
+                  <div className="xphoto xphoto_5"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day5</h2>
-                  <h3 className="descriptionh3">國際太空站</h3>
+                  <h3 className="descriptionh3">太空艙內的自由活動2</h3>
                   <p className="descriptionp">{n.day5}</p>
                 </div>
               </div>
 
               <div className="blog-card alt">
                 <div className="meta">
-                  <div className="photo photo_6"></div>
+                  <div className="xphoto xphoto_6"></div>
                   <ul className="details"></ul>
                 </div>
                 <div className="description">
                   <h2 className="descriptionh2">Day6</h2>
-                  <h3 className="descriptionh3">快樂賦歸</h3>
+                  <h3 className="descriptionh3">返航國際太空站</h3>
                   <p className="descriptionp">{n.day6}</p>
+                </div>
+              </div>
+
+              {/* 4st group */}
+              <div className="blog-card">
+                <div className="meta">
+                  <div className="xphoto xphoto_7"></div>
+                  <ul className="details"></ul>
+                </div>
+                <div className="description">
+                  <h2 className="descriptionh2">Day7</h2>
+                  <h3 className="descriptionh3">快樂賦歸</h3>
+                  <p className="descriptionp">{n.day7}</p>
                 </div>
               </div>
             </React.Fragment>
