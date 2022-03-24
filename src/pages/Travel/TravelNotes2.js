@@ -348,9 +348,9 @@ function TravelNotes() {
       <div className="login-box">
         <form className="signup d-flex">
           <div className="price--1fAWe">
-            <span>$499,999</span>起{/* <span>${v.travel_price}</span>起 */}
+            <span>$499,999</span>起
           </div>
-          <a href="#/">
+          <a href="/ticket-order">
             <span></span>
             <span></span>
             <span></span>
