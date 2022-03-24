@@ -230,15 +230,16 @@ function App() {
             <Route path="/customize-order"></Route> */}
             <Route path="/trans-mainpage"></Route>
             <Route path="/trans-order"></Route>
+            
+            <Route path="/products" exact>
+              <Products />
+            </Route>
             <ScrollToTop>
             <Route path="/products-list/product-detail/:sid">
               <ProductsDetail setProductDetailList={setProductDetailList} />
             </Route>
             <Route path="/products-list" exact>
               <ProductsList />
-            </Route>
-            <Route path="/products" exact>
-              <Products />
             </Route>
             
               <Route exact path="/cart-payment">
