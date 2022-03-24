@@ -2,21 +2,18 @@ import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 import { Link } from 'react-router-dom';
+import { object } from 'prop-types';
 
-function BrowsingHistory() {
-//  console.log(props.Storages);
-// const newStorages=[...props];
-// console.log(newStorages);
+function BrowsingHistory(props) {
+const [productLocalStorage,setProductLocalStorage]=useState([])
 
-// const a=function getStorageValue(defaultValue) {
+  //console.log(typeof options)
+  console.log(props.Storages.productLocalStorage);
+  // const arr = props.Storages.productLocalStorage
+  // setProductLocalStorage(arr)
 
-//   if (typeof window !== "undefined") {
-//     const saved = localStorage.getItem('productStorage');
-//     const initial = saved !== null ? JSON.parse(saved) : defaultValue;
-//     return initial;
-//   }
-// }
-// console.log(a);
+  // const sliceThree= productLocalStorage.slice(-3);
+  //  console.log(sliceThree);
 
   return (
     <>
