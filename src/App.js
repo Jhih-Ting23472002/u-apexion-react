@@ -35,11 +35,11 @@ import ProductsDetail from './pages/Products/ProductsDetail';
 // import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
-// import CartChoosePayment from './pages/Cart/CartChoosePayment';
-// import CartInformation from './pages/Cart/CartInformation';
-// import CartFinalCheck from './pages/Cart/CartFinalCheck';
-// import CartCreditCard from './pages/Cart/CartCreditCard';
-// import CardComplete from './pages/Cart/CardComplete';
+import CartChoosePayment from './pages/Cart/CartChoosePayment';
+import CartInformation from './pages/Cart/CartInformation';
+import CartFinalCheck from './pages/Cart/CartFinalCheck';
+import CartCreditCard from './pages/Cart/CartCreditCard';
+import CardComplete from './pages/Cart/CardComplete';
 
 // Ticket
 import Ticket from './pages/Ticket/Ticket';
@@ -232,7 +232,7 @@ function App() {
             <Products />
           </Route>
           <ScrollToTop>
-            {/* <Route exact path="/cart-payment">
+            <Route exact path="/cart-payment">
               <CartChoosePayment
                 tripPrice={tripPrice} //from 采諭
                 setUserOption={setUserOption}
@@ -259,7 +259,7 @@ function App() {
             </Route>
             <Route path="/cart-complete">
               <CardComplete />
-            </Route> */}
+            </Route>
           </ScrollToTop>
           <Route path="*">
             <NotFoundPage />

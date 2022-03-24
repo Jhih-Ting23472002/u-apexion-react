@@ -55,9 +55,7 @@
 
 .active {
   display: block;
-}
-
-.active {
+  display: flex;
   display: none;
 }
 
@@ -66,9 +64,7 @@
   margin: 1rem 0;
 }
 
-.active {
-  display: flex;
-}
+
 
 @media (min-width: 62rem) {
   .nav2 ul {
@@ -586,6 +582,12 @@ section.timeline-outer {
 .breadcrumb-item>a{
   color:#03e9f4;
   text-decoration:none;
+}
+
+.breadcrumb-item>a:hover{
+  border-bottom:3px solid #03e9f4;
+  transition: 0.2s;
+
 }
 
 .signup{

@@ -1,34 +1,34 @@
 .photo_1{
-    background-image: url('/public/travelimg/traveldaysimg/day1-1.jpg');
+    background-image: url('/public/travelimg/traveldaysimg/day1-2.jpg');
   
   }
   .photo_2{
-    background-image: url('/public/travelimg/traveldaysimg/day2-1.jpg');
-  
-  }
-  .photo_3{
-    background-image: url('/public/travelimg/traveldaysimg/day3-1.jpg');
-  
-  }
-  .photo_4{
     background-image: url('/public/travelimg/traveldaysimg/day4-1.jpg');
   
   }
-  .photo_5{
+  .photo_3{
     background-image: url('/public/travelimg/traveldaysimg/day5-1.jpg');
   
   }
-  .photo_6{
-    background-image: url('/public/travelimg/traveldaysimg/day6-1.jpg');
+  .photo_4{
+    background-image: url('/public/travelimg/traveldaysimg/day4-2.jpeg');
   
   }
-  .photo_7{
-    background-image: url('/public/travelimg/traveldaysimg/day7-1.jpg');
+  .photo_5{
+    background-image: url('/public/travelimg/traveldaysimg/day2-1.jpg');
+  
+  }
+  .photo_6{
+    background-image: url('/public/travelimg/traveldaysimg/day8-1.jpg');
+  
+  }
+  /* .photo_7{
+    background-image: url('/public/travelimg/traveldaysimg/day.jpg');
   
   }
   .photo_8{
-    background-image: url('/public/travelimg/traveldaysimg/day8-1.jpg');
-  }
+    background-image: url('/public/travelimg/traveldaysimg/day.jpg');
+  } */
   
   .travelnotescontainer {
     margin: auto;
@@ -55,20 +55,15 @@
   
   .active {
     display: block;
-  }
-  
-  .active {
     display: none;
+    display: flex;
   }
   
   .active .show-mobile {
     display: block;
     margin: 1rem 0;
   }
-  
-  .active {
-    display: flex;
-  }
+
   
   @media (min-width: 62rem) {
     .nav2 ul {
@@ -586,6 +581,12 @@
   .breadcrumb-item>a{
     color:#03e9f4;
     text-decoration:none;
+  }
+
+  .breadcrumb-item>a:hover{
+    border-bottom:3px solid #03e9f4;
+    transition: 0.2s;
+
   }
   
   .signup{
