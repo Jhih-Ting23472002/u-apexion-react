@@ -76,7 +76,7 @@ function App() {
   const [tripSelected, setTripSelected] = useState('');
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
-  console.log(tripSelected, tripDays);
+  console.log(tripSelected, tripDays, tripPrice);
 
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
@@ -234,7 +234,9 @@ function App() {
           <ScrollToTop>
             <Route exact path="/cart-payment">
               <CartChoosePayment
+                tripSelected={tripSelected} //from 采諭
                 tripPrice={tripPrice} //from 采諭
+
                 setUserOption={setUserOption}
                 userOption={userOption}
               />
