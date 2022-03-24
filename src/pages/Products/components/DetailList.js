@@ -19,7 +19,7 @@ function DetailList(props) {
           <img
             className="pr-detail-img"
             src={`http://localhost:3001/img/product_img/${
-              props.product?.product_img ?? 'M021S_BK004.jpeg'
+              props.product?.product_img ?? 'www.jpg'
             }`}
             alt=""
           />

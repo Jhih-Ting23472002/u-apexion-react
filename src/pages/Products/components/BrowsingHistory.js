@@ -5,31 +5,41 @@ import { Link } from 'react-router-dom';
 import { object } from 'prop-types';
 
 function BrowsingHistory(props) {
-const [productLocalStorage,setProductLocalStorage]=useState([])
+  const { Storages } = props;
+  const [Storage, setStorage] = useState([]);
 
   //console.log(typeof options)
-  console.log(props.Storages.productLocalStorage);
-  // const arr = props.Storages.productLocalStorage
-  // setProductLocalStorage(arr)
+  //console.log(props.Storages.productLocalStorage);
 
-  // const sliceThree= productLocalStorage.slice(-3);
-  //  console.log(sliceThree);
+  // const sliceThree = Storage.slice(-3);
+  //console.log(sliceThree);
+
+  useEffect(() => {
+    if (Storages.length !== 0) {
+      const sliceThree = Storages.productLocalStorage.slice(-3);
+      console.log(sliceThree);
+      setStorage(sliceThree);
+    }
+  }, [Storages.productLocalStorage]);
 
   return (
     <>
+    {Storage.map(v => (
       <div className="col-md-4">
         <div className="card pr-card mb-5">
           <img
             className="card-img-top"
-            //src={`http://localhost:3001/img/product_img/${props.Storages?.productLocalStorage??'M021S_BK004.jpeg'}`}
+            src={ProductsConfig.IMG_PATH + '/' + v.product_img}
             alt=""
           />
           <div className="card-body">
-            <p className="card-text mb-3"></p>
-            <p className="card-text">灰色科技棉、馬海毛和羊駝毛提花</p>
+            <p className="card-text mb-3">{v.product_name}</p>
+            <p className="card-text">{v.material}</p>
           </div>
         </div>
       </div>
+    ))}
+     
     </>
   );
 }

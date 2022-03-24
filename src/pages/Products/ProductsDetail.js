@@ -104,7 +104,7 @@ function ProductsDetail({ setProductDetailList }) {
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>瀏覽紀錄</h4>
-          {/* <BrowsingHistory Storages={Storages} /> */}
+          <BrowsingHistory Storages={Storages} />
         </div>
       </div>
     </article>
