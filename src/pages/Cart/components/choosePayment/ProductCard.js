@@ -16,6 +16,9 @@ const ProductCard = props => {
     console.log({ id }); // 看看是否成功抓到id
 
     setProductDetailList(productDetailList.filter(v => v.id !== id));
+    // filter(v => v.id !== id)) 這句話的意思是，只有return true 不相等的id會被保留，return false 相等的id會被刪除
+    // filter(v => v.id === id)) 這句話的意思是，只有return true 相等的id會被保留 ，return false 不相等的id會被刪除
+
 
     // productDetailList(function (v) {
     //   return v.filter(item => item.id !== productDetailList.id);
