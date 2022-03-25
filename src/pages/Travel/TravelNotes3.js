@@ -21,6 +21,11 @@ function TravelNotes() {
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
+            <button className="notesbackbutton">
+              <a href="/travel-choose">
+                <i class="fa-solid fa-left-long"></i> Back
+              </a>
+            </button>
             <li className="breadcrumb-item">
               <a href="/travel-titan">泰坦星</a>
             </li>
@@ -315,7 +320,7 @@ function TravelNotes() {
                         ．提供登船前2天內的陰性新冠病毒（COVID-19）檢測報告（PCR
                         或 antigen）。
                         <br />
-                        ．如果無法保持社交距離，或當公共衛生當局的強制要求，於船上、私人島嶼上以及岸上觀光期間，都將需配戴口罩。當在碼頭、登船和離船期間時，則必須配戴口罩。
+                        ．如果無法保持社交距離，或當公共衛生當局的強制要求，於船上、星球上觀光期間，都將需配戴口罩。當在密閉空間或航行中、在太空站期間時，則必須配戴口罩。
                       </p>
                       <br />
                       <br />

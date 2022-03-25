@@ -45,10 +45,11 @@ import CardComplete from './pages/Cart/CardComplete';
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketDateOld from './pages/Ticket/TicketDateOld';
-import TicketTest from './pages/Ticket/TicketTest';
+//import TicketTest from './pages/Ticket/TicketTest';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
+// import SeatDrag from './pages/Ticket/SeatDrag';
 
 // Travel
 import TravelIndex from './pages/Travel/TravelIndex';
@@ -56,6 +57,10 @@ import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
 import TravelNotes2 from './pages/Travel/TravelNotes2';
 import TravelNotes3 from './pages/Travel/TravelNotes3';
+import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
+//import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
+import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
+//import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -80,7 +85,9 @@ function App() {
   const [tripSelected, setTripSelected] = useState('');
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
-  console.log(tripSelected, tripDays, tripPrice);
+  const [tripDate, setTripDate] = useState('');
+  console.log('出發日期', tripDate);
+  console.log(tripSelected, tripDays, tripPrice, tripDate);
 
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
@@ -98,10 +105,12 @@ function App() {
     addressDist: '',
     address: '',
   });
+  const [cartTotalPrice, setCartTotalPrice] = useState(0); // 購物車總金額
   // 以上是cart的部分
 
   //周邊商品區
-  const [ProductDetailList, setProductDetailList] = useState([]);
+  const [productDetailList, setProductDetailList] = useState([]);
+  console.log(productDetailList); // 測試，by雍
 
   return (
     // <Router>
@@ -311,6 +320,7 @@ function App() {
             <Route path="/member-collect">
               <MemberCollect />
             </Route>
+            {/* 行程頁面 */}
             <Route path="/travel-index">
               <TravelIndex />
             </Route>
@@ -326,12 +336,25 @@ function App() {
             <Route path="/travel-mann">
               <TravelNotes3 />
             </Route>
+            <Route path="/travelchoose-pricem">
+              <TravelChoosePriceM />
+            </Route>
+            {/* <Route path="/travelchoose-pricef">
+              <TravelChoosePriceF />
+            </Route> */}
+            <Route path="/travelchoose-daym">
+              <TravelChooseDayM />
+            </Route>
+            {/* <Route path="/travelchoose-dayf">
+              <TravelChooseDayF />
+            </Route> */}
+            {/* 訂票頁面 */}
             <Route path="/ticket-order">
               <Ticket />
             </Route>
-            <Route path="/ticket-test">
+            {/* <Route path="/ticket-test">
               <TicketTest />
-            </Route>
+            </Route> */}
             <Route path="/ticket-trip-choose">
               <TicketTrip
                 setTripSelected={setTripSelected}
@@ -340,18 +363,25 @@ function App() {
               />
             </Route>
             <Route path="/ticket-date-choose">
-              <TicketDate tripSelected={tripSelected} tripDays={tripDays} />
+              <TicketDate
+                tripSelected={tripSelected}
+                tripDays={tripDays}
+                setTripDate={setTripDate}
+              />
             </Route>
             <Route path="/ticket-date-choose-old">
               <TicketDateOld />
             </Route>
             <Route path="/ticket-seat-choose">
-              <TicketSeat />
+              <TicketSeat tripDate={tripDate} />
             </Route>
             <Route path="/ticket-meal-choose">
               <TicketMeal />
             </Route>
             <Route path="/ticket-confirm"></Route>
+            {/* <Route path="/ticket-test">
+              <SeatDrag />
+            </Route> */}
             {/* <Route path="/customize-mainpage">
               <CustomizeMainPage />
             </Route>
@@ -368,9 +398,6 @@ function App() {
             <Route path="/trans-mainpage"></Route>
             <Route path="/trans-order"></Route>
 
-            <Route path="/products" exact>
-              <Products />
-            </Route>
             <ScrollToTop>
               <Route path="/products-list/product-detail/:sid">
                 <ProductsDetail setProductDetailList={setProductDetailList} />
@@ -378,11 +405,23 @@ function App() {
               <Route path="/products-list" exact>
                 <ProductsList />
               </Route>
+              <Route path="/products" exact>
+                <Products setProductDetailList={setProductDetailList}/>
+              </Route>
 
               <Route exact path="/cart-payment">
                 <CartChoosePayment
+                  cartTotalPrice={cartTotalPrice} //購物車總金額
+                  setCartTotalPrice={setCartTotalPrice} //購物車總金額
+                  //---------------------------------
                   tripSelected={tripSelected} //from 采諭
+                  setTripSelected={setTripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
+                  setTripPrice={setTripPrice} //from 采諭
+                  //---------------------------------
+                  productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
+                  setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
+                  //---------------------------------
                   setUserOption={setUserOption}
                   userOption={userOption}
                 />

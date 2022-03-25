@@ -155,6 +155,8 @@ function TicketCalender(props) {
         1,
         (parseInt(e.currentTarget.dataset.date.split('-')[2]) + 1).toString()
       );
+
+      props.setTripDate({ dateSelected: dateSelected, returnDate: returnDate });
       const def = abc.join('-');
       console.log('揮手揮手!!!!!!!!!!!!!!!!', abc);
       console.log('揮手揮手!!!!!!!!!!!!!!!!', def);

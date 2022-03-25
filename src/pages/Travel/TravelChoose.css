@@ -200,6 +200,14 @@
   border: 4px double black;
 }
 
+.itemBuyButton>a{
+  color: #05F2F2;
+}
+.itemBuyButton>a:hover{
+  text-decoration:none;
+  color: black;
+}
+
 .morechoose{
   font-size:20px;
   margin-bottom:5%;
