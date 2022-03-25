@@ -8,13 +8,34 @@ import seat03 from './img/seat03.png';
 import './ticket.css';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import SeatSvgFile from './SeatSvgFile';
+import SeatDrag from './SeatDrag';
 
-function TicketSeat() {
+function TicketSeat(props) {
+  const { tripDate } = props;
   const [isSeatA, setIsSeatA] = useState(false);
   const [isSeatB, setIsSeatB] = useState(false);
   const [isSeatC, setIsSeatC] = useState(false);
+  const [seatData, setSeatData] = useState([]);
+  const [seatCabin, setseatCabin] = useState('A');
 
-  useEffect(() => {}, [isSeatA, isSeatB, isSeatC]);
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        `http://localhost:3001/ticket-seat/api/seat-list`,
+        {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+          body: JSON.stringify({ tripDate: tripDate, seatCabin: seatCabin }),
+        }
+      );
+      const seatListDatas = await response.json();
+      setSeatData(seatListDatas);
+    })();
+    console.log(seatData);
+  }, [isSeatA, isSeatB, isSeatC]);
 
   function colorHandler(e) {
     console.log('abc');
@@ -26,18 +47,21 @@ function TicketSeat() {
         setIsSeatB(false);
         setIsSeatC(false);
         console.log('A');
+        setseatCabin('A');
         break;
       case 'B':
         setIsSeatA(false);
         setIsSeatB(true);
         setIsSeatC(false);
         console.log('B');
+        setseatCabin('B');
         break;
       case 'C':
         setIsSeatA(false);
         setIsSeatB(false);
         setIsSeatC(true);
         console.log('C');
+        setseatCabin('C');
         break;
       default:
         setIsSeatA(false);
@@ -90,7 +114,10 @@ function TicketSeat() {
                 </div>
               </div>
               <div className="ticket-seat-choose">
-                <img className="seat-svg" src={seatsvg} alt="" />
+                <div className="seat-svg">
+                  <SeatSvgFile seatData={seatData} seatCabin={seatCabin} />
+                </div>
+                {/* <img className="seat-svg" src={seatsvg} alt="" /> */}
               </div>
             </div>
             <div className="ticket-seat-demo-area">
@@ -103,10 +130,7 @@ function TicketSeat() {
                   <p>USER4_______</p>
                 </div>
                 <div className="ticket-seat-number">
-                  <p>FD.3</p>
-                  <p>FD.4</p>
-                  <p>FD.5</p>
-                  <p>FD.6</p>
+                  <SeatDrag />
                 </div>
               </div>
             </div>
