@@ -7,6 +7,7 @@ function DetailList(props) {
   const [total, setTotal] = useState(1);
   const price = props.product.price;
   const img = props.product.product_img;
+  const name = props.product.product_name;
 
   const { setProductDetailList } = props;
 
@@ -20,7 +21,7 @@ function DetailList(props) {
 
   function addCart() {
     setProductDetailList(function (prevData) {
-      return [{ price, img, total }, ...prevData];
+      return [{ price, img, name, total }, ...prevData];
     });
   }
   return (
