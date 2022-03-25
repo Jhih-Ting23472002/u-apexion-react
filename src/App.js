@@ -57,6 +57,9 @@ import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
 import TravelNotes2 from './pages/Travel/TravelNotes2';
 import TravelNotes3 from './pages/Travel/TravelNotes3';
+import TravelchoosePriceM from './pages/Travel/TravelchoosePriceM';
+import TravelchoosePriceF from './pages/Travel/TravelchoosePriceF';
+
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -316,6 +319,7 @@ function App() {
             <Route path="/member-collect">
               <MemberCollect />
             </Route>
+            {/* 行程頁面 */}
             <Route path="/travel-index">
               <TravelIndex />
             </Route>
@@ -331,6 +335,13 @@ function App() {
             <Route path="/travel-mann">
               <TravelNotes3 />
             </Route>
+            <Route path="/travelchoose-pricem">
+              <TravelchoosePriceM />
+            </Route>
+            <Route path="/travelchoose-pricef">
+              <TravelchoosePriceF />
+            </Route>
+            {/* 訂票頁面 */}
             <Route path="/ticket-order">
               <Ticket />
             </Route>
