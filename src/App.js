@@ -98,10 +98,12 @@ function App() {
     addressDist: '',
     address: '',
   });
+
   // 以上是cart的部分
 
   //周邊商品區
   const [productDetailList, setProductDetailList] = useState([]);
+  console.log(productDetailList); // 測試，by雍
 
   return (
     // <Router>
@@ -383,7 +385,9 @@ function App() {
                 <CartChoosePayment
                   tripSelected={tripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
-                  productDetailList={productDetailList}
+                  //---------------------------------
+                  productDetailList={productDetailList}  //from 智婷
+                  //---------------------------------
                   setUserOption={setUserOption}
                   userOption={userOption}
                 />
