@@ -101,7 +101,7 @@ function App() {
     addressDist: '',
     address: '',
   });
-
+  const [cartTotalPrice, setCartTotalPrice] = useState(0); // 購物車總金額
   // 以上是cart的部分
 
   //周邊商品區
