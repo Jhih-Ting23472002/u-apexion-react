@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './MemberAddress.css';
 import MemberAddressNew from './MemberAddressNew';
+import MemberEditOrDelete from './MemberEditOrDelete';
 import MemberNavbar from '../../components/MemberNav';
 import { findMem } from '../../data/UserWebApi';
+import { getAddress } from '../../data/UserWebApi';
 
 function MemberAddress() {
+  const user_id = localStorage.getItem('user_id');
   const [modalShow, setModalShow] = useState(false);
+  const [editmodalShow, setEditModalShow] = useState(false);
   // const [address, setAddress] = useState([]);
 
   // useEffect(() => {
@@ -18,15 +22,32 @@ function MemberAddress() {
 
   const [address, setAddress] = useState([]);
 
+  const getUserAddress = async () => {
+    const res = getAddress(user_id).then(obj => {
+      console.log('obj:', obj);
+      setAddress(obj.list);
+    });
+  };
+
+  //  [
+  //    { address: "台北市"
+  //      phone_number: "0988888999"
+  //      place_name: "公司"
+  //      postal_code: "106"
+  //      recipient_name: "sam"
+  //      sid: 3
+  //    }
+  // ]
+
+  // 只限第一次進入網頁
+  // useEffect(()=>{
+  //   getUserAddress();
+  // },[])
+
+  // 第一次進入網頁會做，modal的狀態只要有更新，也會再做
   useEffect(() => {
-    (async () => {
-      const obj = await (
-        await fetch('http://localhost:3001/user/api/user-address')
-      ).json();
-      console.log(obj);
-      setAddress(obj);
-    })();
-  }, []);
+    getUserAddress();
+  }, [modalShow, editmodalShow]);
   console.log(address);
 
   return (
@@ -48,7 +69,7 @@ function MemberAddress() {
                   <tr>
                     <th scope="col">地點名稱</th>
                     <th scope="col">姓名</th>
-                    <th scope="col">郵遞地址</th>
+                    <th scope="col">郵遞區號</th>
                     <th scope="col">地址</th>
                     <th scope="col">電話號碼</th>
                     <th></th>
@@ -56,21 +77,32 @@ function MemberAddress() {
                 </thead>
                 {/* {address.map(address => ( */}
                 <tbody>
-                  <tr>
-                    <td>{address && address.place_name}</td>
-                    <td>{address.recipient_name}</td>
-                    <td>{address.postal_code}</td>
-                    <td>{address.address}</td>
-                    <td>{address.phone_number}</td>
-                    <td className="editordelete-btn-td">
-                      <button
-                        className="editordelete-btn"
-                        onClick={() => setModalShow(true)}
-                      >
-                        修改或刪除
-                      </button>
-                    </td>
-                  </tr>
+                  {address &&
+                    address.map((element, i) => {
+                      return (
+                        <tr key={element[i]}>
+                          <td>{element.place_name}</td>
+                          <td>{element.recipient_name}</td>
+                          <td>{element.postal_code}</td>
+                          <td>{element.address}</td>
+                          <td>{element.phone_number}</td>
+                          <td className="editordelete-btn-td">
+                            <button
+                              className="editordelete-btn"
+                              onClick={() => {
+                                setEditModalShow(true);
+                                localStorage.setItem(
+                                  'data',
+                                  JSON.stringify(element)
+                                );
+                              }}
+                            >
+                              修改或刪除
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })}
 
                   {/* <tr>
                     <th scope="row">2</th>
@@ -106,7 +138,11 @@ function MemberAddress() {
           </div>
         </div>
       </div>
-      <MemberAddressNew show={modalShow} onHide={() => setModalShow(false)} />
+      <MemberAddressNew show={modalShow} setModalShow={setModalShow} />
+      <MemberEditOrDelete
+        show={editmodalShow}
+        setModalShow={setEditModalShow}
+      />
     </>
   );
 }
