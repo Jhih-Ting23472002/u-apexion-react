@@ -1,5 +1,6 @@
 import React from 'react';
 import './navbar.css';
+import { Link } from 'react-router-dom';
 
 function navbar() {
   return (
@@ -11,36 +12,36 @@ function navbar() {
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
-              <a href="/travel-index">Schedule</a>
+              <Link to="/travel-index">Schedule</Link>
             </li>
             <li>
-              <a href="#/">Booking</a>
+              <Link to="#/">Booking</Link>
             </li>
             <li>
-              <a href="/products">Shop</a>
+              <Link to="/products">Shop</Link>
             </li>
             <li>
-              <a href="/forum-home">Forum</a>
+              <Link to="/forum-home">Forum</Link>
             </li>
             <li>
-              <a href="#/">Login</a>
+              <Link to="#/">Login</Link>
             </li>
             <li></li>
             <li>
-              <a href="#/">Register</a>
+              <Link to="#/">Register</Link>
             </li>
             <li>
-              <a href="/cart-payment">
+              <Link to="/cart-payment">
                 <img
                   className="nav_nav-bar-img"
                   src={require('./tools/Bag.png')}
                   alt=""
                 />
-              </a>
+              </Link>
             </li>
           </ul>
 
-          <a href="#/" className="nav_menu">
+          <Link to="#/" className="nav_menu">
             <svg
               className="three-line"
               width="30"
@@ -68,43 +69,43 @@ function navbar() {
                 />
               </defs>
             </svg>
-          </a>
+          </Link>
           <div className="phone-menu">
             <ul>
               <li>
-                <a href="#/" data-text="&nbsp;Schedule">
+                <Link to="#/" data-text="&nbsp;Schedule">
                   &nbsp;Schedule
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Booking">
+                <Link to="#/" data-text="&nbsp;Booking">
                   &nbsp;Booking
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Customize">
+                <Link to="#/" data-text="&nbsp;Customize">
                   &nbsp;Customize
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Member">
+                <Link to="#/" data-text="&nbsp;Member">
                   &nbsp;Member
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Forum">
+                <Link to="#/" data-text="&nbsp;Forum">
                   &nbsp;Forum
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Product">
+                <Link to="/products" data-text="&nbsp;Product">
                   &nbsp;Product
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cart-payment" data-text="&nbsp;Cart">
+                <Link to="/cart-payment" data-text="&nbsp;Cart">
                   &nbsp;Cart
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

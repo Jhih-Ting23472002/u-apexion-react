@@ -71,8 +71,8 @@ import ForumPersonalPage from './pages/Forum/ForumPersonalPage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexFirst from './pages/Index/IndexFirst';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -101,7 +101,7 @@ function App() {
   // 以上是cart的部分
 
   //周邊商品區
-  const [ProductDetailList, setProductDetailList] = useState([]);
+  const [productDetailList, setProductDetailList] = useState([]);
 
   return (
     // <Router>
@@ -243,12 +243,12 @@ function App() {
         <>
           <Navbar />
           <Switch>
-            <Route exact path="/">
+            {/* <Route exact path="/">
               <IndexFirst />
             </Route>
             <Route exact path="/u-apexion">
               <IndexMain />
-            </Route>
+            </Route> */}
             {/* <Route path="/index-video"></Route>
             <Route path="/index"></Route> */}
             <Route exact path="/forum-home">
@@ -368,9 +368,6 @@ function App() {
             <Route path="/trans-mainpage"></Route>
             <Route path="/trans-order"></Route>
 
-            <Route path="/products" exact>
-              <Products />
-            </Route>
             <ScrollToTop>
               <Route path="/products-list/product-detail/:sid">
                 <ProductsDetail setProductDetailList={setProductDetailList} />
@@ -378,11 +375,15 @@ function App() {
               <Route path="/products-list" exact>
                 <ProductsList />
               </Route>
+              <Route path="/products" exact>
+                <Products />
+              </Route>
 
               <Route exact path="/cart-payment">
                 <CartChoosePayment
                   tripSelected={tripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
+                  productDetailList={productDetailList}
                   setUserOption={setUserOption}
                   userOption={userOption}
                 />

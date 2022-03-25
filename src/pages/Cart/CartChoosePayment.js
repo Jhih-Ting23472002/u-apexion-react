@@ -14,7 +14,6 @@ const CartChoosePayment = (props) => {
   //   b: '',
   //   c: ''
   // })
-
   function doSetUserOption(type='delivery-area', value){
 
     // props.setCartDeliveryArea(userOption)
