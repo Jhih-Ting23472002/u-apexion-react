@@ -393,6 +393,9 @@ function App() {
 
               <Route exact path="/cart-payment">
                 <CartChoosePayment
+                  cartTotalPrice={cartTotalPrice} //購物車總金額
+                  setCartTotalPrice={setCartTotalPrice} //購物車總金額
+                  //---------------------------------
                   tripSelected={tripSelected} //from 采諭
                   setTripSelected={setTripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭

@@ -34,7 +34,7 @@ const CartChoosePayment = props => {
           </div>
           <ProcessLine />
           <div className="cart d-flex justify-content-center py-5 total-price-text">
-            您的購物袋裡有以下商品，目前總金額是 NT$xxxxxx。
+            您的購物袋裡有以下商品，目前總金額是 ${props.cartTotalPrice}。
           </div>
 
           <ProductCard
