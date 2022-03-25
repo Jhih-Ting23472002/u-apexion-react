@@ -384,9 +384,11 @@ function App() {
               <Route exact path="/cart-payment">
                 <CartChoosePayment
                   tripSelected={tripSelected} //from 采諭
+                  setTripSelected={setTripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
+                  setTripPrice={setTripPrice} //from 采諭
                   //---------------------------------
-                  productDetailList={productDetailList}  //from 智婷
+                  productDetailList={productDetailList} //from 智婷
                   //---------------------------------
                   setUserOption={setUserOption}
                   userOption={userOption}
