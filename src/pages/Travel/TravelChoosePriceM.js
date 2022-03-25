@@ -86,8 +86,7 @@ function TravelChoosePM() {
                         <div className="col-sm-6 col-md-4 image">
                           <img
                             src={
-                              './travelimg/travelproductimg/oz.jpg' +
-                              c.travel_image
+                              './travelimg/travelproductimg/' + c.travel_image
                             }
                             loading="lazy"
                             className="img-fluid rounded"
