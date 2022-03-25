@@ -2,6 +2,10 @@ import React from 'react';
 import cartTicket from '../../img/cartTicket.png';
 
 const TripCard = props => {
+  const { tripSelected, setTripSelected, tripPrice, setTripPrice } = props;
+
+  console.log(tripPrice);
+
   return (
     <>
       <div className="cart separated-line"></div>
@@ -13,7 +17,7 @@ const TripCard = props => {
           <div className="content-detail-inside">
             <div className="content-detail-inside-top-ticket">
               <div className="cart-ticket-destination">
-                <h5 className="cart-trip-name">行程:{props.tripSelected}</h5>
+                <h5 className="cart-trip-name">行程:{tripSelected}</h5>
                 <h5 className="cart-trip-food">太空餐點</h5>
               </div>
               <div className="cart-ticket-during">
@@ -24,7 +28,7 @@ const TripCard = props => {
             <div className="content-detail-inside-bottom-ticket">
               <h5 className="cart-number-people">人數 5</h5>
               <button className="btn cart-remove-btn">remove</button>
-              <div className="cart-order-money">{props.tripPrice}</div>
+              <div className="cart-order-money">{tripPrice}</div>
             </div>
           </div>
         </div>

@@ -40,6 +40,8 @@ const CartChoosePayment = props => {
           <ProductCard
             productDetailList={props.productDetailList} // 刪除資料 state, setState 都要給
             setProductDetailList={props.setProductDetailList} // 刪除資料 state, setState 都要給
+            cartTotalPrice={props.cartTotalPrice}
+            setCartTotalPrice={props.setCartTotalPrice}
           />
 
           <TripCard

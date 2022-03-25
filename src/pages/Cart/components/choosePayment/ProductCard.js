@@ -4,10 +4,13 @@ import { useCart } from '../../utils/useCart';
 import ProductsConfig from '../../../Products/ProductsConfig';
 
 const ProductCard = props => {
-  const { productDetailList, setProductDetailList } = props; // 把props裡面的 state, setState 解構
+  const {
+    productDetailList,
+    setProductDetailList,
+    cartTotalPrice,
+    setCartTotalPrice,
+  } = props; // 把props裡面的 state, setState 解構
   console.log(productDetailList);
-
-  //const [list, updateList] = useState(productDetailList);
 
   function handleRemoveItem(event) {
     // remove 的 func
@@ -18,16 +21,12 @@ const ProductCard = props => {
     setProductDetailList(productDetailList.filter(v => v.id !== id));
     // filter(v => v.id !== id)) 這句話的意思是，只有return true 不相等的id會被保留，return false 相等的id會被刪除
     // filter(v => v.id === id)) 這句話的意思是，只有return true 相等的id會被保留 ，return false 不相等的id會被刪除
-
-
-    // productDetailList(function (v) {
-    //   return v.filter(item => item.id !== productDetailList.id);
-    // });
   }
 
-  // const handleRemoveItem = e => {
-  //   updateList(list.filter(item => item.name !== name));
-  // };
+  let totalProductPrice = 0;
+  productDetailList.map(v => (totalProductPrice += v.price * v.total));
+  console.log(totalProductPrice);
+  setCartTotalPrice(totalProductPrice);
 
   return (
     <>
