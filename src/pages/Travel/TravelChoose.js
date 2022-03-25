@@ -86,11 +86,12 @@ function TravelChoose() {
                   </button>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <select className="form-control w-100 choosesearch">
-                    <option>天數排序</option>
-                    <option>天數由少至多</option>
-                    <option>天數由多至少</option>
-                  </select>
+                <button className="itemBuyButton">
+                    <a href="/travelchoose-dayf">天數由少至多</a>
+                  </button>
+                  <button className="itemBuyButton">
+                    <a href="/travelchoose-daym">天數由多至少</a>
+                  </button>
                 </div>
                 <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">
                   <div className="webdesigntuts-workshopchoose">
