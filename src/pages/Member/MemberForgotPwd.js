@@ -13,7 +13,7 @@ const MemberForgotPwd = () => {
             </div>
             <form className="forgotpwd-form">
               <div className="member-input-container ">
-                <label for="" className="member-label">
+                <label htmlFor="" className="member-label">
                   電子郵件
                 </label>
                 <input
@@ -23,7 +23,7 @@ const MemberForgotPwd = () => {
                 />
               </div>
               <div className="member-input-container ">
-                <label for="" className="member-label">
+                <label htmlFor="" className="member-label">
                   手機號碼
                 </label>
                 <input type="text" placeholder="" className="member-input" />

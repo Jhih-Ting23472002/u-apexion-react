@@ -19,19 +19,19 @@ function MemberPwdEdit() {
             <div className="change-pwd-form-container">
               <form className="change-pwd-form">
                 <div className="member-input-container ">
-                  <label for="" className="member-label">
+                  <label htmlFor="" className="member-label">
                     現在的密碼
                   </label>
                   <input type="text" placeholder="" className="member-input" />
                 </div>
                 <div className="member-input-container ">
-                  <label for="" className="member-label">
+                  <label htmlFor="" className="member-label">
                     新的密碼
                   </label>
                   <input type="text" placeholder="" className="member-input" />
                 </div>
                 <div className="member-input-container ">
-                  <label for="" className="member-label">
+                  <label htmlFor="" className="member-label">
                     確認密碼
                   </label>
                   <input type="text" placeholder="" className="member-input" />

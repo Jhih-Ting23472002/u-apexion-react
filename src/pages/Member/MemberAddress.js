@@ -2,18 +2,32 @@ import React, { useEffect, useState } from 'react';
 import './MemberAddress.css';
 import MemberAddressNew from './MemberAddressNew';
 import MemberNavbar from '../../components/MemberNav';
+import { findMem } from '../../data/UserWebApi';
 
 function MemberAddress() {
   const [modalShow, setModalShow] = useState(false);
+  // const [address, setAddress] = useState([]);
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/user/api/user-address')
+  //     .then(res => res.json())
+  //     .then(obj => {
+  //       setAddress(obj);
+  //     });
+  // }, []);
+
   const [address, setAddress] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/user/user-address-api')
-      .then(r => r.json())
-      .then(obj => {
-        setAddress(obj);
-      });
+    (async () => {
+      const obj = await (
+        await fetch('http://localhost:3001/user/api/user-address')
+      ).json();
+      console.log(obj);
+      setAddress(obj);
+    })();
   }, []);
+  console.log(address);
 
   return (
     <>
@@ -34,6 +48,7 @@ function MemberAddress() {
                   <tr>
                     <th scope="col">地點名稱</th>
                     <th scope="col">姓名</th>
+                    <th scope="col">郵遞地址</th>
                     <th scope="col">地址</th>
                     <th scope="col">電話號碼</th>
                     <th></th>
@@ -42,11 +57,12 @@ function MemberAddress() {
                 {/* {address.map(address => ( */}
                 <tbody>
                   <tr>
-                    <th scope="row">{address && address.place_name}</th>
+                    <td>{address && address.place_name}</td>
                     <td>{address.recipient_name}</td>
-                    <td>106台北市大安區復興南路一段390號2樓</td>
-                    <td>02-6631-6588</td>
-                    <td>
+                    <td>{address.postal_code}</td>
+                    <td>{address.address}</td>
+                    <td>{address.phone_number}</td>
+                    <td className="editordelete-btn-td">
                       <button
                         className="editordelete-btn"
                         onClick={() => setModalShow(true)}
@@ -55,6 +71,7 @@ function MemberAddress() {
                       </button>
                     </td>
                   </tr>
+
                   {/* <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>

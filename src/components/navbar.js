@@ -24,7 +24,7 @@ function navbar() {
               <Link to="/forum-home">Forum</Link>
             </li>
             <li>
-              <Link to="#/">Login</Link>
+              <Link to="/member-login">Login</Link>
             </li>
             <li></li>
             <li>
