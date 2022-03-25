@@ -3,7 +3,7 @@ import './TravelChoose.css';
 import { useEffect, useState } from 'react';
 
 function TravelChoosePF() {
-  const [TravelChooseF, setTravelChooseF] = useState([]);
+  const [TravelChooseM, setTravelChooseF] = useState([]);
 
   useEffect(() => {
     (async function () {
@@ -54,7 +54,7 @@ function TravelChoosePF() {
               </div>
             </div>
             <div className="list">
-              {TravelChooseF.map((c, i) => {
+              {TravelChooseM.map((c, i) => {
                 return (
                   <React.Fragment key={i}>
                     <div className="item pl-4">

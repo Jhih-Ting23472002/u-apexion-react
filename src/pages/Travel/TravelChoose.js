@@ -86,7 +86,7 @@ function TravelChoose() {
                   </button>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                <button className="itemBuyButton">
+                  <button className="itemBuyButton">
                     <a href="/travelchoose-dayf">天數由少至多</a>
                   </button>
                   <button className="itemBuyButton">
