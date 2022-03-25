@@ -406,7 +406,7 @@ function App() {
                 <ProductsList />
               </Route>
               <Route path="/products" exact>
-                <Products />
+                <Products setProductDetailList={setProductDetailList}/>
               </Route>
 
               <Route exact path="/cart-payment">

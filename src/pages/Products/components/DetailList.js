@@ -8,7 +8,7 @@ function DetailList(props) {
   const price = props.product.price;
   const img = props.product.product_img;
   const name = props.product.product_name;
-  const id = props.product.sid;
+  const pid = props.product.sid;
   const { sid } = useParams();
  
 
@@ -20,7 +20,7 @@ function DetailList(props) {
   function addCart() {
     setProductDetailList(function (prevData) {
       
-      return [{ price, img, name, id, total }, ...prevData];
+      return [{ price, img, name, pid, total }, ...prevData];
       
     });
   }

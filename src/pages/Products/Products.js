@@ -6,7 +6,9 @@ import ProductsConfig from './ProductsConfig';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Products() {
+function Products(props) {
+  const { setProductDetailList } = props;
+
   const [ProductsNew, setProductsNew] = useState([]);
   const [ProductRecommend, setProductRecommend] = useState([]);
   const [ProductNavbar, setProductNavbar] = useState('#men');
@@ -26,7 +28,7 @@ function Products() {
       const responseMen = await fetch(ProductsConfig.MEN_Products);
       const ProductMen = await responseMen.json();
       setProductRecommend(ProductMen);
-      console.log(setProductRecommend);
+      // console.log(setProductRecommend);
     })();
   }, []);
 
@@ -246,6 +248,7 @@ function Products() {
                 material={material}
                 product_img={product_img}
                 price={price}
+                setProductDetailList={setProductDetailList}
               />
             );
           })}

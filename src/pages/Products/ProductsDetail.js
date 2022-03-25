@@ -77,10 +77,10 @@ function ProductsDetail(props) {
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
-            <a href="http://localhost:3000/products-list#men">男士精品</a>
-            <a href="http://localhost:3000/products-list">女士精品</a>
-            <a href="http://localhost:3000/products-list">鞋款</a>
-            <a href="#/">配件與腕錶</a>
+            <Link to="/products-list#men">男士精品</Link>
+            <Link to="/products-list">女士精品</Link>
+            <Link to="/products-list">鞋款</Link>
+            <Link to="#/">配件與腕錶</Link>
           </div>
           <div className="div-wrap">
             <div className="wrap">
@@ -100,12 +100,12 @@ function ProductsDetail(props) {
         <DetailList
           product={product}
           setProductDetailList={setProductDetailList}
-          sid={sid}
+          
         />
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>
-          <DetailRecommend sid={sid} product={product} ProductDetail={ProductDetail} />
+          <DetailRecommend product={product} ProductDetail={ProductDetail} />
         </div>
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">
