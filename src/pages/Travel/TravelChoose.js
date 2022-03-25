@@ -17,11 +17,11 @@ function TravelChoose() {
   };
 
   useEffect(() => {
-    const usp = new URLSearchParams(location);
+    const usp = new URLSearchParams(location.search);
     const page = parseInt(usp.get('page'));
     console.log({ page });
     getData(page || 1);
-  }, [location]);
+  }, [location.search]);
 
   const renderMe = data => {
     if (data.rows && data.rows.length) {
