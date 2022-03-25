@@ -73,20 +73,17 @@ function TravelChoose() {
             <div className="text-white px-3 pt-3 my-4">
               <div className="row align-items-center filters">
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <select className="form-control w-100 choosesearch">
-                    <option value="all">全部行程</option>
-                    <option value="planet_moviescene">
-                      星球之旅(電影場景)
-                    </option>
-                    <option value="starsign">星座之旅</option>
-                  </select>
+                  <button className="itemBuyButton">
+                    <a href="/travel-choose">全部行程</a>
+                  </button>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <select className="form-control w-100 choosesearch">
-                    <option>價格排序</option>
-                    <option>價格由少至多</option>
-                    <option>價格由多至少</option>
-                  </select>
+                  <button className="itemBuyButton">
+                    <a href="/travelchoose-pricef">價格由少至多</a>
+                  </button>
+                  <button className="itemBuyButton">
+                    <a href="/travelchoose-pricem">價格由多至少</a>
+                  </button>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
                   <select className="form-control w-100 choosesearch">

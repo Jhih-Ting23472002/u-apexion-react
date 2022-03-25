@@ -8,7 +8,7 @@ function TravelChoosePF() {
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-choose-mf/api/travel-choosef'
+        'http://localhost:3001/travel-choose-pmf/api/travel-choosef'
       );
       const TravelChooseF = await response.json();
       setTravelChooseF(TravelChooseF);

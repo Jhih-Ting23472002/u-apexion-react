@@ -2,17 +2,17 @@ import React from 'react';
 import './TravelChoose.css';
 import { useEffect, useState } from 'react';
 
-function TravelChoosePM() {
-  const [TravelChooseM, setTravelChooseM] = useState([]);
+function TravelChoosePF() {
+  const [TravelChooseF, setTravelChooseF] = useState([]);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-choose-pmf/api/travel-choosem'
+        'http://localhost:3001/travel-choose-dmf/api/travel-choosef'
       );
-      const TravelChooseM = await response.json();
-      setTravelChooseM(TravelChooseM);
-      console.log(TravelChooseM);
+      const TravelChooseF = await response.json();
+      setTravelChooseF(TravelChooseF);
+      console.log(TravelChooseF);
     })();
   }, []);
 
@@ -54,7 +54,7 @@ function TravelChoosePM() {
               </div>
             </div>
             <div className="list">
-              {TravelChooseM.map((c, i) => {
+              {TravelChooseF.map((c, i) => {
                 return (
                   <React.Fragment key={i}>
                     <div className="item pl-4">
@@ -110,4 +110,4 @@ function TravelChoosePM() {
   );
 }
 
-export default TravelChoosePM;
+export default TravelChoosePF;

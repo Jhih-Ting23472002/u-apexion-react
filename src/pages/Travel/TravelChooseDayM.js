@@ -8,7 +8,7 @@ function TravelChoosePM() {
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-choose-pmf/api/travel-choosem'
+        'http://localhost:3001/travel-choose-dmf/api/travel-choosem'
       );
       const TravelChooseM = await response.json();
       setTravelChooseM(TravelChooseM);
