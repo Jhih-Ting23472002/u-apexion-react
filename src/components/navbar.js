@@ -23,7 +23,7 @@ function navbar() {
               <a href="/forum-home">Forum</a>
             </li>
             <li>
-              <a href="#/">Login</a>
+              <a href="/member-login">Login</a>
             </li>
             <li></li>
             <li>

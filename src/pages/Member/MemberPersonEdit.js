@@ -53,7 +53,9 @@ const MemberPersonEdit = () => {
             <div className="person-form-container">
               <form className="person-form" onSubmit={handleRevise}>
                 <div className="member-input-container ">
-                  <label className="member-label">姓名</label>
+                  <label htmlFor="name" className="member-label">
+                    姓名
+                  </label>
                   <input
                     type="text"
                     placeholder=""
@@ -64,7 +66,9 @@ const MemberPersonEdit = () => {
                   />
                 </div>
                 <div className="member-input-container ">
-                  <label className="member-label">手機</label>
+                  <label htmlFor="mobile" className="member-label">
+                    手機
+                  </label>
 
                   <input
                     type="text"
@@ -76,7 +80,9 @@ const MemberPersonEdit = () => {
                   />
                 </div>
                 <div className="member-input-container">
-                  <label className="member-label">性別</label>
+                  <label htmlFor="gender" className="member-label">
+                    性別
+                  </label>
                   <select
                     className="member-select"
                     value={memInfo?.gender ?? ''}
@@ -121,7 +127,9 @@ const MemberPersonEdit = () => {
                 </div> */}
 
                 <div className="member-input-container">
-                  <label className="member-label">生日</label>
+                  <label htmlFor="birthday" className="member-label">
+                    生日
+                  </label>
                   <input
                     type="date"
                     placeholder=""
@@ -133,7 +141,9 @@ const MemberPersonEdit = () => {
                 </div>
 
                 <div className="member-input-container">
-                  <label className="member-label">國籍</label>
+                  <label htmlFor="country" className="member-label">
+                    國籍
+                  </label>
                   <select
                     className="member-select"
                     value={memInfo?.country ?? ''}

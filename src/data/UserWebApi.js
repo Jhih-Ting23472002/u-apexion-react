@@ -54,3 +54,16 @@ export const reviseMem = (memInfo, sid) => {
     }),
   }).then(res => res.json());
 };
+
+//傳回後端新增地址
+export const createAddress = addressNewData => {
+  return fetch(`${BASE_URL}/user/api/user-address-new`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      addressNewData,
+    }),
+  }).then(res => res.json());
+};
