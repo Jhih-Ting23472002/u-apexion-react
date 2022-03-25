@@ -37,7 +37,10 @@ const CartChoosePayment = props => {
             您的購物袋裡有以下商品，目前總金額是 NT$xxxxxx。
           </div>
 
-          <ProductCard productDetailList={props.productDetailList} />
+          <ProductCard
+            productDetailList={props.productDetailList} // 刪除資料 state, setState 都要給
+            setProductDetailList={props.setProductDetailList} // 刪除資料 state, setState 都要給
+          />
 
           <TripCard
             tripSelected={props.tripSelected}

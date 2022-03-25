@@ -388,7 +388,8 @@ function App() {
                   tripPrice={tripPrice} //from 采諭
                   setTripPrice={setTripPrice} //from 采諭
                   //---------------------------------
-                  productDetailList={productDetailList} //from 智婷
+                  productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
+                  setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
                   //---------------------------------
                   setUserOption={setUserOption}
                   userOption={userOption}
