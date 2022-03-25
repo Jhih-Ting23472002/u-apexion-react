@@ -45,7 +45,7 @@ import CardComplete from './pages/Cart/CardComplete';
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketDateOld from './pages/Ticket/TicketDateOld';
-import TicketTest from './pages/Ticket/TicketTest';
+//import TicketTest from './pages/Ticket/TicketTest';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
@@ -58,9 +58,9 @@ import TravelNotes from './pages/Travel/TravelNotes';
 import TravelNotes2 from './pages/Travel/TravelNotes2';
 import TravelNotes3 from './pages/Travel/TravelNotes3';
 import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
-import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
+//import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
 import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
-import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+//import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -339,15 +339,15 @@ function App() {
             <Route path="/travelchoose-pricem">
               <TravelChoosePriceM />
             </Route>
-            <Route path="/travelchoose-pricef">
+            {/* <Route path="/travelchoose-pricef">
               <TravelChoosePriceF />
-            </Route>
+            </Route> */}
             <Route path="/travelchoose-daym">
               <TravelChooseDayM />
             </Route>
-            <Route path="/travelchoose-dayf">
+            {/* <Route path="/travelchoose-dayf">
               <TravelChooseDayF />
-            </Route>
+            </Route> */}
             {/* 訂票頁面 */}
             <Route path="/ticket-order">
               <Ticket />

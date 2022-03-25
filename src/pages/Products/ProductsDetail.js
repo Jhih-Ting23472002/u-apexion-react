@@ -100,11 +100,12 @@ function ProductsDetail(props) {
         <DetailList
           product={product}
           setProductDetailList={setProductDetailList}
+          sid={sid}
         />
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>
-          <DetailRecommend product={product} ProductDetail={ProductDetail} />
+          <DetailRecommend sid={sid} product={product} ProductDetail={ProductDetail} />
         </div>
         {/* 最近瀏覽卡片開始 */}
         <div className="pr-detail-cards1">

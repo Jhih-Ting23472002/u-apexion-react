@@ -24,8 +24,8 @@ function BrowsingHistory(props) {
 
   return (
     <>
-    {Storage.map((v, i)=> (
-      <div key={i.sid} className="col-md-4">
+    {Storage.map((v,)=> (
+      <div key={v.sid} className="col-md-4">
         <div className="card pr-card mb-5">
           <img
             className="card-img-top"

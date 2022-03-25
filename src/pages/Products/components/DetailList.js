@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function DetailList(props) {
   const [total, setTotal] = useState(1);
@@ -9,22 +9,26 @@ function DetailList(props) {
   const img = props.product.product_img;
   const name = props.product.product_name;
   const id = props.product.sid;
+  const { sid } = useParams();
+ 
 
   const { setProductDetailList } = props;
-
   function onTotal(e) {
     setTotal(e.target.value);
   }
-  //props.setDetailList([1,2,3])
-  // setProductDetailList(function (prevData) {
-  //   return [{price}, ...prevData]
-  // })
 
   function addCart() {
     setProductDetailList(function (prevData) {
-      return [{ price, img, name,id, total }, ...prevData];
+      
+      return [{ price, img, name, id, total }, ...prevData];
+      
     });
   }
+ useEffect(() => {
+  setTotal(1)
+ },[sid])
+
+
   return (
     <>
       <div className="pr-detail-list">
