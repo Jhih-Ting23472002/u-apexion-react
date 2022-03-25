@@ -5,13 +5,26 @@ import { Link } from 'react-router-dom';
 
 function DetailList(props) {
   const [total, setTotal] = useState(1);
+  const price = props.product.price;
+  const img = props.product.product_img;
+  const name = props.product.product_name;
+  const id = props.product.sid;
+
+  const { setProductDetailList } = props;
 
   function onTotal(e) {
     setTotal(e.target.value);
   }
+  //props.setDetailList([1,2,3])
+  // setProductDetailList(function (prevData) {
+  //   return [{price}, ...prevData]
+  // })
 
-  function addCart() {}
-
+  function addCart() {
+    setProductDetailList(function (prevData) {
+      return [{ price, img, name,id, total }, ...prevData];
+    });
+  }
   return (
     <>
       <div className="pr-detail-list">
@@ -45,7 +58,7 @@ function DetailList(props) {
                   <option value="Large">Large</option>
                 </select>
               </div>
-              <p className="pr-price">售價:{props.product?.price ?? '7584'}</p>
+              <p className="pr-price">售價:{props.product?.price ?? '0'}</p>
             </div>
             <div className="pr-detail-quantity">
               <span>
@@ -110,7 +123,7 @@ function DetailList(props) {
               </span>
             </div>
           </div>
-          <button className="pr-detail-button" onClick={addCart}>
+          <button className="pr-detail-button" onClick={() => addCart()}>
             加入購物車
           </button>
           <span className="pr-detail-list-detail">

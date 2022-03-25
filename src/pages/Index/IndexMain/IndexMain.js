@@ -27,12 +27,15 @@ const IndexMain = () => {
     setImageToggle(true);
     setAnimation(true);
     setAnimation(!animation);
-    if (image_toggle === true) {
+    //if (image_toggle === true) {
+    setTimeout(() => {
       setImageToggle(false);
       setAnimation(false);
       console.log(image_toggle);
-      console.log(e);
-    }
+    }, 600);
+
+    //console.log(e);
+    // }
     console.log(index);
     console.log(e.target.dataset.value);
   };
@@ -384,18 +387,6 @@ const IndexMain = () => {
                       class="sm-img"
                       alt=""
                       src={`./index_img/${v.image}`}
-                      // onClick={v => {
-                      //   setIndex(i);
-                      //   setImageToggle(true);
-                      //   setAnimation(true);
-                      //   setAnimation(!animation);
-                      //   if (image_toggle === true) {
-                      //     setImageToggle(false);
-                      //     setAnimation(false);
-                      //     console.log(image_toggle);
-                      //     console.log(v);
-                      //   }
-                      // }}
                       onClick={imagehandler}
                     />
                     <p>{v.name}</p>

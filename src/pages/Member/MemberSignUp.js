@@ -1,7 +1,7 @@
 import React from 'react';
 import './MemberSignUp.css';
 // import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { registerMem } from '../../data/UserWebApi';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -60,7 +60,9 @@ const MemberSignUp = () => {
             </div>
             <form className="signup-form" onSubmit={handleRegister}>
               <div className="member-input-container ">
-                <label className="member-label">姓名</label>
+                <label htmlFor="name" className="member-label">
+                  姓名
+                </label>
                 <input
                   type="text"
                   placeholder=""
@@ -73,7 +75,9 @@ const MemberSignUp = () => {
               </div>
 
               <div className="member-input-container completed">
-                <label className="member-label">電子郵件</label>
+                <label htmlFor="account" className="member-label">
+                  電子郵件
+                </label>
                 <input
                   type="email"
                   placeholder="youremail@email.com"
@@ -86,7 +90,9 @@ const MemberSignUp = () => {
               </div>
 
               <div className="member-input-container">
-                <label className="member-label">密碼</label>
+                <label htmlFor="password" className="member-label">
+                  密碼
+                </label>
                 <input
                   type="password"
                   id="txtNewPassword"
@@ -111,7 +117,9 @@ const MemberSignUp = () => {
                 />
               </div> */}
               <div className="member-input-container ">
-                <label className="member-label">手機</label>
+                <label htmlFor="mobile" className="member-label">
+                  手機
+                </label>
 
                 <input
                   type="text"
@@ -123,7 +131,9 @@ const MemberSignUp = () => {
                 />
               </div>
               <div className="member-input-container">
-                <label className="member-label">性別</label>
+                <label htmlFor="gender" className="member-label">
+                  性別
+                </label>
                 <select
                   className="member-select"
                   name="gender"
@@ -174,7 +184,9 @@ const MemberSignUp = () => {
                 </div>
               </div> */}
               <div className="member-input-container">
-                <label className="member-label">生日</label>
+                <label htmlFor="birthday" className="member-label">
+                  生日
+                </label>
                 <input
                   type="date"
                   placeholder=""
@@ -186,7 +198,9 @@ const MemberSignUp = () => {
               </div>
 
               <div className="member-input-container">
-                <label className="member-label">國籍</label>
+                <label htmlFor="country" className="member-label">
+                  國籍
+                </label>
                 <select
                   className="member-select"
                   name="country"

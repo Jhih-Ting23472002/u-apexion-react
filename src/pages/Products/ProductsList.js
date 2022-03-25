@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import './ProductsList.scss';
 import ListCards from './components/ListCards';
 import ProductsConfig from './ProductsConfig';
 import { useState, useEffect } from 'react';
 
 function ProductsList() {
+ 
   // 1. 從伺服器來的原始資料
   const [ProductList, setProductList] = useState([]);
   // 2. 用於網頁上經過各種處理(排序、搜尋、過濾)後的資料
   const [displayProducts, setDisplayProducts] = useState([]);
+
   const [AllList, setAllList] = useState('');
   const [ProductNavbar, setProductNavbar] = useState('#men');
   const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');

@@ -67,6 +67,7 @@ import ForumPostCategoryPage from './pages/Forum/ForumPostCategoryPage';
 import ForumPublishUpdatePage from './pages/Forum/ForumPublishUpdatePage';
 import ForumMemArticlePage from './pages/Forum/ForumMemArticlePage';
 import ForumHotPage from './pages/Forum/ForumHotPage';
+import ForumPersonalPage from './pages/Forum/ForumPersonalPage';
 
 import { CartProvider } from './pages/Cart/utils/useCart';
 
@@ -100,12 +101,148 @@ function App() {
     addressDist: '',
     address: '',
   });
+
   // 以上是cart的部分
 
   //周邊商品區
-  const [ProductDetailList, setProductDetailList] = useState([]);
+  const [productDetailList, setProductDetailList] = useState([]);
+  console.log(productDetailList); // 測試，by雍
 
   return (
+    // <Router>
+    //   <>
+    //     <Navbar />
+    //     <Switch>
+    //       <Route exact path="/">
+    //         <IndexFirst />
+    //       </Route>
+    //       <Route exact path="/u-apexion">
+    //         <IndexMain />
+    //       </Route>
+    //       {/* <Route path="/index-video"></Route>
+    //       <Route path="/index"></Route> */}
+    //       <Route exact path="/forum-home">
+    //         <ForumHomePage />
+    //       </Route>
+    //       <Route path="/forum-home/posts/:sid">
+    //         <ForumSinglePostPage />
+    //       </Route>
+    //       <Route path="/publish">
+    //         <ForumPublishPage />
+    //       </Route>
+    //       <Route path="/publish-edit/:sid">
+    //         <ForumPublishUpdatePage />
+    //       </Route>
+    //       <Route path="/forum-apexion-articles">
+    //         <ForumUArticlePage />
+    //       </Route>
+    //       <Route path="/posts-category/:art_category_sid">
+    //         <ForumPostCategoryPage />
+    //       </Route>
+    //       <Route path="/forum-member-posts">
+    //         <ForumMemArticlePage />
+    //       </Route>
+    //       <Route path="/forum-hot-posts">
+    //         <ForumHotPage />
+    //       </Route>
+    //       <Route path="/forum-personal">
+    //         <ForumPersonalPage />
+    //       </Route>
+    //       <Route path="/member-login">
+    //         <MemberLogin />
+    //       </Route>
+    //       <Route path="/member-sign-up">
+    //         <MemberSignUp />
+    //       </Route>
+    //       <Route path="/member-forgot-pwd">
+    //         <MemberForgotPwd />
+    //       </Route>
+    //       <Route path="/member-person">
+    //         <MemberPerson />
+    //       </Route>
+    //       <Route path="/member-password-edit">
+    //         <MemberPwdEdit />
+    //       </Route>
+    //       <Route path="/member-address">
+    //         <MemberAddress />
+    //       </Route>
+    //       <Route path="/member-address-new">
+    //         <MemberAddressNew />
+    //       </Route>
+    //       <Route path="/member-order-history">
+    //         <MemberOrderHistory />
+    //       </Route>
+    //       <Route path="/member-order-detail">
+    //         <MemberOrderDetails />
+    //       </Route>
+    //       <Route path="/member-collect">
+    //         <MemberCollect />
+    //       </Route>
+    //       <Route path="/travel-index">
+    //         <TravelIndex />
+    //       </Route>
+    //       <Route path="/travel-choose">
+    //         <TravelChoose />
+    //       </Route>
+    //       <Route path="/travel-notes">
+    //         <TravelNotes />
+    //       </Route>
+    //       <Route path="/ticket-order">
+    //         <Ticket />
+    //       </Route>
+    //       <Route path="/ticket-test">
+    //         <TicketTest />
+    //       </Route>
+    //       <Route path="/ticket-trip-choose">
+    //         <TicketTrip
+    //           setTripSelected={setTripSelected}
+    //           setTripDays={setTripDays}
+    //           setTripPrice={setTripPrice}
+    //         />
+    //       </Route>
+    //       <Route path="/ticket-date-choose">
+    //         <TicketDate tripSelected={tripSelected} tripDays={tripDays} />
+    //       </Route>
+    //       <Route path="/ticket-date-choose-old">
+    //         <TicketDateOld />
+    //       </Route>
+    //       <Route path="/ticket-seat-choose">
+    //         <TicketSeat />
+    //       </Route>
+    //       <Route path="/ticket-meal-choose">
+    //         <TicketMeal />
+    //       </Route>
+    //       <Route path="/ticket-confirm"></Route>
+    //       <Route path="/customize-mainpage">
+    //         <CustomizeMainPage />
+    //       </Route>
+    //       <Route path="/customize-suit">
+    //         <CustomizeSuit />
+    //       </Route>
+    //       <Route path="/customize-craft">
+    //         <CustomizeCraft />
+    //       </Route>
+    //       <Route path="/customize-seat">
+    //         <CustomizeSeat />
+    //       </Route>
+    //       <Route path="/customize-order"></Route>
+    //       <Route path="/trans-mainpage"></Route>
+    //       <Route path="/trans-order"></Route>
+    //       <Route path="/products-list/product-detail/:sid">
+    //         <ProductsDetail setProductDetailList={setProductDetailList} />
+    //       </Route>
+    //       <Route path="/products-list" exact>
+    //         <ProductsList />
+    //       </Route>
+    //       <Route path="/products" exact>
+    //         <Products />
+    //       </Route>
+    //       <ScrollToTop>
+    //         <Router exact path="/cart-payment">
+    //           <CartChoosePayment
+    //             tripPrice={tripPrice} //from 采諭
+    //             setUserOption={setUserOption}
+    // userOption={userOption}
     <CartProvider>
       <Router>
         <>
@@ -142,6 +279,9 @@ function App() {
             </Route>
             <Route path="/forum-hot-posts">
               <ForumHotPage />
+            </Route>
+            <Route path="/forum-personal">
+              <ForumPersonalPage />
             </Route>
             <Route path="/member-login">
               <MemberLogin />
@@ -239,6 +379,7 @@ function App() {
             <Route path="/customize-order"></Route> */}
             <Route path="/trans-mainpage"></Route>
             <Route path="/trans-order"></Route>
+
             <ScrollToTop>
               <Route path="/products-list/product-detail/:sid">
                 <ProductsDetail setProductDetailList={setProductDetailList} />
@@ -253,7 +394,13 @@ function App() {
               <Route exact path="/cart-payment">
                 <CartChoosePayment
                   tripSelected={tripSelected} //from 采諭
+                  setTripSelected={setTripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
+                  setTripPrice={setTripPrice} //from 采諭
+                  //---------------------------------
+                  productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
+                  setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
+                  //---------------------------------
                   setUserOption={setUserOption}
                   userOption={userOption}
                 />
@@ -276,7 +423,7 @@ function App() {
                 />
               </Route>
               <Route path="/cart-credit-card">
-                <CartCreditCard tripPrice={tripPrice}/>
+                <CartCreditCard tripPrice={tripPrice} />
               </Route>
               <Route path="/cart-complete">
                 <CardComplete />

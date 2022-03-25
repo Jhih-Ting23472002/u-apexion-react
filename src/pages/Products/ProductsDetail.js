@@ -6,7 +6,9 @@ import DetailList from './components/DetailList';
 import { useParams, Link } from 'react-router-dom';
 import ProductsConfig from './ProductsConfig';
 
-function ProductsDetail({ setProductDetailList }) {
+function ProductsDetail(props) {
+  const { setProductDetailList } = props;
+  //console.log(productDetailList)
   const { sid } = useParams();
 
   const [ProductDetail, setProductDetail] = useState([]);
@@ -23,7 +25,7 @@ function ProductsDetail({ setProductDetailList }) {
       const allDetail = await response.json();
       // console.log(allDetail);
       setProductDetail(allDetail);
-
+      //找到網址列的sid
       const newProduct = allDetail.find((v, i) => v.sid === parseInt(sid));
       setProduct(newProduct);
       const data = localStorage.getItem('productStorage')
@@ -95,7 +97,10 @@ function ProductsDetail({ setProductDetailList }) {
           </div>
         </div>
         {/*---------------商品資訊-----------------------------------------------------*/}
-        <DetailList product={product} />
+        <DetailList
+          product={product}
+          setProductDetailList={setProductDetailList}
+        />
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>
