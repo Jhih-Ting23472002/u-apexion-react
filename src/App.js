@@ -49,6 +49,7 @@ import TicketTest from './pages/Ticket/TicketTest';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
+// import SeatDrag from './pages/Ticket/SeatDrag';
 
 // Travel
 import TravelIndex from './pages/Travel/TravelIndex';
@@ -67,8 +68,7 @@ import ForumPublishUpdatePage from './pages/Forum/ForumPublishUpdatePage';
 import ForumMemArticlePage from './pages/Forum/ForumMemArticlePage';
 import ForumHotPage from './pages/Forum/ForumHotPage';
 
-import { CartProvider } from './pages/Cart/utils/useCart'
-
+import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
 // import IndexFirst from './pages/Index/IndexFirst';
@@ -80,7 +80,9 @@ function App() {
   const [tripSelected, setTripSelected] = useState('');
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
-  console.log(tripSelected, tripDays, tripPrice);
+  const [tripDate, setTripDate] = useState('');
+  console.log('出發日期', tripDate);
+  console.log(tripSelected, tripDays, tripPrice, tripDate);
 
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
@@ -192,9 +194,9 @@ function App() {
             <Route path="/ticket-order">
               <Ticket />
             </Route>
-            <Route path="/ticket-test">
+            {/* <Route path="/ticket-test">
               <TicketTest />
-            </Route>
+            </Route> */}
             <Route path="/ticket-trip-choose">
               <TicketTrip
                 setTripSelected={setTripSelected}
@@ -203,18 +205,25 @@ function App() {
               />
             </Route>
             <Route path="/ticket-date-choose">
-              <TicketDate tripSelected={tripSelected} tripDays={tripDays} />
+              <TicketDate
+                tripSelected={tripSelected}
+                tripDays={tripDays}
+                setTripDate={setTripDate}
+              />
             </Route>
             <Route path="/ticket-date-choose-old">
               <TicketDateOld />
             </Route>
             <Route path="/ticket-seat-choose">
-              <TicketSeat />
+              <TicketSeat tripDate={tripDate} />
             </Route>
             <Route path="/ticket-meal-choose">
               <TicketMeal />
             </Route>
             <Route path="/ticket-confirm"></Route>
+            {/* <Route path="/ticket-test">
+              <SeatDrag />
+            </Route> */}
             {/* <Route path="/customize-mainpage">
               <CustomizeMainPage />
             </Route>
@@ -231,21 +240,20 @@ function App() {
             <Route path="/trans-mainpage"></Route>
             <Route path="/trans-order"></Route>
             <ScrollToTop>
-            <Route path="/products-list/product-detail/:sid">
-              <ProductsDetail setProductDetailList={setProductDetailList} />
-            </Route>
-            <Route path="/products-list" exact>
-              <ProductsList />
-            </Route>
-            <Route path="/products" exact>
-              <Products />
-            </Route>
-            
+              <Route path="/products-list/product-detail/:sid">
+                <ProductsDetail setProductDetailList={setProductDetailList} />
+              </Route>
+              <Route path="/products-list" exact>
+                <ProductsList />
+              </Route>
+              <Route path="/products" exact>
+                <Products />
+              </Route>
+
               <Route exact path="/cart-payment">
                 <CartChoosePayment
                   tripSelected={tripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
-
                   setUserOption={setUserOption}
                   userOption={userOption}
                 />
@@ -262,8 +270,6 @@ function App() {
                 <CartFinalCheck
                   tripSelected={tripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
-
-                  
                   userOption={userOption}
                   setCartUserInfo={setCartUserInfo}
                   cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
