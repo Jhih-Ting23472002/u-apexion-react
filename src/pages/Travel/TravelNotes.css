@@ -30,6 +30,46 @@
   background-image: url('/public/travelimg/traveldaysimg/day8-1.jpg');
 }
 
+.notesbackbutton {
+  position: absolute;
+  left: 0px;
+  width: 120px;
+  height: 30px;
+  margin: 0 auto;
+  color: #05F2F2;
+  background-color: black;
+  border: 4px double #05F2F2;
+  border-radius: 200px;
+  font-size: 18px;
+}
+
+.notesbackbutton:hover {
+  background-color: #05F2F2;
+  color: black;
+  border: 4px double black;
+}
+
+.notesbackbutton>a{
+  color:#05F2F2;
+}
+
+.notesbackbutton>a:hover{
+  color:#000000;
+  text-decoration:none;
+}
+
+@media (max-width: 640px) {
+  .notesbackbutton{
+  position:relative;
+  margin: 0 auto;
+  margin-left: 0;
+  width: 100px;
+  height: 30px;
+  border-radius: 200px;
+  font-size: 18px;
+  }
+}
+
 .travelnotescontainer {
   margin: auto;
   max-width: 85%;
@@ -373,7 +413,7 @@ section.timeline-outer {
     top: -15px;
   }
   .breadcrumb-item{
-    font-size:20px;
+    font-size:5px;
   }
   .blue-text{
     font-size:50px;
@@ -587,6 +627,7 @@ section.timeline-outer {
 .breadcrumb{
   background-color: #000000;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .breadcrumb-item>a{
