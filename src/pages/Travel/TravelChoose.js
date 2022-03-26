@@ -43,7 +43,7 @@ function TravelChoose() {
                   </ul>
                 </div>
                 <div className="col-md-4 text-md-center choosedetails">
-                  <p className="day">{el.travel_day}</p>
+                  <p className="day">旅遊天數:{el.travel_day}days</p>
                   <p className="price">${el.travel_price}</p>
                   <button className="itemBuyButton">Details</button>
                 </div>
