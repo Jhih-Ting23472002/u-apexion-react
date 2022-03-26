@@ -18,6 +18,7 @@ function TicketSeat(props) {
   const [isSeatC, setIsSeatC] = useState(false);
   const [seatData, setSeatData] = useState([]);
   const [seatCabin, setseatCabin] = useState('A');
+  const [change, setChange] = useState(0);
 
   useEffect(() => {
     (async function () {
@@ -115,7 +116,12 @@ function TicketSeat(props) {
               </div>
               <div className="ticket-seat-choose">
                 <div className="seat-svg">
-                  <SeatSvgFile seatData={seatData} seatCabin={seatCabin} />
+                  <SeatSvgFile
+                    seatData={seatData}
+                    seatCabin={seatCabin}
+                    change={change}
+                    setChange={setChange}
+                  />
                 </div>
                 {/* <img className="seat-svg" src={seatsvg} alt="" /> */}
               </div>

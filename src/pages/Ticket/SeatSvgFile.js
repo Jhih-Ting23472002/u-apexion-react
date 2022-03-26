@@ -2,10 +2,10 @@ import './ticket.css';
 import { useEffect, useState } from 'react';
 
 function SeatSvgFile(props) {
-  const { seatData, seatCabin } = props;
+  const { seatData, seatCabin, change, setChange } = props;
   const [seatSelected, setSeatSelected] = useState([]);
-  console.log(seatSelected);
-  console.log(typeof seatSelected);
+  //   console.log(seatSelected);
+  //   console.log(typeof seatSelected);
   let seatArray = [];
   seatData.map((v, i) => {
     return seatArray.push(v.seat_number);
@@ -21,18 +21,23 @@ function SeatSvgFile(props) {
         });
         setSeatSelected(removeSeatSelected);
       } else {
-        seatSelected.push(e.target.dataset.seatNo);
-        setSeatSelected(seatSelected);
+        console.log('hi');
+        const myArr = seatSelected;
+        myArr.push(e.target.dataset.seatNo);
+        // seatSelected.push(e.target.dataset.seatNo);
+        setSeatSelected(myArr);
+        const nowChange = change + 1;
+        setChange(nowChange);
+        console.log('座位設定狀態', seatSelected);
       }
 
-      console.log('座位設定狀態', seatSelected);
-      console.log(seatCabin + '2');
+      //   console.log(seatCabin + '2');
     }
   }
 
   // useEffect(() => {}, [seatSelected]);
 
-  console.log(seatArray);
+  //   console.log(seatArray);
 
   return (
     <>
