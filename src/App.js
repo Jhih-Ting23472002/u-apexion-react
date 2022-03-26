@@ -399,10 +399,10 @@ function App() {
             <Route path="/trans-order"></Route>
 
             <ScrollToTop>
-              <Route path="/products-list/product-detail/:sid">
+              <Route path="/product-detail/:sid">
                 <ProductsDetail setProductDetailList={setProductDetailList} />
               </Route>
-              <Route path="/products-list" exact>
+              <Route path="/products-list/:category?" exact>
                 <ProductsList />
               </Route>
               <Route path="/products" exact>

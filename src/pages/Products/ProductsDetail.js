@@ -77,9 +77,9 @@ function ProductsDetail(props) {
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
-            <Link to="/products-list#men">男士精品</Link>
-            <Link to="/products-list">女士精品</Link>
-            <Link to="/products-list">鞋款</Link>
+            <Link to="/products-list/men">男士精品</Link>
+            <Link to="/products-list/woman">女士精品</Link>
+            <Link to="/products-list/Shoes">鞋款</Link>
             <Link to="#/">配件與腕錶</Link>
           </div>
           <div className="div-wrap">

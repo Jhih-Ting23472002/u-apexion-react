@@ -254,7 +254,7 @@ function Products(props) {
           })}
         </div>
         <div className="pr-card-a-div">
-          <Link to="/products-list">
+          <Link to="/products-list/men">
             View All<i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
