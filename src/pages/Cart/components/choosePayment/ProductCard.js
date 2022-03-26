@@ -9,6 +9,8 @@ const ProductCard = props => {
     setProductDetailList,
     cartTotalPrice,
     setCartTotalPrice,
+    totalProductItem,
+    setTotalProductItem
   } = props; // 把props裡面的 state, setState 解構
   console.log(productDetailList);
 
@@ -18,20 +20,25 @@ const ProductCard = props => {
 
     console.log({ id }); // 看看是否成功抓到id
 
-    setProductDetailList(productDetailList.filter(v => v.id !== id));
+    setProductDetailList(productDetailList.filter(v => v.pid !== id));
     // filter(v => v.id !== id)) 這句話的意思是，只有return true 不相等的id會被保留，return false 相等的id會被刪除
     // filter(v => v.id === id)) 這句話的意思是，只有return true 相等的id會被保留 ，return false 不相等的id會被刪除
   }
 
   let totalProductPrice = 0;
   productDetailList.map(v => (totalProductPrice += v.price * v.total));
-  console.log(totalProductPrice);
+  console.log('totalProductPrice', totalProductPrice);
   setCartTotalPrice(totalProductPrice);
+
+  let productItem = 0;
+  productDetailList.map(v => (productItem += v.total));
+  console.log('productItem', productItem);
+  setTotalProductItem(productItem);
 
   return (
     <>
       {productDetailList.map(v => (
-        <React.Fragment key={v.id}>
+        <React.Fragment key={v.pid}>
           {/* 用 React.Fragment  來給key的值 key={v.id} ，因為現在最外層不是<div>  */}
           <div className="cart separated-line"></div>
           <div className="cart cart-order-item d-flex">
@@ -55,7 +62,7 @@ const ProductCard = props => {
                   <div className="cart-empty-place"></div>
                   <button
                     className="btn cart-remove-btn"
-                    data-id={v.id} // button 要給他id，不然他不知道你的 id 是指誰～
+                    data-id={v.pid} // button 要給他id，不然他不知道你的 id 是指誰～
                     onClick={handleRemoveItem} // 這樣 onClick 啟動handleRemoveItem 的時候 button 才抓得到id
                   >
                     remove
