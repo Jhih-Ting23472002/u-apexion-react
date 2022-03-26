@@ -59,9 +59,9 @@ import TravelNotes from './pages/Travel/TravelNotes';
 import TravelNotes2 from './pages/Travel/TravelNotes2';
 import TravelNotes3 from './pages/Travel/TravelNotes3';
 import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
-//import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
+import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
 import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
-//import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -331,33 +331,33 @@ function App() {
                 <MemberCollect />
               </Route>
               {/* 行程頁面 */}
-              {/* <Route path="/travel-index">
-              <TravelIndex />
-            </Route>
-            <Route path="/travel-choose">
-              <TravelChoose />
-            </Route>
-            <Route path="/travel-titan">
-              <TravelNotes />
-            </Route>
-            <Route path="/travel-xandar">
-              <TravelNotes2 />
-            </Route>
-            <Route path="/travel-mann">
-              <TravelNotes3 />
-            </Route>
-            <Route path="/travelchoose-pricem">
-              <TravelChoosePriceM />
-            </Route>
-            {/* <Route path="/travelchoose-pricef">
-              <TravelChoosePriceF />
-            </Route> */}
+              <Route path="/travel-index">
+                <TravelIndex />
+              </Route>
+              <Route path="/travel-choose">
+                <TravelChoose />
+              </Route>
+              <Route path="/travel-titan">
+                <TravelNotes />
+              </Route>
+              <Route path="/travel-xandar">
+                <TravelNotes2 />
+              </Route>
+              <Route path="/travel-mann">
+                <TravelNotes3 />
+              </Route>
+              <Route path="/travelchoose-pricem">
+                <TravelChoosePriceM />
+              </Route>
+              <Route path="/travelchoose-pricef">
+                <TravelChoosePriceF />
+              </Route>
               <Route path="/travelchoose-daym">
                 <TravelChooseDayM />
               </Route>
-              {/* <Route path="/travelchoose-dayf">
-              <TravelChooseDayF />
-            </Route> */}
+              <Route path="/travelchoose-dayf">
+                <TravelChooseDayF />
+              </Route>
               {/* 訂票頁面 */}
               <Route path="/ticket-order">
                 <Ticket />
