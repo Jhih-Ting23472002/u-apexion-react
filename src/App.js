@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import ScrollToTop from './pages/Cart/components/ScrollToTop';
 
 //----頁面元件----
@@ -27,6 +27,7 @@ import MemberCollect from './pages/Member/MemberCollect';
 import Products from './pages/Products/Products';
 import ProductsList from './pages/Products/ProductsList';
 import ProductsDetail from './pages/Products/ProductsDetail';
+import CartQuantity from './pages/Products/CartQuantity'
 
 // Customize
 // import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
@@ -58,9 +59,9 @@ import TravelNotes from './pages/Travel/TravelNotes';
 import TravelNotes2 from './pages/Travel/TravelNotes2';
 import TravelNotes3 from './pages/Travel/TravelNotes3';
 import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
-import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
+//import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
 import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
-import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+//import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -118,6 +119,8 @@ function App() {
   //周邊商品區
   const [productDetailList, setProductDetailList] = useState([]);
   console.log('productDetailList', productDetailList); // 測試，by雍
+  const [cartTotal, setCartTotal] = useState(0);
+
 
   return (
     // <Router>
@@ -257,7 +260,8 @@ function App() {
     <CartProvider>
       <Router>
         <>
-          <Navbar />
+        <CartQuantity.Provider value={{cartTotal, setCartTotal}}>
+        <Navbar />
           <Switch>
             {/* <Route exact path="/">
               <IndexFirst />
@@ -346,15 +350,15 @@ function App() {
             <Route path="/travelchoose-pricem">
               <TravelChoosePriceM />
             </Route>
-            <Route path="/travelchoose-pricef">
+            {/* <Route path="/travelchoose-pricef">
               <TravelChoosePriceF />
-            </Route>
+            </Route> */}
             <Route path="/travelchoose-daym">
               <TravelChooseDayM />
             </Route>
-            <Route path="/travelchoose-dayf">
+            {/* <Route path="/travelchoose-dayf">
               <TravelChooseDayF />
-            </Route>
+            </Route> */}
             {/* 訂票頁面 */}
             <Route path="/ticket-order">
               <Ticket />
@@ -407,6 +411,7 @@ function App() {
 
             <ScrollToTop>
               <Route path="/product-detail/:sid">
+      
                 <ProductsDetail setProductDetailList={setProductDetailList} />
               </Route>
               <Route path="/products-list/:category?" exact>
@@ -470,6 +475,7 @@ function App() {
             </Route>
           </Switch>
           <Footer />
+          </CartQuantity.Provider>
         </>
       </Router>
     </CartProvider>
