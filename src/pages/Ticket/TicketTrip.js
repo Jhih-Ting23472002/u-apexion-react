@@ -166,7 +166,12 @@ function TicketTrip(props) {
                       <div className="ticket-trip-card">
                         <div className="ticket-trip-days">{v.travel_day}日</div>
                         <div className="ticket-trip-card-head">
-                          <img src={'./travelimg/' + v.travel_image} alt="" />
+                          <img
+                            src={
+                              './travelimg/travelproductimg/' + v.travel_image
+                            }
+                            alt=""
+                          />
                         </div>
                         <div className="ticket-trip-card-body">
                           <div className="ticket-title">

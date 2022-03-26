@@ -1,12 +1,11 @@
 import React from 'react';
-import { useParams,Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './ProductsList.scss';
 import ListCards from './components/ListCards';
 import ProductsConfig from './ProductsConfig';
 import { useState, useEffect } from 'react';
 
 function ProductsList() {
- 
   // 1. 從伺服器來的原始資料
   const [ProductList, setProductList] = useState([]);
   // 2. 用於網頁上經過各種處理(排序、搜尋、過濾)後的資料
@@ -16,6 +15,10 @@ function ProductsList() {
   const [ProductNavbar, setProductNavbar] = useState('#men');
   const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');
   const [searchTerm, setSearchTerm] = useState('');
+
+  const [colourType, setColourType] = useState('');
+// console.log(colourType);
+
 
   useEffect(() => {
     (async function () {
@@ -52,6 +55,29 @@ function ProductsList() {
     const a = 'COUNT(1)';
     setAllList(ShoesList.allRows[a]);
   };
+  //顏色分類
+  // function colourCart(e){
+  //   setColourType(e.target.value);
+  //   const c = colourType;
+  //   setProductList(ProductList.filter((v) => {return c == v.style}));
+  //   console.log(c)
+  // }
+
+  const handleSort = (products, colourType) => {
+    let newProducts = [...ProductList]
+    // if (colourType === 'BK') {
+    //     newProducts = [...newProducts].filter(v => v.style !== colourType))
+    //   }
+    console.log(newProducts)
+    return newProducts
+  };
+
+  useEffect(() => {
+    let newProducts = [];
+    // 處理排序
+    newProducts = handleSort(newProducts, colourType);
+    setProductList(newProducts);
+  }, [colourType]);
 
   return (
     <article>
@@ -180,8 +206,14 @@ function ProductsList() {
             </div> */}
           </div>
           <div>
-            <select class="form-control info-select">
-              <option value="">顏色</option>
+            <select
+              class="form-control info-select"
+              value={colourType}
+              onChange={e => setColourType(e.target.value)}
+            >
+              <option selected value="">
+                顏色
+              </option>
               <option value="BK">黑色</option>
               <option value="WH">白色</option>
               <option value="GR">綠色</option>

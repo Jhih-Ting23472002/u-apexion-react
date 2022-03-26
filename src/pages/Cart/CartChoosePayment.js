@@ -53,11 +53,11 @@ const CartChoosePayment = props => {
             setTripPrice={props.setTripPrice}
           />
 
-          <SuitCard />
+          {/* <SuitCard />
 
           <SeatCard />
 
-          <ShipCard />
+          <ShipCard /> */}
 
           <div className="cart separated-line"></div>
           <div className="cart-user-option-should-pay">

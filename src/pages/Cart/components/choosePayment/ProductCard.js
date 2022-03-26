@@ -10,7 +10,7 @@ const ProductCard = props => {
     cartTotalPrice,
     setCartTotalPrice,
     totalProductItem,
-    setTotalProductItem
+    setTotalProductItem,
   } = props; // 把props裡面的 state, setState 解構
   console.log(productDetailList);
 
