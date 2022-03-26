@@ -53,6 +53,7 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 // import SeatDrag from './pages/Ticket/SeatDrag';
 
 // Travel
+<<<<<<< Updated upstream
 import TravelIndex from './pages/Travel/TravelIndex';
 import TravelChoose from './pages/Travel/TravelChoose';
 import TravelNotes from './pages/Travel/TravelNotes';
@@ -62,6 +63,17 @@ import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
 //import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
 import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
 //import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+=======
+// import TravelIndex from './pages/Travel/TravelIndex';
+// import TravelChoose from './pages/Travel/TravelChoose';
+// import TravelNotes from './pages/Travel/TravelNotes';
+// import TravelNotes2 from './pages/Travel/TravelNotes2';
+// import TravelNotes3 from './pages/Travel/TravelNotes3';
+// import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
+// import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
+// import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
+// import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+>>>>>>> Stashed changes
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -332,7 +344,7 @@ function App() {
               <MemberCollect />
             </Route>
             {/* 行程頁面 */}
-            <Route path="/travel-index">
+            {/* <Route path="/travel-index">
               <TravelIndex />
             </Route>
             <Route path="/travel-choose">
