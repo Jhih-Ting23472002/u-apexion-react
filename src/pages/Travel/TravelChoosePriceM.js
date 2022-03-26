@@ -24,25 +24,25 @@ function TravelChoosePM() {
             <div className="text-white px-3 pt-3 my-4">
               <div className="row align-items-center filters">
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <button className="itemBuyButton">
-                    <a href="/travel-choose">全部行程</a>
-                  </button>
+                  <a href="/travel-choose">
+                    <button className="itemBuyButton">全部行程</button>
+                  </a>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-pricef">價格由少至多</a>
-                  </button>
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-pricem">價格由多至少</a>
-                  </button>
+                  <a href="/travelchoose-pricef">
+                    <button className="itemBuyButton">價格由少至多</button>
+                  </a>
+                  <a href="/travelchoose-pricem">
+                    <button className="itemBuyButton">價格由多至少</button>
+                  </a>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-dayf">天數由少至多</a>
-                  </button>
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-daym">天數由多至少</a>
-                  </button>
+                  <a href="/travelchoose-dayf">
+                    <button className="itemBuyButton">天數由少至多</button>
+                  </a>
+                  <a href="/travelchoose-daym">
+                    <button className="itemBuyButton">天數由多至少</button>
+                  </a>
                 </div>
                 <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">
                   <section className="webdesigntuts-workshopchoose">
