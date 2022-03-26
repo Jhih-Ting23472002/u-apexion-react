@@ -22,46 +22,35 @@ const PostDate = styled.div`
 export const LazyLoadCard = () => {
   return (
     <div className="card forum_card">
-      <div className="card-body forum_card_body">
-        <div className="card-user">
+      <div
+        className="card-body forum_card_body"
+        style={{ width: '1080px', height: '150px', backgroundColor: 'gray' }}
+      >
+        {/* <div className="card-user">
           <div className="forum_user-top">
             <div className="forum_user_top_left">
-              <div className="forum_user-logo">
-                {/* <img className="cover" src="" alt="" /> */}
-              </div>
+              <div className="forum_user-logo"> */}
+        {/* <img className="cover" src="" alt="" /> */}
+        {/* </div>
               <div className="user-title">
                 <div className="user-name forum_user-name"></div>
-                <PostDate>
-                  {/* {new Date(post.art_create_time).toLocaleString()} */}
-                </PostDate>
+                <PostDate> */}
+        {/* {new Date(post.art_create_time).toLocaleString()} */}
+        {/* </PostDate>
               </div>
             </div>
           </div>
-          <div className="article-title">
-            <PostTitle>{/* {post.art_title} */}</PostTitle>
-          </div>
+          <div className="article-title"> */}
+        {/* <PostTitle>{post.art_title}</PostTitle> */}
+        {/* </div>
           <div className="article-text">
             <p className="article-ellipsis"></p>
           </div>
-        </div>
-        <div className="article-hashtag">
-          <a href="#/" className="card-link forum_card-link"></a>
-          <a href="#/" className="card-link forum_card-link"></a>
-        </div>
-      </div>
-      <div className="article-like-box">
-        <div className="article-like-box-group">
-          <i className="fas fa-heart"></i>
-          <div className="article-like-box-number"></div>
-        </div>
-        <div className="article-like-box-group">
-          <i className="fas fa-comment"></i>
-          <div className="article-like-box-number"></div>
-        </div>
-        <div className="article-like-box-group">
-          <i className="fas fa-bookmark"></i>
-          <div className="article-like-box-number"></div>
-        </div>
+        </div> */}
+        {/* <div className="article-hashtag">
+          <a href="#/" className="card-link forum_card-link" />
+          <a href="#/" className="card-link forum_card-link" />
+        </div> */}
       </div>
     </div>
   );

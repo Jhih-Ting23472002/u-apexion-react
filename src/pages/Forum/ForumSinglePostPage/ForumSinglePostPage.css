@@ -1,6 +1,6 @@
-.SinglePostTopRightFlexBtn{
-  border:0;
-  background:transparent;
+.SinglePostTopRightFlexBtn {
+  border: 0;
+  background: transparent;
 }
 .forum_responses {
   width: 95%;
@@ -46,7 +46,7 @@
   font-size: 14px;
   font-weight: 500;
   color: black;
-  padding:5px 0 ;
+  padding: 5px 0;
 }
 .forum_post_time {
   font-size: 12px;
@@ -127,7 +127,7 @@
   /* border: 1px solid red; */
   margin-top: 80px;
   background-color: white;
-  padding:30px 30px;
+  padding: 30px 30px;
 }
 @media (max-width: 599px) {
   .forum_right_card {
@@ -136,34 +136,39 @@
 }
 @media (min-width: 600px) and (max-width: 1024px) {
   .forum_right_card {
-    padding:30px 5px;
+    padding: 30px 5px;
   }
 }
-
 
 .forum_right__user_img {
   width: 130px;
   height: 130px;
   border-radius: 50%;
   margin: 0 auto;
-  border: 1px solid black;
-  background-color:black;
+  /* border: 1px solid black; */
+  background-color: black;
+  box-shadow: 3px 5px 5px rgb(84, 84, 84);
+  transition: 0.5s;
+}
+.forum_right__user_img:hover {
+  width: 140px;
+  height: 140px;
 }
 .forum_right__user_img .forum_img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
 }
-@media (min-width:600px) and (max-width: 1024px) {
+@media (min-width: 600px) and (max-width: 1024px) {
   .forum_right__user_img {
-    width:85px;
-    height:85px;
+    width: 85px;
+    height: 85px;
   }
 }
 @media (min-width: 1800px) {
   .forum_right__user_img {
-    width:150px;
+    width: 150px;
     height: 150px;
   }
 }
@@ -178,14 +183,35 @@
 }
 @media (min-width: 1800px) {
   .forum_right_user_name {
-    font-size:20px;
+    font-size: 20px;
   }
 }
-.forum_right_usermedel{
+.forum_right_usermedel {
   color: black;
   text-align: center;
 }
-.forum_medal{
-  margin-top:20px;
-  padding-right:5px;
+.forum_medal {
+  margin-top: 20px;
+  padding-right: 5px;
+}
+
+.single_post_image {
+  /* border: 1px solid red; */
+  width: 50%;
+  box-shadow: 5px 5px 5px rgba(164, 164, 164, 0.475);
+}
+.single_post_title {
+  font-size: 16px;
+  color: #808080;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-decoration: underline;
+}
+.article-like-box-group-icon {
+  /* border: 1px solid red; */
+  transition: 0.5s;
+}
+.article-like-box-group-icon:active {
+  /* border: 1px solid red; */
+  font-size: 20px;
 }

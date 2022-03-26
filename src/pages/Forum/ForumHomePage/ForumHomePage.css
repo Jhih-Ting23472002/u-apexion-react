@@ -210,7 +210,7 @@
 }
 
 .forum_user_logo_cover {
-  object-fit: contain;
+  object-fit: cover;
 }
 .user-name.forum_user-name {
   color: black;
@@ -387,4 +387,12 @@
 .forum_link_item {
   font-size: 14px;
   font-weight: 500;
+}
+.forum_right_user_name:hover {
+  color: #05f2f2;
+  font-size: 16px;
+  text-decoration: none;
+}
+.forum_right_user_name {
+  transition: 0.8s;
 }

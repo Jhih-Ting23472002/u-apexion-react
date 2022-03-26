@@ -1,5 +1,6 @@
 import React from 'react';
 import './MemberForgotPwd.css';
+import { Link } from 'react-router-dom';
 
 const MemberForgotPwd = () => {
   return (
@@ -28,11 +29,24 @@ const MemberForgotPwd = () => {
                 </label>
                 <input type="text" placeholder="" className="member-input" />
               </div>
+              <div className="member-input-container ">
+                <label htmlFor="" className="member-label">
+                  驗證碼
+                </label>
+                <input type="text" placeholder="" className="member-input" />
+              </div>
               <div className="member-btn-container">
                 <div className="member-return-btn-wrap">
-                  <button className="member-circle-btn member-cancel-btn">
-                    返回
-                  </button>
+                  <Link
+                    to="/member-login"
+                    style={{
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <button className="member-circle-btn member-cancel-btn">
+                      返回
+                    </button>
+                  </Link>
                 </div>
                 <div>
                   <button className="member-circle-btn">確認送出</button>

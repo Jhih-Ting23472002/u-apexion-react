@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 
 function MemberAddressNew(props) {
   // const { modalShow, setModalShow } = props;
-  const history = useHistory();
+  // const history = useHistory();
   const user_id = localStorage.getItem('user_id');
   console.log('user_id:', user_id);
   const [addressNewData, setaddressNewData] = useState({

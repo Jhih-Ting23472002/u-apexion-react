@@ -1,11 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './ForumPersonalPage.css';
-import Modal from 'react-bootstrap/Modal';
+// import Modal from 'react-bootstrap/Modal';
 import ForumPersonalPageModal from './ForumPersonalPageModal';
+import { personPostsData } from './personPostsData';
 
 export default function ForumPersonalPage() {
   const [modalShow, setModalShow] = useState(false);
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const handleImageClick = e => {
+    setModalShow(true);
+    const index = e.target.attributes.getNamedItem('data-index').value;
+    setImageIndex(index);
+    console.log(modalShow);
+    console.log(e.target.attributes.getNamedItem('data-index').value);
+  };
+
   return (
     <>
       <div
@@ -38,99 +49,25 @@ export default function ForumPersonalPage() {
             </div>
           </div>
           <div className="person_posts_photos">
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/space1.jpg" alt="" />
+            {personPostsData.map((v, i) => (
+              <div className="col-4 person_posts_photos_single">
+                <div className="person_posts_single_photo">
+                  <img
+                    src={v.photo}
+                    alt=""
+                    data-index={i}
+                    onClick={handleImageClick}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/training.jpg" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/rocket.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/floor.jpg" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig1.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div
-                className="person_posts_single_photo"
-                onClick={() => {
-                  setModalShow(true);
-                  console.log(modalShow);
-                }}
-              >
-                <img src="./index_img/ig2.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig3.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig4.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig5.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig6.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig7.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig8.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig9.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div className="person_posts_single_photo">
-                <img src="./index_img/ig12.png" alt="" />
-              </div>
-            </div>
-            <div className="col-4 person_posts_photos_single">
-              <div
-                className="person_posts_single_photo"
-                onClick={() => {
-                  setModalShow(true);
-                  console.log(modalShow);
-                }}
-              >
-                <img src="./index_img/ig11.png" alt="" />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
       <ForumPersonalPageModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        imageIndex={imageIndex}
       />
     </>
   );
