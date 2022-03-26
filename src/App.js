@@ -106,11 +106,12 @@ function App() {
     address: '',
   });
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 購物車總金額
+  const [totalProductItem, setTotalProductItem] = useState(0);
   // 以上是cart的部分
 
   //周邊商品區
   const [productDetailList, setProductDetailList] = useState([]);
-  console.log(productDetailList); // 測試，by雍
+  console.log('productDetailList', productDetailList); // 測試，by雍
 
   return (
     // <Router>
@@ -406,7 +407,7 @@ function App() {
                 <ProductsList />
               </Route>
               <Route path="/products" exact>
-                <Products setProductDetailList={setProductDetailList}/>
+                <Products setProductDetailList={setProductDetailList} />
               </Route>
 
               <Route exact path="/cart-payment">
@@ -421,6 +422,8 @@ function App() {
                   //---------------------------------
                   productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                   setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
+                  totalProductItem={totalProductItem} //購物車總衣服數量
+                  setTotalProductItem={setTotalProductItem}
                   //---------------------------------
                   setUserOption={setUserOption}
                   userOption={userOption}
@@ -438,13 +441,19 @@ function App() {
                 <CartFinalCheck
                   tripSelected={tripSelected} //from 采諭
                   tripPrice={tripPrice} //from 采諭
+                  productDetailList={productDetailList} // from 智婷
                   userOption={userOption}
                   setCartUserInfo={setCartUserInfo}
                   cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
+                  cartTotalPrice={cartTotalPrice} //購物車總金額
+                  totalProductItem={totalProductItem} //購物車總衣服數量
                 />
               </Route>
               <Route path="/cart-credit-card">
-                <CartCreditCard tripPrice={tripPrice} />
+                <CartCreditCard
+                  cartTotalPrice={cartTotalPrice} //購物車總金額
+                  tripPrice={tripPrice}
+                />
               </Route>
               <Route path="/cart-complete">
                 <CardComplete />
