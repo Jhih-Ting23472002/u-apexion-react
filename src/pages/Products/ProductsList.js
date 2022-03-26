@@ -27,10 +27,10 @@ function ProductsList() {
       const response = await fetch(ProductsConfig.MEN_List);
       const menList = await response.json();
       setProductList(menList.allMen);
+      setDisplayProducts(menList.allMen);
       const a = 'COUNT(1)';
       setAllList(menList.allRows[a]);
-      // const newImg = 'http://localhost:3000/product_img/cover5_1440_1200.jpeg';
-      // setListImg(newImg);
+
     })();
   }, []);
 
@@ -67,7 +67,7 @@ function ProductsList() {
   // }
 
   const handleSort = (products, colourType) => {
-    let newProducts = [...ProductList]
+    let newProducts = [...displayProducts]
     if (colourType === 'BK') {
         newProducts = [...newProducts].filter(v => v.style == 'BK')
       }
