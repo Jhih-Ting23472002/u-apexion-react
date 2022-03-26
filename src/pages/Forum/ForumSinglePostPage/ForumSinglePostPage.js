@@ -57,7 +57,7 @@ const SinglePostTopUser = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 10px;
+  ${'' /* padding: 0 10px; */}
 `;
 
 const SinglePostName = styled.div`
@@ -276,14 +276,14 @@ export default function ForumSinglePostPage() {
                 }}
               />
             </SinglePostContent>
-            <SinglePostHashtag>
-              {post && post.hashtag1}&nbsp;&nbsp; &nbsp; &nbsp;
-              {post && post.hashtag2}
-            </SinglePostHashtag>
             <SinglePostImg>
               <img src={imgSrc} alt="" />
               {/* {post && post.art_photo} */}
             </SinglePostImg>
+            <SinglePostHashtag>
+              {post && post.hashtag1}&nbsp;&nbsp; &nbsp; &nbsp;
+              {post && post.hashtag2}
+            </SinglePostHashtag>
           </SinglePostContainer>
           <SinglePostResponses>
             <div>
@@ -331,14 +331,19 @@ export default function ForumSinglePostPage() {
           <div className="col forum_right_colum">
             <div className="forum_right_card">
               <div className="forum_right__user_img">
-                {/* <img
+                <img
                   className="forum_img"
-                  src="./forum_img/u-apexionLogo.png"
+                  src={`http://localhost:3001/index_img/member5.png`}
                   alt=""
-                /> */}
+                />
                 {/* ????????why????? */}
               </div>
-              <div className="forum_right_user_name">U-Apexion</div>
+              <Link
+                className="forum_right_user_name"
+                style={{ display: 'block' }}
+              >
+                @ {post && post.name}
+              </Link>
               <div className="forum_right_usermedel">
                 <i className="fa-solid fa-medal forum_medal"></i>
                 120 [8]

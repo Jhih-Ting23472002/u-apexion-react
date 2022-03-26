@@ -428,7 +428,7 @@ const IndexMain = () => {
                   className={
                     sec4Animate
                       ? 'index_steps_circle index_steps_circle-two'
-                      : 'index_steps_circle'
+                      : 'index_steps_circles'
                   }
                 ></div>
                 <a href="#/" className="index_step_words">
@@ -448,7 +448,7 @@ const IndexMain = () => {
                   className={
                     sec4Animate
                       ? 'index_steps_circle index_steps_circle-three'
-                      : 'index_steps_circle'
+                      : 'index_steps_circles'
                   }
                 ></div>
                 <a href="#/" className="index_step_words">
@@ -469,7 +469,7 @@ const IndexMain = () => {
                   className={
                     sec4Animate && circle4
                       ? 'index_steps_circle index_steps_circle-four'
-                      : 'index_steps_circle'
+                      : 'index_steps_circles'
                   }
                 ></div>
                 <a href="#/" className="index_step_words">

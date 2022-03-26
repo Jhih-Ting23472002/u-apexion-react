@@ -5,7 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ForumHomePage.css';
 import ForumNav from '../../../components/Forum-Nav';
-
+import { LazyLoadPosts } from './LazyLoadCard';
+import useLazyLoad from './useLazyLoad';
 // import PublishPage from '../PublishPage'
 
 const Root = styled.div`
@@ -23,9 +24,11 @@ const PostTitle = styled(Link)`
   color: black;
   text-decoration: none;
   letter-spacing: 1px;
+  transition: 0.8s;
   &:hover {
     color: #05f2f2;
     text-decoration: none;
+    font-size: 16px;
   }
 `;
 
@@ -50,6 +53,8 @@ const ForumSortNew = styled(Link)`
     border: 4px double black;
   `};
 `;
+const NUM_PER_PAGE = 4;
+const TOTAL_PAGE = 5;
 
 function Post({ post }) {
   const [likes, setLikes] = useState(post.article_likes);
@@ -62,7 +67,11 @@ function Post({ post }) {
             <div className="forum_user-top">
               <div className="forum_user_top_left">
                 <div className="forum_user-logo">
-                  {/* <img className="cover" src="" alt="" /> */}
+                  <img
+                    className="forum_user_logo_cover"
+                    src={`./index_img/${post.imgs}`}
+                    alt=""
+                  />
                 </div>
                 <div className="user-title">
                   <div className="user-name forum_user-name">{post.name}</div>
@@ -93,9 +102,10 @@ function Post({ post }) {
         <div className="article-like-box">
           <div
             className="article-like-box-group"
+            // style={{ border: '1px solid red' }}
             onClick={() => setLikes(likes + 1)}
           >
-            <i className="fas fa-heart"></i>
+            <i className="fas fa-heart article-like-box-group-icon"></i>
             <div className="article-like-box-number">{likes}</div>
           </div>
           <div className="article-like-box-group">
@@ -218,7 +228,7 @@ export default function ForumHomePage() {
                           <div className="forum_user-logo">
                             <img
                               className="forum_user_logo_cover"
-                              src="./forum_img/u-apexionLogo.png"
+                              src={`./index_img/${post.imgs}`}
                               alt=""
                             />
                           </div>
