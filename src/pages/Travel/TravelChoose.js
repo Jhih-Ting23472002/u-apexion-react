@@ -1,7 +1,8 @@
 import './TravelChoose.css';
 import { useEffect, useState } from 'react';
 import config from './Config';
-import { useHistory, useLocation } from 'react-router-dom';
+// import { useHistory, useLocation, Link } from 'react-router-dom';
+import { useHistory, Link, useLocation } from 'react-router-dom';
 
 function TravelChoose() {
   const history = useHistory();
@@ -78,12 +79,12 @@ function TravelChoose() {
                   </a>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <a href="/travelchoose-pricef">
+                  <Link to="/travelchoose-pricef">
                     <button className="itemBuyButton">價格由少至多</button>
-                  </a>
-                  <a href="/travelchoose-pricem">
+                  </Link>
+                  <Link to="/travelchoose-pricem">
                     <button className="itemBuyButton">價格由多至少</button>
-                  </a>
+                  </Link>
                 </div>
                 <div className="col-12 col-sm-12 col-md-3 mb-3">
                   <a href="/travelchoose-dayf">
