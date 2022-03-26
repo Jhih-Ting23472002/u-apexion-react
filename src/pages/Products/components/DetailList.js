@@ -98,7 +98,7 @@ function DetailList(props) {
                     />
                   </svg>
                 </div>
-                <div className="plus" onClick={() => setTotal(total + 1)}>
+              <div className="plus" onClick={() => { if (total !== 5) setTotal(total + 1) }}>
                   <svg
                     className="plus-svg"
                     viewBox="0 0 15 15"
