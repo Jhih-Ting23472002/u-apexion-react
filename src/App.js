@@ -87,7 +87,13 @@ function App() {
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
   console.log('出發日期', tripDate);
-  console.log(tripSelected, tripDays, tripPrice, tripDate);
+  console.log(
+    tripSelected,
+    tripDays,
+    tripPrice,
+    tripDate.dateSelected,
+    tripDate.returnDate
+  );
 
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
