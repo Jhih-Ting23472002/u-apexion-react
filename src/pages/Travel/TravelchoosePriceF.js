@@ -112,4 +112,4 @@ function TravelChoosePF() {
   );
 }
 
-export default TravelChoosePF;
+export default TravelChoosePF
