@@ -11,9 +11,9 @@ import ScrollToTop from './pages/Cart/components/ScrollToTop';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Member
- import MemberLogin from './pages/Member/MemberLogin';
- import MemberSignUp from './pages/Member/MemberSignUp';
-//import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+import MemberLogin from './pages/Member/MemberLogin';
+import MemberSignUp from './pages/Member/MemberSignUp';
+// import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
 import MemberPwdEdit from './pages/Member/MemberPwdEdit';
@@ -88,7 +88,17 @@ function App() {
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
+  const [seatNumberDemo, setSeatNumberDemo] = useState([]);
+  const [mealSelected, setMealSelected] = useState({
+    USER1: '',
+    USER2: '',
+    USER3: '',
+    USER4: '',
+  });
+  const [change, setChange] = useState(0);
   console.log('出發日期', tripDate);
+  console.log('選擇座位', seatNumberDemo);
+  console.log('餐點', mealSelected);
   console.log(
     tripSelected,
     tripDays,
@@ -130,13 +140,11 @@ function App() {
             <Navbar />
             <Switch>
               {/* <Route exact path="/">
-              <IndexFirst />
-            </Route>
-            <Route exact path="/u-apexion">
-              <IndexMain />
-            </Route> */}
-              {/* <Route path="/index-video"></Route>
-            <Route path="/index"></Route> */}
+                <IndexFirst />
+              </Route>
+              <Route exact path="/u-apexion">
+                <IndexMain />
+              </Route> */}
               <Route exact path="/forum-home">
                 <ForumHomePage />
               </Route>
@@ -253,10 +261,19 @@ function App() {
                 <TicketDateOld />
               </Route>
               <Route path="/ticket-seat-choose">
-                <TicketSeat tripDate={tripDate} />
+                <TicketSeat
+                  tripDate={tripDate}
+                  seatNumberDemo={seatNumberDemo}
+                  setSeatNumberDemo={setSeatNumberDemo}
+                />
               </Route>
               <Route path="/ticket-meal-choose">
-                <TicketMeal />
+                <TicketMeal
+                  mealSelected={mealSelected}
+                  setMealSelected={setMealSelected}
+                  setChange={setChange}
+                  change={change}
+                />
               </Route>
               <Route path="/ticket-confirm"></Route>
               {/* <Route path="/ticket-test">
@@ -297,6 +314,10 @@ function App() {
                     setTripSelected={setTripSelected} //from 采諭
                     tripPrice={tripPrice} //from 采諭
                     setTripPrice={setTripPrice} //from 采諭
+                    tripDate={tripDate} //from 采諭
+                    setTripDate={setTripDate} //from 采諭
+                    mealSelected={mealSelected} //from 采諭
+                    setMealSelected={setMealSelected} //from 采諭
                     //---------------------------------
                     productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                     setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
@@ -319,6 +340,11 @@ function App() {
                   <CartFinalCheck
                     tripSelected={tripSelected} //from 采諭
                     tripPrice={tripPrice} //from 采諭
+                    tripDate={tripDate} //from 采諭
+                    setTripDate={setTripDate} //from 采諭
+                    mealSelected={mealSelected} //from 采諭
+                    setMealSelected={setMealSelected} //from 采諭
+                    //-------------------------------------------------
                     productDetailList={productDetailList} // from 智婷
                     userOption={userOption}
                     setCartUserInfo={setCartUserInfo}
