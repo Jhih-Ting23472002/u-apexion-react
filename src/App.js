@@ -317,6 +317,8 @@ function App() {
                     setTripPrice={setTripPrice} //from 采諭
                     tripDate={tripDate} //from 采諭
                     setTripDate={setTripDate} //from 采諭
+                    mealSelected={mealSelected} //from 采諭
+                    setMealSelected={setMealSelected} //from 采諭
                     //---------------------------------
                     productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                     setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
@@ -339,6 +341,11 @@ function App() {
                   <CartFinalCheck
                     tripSelected={tripSelected} //from 采諭
                     tripPrice={tripPrice} //from 采諭
+                    tripDate={tripDate} //from 采諭
+                    setTripDate={setTripDate} //from 采諭
+                    mealSelected={mealSelected} //from 采諭
+                    setMealSelected={setMealSelected} //from 采諭
+                    //-------------------------------------------------
                     productDetailList={productDetailList} // from 智婷
                     userOption={userOption}
                     setCartUserInfo={setCartUserInfo}
