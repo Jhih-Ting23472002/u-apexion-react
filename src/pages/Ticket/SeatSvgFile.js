@@ -2,7 +2,7 @@ import './ticket.css';
 import { useEffect, useState } from 'react';
 
 function SeatSvgFile(props) {
-  const { seatData, seatCabin, change, setChange, setSeatNumber } = props;
+  const { seatData, seatCabin, change, setChange, setSeatNumberDemo } = props;
   const [seatSelected, setSeatSelected] = useState([]);
   //   console.log(seatSelected);
   //   console.log(typeof seatSelected);
@@ -11,7 +11,7 @@ function SeatSvgFile(props) {
     return seatArray.push(v.seat_number);
   });
 
-  //   let seatSelectArray = [];
+  let seatNumberState = [];
   function seatSelectHandler(e) {
     console.log(e.target.dataset.seatNo);
     if (!e.target.classList.contains('seat-disabled')) {
@@ -20,7 +20,13 @@ function SeatSvgFile(props) {
           return v !== e.target.dataset.seatNo;
         });
         setSeatSelected(removeSeatSelected);
-        setSeatNumber(removeSeatSelected);
+
+		removeSeatSelected.map((v, i) => {
+			seatNumberState.push({ id: i, name: v });
+			return seatNumberState;
+		  });
+		  setSeatNumberDemo(seatNumberState);
+        // setSeatNumber(seatNumberState);
       } else {
         if (seatSelected.length === 4) {
           return;
@@ -29,10 +35,15 @@ function SeatSvgFile(props) {
         myArr.push(e.target.dataset.seatNo);
         // seatSelected.push(e.target.dataset.seatNo);
         setSeatSelected(myArr);
-        setSeatNumber(myArr);
+        myArr.map((v, i) => {
+          seatNumberState.push({ id: i, name: v });
+          return seatNumberState;
+        });
+        setSeatNumberDemo(seatNumberState);
         const nowChange = change + 1;
         setChange(nowChange);
         console.log('座位設定狀態', seatSelected);
+        console.log('seatNumberState', seatNumberState);
       }
 
       //   console.log(seatCabin + '2');

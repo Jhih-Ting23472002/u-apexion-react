@@ -15,7 +15,6 @@ function TicketTrip(props) {
       );
       const tripDatas = await response.json();
       setTripData(tripDatas);
-      console.log(tripDatas);
     })();
   }, []);
 
