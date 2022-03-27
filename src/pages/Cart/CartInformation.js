@@ -1,8 +1,8 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import './CartInformation.css';
 import { Link } from 'react-router-dom';
 
-const CartInformation = (props) => {
+const CartInformation = props => {
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [email, setEmail] = useState('');
@@ -11,12 +11,11 @@ const CartInformation = (props) => {
   // const [afterEmail, setAfterEmail] = useState('');
   // const [disagree, setDisagree] = useState(false);
 
-  function getInfo (type = '', value){
-    const info = {...props.cartUserInfo}
-    info[type] = value
-    props.setCartUserInfo(info)    
+  function getInfo(type = '', value) {
+    const info = { ...props.cartUserInfo };
+    info[type] = value;
+    props.setCartUserInfo(info);
   }
-
 
   return (
     <>
@@ -43,9 +42,15 @@ const CartInformation = (props) => {
             </div>
           </div>
           <div className="cart-chosen-way">
-            <div className="cart-delivery-area">運送區域：{props.userOption.deliveryArea}</div>
-            <div className="cart-payment-way">付款方式：{props.userOption.paymentMethod}</div>
-            <div className="cart-delivery-way">配送方式：{props.userOption.deliveryWay}</div>
+            <div className="cart-delivery-area">
+              運送區域：{props.userOption.deliveryArea}
+            </div>
+            <div className="cart-payment-way">
+              付款方式：{props.userOption.paymentMethod}
+            </div>
+            <div className="cart-delivery-way">
+              配送方式：{props.userOption.deliveryWay}
+            </div>
           </div>
 
           <form className="cart-consumer-information-part">
@@ -58,9 +63,9 @@ const CartInformation = (props) => {
                 <input
                   className="consumer-recipient-input"
                   defaultValue={name}
-                  onChange={(e)=>{setName(
-                    e.target.value
-                  )}}
+                  onChange={e => {
+                    setName(e.target.value);
+                  }}
                   placeholder="請填寫真實姓名"
                   required
                 ></input>
@@ -70,9 +75,9 @@ const CartInformation = (props) => {
                 <input
                   className="consumer-recipient-input"
                   defaultValue={mobile}
-                  onChange={(e)=>{setMobile(
-                    e.target.value
-                  )}}
+                  onChange={e => {
+                    setMobile(e.target.value);
+                  }}
                   placeholder="您的手機號碼"
                 ></input>
                 <div className="mobile-or-telephone">手機市話可擇一填寫</div>
@@ -90,9 +95,9 @@ const CartInformation = (props) => {
                 <input
                   className="consumer-recipient-input"
                   defaultValue={email}
-                  onChange={(e)=>{setEmail(
-                    e.target.value
-                  )}}
+                  onChange={e => {
+                    setEmail(e.target.value);
+                  }}
                   placeholder="您的email"
                   required
                 ></input>
@@ -129,9 +134,9 @@ const CartInformation = (props) => {
                 </label> */}
               </div>
 
-
-              {/* 收件人資訊欄 */}{/* 收件人資訊欄 */}{/* 收件人資訊欄 */}
-
+              {/* 收件人資訊欄 */}
+              {/* 收件人資訊欄 */}
+              {/* 收件人資訊欄 */}
 
               <div className="recipient-information-name-mobile-email-address">
                 <label className="consumer-recipient-label-margin">
@@ -141,9 +146,9 @@ const CartInformation = (props) => {
                   className="consumer-recipient-input"
                   required
                   placeholder="請填寫真實姓名"
-                  onChange={(e) => {
-                      getInfo('name', e.target.value)
-                    }}
+                  onChange={e => {
+                    getInfo('name', e.target.value);
+                  }}
                 ></input>
               </div>
               <div className="recipient-information-name-mobile-email-address">
@@ -155,24 +160,24 @@ const CartInformation = (props) => {
                   className="consumer-recipient-input"
                   required
                   placeholder="您的手機號碼"
-                  onChange={(e) => {
-                      getInfo('mobile', e.target.value)
-                    }}
+                  onChange={e => {
+                    getInfo('mobile', e.target.value);
+                  }}
                 ></input>
-                
+
                 <div className="mobile-or-telephone">
                   宅配人員將以此資料聯繫
                 </div>
               </div>
               <div className="recipient-information-name-mobile-email-address">
                 <label className="consumer-recipient-label-margin">email</label>
-                
+
                 <input
                   className="consumer-recipient-input"
-                  placeholder="您的email"                  
-                  onChange={(e) => {
-                      getInfo('email', e.target.value)
-                    }}
+                  placeholder="您的email"
+                  onChange={e => {
+                    getInfo('email', e.target.value);
+                  }}
                 ></input>
 
                 <div className="mobile-or-telephone">
@@ -185,15 +190,21 @@ const CartInformation = (props) => {
                 </label>
                 <div className="select-consumer-recipient-input">
                   <div className="select-consumer-recipient-input-top mb-3">
-                    <select className="select-city mb-3" onChange={(e) => {
-                      getInfo('addressCity', e.target.value)
-                    }}>
+                    <select
+                      className="select-city mb-3"
+                      onChange={e => {
+                        getInfo('addressCity', e.target.value);
+                      }}
+                    >
                       <option>請選擇縣市</option>
                       <option>台北市</option>
                     </select>
-                    <select className="select-district" onChange={(e) => {
-                      getInfo('addressDist', e.target.value)
-                    }}>
+                    <select
+                      className="select-district"
+                      onChange={e => {
+                        getInfo('addressDist', e.target.value);
+                      }}
+                    >
                       <option>請選擇鄉鎮市區</option>
                       <option>大安區</option>
                       <option>文山區</option>
@@ -203,9 +214,9 @@ const CartInformation = (props) => {
                     <input
                       className="recipient-input-address"
                       placeholder="您的地址"
-                      onChange={(e) => {
-                      getInfo('address', e.target.value)
-                    }}
+                      onChange={e => {
+                        getInfo('address', e.target.value);
+                      }}
                     ></input>
                   </div>
                 </div>
@@ -226,24 +237,23 @@ const CartInformation = (props) => {
               </div>
             </div>
             <div className="previous-next-btn">
-            <div className="col-3"></div>
-            <Link
-              className="btn next-btn position cart-link"
-              to={'/cart-payment'}
-            >
-              <i className="arrow left"></i>上一步
-            </Link>
-            <div className="col-2"></div>
-            <Link
-              className="btn next-btn position cart-link"
-              to={'/cart-final-check'}
-            >
-              下ㄧ步<i className="arrow right"></i>
-            </Link>
-            <div className="col-3"></div>
-          </div>
+              <div className="col-3"></div>
+              <Link
+                className="btn next-btn position cart-link"
+                to={'/cart-payment'}
+              >
+                <i className="arrow left"></i>上一步
+              </Link>
+              <div className="col-2"></div>
+              <Link
+                className="btn next-btn position cart-link"
+                to={'/cart-final-check'}
+              >
+                下ㄧ步<i className="arrow right"></i>
+              </Link>
+              <div className="col-3"></div>
+            </div>
           </form>
-          
         </div>
       </div>
     </>

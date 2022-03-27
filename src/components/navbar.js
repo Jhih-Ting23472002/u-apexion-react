@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
+import CartQuantity from '../pages/Products/CartQuantity'
 
-function navbar() {
+function Navbar() {
+  const {cartTotal}=useContext(CartQuantity)
+  console.log({cartTotal})
   return (
     <>
       <div className="topspace"></div>
@@ -37,6 +40,8 @@ function navbar() {
                   src={require('./tools/Bag.png')}
                   alt=""
                 />
+                <div className="cartTotal">
+                <p>{cartTotal}</p></div>
               </Link>
             </li>
           </ul>
@@ -115,4 +120,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;

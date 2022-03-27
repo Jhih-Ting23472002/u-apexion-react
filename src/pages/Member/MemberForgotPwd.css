@@ -89,3 +89,10 @@
 .member-return-btn-wrap{
   margin-right: 30px;
 }
+
+.member-show{
+  display: block;
+}
+.member-hide{
+  display: none;
+}

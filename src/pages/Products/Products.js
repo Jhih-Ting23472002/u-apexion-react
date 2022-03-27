@@ -214,28 +214,28 @@ function Products(props) {
           >
             男士精品
           </a>
-          <a
-            href="#woman"
+          <Link
+            to="#woman"
             onClick={() => {setProductNavbar('#woman');
             WomanProduct()}}
             className={ProductNavbar === '#woman' ? 'active' : ''}
           >
             女士精品
-          </a>
-          <a
-            href="#Shoes"
+          </Link>
+          <Link
+            to="#Shoes"
             onClick={() => {setProductNavbar('#Shoes');ShoesProduct()}}
             className={ProductNavbar === '#Shoes' ? 'active' : ''}
           >
             鞋款
-          </a>
-          <a
-            href="#watch"
+          </Link>
+          <Link
+            to="#watch"
             onClick={() => setProductNavbar('#watch')}
             className={ProductNavbar === '#watch' ? 'active' : ''}
           >
             配件與腕錶
-          </a>
+          </Link>
         </div>
         <div className="pr-container">
           {ProductRecommend.map((Product, i) => {
@@ -254,7 +254,7 @@ function Products(props) {
           })}
         </div>
         <div className="pr-card-a-div">
-          <Link to="/products-list">
+          <Link to="/products-list/men">
             View All<i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>

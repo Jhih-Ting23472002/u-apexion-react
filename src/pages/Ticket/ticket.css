@@ -1,98 +1,30 @@
 /* 座位svg樣式開始 */
-.seat {
-  fill: white;
+.seat-disabled{
+  fill:rgb(73, 73, 73);
+  stroke: white;
 }
+
+.seat-selected {
+  fill: var(--main-color-02);
+  stroke: white;
+}
+
 .seat:hover {
-  fill: yellow;
+  fill: var(--main-color-02);
+  stroke: white;
 }
-.st0 {
-  filter: url(#Adobe_OpacityMaskFilter);
-}
-.st1 {
-  fill: url(#SVGID_2_);
-}
-.st2 {
-  fill: url(#SVGID_3_);
-}
-.st3 {
-  mask: url(#SVGID_1_);
-}
-.st4 {
-  fill: #ffffff;
-}
-.st5 {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-}
-.st6 {
-  fill: #ffffff;
-  stroke: #ffffff;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-}
-.st7 {
-  fill: #606060;
-}
-.st8 {
-  fill: #ffffff;
-  stroke: #606060;
-  stroke-miterlimit: 10;
-}
-.st9 {
-  fill: none;
-  stroke: #606060;
-  stroke-miterlimit: 10;
-  stroke-dasharray: 12.2439, 12.2439;
-}
-.st10 {
-  fill: none;
-  stroke: #606060;
-  stroke-width: 0.75;
-  stroke-miterlimit: 10;
-  stroke-dasharray: 11.4704, 11.4704;
-}
-.st11 {
-  fill: #606060;
-  stroke: #ffffff;
-  stroke-miterlimit: 10;
-}
-.st12 {
-  fill: none;
-  stroke: url(#SVGID_4_);
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-}
-.st13 {
-  fill: none;
-  stroke: url(#SVGID_5_);
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-}
-.st14 {
-  fill: #f81111;
-}
-.st15 {
-  font-family: 'SegoeUISymbol';
-}
-.st16 {
-  font-size: 12.9039px;
-}
-.st17 {
-  fill: none;
-  stroke: url(#SVGID_6_);
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-}
-.st18 {
-  fill: none;
-  stroke: url(#SVGID_7_);
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-}
+.st0{filter:url(#Adobe_OpacityMaskFilter);}
+	.st1{fill:url(#SVGID_00000115474753273939599580000000054005951162123906_);}
+	.st2{fill:url(#SVGID_00000114756672554066700360000013326035074049570190_);}
+	.st3{mask:url(#SVGID_1_);}
+	.st4{fill:#FFFFFF;}
+	.st5{}
+	.st6{fill:#FFFFFF;stroke:#606060;stroke-miterlimit:10;}
+	.st7{fill:#606060;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st8{font-family:'NotoSansTC-Light-90ms-RKSJ-H';}
+	.st9{font-size:12.9039px;}
+	.st10{fill:none;stroke:url(#SVGID_00000150809683055419660790000009186993585327943334_);stroke-width:2;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:url(#SVGID_00000102510429283395775120000009617074621872571549_);stroke-width:2;stroke-miterlimit:10;}
 /* 座位svg樣式結束 */
 
 .sliderWrap img {
@@ -954,12 +886,19 @@ img {
   position: relative;
 }
 
+.ticket-seat-choose {
+  width: 60%;
+}
+
+
 .ticket-case-choose img,
 .ticket-seat-choose .seat-svg {
   /* border: 1px solid rgb(255, 238, 0); */
-  width: 1000px;
+  width: 100%;
   height: 100%;
   object-fit: contain;
+  display: flex;
+  align-items: center;
 }
 
 .ticket-case-choose img {
@@ -1038,15 +977,7 @@ img {
   color: var(--main-color-02);
 }
 
-/* 座位svg檔開始 */
-.seat {
-  fill: white;
-}
 
-.seat:hover {
-  fill: var(--main-color-02);
-}
-/* 座位svg檔結束 */
 
 /* 座位選擇樣式結束 */
 /* 餐點選擇樣式開始 */

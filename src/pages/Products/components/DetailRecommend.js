@@ -25,7 +25,7 @@ function DetailRecommend(props) {
     <>
       {c.map(v => (
         <div key={v.sid} className="col-md-4">
-          <Link to={'/products-list/product-detail/' + v.sid}
+          <Link to={'/product-detail/' + v.sid}
             className="card pr-card mb-5"
           >
             <img

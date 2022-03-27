@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useContext} from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 import { useParams } from 'react-router-dom';
+import CartQuantity from '../CartQuantity'
 
 function DetailList(props) {
+  const {cartTotal, setCartTotal}=useContext(CartQuantity)
+
   const [total, setTotal] = useState(1);
   const price = props.product.price;
   const img = props.product.product_img;
@@ -19,9 +22,8 @@ function DetailList(props) {
 
   function addCart() {
     setProductDetailList(function (prevData) {
-      
+      setCartTotal(cartTotal + total)   
       return [{ price, img, name, pid, total }, ...prevData];
-      
     });
   }
  useEffect(() => {
@@ -98,7 +100,7 @@ function DetailList(props) {
                     />
                   </svg>
                 </div>
-                <div className="plus" onClick={() => setTotal(total + 1)}>
+              <div className="plus" onClick={() => { if (total !== 5) setTotal(total + 1) }}>
                   <svg
                     className="plus-svg"
                     viewBox="0 0 15 15"

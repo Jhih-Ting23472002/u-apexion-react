@@ -23,7 +23,7 @@ function Recommend(props) {
   return (
     <>
       <div className="pr-card">
-        <Link to={'/products-list/product-detail/' + props.sid} className="pr-img">
+        <Link to={'/product-detail/' + props.sid} className="pr-img">
           <img src={ProductsConfig.IMG_PATH + '/' + props.product_img} alt="" />
         </Link>
         <div className="pr-content">

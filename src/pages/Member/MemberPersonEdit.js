@@ -171,10 +171,14 @@ const MemberPersonEdit = () => {
               </div>
               <div className="person-avatar-container">
                 <div className="person-avatar-img"></div>
-                <div className="person-avatar-upload">
+                <div className="person-avatar-upload" style={{border:'1px solid red'}}>
                   <div className="member-btn-container">
                     {/* <button className="member-circle-btn">選擇圖片</button> */}
-                    <input type="file" id="file-uploader" className=""></input>
+                    <input
+                      type="file"
+                      id="file-uploader"
+                      className="file-uploader"
+                    ></input>
                   </div>
                 </div>
                 <div className="person-avatar-txt">
