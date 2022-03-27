@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import '../Products.scss';
 import ProductsConfig from '../ProductsConfig';
-import { Link, useParams, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import CartQuantity from '../CartQuantity';
 
 function Recommend(props) {
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
+
+  //購物車用
   const { setProductDetailList } = props;
-  const { id } = useParams();
   const price = props.price;
   const img = props.product_img;
   const name = props.product_name;
@@ -14,9 +17,8 @@ function Recommend(props) {
 
   function addCart() {
     setProductDetailList(function (prevData) {
-      
+      setCartTotal(cartTotal + 1);
       return [{ price, img, name, pid, total }, ...prevData];
-      
     });
   }
 
@@ -32,7 +34,13 @@ function Recommend(props) {
           <p>{props.price}</p>
           <p className="pr-p-p">{props.material}</p>
           {/* <button className="pr-card-button" onClick={() => addCart()}></button> */}
-          <input type="button" value="+" name="Recommend" className="pr-card-button" onClick={() => addCart()}/>
+          <input
+            type="button"
+            value="+"
+            name="Recommend"
+            className="pr-card-button"
+            onClick={() => addCart()}
+          />
         </div>
       </div>
     </>
