@@ -28,6 +28,8 @@ function DetailList(props) {
     setTotal(1);
   }, [sid]);
 
+  
+
   return (
     <>
       <div className="pr-detail-list">

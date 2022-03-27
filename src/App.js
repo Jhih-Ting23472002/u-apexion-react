@@ -13,7 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 // Member
  import MemberLogin from './pages/Member/MemberLogin';
  import MemberSignUp from './pages/Member/MemberSignUp';
-import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+//import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
 import MemberPwdEdit from './pages/Member/MemberPwdEdit';
@@ -78,8 +78,8 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+//import IndexFirst from './pages/Index/IndexFirst';
+//import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -173,9 +173,9 @@ function App() {
               <Route path="/member-sign-up">
                 <MemberSignUp />
               </Route>
-              <Route path="/member-forgot-pwd">
+              {/* <Route path="/member-forgot-pwd">
                 <MemberForgotPwd />
-              </Route>
+              </Route> */}
               <Route path="/member-person">
                 <MemberPerson />
               </Route>
@@ -288,7 +288,6 @@ function App() {
                 <Route path="/products" exact>
                   <Products setProductDetailList={setProductDetailList} />
                 </Route>
-
                 <Route exact path="/cart-payment">
                   <CartChoosePayment
                     cartTotalPrice={cartTotalPrice} //購物車總金額
