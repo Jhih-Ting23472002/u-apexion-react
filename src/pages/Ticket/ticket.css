@@ -5,8 +5,9 @@
 }
 
 .seat-selected {
-  fill: var(--main-color-02);
-  stroke: white;
+  fill: var(--main-color-01);
+  stroke: var(--main-color-02);
+  stroke-width: 4;
 }
 
 .seat:hover {
@@ -18,13 +19,17 @@
 	.st2{fill:url(#SVGID_00000114756672554066700360000013326035074049570190_);}
 	.st3{mask:url(#SVGID_1_);}
 	.st4{fill:#FFFFFF;}
-	.st5{}
 	.st6{fill:#FFFFFF;stroke:#606060;stroke-miterlimit:10;}
 	.st7{fill:#606060;stroke:#FFFFFF;stroke-miterlimit:10;}
 	.st8{font-family:'NotoSansTC-Light-90ms-RKSJ-H';}
 	.st9{font-size:12.9039px;}
 	.st10{fill:none;stroke:url(#SVGID_00000150809683055419660790000009186993585327943334_);stroke-width:2;stroke-miterlimit:10;}
 	.st11{fill:none;stroke:url(#SVGID_00000102510429283395775120000009617074621872571549_);stroke-width:2;stroke-miterlimit:10;}
+
+  .seat-number-demo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 /* 座位svg樣式結束 */
 
 .sliderWrap img {
