@@ -11,8 +11,8 @@ import ScrollToTop from './pages/Cart/components/ScrollToTop';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Member
- import MemberLogin from './pages/Member/MemberLogin';
- import MemberSignUp from './pages/Member/MemberSignUp';
+import MemberLogin from './pages/Member/MemberLogin';
+import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
@@ -245,40 +245,40 @@ function App() {
               {/* <Route path="/ticket-test">
               <TicketTest />
             </Route> */}
-            <Route path="/ticket-trip-choose">
-              <TicketTrip
-                setTripSelected={setTripSelected}
-                setTripDays={setTripDays}
-                setTripPrice={setTripPrice}
-              />
-            </Route>
-            <Route path="/ticket-date-choose">
-              <TicketDate
-                tripSelected={tripSelected}
-                tripDays={tripDays}
-                setTripDate={setTripDate}
-              />
-            </Route>
-            <Route path="/ticket-date-choose-old">
-              <TicketDateOld />
-            </Route>
-            <Route path="/ticket-seat-choose">
-              <TicketSeat
-                tripDate={tripDate}
-                seatNumberDemo={seatNumberDemo}
-                setSeatNumberDemo={setSeatNumberDemo}
-              />
-            </Route>
-            <Route path="/ticket-meal-choose">
-              <TicketMeal
-                mealSelected={mealSelected}
-                setMealSelected={setMealSelected}
-                setChange={setChange}
-                change={change}
-              />
-            </Route>
-            <Route path="/ticket-confirm"></Route>
-            {/* <Route path="/ticket-test">
+              <Route path="/ticket-trip-choose">
+                <TicketTrip
+                  setTripSelected={setTripSelected}
+                  setTripDays={setTripDays}
+                  setTripPrice={setTripPrice}
+                />
+              </Route>
+              <Route path="/ticket-date-choose">
+                <TicketDate
+                  tripSelected={tripSelected}
+                  tripDays={tripDays}
+                  setTripDate={setTripDate}
+                />
+              </Route>
+              <Route path="/ticket-date-choose-old">
+                <TicketDateOld />
+              </Route>
+              <Route path="/ticket-seat-choose">
+                <TicketSeat
+                  tripDate={tripDate}
+                  seatNumberDemo={seatNumberDemo}
+                  setSeatNumberDemo={setSeatNumberDemo}
+                />
+              </Route>
+              <Route path="/ticket-meal-choose">
+                <TicketMeal
+                  mealSelected={mealSelected}
+                  setMealSelected={setMealSelected}
+                  setChange={setChange}
+                  change={change}
+                />
+              </Route>
+              <Route path="/ticket-confirm"></Route>
+              {/* <Route path="/ticket-test">
               <SeatDrag />
             </Route> */}
               {/* <Route path="/customize-mainpage">
@@ -317,6 +317,8 @@ function App() {
                     setTripSelected={setTripSelected} //from 采諭
                     tripPrice={tripPrice} //from 采諭
                     setTripPrice={setTripPrice} //from 采諭
+                    tripDate={tripDate} //from 采諭
+                    setTripDate={setTripDate} //from 采諭
                     //---------------------------------
                     productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                     setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
