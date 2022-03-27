@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
+import clsx from 'clsx';
 // import { getPost } from '../../data/WebApi'
 import PropTypes from 'prop-types';
 import './ForumHomePage.css';
@@ -13,7 +14,7 @@ const Root = styled.div`
   ${'' /* border: 1px solid red; */}
   width: 100%;
   margin: 0 auto;
-  ${'' /* border: 1px solid red; */}/
+  ${'' /* border: 1px solid red; */}
 `;
 const AllDisplayFlex = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const ForumSortNew = styled(Link)`
   `};
 `;
 const NUM_PER_PAGE = 4;
-const TOTAL_PAGE = 5;
+const TOTAL_PAGES = 5;
 
 function Post({ post }) {
   const [likes, setLikes] = useState(post.article_likes);
@@ -135,6 +136,27 @@ export default function ForumHomePage() {
   const location = useLocation();
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const triggerRef = useRef(null);
+  const onGrabData = currentPage => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        const data = posts.slice(
+          ((currentPage - 1) % TOTAL_PAGES) * NUM_PER_PAGE,
+          NUM_PER_PAGE * (currentPage % TOTAL_PAGES)
+        );
+        console.log(data);
+        resolve(data);
+      }, 1000);
+    });
+  };
+
+  const { data, loading } = useLazyLoad({ triggerRef, onGrabData });
+  // console.log(
+  //   posts.slice(
+  //     ((2 - 1) % TOTAL_PAGES) * NUM_PER_PAGE,
+  //     NUM_PER_PAGE * (2 % TOTAL_PAGES)
+  //   )
+  // );
 
   useEffect(() => {
     // fetch('http://localhost:3000/forum-list-connectTry')
@@ -298,7 +320,7 @@ export default function ForumHomePage() {
                   </div>
                 ))}
 
-              {posts
+              {data
                 .filter(v => {
                   if (v.forum_sid !== 31 && searchTerm === '') {
                     return v;
@@ -312,52 +334,12 @@ export default function ForumHomePage() {
                 .map(post => (
                   <Post post={post} />
                 ))}
-              {/* <nav aria-label="Page navigation example">
-                <ul className="pagination forum-pagination">
-                  <li className="page-item forum-page-item">
-                    <a
-                      style={{ color: '#808080' }}
-                      className="page-link forum-page-link"
-                      href="#/"
-                    >
-                      <i className="fas fa-angle-double-left"></i>
-                      Previous
-                    </a>
-                  </li>
-                  <li className="page-item forum-page-item">
-                    <a
-                      style={{ color: '#05F2F2' }}
-                      className="page-link forum-page-link"
-                      href="#/"
-                    >
-                      1
-                    </a>
-                  </li>
-                  <li className="page-item forum-page-item">
-                    <a className="page-link forum-page-link" href="#/">
-                      2
-                    </a>
-                  </li>
-                  <li className="page-item forum-page-item">
-                    <a className="page-link forum-page-link" href="#/">
-                      3
-                    </a>
-                  </li>
-                  <li className="page-item forum-page-item">
-                    <a
-                      style={{ display: 'inline' }}
-                      className="page-link forum-page-link"
-                      href="#/"
-                    >
-                      Next
-                    </a>
-                    <i
-                      style={{ fontSize: '10px' }}
-                      className="fas fa-angle-double-right"
-                    ></i>
-                  </li>
-                </ul>
-              </nav> */}
+              <div
+                ref={triggerRef}
+                className={clsx('trigger', { visible: loading })}
+              >
+                <LazyLoadPosts />
+              </div>
             </div>
           </div>
         </div>
