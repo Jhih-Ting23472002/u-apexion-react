@@ -15,23 +15,23 @@ function Navbar() {
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
-              <Link to="/travel-index">Schedule</Link>
+              <Link to="/travel-index">主題探索</Link>
             </li>
             <li>
-              <Link to="#/">Booking</Link>
+              <Link to="#/">訂票</Link>
             </li>
             <li>
-              <Link to="/products">Shop</Link>
+              <Link to="/products">購物</Link>
             </li>
             <li>
-              <Link to="/forum-home">Forum</Link>
+              <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to="/member-login">Login</Link>
+              <Link to="/member-login">登入</Link>
             </li>
             <li></li>
             <li>
-              <Link to="#/">Register</Link>
+              <Link to="#/">註冊</Link>
             </li>
             <li>
               <Link to="/cart-payment">

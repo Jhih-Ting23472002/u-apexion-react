@@ -7,13 +7,15 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Products(props) {
+  //傳給購物車用
   const { setProductDetailList } = props;
 
   const [ProductsNew, setProductsNew] = useState([]);
   const [ProductRecommend, setProductRecommend] = useState([]);
   const [ProductNavbar, setProductNavbar] = useState('#men');
-  const [NewProductImg, setNewProductImg] = useState("./product_img/M021J_BK019_1.jpg");
-
+  const [NewProductImg, setNewProductImg] = useState(
+    './product_img/M021J_BK019_1.jpg'
+  );
 
   useEffect(() => {
     // 新品推薦
@@ -209,22 +211,30 @@ function Products(props) {
         <div className="pr-recommendation-a">
           <a
             href="#men"
-            onClick={() => {setProductNavbar('#men');MenProduct()}}
+            onClick={() => {
+              setProductNavbar('#men');
+              MenProduct();
+            }}
             className={ProductNavbar === '#men' ? 'active' : ''}
           >
             男士精品
           </a>
           <Link
             to="#woman"
-            onClick={() => {setProductNavbar('#woman');
-            WomanProduct()}}
+            onClick={() => {
+              setProductNavbar('#woman');
+              WomanProduct();
+            }}
             className={ProductNavbar === '#woman' ? 'active' : ''}
           >
             女士精品
           </Link>
           <Link
             to="#Shoes"
-            onClick={() => {setProductNavbar('#Shoes');ShoesProduct()}}
+            onClick={() => {
+              setProductNavbar('#Shoes');
+              ShoesProduct();
+            }}
             className={ProductNavbar === '#Shoes' ? 'active' : ''}
           >
             鞋款
