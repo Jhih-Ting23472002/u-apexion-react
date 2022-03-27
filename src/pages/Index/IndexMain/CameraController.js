@@ -82,7 +82,7 @@ const CameraController = () => {
         './index_earth/earthmap1k.jpg'
       );
       let earthMaterialBumpTexture = new TextureLoader().load(
-        './index_earth/earthbump1k.jpg'
+        './index_earth/earthbump.jpg'
       );
       console.log(earthMaterialMapTexture);
       console.log(earthMaterialBumpTexture);

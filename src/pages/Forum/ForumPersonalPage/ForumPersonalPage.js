@@ -29,7 +29,10 @@ export default function ForumPersonalPage() {
         }}
       >
         <div className="forum_person col">
-          <div className="forum_person_left">
+          <div
+            className="forum_person_left"
+            style={{ border: '1px solid red' }}
+          >
             <div className="forum_person_img"></div>
           </div>
           <div className="forum_person_right">
@@ -39,14 +42,22 @@ export default function ForumPersonalPage() {
         </div>
         <div className="forum_person_bottom col">
           <div className="forum_person_bottom_icon">
-            <div className="forum_person_posts" style={{ cursor: 'pointer' }}>
+            <Link
+              to="/forum-personal"
+              className="forum_person_posts"
+              style={{ cursor: 'pointer' }}
+            >
               <i class="fa-solid fa-rectangle-list"></i>
               貼文
-            </div>
-            <div className="forum_person_saves" style={{ cursor: 'pointer' }}>
+            </Link>
+            <Link
+              to="forum-personal-saved"
+              className="forum_person_saves"
+              style={{ cursor: 'pointer' }}
+            >
               <i class="fa-solid fa-bookmark"></i>
               珍藏
-            </div>
+            </Link>
           </div>
           <div className="person_posts_photos">
             {personPostsData.map((v, i) => (

@@ -48,6 +48,13 @@
   color: white;
   letter-spacing: 3px;
   font-size: 14px;
+  transition: 1s;
+}
+.forum_person_posts:hover,
+.forum_person_saves:hover {
+  color: #05f2f2;
+  text-decoration: none;
+  font-size: 16px;
 }
 .forum_person_posts i,
 .forum_person_saves i {
@@ -91,4 +98,3 @@
 .person_posts_single_photo img:hover {
   transform: scale();
 }
-
