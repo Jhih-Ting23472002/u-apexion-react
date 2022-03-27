@@ -52,14 +52,14 @@ import TicketMeal from './pages/Ticket/TicketMeal';
 // import SeatDrag from './pages/Ticket/SeatDrag';
 
 // Travel
-import TravelIndex from './pages/Travel/TravelIndex';
-import TravelChoose from './pages/Travel/TravelChoose';
-import TravelNotes from './pages/Travel/TravelNotes';
-import TravelNotes2 from './pages/Travel/TravelNotes2';
-import TravelNotes3 from './pages/Travel/TravelNotes3';
-import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
+// import TravelIndex from './pages/Travel/TravelIndex';
+// import TravelChoose from './pages/Travel/TravelChoose';
+// import TravelNotes from './pages/Travel/TravelNotes';
+// import TravelNotes2 from './pages/Travel/TravelNotes2';
+// import TravelNotes3 from './pages/Travel/TravelNotes3';
+// import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
 //import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
-import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
+// import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
 //import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
 
 // Forum
@@ -72,12 +72,13 @@ import ForumPublishUpdatePage from './pages/Forum/ForumPublishUpdatePage';
 import ForumMemArticlePage from './pages/Forum/ForumMemArticlePage';
 import ForumHotPage from './pages/Forum/ForumHotPage';
 import ForumPersonalPage from './pages/Forum/ForumPersonalPage';
+import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-// import IndexFirst from './pages/Index/IndexFirst';
-// import IndexMain from './pages/Index/IndexMain';
+import IndexFirst from './pages/Index/IndexFirst';
+import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -252,12 +253,12 @@ function App() {
         <>
           <Navbar />
           <Switch>
-            {/* <Route exact path="/">
+            <Route exact path="/">
               <IndexFirst />
             </Route>
             <Route exact path="/u-apexion">
               <IndexMain />
-            </Route> */}
+            </Route>
             {/* <Route path="/index-video"></Route>
             <Route path="/index"></Route> */}
             <Route exact path="/forum-home">
@@ -286,6 +287,9 @@ function App() {
             </Route>
             <Route path="/forum-personal">
               <ForumPersonalPage />
+            </Route>
+            <Route path="/forum-personal-saved">
+              <ForumPersonalSavePage />
             </Route>
             <Route path="/member-login">
               <MemberLogin />
@@ -321,7 +325,7 @@ function App() {
               <MemberCollect />
             </Route>
             {/* 行程頁面 */}
-            <Route path="/travel-index">
+            {/* <Route path="/travel-index">
               <TravelIndex />
             </Route>
             <Route path="/travel-choose">
@@ -338,13 +342,13 @@ function App() {
             </Route>
             <Route path="/travelchoose-pricem">
               <TravelChoosePriceM />
-            </Route>
+            </Route> */}
             {/* <Route path="/travelchoose-pricef">
               <TravelChoosePriceF />
             </Route> */}
-            <Route path="/travelchoose-daym">
+            {/* <Route path="/travelchoose-daym">
               <TravelChooseDayM />
-            </Route>
+            </Route> */}
             {/* <Route path="/travelchoose-dayf">
               <TravelChooseDayF />
             </Route> */}
@@ -406,7 +410,7 @@ function App() {
                 <ProductsList />
               </Route>
               <Route path="/products" exact>
-                <Products setProductDetailList={setProductDetailList}/>
+                <Products setProductDetailList={setProductDetailList} />
               </Route>
 
               <Route exact path="/cart-payment">
