@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/navbar';
@@ -11,8 +11,8 @@ import ScrollToTop from './pages/Cart/components/ScrollToTop';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Member
-import MemberLogin from './pages/Member/MemberLogin';
-import MemberSignUp from './pages/Member/MemberSignUp';
+ import MemberLogin from './pages/Member/MemberLogin';
+ import MemberSignUp from './pages/Member/MemberSignUp';
 import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
