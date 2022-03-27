@@ -13,7 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 // Member
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
-import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+// import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
 import MemberPwdEdit from './pages/Member/MemberPwdEdit';
@@ -129,14 +129,12 @@ function App() {
           <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
             <Navbar />
             <Switch>
-              {/* <Route exact path="/">
-              <IndexFirst />
-            </Route>
-            <Route exact path="/u-apexion">
-              <IndexMain />
-            </Route> */}
-              {/* <Route path="/index-video"></Route>
-            <Route path="/index"></Route> */}
+              <Route exact path="/">
+                <IndexFirst />
+              </Route>
+              <Route exact path="/u-apexion">
+                <IndexMain />
+              </Route>
               <Route exact path="/forum-home">
                 <ForumHomePage />
               </Route>
@@ -173,9 +171,9 @@ function App() {
               <Route path="/member-sign-up">
                 <MemberSignUp />
               </Route>
-              <Route path="/member-forgot-pwd">
+              {/* <Route path="/member-forgot-pwd">
                 <MemberForgotPwd />
-              </Route>
+              </Route> */}
               <Route path="/member-person">
                 <MemberPerson />
               </Route>
