@@ -15,7 +15,16 @@ function TicketMeal(props) {
   const [modalShow, setModalShow] = useState(false);
   const [demoImg, setDemoImg] = useState('menu01');
   const [active, setActive] = useState([true, false, false, false]);
-  const { mealSelected, setMealSelected, change, setChange } = props;
+  const {
+    mealSelected,
+    tripSelected,
+    tripDate,
+    seatNumberDemo,
+    setMealSelected,
+    change,
+    setChange,
+    tripDays,
+  } = props;
 
   useEffect(() => {
     switch (demoImg) {
@@ -223,7 +232,15 @@ function TicketMeal(props) {
           </div>
         </div>
       </div>
-      <TicketConfirmModal show={modalShow} onHide={() => setModalShow(false)} />
+      <TicketConfirmModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        mealSelected={mealSelected}
+        tripSelected={tripSelected}
+        tripDate={tripDate}
+        seatNumberDemo={seatNumberDemo}
+        tripDays={tripDays}
+      />
       )
     </>
   );
