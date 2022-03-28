@@ -233,6 +233,39 @@
                 .pr-price {
                     margin-left: 2.5vw;
                 }
+
+                >.pr-price-display {
+                    display       : inline-flex;
+                    flex-direction: row;
+                    align-items   : center;
+                    margin-left   : 8px;
+                    width         : 100px ;
+                    position: relative;
+                    cursor         : pointer;
+
+                    .pr-price-tw {
+
+                        opacity        : 1;
+                        text-decoration: underline;
+                        cursor         : pointer;
+                        position       : absolute;
+                        top            : 0;
+                        left           : 0;
+                    }
+
+                    .pr-price-tw-none {
+                        opacity        : 0;
+                        text-decoration: underline;
+                        cursor         : auto;
+                        display        : none;
+                        pointer-events : none;
+                    }
+
+                    .pr-price-tw2 {
+                        opacity: 1;
+                    }
+                }
+
             }
 
             a {
@@ -278,18 +311,21 @@
                 >div {
                     margin-right: 0.5vw;
 
-                    
+
                 }
+
                 .plus-svg {
-                    fill:none;
-                    width: 20px;
+                    fill  : none;
+                    width : 20px;
                     height: 20px;
+                    cursor: pointer;
                 }
-                .plus-svg:hover {
-                    width: 19px;
-                    height: 19px;
-                    fill:none;
-                }
+
+                // .plus-svg:hover {
+                //     width: 19px;
+                //     height: 19px;
+                //     fill:none;
+                // }
 
 
             }

@@ -99,3 +99,16 @@ export const editAddress = (editData, user_id) => {
     }),
   }).then(res => res.json());
 };
+
+export const removeAddress = (sid, user_id) => {
+  return fetch(`${BASE_URL}/user/api/user-address-delete`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      sid,
+      user_id,
+    }),
+  }).then(res => res.json());
+};

@@ -13,7 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 // Member
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
-// import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
 import MemberPwdEdit from './pages/Member/MemberPwdEdit';
@@ -177,9 +177,9 @@ function App() {
               <Route path="/member-sign-up">
                 <MemberSignUp />
               </Route>
-              {/* <Route path="/member-forgot-pwd">
+              <Route path="/member-forgot-pwd">
                 <MemberForgotPwd />
-              </Route> */}
+              </Route>
               <Route path="/member-person">
                 <MemberPerson />
               </Route>
@@ -361,7 +361,13 @@ function App() {
                   />
                 </Route>
                 <Route path="/cart-complete">
-                  <CardComplete />
+                  <CardComplete
+                    productDetailList={productDetailList}
+                    totalProductItem={totalProductItem} //購物車總衣服數量
+                    tripSelected={tripSelected}
+                    tripPrice={tripPrice}
+                    cartTotalPrice={cartTotalPrice} //購物車總金額
+                  />
                 </Route>
               </ScrollToTop>
               <Route path="*">

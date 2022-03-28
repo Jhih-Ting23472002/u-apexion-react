@@ -3,15 +3,14 @@ import './MemberForgotPwd.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { accountAndMobileCheck } from '../../data/UserWebApi';
-import MemberForgotPwdCode from './MemberForgotPwdCode';
-import MemberForgotPwdNew from './MemberForgotPwdNew';
+// import MemberForgotPwdCode from './MemberForgotPwdCode';
+// import MemberForgotPwdNew from './MemberForgotPwdNew';
+import { useHistory } from 'react-router-dom';
 
 const MemberForgotPwd = () => {
   const [account, setAccount] = useState('');
   const [mobile, setMobile] = useState('');
   // const [errorMessage, setErrorMessage] = useState('');
-  const [forgotPwdCode, setForgetPwdCode] = useState(false);
-  const [forgotPwdNew, setForgetPwdNew] = useState(false);
 
   const handleForgetPwdSubmit = e => {
     e.preventDefault();
@@ -21,7 +20,8 @@ const MemberForgotPwd = () => {
       .then(obj => {
         console.log('obj:', obj);
         if (obj.code == '200') {
-          alert(obj.error);
+          alert(obj.message);
+          // setForgetPwdCode(true);
           //呼叫 發送驗證信
         } else {
           alert(obj.error);
@@ -67,12 +67,7 @@ const MemberForgotPwd = () => {
                   }}
                 />
               </div>
-              {/* <div className="member-input-container ">
-                <label htmlFor="" className="member-label">
-                  驗證碼
-                </label>
-                <input type="text" placeholder="" className="member-input" />
-              </div> */}
+
               <div className="member-btn-container">
                 <div className="member-return-btn-wrap">
                   <Link
@@ -104,14 +99,6 @@ const MemberForgotPwd = () => {
           </div>
         </div>
       </div>
-      <MemberForgotPwdCode
-        forgotPwdCode={forgotPwdCode}
-        setForgetPwdCode={setForgetPwdCode}
-      />
-      <MemberForgotPwdNew
-        forgotPwdNew={forgotPwdNew}
-        setForgetPwdNew={setForgetPwdNew}
-      />
     </>
   );
 };

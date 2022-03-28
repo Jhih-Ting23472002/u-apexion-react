@@ -14,7 +14,8 @@ const TripCard = props => {
   } = props;
 
   console.log('tripPrice', tripPrice);
-  console.log(typeof tripPrice);
+  let tripMoney = +tripPrice.substring(1);
+  console.log(tripMoney);
   console.log(
     'tripDate:dateSelected',
     tripDate.dateSelected,
@@ -48,9 +49,9 @@ const TripCard = props => {
               </div>
             </div>
             <div className="content-detail-inside-bottom-ticket">
-              <h5 className="cart-number-people">人數 5</h5>
+              <h5 className="cart-number-people">人數 4</h5>
               <button className="btn cart-remove-btn">remove</button>
-              <div className="cart-order-money">{tripPrice}</div>
+              <div className="cart-order-money">${tripMoney}</div>
             </div>
           </div>
         </div>
