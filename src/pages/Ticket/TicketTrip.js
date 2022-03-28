@@ -182,7 +182,7 @@ function TicketTrip(props) {
                         <div className="ticket-trip-card-body">
                           <div className="ticket-title">
                             <h3>{v.travel_name}</h3>
-                            <h3>${v.travel_price}</h3>
+                            <h3>{v.travel_price}</h3>
                           </div>
                           <p>{v.travel_description}</p>
                         </div>
