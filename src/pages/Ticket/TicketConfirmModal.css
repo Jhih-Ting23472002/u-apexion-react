@@ -38,6 +38,7 @@ element.style {
 
 .modal-header.ticket-confirm-title h2 {
   font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 .modal-header.ticket-confirm-title p {
@@ -132,4 +133,10 @@ element.style {
 
 .ticket-confirm-modal-footer>div {
   display: flex;
+}
+
+.ticket-confirm-seat {
+  /* border: 1px solid red */
+  display: flex;
+  justify-content: flex-end;
 }

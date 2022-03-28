@@ -1,11 +1,26 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
-import CartQuantity from '../pages/Products/CartQuantity'
+import CartQuantity from '../pages/Products/CartQuantity';
+import UserNameF from './UserNameF';
+import SignOut from './SignOut';
 
 function Navbar() {
-  const {cartTotal}=useContext(CartQuantity)
-  console.log({cartTotal})
+  //購物車內數量
+  const { cartTotal } = useContext(CartQuantity);
+  //登入
+  const { userNavbar, setUserNavbar } = useContext(UserNameF);
+  //登出
+  const { signOut, setSignOut } = useContext(SignOut);
+  //註冊連結
+  const [register, setRegister] = useState('/member-sign-up');
+
+  useEffect(() => {
+    if (signOut === '登出') {
+      setRegister('/member-login');
+    }
+  }, [signOut]);
+
   return (
     <>
       <div className="topspace"></div>
@@ -27,11 +42,20 @@ function Navbar() {
               <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to="/member-login">登入</Link>
+              <Link to="/member-login">{userNavbar}</Link>
             </li>
             <li></li>
             <li>
-              <Link to="#/">註冊</Link>
+              <Link
+                to={register}
+                onClick={() => {
+                  setSignOut('註冊');
+                  setUserNavbar('登入');
+                  localStorage.removeItem('user_id');
+                }}
+              >
+                {signOut}
+              </Link>
             </li>
             <li>
               <Link to="/cart-payment">
@@ -41,7 +65,8 @@ function Navbar() {
                   alt=""
                 />
                 <div className="cartTotal">
-                <p>{cartTotal}</p></div>
+                  <p>{cartTotal}</p>
+                </div>
               </Link>
             </li>
           </ul>

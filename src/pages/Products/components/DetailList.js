@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
 import '../productsDetail.scss';
+import ProductsConfig from '../ProductsConfig';
 import { useParams } from 'react-router-dom';
 import CartQuantity from '../CartQuantity';
 
 function DetailList(props) {
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
+  const [money, setMoney] = useState(false);
 
   const [total, setTotal] = useState(1);
+  const [twd, setTwd] = useState(0);
   const price = props.product.price;
   const img = props.product.product_img;
   const name = props.product.product_name;
@@ -25,8 +28,24 @@ function DetailList(props) {
     });
   }
   useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/product/api/DailyForeignExchangeRates'
+      );
+      const ExchangeRates = await response.json();
+      setTwd(ExchangeRates.USDTWD['Exrate']);
+      console.log(ExchangeRates.USDTWD['Exrate']);
+    })();
+  }, []);
+
+  useEffect(() => {
     setTotal(1);
   }, [sid]);
+
+  const moneyClickHandler = e => {
+    setMoney(true);
+  };
+
 
   return (
     <>
@@ -61,7 +80,25 @@ function DetailList(props) {
                   <option value="Large">Large</option>
                 </select>
               </div>
-              <p className="pr-price">售價:{props.product?.price ?? '0'}</p>
+              <p className="pr-price">US${props.product?.price ?? '0'}</p>
+              <div
+                className="pr-price-display"
+
+                onClick={moneyClickHandler}
+              >
+                <div
+                  className="pr-price-tw"
+                  style={{ opacity: money === true ? '0' : '1' }}
+                >
+                  試算台幣
+                </div>
+                <div
+                  className="pr-price-tw2"
+                  style={{ opacity: money === true ? '1' : '0' }}
+                >
+                  約NTD:{Math.floor(props.product.price * twd)}
+                </div>
+              </div>
             </div>
             <div className="pr-detail-quantity">
               <span>

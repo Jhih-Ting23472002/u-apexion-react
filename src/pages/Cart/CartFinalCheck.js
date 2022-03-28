@@ -8,7 +8,15 @@ import cartTicket from './img/cartTicket.png';
 import { Link } from 'react-router-dom';
 
 const CartFinalCheck = props => {
-  const { productDetailList } = props;
+  const {
+    productDetailList,
+    tripSelected,
+    tripPrice,
+    tripDate,
+    mealSelected,
+    totalProductItem,
+    cartTotalPrice,
+  } = props;
 
   return (
     <>
@@ -115,29 +123,32 @@ const CartFinalCheck = props => {
               <div className="cart-list-detail-inside col-8 flex-column limit-width">
                 <div className="d-flex justify-content-between need-width">
                   <div className="cart-product-list-group">
-                    行程：{props.tripSelected}
+                    行程：{tripSelected}
                   </div>
-                  <div className="cart-product-list-group">餐點</div>
+                  <div className="cart-product-list-group">
+                    餐點:{mealSelected.USER1}
+                  </div>
                 </div>
                 <div className="d-flex justify-content-between need-width">
                   <div className="cart-product-list-group">日程</div>
                   <div className="cart-product-list-group">
-                    2022/4/1 - 2022/5/1
+                    {tripDate.dateSelected} &nbsp;to&nbsp; {tripDate.returnDate}
                   </div>
                 </div>
                 <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">人數5</div>
+                  <div className="cart-product-list-group">人數4</div>
                   <div className="cart-product-list-group">
-                    {props.tripPrice}
+                    票價:${+tripPrice}
                   </div>
                 </div>
               </div>
             </div>
             <div className="d-flex flex-column align-items-end final-total-price">
               <div className="mb-4">
-                共{props.totalProductItem}件商品，總金額${props.cartTotalPrice}
+                共{totalProductItem + 1}件商品，總金額$
+                {cartTotalPrice + +tripPrice}
               </div>
-              <div>本訂單需付款金額為${props.cartTotalPrice}</div>
+              <div>本訂單需付款金額為${cartTotalPrice + +tripPrice}</div>
             </div>
           </div>
 

@@ -4,6 +4,7 @@ import './MemberEditOrDelete.css';
 // import ModalHeader from 'react-bootstrap/ModalHeader';
 import { useState, useEffect } from 'react';
 import { editAddress } from '../../data/UserWebApi';
+import { removeAddress } from '../../data/UserWebApi';
 import { useHistory } from 'react-router-dom';
 
 function MemberEditOrDelete(props) {
@@ -12,7 +13,7 @@ function MemberEditOrDelete(props) {
   const user_id = localStorage.getItem('user_id');
   const data = JSON.parse(localStorage.getItem('data'));
   console.log('user_id:', user_id);
-  console.log('data:', data);
+  console.log('data:', data.sid);
   //   {
   //     address: "台北市"
   //     phone_number: "0988888999"
@@ -68,6 +69,18 @@ function MemberEditOrDelete(props) {
       console.log('obj:', obj);
       if (obj.success) {
         alert('修改成功');
+        props.setModalShow(false);
+        // history.push('/member-address'); //新增成功的話跳轉回地址清單頁
+      }
+    });
+  };
+
+  // 刪除資料
+  const handleDelete = () => {
+    removeAddress(data.sid, user_id).then(obj => {
+      console.log('obj:', obj);
+      if (obj.success) {
+        alert('刪除成功');
         props.setModalShow(false);
         // history.push('/member-address'); //新增成功的話跳轉回地址清單頁
       }
@@ -160,6 +173,15 @@ function MemberEditOrDelete(props) {
                 }}
               >
                 返回
+              </button>
+              <button
+                type="button"
+                className="member-modal-circle-btn"
+                onClick={() => {
+                  handleDelete();
+                }}
+              >
+                確認刪除
               </button>
             </div>
           </form>

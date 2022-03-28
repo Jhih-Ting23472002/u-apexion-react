@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { before } from 'lodash';
+import React, { useState, useEffect } from 'react';
 import './CustomizeCraft.css';
 import spaceCraft from './images/spacecraft.png';
 
@@ -15,9 +16,23 @@ const allCountry = [
 ];
 
 function CustomizeCraft() {
-  const [country, setCountry] = useState();
+  const [countryImg, setCountryImg] = useState({});
+  const [classNameSwitch, setClassNameSwitch] = useState(0);
+  const [countryClass, setCountryClass] = useState('suit-flag');
   const [craftString, setCraftString] = useState('');
+  const [labelSt, setLabelSt] = useState('請輸入名稱(8個字元內)');
+  // const CountrySwitch = e => {
+  //   setClassNameSwitch(true);
+  //   if (classNameSwitch === true) {
+  //     e.currentTarget.className = 'suit-flag' ? 'click-country' : '';
+  //     setClassNameSwitch(false);
+  //   }
 
+  //   console.log(classNameSwitch);
+  // };
+  // useEffect(()=>{
+
+  // })
   return (
     <>
       <section className="Customcraft-page-view">
@@ -65,6 +80,7 @@ function CustomizeCraft() {
           </div>
           <div className="craft-img">
             <img src={spaceCraft} alt="" />
+            <p className="craft-string">{craftString}</p>
           </div>
         </div>
         <div className="craft-main-area">
@@ -78,6 +94,7 @@ function CustomizeCraft() {
           </div>
           <div className="craft-area-view2">
             <img src={spaceCraft} alt="" />
+            <p className="craft-string2">{craftString}</p>
           </div>
         </div>
         <svg
@@ -92,24 +109,52 @@ function CustomizeCraft() {
         <div className="craft-card">
           <h1>請選擇太空船外觀</h1>
           <h3>Customize Your SpaceCraft</h3>
-          <h2>20,000${craftString}</h2>
+          <h2>20,000$</h2>
           <div className="craft-in-label">
             <input
               type="text"
+              pattern="[A-z][0-9][-]{1,8}"
               value={craftString}
               onChange={e => {
                 setCraftString(e.target.value);
-                console.log(e.target.value) 
+                e.target.value.length === 0
+                  ? setLabelSt('請輸入名稱(8個字元內)')
+                  : setLabelSt('');
               }}
             />
-            <label>請輸入名稱(8個字元內)</label>
+            <label>{labelSt}</label>
           </div>
 
           <div className="country-select">
             {allCountry.map((v, i) => {
               return (
-                <div className="suit-flag" key={i}>
-                  <img src={v} alt="" />
+                <div
+                  className={countryClass}
+                  //關鍵在這邊的 className 更改大家都一起改
+                  key={i}
+                  onClick={e => {
+                    setClassNameSwitch(0);
+                    console.log(classNameSwitch);
+                    // const newCountryClass = {...countryClass,class:'click-country'}
+                    setCountryClass(
+                      classNameSwitch === 0 ? 'suit-flag' : 'click-country'
+                    );
+                    console.log(e.currentTarget.className);
+
+                    setClassNameSwitch(classNameSwitch === 0 ? 1 : 0);
+
+                    console.log(classNameSwitch);
+                  }}
+                >
+                  <img
+                    data={v}
+                    src={v}
+                    alt=""
+                    onClick={e => {
+                      setCountryImg(e.target.data);
+                      // console.log(e.target.data);
+                    }}
+                  />
                 </div>
               );
             })}

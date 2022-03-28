@@ -28,12 +28,12 @@ function CustomizeMainPage() {
                   onMouseEnter={e => {
                     const newStart = true;
                     setStart(e.currentTarget.play(newStart));
-                    console.log(e.currentTarget.play());
+                    // console.log(e.currentTarget.play());
                   }}
                   onMouseLeave={e => {
                     const newStart = false;
                     setStart(e.currentTarget.pause(newStart));
-                    console.log(e.currentTarget.pause());
+                    // console.log(e.currentTarget.pause());
                   }}
                   className="Custom-suit-video"
                   src={suitMovie}

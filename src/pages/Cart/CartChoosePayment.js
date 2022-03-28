@@ -34,7 +34,8 @@ const CartChoosePayment = props => {
           </div>
           <ProcessLine />
           <div className="cart d-flex justify-content-center py-5 total-price-text">
-            您的購物袋裡有以下商品，目前總金額是 ${props.cartTotalPrice}。
+            您的購物袋裡有以下商品，目前總金額是 $
+            {props.cartTotalPrice + +props.tripPrice}。
           </div>
 
           <ProductCard
@@ -51,6 +52,10 @@ const CartChoosePayment = props => {
             setTripSelected={props.setTripSelected}
             tripPrice={props.tripPrice}
             setTripPrice={props.setTripPrice}
+            tripDate={props.tripDate}
+            setTripDate={props.setTripDate}
+            mealSelected={props.mealSelected}
+            setMealSelected={props.setMealSelected}
           />
 
           {/* <SuitCard />
@@ -95,14 +100,14 @@ const CartChoosePayment = props => {
             </div>
             <div className="cart-should-pay col-5">
               <h5 className="cart-should-pay-text">
-                共{props.totalProductItem}件商品
+                共{props.totalProductItem + 1}件商品
               </h5>
               <h5 className="cart-should-pay-text">
-                小計:{props.cartTotalPrice}
+                小計:&nbsp;${props.cartTotalPrice + +props.tripPrice}
               </h5>
               <div className="cart-should-pay-separated-line"></div>
               <h5 className="cart-should-pay-total-price">
-                應付總金額:{props.cartTotalPrice}
+                應付總金額: ${props.cartTotalPrice + +props.tripPrice}
               </h5>
               <div className="cart-button">
                 <Link to={'/products'} className="btn continue-btn">

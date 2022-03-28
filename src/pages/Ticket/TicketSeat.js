@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import SeatSvgFile from './SeatSvgFile';
 import SeatDrag from './SeatDrag';
+import config from './Config';
 
 function TicketSeat(props) {
   const { tripDate, seatNumberDemo, setSeatNumberDemo } = props;
@@ -19,7 +20,25 @@ function TicketSeat(props) {
   const [seatData, setSeatData] = useState([]);
   const [seatCabin, setseatCabin] = useState('A');
   const [change, setChange] = useState(0);
+  const memberAPI = config.TK_ORDER_API;
+  const [memberData, setMemberData] = useState([]);
+
   // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(memberAPI, {
+        method: 'GET',
+      });
+      const memberListDatas = await response.json();
+      // console.log(memberListDatas.member_name);
+      console.log(memberListDatas[0].member_name);
+      const memberArray = memberListDatas[0].member_name.split(',');
+      console.log(memberArray);
+      setMemberData(memberArray);
+    })();
+  }, []);
+
+  console.log('成員陣列狀態', memberData);
 
   useEffect(() => {
     (async function () {
@@ -132,10 +151,9 @@ function TicketSeat(props) {
               <h3>SEAT</h3>
               <div>
                 <div className="ticket-users">
-                  <p>USER1_______</p>
-                  <p>USER2_______</p>
-                  <p>USER3_______</p>
-                  <p>USER4_______</p>
+                  {memberData.map((v, i) => {
+                    return <p key={i}>{v}_______</p>;
+                  })}
                 </div>
                 <div className="ticket-seat-number">
                   <SeatDrag seatNumberDemo={seatNumberDemo} />
