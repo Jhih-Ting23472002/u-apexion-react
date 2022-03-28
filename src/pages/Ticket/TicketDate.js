@@ -8,6 +8,7 @@ const now = new Date();
 function TicketDate(props) {
   const [tripDays, setTripDays] = useState(props.tripDays);
   const [dateDeperature, setDateDeperature] = useState('----------');
+  const { setTripDate } = props;
 
   // const [dateDeperature, setDateDeperature] = useState(
   //   new Date(2022, now.getMonth(), now.getDate()).toISOString().slice(0, 10)
@@ -95,6 +96,7 @@ function TicketDate(props) {
                   setDateDeperature={setDateDeperature}
                   setDateBack={setDateBack}
                   tripDays={tripDays}
+                  setTripDate={setTripDate}
                 />
               </div>
             </div>

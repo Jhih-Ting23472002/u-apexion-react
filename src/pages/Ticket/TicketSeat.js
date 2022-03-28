@@ -8,13 +8,55 @@ import seat03 from './img/seat03.png';
 import './ticket.css';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import SeatSvgFile from './SeatSvgFile';
+import SeatDrag from './SeatDrag';
+import config from './Config';
 
-function TicketSeat() {
+function TicketSeat(props) {
+  const { tripDate, seatNumberDemo, setSeatNumberDemo } = props;
   const [isSeatA, setIsSeatA] = useState(false);
   const [isSeatB, setIsSeatB] = useState(false);
   const [isSeatC, setIsSeatC] = useState(false);
+  const [seatData, setSeatData] = useState([]);
+  const [seatCabin, setseatCabin] = useState('A');
+  const [change, setChange] = useState(0);
+  const memberAPI = config.TK_ORDER_API;
+  const [memberData, setMemberData] = useState([]);
 
-  useEffect(() => {}, [isSeatA, isSeatB, isSeatC]);
+  // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(memberAPI, {
+        method: 'GET',
+      });
+      const memberListDatas = await response.json();
+      // console.log(memberListDatas.member_name);
+      console.log(memberListDatas[0].member_name);
+      const memberArray = memberListDatas[0].member_name.split(',');
+      console.log(memberArray);
+      setMemberData(memberArray);
+    })();
+  }, []);
+
+  console.log('成員陣列狀態', memberData);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        `http://localhost:3001/ticket-seat/api/seat-list`,
+        {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+          body: JSON.stringify({ tripDate: tripDate, seatCabin: seatCabin }),
+        }
+      );
+      const seatListDatas = await response.json();
+      setSeatData(seatListDatas);
+    })();
+    console.log(seatData);
+  }, [isSeatA, isSeatB, isSeatC]);
 
   function colorHandler(e) {
     console.log('abc');
@@ -26,18 +68,21 @@ function TicketSeat() {
         setIsSeatB(false);
         setIsSeatC(false);
         console.log('A');
+        setseatCabin('A');
         break;
       case 'B':
         setIsSeatA(false);
         setIsSeatB(true);
         setIsSeatC(false);
         console.log('B');
+        setseatCabin('B');
         break;
       case 'C':
         setIsSeatA(false);
         setIsSeatB(false);
         setIsSeatC(true);
         console.log('C');
+        setseatCabin('C');
         break;
       default:
         setIsSeatA(false);
@@ -90,23 +135,28 @@ function TicketSeat() {
                 </div>
               </div>
               <div className="ticket-seat-choose">
-                <img className="seat-svg" src={seatsvg} alt="" />
+                <div className="seat-svg">
+                  <SeatSvgFile
+                    seatData={seatData}
+                    seatCabin={seatCabin}
+                    change={change}
+                    setChange={setChange}
+                    setSeatNumberDemo={setSeatNumberDemo}
+                  />
+                </div>
+                {/* <img className="seat-svg" src={seatsvg} alt="" /> */}
               </div>
             </div>
             <div className="ticket-seat-demo-area">
               <h3>SEAT</h3>
               <div>
                 <div className="ticket-users">
-                  <p>USER1_______</p>
-                  <p>USER2_______</p>
-                  <p>USER3_______</p>
-                  <p>USER4_______</p>
+                  {memberData.map((v, i) => {
+                    return <p key={i}>{v}_______</p>;
+                  })}
                 </div>
                 <div className="ticket-seat-number">
-                  <p>FD.3</p>
-                  <p>FD.4</p>
-                  <p>FD.5</p>
-                  <p>FD.6</p>
+                  <SeatDrag seatNumberDemo={seatNumberDemo} />
                 </div>
               </div>
             </div>

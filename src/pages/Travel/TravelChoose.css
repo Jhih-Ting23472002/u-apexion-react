@@ -1,3 +1,35 @@
+/* sort button */
+
+.sortButton{
+  padding:0px;
+  border-right:3px solid white ;
+}
+
+.sortitemBuyButton {
+  width: 120px;
+  height: 40px;
+  margin: 0 8.5px;
+  color: #05F2F2;
+  background-color: black;
+  border: 4px double #05F2F2;
+  border-radius: 200px;
+  font-size: 18px;
+}
+
+.sortitemBuyButton:hover {
+  background-color: #05F2F2;
+  color: black;
+  border: 4px double black;
+}
+
+.sortitemBuyButton>a{
+  color: #05F2F2;
+}
+.sortitemBuyButton>a:hover{
+  text-decoration:none;
+  color: black;
+}
+
 /* search */
 
 .choosesearch {
@@ -75,7 +107,7 @@
   padding: 0;
   position: relative;
   text-shadow: 0 -1px 0 #000;
-  width: 60px;
+  width: 74px;
 }
 
 .webdesigntuts-workshopchoose button:hover,
@@ -198,6 +230,14 @@
   background-color: #05F2F2;
   color: black;
   border: 4px double black;
+}
+
+.itemBuyButton>a{
+  color: #05F2F2;
+}
+.itemBuyButton>a:hover{
+  text-decoration:none;
+  color: black;
 }
 
 .morechoose{

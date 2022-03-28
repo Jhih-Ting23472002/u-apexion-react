@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './navbar.css';
+import { Link } from 'react-router-dom';
+import CartQuantity from '../pages/Products/CartQuantity';
+import UserNameF from './UserNameF';
+import SignOut from './SignOut';
 
-function navbar() {
+function Navbar() {
+  //購物車內數量
+  const { cartTotal } = useContext(CartQuantity);
+  const { signOut, setSignOut } = useContext(SignOut);
+
+  //   //找會員id用
+  const { userNavbar, setUserNavbar } = useContext(UserNameF);
+
   return (
     <>
       <div className="topspace"></div>
@@ -11,36 +22,48 @@ function navbar() {
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
-              <a href="/travel-index">Schedule</a>
+              <Link to="/travel-index">主題探索</Link>
             </li>
             <li>
-              <a href="#/">Booking</a>
+              <Link to="#/">訂票</Link>
             </li>
             <li>
-              <a href="/products">Shop</a>
+              <Link to="/products">購物</Link>
             </li>
             <li>
-              <a href="/forum-home">Forum</a>
+              <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <a href="#/">Login</a>
+              <Link to="/member-login">{userNavbar}</Link>
             </li>
             <li></li>
             <li>
-              <a href="#/">Register</a>
+              <Link
+                to="#/"
+                onClick={() => {
+                  setSignOut('註冊');
+                  setUserNavbar('登入');
+                  localStorage.removeItem('user_id');
+                }}
+              >
+                {signOut}
+              </Link>
             </li>
             <li>
-              <a href="/cart-payment">
+              <Link to="/cart-payment">
                 <img
                   className="nav_nav-bar-img"
                   src={require('./tools/Bag.png')}
                   alt=""
                 />
-              </a>
+                <div className="cartTotal">
+                  <p>{cartTotal}</p>
+                </div>
+              </Link>
             </li>
           </ul>
 
-          <a href="#/" className="nav_menu">
+          <Link to="#/" className="nav_menu">
             <svg
               className="three-line"
               width="30"
@@ -68,43 +91,43 @@ function navbar() {
                 />
               </defs>
             </svg>
-          </a>
+          </Link>
           <div className="phone-menu">
             <ul>
               <li>
-                <a href="#/" data-text="&nbsp;Schedule">
+                <Link to="#/" data-text="&nbsp;Schedule">
                   &nbsp;Schedule
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Booking">
+                <Link to="#/" data-text="&nbsp;Booking">
                   &nbsp;Booking
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Customize">
+                <Link to="#/" data-text="&nbsp;Customize">
                   &nbsp;Customize
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Member">
+                <Link to="#/" data-text="&nbsp;Member">
                   &nbsp;Member
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Forum">
+                <Link to="#/" data-text="&nbsp;Forum">
                   &nbsp;Forum
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/" data-text="&nbsp;Product">
+                <Link to="/products" data-text="&nbsp;Product">
                   &nbsp;Product
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cart-payment" data-text="&nbsp;Cart">
+                <Link to="/cart-payment" data-text="&nbsp;Cart">
                   &nbsp;Cart
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -114,4 +137,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;

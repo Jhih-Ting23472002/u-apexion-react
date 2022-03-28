@@ -26,7 +26,7 @@ const MemberLogin = () => {
       .then(data => {
         localStorage.setItem('user_id', data.info.sid);
         localStorage.getItem('user_id');
-        history.push('/'); //登入成功後導入會員頁
+        history.push('/member-person'); //登入成功後導入會員頁
       });
   };
 
@@ -63,9 +63,16 @@ const MemberLogin = () => {
                 />
               </div>
               <div className="login-forgot-pwd">
-                <a href="#/">
+                <Link
+                  to="/member-forgot-pwd"
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  {/* <a href="#/"> */}
                   <small>忘記密碼</small>
-                </a>
+                  {/* </a> */}
+                </Link>
               </div>
 
               {/* <div className="login-btn-container">

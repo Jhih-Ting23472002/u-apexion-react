@@ -1,14 +1,23 @@
 import React from 'react';
 import './CartFinalCheck.css';
-import example from './img/example.png';
+import ProductsConfig from '../Products/ProductsConfig';
 import spaceSuit from './img/spaceSuit.png';
 import spaceSeat from './img/spaceSeat.png';
 import spaceShip from './img/spaceShip.png';
 import cartTicket from './img/cartTicket.png';
 import { Link } from 'react-router-dom';
 
-const CartFinalCheck = (props) => {
-  // cartUserInfo
+const CartFinalCheck = props => {
+  const {
+    productDetailList,
+    tripSelected,
+    tripPrice,
+    tripDate,
+    mealSelected,
+    totalProductItem,
+    cartTotalPrice,
+  } = props;
+
   return (
     <>
       <div className="cart-background container-fluid">
@@ -47,20 +56,25 @@ const CartFinalCheck = (props) => {
             </div>
 
             {/* 衣服褲子 */}
-            <div className="cart-order-item cart-list-detail d-flex">
-              <div className="cart-img-div col-4">
-                <img src={example} alt="" />
-              </div>
-              <div className="cart-list-detail-inside col-8">
-                <h5 className="cart-product-list-group">商品名稱</h5>
-                <div className="cart-product-list-group">1</div>
-                <div className="cart-product-list-group">$xxxxx</div>
-              </div>
-            </div>
-            <div className="cart-list-detail-line"></div>
-
+            {productDetailList.map(v => (
+              <React.Fragment key={v.pid}>
+                <div className="cart-order-item cart-list-detail d-flex">
+                  <div className="cart-img-div col-4">
+                    <img src={ProductsConfig.IMG_PATH + '/' + v.img} alt="" />
+                  </div>
+                  <div className="cart-list-detail-inside col-8">
+                    <h5 className="cart-product-list-group">{v.name}</h5>
+                    <div className="cart-product-list-group">{v.total}</div>
+                    <div className="cart-product-list-group">
+                      每項${v.price}
+                    </div>
+                  </div>
+                </div>
+                <div className="cart-list-detail-line"></div>
+              </React.Fragment>
+            ))}
             {/* 個人宇航服 */}
-            <div className="cart-order-item cart-list-detail d-flex">
+            {/* <div className="cart-order-item cart-list-detail d-flex">
               <div className="cart-img-div col-4">
                 <img src={spaceSuit} alt="" />
               </div>
@@ -71,10 +85,10 @@ const CartFinalCheck = (props) => {
                 <div className="cart-product-list-group">$XXXXX</div>
               </div>
             </div>
-            <div className="cart-list-detail-line"></div>
+            <div className="cart-list-detail-line"></div> */}
 
             {/* 太空艙座位 */}
-            <div className="cart-order-item cart-list-detail d-flex">
+            {/* <div className="cart-order-item cart-list-detail d-flex">
               <div className="cart-img-div col-4">
                 <img src={spaceSeat} alt="" />
               </div>
@@ -84,10 +98,10 @@ const CartFinalCheck = (props) => {
                 <div className="cart-product-list-group">$XXXXX</div>
               </div>
             </div>
-            <div className="cart-list-detail-line"></div>
+            <div className="cart-list-detail-line"></div> */}
 
             {/* 太空船 spacecraft */}
-            <div className="cart-order-item cart-list-detail d-flex">
+            {/* <div className="cart-order-item cart-list-detail d-flex">
               <div className="cart-img-div col-4">
                 <img src={spaceShip} alt="" className="spaceship-height" />
               </div>
@@ -98,7 +112,7 @@ const CartFinalCheck = (props) => {
                 <div className="cart-product-list-group">$XXXXX</div>
               </div>
             </div>
-            <div className="cart-list-detail-line"></div>
+            <div className="cart-list-detail-line"></div> */}
 
             {/* 票券 ticket */}
             <div className="cart-order-item cart-list-detail d-flex">
@@ -108,24 +122,33 @@ const CartFinalCheck = (props) => {
 
               <div className="cart-list-detail-inside col-8 flex-column limit-width">
                 <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">行程：{props.tripSelected}</div>
-                  <div className="cart-product-list-group">餐點</div>
+                  <div className="cart-product-list-group">
+                    行程：{tripSelected}
+                  </div>
+                  <div className="cart-product-list-group">
+                    餐點:{mealSelected.USER1}
+                  </div>
                 </div>
                 <div className="d-flex justify-content-between need-width">
                   <div className="cart-product-list-group">日程</div>
                   <div className="cart-product-list-group">
-                    2022/4/1 - 2022/5/1
+                    {tripDate.dateSelected} &nbsp;to&nbsp; {tripDate.returnDate}
                   </div>
                 </div>
                 <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">人數5</div>
-                  <div className="cart-product-list-group">{props.tripPrice}</div>
+                  <div className="cart-product-list-group">人數4</div>
+                  <div className="cart-product-list-group">
+                    票價:${+tripPrice}
+                  </div>
                 </div>
               </div>
             </div>
             <div className="d-flex flex-column align-items-end final-total-price">
-              <div className="mb-4">共n件商品，總金額{props.tripPrice}</div>
-              <div>本訂單需付款金額為{props.tripPrice}</div>
+              <div className="mb-4">
+                共{totalProductItem + 1}件商品，總金額$
+                {cartTotalPrice + +tripPrice}
+              </div>
+              <div>本訂單需付款金額為${cartTotalPrice + +tripPrice}</div>
             </div>
           </div>
 
@@ -162,7 +185,11 @@ const CartFinalCheck = (props) => {
               </div>
               <div className="d-flex mt-5">
                 <p className="col-3">寄送地址：</p>
-                <p className="col-6">{props.cartUserInfo.addressCity}{props.cartUserInfo.addressDist}{props.cartUserInfo.address}</p>
+                <p className="col-6">
+                  {props.cartUserInfo.addressCity}
+                  {props.cartUserInfo.addressDist}
+                  {props.cartUserInfo.address}
+                </p>
                 <div className="col-3"></div>
               </div>
               <div className="d-flex my-5">

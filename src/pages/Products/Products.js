@@ -6,12 +6,16 @@ import ProductsConfig from './ProductsConfig';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Products() {
+function Products(props) {
+  //傳給購物車用
+  const { setProductDetailList } = props;
+
   const [ProductsNew, setProductsNew] = useState([]);
   const [ProductRecommend, setProductRecommend] = useState([]);
   const [ProductNavbar, setProductNavbar] = useState('#men');
-  const [NewProductImg, setNewProductImg] = useState("./product_img/M021J_BK019_1.jpg");
-
+  const [NewProductImg, setNewProductImg] = useState(
+    './product_img/M021J_BK019_1.jpg'
+  );
 
   useEffect(() => {
     // 新品推薦
@@ -26,7 +30,7 @@ function Products() {
       const responseMen = await fetch(ProductsConfig.MEN_Products);
       const ProductMen = await responseMen.json();
       setProductRecommend(ProductMen);
-      console.log(setProductRecommend);
+      // console.log(setProductRecommend);
     })();
   }, []);
 
@@ -205,35 +209,43 @@ function Products() {
       <div className="pr-recommendation">
         <h2>時尚推薦</h2>
         <div className="pr-recommendation-a">
-          <a
-            href="#men"
-            onClick={() => {setProductNavbar('#men');MenProduct()}}
+          <Link
+            to="#men"
+            onClick={() => {
+              setProductNavbar('#men');
+              MenProduct();
+            }}
             className={ProductNavbar === '#men' ? 'active' : ''}
           >
             男士精品
-          </a>
-          <a
-            href="#woman"
-            onClick={() => {setProductNavbar('#woman');
-            WomanProduct()}}
+          </Link>
+          <Link
+            to="#woman"
+            onClick={() => {
+              setProductNavbar('#woman');
+              WomanProduct();
+            }}
             className={ProductNavbar === '#woman' ? 'active' : ''}
           >
             女士精品
-          </a>
-          <a
-            href="#Shoes"
-            onClick={() => {setProductNavbar('#Shoes');ShoesProduct()}}
+          </Link>
+          <Link
+            to="#Shoes"
+            onClick={() => {
+              setProductNavbar('#Shoes');
+              ShoesProduct();
+            }}
             className={ProductNavbar === '#Shoes' ? 'active' : ''}
           >
             鞋款
-          </a>
-          <a
-            href="#watch"
+          </Link>
+          <Link
+            to="#watch"
             onClick={() => setProductNavbar('#watch')}
             className={ProductNavbar === '#watch' ? 'active' : ''}
           >
             配件與腕錶
-          </a>
+          </Link>
         </div>
         <div className="pr-container">
           {ProductRecommend.map((Product, i) => {
@@ -246,14 +258,15 @@ function Products() {
                 material={material}
                 product_img={product_img}
                 price={price}
+                setProductDetailList={setProductDetailList}
               />
             );
           })}
         </div>
         <div className="pr-card-a-div">
-          <a href="/products-list">
+          <Link to="/products-list/men">
             View All<i className="fa-solid fa-arrow-right"></i>
-          </a>
+          </Link>
         </div>
       </div>
       {/*-------手機sp-------------*/}
@@ -262,28 +275,28 @@ function Products() {
           <h3>男士精品</h3>
           <img src="./product_img/28b106.jpeg" alt="" />
           <div>
-            <a href="#/">探索</a>
+            <Link to="#/">探索</Link>
           </div>
         </div>
         <div className="pr-sp-card-img">
           <h3>女士精品</h3>
           <img src="./product_img/cdc-1200.jpeg" alt="" />
           <div>
-            <a href="#/">探索</a>
+            <Link to="#/">探索</Link>
           </div>
         </div>
         <div className="pr-sp-card-img">
           <h3>鞋款</h3>
           <img src="./product_img/2019071945540457.jpg" alt="" />
           <div>
-            <a href="#/">探索</a>
+            <Link to="#/">探索</Link>
           </div>
         </div>
         <div className="pr-sp-card-img">
           <h3>配件與腕錶</h3>
           <img src="./product_img/Expe.jpeg" alt="" />
           <div>
-            <a href="#/">探索</a>
+            <Link to="#/">探索</Link>
           </div>
         </div>
       </div>

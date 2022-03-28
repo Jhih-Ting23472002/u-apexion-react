@@ -6,7 +6,9 @@ import DetailList from './components/DetailList';
 import { useParams, Link } from 'react-router-dom';
 import ProductsConfig from './ProductsConfig';
 
-function ProductsDetail({ setProductDetailList }) {
+function ProductsDetail(props) {
+  const { setProductDetailList } = props;
+  //console.log(productDetailList)
   const { sid } = useParams();
 
   const [ProductDetail, setProductDetail] = useState([]);
@@ -23,7 +25,7 @@ function ProductsDetail({ setProductDetailList }) {
       const allDetail = await response.json();
       // console.log(allDetail);
       setProductDetail(allDetail);
-
+      //找到網址列的sid
       const newProduct = allDetail.find((v, i) => v.sid === parseInt(sid));
       setProduct(newProduct);
       const data = localStorage.getItem('productStorage')
@@ -75,10 +77,10 @@ function ProductsDetail({ setProductDetailList }) {
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
-            <a href="http://localhost:3000/products-list#men">男士精品</a>
-            <a href="http://localhost:3000/products-list">女士精品</a>
-            <a href="http://localhost:3000/products-list">鞋款</a>
-            <a href="#/">配件與腕錶</a>
+            <Link to="/products-list/men">男士精品</Link>
+            <Link to="/products-list/woman">女士精品</Link>
+            <Link to="/products-list/Shoes">鞋款</Link>
+            <Link to="#/">配件與腕錶</Link>
           </div>
           <div className="div-wrap">
             <div className="wrap">
@@ -95,7 +97,11 @@ function ProductsDetail({ setProductDetailList }) {
           </div>
         </div>
         {/*---------------商品資訊-----------------------------------------------------*/}
-        <DetailList product={product} />
+        <DetailList
+          product={product}
+          setProductDetailList={setProductDetailList}
+          
+        />
         {/* 相關商品卡片開始 */}
         <div className="pr-detail-cards1">
           <h4>相關商品</h4>

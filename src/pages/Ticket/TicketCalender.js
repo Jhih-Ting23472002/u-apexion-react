@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 function TicketCalender(props) {
   const didMountRef = useRef(false);
   console.log(props.tripDays);
-  const [monthSelected, setMonthSelected] = useState(0);
+  const [monthSelected, setMonthSelected] = useState(new Date().getMonth());
   const [monthShow, setMonthShow] = useState([0, 1, 2]);
 
   // const [pickDate, setPickDate] = useState('');
@@ -155,6 +155,8 @@ function TicketCalender(props) {
         1,
         (parseInt(e.currentTarget.dataset.date.split('-')[2]) + 1).toString()
       );
+
+      props.setTripDate({ dateSelected: dateSelected, returnDate: returnDate });
       const def = abc.join('-');
       console.log('揮手揮手!!!!!!!!!!!!!!!!', abc);
       console.log('揮手揮手!!!!!!!!!!!!!!!!', def);

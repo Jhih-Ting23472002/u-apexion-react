@@ -68,3 +68,10 @@
   padding: 4px 8px;
   border-radius: 5px;
 }
+
+.editordelete-btn-td{
+  display: flex;
+  justify-content: flex-end;
+
+
+}

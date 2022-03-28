@@ -17,32 +17,32 @@ const Footer = () => {
 
             <div className="f2 col-lg-3 d-none d-xl-block">
               <div className="">
-                <h6 className="footer-heading2">Services</h6>
+                <h6 className="footer-heading2">品牌</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
-                    <a href="#/">Email Marketing</a>
+                    <a href="#/">電子郵件行銷</a>
                   </li>
                   <li>
-                    <a href="#/">Campaigns</a>
+                    <a href="#/">廣告/活動</a>
                   </li>
                   <li>
-                    <a href="#/">Branding</a>
+                    <a href="#/">品牌服務</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="f2-p d-block d-xl-none">
               <div className="">
-                <h6 className="footer-heading2">Services</h6>
+                <h6 className="footer-heading2">品牌</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
-                    <a href="#/">Email Marketing</a>
+                    <a href="#/">電子郵件行銷</a>
                   </li>
                   <li>
-                    <a href="#/">Campaigns</a>
+                    <a href="#/">廣告/活動</a>
                   </li>
                   <li>
-                    <a href="#/">Branding</a>
+                    <a href="#/">品牌服務</a>
                   </li>
                 </ul>
               </div>
@@ -50,32 +50,32 @@ const Footer = () => {
 
             <div className="f3 col-lg-3 d-none d-xl-block">
               <div className="">
-                <h6 className="footer-heading2">Furniture</h6>
+                <h6 className="footer-heading2">服務</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
-                    <a href="#/">Beds</a>
+                    <a href="#/">旅遊行程</a>
                   </li>
                   <li>
-                    <a href="#/">Chair</a>
+                    <a href="#/">訂票服務</a>
                   </li>
                   <li>
-                    <a href="#/">All</a>
+                    <a href="#/">購物中心</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="f3-p d-block d-xl-none">
               <div className="">
-                <h6 className="footer-heading2">Furniture</h6>
+                <h6 className="footer-heading2">服務</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
-                    <a href="#/">Beds</a>
+                    <a href="#/">旅行</a>
                   </li>
                   <li>
-                    <a href="#/">Chair</a>
+                    <a href="#/">訂票</a>
                   </li>
                   <li>
-                    <a href="#/">All</a>
+                    <a href="#/">購物</a>
                   </li>
                 </ul>
               </div>
@@ -83,7 +83,7 @@ const Footer = () => {
 
             <div className="f4 d-none d-xl-block ">
               <div className="">
-                <h6 className="footer-heading2">Follow Us</h6>
+                <h6 className="footer-heading2">聯絡我們</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
                     <i className="fa-brands fa-facebook-f"></i>{' '}
@@ -103,13 +103,13 @@ const Footer = () => {
 
             <div className="f4-p d-block d-xl-none">
               <div className="">
-                <h6 className="footer-heading2">Contract</h6>
+                <h6 className="footer-heading2">關於</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
-                    <a href="#/">Terms&Conditions </a>
+                    <a href="#/">Facebook </a>
                   </li>
                   <li>
-                    <a href="#/">PrivacyPolicy</a>
+                    <a href="#/">Instagram</a>
                   </li>
                 </ul>
               </div>

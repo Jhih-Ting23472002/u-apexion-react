@@ -1,16 +1,51 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import CartQuantity from '../CartQuantity';
 
 function DetailList(props) {
-  const [total, setTotal] = useState(1);
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
+  const [money, setMoney] = useState(false);
 
+  const [total, setTotal] = useState(1);
+  const [twd, setTwd] = useState(0);
+  const price = props.product.price;
+  const img = props.product.product_img;
+  const name = props.product.product_name;
+  const pid = props.product.sid;
+  const { sid } = useParams();
+
+  const { setProductDetailList } = props;
   function onTotal(e) {
     setTotal(e.target.value);
   }
 
-  function addCart() {}
+  function addCart() {
+    setProductDetailList(function (prevData) {
+      setCartTotal(cartTotal + total);
+      return [{ price, img, name, pid, total }, ...prevData];
+    });
+  }
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/product/api/DailyForeignExchangeRates'
+      );
+      const ExchangeRates = await response.json();
+      setTwd(ExchangeRates.USDTWD['Exrate']);
+      console.log(ExchangeRates.USDTWD['Exrate']);
+    })();
+  }, []);
+
+  useEffect(() => {
+    setTotal(1);
+  }, [sid]);
+
+  const moneyClickHandler = e => {
+    setMoney(true);
+  };
+
 
   return (
     <>
@@ -45,7 +80,25 @@ function DetailList(props) {
                   <option value="Large">Large</option>
                 </select>
               </div>
-              <p className="pr-price">售價:{props.product?.price ?? '7584'}</p>
+              <p className="pr-price">US${props.product?.price ?? '0'}</p>
+              <div
+                className="pr-price-display"
+
+                onClick={moneyClickHandler}
+              >
+                <div
+                  className="pr-price-tw"
+                  style={{ opacity: money === true ? '0' : '1' }}
+                >
+                  試算台幣
+                </div>
+                <div
+                  className="pr-price-tw2"
+                  style={{ opacity: money === true ? '1' : '0' }}
+                >
+                  約NTD:{Math.floor(props.product.price * twd)}
+                </div>
+              </div>
             </div>
             <div className="pr-detail-quantity">
               <span>
@@ -81,7 +134,12 @@ function DetailList(props) {
                     />
                   </svg>
                 </div>
-                <div className="plus" onClick={() => setTotal(total + 1)}>
+                <div
+                  className="plus"
+                  onClick={() => {
+                    if (total !== 5) setTotal(total + 1);
+                  }}
+                >
                   <svg
                     className="plus-svg"
                     viewBox="0 0 15 15"
@@ -110,7 +168,7 @@ function DetailList(props) {
               </span>
             </div>
           </div>
-          <button className="pr-detail-button" onClick={addCart}>
+          <button className="pr-detail-button" onClick={() => addCart()}>
             加入購物車
           </button>
           <span className="pr-detail-list-detail">

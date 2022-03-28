@@ -27,12 +27,15 @@ const IndexMain = () => {
     setImageToggle(true);
     setAnimation(true);
     setAnimation(!animation);
-    if (image_toggle === true) {
+    //if (image_toggle === true) {
+    setTimeout(() => {
       setImageToggle(false);
       setAnimation(false);
       console.log(image_toggle);
-      console.log(e);
-    }
+    }, 600);
+
+    //console.log(e);
+    // }
     console.log(index);
     console.log(e.target.dataset.value);
   };
@@ -384,18 +387,6 @@ const IndexMain = () => {
                       class="sm-img"
                       alt=""
                       src={`./index_img/${v.image}`}
-                      // onClick={v => {
-                      //   setIndex(i);
-                      //   setImageToggle(true);
-                      //   setAnimation(true);
-                      //   setAnimation(!animation);
-                      //   if (image_toggle === true) {
-                      //     setImageToggle(false);
-                      //     setAnimation(false);
-                      //     console.log(image_toggle);
-                      //     console.log(v);
-                      //   }
-                      // }}
                       onClick={imagehandler}
                     />
                     <p>{v.name}</p>
@@ -437,7 +428,7 @@ const IndexMain = () => {
                   className={
                     sec4Animate
                       ? 'index_steps_circle index_steps_circle-two'
-                      : 'index_steps_circle'
+                      : 'index_steps_circles'
                   }
                 ></div>
                 <a href="#/" className="index_step_words">
@@ -457,7 +448,7 @@ const IndexMain = () => {
                   className={
                     sec4Animate
                       ? 'index_steps_circle index_steps_circle-three'
-                      : 'index_steps_circle'
+                      : 'index_steps_circles'
                   }
                 ></div>
                 <a href="#/" className="index_step_words">
@@ -478,7 +469,7 @@ const IndexMain = () => {
                   className={
                     sec4Animate && circle4
                       ? 'index_steps_circle index_steps_circle-four'
-                      : 'index_steps_circle'
+                      : 'index_steps_circles'
                   }
                 ></div>
                 <a href="#/" className="index_step_words">

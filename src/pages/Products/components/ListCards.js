@@ -7,7 +7,7 @@ function ListCards(props) {
   return (
     <>
       <div className="col-md-4">
-        <Link to={'/products-list/product-detail/' + props.sid} className="card pr-card mb-5">
+        <Link to={'/product-detail/' + props.sid} className="card pr-card mb-5">
           <img
             className="card-img-top"
             src={ProductsConfig.IMG_PATH+'/'+ (props.product_img)}

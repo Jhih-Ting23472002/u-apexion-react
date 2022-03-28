@@ -1,7 +1,7 @@
 import './TravelChoose.css';
 import { useEffect, useState } from 'react';
 import config from './Config';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation, Link } from 'react-router-dom';
 
 function TravelChoose() {
   const history = useHistory();
@@ -43,7 +43,7 @@ function TravelChoose() {
                   </ul>
                 </div>
                 <div className="col-md-4 text-md-center choosedetails">
-                  <p className="day">{el.travel_day}</p>
+                  <p className="day">旅遊天數:{el.travel_day}days</p>
                   <p className="price">${el.travel_price}</p>
                   <button className="itemBuyButton">Details</button>
                 </div>
@@ -70,30 +70,28 @@ function TravelChoose() {
       <section className="py-5">
         <div className="container choosecontainer">
           <div className="position-relative">
-            <div className="text-white px-3 pt-3 my-4">
+            <div className="text-white px-3 pt-3 my-5">
               <div className="row align-items-center filters">
-                <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <select className="form-control w-100 choosesearch">
-                    <option value="all">全部行程</option>
-                    <option value="planet_moviescene">
-                      星球之旅(電影場景)
-                    </option>
-                    <option value="starsign">星座之旅</option>
-                  </select>
+                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                  <Link to="/travel-choose">
+                    <button className="sortitemBuyButton">全部行程</button>
+                  </Link>
                 </div>
-                <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <select className="form-control w-100 choosesearch">
-                    <option>價格排序</option>
-                    <option>價格由少至多</option>
-                    <option>價格由多至少</option>
-                  </select>
+                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                  <Link to="/travelchoose-pricef">
+                    <button className="sortitemBuyButton">價格:低到高</button>
+                  </Link>
+                  <Link to="/travelchoose-pricem">
+                    <button className="sortitemBuyButton">價格:高到低</button>
+                  </Link>
                 </div>
-                <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <select className="form-control w-100 choosesearch">
-                    <option>天數排序</option>
-                    <option>天數由少至多</option>
-                    <option>天數由多至少</option>
-                  </select>
+                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                  <Link to="/travelchoose-dayf">
+                    <button className="sortitemBuyButton">天數:少至多</button>
+                  </Link>
+                  <Link to="/travelchoose-daym">
+                    <button className="sortitemBuyButton">天數:多至少</button>
+                  </Link>
                 </div>
                 <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">
                   <div className="webdesigntuts-workshopchoose">

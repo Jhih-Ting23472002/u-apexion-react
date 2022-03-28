@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -24,7 +22,6 @@ yarn-error.log*
 
 .vscode
 package-lock.json
-.gitignore
 node_modules
 index_imgs
 index_img
@@ -32,7 +29,6 @@ index_earth
 
 
 product_img
-travelimg
 # 影片暫不上傳...區
 movies
 

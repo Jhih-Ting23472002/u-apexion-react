@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 import { Link } from 'react-router-dom';
-import { object } from 'prop-types';
+
 
 function BrowsingHistory(props) {
   const { Storages } = props;
@@ -17,15 +17,15 @@ function BrowsingHistory(props) {
   useEffect(() => {
     if (Storages.length !== 0) {
       const sliceThree = Storages.productLocalStorage.slice(-3);
-      console.log(sliceThree);
+      //console.log(sliceThree);
       setStorage(sliceThree);
     }
   }, [Storages.productLocalStorage]);
 
   return (
     <>
-    {Storage.map(v => (
-      <div className="col-md-4">
+    {Storage.map((v,)=> (
+      <div key={v.sid} className="col-md-4">
         <div className="card pr-card mb-5">
           <img
             className="card-img-top"

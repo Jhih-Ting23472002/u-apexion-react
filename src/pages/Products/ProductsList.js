@@ -1,29 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './ProductsList.scss';
 import ListCards from './components/ListCards';
 import ProductsConfig from './ProductsConfig';
 import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 
 function ProductsList() {
+  const { category } = useParams();
+  // console.log(category);
   // 1. 從伺服器來的原始資料
   const [ProductList, setProductList] = useState([]);
   // 2. 用於網頁上經過各種處理(排序、搜尋、過濾)後的資料
   const [displayProducts, setDisplayProducts] = useState([]);
 
   const [AllList, setAllList] = useState('');
-  const [ProductNavbar, setProductNavbar] = useState('#men');
-  const [ListImg, setListImg] = useState('./product_img/cover5_1440_1200.jpeg');
+  const [ProductNavbar, setProductNavbar] = useState('/men');
+  const [ListImg, setListImg] = useState(
+    'http://localhost:3000/product_img/cover5_1440_1200.jpeg'
+  );
   const [searchTerm, setSearchTerm] = useState('');
+
+  const [colourType, setColourType] = useState('all');
+  // console.log(colourType);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(ProductsConfig.MEN_List);
       const menList = await response.json();
       setProductList(menList.allMen);
+      setDisplayProducts(menList.allMen);
       const a = 'COUNT(1)';
       setAllList(menList.allRows[a]);
-      // console.log(menList.allRows);
     })();
   }, []);
 
@@ -51,6 +58,42 @@ function ProductsList() {
     const a = 'COUNT(1)';
     setAllList(ShoesList.allRows[a]);
   };
+  //顏色分類
+  // function colourCart(e){
+  //   setColourType(e.target.value);
+  //   const c = colourType;
+  //   setProductList(ProductList.filter((v) => {return c == v.style}));
+  //   console.log(c)
+  // }
+
+  const handleSort = (products, colourType) => {
+    let newProducts = [...displayProducts];
+    if (colourType === 'BK') {
+      newProducts = [...newProducts].filter(v => v.style == 'BK');
+    }
+    if (colourType === 'WH') {
+      newProducts = [...newProducts].filter(v => v.style == 'WH');
+    }
+    if (colourType === 'GR') {
+      newProducts = [...newProducts].filter(v => v.style == 'GR');
+    }
+    if (colourType === 'all') {
+      newProducts = [...newProducts];
+    }
+    console.log(newProducts);
+    return newProducts;
+  };
+
+  useEffect(() => {
+    let newProducts = [];
+    // 處理排序
+    newProducts = handleSort(newProducts, colourType);
+    setProductList(newProducts);
+  }, [colourType]);
+
+  useEffect(() => {
+    setColourType('all');
+  }, [category]);
 
   return (
     <article>
@@ -58,43 +101,46 @@ function ProductsList() {
         {/*---------------分類選單-----------------------------------------------------*/}
         <div className="pr-list-nbr">
           <div className="pr-list-nbr-a">
-            <a
-              href="#men"
+            <Link
+              to="/products-list/men"
               onClick={() => {
-                setProductNavbar('#men');
+                setProductNavbar('/men');
                 ProductMenList();
-                const newImg = './product_img/cover5_1440_1200.jpeg';
+                const newImg =
+                  'http://localhost:3000/product_img/cover5_1440_1200.jpeg';
                 setListImg(newImg);
               }}
-              className={ProductNavbar === '#men' ? 'active' : ''}
+              className={ProductNavbar === '/men' ? 'active' : ''}
             >
               男士精品
-            </a>
-            <a
-              href="#woman"
+            </Link>
+            <Link
+              to="/products-list/woman"
               onClick={() => {
-                setProductNavbar('#woman');
+                setProductNavbar('/woman');
                 ProductWomanList();
-                const newImg = './product_img/624946556.jpeg';
+                const newImg =
+                  'http://localhost:3000/product_img/624946556.jpeg';
                 setListImg(newImg);
               }}
-              className={ProductNavbar === '#woman' ? 'active' : ''}
+              className={ProductNavbar === '/woman' ? 'active' : ''}
             >
               女士精品
-            </a>
-            <a
-              href="#Shoes"
+            </Link>
+            <Link
+              to="/products-list/Shoes"
               onClick={() => {
-                setProductNavbar('#Shoes');
+                setProductNavbar('/Shoes');
                 ProductShoesList();
-                const newImg = './product_img/sneaker-release.jpg';
+                const newImg =
+                  'http://localhost:3000/product_img/sneaker-release.jpg';
                 setListImg(newImg);
               }}
-              className={ProductNavbar === '#Shoes' ? 'active' : ''}
+              className={ProductNavbar === '/Shoes' ? 'active' : ''}
             >
               鞋款
-            </a>
-            <a href="#watch">配件與腕錶</a>
+            </Link>
+            <Link to="#watch">配件與腕錶</Link>
           </div>
           <div className="div-wrap">
             <div className="wrap">
@@ -179,11 +225,17 @@ function ProductsList() {
             </div> */}
           </div>
           <div>
-            <select class="form-control info-select">
-              <option value="">顏色</option>
+            <select
+              class="form-control info-select"
+              value={colourType}
+              onChange={e => setColourType(e.target.value)}
+            >
+              <option selected value="all">
+                顏色
+              </option>
               <option value="BK">黑色</option>
               <option value="WH">白色</option>
-              <option value="GR">綠色</option>
+              <option value="GR">灰色</option>
             </select>
           </div>
         </div>
