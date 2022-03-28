@@ -5,7 +5,7 @@ import CartQuantity from '../pages/Products/CartQuantity'
 
 function Navbar() {
   const {cartTotal}=useContext(CartQuantity)
-  console.log({cartTotal})
+  // console.log({cartTotal})
   return (
     <>
       <div className="topspace"></div>
