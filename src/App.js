@@ -365,7 +365,13 @@ function App() {
                   />
                 </Route>
                 <Route path="/cart-complete">
-                  <CardComplete />
+                  <CardComplete
+                    productDetailList={productDetailList}
+                    totalProductItem={totalProductItem} //購物車總衣服數量
+                    tripSelected={tripSelected}
+                    tripPrice={tripPrice}
+                    cartTotalPrice={cartTotalPrice} //購物車總金額
+                  />
                 </Route>
               </ScrollToTop>
               <Route path="*">
