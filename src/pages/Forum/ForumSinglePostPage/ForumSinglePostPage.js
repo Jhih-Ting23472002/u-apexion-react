@@ -100,7 +100,7 @@ const SinglePostContent = styled.div`
 const SinglePostHashtag = styled.div`
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: #05f2f2;
   margin-top: 20px;
   margin-bottom: 20px;
 `;
@@ -113,6 +113,8 @@ const SinglePostResponses = styled.div``;
 
 const SinglePostImg = styled.div`
   width: 50%;
+  display: block;
+  margin: 10px auto;
 `;
 
 export default function ForumSinglePostPage() {
@@ -152,13 +154,13 @@ export default function ForumSinglePostPage() {
     getPost(sid).then(post => {
       setPost(post);
       console.log(post.art_photo);
-      setImgSrc('http://localhost:3000/img/' + post.art_photo);
+      setImgSrc('http://localhost:3001/img/' + post.art_photo);
     });
     getResponse(sid).then(response => setResponse(response));
   }, []);
 
   const fetchMessage = () => {
-    return fetch(`http://localhost:3000/forum_index/res-list/${sid}`)
+    return fetch(`http://localhost:3001/forum_index/res-list/${sid}`)
       .then(res => res.json())
       .then(data => {
         setMessage(data);
@@ -171,7 +173,7 @@ export default function ForumSinglePostPage() {
 
   const handleDeletePost = e => {
     alert('確認刪除嗎？');
-    fetch(`http://localhost:3000/forum_index/list-delete/${sid}`).then(res =>
+    fetch(`http://localhost:3001/forum_index/list-delete/${sid}`).then(res =>
       res.json()
     );
     setLoading(true);
@@ -179,7 +181,7 @@ export default function ForumSinglePostPage() {
 
   const handleFormSubmit = e => {
     // e.preventDefault()
-    fetch(`http://localhost:3000/forum_index/res-list/${sid}`, {
+    fetch(`http://localhost:3001/forum_index/res-list/${sid}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -333,7 +335,7 @@ export default function ForumSinglePostPage() {
               <div className="forum_right__user_img">
                 <img
                   className="forum_img"
-                  src={`http://localhost:3001/index_img/member5.png`}
+                  src={`http://localhost:3000/index_img/member5.png`}
                   alt=""
                 />
                 {/* ????????why????? */}

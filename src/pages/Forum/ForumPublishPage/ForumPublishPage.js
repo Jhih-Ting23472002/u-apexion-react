@@ -64,7 +64,7 @@ export default function ForumPublishPage() {
     // e.preventDefault()
     const fd = new FormData(document.form1);
     alert('確認送出嗎？');
-    fetch('http://localhost:3000/forum_index/forumArticle_insert', {
+    fetch('http://localhost:3001/forum_index/forumArticle_insert', {
       // 修改
       method: 'POST',
       // headers: {
@@ -81,7 +81,7 @@ export default function ForumPublishPage() {
     })
       .then(res => res.jon())
       .then(data => {
-        return fetch('http://localhost:3000/forum-list-connectTry')
+        return fetch('http://localhost:3001/forum-list-connectTry')
           .then(res => res.json())
           .then(posts => setPosts(posts));
       })

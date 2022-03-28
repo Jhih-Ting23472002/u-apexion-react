@@ -196,6 +196,7 @@
   font-family: 'Noto Sans HK';
   font-weight: 900;
   border: 1px solid;
+  object-fit: cover;
 }
 .forum_user_top_left {
   display: flex;
@@ -207,9 +208,6 @@
   height: 100%;
   border-radius: 50%;
   background-color: black;
-}
-
-.forum_user_logo_cover {
   object-fit: cover;
 }
 .user-name.forum_user-name {

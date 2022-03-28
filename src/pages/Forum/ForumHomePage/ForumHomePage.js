@@ -146,7 +146,8 @@ export default function ForumHomePage() {
         );
         console.log(data);
         resolve(data);
-      }, 1000);
+        if (currentPage == 6) return;
+      }, 0);
     });
   };
 
@@ -160,7 +161,7 @@ export default function ForumHomePage() {
 
   useEffect(() => {
     // fetch('http://localhost:3000/forum-list-connectTry')
-    fetch('http://localhost:3000/forum_index/getAll')
+    fetch('http://localhost:3001/forum_index/getAll')
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);

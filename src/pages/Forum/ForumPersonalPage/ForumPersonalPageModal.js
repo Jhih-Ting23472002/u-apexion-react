@@ -34,13 +34,21 @@ function ForumPersonalPageModal(props) {
           ))}
       </Modal.Body>
       <Modal.Footer className="forum-confirm-modal-footer">
-        <Link
-          to="/forum-home/posts/111"
-          onClick={props.onHide}
-          className="forum-confirm-btn"
-        >
-          前往文章
-        </Link>
+        {personPostsData
+          .filter((v, i) => {
+            if (props.imageIndex == i) {
+              return v;
+            }
+          })
+          .map((image, i) => (
+            <Link
+              to={image.postsLink}
+              onClick={props.onHide}
+              className="forum-confirm-btn"
+            >
+              前往文章
+            </Link>
+          ))}
       </Modal.Footer>
     </Modal>
   );

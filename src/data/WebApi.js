@@ -1,8 +1,8 @@
 // forum API
 
-const BASE_URL = 'http://localhost:3000/forum_index/list/';
+const BASE_URL = 'http://localhost:3001/forum_index/list/';
 
-const Response_URL = 'http://localhost:3000/forum_index/res-list/';
+const Response_URL = 'http://localhost:3001/forum_index/res-list/';
 
 
 export const getPost = sid => {
@@ -15,7 +15,7 @@ export const getResponse = res_art_sid => {
 
 export const getCategory = art_category_sid => {
   return fetch(
-    `http://localhost:3000/forum_index/article-category/${art_category_sid}`
+    `http://localhost:3001/forum_index/article-category/${art_category_sid}`
   ).then(res => res.json());
 };
 

@@ -117,7 +117,7 @@ export default function ForumUArticlePage() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/forum_index/getAll')
+    fetch('http://localhost:3001/forum_index/getAll')
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);

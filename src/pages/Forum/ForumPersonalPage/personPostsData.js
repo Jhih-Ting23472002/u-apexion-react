@@ -2,17 +2,17 @@ const personPostsData = [
   {
     id: 1,
     photo: './index_img/space1.jpg',
-    postsLink: '/',
+    postsLink: '/forum-home/posts/126',
   },
   {
     id: 2,
     photo: './index_img/training.jpg',
-    postsLink: '/',
+    postsLink: '/forum-home/posts/127',
   },
   {
     id: 3,
     photo: './index_img/rocket.png',
-    postsLink: '/',
+    postsLink: '/forum-home/posts/128',
   },
   {
     id: 4,

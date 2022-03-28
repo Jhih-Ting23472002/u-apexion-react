@@ -142,7 +142,7 @@ export default function ForumHomePage() {
 
   useEffect(() => {
     // fetch('http://localhost:3000/forum-list-connectTry')
-    fetch('http://localhost:3000/forum_index/getSort-hot-posts')
+    fetch('http://localhost:3001/forum_index/getSort-hot-posts')
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);
