@@ -1,19 +1,6 @@
 const BASE_URL = 'http://localhost:3001';
 
-// export const login = (account, password) => {
-//   return fetch(`${BASE_URL}/user/api/auth-list`, {
-//     method: 'POST',
-//     headers: {
-//       'content-type': 'application/json',
-//     },
-//     body: JSON.stringify({
-//       account,
-//       password,
-//     }),
-//   }).then(res => res.json());
-// };
-
-//忘記密碼頁帳號驗證API
+//忘記密碼-帳號&手機驗證API
 export const accountAndMobileCheck = (account, mobile) => {
   return fetch(`${BASE_URL}/user/api/accountAndMobileCheck`, {
     method: 'POST',
@@ -27,7 +14,35 @@ export const accountAndMobileCheck = (account, mobile) => {
   }).then(res => res.json());
 };
 
-//token拿資料步驟2 : 傳輸回後端找資料的API
+//忘記密碼-驗證碼確認
+export const verifyCodeConfirm = (validCode, verify_code) => {
+  return fetch(`${BASE_URL}/user/api/revise-pwd-vcode`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      validCode,
+      verify_code,
+    }),
+  }).then(res => res.json());
+};
+
+//忘記密碼-更改密碼確認
+export const pwdNewConfirm = (newPassword, forgotsid) => {
+  return fetch(`${BASE_URL}/user/api/reset-pwd`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      newPassword,
+      forgotsid,
+    }),
+  }).then(res => res.json());
+};
+
+//傳輸回後端找資料的API
 export const findMem = sid => {
   // const token = getAuthToken();
   return fetch(`${BASE_URL}/user/api/find-user`, {
@@ -100,6 +115,7 @@ export const editAddress = (editData, user_id) => {
   }).then(res => res.json());
 };
 
+//傳回後端刪除地址
 export const removeAddress = (sid, user_id) => {
   return fetch(`${BASE_URL}/user/api/user-address-delete`, {
     method: 'POST',
