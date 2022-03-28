@@ -122,7 +122,7 @@ function App() {
   });
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 購物車總金額
   const [totalProductItem, setTotalProductItem] = useState(0);
-  const [cartOrderListNumber, setCartOrderListNumber] = useState();
+  const [cartOrderListNumber, setCartOrderListNumber] = useState(0);
   // 以上是cart的部分
 
   //周邊商品區
@@ -364,6 +364,8 @@ function App() {
                     <CartCreditCard
                       cartTotalPrice={cartTotalPrice} //購物車總金額
                       tripPrice={tripPrice}
+                      cartOrderListNumber={cartOrderListNumber}
+                      setCartOrderListNumber={setCartOrderListNumber}
                     />
                   </Route>
                   <Route path="/cart-complete">
@@ -373,6 +375,7 @@ function App() {
                       tripSelected={tripSelected}
                       tripPrice={tripPrice}
                       cartTotalPrice={cartTotalPrice} //購物車總金額
+                      cartOrderListNumber={cartOrderListNumber}
                     />
                   </Route>
                 </ScrollToTop>
