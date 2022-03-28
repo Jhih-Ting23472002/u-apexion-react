@@ -1,11 +1,31 @@
 import './ticket.css';
 import { useEffect, useState } from 'react';
+import config from './Config';
 
 function SeatSvgFile(props) {
   const { seatData, seatCabin, change, setChange, setSeatNumberDemo } = props;
   const [seatSelected, setSeatSelected] = useState([]);
   //   console.log(seatSelected);
   //   console.log(typeof seatSelected);
+
+  const memberAPI = config.TK_ORDER_API;
+  const [memberData, setMemberData] = useState([]);
+
+  // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(memberAPI, {
+        method: 'GET',
+      });
+      const memberListDatas = await response.json();
+      // console.log(memberListDatas.member_name);
+      console.log(memberListDatas[0].member_name);
+      const memberArray = memberListDatas[0].member_name.split(',');
+      console.log('選位子component', memberArray);
+      setMemberData(memberArray);
+    })();
+  }, []);
+
   let seatArray = [];
   seatData.map((v, i) => {
     return seatArray.push(v.seat_number);
@@ -21,14 +41,14 @@ function SeatSvgFile(props) {
         });
         setSeatSelected(removeSeatSelected);
 
-		removeSeatSelected.map((v, i) => {
-			seatNumberState.push({ id: i, name: v });
-			return seatNumberState;
-		  });
-		  setSeatNumberDemo(seatNumberState);
+        removeSeatSelected.map((v, i) => {
+          seatNumberState.push({ id: i, name: v });
+          return seatNumberState;
+        });
+        setSeatNumberDemo(seatNumberState);
         // setSeatNumber(seatNumberState);
       } else {
-        if (seatSelected.length === 4) {
+        if (seatSelected.length === memberData.length) {
           return;
         }
         const myArr = seatSelected;
