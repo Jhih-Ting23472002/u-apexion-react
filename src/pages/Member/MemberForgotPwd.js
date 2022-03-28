@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { accountAndMobileCheck } from '../../data/UserWebApi';
 import MemberForgotPwdCode from './MemberForgotPwdCode';
-import MemberForgotPwdNew from './MemberForgotPwdNew';
+// import MemberForgotPwdNew from './MemberForgotPwdNew';
+import { useHistory } from 'react-router-dom';
 
 const MemberForgotPwd = () => {
   const [account, setAccount] = useState('');
   const [mobile, setMobile] = useState('');
   // const [errorMessage, setErrorMessage] = useState('');
+
   const [forgotPwdCode, setForgetPwdCode] = useState(false);
-  const [forgotPwdNew, setForgetPwdNew] = useState(false);
+  // const [forgotPwdNew, setForgetPwdNew] = useState(false);
 
   const handleForgetPwdSubmit = e => {
     e.preventDefault();
@@ -21,7 +23,8 @@ const MemberForgotPwd = () => {
       .then(obj => {
         console.log('obj:', obj);
         if (obj.code == '200') {
-          alert(obj.error);
+          alert(obj.message);
+          // setForgetPwdCode(true);
           //呼叫 發送驗證信
         } else {
           alert(obj.error);
@@ -67,12 +70,9 @@ const MemberForgotPwd = () => {
                   }}
                 />
               </div>
-              {/* <div className="member-input-container ">
-                <label htmlFor="" className="member-label">
-                  驗證碼
-                </label>
-                <input type="text" placeholder="" className="member-input" />
-              </div> */}
+
+              {/* <MemberForgotPwdCode /> */}
+
               <div className="member-btn-container">
                 <div className="member-return-btn-wrap">
                   <Link
@@ -87,9 +87,15 @@ const MemberForgotPwd = () => {
                   </Link>
                 </div>
                 <div>
-                  <button className="member-circle-btn">確認送出</button>
+                  <button
+                    className="member-circle-btn"
+                    onClick={() => setForgetPwdCode(true)}
+                  >
+                    確認送出
+                  </button>
                 </div>
               </div>
+              {/* <MemberForgotPwdCode /> */}
             </form>
             {/* <div className="member-btn-container">
               <div className="member-return-btn-wrap">
@@ -108,10 +114,10 @@ const MemberForgotPwd = () => {
         forgotPwdCode={forgotPwdCode}
         setForgetPwdCode={setForgetPwdCode}
       />
-      <MemberForgotPwdNew
+      {/* <MemberForgotPwdNew
         forgotPwdNew={forgotPwdNew}
         setForgetPwdNew={setForgetPwdNew}
-      />
+      /> */}
     </>
   );
 };
