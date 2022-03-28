@@ -3,7 +3,16 @@ import './CardComplete.css';
 import { Link } from 'react-router-dom';
 
 const CardComplete = props => {
-  const { productDetailList, totalProductItem, tripSelected, tripPrice, cartTotalPrice } = props;
+  const {
+    productDetailList,
+    totalProductItem,
+    tripSelected,
+    tripPrice,
+    cartTotalPrice,
+  } = props;
+
+  let orderListNumber = Math.floor(Math.random() * 100000000000);
+  console.log('orderListNumber', orderListNumber);
 
   return (
     <>
@@ -31,7 +40,7 @@ const CardComplete = props => {
           </div>
           <div className="cart d-flex justify-content-center py-5 total-price-text deal-receipt">
             <p>付款已完成，交易金額為${cartTotalPrice}元。</p>
-            <p>謝謝您的訂購，您的訂單編號為：20220129015648。</p>
+            <p>謝謝您的訂購，您的訂單編號為：{orderListNumber}。</p>
           </div>
 
           {/* 購物明細 */}

@@ -48,7 +48,7 @@ const TripCard = props => {
               </div>
             </div>
             <div className="content-detail-inside-bottom-ticket">
-              <h5 className="cart-number-people">人數 5</h5>
+              <h5 className="cart-number-people">人數 4</h5>
               <button className="btn cart-remove-btn">remove</button>
               <div className="cart-order-money">{tripPrice}</div>
             </div>
