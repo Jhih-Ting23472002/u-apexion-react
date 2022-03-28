@@ -6,20 +6,24 @@ function TicketInput(props) {
   const inputHtml = (
     <>
       <div className="inputWrap">
-        <label>USER1</label>
+        <label>成員</label>
         <div className="inputGroup">
-          <input type="text" placeholder="請輸入護照英文姓名" />
+          <input
+            name="memberName[]"
+            type="text"
+            placeholder="請輸入護照英文姓名"
+          />
           <span></span>
         </div>
       </div>
       <div className="inputWrap">
-        <label>USER1</label>
+        <label>成員</label>
         <div className="inputGroup">
           <p>請上傳影本及3個月內的健檢報告</p>
           <label className="uploadButton" for="">
             <input
               type="file"
-              name="file"
+              name="memberFiles[]"
               id="file"
               value=""
               style={{

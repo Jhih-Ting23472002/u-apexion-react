@@ -14,6 +14,17 @@ const CardComplete = props => {
   let orderListNumber = Math.floor(Math.random() * 100000000000);
   console.log('orderListNumber', orderListNumber);
 
+  const sendOrderDeatilHandler = e => {
+    alert('資料都對嗎？');
+    fetch('http://localhost:3001/cart/order-list-post', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        orderListNumber,
+      }),
+    }).then(res => res.json());
+  };
+
   return (
     <>
       <div className="cart-background container-fluid">
@@ -39,7 +50,11 @@ const CardComplete = props => {
             </div>
           </div>
           <div className="cart d-flex justify-content-center py-5 total-price-text deal-receipt">
-            <p>付款已完成，交易金額為${cartTotalPrice}元。</p>
+            <p>
+              付款已完成，交易金額為${cartTotalPrice + +tripPrice.substring(1)}
+              元。
+            </p>
+            <br />
             <p>謝謝您的訂購，您的訂單編號為：{orderListNumber}。</p>
           </div>
 
@@ -75,7 +90,9 @@ const CardComplete = props => {
               <div className="product-trip-custom d-flex align-items-center">
                 <div className="col-5 text-center">{tripSelected}</div>
                 <div className="col-4 text-center">1</div>
-                <div className="col-3 text-center">{tripPrice}</div>
+                <div className="col-3 text-center">
+                  ${+tripPrice.substring(1)}
+                </div>
               </div>
 
               {/* 共 2 項商品，總金額$500  */}
@@ -84,14 +101,18 @@ const CardComplete = props => {
                 <div className="col-4 text-center">
                   共 {totalProductItem + 1} 項商品，總金額
                 </div>
-                <div className="col-3 text-center">${cartTotalPrice}</div>
+                <div className="col-3 text-center">
+                  ${cartTotalPrice + +tripPrice.substring(1)}
+                </div>
               </div>
 
               {/* 本訂單已付款金額$500 */}
               <div className="remind-money-again d-flex align-items-center">
                 <div className="col-5"></div>
                 <div className="col-4 text-center">本訂單已付款金額</div>
-                <div className="col-3 text-center">${cartTotalPrice}</div>
+                <div className="col-3 text-center">
+                  ${cartTotalPrice + +tripPrice.substring(1)}
+                </div>
               </div>
             </div>
           </div>
@@ -108,9 +129,14 @@ const CardComplete = props => {
               登出
             </Link>
             <div className="col-1"></div>
-            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
-              會員專區
-            </Link>
+            <button
+              type="button"
+              onClick={sendOrderDeatilHandler}
+              className="col-2 btn cart-link to-other-page mt-5"
+              to={''}
+            >
+              送資料
+            </button>
           </div>
         </div>
       </div>

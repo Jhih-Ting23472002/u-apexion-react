@@ -11,21 +11,36 @@ import slider08 from './img/slider08.jpg';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import TicketOrderModal from './TicketOrderModal';
+// import TicketOrderModal from './TicketOrderModal';
+import config from './Config';
 
 function Ticket() {
   const [modalShow, setModalShow] = useState(false);
   const [count, setCount] = useState(1);
   const [number, setNumber] = useState(1);
+  const API = config.TK_ORDER_API;
+
+  const doSubmit = async function (event) {
+    event.preventDefault();
+    const fd = new FormData(document.form1);
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: { ContentType: 'multipart/form-data' },
+      body: fd,
+    });
+    const obj = r.json();
+    console.log(obj);
+  };
   return (
     <>
       <div className="ticketWrap">
-        <div className="inputArea">
+        <form className="inputArea" onSubmit={doSubmit} name="form1" multiple>
           <h2>Hello，User</h2>
           <div className="inputWrap">
             <label>人數</label>
             <div className="inputGroup">
               <input
+                name="memberCounts"
                 className="people-count"
                 type="text"
                 placeholder="請輸入人數，上限4人"
@@ -44,7 +59,7 @@ function Ticket() {
           </div>
           <TicketInput count={count} />
           <button className="tickitConfirmBtn">確認送出</button>
-        </div>
+        </form>
         <div className="sliderArea">
           <div className="sliderWrap">
             <div>
@@ -87,7 +102,7 @@ function Ticket() {
         </div>
       </div>
 
-      <TicketOrderModal show={modalShow} onHide={() => setModalShow(false)} />
+      {/* <TicketOrderModal show={modalShow} onHide={() => setModalShow(false)} /> */}
     </>
   );
 }

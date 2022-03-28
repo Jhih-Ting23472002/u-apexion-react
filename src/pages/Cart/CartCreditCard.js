@@ -72,7 +72,7 @@ const CartCreditCard = props => {
               </button>
             </Link>
             <div className="card-trade mx-3">
-              交易金額 ${props.cartTotalPrice}
+              交易金額 ${props.cartTotalPrice + +props.tripPrice.substring(1)}
             </div>
           </div>
         </div>

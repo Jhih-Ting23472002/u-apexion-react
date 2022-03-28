@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import TicketConfirmModal from './TicketConfirmModal';
+import config from './Config';
 
 function TicketMeal(props) {
   const [modalShow, setModalShow] = useState(false);
@@ -24,7 +25,26 @@ function TicketMeal(props) {
     change,
     setChange,
     tripDays,
+    tripPrice,
   } = props;
+
+  const memberAPI = config.TK_ORDER_API;
+  const [memberData, setMemberData] = useState([]);
+
+  // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(memberAPI, {
+        method: 'GET',
+      });
+      const memberListDatas = await response.json();
+      // console.log(memberListDatas.member_name);
+      console.log(memberListDatas[0].member_name);
+      const memberArray = memberListDatas[0].member_name.split(',');
+      console.log('餐點頁面', memberArray);
+      setMemberData(memberArray);
+    })();
+  }, []);
 
   useEffect(() => {
     switch (demoImg) {
@@ -97,7 +117,7 @@ function TicketMeal(props) {
                   <div className="menu-detail">
                     <h3>太空拉麵</h3>
                     <p>
-                      歐里庇得斯曾經說過，有遠大抱負的人不可忽略眼前的工作。這不禁令我重新仔細的思考。
+                      叉燒肉脂肪偏多，雞肉則是舒肥的方式料理，湯頭屬於濃郁系，熱愛日式口味的拉麵控絕對會愛。
                     </p>
                   </div>
                 </div>
@@ -114,7 +134,7 @@ function TicketMeal(props) {
                   <div className="menu-detail">
                     <h3>太空炒飯</h3>
                     <p>
-                      歐里庇得斯曾經說過，有遠大抱負的人不可忽略眼前的工作。這不禁令我重新仔細的思考。
+                      米飯炒得較鬆軟，搭配著一旁的酸豆使口味更為豐富，上頭排骨有厚度，搭配著醬油和蔥末一起吃很有味。
                     </p>
                   </div>
                 </div>
@@ -131,7 +151,7 @@ function TicketMeal(props) {
                   <div className="menu-detail">
                     <h3>太空咖哩</h3>
                     <p>
-                      歐里庇得斯曾經說過，有遠大抱負的人不可忽略眼前的工作。這不禁令我重新仔細的思考。
+                      香辣濃稠咖哩搭配上，與宮城特產的「發芽米」，以各百分之50的黃金比例，調配出太空白米飯。
                     </p>
                   </div>
                 </div>
@@ -148,7 +168,7 @@ function TicketMeal(props) {
                   <div className="menu-detail">
                     <h3>太空炒麵</h3>
                     <p>
-                      歐里庇得斯曾經說過，有遠大抱負的人不可忽略眼前的工作。這不禁令我重新仔細的思考。
+                      蔬菜的甜味加上肉絲的鮮香，油麵把鮮美湯汁吸得飽飽的，咕嚕咕嚕滑順入喉的美味，每每讓人欲罷不能。
                     </p>
                   </div>
                 </div>
@@ -158,66 +178,25 @@ function TicketMeal(props) {
               </div>
             </div>
             <div className="menu-select-area">
-              <div>
-                <label htmlFor="">USER1</label>
-                <select
-                  onChange={e => mealSelectedHandler(e)}
-                  data-user="USER1"
-                  name=""
-                  id=""
-                >
-                  <option value="">請選擇餐點</option>
-                  <option value="太空拉麵">太空拉麵</option>
-                  <option value="太空炒飯">太空炒飯</option>
-                  <option value="太空咖哩">太空咖哩</option>
-                  <option value="太空炒麵">太空炒麵</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="">USER2</label>
-                <select
-                  onChange={e => mealSelectedHandler(e)}
-                  data-user="USER2"
-                  name=""
-                  id=""
-                >
-                  <option value="">請選擇餐點</option>
-                  <option value="太空拉麵">太空拉麵</option>
-                  <option value="太空炒飯">太空炒飯</option>
-                  <option value="太空咖哩">太空咖哩</option>
-                  <option value="太空炒麵">太空炒麵</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="">USER3</label>
-                <select
-                  onChange={e => mealSelectedHandler(e)}
-                  data-user="USER3"
-                  name=""
-                  id=""
-                >
-                  <option value="">請選擇餐點</option>
-                  <option value="太空拉麵">太空拉麵</option>
-                  <option value="太空炒飯">太空炒飯</option>
-                  <option value="太空咖哩">太空咖哩</option>
-                  <option value="太空炒麵">太空炒麵</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="">USER4</label>
-                <select
-                  onChange={e => mealSelectedHandler(e)}
-                  data-user="USER4"
-                  name=""
-                  id=""
-                >
-                  <option value="">請選擇餐點</option>
-                  <option value="太空拉麵">太空拉麵</option>
-                  <option value="太空炒飯">太空炒飯</option>
-                  <option value="太空咖哩">太空咖哩</option>
-                  <option value="太空炒麵">太空炒麵</option>
-                </select>
-              </div>
+              {memberData.map((v, i) => {
+                return (
+                  <div key={i}>
+                    <label htmlFor="">{v}</label>
+                    <select
+                      onChange={e => mealSelectedHandler(e)}
+                      data-user={v}
+                      name=""
+                      id=""
+                    >
+                      <option value="">請選擇餐點</option>
+                      <option value="太空拉麵">太空拉麵</option>
+                      <option value="太空炒飯">太空炒飯</option>
+                      <option value="太空咖哩">太空咖哩</option>
+                      <option value="太空炒麵">太空炒麵</option>
+                    </select>
+                  </div>
+                );
+              })}
             </div>
             <Link
               to="/ticket-seat-choose"
@@ -240,6 +219,7 @@ function TicketMeal(props) {
         tripDate={tripDate}
         seatNumberDemo={seatNumberDemo}
         tripDays={tripDays}
+        tripPrice={tripPrice}
       />
       )
     </>

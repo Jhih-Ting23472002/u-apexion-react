@@ -1,15 +1,56 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styled from 'styled-components';
 import './ticket.css';
 import './TicketConfirmModal.css';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import config from './Config';
 
 function TicketOrderModal(props) {
-  const { mealSelected, tripSelected, tripDate, seatNumberDemo, tripDays } =
-    props;
+  const {
+    mealSelected,
+    tripSelected,
+    tripDate,
+    seatNumberDemo,
+    tripDays,
+    tripPrice,
+  } = props;
   console.log(mealSelected, tripSelected, tripDate, seatNumberDemo);
+  const memberAPI = config.TK_ORDER_API;
+  const [memberData, setMemberData] = useState([]);
+  const memberDataArray = memberData.map((v, i) => {
+    return v;
+  });
+
+  console.log('價格', tripPrice);
+  console.log('人數', memberData.length);
+  console.log('成員名子', memberDataArray);
+  // console.log('成員ttt', memberDataArray[0]);
+  console.log('成員rrr', memberDataArray[1]);
+  console.log('餐點名稱', mealSelected.rrr);
+  console.log('餐點名稱', mealSelected.rrr);
+  // console.log('餐點名稱', mealSelected[memberDataArray[0]]);
+
+  const abc = mealSelected.map((v, i) => {
+    return v + i;
+  });
+  console.log('餐點的map', abc);
+
+  // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(memberAPI, {
+        method: 'GET',
+      });
+      const memberListDatas = await response.json();
+      console.log(memberListDatas.member_name);
+      console.log(memberListDatas[0].member_name);
+      const memberArray = memberListDatas[0].member_name.split(',');
+      console.log(memberArray);
+      setMemberData(memberArray);
+    })();
+  }, []);
 
   return (
     <Modal
@@ -42,24 +83,36 @@ function TicketOrderModal(props) {
           </div>
           <div className="ticket-confirm-content">
             <p>艙位</p>
-            <div>
-              <p>USER1 {seatNumberDemo[0].name} /</p>
-              <p>USER2 {seatNumberDemo[1].name} /</p>
-              <p>USER3 {seatNumberDemo[2].name} /</p>
-              <p>USER4 {seatNumberDemo[3].name}</p>
+            <div className="ticket-confirm-seat">
+              <div>
+                {memberData.map((v, i) => {
+                  return <p>{v}&nbsp;:&nbsp;</p>;
+                })}
+              </div>
+              <div>
+                {seatNumberDemo.map((v, i) => {
+                  return <p>{v.name}</p>;
+                })}
+              </div>
             </div>
           </div>
           <div className="ticket-confirm-content">
             <p>餐點</p>
-            <div>
-              <p>USER1 {mealSelected.USER1} /</p>
-              <p>USER2 {mealSelected.USER2} /</p>
-              <p>USER3 {mealSelected.USER3} /</p>
-              <p>USER4 {mealSelected.USER4} </p>
+            <div className="ticket-confirm-seat">
+              <div>
+                {memberData.map((v, i) => {
+                  return <p>{v}&nbsp;:&nbsp;</p>;
+                })}
+              </div>
+              <div>
+                {mealSelected.map((v, i) => {
+                  return <p>{v.memberDataArray[i]}</p>;
+                })}
+              </div>
             </div>
           </div>
           <div className="ticket-confirm-content ticket-confirm-price">
-            $4,000
+            ${tripPrice * memberData.length}
           </div>
         </div>
       </Modal.Body>
