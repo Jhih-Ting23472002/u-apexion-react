@@ -89,12 +89,7 @@ function App() {
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
   const [seatNumberDemo, setSeatNumberDemo] = useState([]);
-  const [mealSelected, setMealSelected] = useState({
-    USER1: '',
-    USER2: '',
-    USER3: '',
-    USER4: '',
-  });
+  const [mealSelected, setMealSelected] = useState([]);
   const [change, setChange] = useState(0);
   console.log('行程', tripSelected);
   console.log('出發日期', tripDate);
@@ -278,6 +273,7 @@ function App() {
                   tripDate={tripDate}
                   seatNumberDemo={seatNumberDemo}
                   tripDays={tripDays}
+                  tripPrice={tripPrice}
                 />
               </Route>
               <Route path="/ticket-confirm"></Route>
