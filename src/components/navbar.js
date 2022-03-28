@@ -8,10 +8,18 @@ import SignOut from './SignOut';
 function Navbar() {
   //購物車內數量
   const { cartTotal } = useContext(CartQuantity);
-  const { signOut, setSignOut } = useContext(SignOut);
-
-  //   //找會員id用
+  //登入
   const { userNavbar, setUserNavbar } = useContext(UserNameF);
+  //登出
+  const { signOut, setSignOut } = useContext(SignOut);
+  //註冊連結
+  const [register, setRegister] = useState('/member-sign-up');
+
+  useEffect(() => {
+    if (signOut === '登出') {
+      setRegister('/member-login');
+    }
+  }, [signOut]);
 
   return (
     <>
@@ -39,7 +47,7 @@ function Navbar() {
             <li></li>
             <li>
               <Link
-                to="#/"
+                to={register}
                 onClick={() => {
                   setSignOut('註冊');
                   setUserNavbar('登入');

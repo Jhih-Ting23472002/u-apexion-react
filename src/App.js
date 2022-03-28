@@ -32,10 +32,10 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
-import CustomizeSeat from './pages/Customize/CustomizeSeat';
-import CustomizeCraft from './pages/Customize/CustomizeCraft';
-import CustomizeSuit from './pages/Customize/CustomizeSuit';
+// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+// import CustomizeSeat from './pages/Customize/CustomizeSeat';
+// import CustomizeCraft from './pages/Customize/CustomizeCraft';
+// import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -245,28 +245,49 @@ function App() {
                   </Route>
                   {/* <Route path="/ticket-test">
               <TicketTest />
-            </Route>
-            <Route path="/ticket-trip-choose">
-              <TicketTrip
-                setTripSelected={setTripSelected}
-                setTripDays={setTripDays}
-                setTripPrice={setTripPrice}
-              />
-            </Route>
-            <Route path="/ticket-date-choose">
-              <TicketDate tripSelected={tripSelected} tripDays={tripDays} />
-            </Route>
-            <Route path="/ticket-date-choose-old">
-              <TicketDateOld />
-            </Route>
-            <Route path="/ticket-seat-choose">
-              <TicketSeat />
-            </Route>
-            <Route path="/ticket-meal-choose">
-              <TicketMeal />
-            </Route>
-            <Route path="/ticket-confirm"></Route>
-            <Route path="/customize-mainpage">
+            </Route> */}
+                  <Route path="/ticket-trip-choose">
+                    <TicketTrip
+                      setTripSelected={setTripSelected}
+                      setTripDays={setTripDays}
+                      setTripPrice={setTripPrice}
+                    />
+                  </Route>
+                  <Route path="/ticket-date-choose">
+                    <TicketDate
+                      tripSelected={tripSelected}
+                      tripDays={tripDays}
+                      setTripDate={setTripDate}
+                    />
+                  </Route>
+                  <Route path="/ticket-date-choose-old">
+                    <TicketDateOld />
+                  </Route>
+                  <Route path="/ticket-seat-choose">
+                    <TicketSeat
+                      tripDate={tripDate}
+                      seatNumberDemo={seatNumberDemo}
+                      setSeatNumberDemo={setSeatNumberDemo}
+                    />
+                  </Route>
+                  <Route path="/ticket-meal-choose">
+                    <TicketMeal
+                      mealSelected={mealSelected}
+                      setMealSelected={setMealSelected}
+                      setChange={setChange}
+                      change={change}
+                      tripSelected={tripSelected}
+                      tripDate={tripDate}
+                      seatNumberDemo={seatNumberDemo}
+                      tripDays={tripDays}
+                      tripPrice={tripPrice}
+                    />
+                  </Route>
+                  <Route path="/ticket-confirm"></Route>
+                  {/* <Route path="/ticket-test">
+              <SeatDrag />
+            </Route> */}
+                  {/* <Route path="/customize-mainpage">
               <CustomizeMainPage />
             </Route>
             <Route path="/customize-suit">
@@ -278,25 +299,9 @@ function App() {
             <Route path="/customize-seat">
               <CustomizeSeat />
             </Route>
-            <Route path="/customize-order"></Route>
-            <Route path="/trans-mainpage"></Route>
-            <Route path="/trans-order"></Route>
-            
-            <Route path="/products" exact>
-              <Products />
-            </Route>
-            <ScrollToTop>
-            <Route path="/products-list/product-detail/:sid">
-              <ProductsDetail setProductDetailList={setProductDetailList} />
-            </Route>
-            <Route path="/products-list" exact>
-              <ProductsList />
-            </Route>
-            
-              <Route exact path="/cart-payment">
-                <CartChoosePayment
-                  tripSelected={tripSelected} //from 采諭
-                  tripPrice={tripPrice} //from 采諭
+            <Route path="/customize-order"></Route> */}
+                  <Route path="/trans-mainpage"></Route>
+                  <Route path="/trans-order"></Route>
 
                   <ScrollToTop>
                     <Route path="/product-detail/:sid">
