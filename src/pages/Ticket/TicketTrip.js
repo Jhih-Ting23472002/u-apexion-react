@@ -37,7 +37,7 @@ function TicketTrip(props) {
   };
 
   let moveDistance = 0;
-  moveDistance = distance * -16.8;
+  moveDistance = distance * -8.36363636;
 
   const toRight = function () {
     setDistance(distance + 1);
@@ -69,6 +69,7 @@ function TicketTrip(props) {
 
   function tripHandler(e) {
     console.log(e);
+
     console.log(e.target.parentNode.parentNode);
     console.log(
       e.target.parentNode.previousSibling.firstChild.firstChild.innerHTML
@@ -87,6 +88,12 @@ function TicketTrip(props) {
       e.target.parentNode.parentNode.firstChild.innerHTML.slice(0, 1)
     );
 
+    // const getPrice =
+    //   e.target.parentNode.previousSibling.firstChild.lastChild.innerHTML;
+    // getPrice.split(',');
+    // console.log(getPrice);
+    // getPrice.shift();
+    // console.log('拿到價格', getPrice.join());
     props.setTripPrice(
       e.target.parentNode.previousSibling.firstChild.lastChild.innerHTML
     );
