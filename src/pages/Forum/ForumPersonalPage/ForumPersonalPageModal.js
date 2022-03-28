@@ -2,10 +2,13 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 // import './ticket.css';
 import './ForumPersonalPageModal.css';
+import { personPostsData } from './personPostsData';
 
 function ForumPersonalPageModal(props) {
+  const { imageIndex } = props;
   return (
     <Modal
       className="back-view forum_back_view"
@@ -16,12 +19,28 @@ function ForumPersonalPageModal(props) {
     >
       <Modal.Header closeButton className="forum-confirm-deatil"></Modal.Header>
       <Modal.Body className="forum-modal-body">
-        <img src="./index_img/ig2.png" alt="" />
+        {personPostsData
+          .filter((v, i) => {
+            if (props.imageIndex == i) {
+              return v;
+            }
+          })
+          .map((image, i) => (
+            <img
+              src={image.photo}
+              alt=""
+              style={{ boxShadow: '6px 6px 10px black', borderRadius: '3px' }}
+            />
+          ))}
       </Modal.Body>
       <Modal.Footer className="forum-confirm-modal-footer">
-        <Button onClick={props.onHide} className="forum-confirm-btn">
+        <Link
+          to="/forum-home/posts/111"
+          onClick={props.onHide}
+          className="forum-confirm-btn"
+        >
           前往文章
-        </Button>
+        </Link>
       </Modal.Footer>
     </Modal>
   );

@@ -42,6 +42,8 @@ const CartChoosePayment = props => {
             setProductDetailList={props.setProductDetailList} // 刪除資料 state, setState 都要給
             cartTotalPrice={props.cartTotalPrice}
             setCartTotalPrice={props.setCartTotalPrice}
+            totalProductItem={props.totalProductItem}
+            setTotalProductItem={props.setTotalProductItem}
           />
 
           <TripCard
@@ -49,13 +51,17 @@ const CartChoosePayment = props => {
             setTripSelected={props.setTripSelected}
             tripPrice={props.tripPrice}
             setTripPrice={props.setTripPrice}
+            tripDate={props.tripDate}
+            setTripDate={props.setTripDate}
+            mealSelected={props.mealSelected}
+            setMealSelected={props.setMealSelected}
           />
 
-          <SuitCard />
+          {/* <SuitCard />
 
           <SeatCard />
 
-          <ShipCard />
+          <ShipCard /> */}
 
           <div className="cart separated-line"></div>
           <div className="cart-user-option-should-pay">
@@ -92,11 +98,15 @@ const CartChoosePayment = props => {
               </select>
             </div>
             <div className="cart-should-pay col-5">
-              <h5 className="cart-should-pay-text">共n件商品</h5>
-              <h5 className="cart-should-pay-text">小計:{props.tripPrice}</h5>
+              <h5 className="cart-should-pay-text">
+                共{props.totalProductItem + 1}件商品
+              </h5>
+              <h5 className="cart-should-pay-text">
+                小計:{props.cartTotalPrice}
+              </h5>
               <div className="cart-should-pay-separated-line"></div>
               <h5 className="cart-should-pay-total-price">
-                應付總金額:{props.tripPrice}
+                應付總金額:{props.cartTotalPrice}
               </h5>
               <div className="cart-button">
                 <Link to={'/products'} className="btn continue-btn">

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
+import CartQuantity from '../pages/Products/CartQuantity'
 
-function navbar() {
+function Navbar() {
+  const {cartTotal}=useContext(CartQuantity)
+  console.log({cartTotal})
   return (
     <>
       <div className="topspace"></div>
@@ -12,23 +15,23 @@ function navbar() {
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
-              <Link to="/travel-index">Schedule</Link>
+              <Link to="/travel-index">主題探索</Link>
             </li>
             <li>
-              <Link to="#/">Booking</Link>
+              <Link to="#/">訂票</Link>
             </li>
             <li>
-              <Link to="/products">Shop</Link>
+              <Link to="/products">購物</Link>
             </li>
             <li>
-              <Link to="/forum-home">Forum</Link>
+              <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to="/member-login">Login</Link>
+              <Link to="/member-login">登入</Link>
             </li>
             <li></li>
             <li>
-              <Link to="#/">Register</Link>
+              <Link to="#/">註冊</Link>
             </li>
             <li>
               <Link to="/cart-payment">
@@ -37,6 +40,8 @@ function navbar() {
                   src={require('./tools/Bag.png')}
                   alt=""
                 />
+                <div className="cartTotal">
+                <p>{cartTotal}</p></div>
               </Link>
             </li>
           </ul>
@@ -115,4 +120,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;

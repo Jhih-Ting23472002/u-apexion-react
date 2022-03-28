@@ -2,9 +2,29 @@ import React from 'react';
 import cartTicket from '../../img/cartTicket.png';
 
 const TripCard = props => {
-  const { tripSelected, setTripSelected, tripPrice, setTripPrice } = props;
+  const {
+    tripSelected,
+    setTripSelected,
+    tripPrice,
+    setTripPrice,
+    tripDate,
+    setTripDate,
+    mealSelected,
+    setMealSelected,
+  } = props;
 
-  console.log(tripPrice);
+  console.log('tripPrice', tripPrice);
+  console.log(typeof tripPrice);
+  console.log(
+    'tripDate:dateSelected',
+    tripDate.dateSelected,
+    'tripDate:returnDate',
+    tripDate.returnDate,
+    'mealSelected',
+    mealSelected,
+    'mealSelected:USER1',
+    mealSelected.USER1
+  );
 
   return (
     <>
@@ -18,15 +38,17 @@ const TripCard = props => {
             <div className="content-detail-inside-top-ticket">
               <div className="cart-ticket-destination">
                 <h5 className="cart-trip-name">行程:{tripSelected}</h5>
-                <h5 className="cart-trip-food">太空餐點</h5>
+                <h5 className="cart-trip-food">餐點:{mealSelected.USER1}</h5>
               </div>
               <div className="cart-ticket-during">
-                <h5 className="cart-start-time">啟航 2022/03/10 </h5>
-                <h5 className="cart-gohome-time">回程 2022/03/15 </h5>
+                <h5 className="cart-start-time">
+                  啟航 {tripDate.dateSelected}
+                </h5>
+                <h5 className="cart-gohome-time">回程 {tripDate.returnDate}</h5>
               </div>
             </div>
             <div className="content-detail-inside-bottom-ticket">
-              <h5 className="cart-number-people">人數 5</h5>
+              <h5 className="cart-number-people">人數 4</h5>
               <button className="btn cart-remove-btn">remove</button>
               <div className="cart-order-money">{tripPrice}</div>
             </div>

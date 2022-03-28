@@ -12,12 +12,14 @@ import SeatSvgFile from './SeatSvgFile';
 import SeatDrag from './SeatDrag';
 
 function TicketSeat(props) {
-  const { tripDate } = props;
+  const { tripDate, seatNumberDemo, setSeatNumberDemo } = props;
   const [isSeatA, setIsSeatA] = useState(false);
   const [isSeatB, setIsSeatB] = useState(false);
   const [isSeatC, setIsSeatC] = useState(false);
   const [seatData, setSeatData] = useState([]);
   const [seatCabin, setseatCabin] = useState('A');
+  const [change, setChange] = useState(0);
+  // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
 
   useEffect(() => {
     (async function () {
@@ -115,7 +117,13 @@ function TicketSeat(props) {
               </div>
               <div className="ticket-seat-choose">
                 <div className="seat-svg">
-                  <SeatSvgFile seatData={seatData} seatCabin={seatCabin} />
+                  <SeatSvgFile
+                    seatData={seatData}
+                    seatCabin={seatCabin}
+                    change={change}
+                    setChange={setChange}
+                    setSeatNumberDemo={setSeatNumberDemo}
+                  />
                 </div>
                 {/* <img className="seat-svg" src={seatsvg} alt="" /> */}
               </div>
@@ -130,7 +138,7 @@ function TicketSeat(props) {
                   <p>USER4_______</p>
                 </div>
                 <div className="ticket-seat-number">
-                  <SeatDrag />
+                  <SeatDrag seatNumberDemo={seatNumberDemo} />
                 </div>
               </div>
             </div>

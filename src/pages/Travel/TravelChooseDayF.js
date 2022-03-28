@@ -1,6 +1,7 @@
 import React from 'react';
 import './TravelChoose.css';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function TravelChoosePF() {
   const [TravelChooseF, setTravelChooseF] = useState([]);
@@ -21,28 +22,28 @@ function TravelChoosePF() {
       <section className="py-5">
         <div className="container choosecontainer">
           <div className="position-relative">
-            <div className="text-white px-3 pt-3 my-4">
+            <div className="text-white px-3 pt-3 my-5">
               <div className="row align-items-center filters">
-                <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <button className="itemBuyButton">
-                    <a href="/travel-choose">全部行程</a>
-                  </button>
+                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                  <Link to="/travel-choose">
+                    <button className="sortitemBuyButton">全部行程</button>
+                  </Link>
                 </div>
-                <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-pricef">價格由少至多</a>
-                  </button>
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-pricem">價格由多至少</a>
-                  </button>
+                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                  <Link to="/travelchoose-pricef">
+                    <button className="sortitemBuyButton">價格:低到高</button>
+                  </Link>
+                  <Link to="/travelchoose-pricem">
+                    <button className="sortitemBuyButton">價格:高到低</button>
+                  </Link>
                 </div>
-                <div className="col-12 col-sm-12 col-md-3 mb-3">
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-dayf">天數由少至多</a>
-                  </button>
-                  <button className="itemBuyButton">
-                    <a href="/travelchoose-daym">天數由多至少</a>
-                  </button>
+                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                  <Link to="/travelchoose-dayf">
+                    <button className="sortitemBuyButton">天數:少至多</button>
+                  </Link>
+                  <Link to="/travelchoose-daym">
+                    <button className="sortitemBuyButton">天數:多至少</button>
+                  </Link>
                 </div>
                 <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">
                   <section className="webdesigntuts-workshopchoose">
@@ -82,7 +83,7 @@ function TravelChoosePF() {
                               </ul>
                             </div>
                             <div className="col-md-4 text-md-center choosedetails">
-                              <p className="day">{c.travel_day}</p>
+                              <p className="day">旅遊天數:{c.travel_day}days</p>
                               <p className="price">${c.travel_price}</p>
                               <button className="itemBuyButton">Details</button>
                             </div>
@@ -107,9 +108,6 @@ function TravelChoosePF() {
           </div>
         </div>
       </section>
-      <div className="morechoose">
-        <button className="tourButton">更多行程</button>
-      </div>
       <hr className="generalHr" />
     </>
   );

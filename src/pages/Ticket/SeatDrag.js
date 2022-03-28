@@ -2,18 +2,23 @@ import React, { FC, useState } from 'react';
 import { ReactSortable } from 'react-sortablejs';
 
 function Dragtest(props) {
-  const [state, setState] = useState([
-    { id: 1, name: 'A.1' },
-    { id: 2, name: 'A.2' },
-    { id: 3, name: 'A.3' },
-    { id: 4, name: 'A.4' },
-  ]);
+  const { seatNumberDemo } = props;
 
+  //生命週期關係無法更新畫面
+  console.log('位子號碼', seatNumberDemo);
+
+  // const seatNumberState = [];
+  // seatNumber.map((v, i) => {
+  //   seatNumberState.push({ id: i, name: v });
+  //   return seatNumberState;
+  // });
+  // console.log('seatNumberState', seatNumberState);
+  const [state, setState] = useState(seatNumberDemo);
   return (
     <>
       <ReactSortable list={state} setList={setState}>
-        {state.map(item => (
-          <div key={item.id}>{item.name}</div>
+        {seatNumberDemo.map(item => (
+          <div className="seat-number-demo" key={item.id}>{item.name}</div>
         ))}
       </ReactSortable>
     </>

@@ -6,14 +6,25 @@ import menu02 from './img/menu02.jpg';
 import menu03 from './img/menu03.jpg';
 import menu04 from './img/menu04.jpg';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import TicketConfirmModal from './TicketConfirmModal';
 
-function TicketMeal() {
+function TicketMeal(props) {
   const [modalShow, setModalShow] = useState(false);
   const [demoImg, setDemoImg] = useState('menu01');
   const [active, setActive] = useState([true, false, false, false]);
+  const {
+    mealSelected,
+    tripSelected,
+    tripDate,
+    seatNumberDemo,
+    setMealSelected,
+    change,
+    setChange,
+    tripDays,
+  } = props;
 
   useEffect(() => {
     switch (demoImg) {
@@ -39,6 +50,17 @@ function TicketMeal() {
     console.log(e);
     console.log(e.currentTarget);
     console.log(e.currentTarget.dataset.value);
+  };
+
+  const mealSelectedHandler = function (e) {
+    console.log(e.target.dataset.user);
+    const newMealState = mealSelected;
+    newMealState[e.target.dataset.user] = e.target.value;
+    setMealSelected(newMealState);
+    const nowChange = change + 1;
+    setChange(nowChange);
+    console.log('newMealState', newMealState);
+    console.log('mealSelected', mealSelected);
   };
 
   console.log(demoImg);
@@ -138,51 +160,87 @@ function TicketMeal() {
             <div className="menu-select-area">
               <div>
                 <label htmlFor="">USER1</label>
-                <select name="" id="">
-                  <option value="">太空拉麵</option>
-                  <option value="">太空炒飯</option>
-                  <option value="">太空咖哩</option>
-                  <option value="">太空炒麵</option>
+                <select
+                  onChange={e => mealSelectedHandler(e)}
+                  data-user="USER1"
+                  name=""
+                  id=""
+                >
+                  <option value="">請選擇餐點</option>
+                  <option value="太空拉麵">太空拉麵</option>
+                  <option value="太空炒飯">太空炒飯</option>
+                  <option value="太空咖哩">太空咖哩</option>
+                  <option value="太空炒麵">太空炒麵</option>
                 </select>
               </div>
               <div>
                 <label htmlFor="">USER2</label>
-                <select name="" id="">
-                  <option value="">太空拉麵</option>
-                  <option value="">太空炒飯</option>
-                  <option value="">太空咖哩</option>
-                  <option value="">太空炒麵</option>
+                <select
+                  onChange={e => mealSelectedHandler(e)}
+                  data-user="USER2"
+                  name=""
+                  id=""
+                >
+                  <option value="">請選擇餐點</option>
+                  <option value="太空拉麵">太空拉麵</option>
+                  <option value="太空炒飯">太空炒飯</option>
+                  <option value="太空咖哩">太空咖哩</option>
+                  <option value="太空炒麵">太空炒麵</option>
                 </select>
               </div>
               <div>
                 <label htmlFor="">USER3</label>
-                <select name="" id="">
-                  <option value="">太空拉麵</option>
-                  <option value="">太空炒飯</option>
-                  <option value="">太空咖哩</option>
-                  <option value="">太空炒麵</option>
+                <select
+                  onChange={e => mealSelectedHandler(e)}
+                  data-user="USER3"
+                  name=""
+                  id=""
+                >
+                  <option value="">請選擇餐點</option>
+                  <option value="太空拉麵">太空拉麵</option>
+                  <option value="太空炒飯">太空炒飯</option>
+                  <option value="太空咖哩">太空咖哩</option>
+                  <option value="太空炒麵">太空炒麵</option>
                 </select>
               </div>
               <div>
                 <label htmlFor="">USER4</label>
-                <select name="" id="">
-                  <option value="">太空拉麵</option>
-                  <option value="">太空炒飯</option>
-                  <option value="">太空咖哩</option>
-                  <option value="">太空炒麵</option>
+                <select
+                  onChange={e => mealSelectedHandler(e)}
+                  data-user="USER4"
+                  name=""
+                  id=""
+                >
+                  <option value="">請選擇餐點</option>
+                  <option value="太空拉麵">太空拉麵</option>
+                  <option value="太空炒飯">太空炒飯</option>
+                  <option value="太空咖哩">太空咖哩</option>
+                  <option value="太空炒麵">太空炒麵</option>
                 </select>
               </div>
             </div>
-            <a className="ticket-meal-back" href="/">
+            <Link
+              to="/ticket-seat-choose"
+              className="ticket-meal-back"
+              href="/"
+            >
               <i className="fa-solid fa-left-long"></i>Back
-            </a>
+            </Link>
             <p className="ticket-meal-next" onClick={() => setModalShow(true)}>
               Next<i className="fa-solid fa-right-long"></i>
             </p>
           </div>
         </div>
       </div>
-      <TicketConfirmModal show={modalShow} onHide={() => setModalShow(false)} />
+      <TicketConfirmModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        mealSelected={mealSelected}
+        tripSelected={tripSelected}
+        tripDate={tripDate}
+        seatNumberDemo={seatNumberDemo}
+        tripDays={tripDays}
+      />
       )
     </>
   );

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 function TicketCalender(props) {
   const didMountRef = useRef(false);
   console.log(props.tripDays);
-  const [monthSelected, setMonthSelected] = useState(0);
+  const [monthSelected, setMonthSelected] = useState(new Date().getMonth());
   const [monthShow, setMonthShow] = useState([0, 1, 2]);
 
   // const [pickDate, setPickDate] = useState('');

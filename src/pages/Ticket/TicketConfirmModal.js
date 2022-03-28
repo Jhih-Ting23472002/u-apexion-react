@@ -7,6 +7,10 @@ import './TicketConfirmModal.css';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 function TicketOrderModal(props) {
+  const { mealSelected, tripSelected, tripDate, seatNumberDemo, tripDays } =
+    props;
+  console.log(mealSelected, tripSelected, tripDate, seatNumberDemo);
+
   return (
     <Modal
       className="back-view"
@@ -25,28 +29,33 @@ function TicketOrderModal(props) {
         <div className="ticket-confirm-wrap">
           <div className="ticket-confirm-content">
             <p>行程</p>
-            <p>泰坦星5日遊</p>
+            <p>
+              {tripSelected}
+              {tripDays}日遊
+            </p>
           </div>
           <div className="ticket-confirm-content">
             <p>日程</p>
-            <p>022/1/24 - 2022/1/28</p>
+            <p>
+              {tripDate.dateSelected} - {tripDate.returnDate}
+            </p>
           </div>
           <div className="ticket-confirm-content">
             <p>艙位</p>
             <div>
-              <p>USE1 FD.3 /</p>
-              <p>USE2 FD.4 /</p>
-              <p>USE3 FD.5 /</p>
-              <p>USE4 FD.6</p>
+              <p>USER1 {seatNumberDemo[0].name} /</p>
+              <p>USER2 {seatNumberDemo[1].name} /</p>
+              <p>USER3 {seatNumberDemo[2].name} /</p>
+              <p>USER4 {seatNumberDemo[3].name}</p>
             </div>
           </div>
           <div className="ticket-confirm-content">
             <p>餐點</p>
             <div>
-              <p>USE1 太空炒麵 /</p>
-              <p>USE2 太空咖哩 /</p>
-              <p>USE3 太空咖哩 /</p>
-              <p>USE4 太空咖哩</p>
+              <p>USER1 {mealSelected.USER1} /</p>
+              <p>USER2 {mealSelected.USER2} /</p>
+              <p>USER3 {mealSelected.USER3} /</p>
+              <p>USER4 {mealSelected.USER4} </p>
             </div>
           </div>
           <div className="ticket-confirm-content ticket-confirm-price">

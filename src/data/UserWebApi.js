@@ -13,6 +13,20 @@ const BASE_URL = 'http://localhost:3001';
 //   }).then(res => res.json());
 // };
 
+//忘記密碼頁帳號驗證API
+export const accountAndMobileCheck = (account, mobile) => {
+  return fetch(`${BASE_URL}/user/api/accountAndMobileCheck`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      account,
+      mobile,
+    }),
+  }).then(res => res.json());
+};
+
 //token拿資料步驟2 : 傳輸回後端找資料的API
 export const findMem = sid => {
   // const token = getAuthToken();
@@ -73,7 +87,7 @@ export const getAddress = user_id => {
   );
 };
 
-export const editAddress = (editData,user_id) => {
+export const editAddress = (editData, user_id) => {
   return fetch(`${BASE_URL}/user/api/user-address-edit`, {
     method: 'POST',
     headers: {

@@ -7,13 +7,15 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Products(props) {
+  //傳給購物車用
   const { setProductDetailList } = props;
 
   const [ProductsNew, setProductsNew] = useState([]);
   const [ProductRecommend, setProductRecommend] = useState([]);
   const [ProductNavbar, setProductNavbar] = useState('#men');
-  const [NewProductImg, setNewProductImg] = useState("./product_img/M021J_BK019_1.jpg");
-
+  const [NewProductImg, setNewProductImg] = useState(
+    './product_img/M021J_BK019_1.jpg'
+  );
 
   useEffect(() => {
     // 新品推薦
@@ -209,33 +211,41 @@ function Products(props) {
         <div className="pr-recommendation-a">
           <a
             href="#men"
-            onClick={() => {setProductNavbar('#men');MenProduct()}}
+            onClick={() => {
+              setProductNavbar('#men');
+              MenProduct();
+            }}
             className={ProductNavbar === '#men' ? 'active' : ''}
           >
             男士精品
           </a>
-          <a
-            href="#woman"
-            onClick={() => {setProductNavbar('#woman');
-            WomanProduct()}}
+          <Link
+            to="#woman"
+            onClick={() => {
+              setProductNavbar('#woman');
+              WomanProduct();
+            }}
             className={ProductNavbar === '#woman' ? 'active' : ''}
           >
             女士精品
-          </a>
-          <a
-            href="#Shoes"
-            onClick={() => {setProductNavbar('#Shoes');ShoesProduct()}}
+          </Link>
+          <Link
+            to="#Shoes"
+            onClick={() => {
+              setProductNavbar('#Shoes');
+              ShoesProduct();
+            }}
             className={ProductNavbar === '#Shoes' ? 'active' : ''}
           >
             鞋款
-          </a>
-          <a
-            href="#watch"
+          </Link>
+          <Link
+            to="#watch"
             onClick={() => setProductNavbar('#watch')}
             className={ProductNavbar === '#watch' ? 'active' : ''}
           >
             配件與腕錶
-          </a>
+          </Link>
         </div>
         <div className="pr-container">
           {ProductRecommend.map((Product, i) => {
@@ -254,7 +264,7 @@ function Products(props) {
           })}
         </div>
         <div className="pr-card-a-div">
-          <Link to="/products-list">
+          <Link to="/products-list/men">
             View All<i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>

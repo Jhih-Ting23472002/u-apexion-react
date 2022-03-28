@@ -1,27 +1,40 @@
-.forum_personal_container {
-  padding-top: 20px;
+.forum_personal_background {
+  background-color: black;
+  transition: 1s;
 }
+
 .forum_person {
   color: white;
   display: flex;
   align-items: center;
   padding-bottom: 30px;
   border-bottom: 0.5px solid white;
+  transition: 1s;
 }
 .forum_person_left {
   width: 150px;
   height: 150px;
   margin-right: 50px;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(
+    270deg,
+    rgba(34, 193, 195, 0.3) 0%,
+    rgba(34, 193, 195, 1) 100%
+  );
+  transition: 0.5s;
+}
+.forum_person_left:hover {
+  padding: 2px;
 }
 .forum_person_img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 3px double #05f2f2;
-  background-image: url('./forum_person_img/Mask-Grouplogo.png');
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover !important;
 }
 .forum_person_email,
 .forum_person_nickname {
@@ -30,9 +43,6 @@
   font-weight: bold;
   letter-spacing: 2px;
   font-family: 'Arsenal';
-}
-.forum_person_bottom {
-  /* border: 1px solid red; */
 }
 .forum_person_bottom_icon {
   display: flex;
@@ -48,6 +58,13 @@
   color: white;
   letter-spacing: 3px;
   font-size: 14px;
+  transition: 1s;
+}
+.forum_person_posts:hover,
+.forum_person_saves:hover {
+  color: #05f2f2;
+  text-decoration: none;
+  font-size: 16px;
 }
 .forum_person_posts i,
 .forum_person_saves i {
@@ -91,4 +108,3 @@
 .person_posts_single_photo img:hover {
   transform: scale();
 }
-
