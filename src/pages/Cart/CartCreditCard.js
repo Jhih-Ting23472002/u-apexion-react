@@ -18,7 +18,7 @@ const CartCreditCard = props => {
   const sendOrderDeatilHandler = e => {
     setCartOrderListNumber(orderListNumber);
     console.log('orderListNumber', orderListNumber);
-    alert('資料都對嗎？');
+    alert('金額核對完畢，確認送出？');
     fetch('http://localhost:3001/cart/order-list-post', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
