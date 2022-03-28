@@ -138,7 +138,7 @@ const CartFinalCheck = props => {
                 <div className="d-flex justify-content-between need-width">
                   <div className="cart-product-list-group">人數4</div>
                   <div className="cart-product-list-group">
-                    票價:${+tripPrice.substring(1)}
+                    票價:${+tripPrice}
                   </div>
                 </div>
               </div>
@@ -146,11 +146,9 @@ const CartFinalCheck = props => {
             <div className="d-flex flex-column align-items-end final-total-price">
               <div className="mb-4">
                 共{totalProductItem + 1}件商品，總金額$
-                {cartTotalPrice + +tripPrice.substring(1)}
+                {cartTotalPrice + +tripPrice}
               </div>
-              <div>
-                本訂單需付款金額為${cartTotalPrice + +tripPrice.substring(1)}
-              </div>
+              <div>本訂單需付款金額為${cartTotalPrice + +tripPrice}</div>
             </div>
           </div>
 

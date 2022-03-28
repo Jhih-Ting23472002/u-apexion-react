@@ -13,7 +13,7 @@ const CartCreditCard = props => {
 
   const { cartOrderListNumber, setCartOrderListNumber } = props;
 
-  let orderListNumber = Math.floor(Math.random() * 100000 + 10000000); // 訂單編號
+  let orderListNumber = Math.floor(Math.random() * 1000000 + 10000000); // 訂單編號
 
   const sendOrderDeatilHandler = e => {
     setCartOrderListNumber(orderListNumber);
@@ -93,7 +93,7 @@ const CartCreditCard = props => {
               </button>
             </Link>
             <div className="card-trade mx-3">
-              交易金額 ${props.cartTotalPrice + +props.tripPrice.substring(1)}
+              交易金額 ${props.cartTotalPrice + +props.tripPrice}
             </div>
           </div>
         </div>

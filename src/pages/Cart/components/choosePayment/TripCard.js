@@ -14,7 +14,7 @@ const TripCard = props => {
   } = props;
 
   console.log('tripPrice', tripPrice);
-  let tripMoney = +tripPrice.substring(1);
+  let tripMoney = tripPrice;
   console.log(tripMoney);
   console.log(
     'tripDate:dateSelected',
