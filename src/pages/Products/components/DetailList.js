@@ -44,10 +44,9 @@ function DetailList(props) {
 
   const moneyClickHandler = e => {
     setMoney(true);
-    console.log('!');
   };
 
-  console.log(Math.floor(props.product.price * twd));
+
   return (
     <>
       <div className="pr-detail-list">
@@ -84,7 +83,7 @@ function DetailList(props) {
               <p className="pr-price">US${props.product?.price ?? '0'}</p>
               <div
                 className="pr-price-display"
-                style={{ border: '1px solid red' }}
+
                 onClick={moneyClickHandler}
               >
                 <div

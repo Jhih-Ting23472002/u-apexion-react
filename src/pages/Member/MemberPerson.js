@@ -1,8 +1,9 @@
 import React from 'react';
 import './MemberPerson.css';
 import MemberNavbar from '../../components/MemberNav';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { reviseMem, findMem } from '../../data/UserWebApi';
+import UserNameF from '../../components/UserNameF';
 
 const MemberPerson = () => {
   const [memInfo, setMemInfo] = useState({
@@ -38,6 +39,40 @@ const MemberPerson = () => {
   //   const newData = { ...memInfo, [e.target.name]: e.target.value };
   //   setMemInfo(newData);
   // };
+
+  //找會員id用
+  const { setUserNavbar } = useContext(UserNameF);
+  const [userAll, setUserAll] = useState([]);
+
+  // useEffect(() => {
+  //   (async function () {
+  //     const response = await fetch('http://localhost:3001/user/api/getuser');
+  //     const getUser = await response.json();
+  //     setUserAll(getUser);
+  //     const userId = localStorage.getItem('user_id');
+  //     console.log(getUser);
+  //     console.log(userAll);
+  //     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
+  //     // setUserNavbar(newUserName.name);
+  //   })();
+  // }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('http://localhost:3001/user/api/getuser');
+      const data = await res.json();
+      // console.log(data);
+      setUserAll(data);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const userId = localStorage.getItem('user_id');
+    const newUserName = userAll?.find(v => v.sid === parseInt(userId));
+    console.log(newUserName?.name);
+    setUserNavbar(newUserName?.name);
+  }, [userAll]);
 
   return (
     <>
