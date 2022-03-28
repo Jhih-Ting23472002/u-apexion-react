@@ -4,6 +4,7 @@ import MemberNavbar from '../../components/MemberNav';
 import { useEffect, useState, useContext } from 'react';
 import { reviseMem, findMem } from '../../data/UserWebApi';
 import UserNameF from '../../components/UserNameF';
+import SignOut from '../../components/SignOut';
 
 const MemberPerson = () => {
   const [memInfo, setMemInfo] = useState({
@@ -43,19 +44,7 @@ const MemberPerson = () => {
   //找會員id用
   const { setUserNavbar } = useContext(UserNameF);
   const [userAll, setUserAll] = useState([]);
-
-  // useEffect(() => {
-  //   (async function () {
-  //     const response = await fetch('http://localhost:3001/user/api/getuser');
-  //     const getUser = await response.json();
-  //     setUserAll(getUser);
-  //     const userId = localStorage.getItem('user_id');
-  //     console.log(getUser);
-  //     console.log(userAll);
-  //     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
-  //     // setUserNavbar(newUserName.name);
-  //   })();
-  // }, []);
+  const { signOut, setSignOut  } = useContext(SignOut);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -70,9 +59,10 @@ const MemberPerson = () => {
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
-    console.log(newUserName?.name);
-    setUserNavbar(newUserName?.name);
+    setUserNavbar("Hi "+ newUserName?.name);
+    setSignOut('登出')
   }, [userAll]);
+  
 
   return (
     <>

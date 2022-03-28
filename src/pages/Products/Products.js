@@ -209,8 +209,8 @@ function Products(props) {
       <div className="pr-recommendation">
         <h2>時尚推薦</h2>
         <div className="pr-recommendation-a">
-          <a
-            href="#men"
+          <Link
+            to="#men"
             onClick={() => {
               setProductNavbar('#men');
               MenProduct();
@@ -218,7 +218,7 @@ function Products(props) {
             className={ProductNavbar === '#men' ? 'active' : ''}
           >
             男士精品
-          </a>
+          </Link>
           <Link
             to="#woman"
             onClick={() => {

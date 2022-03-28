@@ -1,17 +1,17 @@
-import React, { useContext, useEffect,useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import CartQuantity from '../pages/Products/CartQuantity';
 import UserNameF from './UserNameF';
+import SignOut from './SignOut';
 
 function Navbar() {
+  //購物車內數量
   const { cartTotal } = useContext(CartQuantity);
-  const { userNavbar} = useContext(UserNameF);
-  // const [userAll, setUserAll] = useState({});
+  const { signOut, setSignOut } = useContext(SignOut);
 
-
-
-
+  //   //找會員id用
+  const { userNavbar, setUserNavbar } = useContext(UserNameF);
 
   return (
     <>
@@ -38,7 +38,16 @@ function Navbar() {
             </li>
             <li></li>
             <li>
-              <Link to="#/">註冊</Link>
+              <Link
+                to="#/"
+                onClick={() => {
+                  setSignOut('註冊');
+                  setUserNavbar('登入');
+                  localStorage.removeItem('user_id');
+                }}
+              >
+                {signOut}
+              </Link>
             </li>
             <li>
               <Link to="/cart-payment">
