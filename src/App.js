@@ -13,7 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 // Member
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
-import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+// import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
 import MemberPwdEdit from './pages/Member/MemberPwdEdit';
@@ -78,8 +78,8 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+//import IndexFirst from './pages/Index/IndexFirst';
+//import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -141,13 +141,11 @@ function App() {
             <Navbar />
             <Switch>
               {/* <Route exact path="/">
-              <IndexFirst />
-            </Route>
-            <Route exact path="/u-apexion">
-              <IndexMain />
-            </Route> */}
-              {/* <Route path="/index-video"></Route>
-            <Route path="/index"></Route> */}
+                <IndexFirst />
+              </Route>
+              <Route exact path="/u-apexion">
+                <IndexMain />
+              </Route> */}
               <Route exact path="/forum-home">
                 <ForumHomePage />
               </Route>
@@ -184,9 +182,9 @@ function App() {
               <Route path="/member-sign-up">
                 <MemberSignUp />
               </Route>
-              <Route path="/member-forgot-pwd">
+              {/* <Route path="/member-forgot-pwd">
                 <MemberForgotPwd />
-              </Route>
+              </Route> */}
               <Route path="/member-person">
                 <MemberPerson />
               </Route>
@@ -312,7 +310,6 @@ function App() {
                 <Route path="/products" exact>
                   <Products setProductDetailList={setProductDetailList} />
                 </Route>
-
                 <Route exact path="/cart-payment">
                   <CartChoosePayment
                     cartTotalPrice={cartTotalPrice} //購物車總金額
@@ -322,6 +319,10 @@ function App() {
                     setTripSelected={setTripSelected} //from 采諭
                     tripPrice={tripPrice} //from 采諭
                     setTripPrice={setTripPrice} //from 采諭
+                    tripDate={tripDate} //from 采諭
+                    setTripDate={setTripDate} //from 采諭
+                    mealSelected={mealSelected} //from 采諭
+                    setMealSelected={setMealSelected} //from 采諭
                     //---------------------------------
                     productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                     setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
@@ -344,6 +345,11 @@ function App() {
                   <CartFinalCheck
                     tripSelected={tripSelected} //from 采諭
                     tripPrice={tripPrice} //from 采諭
+                    tripDate={tripDate} //from 采諭
+                    setTripDate={setTripDate} //from 采諭
+                    mealSelected={mealSelected} //from 采諭
+                    setMealSelected={setMealSelected} //from 采諭
+                    //-------------------------------------------------
                     productDetailList={productDetailList} // from 智婷
                     userOption={userOption}
                     setCartUserInfo={setCartUserInfo}

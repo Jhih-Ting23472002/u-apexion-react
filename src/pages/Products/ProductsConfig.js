@@ -10,5 +10,7 @@ const ProductsConfig = {
   MEN_List: `${host}/product/api/getAllMen`,
   Woman_List: `${host}/product/api/getAllWoman`,
   Shoes_List: `${host}/product/api/getAllShoes`,
+  //外匯
+  DailyForeignExchangeRates:'https://openapi.taifex.com.tw/v1/DailyForeignExchangeRates',
 };
 export default ProductsConfig;
