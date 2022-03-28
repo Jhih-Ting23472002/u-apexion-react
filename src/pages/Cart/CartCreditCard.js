@@ -11,6 +11,23 @@ const CartCreditCard = props => {
   const [cvc, setCvc] = useState('');
   const [focus, setFocus] = useState('');
 
+  const { cartOrderListNumber, setCartOrderListNumber } = props;
+
+  let orderListNumber = Math.floor(Math.random() * 100000 + 10000000); // 訂單編號
+
+  const sendOrderDeatilHandler = e => {
+    setCartOrderListNumber(orderListNumber);
+    console.log('orderListNumber', orderListNumber);
+    alert('資料都對嗎？');
+    fetch('http://localhost:3001/cart/order-list-post', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        orderListNumber,
+      }),
+    }).then(res => res.json());
+  };
+
   return (
     <>
       <div className="cart-background container-fluid">
@@ -67,7 +84,11 @@ const CartCreditCard = props => {
           </form>
           <div className="d-flex justify-content-center align-items-center mt-5">
             <Link to={'/cart-complete'} className="mx-3">
-              <button type="button" className="btn card-confirm cart-link">
+              <button
+                type="button"
+                onClick={sendOrderDeatilHandler}
+                className="btn card-confirm cart-link"
+              >
                 確認付款 (Confirm)
               </button>
             </Link>

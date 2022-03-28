@@ -107,7 +107,7 @@ const CartChoosePayment = props => {
               </h5>
               <div className="cart-should-pay-separated-line"></div>
               <h5 className="cart-should-pay-total-price">
-                應付總金額:
+                應付總金額: $
                 {props.cartTotalPrice + +props.tripPrice.substring(1)}
               </h5>
               <div className="cart-button">

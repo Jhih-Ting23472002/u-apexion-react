@@ -9,21 +9,11 @@ const CardComplete = props => {
     tripSelected,
     tripPrice,
     cartTotalPrice,
+    cartOrderListNumber, // 訂單編號
   } = props;
 
-  let orderListNumber = Math.floor(Math.random() * 100000000000);
-  console.log('orderListNumber', orderListNumber);
-
-  const sendOrderDeatilHandler = e => {
-    alert('資料都對嗎？');
-    fetch('http://localhost:3001/cart/order-list-post', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        orderListNumber,
-      }),
-    }).then(res => res.json());
-  };
+  // let orderListNumber = Math.floor(Math.random() * 100000000000);
+  // console.log('orderListNumber', orderListNumber);
 
   return (
     <>
@@ -55,7 +45,7 @@ const CardComplete = props => {
               元。
             </p>
             <br />
-            <p>謝謝您的訂購，您的訂單編號為：{orderListNumber}。</p>
+            <p>謝謝您的訂購，您的訂單編號為：{cartOrderListNumber}。</p>
           </div>
 
           {/* 購物明細 */}
@@ -131,7 +121,6 @@ const CardComplete = props => {
             <div className="col-1"></div>
             <button
               type="button"
-              onClick={sendOrderDeatilHandler}
               className="col-2 btn cart-link to-other-page mt-5"
               to={''}
             >
