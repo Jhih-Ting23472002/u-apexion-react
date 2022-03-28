@@ -3,7 +3,7 @@ import './MemberForgotPwd.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { accountAndMobileCheck } from '../../data/UserWebApi';
-import MemberForgotPwdCode from './MemberForgotPwdCode';
+// import MemberForgotPwdCode from './MemberForgotPwdCode';
 // import MemberForgotPwdNew from './MemberForgotPwdNew';
 import { useHistory } from 'react-router-dom';
 
@@ -11,9 +11,6 @@ const MemberForgotPwd = () => {
   const [account, setAccount] = useState('');
   const [mobile, setMobile] = useState('');
   // const [errorMessage, setErrorMessage] = useState('');
-
-  const [forgotPwdCode, setForgetPwdCode] = useState(false);
-  // const [forgotPwdNew, setForgetPwdNew] = useState(false);
 
   const handleForgetPwdSubmit = e => {
     e.preventDefault();
@@ -71,8 +68,6 @@ const MemberForgotPwd = () => {
                 />
               </div>
 
-              {/* <MemberForgotPwdCode /> */}
-
               <div className="member-btn-container">
                 <div className="member-return-btn-wrap">
                   <Link
@@ -87,15 +82,9 @@ const MemberForgotPwd = () => {
                   </Link>
                 </div>
                 <div>
-                  <button
-                    className="member-circle-btn"
-                    onClick={() => setForgetPwdCode(true)}
-                  >
-                    確認送出
-                  </button>
+                  <button className="member-circle-btn">確認送出</button>
                 </div>
               </div>
-              {/* <MemberForgotPwdCode /> */}
             </form>
             {/* <div className="member-btn-container">
               <div className="member-return-btn-wrap">
@@ -110,14 +99,6 @@ const MemberForgotPwd = () => {
           </div>
         </div>
       </div>
-      <MemberForgotPwdCode
-        forgotPwdCode={forgotPwdCode}
-        setForgetPwdCode={setForgetPwdCode}
-      />
-      {/* <MemberForgotPwdNew
-        forgotPwdNew={forgotPwdNew}
-        setForgetPwdNew={setForgetPwdNew}
-      /> */}
     </>
   );
 };

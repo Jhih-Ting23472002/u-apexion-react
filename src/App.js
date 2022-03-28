@@ -13,7 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 // Member
 import MemberLogin from './pages/Member/MemberLogin';
 import MemberSignUp from './pages/Member/MemberSignUp';
-// import MemberForgotPwd from './pages/Member/MemberForgotPwd';
+import MemberForgotPwd from './pages/Member/MemberForgotPwd';
 import MemberPerson from './pages/Member/MemberPerson';
 import MemberPersonEdit from './pages/Member/MemberPersonEdit';
 import MemberPwdEdit from './pages/Member/MemberPwdEdit';
@@ -182,9 +182,9 @@ function App() {
               <Route path="/member-sign-up">
                 <MemberSignUp />
               </Route>
-              {/* <Route path="/member-forgot-pwd">
+              <Route path="/member-forgot-pwd">
                 <MemberForgotPwd />
-              </Route> */}
+              </Route>
               <Route path="/member-person">
                 <MemberPerson />
               </Route>

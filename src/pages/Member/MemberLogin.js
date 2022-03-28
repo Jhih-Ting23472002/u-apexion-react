@@ -69,9 +69,9 @@ const MemberLogin = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  <a href="#/">
-                    <small>忘記密碼</small>
-                  </a>
+                  {/* <a href="#/"> */}
+                  <small>忘記密碼</small>
+                  {/* </a> */}
                 </Link>
               </div>
 
