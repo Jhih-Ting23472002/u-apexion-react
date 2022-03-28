@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 import { Link } from 'react-router-dom';
-import { object } from 'prop-types';
+
 
 function BrowsingHistory(props) {
   const { Storages } = props;
