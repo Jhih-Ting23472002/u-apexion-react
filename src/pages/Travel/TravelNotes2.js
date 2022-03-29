@@ -21,9 +21,14 @@ function TravelNotes() {
     <>
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
+          <Link to="/travel-choose">
+            <button className="notesbackbutton nb2 d-block d-xl-none">
+              <i className="fa-solid fa-left-long"></i> Back
+            </button>
+          </Link>
           <ol className="breadcrumb">
             <Link to="/travel-choose">
-              <button className="notesbackbutton">
+              <button className="notesbackbutton d-none d-xl-block">
                 <i className="fa-solid fa-left-long"></i> Back
               </button>
             </Link>
