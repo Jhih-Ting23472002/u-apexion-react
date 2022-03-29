@@ -33,9 +33,9 @@ import SignOut from './components/SignOut';
 
 // Customize
 // import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
-// import CustomizeSeat from './pages/Customize/CustomizeSeat';
-// import CustomizeCraft from './pages/Customize/CustomizeCraft';
-// import CustomizeSuit from './pages/Customize/CustomizeSuit';
+import CustomizeSeat from './pages/Customize/CustomizeSeat';
+import CustomizeCraft from './pages/Customize/CustomizeCraft';
+import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -288,18 +288,18 @@ function App() {
               <SeatDrag />
             </Route> */}
                   {/* <Route path="/customize-mainpage">
-              <CustomizeMainPage />
-            </Route>
-            <Route path="/customize-suit">
-              <CustomizeSuit />
-            </Route>
-            <Route path="/customize-craft">
-              <CustomizeCraft />
-            </Route>
-            <Route path="/customize-seat">
-              <CustomizeSeat />
-            </Route>
-            <Route path="/customize-order"></Route> */}
+                    <CustomizeMainPage />
+                  </Route> */}
+                  <Route path="/customize-suit">
+                    <CustomizeSuit />
+                  </Route>
+                  <Route path="/customize-craft">
+                    <CustomizeCraft />
+                  </Route>
+                  <Route path="/customize-seat">
+                    <CustomizeSeat />
+                  </Route>
+                  <Route path="/customize-order"></Route>
                   <Route path="/trans-mainpage"></Route>
                   <Route path="/trans-order"></Route>
 
