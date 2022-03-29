@@ -32,6 +32,7 @@ function TravelIndex() {
   }, []);
 
   function travelPage(e) {
+    console.log(e);
     console.log(e.target.id);
   }
 
