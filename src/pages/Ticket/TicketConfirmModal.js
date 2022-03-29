@@ -15,19 +15,20 @@ function TicketOrderModal(props) {
     seatNumberDemo,
     tripDays,
     tripPrice,
+    memberName,
   } = props;
   console.log(mealSelected, tripSelected, tripDate, seatNumberDemo);
   const memberAPI = config.TK_ORDER_API;
-  const [memberData, setMemberData] = useState([]);
-  const memberDataArray = memberData.map((v, i) => {
-    return v;
-  });
+  // const [memberData, setMemberData] = useState([]);
+  // const memberDataArray = memberData.map((v, i) => {
+  //   return v;
+  // });
 
   console.log('價格', tripPrice);
-  console.log('人數', memberData.length);
-  console.log('成員名子', memberDataArray);
+  // console.log('人數', memberData.length);
+  // console.log('成員名子', memberDataArray);
   // console.log('成員ttt', memberDataArray[0]);
-  console.log('成員rrr', memberDataArray[1]);
+  // console.log('成員rrr', memberDataArray[1]);
   console.log('餐點名稱', mealSelected.rrr);
   console.log('餐點名稱', mealSelected.rrr);
   // console.log('餐點名稱', mealSelected[memberDataArray[0]]);
@@ -38,19 +39,19 @@ function TicketOrderModal(props) {
   console.log('餐點的map', abc);
 
   // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
-  useEffect(() => {
-    (async function () {
-      const response = await fetch(memberAPI, {
-        method: 'GET',
-      });
-      const memberListDatas = await response.json();
-      console.log(memberListDatas.member_name);
-      console.log(memberListDatas[0].member_name);
-      const memberArray = memberListDatas[0].member_name.split(',');
-      console.log(memberArray);
-      setMemberData(memberArray);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async function () {
+  //     const response = await fetch(memberAPI, {
+  //       method: 'GET',
+  //     });
+  //     const memberListDatas = await response.json();
+  //     console.log(memberListDatas.member_name);
+  //     console.log(memberListDatas[0].member_name);
+  //     const memberArray = memberListDatas[0].member_name.split(',');
+  //     console.log(memberArray);
+  //     setMemberData(memberArray);
+  //   })();
+  // }, []);
 
   return (
     <Modal
@@ -85,7 +86,7 @@ function TicketOrderModal(props) {
             <p>艙位</p>
             <div className="ticket-confirm-seat">
               <div>
-                {memberData.map((v, i) => {
+                {memberName.map((v, i) => {
                   return <p>{v}&nbsp;:&nbsp;</p>;
                 })}
               </div>
@@ -100,19 +101,19 @@ function TicketOrderModal(props) {
             <p>餐點</p>
             <div className="ticket-confirm-seat">
               <div>
-                {memberData.map((v, i) => {
+                {memberName.map((v, i) => {
                   return <p>{v}&nbsp;:&nbsp;</p>;
                 })}
               </div>
               <div>
                 {mealSelected.map((v, i) => {
-                  return <p>{v.memberDataArray[i]}</p>;
+                  return <p>{v.memberData[i]}</p>;
                 })}
               </div>
             </div>
           </div>
           <div className="ticket-confirm-content ticket-confirm-price">
-            ${tripPrice * memberData.length}
+            ${tripPrice * memberName.length}
           </div>
         </div>
       </Modal.Body>
