@@ -129,7 +129,7 @@ function CustomizeCraft() {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  className={e.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
+                  // className={e.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
                   data-key={i}
