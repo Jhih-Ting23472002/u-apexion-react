@@ -32,10 +32,10 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
-// import CustomizeSeat from './pages/Customize/CustomizeSeat';
-// import CustomizeCraft from './pages/Customize/CustomizeCraft';
-// import CustomizeSuit from './pages/Customize/CustomizeSuit';
+//import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeSeat from './pages/Customize/CustomizeSeat';
+import CustomizeCraft from './pages/Customize/CustomizeCraft';
+import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
 import CartChoosePayment from './pages/Cart/CartChoosePayment';
@@ -125,7 +125,7 @@ function App() {
   });
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 購物車總金額
   const [totalProductItem, setTotalProductItem] = useState(0);
-  const [cartOrderListNumber, setCartOrderListNumber] = useState(0);
+  const [cartOrderListNumber, setCartOrderListNumber] = useState(0); // 訂單編號初始值
   // 以上是cart的部分
 
   //周邊商品區
@@ -142,7 +142,7 @@ function App() {
           <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
             <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
               <SignOut.Provider value={{ signOut, setSignOut }}>
-                <Navbar />
+                <Navbar setProductDetailList={setProductDetailList} productDetailList={productDetailList}/>
                 <Switch>
                   {/* <Route exact path="/">
                 <IndexFirst />
@@ -220,13 +220,13 @@ function App() {
                   <Route path="/travel-choose">
                     <TravelChoose />
                   </Route>
-                  <Route path="/travel-titan">
+                  <Route path="/travel-UAP-001">
                     <TravelNotes />
                   </Route>
-                  <Route path="/travel-xandar">
+                  <Route path="/travel-UAP-002">
                     <TravelNotes2 />
                   </Route>
-                  <Route path="/travel-mann">
+                  <Route path="/travel-UAP-004">
                     <TravelNotes3 />
                   </Route>
                   <Route path="/travelchoose-pricem">
@@ -292,18 +292,18 @@ function App() {
               <SeatDrag />
             </Route> */}
                   {/* <Route path="/customize-mainpage">
-              <CustomizeMainPage />
-            </Route>
-            <Route path="/customize-suit">
-              <CustomizeSuit />
-            </Route>
-            <Route path="/customize-craft">
-              <CustomizeCraft />
-            </Route>
-            <Route path="/customize-seat">
-              <CustomizeSeat />
-            </Route>
-            <Route path="/customize-order"></Route> */}
+                    <CustomizeMainPage />
+                  </Route> */}
+                  <Route path="/customize-suit">
+                    <CustomizeSuit />
+                  </Route>
+                  <Route path="/customize-craft">
+                    <CustomizeCraft />
+                  </Route>
+                  <Route path="/customize-seat">
+                    <CustomizeSeat />
+                  </Route>
+                  <Route path="/customize-order"></Route>
                   <Route path="/trans-mainpage"></Route>
                   <Route path="/trans-order"></Route>
 
@@ -369,10 +369,13 @@ function App() {
                     </Route>
                     <Route path="/cart-credit-card">
                       <CartCreditCard
+                        tripSelected={tripSelected} //from 采諭  票券名稱
+                        tripPrice={tripPrice} //from 采諭  票券金額
+                        productDetailList={productDetailList} //from 智婷  產品名稱、數量、金額
+                        //-------------------------------------------------
                         cartTotalPrice={cartTotalPrice} //購物車總金額
-                        tripPrice={tripPrice}
-                        cartOrderListNumber={cartOrderListNumber}
-                        setCartOrderListNumber={setCartOrderListNumber}
+                        cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
+                        setCartOrderListNumber={setCartOrderListNumber} // 訂單編號後來的值
                       />
                     </Route>
                     <Route path="/cart-complete">
@@ -382,7 +385,7 @@ function App() {
                         tripSelected={tripSelected}
                         tripPrice={tripPrice}
                         cartTotalPrice={cartTotalPrice} //購物車總金額
-                        cartOrderListNumber={cartOrderListNumber}
+                        cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>
                   </ScrollToTop>

@@ -44,7 +44,11 @@ export default function ForumNav() {
             >
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-border-all"> </i>
-                <a href="/#" className="forum_nav_item">
+                <a
+                  href="/#"
+                  className="forum_nav_item"
+                  style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
+                >
                   全部
                 </a>
               </div>
@@ -55,7 +59,11 @@ export default function ForumNav() {
             >
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-rocket"> </i>
-                <a href="/#" className="forum_nav_item">
+                <a
+                  href="/#"
+                  className="forum_nav_item"
+                  style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
+                >
                   U-Apextion文章
                 </a>
               </div>
@@ -66,7 +74,11 @@ export default function ForumNav() {
             >
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-users"> </i>
-                <a href="/#" className="forum_nav_item">
+                <a
+                  href="/#"
+                  className="forum_nav_item"
+                  style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
+                >
                   會員文章
                 </a>
               </div>
@@ -84,6 +96,7 @@ export default function ForumNav() {
                       fontWeight: '500',
                       textDecoration: 'none',
                       fontSize: '14px',
+                      letterSpacing: '2px',
                     }}
                   >
                     分類
@@ -194,7 +207,11 @@ export default function ForumNav() {
             <ForunArticalAll to="/#" $active={location.pathname === '/#'}>
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-tag"> </i>
-                <a href="/#" className="forum_nav_item">
+                <a
+                  href="/#"
+                  className="forum_nav_item"
+                  style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
+                >
                   #Hashtags
                 </a>
               </div>
@@ -216,7 +233,11 @@ export default function ForumNav() {
             >
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-address-card"> </i>
-                <a href="/#" className="forum_nav_item">
+                <a
+                  href="/#"
+                  className="forum_nav_item"
+                  style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
+                >
                   個人貼文
                 </a>
               </div>
@@ -224,7 +245,11 @@ export default function ForumNav() {
             <ForunArticalAll to="/#" $active={location.pathname === '/#'}>
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-heart"> </i>
-                <a href="/#" className="forum_nav_item">
+                <a
+                  href="/#"
+                  className="forum_nav_item"
+                  style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
+                >
                   按讚貼文
                 </a>
               </div>
@@ -232,7 +257,11 @@ export default function ForumNav() {
             <ForunArticalAll to="/#" $active={location.pathname === '/#'}>
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-bookmark"> </i>
-                <a href="/#" className="forum_nav_item">
+                <a
+                  href="/#"
+                  className="forum_nav_item"
+                  style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
+                >
                   個人珍藏
                 </a>
               </div>

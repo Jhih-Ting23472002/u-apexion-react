@@ -75,7 +75,7 @@ function MemberAddress() {
                     <th></th>
                   </tr>
                 </thead>
-                {/* {address.map(address => ( */}
+
                 <tbody>
                   {address &&
                     address.map((element, i) => {
