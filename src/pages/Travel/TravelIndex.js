@@ -2,12 +2,12 @@ import React from 'react';
 import './TravelIndex.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function TravelIndex() {
   const [TravelStarSign, setTravelStarSign] = useState([]);
   const [TravelPlanet, setTravelPlanet] = useState([]);
-  const [Url, setUrl] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     (async function () {
@@ -34,7 +34,8 @@ function TravelIndex() {
   function travelPage(e) {
     console.log(e);
     console.log(e.target.id);
-    setUrl(e.target.id);
+    console.log('/travel-' + e.target.id);
+    history.push('/travel-' + e.target.id);
   }
 
   return (
@@ -233,17 +234,15 @@ function TravelIndex() {
                       <h2 className="informationShopItemprice">
                         ${t.travel_price}起
                       </h2>
-                      <Link to="/travel-${Url}">
-                        <button
-                          onClick={e => {
-                            travelPage(e);
-                          }}
-                          className="travelitemBuyButton"
-                          id={t.travel_number}
-                        >
-                          Details
-                        </button>
-                      </Link>
+                      <button
+                        onClick={e => {
+                          travelPage(e);
+                        }}
+                        className="travelitemBuyButton"
+                        id={t.travel_number}
+                      >
+                        Details
+                      </button>
                     </div>
                     <hr className="generalHrpart1" />
                     <p className="informationShopItemhp">
@@ -270,7 +269,7 @@ function TravelIndex() {
             <img src="./travelimg/taiwan.jpg" alt="" />
             <a className="projectItemDesc" target="_blank" href="#/">
               <p className="projectItemp">
-                Taiwan (971花蓮縣新城鄉七星街79巷5號){' '}
+                Taiwan (971花蓮縣新城鄉七星街79巷5號)
               </p>
             </a>
           </div>
