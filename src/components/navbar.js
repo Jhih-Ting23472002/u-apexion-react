@@ -33,7 +33,7 @@ function Navbar() {
               <Link to="/travel-index">主題探索</Link>
             </li>
             <li>
-              <Link to="#/">訂票</Link>
+              <Link to="/ticket-order">訂票</Link>
             </li>
             <li>
               <Link to="/products">購物</Link>
