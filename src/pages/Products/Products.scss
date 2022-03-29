@@ -709,17 +709,20 @@
                 display:flex;
                 justify-content:center;
 
-                >a {
+                >div {
                     margin: 0 4vw;
                     color : rgb(153, 153, 153);;
                 }
-                >a:hover {
+                >div:hover {
                     margin: 0 4vw;
                     color : black;
+                    cursor       : pointer;
+
                 }
                 >.active {
                     margin: 0 4vw;
                     color : black;
+                    cursor       : pointer;
                 }
             }
 
