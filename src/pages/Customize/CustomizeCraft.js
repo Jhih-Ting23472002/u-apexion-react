@@ -1,3 +1,4 @@
+import { event } from 'jquery';
 import { before } from 'lodash';
 import React, { useState, useEffect } from 'react';
 import './CustomizeCraft.css';
@@ -129,7 +130,7 @@ function CustomizeCraft() {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  // className={e.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
+                  className={event.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
                   data-key={i}

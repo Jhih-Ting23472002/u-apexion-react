@@ -32,7 +32,7 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+//import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
