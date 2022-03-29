@@ -14,13 +14,16 @@ function Navbar() {
   const { signOut, setSignOut } = useContext(SignOut);
   //註冊連結
   const [register, setRegister] = useState('/member-sign-up');
+  console.log(register)
 
   useEffect(() => {
     if (signOut === '登出') {
       setRegister('/member-login');
+    }else{
+      setRegister('/member-sign-up');
     }
   }, [signOut]);
-
+  console.log(register)
   return (
     <>
       <div className="topspace"></div>
