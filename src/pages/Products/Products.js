@@ -18,21 +18,22 @@ function Products(props) {
   );
 
   useEffect(() => {
-    // 新品推薦
-    (async function () {
-      const response = await fetch(ProductsConfig.NEW_Products);
-      const ProductsNew = await response.json();
-      setProductsNew(ProductsNew);
-      // console.log(ProductsNew);
-    })();
+   (// 新品推薦
+      async function () {
+        const response = await fetch(ProductsConfig.NEW_Products);
+        const ProductsNew = await response.json();
+        setProductsNew(ProductsNew);
+        // console.log(ProductsNew);
+      }
+    )();
     // 分類推薦
     (async function () {
       const responseMen = await fetch(ProductsConfig.MEN_Products);
       const ProductMen = await responseMen.json();
       setProductRecommend(ProductMen);
-      // console.log(setProductRecommend);
     })();
   }, []);
+
 
   const WomanProduct = async function () {
     const responseWoman = await fetch(ProductsConfig.Woman_Products);
@@ -224,7 +225,7 @@ function Products(props) {
               setProductNavbar('#men');
               MenProduct();
             }}
-            className={ProductNavbar === {setProductNavbar} ? 'active' : ''}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
           >
             男士精品
           </div>
@@ -243,23 +244,22 @@ function Products(props) {
               setProductNavbar('#woman');
               WomanProduct();
             }}
-            className={ProductNavbar === {setProductNavbar}  ? 'active' : ''}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
           >
             女士精品
           </div>
           <div
-
             onClick={() => {
               setProductNavbar('#Shoes');
               ShoesProduct();
             }}
-            className={ProductNavbar === {setProductNavbar}  ? 'active' : ''}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
           >
             鞋款
           </div>
           <div
             onClick={() => setProductNavbar('#watch')}
-            className={ProductNavbar === {setProductNavbar} ? 'active' : ''}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
           >
             配件與腕錶
           </div>

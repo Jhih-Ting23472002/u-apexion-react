@@ -5,7 +5,7 @@ import CartQuantity from '../pages/Products/CartQuantity';
 import UserNameF from './UserNameF';
 import SignOut from './SignOut';
 
-function Navbar() {
+function Navbar(props) {
   //購物車內數量
   const { cartTotal } = useContext(CartQuantity);
   //登入
@@ -14,7 +14,12 @@ function Navbar() {
   const { signOut, setSignOut } = useContext(SignOut);
   //註冊連結
   const [register, setRegister] = useState('/member-sign-up');
-  console.log(register)
+  // console.log(register)
+  const { productDetailList,setProductDetailList } = props;
+
+  // useEffect(() => {
+  //   setProductDetailList([])
+  // },[productDetailList])
 
   useEffect(() => {
     if (signOut === '登出') {
@@ -23,7 +28,9 @@ function Navbar() {
       setRegister('/member-sign-up');
     }
   }, [signOut]);
-  console.log(register)
+  //console.log(register)
+
+
   return (
     <>
       <div className="topspace"></div>
@@ -39,7 +46,7 @@ function Navbar() {
               <Link to="#/">訂票</Link>
             </li>
             <li>
-              <Link to="/products">購物</Link>
+              <Link to="/products" onClick={()=>{setProductDetailList([])}}>購物</Link>
             </li>
             <li>
               <Link to="/forum-home">論壇</Link>

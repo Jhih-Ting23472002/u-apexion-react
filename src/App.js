@@ -140,7 +140,7 @@ function App() {
           <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
             <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
               <SignOut.Provider value={{ signOut, setSignOut }}>
-                <Navbar />
+                <Navbar setProductDetailList={setProductDetailList} productDetailList={productDetailList}/>
                 <Switch>
                   {/* <Route exact path="/">
                 <IndexFirst />
