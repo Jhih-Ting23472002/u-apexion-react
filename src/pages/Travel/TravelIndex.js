@@ -33,7 +33,8 @@ function TravelIndex() {
 
   function travelPage(e) {
     console.log(e);
-    
+    console.log(e.target.id);
+    setUrl(e.target.id);
   }
 
   return (
@@ -221,7 +222,7 @@ function TravelIndex() {
           {TravelPlanet.map((t, i) => {
             return (
               <React.Fragment key={i}>
-                <div className="shopItem smallItem" id={t.sid}>
+                <div className="shopItem smallItem">
                   <img
                     src={'./travelimg/travelproductimg/' + t.travel_image}
                     alt=""
@@ -232,14 +233,17 @@ function TravelIndex() {
                       <h2 className="informationShopItemprice">
                         ${t.travel_price}起
                       </h2>
-                      <button
-                        onClick={e => {
-                          travelPage(e);
-                        }}
-                        className="travelitemBuyButton"
-                      >
-                        Details
-                      </button>
+                      <Link to="/travel-${Url}">
+                        <button
+                          onClick={e => {
+                            travelPage(e);
+                          }}
+                          className="travelitemBuyButton"
+                          id={t.travel_number}
+                        >
+                          Details
+                        </button>
+                      </Link>
                     </div>
                     <hr className="generalHrpart1" />
                     <p className="informationShopItemhp">
