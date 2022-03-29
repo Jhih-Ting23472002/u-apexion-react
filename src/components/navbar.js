@@ -17,14 +17,10 @@ function Navbar(props) {
   // console.log(register)
   const { productDetailList,setProductDetailList } = props;
 
-  // useEffect(() => {
-  //   setProductDetailList([])
-  // },[productDetailList])
-
   useEffect(() => {
     if (signOut === '登出') {
       setRegister('/member-login');
-    }else{
+    } else {
       setRegister('/member-sign-up');
     }
   }, [signOut]);
@@ -52,7 +48,7 @@ function Navbar(props) {
               <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to="/member-login">{userNavbar}</Link>
+              <Link to="/member-person">{userNavbar}</Link>
             </li>
             <li></li>
             <li>
