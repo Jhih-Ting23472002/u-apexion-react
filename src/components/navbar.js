@@ -109,7 +109,7 @@ function Navbar(props) {
           <div className="phone-menu">
             <ul>
               <li>
-                <Link to="#/" data-text="&nbsp;Schedule">
+                <Link to="/travel-index" data-text="&nbsp;Schedule">
                   &nbsp;Schedule
                 </Link>
               </li>

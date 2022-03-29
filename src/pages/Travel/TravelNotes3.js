@@ -22,11 +22,11 @@ function TravelNotes() {
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <button className="notesbackbutton">
-              <Link to="/travel-choose">
+            <Link to="/travel-choose">
+              <button className="notesbackbutton">
                 <i className="fa-solid fa-left-long"></i> Back
-              </Link>
-            </button>
+              </button>
+            </Link>
             <li className="breadcrumb-item">
               <Link to="/travel-UAP-001">泰坦星</Link>
             </li>
@@ -50,6 +50,18 @@ function TravelNotes() {
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">蓋亞花園</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">潘朵拉</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">塞伯坦星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">瓦肯星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">致遠星</Link>
             </li>
           </ol>
         </div>
