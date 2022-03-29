@@ -2,6 +2,7 @@ import React from 'react';
 import './TravelNotes2.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function TravelNotes() {
   const [JourneyXandar, setJourneyXandar] = useState([]);
@@ -22,38 +23,38 @@ function TravelNotes() {
         <div className="nav2" aria-label="breadcrumb">
           <ol className="breadcrumb">
             <button className="notesbackbutton">
-              <a href="/travel-choose">
-                <i class="fa-solid fa-left-long"></i> Back
-              </a>
+              <Link to="/travel-choose">
+                <i className="fa-solid fa-left-long"></i> Back
+              </Link>
             </button>
             <li className="breadcrumb-item">
-              <a href="/travel-titan">泰坦星</a>
+              <Link to="/travel-titan">泰坦星</Link>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">米勒星</a>
+              <Link to="#/">米勒星</Link>
             </li>
             <li className="breadcrumb-item">
-              <a href="/travel-mann">曼恩星</a>
+              <Link to="/travel-mann">曼恩星</Link>
             </li>
             <li className="breadcrumb-item active " aria-current="page">
               柴達星
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">拉曼提斯</a>
+              <Link to="#/">拉曼提斯</Link>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">火星</a>
+              <Link to="#/">火星</Link>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">奧茲</a>
+              <Link to="#/">奧茲</Link>
             </li>
             <li className="breadcrumb-item">
-              <a href="#/">蓋亞花園</a>
+              <Link to="#/">蓋亞花園</Link>
             </li>
           </ol>
         </div>
 
-        <Carousel>
+        <Carousel slide={false} fade={false}>
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
@@ -368,13 +369,13 @@ function TravelNotes() {
           <div className="price--1fAWe">
             <span>$599,999</span>起
           </div>
-          <a href="/ticket-order">
+          <Link to="/ticket-order">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             立即報名
-          </a>
+          </Link>
         </form>
       </div>
       <hr className="generalHr" />

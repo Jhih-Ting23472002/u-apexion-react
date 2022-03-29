@@ -56,10 +56,11 @@ body {
 .forum_nav_item {
   font-size: 14px;
   color: white;
+  font-weight: normal;
 }
 
 @media (min-width: 1401px) {
-  .forum_nav_item {
+  .forum_nav_item1 {
     /* font-size: 15px; */
     margin-left: 5px;
     letter-spacing: 1px;

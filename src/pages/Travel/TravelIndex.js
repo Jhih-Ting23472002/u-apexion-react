@@ -2,6 +2,7 @@ import React from 'react';
 import './TravelIndex.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function TravelIndex() {
   const [TravelStarSign, setTravelStarSign] = useState([]);
@@ -56,8 +57,8 @@ function TravelIndex() {
         <hr className="generalHr" />
       </section>
 
-      <Carousel fade>
-        <Carousel.Item interval={2000}>
+      <Carousel slide={false} fade={false}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun3.png"
@@ -71,7 +72,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun2.jpg"
@@ -85,7 +86,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun1.jpg"
@@ -99,7 +100,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun4.jpg"
@@ -113,7 +114,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun5.png"
@@ -127,7 +128,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun6.jpg"
@@ -141,7 +142,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun7.jpg"
@@ -163,9 +164,9 @@ function TravelIndex() {
             <div className="tourOverlayp">
               <p>快來看看關於行程旅程的文章感想吧</p>
             </div>
-            <a href="/posts-category/2">
+            <Link to="/posts-category/2">
               <button className="tourButton">Let's go</button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -237,9 +238,9 @@ function TravelIndex() {
           })}
         </div>
         <div className="morechoose">
-          <a href="/travel-choose">
+          <Link to="/travel-choose">
             <button className="tourButton">觀看更多行程</button>
-          </a>
+          </Link>
         </div>
       </section>
 
