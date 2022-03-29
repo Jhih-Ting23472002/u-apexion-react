@@ -129,13 +129,14 @@ function CustomizeCraft() {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  className={countryClass}
+                  className={e.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
-                  onClick={e => {
+                  data-key={i}
+                  onClick={ e => {
+                    console.log(e.currentTarget.attributes)
                     setClassNameSwitch(0);
                     console.log(classNameSwitch);
-                    // const newCountryClass = {...countryClass,class:'click-country'}
                     setCountryClass(
                       classNameSwitch === 0 ? 'suit-flag' : 'click-country'
                     );
@@ -147,12 +148,12 @@ function CustomizeCraft() {
                   }}
                 >
                   <img
-                    data={v}
+                    data-img={v.toString()}
                     src={v}
                     alt=""
                     onClick={e => {
                       setCountryImg(e.target.data);
-                      // console.log(e.target.data);
+                      // console.log(e.target.dataset.img)
                     }}
                   />
                 </div>
