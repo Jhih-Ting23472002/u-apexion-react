@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 function TravelIndex() {
   const [TravelStarSign, setTravelStarSign] = useState([]);
   const [TravelPlanet, setTravelPlanet] = useState([]);
+  const [Url, setUrl] = useState([]);
 
   useEffect(() => {
     (async function () {
@@ -29,6 +30,11 @@ function TravelIndex() {
       console.log(TravelPlanet);
     })();
   }, []);
+
+  function travelPage(e) {
+    console.log(e.target.id);
+  }
+
   return (
     <>
       <section>
@@ -214,7 +220,7 @@ function TravelIndex() {
           {TravelPlanet.map((t, i) => {
             return (
               <React.Fragment key={i}>
-                <div className="shopItem smallItem">
+                <div className="shopItem smallItem" id={t.sid}>
                   <img
                     src={'./travelimg/travelproductimg/' + t.travel_image}
                     alt=""
@@ -225,7 +231,14 @@ function TravelIndex() {
                       <h2 className="informationShopItemprice">
                         ${t.travel_price}起
                       </h2>
-                      <button className="travelitemBuyButton">Details</button>
+                      <button
+                        onClick={e => {
+                          travelPage(e);
+                        }}
+                        className="travelitemBuyButton"
+                      >
+                        Details
+                      </button>
                     </div>
                     <hr className="generalHrpart1" />
                     <p className="informationShopItemhp">
