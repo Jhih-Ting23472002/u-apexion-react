@@ -218,13 +218,13 @@ function App() {
                   <Route path="/travel-choose">
                     <TravelChoose />
                   </Route>
-                  <Route path="/travel-titan">
+                  <Route path="/travel-UAP-001">
                     <TravelNotes />
                   </Route>
-                  <Route path="/travel-xandar">
+                  <Route path="/travel-UAP-002">
                     <TravelNotes2 />
                   </Route>
-                  <Route path="/travel-mann">
+                  <Route path="/travel-UAP-004">
                     <TravelNotes3 />
                   </Route>
                   <Route path="/travelchoose-pricem">

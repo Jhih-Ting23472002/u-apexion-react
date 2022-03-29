@@ -28,7 +28,7 @@ function TravelNotes() {
               </Link>
             </button>
             <li className="breadcrumb-item">
-              <Link to="/travel-titan">泰坦星</Link>
+              <Link to="/travel-UAP-001">泰坦星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">米勒星</Link>
@@ -37,7 +37,7 @@ function TravelNotes() {
               曼恩星
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-xandar">柴達星</Link>
+              <Link to="/travel-UAP-002">柴達星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">拉曼提斯</Link>

@@ -34,10 +34,10 @@ function TravelNotes() {
               <Link to="#/">米勒星</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-mann">曼恩星</Link>
+              <Link to="/travel-UAP-004">曼恩星</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-xandar">柴達星</Link>
+              <Link to="/travel-UAP-002">柴達星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">拉曼提斯</Link>

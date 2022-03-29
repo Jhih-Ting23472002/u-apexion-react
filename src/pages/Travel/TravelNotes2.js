@@ -28,13 +28,13 @@ function TravelNotes() {
               </Link>
             </button>
             <li className="breadcrumb-item">
-              <Link to="/travel-titan">泰坦星</Link>
+              <Link to="/travel-UAP-001">泰坦星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">米勒星</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-mann">曼恩星</Link>
+              <Link to="/travel-UAP-004">曼恩星</Link>
             </li>
             <li className="breadcrumb-item active " aria-current="page">
               柴達星
