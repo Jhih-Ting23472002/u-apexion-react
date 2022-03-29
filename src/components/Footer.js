@@ -20,7 +20,7 @@ const Footer = () => {
                 <h6 className="footer-heading2">品牌</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
-                    <a href="#/">電子郵件行銷</a>
+                    <a href="#/">郵件行銷</a>
                   </li>
                   <li>
                     <a href="#/">廣告/活動</a>
@@ -36,7 +36,7 @@ const Footer = () => {
                 <h6 className="footer-heading2">品牌</h6>
                 <ul className="list-unstyled footer-link mt-4">
                   <li>
-                    <a href="#/">電子郵件行銷</a>
+                    <a href="#/">郵件行銷</a>
                   </li>
                   <li>
                     <a href="#/">廣告/活動</a>
