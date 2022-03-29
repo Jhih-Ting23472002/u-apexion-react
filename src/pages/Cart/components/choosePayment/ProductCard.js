@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import example from '../../img/example.png';
 import { useCart } from '../../utils/useCart';
 import ProductsConfig from '../../../Products/ProductsConfig';
+import CartQuantity from '../../../Products/CartQuantity';
 
 const ProductCard = props => {
   const {
@@ -12,6 +13,8 @@ const ProductCard = props => {
     totalProductItem,
     setTotalProductItem,
   } = props; // 把props裡面的 state, setState 解構
+
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
   console.log(productDetailList);
 
   function handleRemoveItem(event) {
@@ -34,6 +37,7 @@ const ProductCard = props => {
   productDetailList.map(v => (productItem += v.total));
   console.log('productItem', productItem);
   setTotalProductItem(productItem);
+  setCartTotal(productItem);
 
   return (
     <>
