@@ -29,7 +29,7 @@ function Navbar() {
       <div className="topspace"></div>
       <nav>
         <div className="nav_container">
-          <a className="nav_UA-logo" href="#/"></a>
+          <Link to="#/" className="nav_UA-logo"></Link>
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
