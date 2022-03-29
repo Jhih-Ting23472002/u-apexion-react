@@ -356,13 +356,13 @@ function TravelNotes() {
           <div className="price--1fAWe">
             <span>$399,999</span>起
           </div>
-          <a href="/ticket-order">
+          <Link to="/ticket-order">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             立即報名
-          </a>
+          </Link>
         </form>
       </div>
       <hr className="generalHr" />

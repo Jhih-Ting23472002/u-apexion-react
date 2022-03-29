@@ -2,6 +2,7 @@ import React from 'react';
 import './TravelIndex.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function TravelIndex() {
   const [TravelStarSign, setTravelStarSign] = useState([]);
@@ -163,9 +164,9 @@ function TravelIndex() {
             <div className="tourOverlayp">
               <p>快來看看關於行程旅程的文章感想吧</p>
             </div>
-            <a href="/posts-category/2">
+            <Link to="/posts-category/2">
               <button className="tourButton">Let's go</button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -237,9 +238,9 @@ function TravelIndex() {
           })}
         </div>
         <div className="morechoose">
-          <a href="/travel-choose">
+          <Link to="/travel-choose">
             <button className="tourButton">觀看更多行程</button>
-          </a>
+          </Link>
         </div>
       </section>
 
