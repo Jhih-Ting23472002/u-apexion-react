@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import './CardComplete.css';
 import { Link } from 'react-router-dom';
+import CartQuantity from '../Products/CartQuantity';
 
 const CardComplete = props => {
   const {
@@ -15,6 +16,10 @@ const CardComplete = props => {
   // let orderListNumber = Math.floor(Math.random() * 100000000000);
   // console.log('orderListNumber', orderListNumber);
 
+  const { setCartTotal } = useContext(CartQuantity);
+  useEffect(() => {
+    setCartTotal(0);
+  }, []);
   return (
     <>
       <div className="cart-background container-fluid">

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-import example from '../../img/example.png';
 import { useCart } from '../../utils/useCart';
 import ProductsConfig from '../../../Products/ProductsConfig';
 import CartQuantity from '../../../Products/CartQuantity';
