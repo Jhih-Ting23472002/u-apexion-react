@@ -68,7 +68,7 @@ const CardComplete = props => {
                 <div className="col-4 text-center quantity-detail-border-right">
                   商品數量
                 </div>
-                <div className="col-3 text-center">小記</div>
+                <div className="col-3 text-center">小計</div>
               </div>
 
               {/* aaa-衣服 bbb-褲子 */}
