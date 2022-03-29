@@ -3,8 +3,10 @@ import './MemberPersonEdit.css';
 import MemberNavbar from '../../components/MemberNav';
 import { useEffect, useState } from 'react';
 import { reviseMem, findMem } from '../../data/UserWebApi';
+import { useHistory } from 'react-router-dom';
 
 const MemberPersonEdit = () => {
+  const history = useHistory();
   const [memInfo, setMemInfo] = useState({
     name: '',
     mobile: '',
@@ -31,7 +33,7 @@ const MemberPersonEdit = () => {
       if (obj.success) {
         alert('修改成功');
       }
-      // history.push('/member-login'); //登入成功後導入會員頁
+      history.push('/member-person'); //登入成功後導入會員頁
     });
   };
   const handleChange = e => {
@@ -158,11 +160,15 @@ const MemberPersonEdit = () => {
                   </select>
                 </div>
                 <div className="member-btn-container person-btn-container">
-                  <div className="member-return-btn-wrap">
-                    <button className="member-circle-btn">取消更改</button>
-                  </div>
+                  {/* <div className="member-return-btn-wrap">
+                    <button type="button" className="member-circle-btn">
+                      取消更改
+                    </button>
+                  </div> */}
                   <div>
-                    <button className="member-circle-btn">確認送出</button>
+                    <button type="submit" className="member-circle-btn">
+                      確認修改
+                    </button>
                   </div>
                 </div>
               </form>
@@ -171,7 +177,10 @@ const MemberPersonEdit = () => {
               </div>
               <div className="person-avatar-container">
                 <div className="person-avatar-img"></div>
-                <div className="person-avatar-upload" style={{border:'1px solid red'}}>
+                <div
+                  className="person-avatar-upload"
+                  style={{ border: '1px solid red' }}
+                >
                   <div className="member-btn-container">
                     {/* <button className="member-circle-btn">選擇圖片</button> */}
                     <input
