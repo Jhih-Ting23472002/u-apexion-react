@@ -24,7 +24,7 @@ function TravelNotes() {
           <ol className="breadcrumb">
             <button className="notesbackbutton">
               <Link to="/travel-choose">
-                <i class="fa-solid fa-left-long"></i> Back
+                <i className="fa-solid fa-left-long"></i> Back
               </Link>
             </button>
             <li className="breadcrumb-item">
@@ -54,7 +54,7 @@ function TravelNotes() {
           </ol>
         </div>
 
-        <Carousel>
+        <Carousel slide={false} fade={false}>
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"

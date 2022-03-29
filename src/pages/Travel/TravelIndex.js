@@ -57,8 +57,8 @@ function TravelIndex() {
         <hr className="generalHr" />
       </section>
 
-      <Carousel fade>
-        <Carousel.Item interval={2000}>
+      <Carousel slide={false} fade={false}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun3.png"
@@ -72,7 +72,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun2.jpg"
@@ -86,7 +86,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun1.jpg"
@@ -100,7 +100,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun4.jpg"
@@ -114,7 +114,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun5.png"
@@ -128,7 +128,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun6.jpg"
@@ -142,7 +142,7 @@ function TravelIndex() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
             src="./travelimg/indexcarouselimg/fun7.jpg"
