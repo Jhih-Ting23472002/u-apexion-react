@@ -93,6 +93,8 @@ function App() {
   const [seatNumberDemo, setSeatNumberDemo] = useState([]);
   const [mealSelected, setMealSelected] = useState([]);
   const [change, setChange] = useState(0);
+  const [memberName, setMemberName] = useState([]);
+  console.log('成員', memberName);
   console.log('行程', tripSelected);
   console.log('出發日期', tripDate);
   console.log('選擇座位', seatNumberDemo);
@@ -241,7 +243,7 @@ function App() {
                   </Route>
                   {/* 訂票頁面 */}
                   <Route path="/ticket-order">
-                    <Ticket />
+                    <Ticket setMemberName={setMemberName} />
                   </Route>
                   {/* <Route path="/ticket-test">
               <TicketTest />
@@ -268,6 +270,7 @@ function App() {
                       tripDate={tripDate}
                       seatNumberDemo={seatNumberDemo}
                       setSeatNumberDemo={setSeatNumberDemo}
+                      memberName={memberName}
                     />
                   </Route>
                   <Route path="/ticket-meal-choose">
@@ -281,6 +284,7 @@ function App() {
                       seatNumberDemo={seatNumberDemo}
                       tripDays={tripDays}
                       tripPrice={tripPrice}
+                      memberName={memberName}
                     />
                   </Route>
                   <Route path="/ticket-confirm"></Route>
