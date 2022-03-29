@@ -59,7 +59,7 @@ const MemberPerson = () => {
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
-    setUserNavbar("Hi "+ newUserName?.name);
+    setUserNavbar("Hello "+ newUserName?.name);
     setSignOut('登出')
   }, [userAll]);
   
