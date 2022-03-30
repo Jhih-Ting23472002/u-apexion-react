@@ -189,14 +189,14 @@ function TravelNotes() {
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/food3.jpg"
+              src="./travelimg/notescarouselimg/food5.jpg"
               alt="Second slide"
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">太空布丁space pudding</h2>
+              <h2 className="carouselh4">太空咖哩space curry</h2>
               <p className="carouselp">
-                此款太空商品「太空布丁」外觀呈現正方形的黄色塊狀。但味道就是正統的「布丁」喔！有濃濃的布丁味。
+                此款太空商品「太空咖哩」搭配的白米是嚴選出「秋田小町」白米，與宮城特產的「發芽米」，是有點黏又不會太黏的口感，用針筒注入熱水，30分鐘就可以食用。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
