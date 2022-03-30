@@ -40,6 +40,7 @@ function DetailList(props) {
 
   useEffect(() => {
     setTotal(1);
+    setMoney(false)
   }, [sid]);
 
   const moneyClickHandler = e => {
