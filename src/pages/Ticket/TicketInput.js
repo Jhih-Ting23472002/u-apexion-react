@@ -69,9 +69,9 @@ function TicketInput(props) {
       headers: {
         'content-type': 'application/json',
       },
-      // body: JSON.stringify({
-      //   'account':{userEmail};
-      // }),
+      body: JSON.stringify({
+        account: userEmail,
+      }),
     }).then(res => res.json());
     setCheckModalShow(true);
     console.log(e);
