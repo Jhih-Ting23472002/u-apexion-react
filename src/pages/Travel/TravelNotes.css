@@ -30,6 +30,13 @@
   background-image: url('/public/travelimg/traveldaysimg/day8-1.jpg');
 }
 
+.gotop {
+  position: fixed;
+  right: 0;
+  top: 93%;
+  width: 3.5%;
+}
+
 .notesbackbutton {
   position: absolute;
   left: 0px;
@@ -151,7 +158,7 @@
   margin-top: 2%;
   margin-bottom:3%;
   height: 85vh;
-  max-width: 70%;
+  max-width: 80%;
 }
 
 @media (max-width: 640px) {

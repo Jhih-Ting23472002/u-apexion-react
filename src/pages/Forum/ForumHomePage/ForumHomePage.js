@@ -144,7 +144,7 @@ export default function ForumHomePage() {
           ((currentPage - 1) % TOTAL_PAGES) * NUM_PER_PAGE,
           NUM_PER_PAGE * (currentPage % TOTAL_PAGES)
         );
-        console.log(data);
+        // console.log(data);
         resolve(data);
         if (currentPage == 6) return;
       }, 0);

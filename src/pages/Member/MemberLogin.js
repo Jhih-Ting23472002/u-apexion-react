@@ -26,6 +26,7 @@ const MemberLogin = () => {
       .then(data => {
         localStorage.setItem('user_id', data.info.sid);
         localStorage.setItem('user_email', data.info.account);
+        localStorage.setItem('user_name', data.info.name);
         localStorage.getItem('user_id');
         localStorage.getItem('user_email');
         history.push('/member-person'); //登入成功後導入會員頁

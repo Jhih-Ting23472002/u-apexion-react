@@ -42,6 +42,19 @@ export const pwdNewConfirm = (newPassword, forgotsid) => {
   }).then(res => res.json());
 };
 
+// 修改密碼前先取得舊密碼
+export const editPassword = pswData => {
+  return fetch(`${BASE_URL}/user/api/edit-pwd`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      pswData,
+    }),
+  }).then(res => res.json());
+};
+
 //傳輸回後端找資料的API
 export const findMem = sid => {
   // const token = getAuthToken();
@@ -71,16 +84,13 @@ export const registerMem = registerData => {
 };
 
 //傳回後端修改資料
-export const reviseMem = (memInfo, sid) => {
+export const reviseMem = fd => {
   return fetch(`${BASE_URL}/user/api/user-revise`, {
     method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      memInfo,
-      sid,
-    }),
+    // headers: {
+    //   'content-type': 'application/json',
+    // },
+    body: fd,
   }).then(res => res.json());
 };
 
