@@ -130,7 +130,7 @@ function App() {
 
   //周邊商品區
   const [productDetailList, setProductDetailList] = useState([]);
-  console.log('productDetailList', productDetailList); // 測試，by雍
+  //console.log('productDetailList', productDetailList); // 測試，by雍
   const [cartTotal, setCartTotal] = useState(0);
   const [userNavbar, setUserNavbar] = useState('登入');
   const [signOut, setSignOut] = useState('註冊');
