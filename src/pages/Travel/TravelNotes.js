@@ -202,6 +202,12 @@ function TravelNotes() {
           </Carousel.Item>
         </Carousel>
 
+        <div className="gotop d-none d-xl-block">
+          <a href="#pagetop">
+            <img src="./travelimg/btn4_top2.png" alt="" />
+          </a>
+        </div>
+
         <div className="content">
           <h1 className="blue-text lighten-1 header">泰坦星Titan</h1>
         </div>
@@ -210,13 +216,6 @@ function TravelNotes() {
           return (
             <React.Fragment key={i}>
               {/* 1st group */}
-
-              <div className="gotop d-none d-xl-block">
-                <a href="#pagetop">
-                  <img src="./travelimg/btn4_top2.png" alt="" />
-                </a>
-              </div>
-
               <div className="blog-card">
                 <div className="meta">
                   <div className="tphoto tphoto_1"></div>
