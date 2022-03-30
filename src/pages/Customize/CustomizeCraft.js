@@ -1,8 +1,11 @@
+import { before, transform } from 'lodash';
 import { event } from 'jquery';
 import { before } from 'lodash';
 import React, { useState, useEffect } from 'react';
 import './CustomizeCraft.css';
 import spaceCraft from './images/spacecraft.png';
+import taiwan from './images/taiwan.png';
+import usa from './images/america.png';
 
 const allCountry = [
   '/customize_img/america.png',
@@ -17,23 +20,20 @@ const allCountry = [
 ];
 
 function CustomizeCraft() {
-  const [countryImg, setCountryImg] = useState({});
-  const [classNameSwitch, setClassNameSwitch] = useState(0);
-  const [countryClass, setCountryClass] = useState('suit-flag');
+  const [stepClassname1, setStepClassname1] = useState('');
+  const [stepClassname2, setStepClassname2] = useState('');
+  const [stepClassname3, setStepClassname3] = useState('');
+  const [craftStep, setCraftStep] = useState({
+    fill1: '#595959',
+    fill2: '#595959',
+  });
+  const [countryImg, setCountryImg] = useState('');
+  const [craftCountryStyle, setCraftCountryStyle] = useState('0');
+  const [classNameSwitch, setClassNameSwitch] = useState('suit-flag');
+  const [countryClass, setCountryClass] = useState();
   const [craftString, setCraftString] = useState('');
   const [labelSt, setLabelSt] = useState('請輸入名稱(8個字元內)');
-  // const CountrySwitch = e => {
-  //   setClassNameSwitch(true);
-  //   if (classNameSwitch === true) {
-  //     e.currentTarget.className = 'suit-flag' ? 'click-country' : '';
-  //     setClassNameSwitch(false);
-  //   }
 
-  //   console.log(classNameSwitch);
-  // };
-  // useEffect(()=>{
-
-  // })
   return (
     <>
       <section className="Customcraft-page-view">
@@ -44,49 +44,116 @@ function CustomizeCraft() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
+              {/* 圓形1 */}
+              <path
+                d="M418.903 6.28445C418.903 9.72722 416.112 12.5181 412.669 12.5181C409.226 12.5181 406.436 9.72722 406.436 6.28445C406.436 2.84169 409.226 0.0507812 412.669 0.0507812C416.112 0.0507812 418.903 2.84169 418.903 6.28445Z"
+                fill={craftStep.fill1}
+                style={{ transition: '.5s ease-in-out' }}
+              />
+
+              {/* 線1 背景底線 */}
               <path
                 d="M412.669 6.28442H6.23389V62.3875"
                 stroke="#595959"
-                strokeWidth="2"
+                strokeWidth="3"
               />
+              {/* 線1 主線 */}
               <path
-                d="M346.592 700.716H6.23389V657.08"
+                className={stepClassname1}
+                d="M412.669 6.28442H6.23389V62.3875"
+                stroke={craftStep.fill1}
+                strokeWidth="3"
+              />
+
+              {/* 圓形2 */}
+              <path
+                d="M12.4673 62.3875C12.4673 65.8302 9.67643 68.6212 6.23367 68.6212C2.79091 68.6212 0 65.8302 0 62.3875C0 58.9447 2.79091 56.1538 6.23367 56.1538C9.67643 56.1538 12.4673 58.9447 12.4673 62.3875Z"
+                fill={craftStep.fill1}
+                style={{ transition: ' .5s ease-in-out 1.5s' }}
+              />
+
+              {/* 圓形3 */}
+              <path
+                d="M12.4673 657.234C12.4673 660.676 9.67643 663.467 6.23367 663.467C2.79091 663.467 0 660.676 0 657.234C0 653.791 2.79091 651 6.23367 651C9.67643 651 12.4673 653.791 12.4673 657.234Z"
+                fill={craftStep.fill2}
+                style={{ transition: ' .5s ease-in-out ' }}
+              />
+              {/* 背景線2 */}
+              <path
+                d="M6.23389 656.5V700.716H346.5"
+                stroke="#595959"
+                strokeWidth="3"
+              />
+              {/* 主線2 */}
+              <path
+                className={stepClassname2}
+                d="M6.23389 656.5V700.716H346.5"
                 stroke="#595959"
                 strokeWidth="2"
               />
+              {/* 圓形4 */}
               <path
-                d="M418.903 6.28445C418.903 9.72722 416.112 12.5181 412.669 12.5181C409.226 12.5181 406.436 9.72722 406.436 6.28445C406.436 2.84169 409.226 0.0507812 412.669 0.0507812C416.112 0.0507812 418.903 2.84169 418.903 6.28445Z"
-                fill="#595959"
+                d="M353.467 701.234C353.467 704.676 350.676 707.467 347.234 707.467C343.791 707.467 341 704.676 341 701.234C341 697.791 343.791 695 347.234 695C350.676 695 353.467 697.791 353.467 701.234Z"
+                fill={craftStep.fill2}
+                style={{ transition: ' .5s ease-in-out 1s' }}
               />
+              {/* 圓形5 */}
               <path
-                d="M12.4673 62.3875C12.4673 65.8302 9.67643 68.6212 6.23367 68.6212C2.79091 68.6212 0 65.8302 0 62.3875C0 58.9447 2.79091 56.1538 6.23367 56.1538C9.67643 56.1538 12.4673 58.9447 12.4673 62.3875Z"
-                fill="#595959"
+                d="M576.467 701.234C576.467 704.676 573.676 707.467 570.234 707.467C566.791 707.467 564 704.676 564 701.234C564 697.791 566.791 695 570.234 695C573.676 695 576.467 697.791 576.467 701.234Z"
+                fill={craftStep.fill2}
+                style={{ transition: ' .5s ease-in-out 1.5s' }}
               />
-              <circle cx="346.592" cy="700.716" r="6.23367" fill="#595959" />
-              <circle cx="6.23367" cy="657.08" r="6.23367" fill="#595959" />
-              <path d="M569.758 700.716H854.013" stroke="#595959" />
-              <ellipse
-                rx="4.98694"
-                ry="6.23367"
-                transform="matrix(-1 0 0 1 854.013 700.716)"
-                fill="#595959"
+
+              {/* 背景按鈕線 */}
+              <path
+                d="M569.758 700.716H854.013"
+                stroke="#595959"
+                strokeWidth="3"
               />
-              <ellipse
-                rx="4.98694"
-                ry="6.23367"
-                transform="matrix(-1 0 0 1 569.758 700.716)"
-                fill="#595959"
+              {/* 按鈕主線 */}
+              <path
+                className={stepClassname3}
+                d="M569.758 700.716H854.013"
+                strokeWidth="2"
+              />
+              {/* 圓形6 */}
+              <path
+                d="M860.467 701.234C860.467 704.676 857.676 707.467 854.234 707.467C850.791 707.467 848 704.676 848 701.234C848 697.791 850.791 695 854.234 695C857.676 695 860.467 697.791 860.467 701.234Z"
+                fill={craftStep.fill2}
+                style={{ transition: ' .5s ease-in-out 1.5s' }}
               />
             </svg>
           </div>
           <div className="craft-img">
+            <div
+              className="craft-filter2"
+              style={{ opacity: craftCountryStyle }}
+            >
+              <img
+                className="craft-area-view1-country2"
+                src={countryImg}
+                alt=""
+                style={{ opacity: craftCountryStyle }}
+              />
+            </div>
             <img src={spaceCraft} alt="" />
             <p className="craft-string">{craftString}</p>
           </div>
         </div>
         <div className="craft-main-area">
           <div className="craft-area-view1">
-            <img src={spaceCraft} alt="" />
+            <div
+              className="craft-filter"
+              style={{ opacity: craftCountryStyle }}
+            >
+              <img
+                className="craft-area-view1-country"
+                src={countryImg}
+                alt=""
+                style={{ opacity: craftCountryStyle }}
+              />
+            </div>
+            <img className="craft-area-view1-pic" src={spaceCraft} alt="" />
           </div>
           <div className="craft-lorem">
             <p>
@@ -94,7 +161,7 @@ function CustomizeCraft() {
             </p>
           </div>
           <div className="craft-area-view2">
-            <img src={spaceCraft} alt="" />
+            <img className="craft-area-view2-pic" src={spaceCraft} alt="" />
             <p className="craft-string2">{craftString}</p>
           </div>
         </div>
@@ -121,6 +188,12 @@ function CustomizeCraft() {
                 e.target.value.length === 0
                   ? setLabelSt('請輸入名稱(8個字元內)')
                   : setLabelSt('');
+                const newStep = {
+                  ...craftStep,
+                  fill1: '#05f2f2',
+                };
+                setCraftStep(newStep);
+                setStepClassname1('stepLine');
               }}
             />
             <label>{labelSt}</label>
@@ -133,28 +206,62 @@ function CustomizeCraft() {
                   className={event.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
-                  data-key={i}
-                  onClick={ e => {
-                    console.log(e.currentTarget.attributes)
-                    setClassNameSwitch(0);
-                    console.log(classNameSwitch);
-                    setCountryClass(
-                      classNameSwitch === 0 ? 'suit-flag' : 'click-country'
-                    );
+                  data-key={i + 1}
+                  onClick={e => {
+                    // setClassNameSwitch(e.currentTarget);
+                    // if(e.currentTarget.dataset.key!==lassNameSwitch.number)
+                    // ===========
+                    // console.log(e.currentTarget.className);
+                    // const newClassNameSwitch = 'suit-flag';
+                    // e.currentTarget === e.currentTarget ? console.log('ok') : console.log('NOT ok')
+
+                    // console.log(classNameSwitch);
+                    // setClassNameSwitch(
+                    //   e.currentTarget.classList.add('click-country')
+                    // );
                     console.log(e.currentTarget.className);
+                    console.log(e.currentTarget.dataset.key);
+                    setClassNameSwitch(e.currentTarget.className);
+                    // =======================
+                    // console.log(e.currentTarget.dataset.key);
+                    // // console.log(e.currentTarget.attributes)
+                    // setClassNameSwitch(e.currentTarget.dataset.key);
+                    // console.log(classNameSwitch);
 
-                    setClassNameSwitch(classNameSwitch === 0 ? 1 : 0);
-
-                    console.log(classNameSwitch);
+                    // setCountryClass(
+                    //   classNameSwitch === e.currentTarget.dataset.key
+                    //     ? 'click-country'
+                    //     : 'suit-flag'
+                    // );
+                    // console.log(countryClass);
                   }}
                 >
                   <img
-                    data-img={v.toString()}
+                    data-img={v}
                     src={v}
                     alt=""
                     onClick={e => {
-                      setCountryImg(e.target.data);
-                      // console.log(e.target.dataset.img)
+                      //抓取圖片放入太空船
+                      const closeOpa = '0';
+                      setCraftCountryStyle(closeOpa);
+                      setTimeout(() => {
+                        // 設置延遲
+                        const openOpa = '1';
+                        setCraftCountryStyle(openOpa);
+                        // 讓圖片淡入
+                        setCountryImg(e.target.dataset.img);
+                        // console.log('1===', e.target.dataset.img);
+                        // 載入圖片
+                      }, 700);
+                      const newStep2 = {
+                        ...craftStep,
+                        fill2: '#05f2f2',
+                      };
+                      setCraftStep(newStep2);
+                      setStepClassname2('stepLine2');
+                      setTimeout(() => {
+                        setStepClassname3('stepLine3');
+                      }, 2000);
                     }}
                   />
                 </div>

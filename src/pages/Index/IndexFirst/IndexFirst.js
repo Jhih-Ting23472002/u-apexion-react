@@ -13,7 +13,7 @@ const IndexEnter = styled(Link)`
 const IndexFirst = () => (
   <>
     <div className="index-vedio">
-      <video controls autoPlay loop id="bg-video">
+      <video controls autoPlay loop id="bg-video" muted>
         <source src="./index_img/rocket.mp4" type="video/mp4" />
       </video>
       <img
