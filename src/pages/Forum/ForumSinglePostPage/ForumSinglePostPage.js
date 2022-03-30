@@ -117,6 +117,9 @@ const SinglePostImg = styled.div`
   margin: 10px auto;
 `;
 
+const userId = localStorage.getItem('user_id');
+console.log(userId);
+
 export default function ForumSinglePostPage() {
   const [post, setPost] = useState(null);
   const [response, setResponse] = useState(null);
@@ -153,7 +156,7 @@ export default function ForumSinglePostPage() {
   useEffect(() => {
     getPost(sid).then(post => {
       setPost(post);
-      console.log(post.art_photo);
+      // console.log(post.art_photo);
       setImgSrc('http://localhost:3001/img/' + post.art_photo);
     });
     getResponse(sid).then(response => setResponse(response));
@@ -172,11 +175,15 @@ export default function ForumSinglePostPage() {
   };
 
   const handleDeletePost = e => {
-    alert('確認刪除嗎？');
-    fetch(`http://localhost:3001/forum_index/list-delete/${sid}`).then(res =>
-      res.json()
-    );
-    setLoading(true);
+    if (userId !== post.forum_user_sid) {
+      return;
+    } else {
+      alert('確認刪除嗎？');
+      fetch(`http://localhost:3001/forum_index/list-delete/${sid}`).then(res =>
+        res.json()
+      );
+      setLoading(true);
+    }
   };
 
   const handleFormSubmit = e => {
@@ -253,13 +260,29 @@ export default function ForumSinglePostPage() {
                 </SinglePostTopUser>
               </SinglePostTopLeftFlex>
               <SinglePostTopRightFlex>
-                <SinglePostTopRightEDIT to={`/publish-edit/${sid}`}>
-                  <button className="SinglePostTopRightFlexBtn">
+                <SinglePostTopRightEDIT
+                  to={
+                    post && userId == post.forum_user_sid
+                      ? `/publish-edit/${sid}`
+                      : `/forum-home/posts/${sid}`
+                  }
+                >
+                  <button
+                    className="SinglePostTopRightFlexBtn"
+                    disabled={
+                      post && userId == post.forum_user_sid ? false : true
+                    }
+                  >
                     <i class="fa-solid fa-pen-to-square"></i>
                   </button>
                 </SinglePostTopRightEDIT>
                 <SinglePostTopRightDELETE onClick={handleDeletePost}>
-                  <button className="SinglePostTopRightFlexBtn">
+                  <button
+                    className="SinglePostTopRightFlexBtn"
+                    disabled={
+                      post && userId == post.forum_user_sid ? false : true
+                    }
+                  >
                     <i class="fa-regular fa-trash-can"></i>
                   </button>
                 </SinglePostTopRightDELETE>

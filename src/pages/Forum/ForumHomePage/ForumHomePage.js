@@ -55,7 +55,7 @@ const ForumSortNew = styled(Link)`
   `};
 `;
 const NUM_PER_PAGE = 4;
-const TOTAL_PAGES = 5;
+const TOTAL_PAGES = 8;
 
 function Post({ post }) {
   const [likes, setLikes] = useState(post.article_likes);

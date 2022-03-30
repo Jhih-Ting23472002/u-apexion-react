@@ -80,8 +80,8 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-//import IndexFirst from './pages/Index/IndexFirst';
-//import IndexMain from './pages/Index/IndexMain';
+import IndexFirst from './pages/Index/IndexFirst';
+import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -142,7 +142,7 @@ function App() {
 console.log('customize',customize);
 
   return (
-    <CartProvider>
+    <CartProvider> 
       <Router>
         <>
           <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
@@ -257,50 +257,48 @@ console.log('customize',customize);
                   {/* <Route path="/ticket-test">
               <TicketTest />
             </Route> */}
-                  <Route path="/ticket-trip-choose">
-                    <TicketTrip
-                      setTripSelected={setTripSelected}
-                      setTripDays={setTripDays}
-                      setTripPrice={setTripPrice}
-                    />
-                  </Route>
-                  <Route path="/ticket-date-choose">
-                    <TicketDate
-                      tripSelected={tripSelected}
-                      tripDays={tripDays}
-                      setTripDate={setTripDate}
-                    />
-                  </Route>
-                  <Route path="/ticket-date-choose-old">
-                    <TicketDateOld />
-                  </Route>
-                  <Route path="/ticket-seat-choose">
-                    <TicketSeat
-                      tripDate={tripDate}
-                      seatNumberDemo={seatNumberDemo}
-                      setSeatNumberDemo={setSeatNumberDemo}
-                      memberName={memberName}
-                    />
-                  </Route>
-                  <Route path="/ticket-meal-choose">
-                    <TicketMeal
-                      mealSelected={mealSelected}
-                      setMealSelected={setMealSelected}
-                      setChange={setChange}
-                      change={change}
-                      tripSelected={tripSelected}
-                      tripDate={tripDate}
-                      seatNumberDemo={seatNumberDemo}
-                      tripDays={tripDays}
-                      tripPrice={tripPrice}
-                      memberName={memberName}
-                    />
-                  </Route>
-                  <Route path="/ticket-confirm"></Route>
-                  {/* <Route path="/ticket-test">
+                    <Route path="/ticket-trip-choose">
+                      <TicketTrip
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                        setTripPrice={setTripPrice}
+                      />
+                    </Route>
+                    <Route path="/ticket-date-choose">
+                      <TicketDate
+                        tripSelected={tripSelected}
+                        tripDays={tripDays}
+                        setTripDate={setTripDate}
+                      />
+                    </Route>
+                    <Route path="/ticket-date-choose-old">
+                      <TicketDateOld />
+                    </Route>
+                    <Route path="/ticket-seat-choose">
+                      <TicketSeat
+                        tripDate={tripDate}
+                        seatNumberDemo={seatNumberDemo}
+                        setSeatNumberDemo={setSeatNumberDemo}
+                      />
+                    </Route>
+                    <Route path="/ticket-meal-choose">
+                      <TicketMeal
+                        mealSelected={mealSelected}
+                        setMealSelected={setMealSelected}
+                        setChange={setChange}
+                        change={change}
+                        tripSelected={tripSelected}
+                        tripDate={tripDate}
+                        seatNumberDemo={seatNumberDemo}
+                        tripDays={tripDays}
+                        tripPrice={tripPrice}
+                      />
+                    </Route>
+                    <Route path="/ticket-confirm"></Route>
+                    {/* <Route path="/ticket-test">
               <SeatDrag />
             </Route> */}
-                  {/* <Route path="/customize-mainpage">
+                    {/* <Route path="/customize-mainpage">
                     <CustomizeMainPage />
                   </Route> */}
                   <Route path="/customize-suit">
@@ -316,7 +314,6 @@ console.log('customize',customize);
                   <Route path="/trans-mainpage"></Route>
                   <Route path="/trans-order"></Route>
 
-                  <ScrollToTop>
                     <Route path="/product-detail/:sid">
                       <ProductsDetail
                         setProductDetailList={setProductDetailList}
@@ -397,15 +394,16 @@ console.log('customize',customize);
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>
-                  </ScrollToTop>
-                  <Route path="*">
-                    <NotFoundPage />
-                  </Route>
-                </Switch>
-                <Footer />
-              </SignOut.Provider>
-            </CartQuantity.Provider>
-          </UserNameF.Provider>
+
+                    <Route path="*">
+                      <NotFoundPage />
+                    </Route>
+                  </Switch>
+                  <Footer />
+                </SignOut.Provider>
+              </CartQuantity.Provider>
+            </UserNameF.Provider>
+          </ScrollToTop>
         </>
       </Router>
     </CartProvider>
