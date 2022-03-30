@@ -131,9 +131,15 @@ function App() {
   //周邊商品區
   const [productDetailList, setProductDetailList] = useState([]);
   //console.log('productDetailList', productDetailList); // 測試，by雍
+
+  //navbar用參數
   const [cartTotal, setCartTotal] = useState(0);
   const [userNavbar, setUserNavbar] = useState('登入');
   const [signOut, setSignOut] = useState('註冊');
+
+  //客製化商品
+  const [customize,setCustomize]=useState([]);
+console.log('customize',customize);
 
   return (
     <CartProvider>
@@ -142,7 +148,10 @@ function App() {
           <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
             <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
               <SignOut.Provider value={{ signOut, setSignOut }}>
-                <Navbar setProductDetailList={setProductDetailList} productDetailList={productDetailList}/>
+                <Navbar
+                  setProductDetailList={setProductDetailList}
+                  productDetailList={productDetailList}
+                />
                 <Switch>
                   {/* <Route exact path="/">
                 <IndexFirst />
@@ -301,7 +310,7 @@ function App() {
                     <CustomizeCraft />
                   </Route>
                   <Route path="/customize-seat">
-                    <CustomizeSeat />
+                    <CustomizeSeat setCustomize={setCustomize}/>
                   </Route>
                   <Route path="/customize-order"></Route>
                   <Route path="/trans-mainpage"></Route>
