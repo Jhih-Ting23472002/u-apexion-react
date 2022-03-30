@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import './CustomizeOrder.css';
 import ModalHeader from 'react-bootstrap/ModalHeader';
+
+
 function CustomizeOrder(props) {
+  //app最外層傳入
+  const { setCustomize, seatColor } = props;
+
+  //座位價格
+  const [seatPrice, setSeatPrice] = useState(1500);
+
+
   return (
     <>
       <Modal
@@ -64,7 +73,7 @@ function CustomizeOrder(props) {
               <table>
                 <tr>
                   <th>顏色：</th>
-                  <td>Blue</td>
+                  <td>{seatColor.background}</td>
                 </tr>
               </table>
               <h3>15,000$</h3>
@@ -74,11 +83,12 @@ function CustomizeOrder(props) {
             </div>
           </div>
           <div className="custombody-totalprice">
-            <h3>總價：</h3><h2>60,000$</h2>
+            <h3>總價：</h3>
+            <h2>60,000$</h2>
           </div>
         </Modal.Body>
         <div className="customorder-footer">
-          <button className="customorder-circle-btn" onClick={props.onHide}>
+          <button className="customorder-circle-btn" onClick={props.onHide} >
             確定送出
           </button>
           <button
