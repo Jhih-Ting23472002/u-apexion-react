@@ -3,6 +3,7 @@ import './CartCreditCard.css';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Link } from 'react-router-dom';
+import CartCreditCardModal from './CartCreditCardModal';
 
 const CartCreditCard = props => {
   const [number, setNumber] = useState('');
@@ -153,6 +154,7 @@ const CartCreditCard = props => {
           </div>
         </div>
       </div>
+      <CartCreditCardModal />
     </>
   );
 };
