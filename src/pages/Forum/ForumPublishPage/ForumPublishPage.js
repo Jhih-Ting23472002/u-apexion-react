@@ -32,6 +32,12 @@ export default function ForumPublishPage() {
   const [hashtagtwoValue, setHashTagTwoValue] = useState(null);
   const [fileSrc, setFileSrc] = useState(null);
   const [postApiError, setPostApiError] = useState(null);
+
+  const userId = localStorage.getItem('user_id');
+  console.log(userId);
+
+  const user_name = localStorage.getItem('user_name');
+
   let history = useHistory();
 
   const handleInputChange = e => {
@@ -109,8 +115,20 @@ export default function ForumPublishPage() {
                       />
                     </div>
                     <div className="user-title">
-                      <div className="forum_user-name">U-Apexion</div>
-                      <div className="forum_post-time">2022/4/20 17:20pm</div>
+                      <div className="forum_user-name">{user_name}</div>
+                      <div className="forum_post-time">
+                        {new Date().getFullYear() +
+                          '-' +
+                          (new Date().getMonth() + 1) +
+                          '-' +
+                          new Date().getDate() +
+                          '-' +
+                          new Date().getHours() +
+                          ':' +
+                          new Date().getMinutes() +
+                          ':' +
+                          new Date().getSeconds()}
+                      </div>
                     </div>
                   </div>
                   <div className="forum_user-top-right">
@@ -154,6 +172,12 @@ export default function ForumPublishPage() {
                   <option value="10">注意事項</option>
                 </select>
                 <div className="mb-4">
+                  <input
+                    type="text"
+                    value={userId}
+                    name="forum_user_sid"
+                    style={{ display: 'none' }}
+                  />
                   <label
                     for="exampleInputEmail1"
                     className="form-label publish-page-label"
