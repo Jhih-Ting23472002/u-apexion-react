@@ -18,15 +18,14 @@
   position: absolute;
   right: 4vw;
   width: 46vw;
-  min-width: 690px;
+  min-width: 700px;
   filter: drop-shadow(-15px 10px 8px black);
 }
 .craft-img {
   position: absolute;
   top: -5px;
   right: 22vw;
-  width: 7vw;
-  min-width: 105px;
+  width: 120px;
   opacity: 1;
   filter: drop-shadow(-50px 15px 20px rgba(0, 0, 0, 0.4));
 }
@@ -41,7 +40,7 @@
   /* background-color: #fff; */
   position: absolute;
   top: 60%;
-  left: -16%;
+  left: -10%;
   transform: rotate(-90deg);
 }
 
@@ -113,8 +112,8 @@
 /* 太空船 */
 .craft-area-view1-country2 {
   object-fit: cover;
-  width: 60px;
-  height: 36px;
+  width: 65px;
+  height: 39px;
   transition: 0.8s ease-in-out;
 }
 .craft-filter2 {
@@ -122,7 +121,7 @@
   transform: rotate(-90deg);
   z-index: 1;
   position: absolute;
-  right: 21%;
+  right: 22.5%;
   top: 8%;
   transition: 0.8s ease-in-out;
 }
