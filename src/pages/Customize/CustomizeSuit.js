@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CustomizeSuit.css';
-
+import whiteSuit from './images/spacesuit-white.png';
+import orangeSuit from './images/spacesuit-orange.png';
+import blueSuit from './images/spacesuit-blue.png';
+import noSelect from './images/noselect.png';
+import ta from './images/taiwan.png';
 const allCountry = [
   '/customize_img/america.png',
   '/customize_img/canada.png',
@@ -38,23 +42,31 @@ const allMark = [
   '/customize_img/space-mark-23.png',
 ];
 
-
-
 function CustomizeSuit() {
+  //顏色
+  const [opa, setOpa] = useState('');
+  const [suitImg, setSuitImg] = useState('');
+  //國家
+  const [countrySelectSuit, setCountrySelectSuit] = useState('0');
+  const [countryImgSuit, setCountryImgSuit] = useState('0');
+
+  //徽章
   return (
     <>
       <section className="Customsuit-page-view">
         <div className="back-circle">
           <div className="image-mirrow">
+            <img src={ta} className="suitCountryImg" />
             <img
               className="image-mirrow-img"
-              src={require('./images/spacesuit-white.png')}
+              src={suitImg.length === 0 ? whiteSuit : suitImg}
+              style={{ opacity: opa }}
               alt=""
             />
           </div>
         </div>
         <svg
-          className="left-page-svg"
+          className="right-page-svg"
           viewBox="0 0 913 1024"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +83,8 @@ function CustomizeSuit() {
             <path
               d="M505 46.7082C455.717 18.2707 398.53 2 337.543 2C152.227 2 2 152.228 2 337.543C2 522.858 152.227 673.086 337.543 673.086C398.53 673.086 455.717 656.815 505 628.378"
               stroke="#595959"
-              stroke-width="3"
-              stroke-linecap="round"
+              strokeWidth="3"
+              strokeLinecap="round"
             />
             <circle cx="63" cy="146" r="10" fill="#595959" />
             <circle cx="504" cy="628" r="8" fill="#595959" />
@@ -81,7 +93,11 @@ function CustomizeSuit() {
           </svg>
           <button className="suit-circle-btn">完成送出</button>
           <div className="maybe-use-canvus">
-            <img src={require('./images/spacesuit-white.png')} alt="" />
+            <img
+              src={suitImg.length === 0 ? whiteSuit : suitImg}
+              alt=""
+              style={{ opacity: opa }}
+            />
           </div>
         </div>
         <div className="suit-card">
@@ -89,26 +105,109 @@ function CustomizeSuit() {
           <h3>Customize Your SpaceSuit</h3>
           <h2>25,000$</h2>
           <div className="suit-select-color">
-            <div className="white suit-flag"></div>
-            <div className="orange suit-flag"></div>
-            <div className="blue suit-flag"></div>
+            <div
+              data-img={'/customize_img/spacesuit-white.png'}
+              className="white suit-flag"
+              onClick={e => {
+                const newOpaClose = '0';
+                setOpa(newOpaClose);
+                // 讓seat-box-img 圖片淡出
+                setTimeout(() => {
+                  // 設置延遲
+                  const newOpaOpen = '1';
+                  setOpa(newOpaOpen);
+                  // 讓圖片淡入
+                  const newImg = whiteSuit;
+                  setSuitImg(newImg);
+                  // 載入圖片
+                }, 700);
+              }}
+            ></div>
+            <div
+              data-img={'/customize_img/spacesuit-orange.png'}
+              className="orange suit-flag"
+              onClick={e => {
+                const newOpaClose = '0';
+                setOpa(newOpaClose);
+                // 讓seat-box-img 圖片淡出
+                setTimeout(() => {
+                  // 設置延遲
+                  const newOpaOpen = '1';
+                  setOpa(newOpaOpen);
+                  // 讓圖片淡入
+                  const newImg = orangeSuit;
+                  setSuitImg(newImg);
+                  // 載入圖片
+                }, 700);
+              }}
+            ></div>
+            <div
+              data-img={'/customize_img/spacesuit-blue.png'}
+              className="blue suit-flag"
+              onClick={e => {
+                const newOpaClose = '0';
+                setOpa(newOpaClose);
+                // 讓seat-box-img 圖片淡出
+                setTimeout(() => {
+                  // 設置延遲
+                  const newOpaOpen = '1';
+                  setOpa(newOpaOpen);
+                  // 讓圖片淡入
+                  const newImg = blueSuit;
+                  setSuitImg(newImg);
+                  // 載入圖片
+                }, 700);
+              }}
+            ></div>
           </div>
           <div className="country-select">
-          {allCountry.map((v, i) => {
+            {allCountry.map((v, i) => {
               return (
-                <div className="suit-flag" key={i}>
-                  <img src={v} alt="" />
+                <div
+                  data-key={i + 1}
+                  className="suit-flag"
+                  key={i}
+                  onClick={e => {}}
+                >
+                  <img
+                    data-img={v}
+                    src={v}
+                    alt=""
+                    onClick={e => {
+                      //抓取圖片放入太空船
+                      const closeOpa = '0';
+                      setCountrySelectSuit(closeOpa);
+                      setTimeout(() => {
+                        // 設置延遲
+                        const openOpa = '1';
+                        setCountrySelectSuit(openOpa);
+                        // 讓圖片淡入
+                        setCountryImgSuit(e.target.dataset.img);
+                        // console.log('1===', e.target.dataset.img);
+                        // 載入圖片
+                      }, 700);
+                      // const newStep2 = {
+                      //   ...craftStep,
+                      //   fill2: '#05f2f2',
+                      // };
+                      // setCraftStep(newStep2);
+                      // setStepClassname2('stepLine2');
+                      // setTimeout(() => {
+                      //   setStepClassname3('stepLine3');
+                      // }, 2000);
+                    }}
+                  />
                 </div>
               );
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={require('./images/noselect.png')} alt="" />
+                <img src={noSelect} alt="" />
               </div>
             </div>
           </div>
           <div className="mark-select">
-          {allMark.map((v, i) => {
+            {allMark.map((v, i) => {
               return (
                 <div className="suit-mark" key={i}>
                   <img src={v} alt="" />
@@ -117,14 +216,14 @@ function CustomizeSuit() {
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={require('./images/noselect.png')} alt="" />
+                <img src={noSelect} alt="" />
               </div>
             </div>
           </div>
         </div>
 
         <svg
-          className="right-page-svg"
+          className="left-page-svg"
           viewBox="0 0 913 1024"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

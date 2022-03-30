@@ -1,7 +1,9 @@
-import { before, transform } from 'lodash';
+
 import React, { useState, useEffect } from 'react';
 import './CustomizeCraft.css';
 import spaceCraft from './images/spacecraft.png';
+import noSelect from './images/noselect.png';
+
 
 const allCountry = [
   '/customize_img/america.png',
@@ -199,7 +201,7 @@ function CustomizeCraft() {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  className={event.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
+                  className={classNameSwitch}
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
                   data-key={i + 1}
@@ -265,7 +267,7 @@ function CustomizeCraft() {
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={require('./images/noselect.png')} alt="" />
+                <img src={noSelect} alt="" />
               </div>
             </div>
           </div>
