@@ -8,7 +8,7 @@ import CartQuantity from '../Products/CartQuantity';
 
 function CustomizeSeat(props) {
   //最外面app參數
-  const { setCustomize } = props;
+  const { setCustomize,craft } = props;
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
 
   const [modalShow, setModalShow] = useState(false);
@@ -17,13 +17,13 @@ function CustomizeSeat(props) {
   const [seatImg, setSeatImg] = useState('');
 
   const [opa, setOpa] = useState('');
-  const price = 15000;
+  
 
   function addCart() {
     setCustomize(function (prevData) {
-      setCartTotal(cartTotal + 3);
+      setCartTotal(cartTotal + 1);
       setModalShow(true);
-      return [{ style, seatImg, price }, ...prevData];
+      return [...prevData,{ style }];
     });
   }
 
@@ -122,7 +122,7 @@ function CustomizeSeat(props) {
         show={modalShow}
         onHide={() => setModalShow(false)}
         setCustomize={setCustomize}
-        seatColor={color}
+        seatColor={style}
       />
     </>
   );
