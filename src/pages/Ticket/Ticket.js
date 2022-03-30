@@ -47,7 +47,7 @@ function Ticket(props) {
       <div className="ticketWrap">
         <form className="inputArea" onSubmit={doSubmit} name="form1" multiple>
           <input type="hidden" name="userId" value={parseInt(userId)} />
-          <h2>{userNavbar}</h2>
+          <h2>{userNavbar === '登入' ? 'Hello' : userNavbar}</h2>
           <div className="inputWrap">
             <label>人數</label>
             <div className="inputGroup">
