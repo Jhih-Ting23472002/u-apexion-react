@@ -8,17 +8,22 @@ import slider05 from './img/slider05.jpg';
 import slider06 from './img/slider06.jpg';
 import slider07 from './img/slider07.jpeg';
 import slider08 from './img/slider08.jpg';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import UserNameF from '../../components/UserNameF';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-// import TicketOrderModal from './TicketOrderModal';
+import TicketOrderModal from './TicketOrderModal';
 import config from './Config';
 
-function Ticket() {
-  const [modalShow, setModalShow] = useState(false);
+function Ticket(props) {
+  const [orderModalShow, setOrderModalShow] = useState(false);
   const [count, setCount] = useState(1);
   const [number, setNumber] = useState(1);
   const API = config.TK_ORDER_API;
+  const [userId, setUserId] = useState(0);
+  const { setMemberName } = props;
+
+  const { userNavbar } = useContext(UserNameF);
 
   const doSubmit = async function (event) {
     event.preventDefault();
@@ -31,11 +36,18 @@ function Ticket() {
     const obj = r.json();
     console.log(obj);
   };
+
+  useEffect(() => {
+    const userID = localStorage.getItem('user_id');
+    setUserId(userID);
+  }, []);
+
   return (
     <>
       <div className="ticketWrap">
         <form className="inputArea" onSubmit={doSubmit} name="form1" multiple>
-          <h2>Hello，User</h2>
+          <input type="hidden" name="userId" value={parseInt(userId)} />
+          <h2>{userNavbar}</h2>
           <div className="inputWrap">
             <label>人數</label>
             <div className="inputGroup">
@@ -50,15 +62,14 @@ function Ticket() {
               />
               <span
                 onClick={() =>
-                  number <= 4 ? setCount(number) : setModalShow(true)
+                  number <= 4 ? setCount(number) : setOrderModalShow(true)
                 }
               >
                 <i className="fas fa-chevron-down"></i>
               </span>
             </div>
           </div>
-          <TicketInput count={count} />
-          <button className="tickitConfirmBtn">確認送出</button>
+          <TicketInput count={count} setMemberName={setMemberName} />
         </form>
         <div className="sliderArea">
           <div className="sliderWrap">
@@ -102,7 +113,10 @@ function Ticket() {
         </div>
       </div>
 
-      {/* <TicketOrderModal show={modalShow} onHide={() => setModalShow(false)} /> */}
+      <TicketOrderModal
+        show={orderModalShow}
+        onHide={() => setOrderModalShow(false)}
+      />
     </>
   );
 }

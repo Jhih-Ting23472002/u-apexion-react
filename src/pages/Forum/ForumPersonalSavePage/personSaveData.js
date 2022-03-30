@@ -1,13 +1,13 @@
-const personPostsData = [
+const personSaveData = [
   {
     id: 1,
-    photo: './index_img/space1.jpg',
-    postsLink: '/forum-home/posts/126',
+    photo: './index_img/bg-1.png',
+    postsLink: '/forum-home/posts/29',
   },
   {
     id: 2,
-    photo: './index_img/training.jpg',
-    postsLink: '/forum-home/posts/127',
+    photo: 'http://localhost:3001/img/59695a44-5e4f-4411-89aa-f263d4cc5a7b.png',
+    postsLink: '/forum-home/posts/124',
   },
   {
     id: 3,
@@ -17,7 +17,7 @@ const personPostsData = [
   {
     id: 4,
     photo: './index_img/floor.jpg',
-    postsLink: '/forum-home/posts/134',
+    postsLink: '/',
   },
   {
     id: 5,
@@ -75,4 +75,4 @@ const personPostsData = [
     postsLink: '/',
   },
 ];
-export { personPostsData };
+export { personSaveData };

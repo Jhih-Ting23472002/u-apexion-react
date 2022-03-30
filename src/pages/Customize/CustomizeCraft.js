@@ -1,4 +1,6 @@
 import { before, transform } from 'lodash';
+import { event } from 'jquery';
+import { before } from 'lodash';
 import React, { useState, useEffect } from 'react';
 import './CustomizeCraft.css';
 import spaceCraft from './images/spacecraft.png';
@@ -201,7 +203,7 @@ function CustomizeCraft() {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  className={classNameSwitch}
+                  className={event.currentTarget.dataset.key ===i ? countryClass : 'suit-flag'}
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
                   data-key={i + 1}

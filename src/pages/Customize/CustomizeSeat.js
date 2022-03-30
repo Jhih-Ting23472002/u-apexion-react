@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import './CustomizeSeat.css';
 import CustomizeOrder from './CustomizeOrder';
 import whiteSeat from './images/spaceseat-white.png';
 import orangeSeat from './images/spaceseat-orange.png';
 import blueSeat from './images/spaceseat-blue.png';
+import CartQuantity from '../Products/CartQuantity'
 
-function CustomizeSeat() {
+function CustomizeSeat(props) {
+  //最外面app參數
+  const { setCustomize } = props;
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
+
   const [modalShow, setModalShow] = useState(false);
   const [color, setColor] = useState({});
+  const [style, setStyle] = useState('');
   const [seatImg, setSeatImg] = useState('');
+
   const [opa, setOpa] = useState('');
+  const price=15000
+
+  function addCart(){
+    setCustomize(function(prevData){
+      setCartTotal(cartTotal + 3);
+      setModalShow(true)
+      return [{style,seatImg,price}, ...prevData];
+    })
+  }
+
 
   return (
     <>
@@ -32,9 +49,10 @@ function CustomizeSeat() {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 // 讓seat-box-img 圖片淡出
-                const newColor = { ...color, background: 'white' };
+                const newColor = { ...color, background: 'white' }
                 setColor(newColor);
                 // 改變.seat-backcolor的背景顏色
+                setStyle('white')
                 setTimeout(() => {
                   // 設置延遲
                   const newOpaOpen = '1';
@@ -53,6 +71,7 @@ function CustomizeSeat() {
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#EE6A26' };
                 setColor(newColor);
+                setStyle('orangeSeat')
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
@@ -68,6 +87,7 @@ function CustomizeSeat() {
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#0072D6' };
                 setColor(newColor);
+                setStyle('blueSeat')
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
@@ -84,7 +104,7 @@ function CustomizeSeat() {
           </div>
           <button
             className="seat-circle-btn"
-            onClick={() => setModalShow(true)}
+            onClick={() => addCart()}
           >
             完成送出
           </button>
@@ -102,7 +122,7 @@ function CustomizeSeat() {
           />
         </svg>
       </section>
-      <CustomizeOrder show={modalShow} onHide={() => setModalShow(false)} />
+      <CustomizeOrder show={modalShow} onHide={() => setModalShow(false)} setCustomize={setCustomize} seatColor={color}/>
     </>
   );
 }

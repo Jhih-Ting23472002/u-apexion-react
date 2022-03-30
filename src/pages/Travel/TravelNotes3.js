@@ -21,14 +21,19 @@ function TravelNotes() {
     <>
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <button className="notesbackbutton">
-              <Link to="/travel-choose">
-                <i className="fa-solid fa-left-long"></i> Back
-              </Link>
+          <Link to="/travel-choose">
+            <button className="notesbackbutton nb2 d-block d-xl-none">
+              <i className="fa-solid fa-left-long"></i> Back
             </button>
+          </Link>
+          <ol className="breadcrumb">
+            <Link to="/travel-choose">
+              <button className="notesbackbutton d-none d-xl-block">
+                <i className="fa-solid fa-left-long"></i> Back
+              </button>
+            </Link>
             <li className="breadcrumb-item">
-              <Link to="/travel-titan">泰坦星</Link>
+              <Link to="/travel-UAP-001">泰坦星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">米勒星</Link>
@@ -37,7 +42,7 @@ function TravelNotes() {
               曼恩星
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-xandar">柴達星</Link>
+              <Link to="/travel-UAP-002">柴達星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">拉曼提斯</Link>
@@ -50,6 +55,18 @@ function TravelNotes() {
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">蓋亞花園</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">潘朵拉</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">塞伯坦星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">瓦肯星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">致遠星</Link>
             </li>
           </ol>
         </div>

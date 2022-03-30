@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './CartChoosePayment.css';
 import ProcessLine from './components/ProcessLine';
 import ProductCard from './components/choosePayment/ProductCard';

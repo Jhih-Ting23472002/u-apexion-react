@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 function TravelNotes() {
   const [JourneyTitan, setJourneyTitan] = useState([]);
+  const [JourneyUap001, setJourneyUap001] = useState([]);
 
   useEffect(() => {
     (async function () {
@@ -17,16 +18,33 @@ function TravelNotes() {
       console.log(JourneyTitan);
     })();
   }, []);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'http://localhost:3001/travel-notes/api/travel-journeyuap001'
+      );
+      const JourneyUap001 = await response.json();
+      setJourneyUap001(JourneyUap001);
+      console.log(JourneyUap001);
+    })();
+  }, []);
+
   return (
     <>
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <button className="notesbackbutton">
-              <Link to="/travel-choose">
-                <i className="fa-solid fa-left-long"></i> Back
-              </Link>
+          <Link to="/travel-choose">
+            <button className="notesbackbutton nb2 d-block d-xl-none">
+              <i className="fa-solid fa-left-long"></i> Back
             </button>
+          </Link>
+          <ol className="breadcrumb">
+            <Link to="/travel-choose">
+              <button className="notesbackbutton d-none d-xl-block">
+                <i className="fa-solid fa-left-long"></i> Back
+              </button>
+            </Link>
             <li className="breadcrumb-item active" aria-current="page">
               泰坦星
             </li>
@@ -34,10 +52,10 @@ function TravelNotes() {
               <Link to="#/">米勒星</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-mann">曼恩星</Link>
+              <Link to="/travel-UAP-004">曼恩星</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-xandar">柴達星</Link>
+              <Link to="/travel-UAP-002">柴達星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">拉曼提斯</Link>
@@ -50,6 +68,18 @@ function TravelNotes() {
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">蓋亞花園</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">潘朵拉</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">塞伯坦星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">瓦肯星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">致遠星</Link>
             </li>
           </ol>
         </div>

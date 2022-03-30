@@ -23,6 +23,13 @@ function TravelChoose() {
     getData(page || 1);
   }, [location.search]);
 
+  function travelPage(e) {
+    console.log(e);
+    console.log(e.target.id);
+    console.log('/travel-' + e.target.id);
+    history.push('/travel-' + e.target.id);
+  }
+
   const renderMe = data => {
     if (data.rows && data.rows.length) {
       return data.rows.map(el => (
@@ -45,7 +52,15 @@ function TravelChoose() {
                 <div className="col-md-4 text-md-center choosedetails">
                   <p className="day">旅遊天數:{el.travel_day}days</p>
                   <p className="price">${el.travel_price}</p>
-                  <button className="itemBuyButton">Details</button>
+                  <button
+                    onClick={e => {
+                      travelPage(e);
+                    }}
+                    className="itemBuyButton"
+                    id={el.travel_number}
+                  >
+                    Details
+                  </button>
                 </div>
               </div>
             </div>

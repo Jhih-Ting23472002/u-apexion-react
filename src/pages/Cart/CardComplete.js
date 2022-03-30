@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import './CardComplete.css';
 import { Link } from 'react-router-dom';
+import CartQuantity from '../Products/CartQuantity';
 
 const CardComplete = props => {
   const {
@@ -15,6 +16,10 @@ const CardComplete = props => {
   // let orderListNumber = Math.floor(Math.random() * 100000000000);
   // console.log('orderListNumber', orderListNumber);
 
+  const { setCartTotal } = useContext(CartQuantity);
+  useEffect(() => {
+    setCartTotal(0);
+  }, []);
   return (
     <>
       <div className="cart-background container-fluid">
@@ -63,7 +68,7 @@ const CardComplete = props => {
                 <div className="col-4 text-center quantity-detail-border-right">
                   商品數量
                 </div>
-                <div className="col-3 text-center">小記</div>
+                <div className="col-3 text-center">小計</div>
               </div>
 
               {/* aaa-衣服 bbb-褲子 */}

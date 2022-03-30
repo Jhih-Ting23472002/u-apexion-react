@@ -96,11 +96,11 @@ label.publish-page-label {
 .forum_btn {
   background: #05f2f2;
   color: rgb(106, 106, 106);
-  font-family: 'Noto Sans HK';
+  font-family: 'Noto Sans';
   font-size: 14px;
-  font-weight: 500;
+  font-weight: normal;
   padding: 10px 10px;
-  border: 0px;
+  /* border: 1px solid red; */
   letter-spacing: 2px;
 }
 .forum_btn i {
