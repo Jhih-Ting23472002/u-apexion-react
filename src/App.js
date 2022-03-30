@@ -34,7 +34,7 @@ import SignOut from './components/SignOut';
 // Customize
 //import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
-import CustomizeCraft from './pages/Customize/CustomizeCraft';
+//import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
@@ -300,9 +300,9 @@ function App() {
                     <Route path="/customize-suit">
                       <CustomizeSuit />
                     </Route>
-                    <Route path="/customize-craft">
+                    {/* <Route path="/customize-craft">
                       <CustomizeCraft />
-                    </Route>
+                    </Route> */}
                     <Route path="/customize-seat">
                       <CustomizeSeat setCustomize={setCustomize} />
                     </Route>
