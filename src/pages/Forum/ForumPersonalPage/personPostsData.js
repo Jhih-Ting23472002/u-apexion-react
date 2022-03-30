@@ -17,7 +17,7 @@ const personPostsData = [
   {
     id: 4,
     photo: './index_img/floor.jpg',
-    postsLink: '/',
+    postsLink: '/forum-home/posts/134',
   },
   {
     id: 5,
