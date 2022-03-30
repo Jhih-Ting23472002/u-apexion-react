@@ -44,6 +44,7 @@
   left: -16%;
   transform: rotate(-90deg);
 }
+
 .craft-string2 {
   font-size: 18px;
   text-align: center;
@@ -65,8 +66,8 @@
   right: 64vw;
   width: 30vw;
   height: 30vw;
-  min-width: 400px;
-  min-height: 400px;
+  min-width: 450px;
+  min-height: 450px;
   background-color: rgb(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
@@ -80,7 +81,67 @@
   height: 150px;
   overflow: hidden;
 }
-.craft-area-view1 img {
+/* 太空船背景 */
+.craft-area-view1-country {
+  object-fit: cover;
+  width: 75px;
+  height: 45px;
+  transition: 0.8s ease-in-out;
+}
+.craft-filter {
+  filter: contrast(0.9);
+  z-index: 1;
+  position: absolute;
+  right: 14%;
+  top: 33%;
+  transition: 0.8s ease-in-out;
+}
+.craft-filter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 20%,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0.4) 90%
+  );
+}
+/* 太空船 */
+.craft-area-view1-country2 {
+  object-fit: cover;
+  width: 60px;
+  height: 36px;
+  transition: 0.8s ease-in-out;
+}
+.craft-filter2 {
+  filter: contrast(0.9);
+  transform: rotate(-90deg);
+  z-index: 1;
+  position: absolute;
+  right: 21%;
+  top: 8%;
+  transition: 0.8s ease-in-out;
+}
+.craft-filter2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 20%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(0, 0, 0, 0.4) 90%
+  );
+}
+
+.craft-area-view1-pic {
   width: 40%;
   position: absolute;
   top: -213%;
@@ -94,7 +155,7 @@
   height: 150px;
   overflow: hidden;
 }
-.craft-area-view2 img {
+.craft-area-view2-pic {
   width: 40%;
   position: absolute;
   top: -213%;
@@ -229,7 +290,7 @@
   border: 1px solid #05f2f2;
   position: relative;
   z-index: 2;
-  transition: 0.5s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 .craft-in-label input:focus + label {
   opacity: 0;
@@ -251,6 +312,51 @@
   width: 50px;
   height: 30px;
   object-fit: cover;
-  filter:drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4) ;
-  transition: .3s ease-in-out;
+  filter: drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4);
+  transition: 0.3s ease-in-out;
+}
+.stepLine {
+  stroke: #05f2f2;
+  stroke-dasharray: 460;
+  stroke-dashoffset: 0;
+  animation: stepLine1 1.5s ease-in-out forwards;
+}
+@keyframes stepLine1 {
+  0% {
+    stroke-dashoffset: 460;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.stepLine2 {
+  stroke: #05f2f2;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+  animation: stepLine2 1.5s ease-in-out forwards;
+}
+@keyframes stepLine2 {
+  0% {
+    stroke-dashoffset: 400;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.stepLine3 {
+  stroke: #05f2f2;
+  stroke-dasharray: 280;
+  stroke-dashoffset: 0;
+  animation: stepLine3 1.5s ease-in-out forwards ;
+}
+@keyframes stepLine3 {
+  0% {
+    stroke-dashoffset: 280;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
