@@ -136,8 +136,9 @@ function App() {
   const [signOut, setSignOut] = useState('註冊');
 
   //客製化商品
-  const [customize, setCustomize] = useState([]);
-  //console.log('customize', customize);
+  const [customize, setCustomize] = useState([]); // 椅子
+  const [craft, setCraft] = useState([]); // 火箭
+  console.log(craft)
 
   return (
     <CartProvider>
@@ -147,7 +148,7 @@ function App() {
             <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
               <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
                 <SignOut.Provider value={{ signOut, setSignOut }}>
-                  <Navbar  setProductDetailList={setProductDetailList}/>
+                  <Navbar setProductDetailList={setProductDetailList} />
                   <Switch>
                     {/* <Route exact path="/">
                       <IndexFirst />
@@ -301,10 +302,10 @@ function App() {
                       <CustomizeSuit />
                     </Route>
                     <Route path="/customize-craft">
-                      <CustomizeCraft />
+                      <CustomizeCraft setCraft={setCraft}/>
                     </Route>
                     <Route path="/customize-seat">
-                      <CustomizeSeat setCustomize={setCustomize} />
+                      <CustomizeSeat setCustomize={setCustomize} craft={craft}/>
                     </Route>
                     <Route path="/customize-order"></Route>
                     <Route path="/trans-mainpage"></Route>
