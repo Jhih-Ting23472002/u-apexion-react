@@ -7,7 +7,7 @@ import SignOut from './SignOut';
 
 function Navbar(props) {
   //購物車內數量
-  const { cartTotal } = useContext(CartQuantity);
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
   //登入
   const { userNavbar, setUserNavbar } = useContext(UserNameF);
   //離開
@@ -73,10 +73,13 @@ function Navbar(props) {
               <Link
                 to={register}
                 onClick={() => {
+                  setCartTotal(0)
                   setSignOut('註冊');
                   setUserNavbar('登入');
-                  localStorage.removeItem('user_id');
-                  localStorage.removeItem('user_name');
+                  localStorage.clear() ;
+                  // localStorage.removeItem('user_id');
+                  // localStorage.removeItem('user_name');
+                  // localStorage.removeItem('productLocalStorage');
                 }}
               >
                 {signOut}
