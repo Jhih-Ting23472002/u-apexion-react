@@ -14,6 +14,9 @@ const MemberPersonEdit = () => {
     birthday: '',
     country: '',
   });
+  const [fileSrc, setFileSrc] = useState(null);
+  const [userPhoto, setUserPhoto] = useState('');
+  console.log(userPhoto);
 
   //先從localStorage拿id (你們的user_id)
   const sid = localStorage.getItem('user_id');
@@ -28,9 +31,11 @@ const MemberPersonEdit = () => {
 
   const handleRevise = e => {
     e.preventDefault();
-    reviseMem(memInfo, sid).then(obj => {
+    const fd = new FormData(document.form1);
+    reviseMem(fd).then(obj => {
       console.log(obj);
       if (obj.success) {
+        setUserPhoto('http://localhost:3001/img' + '/' + obj.user_photo);
         alert('修改成功');
       }
       history.push('/member-person'); //登入成功後導入會員頁
@@ -40,6 +45,23 @@ const MemberPersonEdit = () => {
     const newData = { ...memInfo, [e.target.name]: e.target.value };
     setMemInfo(newData);
   };
+  const imgHandler = e => {
+    const file = e.target.files[0];
+    console.log(file);
+    const fileReader = new FileReader();
+    fileReader.onload = function () {
+      setFileSrc(fileReader.result);
+      console.log(fileSrc);
+    };
+    fileReader.readAsDataURL(file);
+  };
+  // const handleFormSubmit = e => {
+  //   const fd = new FormData('formImage');
+  //   fetch('', {
+  //     method: 'POST',
+  //     body: fd,
+  //   }).then(res => res.json());
+  // };
 
   return (
     <>
@@ -53,7 +75,11 @@ const MemberPersonEdit = () => {
               </div>
             </div>
             <div className="person-form-container">
-              <form className="person-form" onSubmit={handleRevise}>
+              <form
+                className="person-form"
+                onSubmit={handleRevise}
+                name="form1"
+              >
                 <div className="member-input-container ">
                   <label htmlFor="name" className="member-label">
                     姓名
@@ -64,6 +90,14 @@ const MemberPersonEdit = () => {
                     className="member-input"
                     value={memInfo?.name ?? 'name'}
                     name="name"
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="file-uploader"
+                    value={sid}
+                    name="sid"
                     onChange={handleChange}
                   />
                 </div>
@@ -159,12 +193,26 @@ const MemberPersonEdit = () => {
                     <option>美國</option>
                   </select>
                 </div>
+                <input
+                  type="file"
+                  name="avatar"
+                  id="avatar"
+                  onChange={imgHandler}
+                  accept="image/*"
+                  className="file-uploader"
+                />
                 <div className="member-btn-container person-btn-container">
-                  {/* <div className="member-return-btn-wrap">
-                    <button type="button" className="member-circle-btn">
+                  <div className="member-return-btn-wrap">
+                    <button
+                      type="button"
+                      className="member-circle-btn"
+                      onClick={() => {
+                        setMemInfo();
+                      }}
+                    >
                       取消更改
                     </button>
-                  </div> */}
+                  </div>
                   <div>
                     <button type="submit" className="member-circle-btn">
                       確認修改
@@ -175,26 +223,40 @@ const MemberPersonEdit = () => {
               <div className="member-line-wrap">
                 <div className="person-line"></div>
               </div>
-              <div className="person-avatar-container">
-                <div className="person-avatar-img"></div>
+              {/* <form style={{width:'500px'}}> */}
+              <div
+                className="person-avatar-container"
+                // style={{ border: '1px solid red' }}
+              >
+                {/* <form
+                  style={{ width: '100%' }}
+                  name="formImage"
+                  onSubmit={handleFormSubmit}
+                > */}
+                <img className="person-avatar-img" src={fileSrc} alt=""></img>
                 <div
                   className="person-avatar-upload"
-                  style={{ border: '1px solid red' }}
+                  // style={{ border: '1px solid red' }}
                 >
                   <div className="member-btn-container">
-                    {/* <button className="member-circle-btn">選擇圖片</button> */}
-                    <input
-                      type="file"
-                      id="file-uploader"
-                      className="file-uploader"
-                    ></input>
+                    <div
+                      className="member-circle-btn"
+                      style={{ cursor: 'pointer' }}
+                      onClick={e => {
+                        document.querySelector('#avatar').click();
+                      }}
+                    >
+                      選擇圖片
+                    </div>
                   </div>
                 </div>
-                <div className="person-avatar-txt">
+                <div className="person-avatar-txt" style={{ marginTop: '5px' }}>
                   <p>檔案大小:最大1MB</p>
                   <p>檔案限制: .JEPG, .PNG</p>
                 </div>
+                {/* </form> */}
               </div>
+              {/* </form> */}
             </div>
           </div>
         </div>

@@ -55,12 +55,12 @@
   display: flex;
   flex-direction: row;
   align-self: center;
-  height: 50vh;
+  height: 70vh;
   align-items: center;
 }
 
 .person-form {
-  width: 65%;
+  width: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -78,16 +78,18 @@
 
 .person-line {
   width: 1px;
-  height: 33vh;
+  height: 40vh;
   background-color: #fff;
   opacity: 0.1;
 }
-
+.member-circle-btn input {
+}
 .person-avatar-container {
-  width: 25%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
 }
 
 .person-avatar-img {
@@ -96,6 +98,8 @@
   background-color: #aaa;
   border: 2px solid #fff;
   border-radius: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 .person-avatar-img,
@@ -116,5 +120,6 @@
 }
 
 .file-uploader {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  display: none;
 }
