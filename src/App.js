@@ -80,8 +80,8 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-//import IndexFirst from './pages/Index/IndexFirst';
-//import IndexMain from './pages/Index/IndexMain';
+import IndexFirst from './pages/Index/IndexFirst';
+import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -137,173 +137,173 @@ function App() {
     <CartProvider>
       <Router>
         <>
-          <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
-            <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
-              <SignOut.Provider value={{ signOut, setSignOut }}>
-                <Navbar />
-                <Switch>
-                  {/* <Route exact path="/">
-                <IndexFirst />
-              </Route>
-              <Route exact path="/u-apexion">
-                <IndexMain />
-              </Route> */}
-                  <Route exact path="/forum-home">
-                    <ForumHomePage />
-                  </Route>
-                  <Route path="/forum-home/posts/:sid">
-                    <ForumSinglePostPage />
-                  </Route>
-                  <Route path="/publish">
-                    <ForumPublishPage />
-                  </Route>
-                  <Route path="/publish-edit/:sid">
-                    <ForumPublishUpdatePage />
-                  </Route>
-                  <Route path="/forum-apexion-articles">
-                    <ForumUArticlePage />
-                  </Route>
-                  <Route path="/posts-category/:art_category_sid">
-                    <ForumPostCategoryPage />
-                  </Route>
-                  <Route path="/forum-member-posts">
-                    <ForumMemArticlePage />
-                  </Route>
-                  <Route path="/forum-hot-posts">
-                    <ForumHotPage />
-                  </Route>
-                  <Route path="/forum-personal">
-                    <ForumPersonalPage />
-                  </Route>
-                  <Route path="/forum-personal-saved">
-                    <ForumPersonalSavePage />
-                  </Route>
-                  <Route path="/member-login">
-                    <MemberLogin />
-                  </Route>
-                  <Route path="/member-sign-up">
-                    <MemberSignUp />
-                  </Route>
-                  <Route path="/member-forgot-pwd">
-                    <MemberForgotPwd />
-                  </Route>
-                  <Route path="/member-person">
-                    <MemberPerson />
-                  </Route>
-                  <Route path="/member-person-edit">
-                    <MemberPersonEdit />
-                  </Route>
-                  <Route path="/member-password-edit">
-                    <MemberPwdEdit />
-                  </Route>
-                  <Route path="/member-address">
-                    <MemberAddress />
-                  </Route>
-                  <Route path="/member-address-new">
-                    <MemberAddressNew />
-                  </Route>
-                  <Route path="/member-order-history">
-                    <MemberOrderHistory />
-                  </Route>
-                  <Route path="/member-order-detail">
-                    <MemberOrderDetails />
-                  </Route>
-                  <Route path="/member-collect">
-                    <MemberCollect />
-                  </Route>
-                  {/* 行程頁面 */}
-                  <Route path="/travel-index">
-                    <TravelIndex />
-                  </Route>
-                  <Route path="/travel-choose">
-                    <TravelChoose />
-                  </Route>
-                  <Route path="/travel-titan">
-                    <TravelNotes />
-                  </Route>
-                  <Route path="/travel-xandar">
-                    <TravelNotes2 />
-                  </Route>
-                  <Route path="/travel-mann">
-                    <TravelNotes3 />
-                  </Route>
-                  <Route path="/travelchoose-pricem">
-                    <TravelChoosePriceM />
-                  </Route>
-                  <Route path="/travelchoose-pricef">
-                    <TravelChoosePriceF />
-                  </Route>
-                  <Route path="/travelchoose-daym">
-                    <TravelChooseDayM />
-                  </Route>
-                  <Route path="/travelchoose-dayf">
-                    <TravelChooseDayF />
-                  </Route>
-                  {/* 訂票頁面 */}
-                  <Route path="/ticket-order">
-                    <Ticket />
-                  </Route>
-                  {/* <Route path="/ticket-test">
+          <ScrollToTop>
+            <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
+              <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
+                <SignOut.Provider value={{ signOut, setSignOut }}>
+                  <Navbar />
+                  <Switch>
+                    <Route exact path="/">
+                      <IndexFirst />
+                    </Route>
+                    <Route exact path="/u-apexion">
+                      <IndexMain />
+                    </Route>
+                    <Route exact path="/forum-home">
+                      <ForumHomePage />
+                    </Route>
+                    <Route path="/forum-home/posts/:sid">
+                      <ForumSinglePostPage />
+                    </Route>
+                    <Route path="/publish">
+                      <ForumPublishPage />
+                    </Route>
+                    <Route path="/publish-edit/:sid">
+                      <ForumPublishUpdatePage />
+                    </Route>
+                    <Route path="/forum-apexion-articles">
+                      <ForumUArticlePage />
+                    </Route>
+                    <Route path="/posts-category/:art_category_sid">
+                      <ForumPostCategoryPage />
+                    </Route>
+                    <Route path="/forum-member-posts">
+                      <ForumMemArticlePage />
+                    </Route>
+                    <Route path="/forum-hot-posts">
+                      <ForumHotPage />
+                    </Route>
+                    <Route path="/forum-personal">
+                      <ForumPersonalPage />
+                    </Route>
+                    <Route path="/forum-personal-saved">
+                      <ForumPersonalSavePage />
+                    </Route>
+                    <Route path="/member-login">
+                      <MemberLogin />
+                    </Route>
+                    <Route path="/member-sign-up">
+                      <MemberSignUp />
+                    </Route>
+                    <Route path="/member-forgot-pwd">
+                      <MemberForgotPwd />
+                    </Route>
+                    <Route path="/member-person">
+                      <MemberPerson />
+                    </Route>
+                    <Route path="/member-person-edit">
+                      <MemberPersonEdit />
+                    </Route>
+                    <Route path="/member-password-edit">
+                      <MemberPwdEdit />
+                    </Route>
+                    <Route path="/member-address">
+                      <MemberAddress />
+                    </Route>
+                    <Route path="/member-address-new">
+                      <MemberAddressNew />
+                    </Route>
+                    <Route path="/member-order-history">
+                      <MemberOrderHistory />
+                    </Route>
+                    <Route path="/member-order-detail">
+                      <MemberOrderDetails />
+                    </Route>
+                    <Route path="/member-collect">
+                      <MemberCollect />
+                    </Route>
+                    {/* 行程頁面 */}
+                    <Route path="/travel-index">
+                      <TravelIndex />
+                    </Route>
+                    <Route path="/travel-choose">
+                      <TravelChoose />
+                    </Route>
+                    <Route path="/travel-titan">
+                      <TravelNotes />
+                    </Route>
+                    <Route path="/travel-xandar">
+                      <TravelNotes2 />
+                    </Route>
+                    <Route path="/travel-mann">
+                      <TravelNotes3 />
+                    </Route>
+                    <Route path="/travelchoose-pricem">
+                      <TravelChoosePriceM />
+                    </Route>
+                    <Route path="/travelchoose-pricef">
+                      <TravelChoosePriceF />
+                    </Route>
+                    <Route path="/travelchoose-daym">
+                      <TravelChooseDayM />
+                    </Route>
+                    <Route path="/travelchoose-dayf">
+                      <TravelChooseDayF />
+                    </Route>
+                    {/* 訂票頁面 */}
+                    <Route path="/ticket-order">
+                      <Ticket />
+                    </Route>
+                    {/* <Route path="/ticket-test">
               <TicketTest />
             </Route> */}
-                  <Route path="/ticket-trip-choose">
-                    <TicketTrip
-                      setTripSelected={setTripSelected}
-                      setTripDays={setTripDays}
-                      setTripPrice={setTripPrice}
-                    />
-                  </Route>
-                  <Route path="/ticket-date-choose">
-                    <TicketDate
-                      tripSelected={tripSelected}
-                      tripDays={tripDays}
-                      setTripDate={setTripDate}
-                    />
-                  </Route>
-                  <Route path="/ticket-date-choose-old">
-                    <TicketDateOld />
-                  </Route>
-                  <Route path="/ticket-seat-choose">
-                    <TicketSeat
-                      tripDate={tripDate}
-                      seatNumberDemo={seatNumberDemo}
-                      setSeatNumberDemo={setSeatNumberDemo}
-                    />
-                  </Route>
-                  <Route path="/ticket-meal-choose">
-                    <TicketMeal
-                      mealSelected={mealSelected}
-                      setMealSelected={setMealSelected}
-                      setChange={setChange}
-                      change={change}
-                      tripSelected={tripSelected}
-                      tripDate={tripDate}
-                      seatNumberDemo={seatNumberDemo}
-                      tripDays={tripDays}
-                      tripPrice={tripPrice}
-                    />
-                  </Route>
-                  <Route path="/ticket-confirm"></Route>
-                  {/* <Route path="/ticket-test">
+                    <Route path="/ticket-trip-choose">
+                      <TicketTrip
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                        setTripPrice={setTripPrice}
+                      />
+                    </Route>
+                    <Route path="/ticket-date-choose">
+                      <TicketDate
+                        tripSelected={tripSelected}
+                        tripDays={tripDays}
+                        setTripDate={setTripDate}
+                      />
+                    </Route>
+                    <Route path="/ticket-date-choose-old">
+                      <TicketDateOld />
+                    </Route>
+                    <Route path="/ticket-seat-choose">
+                      <TicketSeat
+                        tripDate={tripDate}
+                        seatNumberDemo={seatNumberDemo}
+                        setSeatNumberDemo={setSeatNumberDemo}
+                      />
+                    </Route>
+                    <Route path="/ticket-meal-choose">
+                      <TicketMeal
+                        mealSelected={mealSelected}
+                        setMealSelected={setMealSelected}
+                        setChange={setChange}
+                        change={change}
+                        tripSelected={tripSelected}
+                        tripDate={tripDate}
+                        seatNumberDemo={seatNumberDemo}
+                        tripDays={tripDays}
+                        tripPrice={tripPrice}
+                      />
+                    </Route>
+                    <Route path="/ticket-confirm"></Route>
+                    {/* <Route path="/ticket-test">
               <SeatDrag />
             </Route> */}
-                  {/* <Route path="/customize-mainpage">
+                    {/* <Route path="/customize-mainpage">
                     <CustomizeMainPage />
                   </Route> */}
-                  <Route path="/customize-suit">
-                    <CustomizeSuit />
-                  </Route>
-                  <Route path="/customize-craft">
-                    <CustomizeCraft />
-                  </Route>
-                  <Route path="/customize-seat">
-                    <CustomizeSeat />
-                  </Route>
-                  <Route path="/customize-order"></Route>
-                  <Route path="/trans-mainpage"></Route>
-                  <Route path="/trans-order"></Route>
+                    <Route path="/customize-suit">
+                      <CustomizeSuit />
+                    </Route>
+                    <Route path="/customize-craft">
+                      <CustomizeCraft />
+                    </Route>
+                    <Route path="/customize-seat">
+                      <CustomizeSeat />
+                    </Route>
+                    <Route path="/customize-order"></Route>
+                    <Route path="/trans-mainpage"></Route>
+                    <Route path="/trans-order"></Route>
 
-                  <ScrollToTop>
                     <Route path="/product-detail/:sid">
                       <ProductsDetail
                         setProductDetailList={setProductDetailList}
@@ -381,15 +381,16 @@ function App() {
                         cartOrderListNumber={cartOrderListNumber}
                       />
                     </Route>
-                  </ScrollToTop>
-                  <Route path="*">
-                    <NotFoundPage />
-                  </Route>
-                </Switch>
-                <Footer />
-              </SignOut.Provider>
-            </CartQuantity.Provider>
-          </UserNameF.Provider>
+
+                    <Route path="*">
+                      <NotFoundPage />
+                    </Route>
+                  </Switch>
+                  <Footer />
+                </SignOut.Provider>
+              </CartQuantity.Provider>
+            </UserNameF.Provider>
+          </ScrollToTop>
         </>
       </Router>
     </CartProvider>

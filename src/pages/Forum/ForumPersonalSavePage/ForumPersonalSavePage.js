@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ForumPersonalSavePage.css';
 // import Modal from 'react-bootstrap/Modal';
 import ForumPersonalSavePageModal from './ForumPersonalSavePageModal';
+import { personSaveData } from './personSaveData';
 import styled from 'styled-components';
 
 const CheckBoxWrapper = styled.div`
@@ -127,7 +128,7 @@ export default function ForumPersonalSavePage() {
                   cursor: 'pointer',
                   color: bgcolor === true ? 'black' : 'white',
                   borderTop:
-                    bgcolor === true ? '3px solid white' : '3px solid black',
+                    bgcolor === true ? '3px solid white' : '3px solid #05f2f2',
                 }}
               >
                 <i class="fa-solid fa-bookmark"></i>
@@ -135,93 +136,18 @@ export default function ForumPersonalSavePage() {
               </Link>
             </div>
             <div className="person_posts_photos">
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/space1.jpg" alt="" />
+              {personSaveData.map((v, i) => (
+                <div className="col-4 person_posts_photos_single">
+                  <div className="person_posts_single_photo">
+                    <img
+                      src={v.photo}
+                      alt=""
+                      data-index={i}
+                      onClick={handleImageClick}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/training.jpg" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/rocket.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/floor.jpg" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig1.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div
-                  className="person_posts_single_photo"
-                  onClick={() => {
-                    setModalShow(true);
-                    console.log(modalShow);
-                  }}
-                >
-                  <img src="./index_img/ig2.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig3.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig4.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig5.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig6.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig7.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig8.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig9.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div className="person_posts_single_photo">
-                  <img src="./index_img/ig12.png" alt="" />
-                </div>
-              </div>
-              <div className="col-4 person_posts_photos_single">
-                <div
-                  className="person_posts_single_photo"
-                  onClick={() => {
-                    setModalShow(true);
-                    console.log(modalShow);
-                  }}
-                >
-                  <img src="./index_img/ig11.png" alt="" />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
