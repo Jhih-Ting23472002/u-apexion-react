@@ -1,11 +1,7 @@
 import { before, transform } from 'lodash';
-import { event } from 'jquery';
-import { before } from 'lodash';
 import React, { useState, useEffect } from 'react';
 import './CustomizeCraft.css';
 import spaceCraft from './images/spacecraft.png';
-import taiwan from './images/taiwan.png';
-import usa from './images/america.png';
 
 const allCountry = [
   '/customize_img/america.png',
