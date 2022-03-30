@@ -1,12 +1,12 @@
 /* 座位svg樣式開始 */
-.seat-disabled{
-  fill:rgb(73, 73, 73);
+.seat-disabled {
+  fill: #808080;
   stroke: white;
 }
 
 .seat-selected {
-  fill: var(--main-color-02);
-  stroke: #EDAA34;
+  fill: var(--sub-color-02);
+  stroke: #ffb907;
   stroke-width: 4;
 }
 
@@ -14,22 +14,54 @@
   fill: var(--main-color-02);
   stroke: white;
 }
-.st0{filter:url(#Adobe_OpacityMaskFilter);}
-	.st1{fill:url(#SVGID_00000115474753273939599580000000054005951162123906_);}
-	.st2{fill:url(#SVGID_00000114756672554066700360000013326035074049570190_);}
-	.st3{mask:url(#SVGID_1_);}
-	.st4{fill:#FFFFFF;}
-	.st6{fill:#FFFFFF;stroke:#606060;stroke-miterlimit:10;}
-	.st7{fill:#606060;stroke:#FFFFFF;stroke-miterlimit:10;}
-	.st8{font-family:'NotoSansTC-Light-90ms-RKSJ-H';}
-	.st9{font-size:12.9039px;}
-	.st10{fill:none;stroke:url(#SVGID_00000150809683055419660790000009186993585327943334_);stroke-width:2;stroke-miterlimit:10;}
-	.st11{fill:none;stroke:url(#SVGID_00000102510429283395775120000009617074621872571549_);stroke-width:2;stroke-miterlimit:10;}
+.st0 {
+  filter: url(#Adobe_OpacityMaskFilter);
+}
+.st1 {
+  fill: url(#SVGID_00000115474753273939599580000000054005951162123906_);
+}
+.st2 {
+  fill: url(#SVGID_00000114756672554066700360000013326035074049570190_);
+}
+.st3 {
+  mask: url(#SVGID_1_);
+}
+.st4 {
+  fill: #ffffff;
+}
+.st6 {
+  fill: #ffffff;
+  stroke: #606060;
+  stroke-miterlimit: 10;
+}
+.st7 {
+  fill: #606060;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+}
+.st8 {
+  font-family: 'NotoSansTC-Light-90ms-RKSJ-H';
+}
+.st9 {
+  font-size: 12.9039px;
+}
+.st10 {
+  fill: none;
+  stroke: url(#SVGID_00000150809683055419660790000009186993585327943334_);
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+.st11 {
+  fill: none;
+  stroke: url(#SVGID_00000102510429283395775120000009617074621872571549_);
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
 
-  .seat-number-demo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+.seat-number-demo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 /* 座位svg樣式結束 */
 
 .sliderWrap img {
@@ -893,7 +925,6 @@ img {
   width: 60%;
 }
 
-
 .ticket-case-choose img,
 .ticket-seat-choose .seat-svg {
   /* border: 1px solid rgb(255, 238, 0); */
@@ -979,8 +1010,6 @@ img {
 .case-selected {
   color: var(--main-color-02);
 }
-
-
 
 /* 座位選擇樣式結束 */
 /* 餐點選擇樣式開始 */

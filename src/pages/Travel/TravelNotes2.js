@@ -21,20 +21,25 @@ function TravelNotes() {
     <>
       <div className="container travelnotescontainer">
         <div className="nav2" aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <button className="notesbackbutton">
-              <Link to="/travel-choose">
-                <i class="fa-solid fa-left-long"></i> Back
-              </Link>
+          <Link to="/travel-choose">
+            <button className="notesbackbutton nb2 d-block d-xl-none">
+              <i className="fa-solid fa-left-long"></i> Back
             </button>
+          </Link>
+          <ol className="breadcrumb">
+            <Link to="/travel-choose">
+              <button className="notesbackbutton d-none d-xl-block">
+                <i className="fa-solid fa-left-long"></i> Back
+              </button>
+            </Link>
             <li className="breadcrumb-item">
-              <Link to="/travel-titan">泰坦星</Link>
+              <Link to="/travel-UAP-001">泰坦星</Link>
             </li>
             <li className="breadcrumb-item">
               <Link to="#/">米勒星</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to="/travel-mann">曼恩星</Link>
+              <Link to="/travel-UAP-004">曼恩星</Link>
             </li>
             <li className="breadcrumb-item active " aria-current="page">
               柴達星
@@ -51,10 +56,22 @@ function TravelNotes() {
             <li className="breadcrumb-item">
               <Link to="#/">蓋亞花園</Link>
             </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">潘朵拉</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">塞伯坦星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">瓦肯星</Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link to="#/">致遠星</Link>
+            </li>
           </ol>
         </div>
 
-        <Carousel>
+        <Carousel slide={false} fade={false}>
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
@@ -369,13 +386,13 @@ function TravelNotes() {
           <div className="price--1fAWe">
             <span>$599,999</span>起
           </div>
-          <a href="/ticket-order">
+          <Link to="/ticket-order">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             立即報名
-          </a>
+          </Link>
         </form>
       </div>
       <hr className="generalHr" />

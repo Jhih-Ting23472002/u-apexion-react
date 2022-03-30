@@ -5,7 +5,7 @@ import CartQuantity from '../pages/Products/CartQuantity';
 import UserNameF from './UserNameF';
 import SignOut from './SignOut';
 
-function Navbar() {
+function Navbar(props) {
   //購物車內數量
   const { cartTotal } = useContext(CartQuantity);
   //登入
@@ -14,38 +14,41 @@ function Navbar() {
   const { signOut, setSignOut } = useContext(SignOut);
   //註冊連結
   const [register, setRegister] = useState('/member-sign-up');
-  console.log(register)
+  // console.log(register)
+  const { productDetailList,setProductDetailList } = props;
 
   useEffect(() => {
     if (signOut === '登出') {
       setRegister('/member-login');
-    }else{
+    } else {
       setRegister('/member-sign-up');
     }
   }, [signOut]);
-  console.log(register)
+  //console.log(register)
+
+
   return (
     <>
       <div className="topspace"></div>
       <nav>
         <div className="nav_container">
-          <a className="nav_UA-logo" href="#/"></a>
+          <Link to="#/" className="nav_UA-logo"></Link>
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
               <Link to="/travel-index">主題探索</Link>
             </li>
             <li>
-              <Link to="#/">訂票</Link>
+              <Link to="/ticket-order">訂票</Link>
             </li>
             <li>
-              <Link to="/products">購物</Link>
+              <Link to="/products" onClick={()=>{setProductDetailList([])}}>購物</Link>
             </li>
             <li>
               <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to="/member-login">{userNavbar}</Link>
+              <Link to="/member-person">{userNavbar}</Link>
             </li>
             <li></li>
             <li>
@@ -106,7 +109,7 @@ function Navbar() {
           <div className="phone-menu">
             <ul>
               <li>
-                <Link to="#/" data-text="&nbsp;Schedule">
+                <Link to="/travel-index" data-text="&nbsp;Schedule">
                   &nbsp;Schedule
                 </Link>
               </li>

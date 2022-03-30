@@ -68,7 +68,13 @@ const MemberForgotPwd = () => {
         />
       </div>
       {pwdNew.newPassword !== pwdNew.confirmPassword && (
-        <h1 style={{ color: 'white' }}>輸入密碼與驗證密碼不符</h1>
+        <div className=" confirmpassword-p">
+          <p
+            style={{ color: 'red', display: 'flex', justifyContent: 'center' }}
+          >
+            新的密碼與確認密碼不相符
+          </p>
+        </div>
       )}
       <div className="member-btn-container">
         <div>

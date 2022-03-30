@@ -26,25 +26,26 @@ function TicketMeal(props) {
     setChange,
     tripDays,
     tripPrice,
+    memberName,
   } = props;
 
   const memberAPI = config.TK_ORDER_API;
-  const [memberData, setMemberData] = useState([]);
+  // const [memberData, setMemberData] = useState([]);
 
   // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
-  useEffect(() => {
-    (async function () {
-      const response = await fetch(memberAPI, {
-        method: 'GET',
-      });
-      const memberListDatas = await response.json();
-      // console.log(memberListDatas.member_name);
-      console.log(memberListDatas[0].member_name);
-      const memberArray = memberListDatas[0].member_name.split(',');
-      console.log('餐點頁面', memberArray);
-      setMemberData(memberArray);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async function () {
+  //     const response = await fetch(memberAPI, {
+  //       method: 'GET',
+  //     });
+  //     const memberListDatas = await response.json();
+  //     // console.log(memberListDatas.member_name);
+  //     console.log(memberListDatas[0].member_name);
+  //     const memberArray = memberListDatas[0].member_name.split(',');
+  //     console.log('餐點頁面', memberArray);
+  //     setMemberData(memberArray);
+  //   })();
+  // }, []);
 
   useEffect(() => {
     switch (demoImg) {
@@ -178,7 +179,7 @@ function TicketMeal(props) {
               </div>
             </div>
             <div className="menu-select-area">
-              {memberData.map((v, i) => {
+              {memberName.map((v, i) => {
                 return (
                   <div key={i}>
                     <label htmlFor="">{v}</label>
@@ -220,6 +221,7 @@ function TicketMeal(props) {
         seatNumberDemo={seatNumberDemo}
         tripDays={tripDays}
         tripPrice={tripPrice}
+        memberName={memberName}
       />
       )
     </>

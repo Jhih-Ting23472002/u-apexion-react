@@ -18,21 +18,22 @@ function Products(props) {
   );
 
   useEffect(() => {
-    // 新品推薦
-    (async function () {
-      const response = await fetch(ProductsConfig.NEW_Products);
-      const ProductsNew = await response.json();
-      setProductsNew(ProductsNew);
-      // console.log(ProductsNew);
-    })();
+   (// 新品推薦
+      async function () {
+        const response = await fetch(ProductsConfig.NEW_Products);
+        const ProductsNew = await response.json();
+        setProductsNew(ProductsNew);
+        // console.log(ProductsNew);
+      }
+    )();
     // 分類推薦
     (async function () {
       const responseMen = await fetch(ProductsConfig.MEN_Products);
       const ProductMen = await responseMen.json();
       setProductRecommend(ProductMen);
-      // console.log(setProductRecommend);
     })();
   }, []);
+
 
   const WomanProduct = async function () {
     const responseWoman = await fetch(ProductsConfig.Woman_Products);
@@ -209,7 +210,7 @@ function Products(props) {
       <div className="pr-recommendation">
         <h2>時尚推薦</h2>
         <div className="pr-recommendation-a">
-          <Link
+          {/* <Link
             to="#men"
             onClick={() => {
               setProductNavbar('#men');
@@ -218,8 +219,17 @@ function Products(props) {
             className={ProductNavbar === '#men' ? 'active' : ''}
           >
             男士精品
-          </Link>
-          <Link
+          </Link> */}
+          <div
+            onClick={() => {
+              setProductNavbar('#men');
+              MenProduct();
+            }}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
+          >
+            男士精品
+          </div>
+          {/* <Link
             to="#woman"
             onClick={() => {
               setProductNavbar('#woman');
@@ -228,24 +238,31 @@ function Products(props) {
             className={ProductNavbar === '#woman' ? 'active' : ''}
           >
             女士精品
-          </Link>
-          <Link
-            to="#Shoes"
+          </Link> */}
+          <div
+            onClick={() => {
+              setProductNavbar('#woman');
+              WomanProduct();
+            }}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
+          >
+            女士精品
+          </div>
+          <div
             onClick={() => {
               setProductNavbar('#Shoes');
               ShoesProduct();
             }}
-            className={ProductNavbar === '#Shoes' ? 'active' : ''}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
           >
             鞋款
-          </Link>
-          <Link
-            to="#watch"
+          </div>
+          <div
             onClick={() => setProductNavbar('#watch')}
-            className={ProductNavbar === '#watch' ? 'active' : ''}
+            className={ProductNavbar === { setProductNavbar } ? 'active' : ''}
           >
             配件與腕錶
-          </Link>
+          </div>
         </div>
         <div className="pr-container">
           {ProductRecommend.map((Product, i) => {
