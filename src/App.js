@@ -80,8 +80,8 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexFirst from './pages/Index/IndexFirst';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -130,14 +130,14 @@ function App() {
 
   //周邊商品區
   const [productDetailList, setProductDetailList] = useState([]);
-  //console.log('productDetailList', productDetailList); // 測試，by雍
+  console.log('productDetailList', productDetailList); // 測試，by雍
   const [cartTotal, setCartTotal] = useState(0);
   const [userNavbar, setUserNavbar] = useState('登入');
   const [signOut, setSignOut] = useState('註冊');
 
   //客製化商品
   const [customize, setCustomize] = useState([]);
-  console.log('customize', customize);
+  //console.log('customize', customize);
 
   return (
     <CartProvider>
@@ -147,16 +147,14 @@ function App() {
             <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
               <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
                 <SignOut.Provider value={{ signOut, setSignOut }}>
-                  <Navbar />
-                  setProductDetailList={setProductDetailList}
-                  productDetailList={productDetailList}
+                  <Navbar  setProductDetailList={setProductDetailList}/>
                   <Switch>
-                    <Route exact path="/">
+                    {/* <Route exact path="/">
                       <IndexFirst />
                     </Route>
                     <Route exact path="/u-apexion">
                       <IndexMain />
-                    </Route>
+                    </Route> */}
                     <Route exact path="/forum-home">
                       <ForumHomePage />
                     </Route>

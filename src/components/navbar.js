@@ -15,7 +15,7 @@ function Navbar(props) {
   //註冊連結
   const [register, setRegister] = useState('/member-sign-up');
   // console.log(register)
-  const { productDetailList,setProductDetailList } = props;
+  const { setProductDetailList } = props;
 
   useEffect(() => {
     if (signOut === '登出') {
@@ -25,7 +25,6 @@ function Navbar(props) {
     }
   }, [signOut]);
   //console.log(register)
-
 
   return (
     <>
@@ -42,13 +41,15 @@ function Navbar(props) {
               <Link to="/ticket-order">訂票</Link>
             </li>
             <li>
-              <Link to="/products" onClick={()=>{setProductDetailList([])}}>購物</Link>
+              <Link to="/products" onClick={()=>setProductDetailList([])}>
+                購物
+              </Link>
             </li>
             <li>
               <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to="/member-person">{userNavbar}</Link>
+              <Link to="/member-login">{userNavbar}</Link>
             </li>
             <li></li>
             <li>
