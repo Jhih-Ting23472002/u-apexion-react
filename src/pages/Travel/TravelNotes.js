@@ -196,7 +196,7 @@ function TravelNotes() {
             <Carousel.Caption>
               <h2 className="carouselh4">太空布丁space pudding</h2>
               <p className="carouselp">
-                我們的太空商品「太空布丁」外觀呈現正方形的黄色塊狀。但味道就是正統的「布丁」喔！有濃濃的布丁味。
+                此款太空商品「太空布丁」外觀呈現正方形的黄色塊狀。但味道就是正統的「布丁」喔！有濃濃的布丁味。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
