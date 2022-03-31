@@ -80,8 +80,8 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
-// import IndexFirst from './pages/Index/IndexFirst';
-// import IndexMain from './pages/Index/IndexMain';
+import IndexFirst from './pages/Index/IndexFirst';
+import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -147,14 +147,14 @@ function App() {
             <UserNameF.Provider value={{ userNavbar, setUserNavbar }}>
               <CartQuantity.Provider value={{ cartTotal, setCartTotal }}>
                 <SignOut.Provider value={{ signOut, setSignOut }}>
-                  <Navbar  setProductDetailList={setProductDetailList}/>
+                  <Navbar setProductDetailList={setProductDetailList} />
                   <Switch>
-                    {/* <Route exact path="/">
+                    <Route exact path="/">
                       <IndexFirst />
                     </Route>
                     <Route exact path="/u-apexion">
                       <IndexMain />
-                    </Route> */}
+                    </Route>
                     <Route exact path="/forum-home">
                       <ForumHomePage />
                     </Route>
