@@ -56,6 +56,7 @@ const CartChoosePayment = props => {
             setTripDate={props.setTripDate}
             mealSelected={props.mealSelected}
             setMealSelected={props.setMealSelected}
+            memberName={props.memberName}
           />
 
           {/* <SuitCard />
