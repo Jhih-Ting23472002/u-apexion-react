@@ -54,7 +54,9 @@ function TravelIndex() {
                   type="search"
                   placeholder="請輸入產品名/關鍵字/產品代碼 ex.巨蟹座 or 火星 or UAT-001"
                 />
-                <button>Search</button>
+                <Link to="/travelchoose-UAS-004">
+                  <button>Search</button>
+                </Link>
               </form>
             </section>
           </div>

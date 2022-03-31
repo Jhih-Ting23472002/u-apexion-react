@@ -64,6 +64,7 @@ import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
 import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
 import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
 import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+import TravelIndexSearch from './pages/Travel/TravelIndexSearch';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -94,7 +95,7 @@ function App() {
   const [mealSelected, setMealSelected] = useState([]);
   const [change, setChange] = useState(0);
   const [memberName, setMemberName] = useState([]);
- 
+
   console.log('成員', memberName);
   console.log('行程', tripSelected);
   console.log('出發日期', tripDate);
@@ -140,7 +141,7 @@ function App() {
   //客製化商品
   const [customize, setCustomize] = useState([]); // 椅子
   const [craft, setCraft] = useState([]); // 火箭
-  console.log(craft)
+  console.log(craft);
 
   return (
     <CartProvider>
@@ -249,6 +250,10 @@ function App() {
                     <Route path="/travelchoose-dayf">
                       <TravelChooseDayF />
                     </Route>
+                    <Route path="/travelchoose-UAS-004">
+                      <TravelIndexSearch />
+                    </Route>
+
                     {/* 訂票頁面 */}
                     <Route path="/ticket-order">
                       <Ticket setMemberName={setMemberName} />
@@ -306,10 +311,13 @@ function App() {
                       <CustomizeSuit />
                     </Route>
                     <Route path="/customize-craft">
-                      <CustomizeCraft setCraft={setCraft}/>
+                      <CustomizeCraft setCraft={setCraft} />
                     </Route>
                     <Route path="/customize-seat">
-                      <CustomizeSeat setCustomize={setCustomize} craft={craft}/>
+                      <CustomizeSeat
+                        setCustomize={setCustomize}
+                        craft={craft}
+                      />
                     </Route>
                     <Route path="/customize-order"></Route>
                     <Route path="/trans-mainpage"></Route>
