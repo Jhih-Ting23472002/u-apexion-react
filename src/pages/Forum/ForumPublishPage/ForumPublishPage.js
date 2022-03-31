@@ -23,7 +23,7 @@ const ErrorMessage = styled.div`
   color: red;
 `;
 
-export default function ForumPublishPage() {
+export default function ForumPublishPage(props) {
   const [posts, setPosts] = useState([]);
   const [titleValue, setTitleValue] = useState(null);
   const [contentValue, setContentValue] = useState(null);
@@ -32,9 +32,10 @@ export default function ForumPublishPage() {
   const [hashtagtwoValue, setHashTagTwoValue] = useState(null);
   const [fileSrc, setFileSrc] = useState(null);
   const [postApiError, setPostApiError] = useState(null);
+  const { setNewPost, newpost } = props;
 
   const userId = localStorage.getItem('user_id');
-  console.log(userId);
+  // console.log(userId);
 
   const user_name = localStorage.getItem('user_name');
 
@@ -73,26 +74,17 @@ export default function ForumPublishPage() {
     fetch('http://localhost:3001/forum_index/forumArticle_insert', {
       // 修改
       method: 'POST',
-      // headers: {
-      //   'Content-Type': 'multipart/form-data',
-      // },
-      // body: JSON.stringify({
-      //   art_category_sid: categoryValue,
-      //   art_title: titleValue,
-      //   art_content: contentValue,
-      //   hashtag1: hashtagOneValue,
-      //   hashtag2: hashtagtwoValue,
-      // }),
       body: fd,
     })
-      .then(res => res.jon())
+      .then(res => res.json())
       .then(data => {
-        return fetch('http://localhost:3001/forum-list-connectTry')
-          .then(res => res.json())
-          .then(posts => setPosts(posts));
-      })
-      .catch(error => {
-        setPostApiError(error.message);
+        setTimeout(() => {
+          if (newpost === true) {
+            setNewPost(false);
+          } else {
+            setNewPost(true);
+          }
+        }, 5000);
       });
     history.push('/forum-home');
   };
