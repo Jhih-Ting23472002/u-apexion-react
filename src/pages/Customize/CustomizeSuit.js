@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import './CustomizeSuit.css';
-import whiteSuit from './images/spacesuit-white.png';
-import orangeSuit from './images/spacesuit-orange.png';
-import blueSuit from './images/spacesuit-blue.png';
-import noSelect from './images/noselect.png';
 const allCountry = [
   '/customize_img/america.png',
   '/customize_img/canada.png',
@@ -77,7 +73,11 @@ function CustomizeSuit() {
             />
             <img
               className="image-mirrow-img"
-              src={suitImg.length === 0 ? whiteSuit : suitImg}
+              src={
+                suitImg.length === 0
+                  ? '/customize_img/spacesuit-white.png'
+                  : suitImg
+              }
               style={{ opacity: opa }}
               alt=""
             />
@@ -177,7 +177,11 @@ function CustomizeSuit() {
             />
             <img
               className="suitcanvas"
-              src={suitImg.length === 0 ? whiteSuit : suitImg}
+              src={
+                suitImg.length === 0
+                  ? '/customize_img/spacesuit-white.png'
+                  : suitImg
+              }
               alt=""
               style={{ opacity: opa }}
             />
@@ -200,7 +204,7 @@ function CustomizeSuit() {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   // 讓圖片淡入
-                  const newImg = whiteSuit;
+                  const newImg = '/customize_img/spacesuit-white.png';
                   setSuitImg(newImg);
                   // 載入圖片
                 }, 700);
@@ -224,7 +228,7 @@ function CustomizeSuit() {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   // 讓圖片淡入
-                  const newImg = orangeSuit;
+                  const newImg = '/customize_img/spacesuit-orange.png';
                   setSuitImg(newImg);
                   // 載入圖片
                 }, 700);
@@ -248,7 +252,7 @@ function CustomizeSuit() {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   // 讓圖片淡入
-                  const newImg = blueSuit;
+                  const newImg = '/customize_img/spacesuit-blue.png';
                   setSuitImg(newImg);
                   // 載入圖片
                 }, 700);
@@ -300,7 +304,7 @@ function CustomizeSuit() {
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={noSelect} alt="" />
+                <img src={'/customize_img/noselect.png'} alt="" />
               </div>
             </div>
           </div>
@@ -338,7 +342,7 @@ function CustomizeSuit() {
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={noSelect} alt="" />
+                <img src={'/customize_img/noselect.png'} alt="" />
               </div>
             </div>
           </div>
