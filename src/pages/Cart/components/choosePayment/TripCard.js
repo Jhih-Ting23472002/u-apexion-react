@@ -11,6 +11,8 @@ const TripCard = props => {
     setTripDate,
     mealSelected,
     setMealSelected,
+    cartTripTotal,
+    setCartTripTotal,
     memberName,
   } = props;
 
@@ -29,7 +31,7 @@ const TripCard = props => {
 
   console.log('購物車訂票資訊', ticketArr);
   console.log('tripPrice', tripPrice);
-  let tripMoney = tripPrice;
+  let tripMoney = ticketArr[0].price;
   console.log(tripMoney);
   console.log(mealSelected);
   console.log(
@@ -38,11 +40,11 @@ const TripCard = props => {
     'tripDate:returnDate',
     tripDate.returnDate,
     'mealSelected',
-    mealSelected,
-    'mealSelected:USER1',
-    mealSelected.USER1
+    mealSelected
   );
+  setCartTripTotal(ticketArr[0].price);
 
+  // setTripPrice(ticketArr[0].price);
   return (
     <>
       <div className="cart separated-line"></div>
@@ -55,7 +57,7 @@ const TripCard = props => {
             <div className="content-detail-inside-top-ticket">
               <div className="cart-ticket-destination">
                 <h5 className="cart-trip-name">行程:{tripSelected}</h5>
-                <h5 className="cart-trip-food">餐點:{mealSelected.USER1}</h5>
+                <h5 className="cart-trip-food">餐點:{ticketArr[0].meal}</h5>
               </div>
               <div className="cart-ticket-during">
                 <h5 className="cart-start-time">
@@ -65,7 +67,7 @@ const TripCard = props => {
               </div>
             </div>
             <div className="content-detail-inside-bottom-ticket">
-              <h5 className="cart-number-people">人數 4</h5>
+              <h5 className="cart-number-people">人數{ticketArr[0].people}</h5>
               <button className="btn cart-remove-btn">remove</button>
               <div className="cart-order-money">${tripMoney}</div>
             </div>

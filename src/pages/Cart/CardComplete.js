@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import './CardComplete.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import CartQuantity from '../Products/CartQuantity';
 
 const CardComplete = props => {
@@ -10,8 +10,11 @@ const CardComplete = props => {
     tripSelected,
     tripPrice,
     cartTotalPrice,
+    cartTripTotal,
     cartOrderListNumber, // 訂單編號
   } = props;
+
+  const history = useHistory();
 
   // let orderListNumber = Math.floor(Math.random() * 100000000000);
   // console.log('orderListNumber', orderListNumber);
@@ -46,7 +49,7 @@ const CardComplete = props => {
           </div>
           <div className="cart d-flex justify-content-center py-5 total-price-text deal-receipt">
             <p>
-              付款已完成，交易金額為${cartTotalPrice + +tripPrice}
+              付款已完成，交易金額為${cartTotalPrice + cartTripTotal}
               元。
             </p>
             <br />
@@ -85,7 +88,7 @@ const CardComplete = props => {
               <div className="product-trip-custom d-flex align-items-center">
                 <div className="col-5 text-center">{tripSelected}</div>
                 <div className="col-4 text-center">1</div>
-                <div className="col-3 text-center">${+tripPrice}</div>
+                <div className="col-3 text-center">${cartTripTotal}</div>
               </div>
 
               {/* 共 2 項商品，總金額$500  */}
@@ -95,7 +98,7 @@ const CardComplete = props => {
                   共 {totalProductItem + 1} 項商品，總金額
                 </div>
                 <div className="col-3 text-center">
-                  ${cartTotalPrice + +tripPrice}
+                  ${cartTotalPrice + cartTripTotal}
                 </div>
               </div>
 
@@ -104,31 +107,43 @@ const CardComplete = props => {
                 <div className="col-5"></div>
                 <div className="col-4 text-center">本訂單已付款金額</div>
                 <div className="col-3 text-center">
-                  ${cartTotalPrice + +tripPrice}
+                  ${cartTotalPrice + cartTripTotal}
                 </div>
               </div>
             </div>
           </div>
-          <div className="d-flex justify-content-between">
-            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+          <div className="d-flex justify-content-around">
+            <Link
+              className="col-2 btn cart-link to-other-page mt-5"
+              to={'/travel-index'}
+            >
               回首頁
             </Link>
-            <div className="col-1"></div>
-            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+            {/* <div className="col-1"></div> */}
+            <Link
+              className="col-2 btn cart-link to-other-page mt-5"
+              to={'/products'}
+            >
               繼續購物
             </Link>
-            <div className="col-1"></div>
-            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
-              登出
-            </Link>
-            <div className="col-1"></div>
-            <button
-              type="button"
+            {/* <div className="col-1"></div> */}
+            {/* <Link
               className="col-2 btn cart-link to-other-page mt-5"
-              to={''}
+              to={'/member-login'}
+              onClick={() => {
+                localStorage.clear();
+                history.push('/member-login');
+              }}
+            >
+              登出
+            </Link> */}
+            {/* <div className="col-1"></div> */}
+            <Link
+              className="col-2 btn cart-link to-other-page mt-5"
+              to={'/member-person'}
             >
               會員專區
-            </button>
+            </Link>
           </div>
         </div>
       </div>

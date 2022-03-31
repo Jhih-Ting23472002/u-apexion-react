@@ -130,12 +130,12 @@ export default function ForumSinglePostPage() {
   const history = useHistory();
   const [imgSrc, setImgSrc] = useState();
 
-  function SinglePostResponsesArea({ name, res_content, res_time }) {
+  function SinglePostResponsesArea({ name, res_content, res_time, user_img }) {
     return (
       <div className="forum_response_area">
         <div className="forum_response_user">
           <div className="forum_response_user_img">
-            <img src="" alt="" />
+            <img src={`./index_img/${user_img}`} alt="" />
           </div>
           <div className="forum_response_user_name_time">
             <div className="forum_user_name">@{name}</div>
@@ -331,6 +331,7 @@ export default function ForumSinglePostPage() {
                         name={v.name}
                         res_time={new Date(v.res_time).toLocaleString()}
                         res_content={v.res_content}
+                        user_img={v.img}
                       ></SinglePostResponsesArea>
                     );
                   })}
@@ -364,7 +365,7 @@ export default function ForumSinglePostPage() {
               <div className="forum_right__user_img">
                 <img
                   className="forum_img"
-                  src={`http://localhost:3000/index_img/member5.png`}
+                  src={`http://localhost:3000/index_img/${post && post.imgs}`}
                   alt=""
                 />
                 {/* ????????why????? */}

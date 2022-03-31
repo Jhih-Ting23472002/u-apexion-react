@@ -3,18 +3,17 @@ import './TravelChoose.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function TravelChoosePM() {
-  const [TravelChooseM, setTravelChooseM] = useState([]);
+function TravelIndexSearch() {
+  const [TravelChooseF, setTravelChooseF] = useState([]);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-choose-pmf/api/travel-choosem'
+        'http://localhost:3001/travel-index-search/api/travel-choose-UAS-004'
       );
-      const TravelChooseM = await response.json();
-      setTravelChooseM(TravelChooseM);
-      console.log(TravelChooseM);
+      const TravelChooseF = await response.json();
+      setTravelChooseF(TravelChooseF);
+      console.log(TravelChooseF);
     })();
   }, []);
 
@@ -23,7 +22,7 @@ function TravelChoosePM() {
     setLoading(true);
 
     //載入資料
-    setTravelChooseM([]);
+    setTravelChooseF([]);
     //X秒後,開啟載入資料指示
     setTimeout(() => setLoading(false), 2000);
   }, []);
@@ -48,7 +47,7 @@ function TravelChoosePM() {
       <div className="container choosecontainer">
         <div className="position-relative">
           <div className="list">
-            {TravelChooseM.map((c, i) => {
+            {TravelChooseF.map((c, i) => {
               return (
                 <React.Fragment key={i}>
                   <div className="item pl-4">
@@ -146,4 +145,4 @@ function TravelChoosePM() {
   );
 }
 
-export default TravelChoosePM;
+export default TravelIndexSearch;

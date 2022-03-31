@@ -47,7 +47,7 @@ function Navbar(props) {
       <div className="topspace"></div>
       <nav>
         <div className="nav_container">
-          <Link to="#/" className="nav_UA-logo"></Link>
+          <Link to="/" className="nav_UA-logo"></Link>
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>

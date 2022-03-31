@@ -82,65 +82,62 @@ function TravelChoose() {
 
   return (
     <>
-      <section className="py-5">
-        <div className="container choosecontainer">
-          <div className="position-relative">
-            <div className="text-white px-3 pt-3 my-5">
-              <div className="row align-items-center filters">
-                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
-                  <Link to="/travel-choose">
-                    <button className="sortitemBuyButton">全部行程</button>
-                  </Link>
-                </div>
-                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
-                  <Link to="/travelchoose-pricef">
-                    <button className="sortitemBuyButton">價格:低到高</button>
-                  </Link>
-                  <Link to="/travelchoose-pricem">
-                    <button className="sortitemBuyButton">價格:高到低</button>
-                  </Link>
-                </div>
-                <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
-                  <Link to="/travelchoose-dayf">
-                    <button className="sortitemBuyButton">天數:少至多</button>
-                  </Link>
-                  <Link to="/travelchoose-daym">
-                    <button className="sortitemBuyButton">天數:多至少</button>
-                  </Link>
-                </div>
-                <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">
-                  <div className="webdesigntuts-workshopchoose">
-                    <form
-                      onSubmit={e => {
-                        e.preventDefault();
-                        fetch(
-                          config.CHOOSE_LIST +
-                            '?search=' +
-                            e.target.search.value
-                        )
-                          .then(r => r.json())
-                          .then(travelobj => {
-                            console.log(travelobj);
-                            setData(travelobj);
-                          });
-                      }}
-                    >
-                      <input
-                        type="search"
-                        placeholder="請輸入產品名/關鍵字/產品代碼 ex.巨蟹座 or 火星 or UAT-001"
-                        aria-label="Search"
-                        name="search"
-                      />
-                      <button type="submit">Search</button>
-                    </form>
-                  </div>
+      <div className="container choosecontainer">
+        <div className="position-relative">
+          <div className="text-white px-3 pt-3 my-5">
+            <div className="row align-items-center filters">
+              <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                <Link to="/travel-choose">
+                  <button className="sortitemBuyButton">全部行程</button>
+                </Link>
+              </div>
+              <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                <Link to="/travelchoose-pricef">
+                  <button className="sortitemBuyButton">價格:低到高</button>
+                </Link>
+                <Link to="/travelchoose-pricem">
+                  <button className="sortitemBuyButton">價格:高到低</button>
+                </Link>
+              </div>
+              <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
+                <Link to="/travelchoose-dayf">
+                  <button className="sortitemBuyButton">天數:少至多</button>
+                </Link>
+                <Link to="/travelchoose-daym">
+                  <button className="sortitemBuyButton">天數:多至少</button>
+                </Link>
+              </div>
+              <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">
+                <div className="webdesigntuts-workshopchoose">
+                  <form
+                    onSubmit={e => {
+                      e.preventDefault();
+                      fetch(
+                        config.CHOOSE_LIST + '?search=' + e.target.search.value
+                      )
+                        .then(r => r.json())
+                        .then(travelobj => {
+                          console.log(travelobj);
+                          setData(travelobj);
+                        });
+                    }}
+                  >
+                    <input
+                      type="search"
+                      placeholder="請輸入產品名/關鍵字/產品代碼 ex.巨蟹座 or 火星 or UAT-001"
+                      aria-label="Search"
+                      name="search"
+                    />
+                    <button type="submit">Search</button>
+                  </form>
                 </div>
               </div>
             </div>
-            <div className="list">{renderMe(data)}</div>
           </div>
+          <div className="list">{renderMe(data)}</div>
         </div>
-      </section>
+      </div>
+
       <div className="morechoose">
         {data.rows && data.rows.length ? (
           <div aria-label="Page navigation example">

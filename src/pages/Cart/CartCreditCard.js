@@ -13,18 +13,52 @@ const CartCreditCard = props => {
   const [focus, setFocus] = useState('');
   // const [productFinalName, setProductFinalName] = useState('');
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const {
     cartOrderListNumber,
     setCartOrderListNumber,
     tripSelected,
     tripPrice,
+    memberName,
     productDetailList,
+    cartTripTotal,
   } = props;
+
+  const ticketArr = [
+    {
+      trip: tripSelected,
+      quantity: 1,
+      people: memberName.length,
+      price: parseInt(tripPrice) * memberName.length,
+    },
+  ];
+
+  const productTina = [];
+  for (let i in ticketArr) {
+    const TinaName = ticketArr[i].trip;
+    productTina.push(TinaName);
+    console.log(productTina);
+  }
+
+  const productTinaQuantity = [];
+  for (let i in ticketArr) {
+    const TinaQuantity = ticketArr[i].quantity;
+    productTinaQuantity.push(TinaQuantity);
+  }
+
+  const productTinaPrice = [];
+  for (let i in ticketArr) {
+    const TinaPrice = ticketArr[i].price;
+    productTinaPrice.push(TinaPrice);
+  }
 
   // 購買智婷每一筆商品名稱的陣列，初始值為空
   let productJTing = [];
 
-  // 跑回圈，完全不懂我到底會什麼？一直拖別人後腿，我不知道為何是 『 for in 』 ， 不能用 『 for of 或 for 』嗎？？？？？？
+  // 跑回圈，我不知道為何是 『 for in 』 ， 不能用 『 for of 或 for 』嗎？？？？？？
   for (let i in productDetailList) {
     // 跑回圈取到每一筆資料的名稱
     const JTingName = productDetailList[i].name;
@@ -39,7 +73,7 @@ const CartCreditCard = props => {
   // 購買智婷每一筆商品數量的陣列，初始值為空
   let productJTingQuantity = [];
 
-  // 跑回圈，完全不懂我到底會什麼？一直拖別人後腿，我不知道為何是 『 for in 』 ， 不能用 『 for of 或 for 』嗎？？？？？？
+  // 跑回圈，我不知道為何是 『 for in 』 ， 不能用 『 for of 或 for 』嗎？？？？？？
   for (let i in productDetailList) {
     // 跑回圈取到每一筆資料的數量
     const JTingQuantity = productDetailList[i].total;
@@ -54,7 +88,7 @@ const CartCreditCard = props => {
   // 購買智婷每一筆商品價錢的陣列，初始值為空
   let productJTingPrice = [];
 
-  // 跑回圈，完全不懂我到底會什麼？一直拖別人後腿，我不知道為何是 『 for in 』 ， 不能用 『 for of 或 for 』嗎？？？？？？
+  // 跑回圈，我不知道為何是 『 for in 』 ， 不能用 『 for of 或 for 』嗎？？？？？？
   for (let i in productDetailList) {
     // 跑回圈取到每一筆資料的價錢
     const JTingPrice = productDetailList[i].price;
@@ -67,19 +101,28 @@ const CartCreditCard = props => {
   let orderListNumber = Math.floor(Math.random() * 1000000 + 10000000); // 訂單編號
   const userId = localStorage.getItem('user_id');
 
+  const productJTingTina = []; // JTingTina 商品名稱分別加總
+  productJTingTina.push(productJTing, productTina);
+
+  const productJTingTinaQuantity = []; // JTingTina 商品數量分別加總
+  productJTingTinaQuantity.push(productJTingQuantity, productTinaQuantity);
+
+  const productJTingTinaPrice = []; // JTingTina 商品價錢分別加總
+  productJTingTinaPrice.push(productJTingPrice, productTinaPrice);
+
   const sendOrderDeatilHandler = e => {
     setCartOrderListNumber(orderListNumber);
     //console.log('orderListNumber', orderListNumber);  測試是否印成功
-    alert('金額核對完畢，確認送出？');
+    // alert('金額核對完畢，確認送出？');
     fetch('http://localhost:3001/cart/order-list-post', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         orderListNumber,
         userId,
-        productJTing,
-        productJTingQuantity,
-        productJTingPrice,
+        productJTingTina, // productJTing + productTina
+        productJTingTinaQuantity,
+        productJTingTinaPrice,
       }),
     }).then(res => res.json());
   };
@@ -142,19 +185,27 @@ const CartCreditCard = props => {
             <Link to={'/cart-complete'} className="mx-3">
               <button
                 type="button"
-                onClick={sendOrderDeatilHandler}
+                onClick={() => {
+                  sendOrderDeatilHandler();
+                  // handleShow();
+                }}
                 className="btn card-confirm cart-link"
               >
                 確認付款 (Confirm)
               </button>
             </Link>
             <div className="card-trade mx-3">
-              交易金額 ${props.cartTotalPrice + +props.tripPrice}
+              交易金額 ${props.cartTotalPrice + cartTripTotal}
             </div>
           </div>
         </div>
       </div>
-      <CartCreditCardModal />
+      {/* <CartCreditCardModal
+        show={show}
+        setShow={setShow}
+        handleClose={handleClose}
+        handleShow={handleShow}
+      /> */}
     </>
   );
 };
