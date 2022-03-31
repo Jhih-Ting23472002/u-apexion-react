@@ -15,3 +15,58 @@ element.style {
   position: relative;
   box-shadow: -5px 5px 20px black;
 }
+
+.ticket-error-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.ticket-error-body p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.ticket-error-footer {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.ticket-error-btn {
+  background-color: var(--main-color-02);
+  color: #000000;
+  width: fit-content;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  background-color: '#05DBF2';
+  color: '#00002D';
+  text-decoration: none;
+}
+
+.ticket-error-btn::after {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 1px solid #093866;
+  border-radius: 15px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.ticket-error-btn:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  border: 4px double white;
+}

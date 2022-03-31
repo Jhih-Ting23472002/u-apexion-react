@@ -79,6 +79,6 @@
     margin: 1.75rem auto;
   }
   .modal-content {
-    height: 750px;
+    min-height: 200px;
   }
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styled from 'styled-components';
@@ -6,8 +6,10 @@ import './ticket.css';
 import './TicketConfirmModal.css';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import config from './Config';
+import CartQuantity from '../Products/CartQuantity';
 
 function TicketOrderModal(props) {
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
   const {
     mealSelected,
     tripSelected,
@@ -52,6 +54,8 @@ function TicketOrderModal(props) {
   //     setMemberData(memberArray);
   //   })();
   // }, []);
+
+
 
   return (
     <Modal
@@ -122,7 +126,7 @@ function TicketOrderModal(props) {
           修改
         </Button>
         <div>
-          <Button onClick={props.onHide} className="ticket-confirm-btn">
+          <Button onClick={()=> setCartTotal(cartTotal + 1)} className="ticket-confirm-btn">
             加購客製化服務
           </Button>
           <Link
