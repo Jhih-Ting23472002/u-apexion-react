@@ -25,7 +25,7 @@ function TravelChooseDM() {
     //載入資料
     setTravelChooseM([]);
     //X秒後,開啟載入資料指示
-    setTimeout(() => setLoading(false), 700);
+    setTimeout(() => setLoading(false), 3000);
   }, []);
 
   const spinner = (
@@ -141,7 +141,7 @@ function TravelChooseDM() {
       </div>
 
       {loading ? spinner : display}
-      <hr className="generalHr" />
+      <hr className="generalHr chr" />
     </>
   );
 }
