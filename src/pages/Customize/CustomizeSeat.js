@@ -122,6 +122,7 @@ function CustomizeSeat(props) {
         onHide={() => setModalShow(false)}
         setCustomize={setCustomize}
         seatColor={style}
+        craft={craft}
       />
     </>
   );

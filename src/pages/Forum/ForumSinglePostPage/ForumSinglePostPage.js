@@ -175,7 +175,10 @@ export default function ForumSinglePostPage() {
   };
 
   const handleDeletePost = e => {
-    if (userId !== post.forum_user_sid) {
+    if (parseInt(userId) !== parseInt(post.forum_user_sid)) {
+      console.log(post.forum_user_sid);
+      console.log('userId', userId);
+      console.log('clicked');
       return;
     } else {
       alert('確認刪除嗎？');
@@ -186,6 +189,8 @@ export default function ForumSinglePostPage() {
     }
   };
 
+  const userId = localStorage.getItem('user_id');
+
   const handleFormSubmit = e => {
     // e.preventDefault()
     fetch(`http://localhost:3001/forum_index/res-list/${sid}`, {
@@ -195,6 +200,7 @@ export default function ForumSinglePostPage() {
       },
       body: JSON.stringify({
         res_content: value,
+        res_user: userId,
       }),
     })
       .then(res => res.json())
@@ -358,7 +364,7 @@ export default function ForumSinglePostPage() {
               <div className="forum_right__user_img">
                 <img
                   className="forum_img"
-                  src={`http://localhost:3000/index_img/member5.png`}
+                  src={`http://localhost:3000/index_img/${post && post.imgs}`}
                   alt=""
                 />
                 {/* ????????why????? */}
