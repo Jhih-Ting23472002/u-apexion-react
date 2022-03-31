@@ -10,6 +10,7 @@ const CardComplete = props => {
     tripSelected,
     tripPrice,
     cartTotalPrice,
+    cartTripTotal,
     cartOrderListNumber, // 訂單編號
   } = props;
 
@@ -48,7 +49,7 @@ const CardComplete = props => {
           </div>
           <div className="cart d-flex justify-content-center py-5 total-price-text deal-receipt">
             <p>
-              付款已完成，交易金額為${cartTotalPrice + +tripPrice}
+              付款已完成，交易金額為${cartTotalPrice + cartTripTotal}
               元。
             </p>
             <br />
@@ -87,7 +88,7 @@ const CardComplete = props => {
               <div className="product-trip-custom d-flex align-items-center">
                 <div className="col-5 text-center">{tripSelected}</div>
                 <div className="col-4 text-center">1</div>
-                <div className="col-3 text-center">${+tripPrice}</div>
+                <div className="col-3 text-center">${cartTripTotal}</div>
               </div>
 
               {/* 共 2 項商品，總金額$500  */}
@@ -97,7 +98,7 @@ const CardComplete = props => {
                   共 {totalProductItem + 1} 項商品，總金額
                 </div>
                 <div className="col-3 text-center">
-                  ${cartTotalPrice + +tripPrice}
+                  ${cartTotalPrice + cartTripTotal}
                 </div>
               </div>
 
@@ -106,7 +107,7 @@ const CardComplete = props => {
                 <div className="col-5"></div>
                 <div className="col-4 text-center">本訂單已付款金額</div>
                 <div className="col-3 text-center">
-                  ${cartTotalPrice + +tripPrice}
+                  ${cartTotalPrice + cartTripTotal}
                 </div>
               </div>
             </div>

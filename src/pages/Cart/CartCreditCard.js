@@ -23,6 +23,7 @@ const CartCreditCard = props => {
     tripSelected,
     tripPrice,
     productDetailList,
+    cartTripTotal,
   } = props;
 
   // 購買智婷每一筆商品名稱的陣列，初始值為空
@@ -156,7 +157,7 @@ const CartCreditCard = props => {
               </button>
             </Link>
             <div className="card-trade mx-3">
-              交易金額 ${props.cartTotalPrice + +props.tripPrice}
+              交易金額 ${props.cartTotalPrice + cartTripTotal}
             </div>
           </div>
         </div>
