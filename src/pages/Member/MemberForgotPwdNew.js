@@ -21,7 +21,7 @@ const MemberForgotPwd = () => {
 
   const pwdNewConfirmHandle = () => {
     if (pwdNew.newPassword !== pwdNew.confirmPassword) {
-      alert('輸入密碼與驗證密碼不符');
+      alert('輸入的新密碼與確認密碼不符');
       return;
     }
     pwdNewConfirm(pwdNew.newPassword, forgotsid).then(obj => {

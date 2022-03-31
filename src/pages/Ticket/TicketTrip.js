@@ -3,10 +3,12 @@ import stepCircle from './img/stepCircle.png';
 import stepCircleMb from './img/stepCircle-mb.png';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function TicketTrip(props) {
   const [tripData, setTripData] = useState([]);
   const [distance, setDistance] = useState(0);
+  // const [addAni, setAddAni] = useState(false);
 
   useEffect(() => {
     (async function () {
@@ -16,9 +18,11 @@ function TicketTrip(props) {
       const tripDatas = await response.json();
       setTripData(tripDatas);
     })();
-  }, []);
 
-  useEffect(() => {}, []);
+    //setTimeout(function () {
+    // setAddAni(true);
+    //}, 700);
+  }, []);
 
   const StarsingHandle = async function () {
     const response = await fetch(
@@ -107,14 +111,23 @@ function TicketTrip(props) {
   return (
     <>
       <div className="ticket-container">
-        <div className="step-circle">
+        {/* <div className="step-circle" style={{ animation: addAni }}> */}
+
+        <motion.div
+          className="step-circle"
+          animate={{ x: [0, 0], rotate: [70, 0] }}
+          transition={{ duration: 2 }}
+        >
+          {/* <div className="step-circle"> */}
           <img className="step-circle-img" src={stepCircle} alt="" />
           <img className="step-circle-mb" src={stepCircleMb} alt="" />
           <div className="ticket-steps">
             <p>STEP</p>
             <p>1</p>
           </div>
-        </div>
+          {/* </div> */}
+        </motion.div>
+
         <div className="ticket-trip">
           <div className="ticket-trip-wrap">
             <div

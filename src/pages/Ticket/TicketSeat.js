@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 import SeatSvgFile from './SeatSvgFile';
 import SeatDrag from './SeatDrag';
 import config from './Config';
+import { motion } from 'framer-motion';
 
 function TicketSeat(props) {
   const { tripDate, seatNumberDemo, setSeatNumberDemo, memberName } = props;
@@ -95,14 +96,18 @@ function TicketSeat(props) {
   return (
     <>
       <div class="ticket-container">
-        <div class="step-circle">
+        <motion.div
+          className="step-circle"
+          animate={{ x: [0, 0], rotate: [70, 0] }}
+          transition={{ duration: 2 }}
+        >
           <img className="step-circle-img" src={stepCircle} alt="" />
           <img className="step-circle-mb" src={stepCircleMb} alt="" />
           <div className="ticket-steps">
             <p>STEP</p>
             <p>3</p>
           </div>
-        </div>
+        </motion.div>
         <div class="ticket-seat">
           <div class="ticket-seat-wrap">
             <h2>請選擇 艙位及座位</h2>

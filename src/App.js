@@ -64,6 +64,7 @@ import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
 import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
 import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
 import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+import TravelIndexSearch from './pages/Travel/TravelIndexSearch';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -94,7 +95,7 @@ function App() {
   const [mealSelected, setMealSelected] = useState([]);
   const [change, setChange] = useState(0);
   const [memberName, setMemberName] = useState([]);
- 
+
   console.log('成員', memberName);
   console.log('行程', tripSelected);
   console.log('出發日期', tripDate);
@@ -140,7 +141,10 @@ function App() {
   //客製化商品
   const [customize, setCustomize] = useState([]); // 椅子
   const [craft, setCraft] = useState([]); // 火箭
-  console.log(craft)
+  console.log(craft);
+
+  // forum
+  const [newpost, setNewPost] = useState(false);
 
   return (
     <CartProvider>
@@ -159,13 +163,16 @@ function App() {
                       <IndexMain />
                     </Route>
                     <Route exact path="/forum-home">
-                      <ForumHomePage />
+                      <ForumHomePage newpost={newpost} />
                     </Route>
                     <Route path="/forum-home/posts/:sid">
                       <ForumSinglePostPage />
                     </Route>
                     <Route path="/publish">
-                      <ForumPublishPage />
+                      <ForumPublishPage
+                        newpost={newpost}
+                        setNewPost={setNewPost}
+                      />
                     </Route>
                     <Route path="/publish-edit/:sid">
                       <ForumPublishUpdatePage />
@@ -249,6 +256,10 @@ function App() {
                     <Route path="/travelchoose-dayf">
                       <TravelChooseDayF />
                     </Route>
+                    <Route path="/travelchoose-UAS-004">
+                      <TravelIndexSearch />
+                    </Route>
+
                     {/* 訂票頁面 */}
                     <Route path="/ticket-order">
                       <Ticket setMemberName={setMemberName} />
@@ -306,10 +317,13 @@ function App() {
                       <CustomizeSuit />
                     </Route>
                     <Route path="/customize-craft">
-                      <CustomizeCraft setCraft={setCraft}/>
+                      <CustomizeCraft setCraft={setCraft} />
                     </Route>
                     <Route path="/customize-seat">
-                      <CustomizeSeat setCustomize={setCustomize} craft={craft}/>
+                      <CustomizeSeat
+                        setCustomize={setCustomize}
+                        craft={craft}
+                      />
                     </Route>
                     <Route path="/customize-order"></Route>
                     <Route path="/trans-mainpage"></Route>
@@ -389,6 +403,7 @@ function App() {
                         cartTripTotal={cartTripTotal} // 票券總金額
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
                         setCartOrderListNumber={setCartOrderListNumber} // 訂單編號後來的值
+                        memberName={memberName}
                       />
                     </Route>
                     <Route path="/cart-complete">
@@ -399,6 +414,7 @@ function App() {
                         tripPrice={tripPrice}
                         cartTotalPrice={cartTotalPrice} //購物車總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        memberName={memberName}
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>

@@ -61,6 +61,7 @@
 .seat-number-demo {
   font-size: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
 }
 /* 座位svg樣式結束 */
 
@@ -199,6 +200,12 @@
   border: 4px double black;
 }
 
+.memberNames,
+.inputGroup,
+.people-count {
+  -webkit-user-select: none;
+}
+
 /* 訂票輸入欄樣式結束 */
 /* 輪播牆樣式開始 */
 .sliderArea {
@@ -275,9 +282,14 @@ img {
   display: flex;
   align-items: center;
   /* border: 5px solid rgb(255, 81, 0); */
-  animation: step-circle-rotate 1s 1;
+  /* animation: step-circle-rotate 1s 1; */
   /* rotate(-70deg) */
 }
+
+/* 
+.step-ani-enter {
+  animation: step-circle-rotate 1s 1;
+} */
 
 .step-circle-mb {
   display: none;

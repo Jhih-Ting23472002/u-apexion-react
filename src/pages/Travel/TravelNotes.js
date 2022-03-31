@@ -84,7 +84,7 @@ function TravelNotes() {
           </ol>
         </div>
 
-        <Carousel slide={false} fade={false}>
+        <Carousel>
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"

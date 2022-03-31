@@ -22,7 +22,7 @@ function Navbar(props) {
   useEffect(() => {
     if (localStorage.getItem('user_name')) {
       const userName = localStorage.getItem('user_name');
-      setUserNavbar('Hello ' + userName);
+      setUserNavbar(userName);
       setSignOut('登出');
     } else {
       setUserNavbar('登入');
@@ -65,10 +65,10 @@ function Navbar(props) {
               <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to={personalPage}>{userNavbar}</Link>
+              <Link to={personalPage}>{userNavbar}&nbsp;&nbsp;|</Link>
             </li>
             <li></li>
-            <li>
+            <li className="navbar-login">
               <Link
                 to={register}
                 onClick={() => {
