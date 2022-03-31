@@ -1,9 +1,10 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './CustomizeCraft.css';
 import spaceCraft from './images/spacecraft.png';
 import noSelect from './images/noselect.png';
-
+//購物車數量
+import CartQuantity from '../Products/CartQuantity';
+import { useHistory } from 'react-router-dom';
 
 const allCountry = [
   '/customize_img/america.png',
@@ -17,7 +18,11 @@ const allCountry = [
   '/customize_img/ukraine.png',
 ];
 
-function CustomizeCraft() {
+function CustomizeCraft(props) {
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
+  const { setCraft } = props;
+  const history = useHistory();
+
   const [stepClassname1, setStepClassname1] = useState('');
   const [stepClassname2, setStepClassname2] = useState('');
   const [stepClassname3, setStepClassname3] = useState('');
@@ -26,11 +31,20 @@ function CustomizeCraft() {
     fill2: '#595959',
   });
   const [countryImg, setCountryImg] = useState('');
+  //console.log(countryImg)
   const [craftCountryStyle, setCraftCountryStyle] = useState('0');
   const [classNameSwitch, setClassNameSwitch] = useState('suit-flag');
   const [countryClass, setCountryClass] = useState();
   const [craftString, setCraftString] = useState('');
   const [labelSt, setLabelSt] = useState('請輸入名稱(8個字元內)');
+
+  function addCart() {
+    setCraft(function (prevData) {
+      history.push('/customize-seat');
+      setCartTotal(cartTotal + 1);
+      return [...prevData, { craftString }];
+    });
+  }
 
   return (
     <>
@@ -271,7 +285,9 @@ function CustomizeCraft() {
               </div>
             </div>
           </div>
-          <button className="craft-circle-btn">完成送出</button>
+          <button className="craft-circle-btn" onClick={() => addCart()}>
+            完成送出
+          </button>
         </div>
 
         <svg
