@@ -397,6 +397,7 @@ function App() {
                         cartTripTotal={cartTripTotal} // 票券總金額
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
                         setCartOrderListNumber={setCartOrderListNumber} // 訂單編號後來的值
+                        memberName={memberName}
                       />
                     </Route>
                     <Route path="/cart-complete">
@@ -407,6 +408,7 @@ function App() {
                         tripPrice={tripPrice}
                         cartTotalPrice={cartTotalPrice} //購物車總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        memberName={memberName}
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>
