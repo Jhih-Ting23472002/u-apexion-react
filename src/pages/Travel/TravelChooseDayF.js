@@ -28,10 +28,17 @@ function TravelChooseDF() {
   }, []);
 
   const spinner = (
-    <div class="centerWrap">
-      <div class="bb8"></div>
-      <span class="quote"></span>
-    </div>
+    <>
+      <div class="centerWrap d-none d-xl-block">
+        <div class="bb8"></div>
+        <span class="quote"></span>
+      </div>
+      <div className="d-flex justify-content-center d-block d-xl-none">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    </>
   );
 
   const display = (
