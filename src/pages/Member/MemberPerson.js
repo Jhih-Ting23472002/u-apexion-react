@@ -210,9 +210,11 @@ const MemberPerson = () => {
                 <div className="person-avatar-img">
                   <img
                     className="person-avatar-img"
-                    src={imgurl + memInfo.avatar}
+                    //如果沒有上傳照片??，就給預設的照片
+                    src={`http://localhost:3001/img/${
+                      memInfo.avatar?? 'db7efb56-50c7-40f7-b622-00cc246d45ca.jpg'}`}
                     alt=""
-                  ></img>
+                  />
                 </div>
               </div>
             </div>
