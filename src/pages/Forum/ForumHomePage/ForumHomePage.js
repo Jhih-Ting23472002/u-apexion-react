@@ -155,11 +155,12 @@ Post.propTypes = {
   post: PropTypes.object,
 };
 
-export default function ForumHomePage() {
+export default function ForumHomePage(props) {
   const location = useLocation();
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const triggerRef = useRef(null);
+  const { newpost } = props;
   const onGrabData = currentPage => {
     return new Promise(resolve => {
       setTimeout(() => {
@@ -187,7 +188,8 @@ export default function ForumHomePage() {
     fetch('http://localhost:3001/forum_index/getAll')
       .then(res => res.json())
       .then(posts => setPosts(posts));
-  }, []);
+  }, [newpost]);
+  console.log(newpost);
 
   return (
     <Root>

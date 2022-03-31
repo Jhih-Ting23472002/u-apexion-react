@@ -143,6 +143,9 @@ function App() {
   const [craft, setCraft] = useState([]); // 火箭
   console.log(craft);
 
+  // forum
+  const [newpost, setNewPost] = useState(false);
+
   return (
     <CartProvider>
       <Router>
@@ -160,13 +163,16 @@ function App() {
                       <IndexMain />
                     </Route>
                     <Route exact path="/forum-home">
-                      <ForumHomePage />
+                      <ForumHomePage newpost={newpost} />
                     </Route>
                     <Route path="/forum-home/posts/:sid">
                       <ForumSinglePostPage />
                     </Route>
                     <Route path="/publish">
-                      <ForumPublishPage />
+                      <ForumPublishPage
+                        newpost={newpost}
+                        setNewPost={setNewPost}
+                      />
                     </Route>
                     <Route path="/publish-edit/:sid">
                       <ForumPublishUpdatePage />
