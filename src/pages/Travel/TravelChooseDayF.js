@@ -24,14 +24,13 @@ function TravelChooseDF() {
     //載入資料
     setTravelChooseF([]);
     //X秒後,開啟載入資料指示
-    setTimeout(() => setLoading(false), 700);
+    setTimeout(() => setLoading(false), 3000);
   }, []);
 
   const spinner = (
-    <div className="d-flex justify-content-center">
-      <div className="spinner-border" role="status">
-        <span className="sr-only">Loading...</span>
-      </div>
+    <div class="centerWrap">
+      <div class="bb8"></div>
+      <span class="quote"></span>
     </div>
   );
 
@@ -133,7 +132,7 @@ function TravelChooseDF() {
       </div>
 
       {loading ? spinner : display}
-      <hr className="generalHr" />
+      <hr className="generalHr chr" />
     </>
   );
 }
