@@ -24,11 +24,11 @@
   height: 100%;
   border-radius: 50%;
   /* border: 3px double #05f2f2; */
-  background-image: url('./forum_person_img/apexion-big.png');
+  background-image: url('./forum_person_img/people2.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-color: #000000;
-  background-size:cover;
+  background-size: cover;
 }
 .forum_person_email,
 .forum_person_nickname {

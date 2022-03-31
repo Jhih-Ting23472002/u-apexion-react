@@ -175,7 +175,10 @@ function App() {
                       />
                     </Route>
                     <Route path="/publish-edit/:sid">
-                      <ForumPublishUpdatePage />
+                      <ForumPublishUpdatePage
+                        newpost={newpost}
+                        setNewPost={setNewPost}
+                      />
                     </Route>
                     <Route path="/forum-apexion-articles">
                       <ForumUArticlePage />

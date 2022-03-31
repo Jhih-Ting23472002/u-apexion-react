@@ -35,6 +35,7 @@ export default function ForumPublishPage(props) {
   const { setNewPost, newpost } = props;
 
   const userId = localStorage.getItem('user_id');
+  const userImg = localStorage.getItem('user_img');
   // console.log(userId);
 
   const user_name = localStorage.getItem('user_name');
@@ -84,7 +85,7 @@ export default function ForumPublishPage(props) {
           } else {
             setNewPost(true);
           }
-        }, 5000);
+        }, 20000);
       });
     history.push('/forum-home');
   };
@@ -102,7 +103,7 @@ export default function ForumPublishPage(props) {
                     <div className="forum_user-logo">
                       <img
                         className="forum_cover"
-                        src="./forum_img/u-apexionLogo.png"
+                        src={`http://localhost:3000/index_img/${userImg}`}
                         alt=""
                       />
                     </div>
