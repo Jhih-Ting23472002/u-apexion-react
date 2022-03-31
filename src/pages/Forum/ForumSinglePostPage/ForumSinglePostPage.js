@@ -364,7 +364,7 @@ export default function ForumSinglePostPage() {
               <div className="forum_right__user_img">
                 <img
                   className="forum_img"
-                  src={`http://localhost:3000/index_img/member5.png`}
+                  src={`http://localhost:3000/index_img/${post && post.imgs}`}
                   alt=""
                 />
                 {/* ????????why????? */}
