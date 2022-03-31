@@ -111,16 +111,22 @@ const CardComplete = props => {
               </div>
             </div>
           </div>
-          <div className="d-flex justify-content-between">
-            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+          <div className="d-flex justify-content-around">
+            <Link
+              className="col-2 btn cart-link to-other-page mt-5"
+              to={'/travel-index'}
+            >
               回首頁
             </Link>
-            <div className="col-1"></div>
-            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+            {/* <div className="col-1"></div> */}
+            <Link
+              className="col-2 btn cart-link to-other-page mt-5"
+              to={'/products'}
+            >
               繼續購物
             </Link>
-            <div className="col-1"></div>
-            <Link
+            {/* <div className="col-1"></div> */}
+            {/* <Link
               className="col-2 btn cart-link to-other-page mt-5"
               to={'/member-login'}
               onClick={() => {
@@ -129,8 +135,8 @@ const CardComplete = props => {
               }}
             >
               登出
-            </Link>
-            <div className="col-1"></div>
+            </Link> */}
+            {/* <div className="col-1"></div> */}
             <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
               會員專區
             </Link>
