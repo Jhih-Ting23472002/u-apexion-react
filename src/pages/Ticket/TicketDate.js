@@ -3,6 +3,7 @@ import stepCircleMb from './img/stepCircle-mb.png';
 import TicketCalender from './TicketCalender';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const now = new Date();
 function TicketDate(props) {
@@ -49,14 +50,18 @@ function TicketDate(props) {
   return (
     <>
       <div class="ticket-container">
-        <div class="step-circle">
+        <motion.div
+          className="step-circle"
+          animate={{ x: [0, 0], rotate: [70, 0] }}
+          transition={{ duration: 2 }}
+        >
           <img className="step-circle-img" src={stepCircle} alt="" />
           <img className="step-circle-mb" src={stepCircleMb} alt="" />
           <div className="ticket-steps">
             <p>STEP</p>
             <p>2</p>
           </div>
-        </div>
+        </motion.div>
         <div className="ticket-date">
           <div className="ticket-date-wrap">
             <div className="ticket-date-title">

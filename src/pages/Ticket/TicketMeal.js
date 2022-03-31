@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import TicketConfirmModal from './TicketConfirmModal';
 import config from './Config';
+import { motion } from 'framer-motion';
 
 function TicketMeal(props) {
   const [modalShow, setModalShow] = useState(false);
@@ -89,14 +90,18 @@ function TicketMeal(props) {
     <>
       (
       <div className="ticket-container">
-        <div className="step-circle">
+        <motion.div
+          className="step-circle"
+          animate={{ x: [0, 0], rotate: [70, 0] }}
+          transition={{ duration: 2 }}
+        >
           <img className="step-circle-img" src={stepCircle} alt="" />
           <img className="step-circle-mb" src={stepCircleMb} alt="" />
           <div className="ticket-steps">
             <p>STEP</p>
             <p>4</p>
           </div>
-        </div>
+        </motion.div>
         <div className="ticket-menu">
           <div className="ticket-menu-wrap">
             <div className="ticket-menu-title">
