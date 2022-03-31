@@ -23,7 +23,7 @@ function MemberAddress() {
   const [address, setAddress] = useState([]);
 
   const getUserAddress = async () => {
-    const res = getAddress(user_id).then(obj => {
+    getAddress(user_id).then(obj => {
       console.log('obj:', obj);
       setAddress(obj.list);
     });

@@ -1,14 +1,14 @@
-import React, { useState,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './CustomizeSeat.css';
 import CustomizeOrder from './CustomizeOrder';
 import whiteSeat from './images/spaceseat-white.png';
 import orangeSeat from './images/spaceseat-orange.png';
 import blueSeat from './images/spaceseat-blue.png';
-import CartQuantity from '../Products/CartQuantity'
+import CartQuantity from '../Products/CartQuantity';
 
 function CustomizeSeat(props) {
   //最外面app參數
-  const { setCustomize } = props;
+  const { setCustomize,craft } = props;
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
 
   const [modalShow, setModalShow] = useState(false);
@@ -17,16 +17,15 @@ function CustomizeSeat(props) {
   const [seatImg, setSeatImg] = useState('');
 
   const [opa, setOpa] = useState('');
-  const price=15000
+  
 
-  function addCart(){
-    setCustomize(function(prevData){
-      setCartTotal(cartTotal + 3);
-      setModalShow(true)
-      return [{style,seatImg,price}, ...prevData];
-    })
+  function addCart() {
+    setCustomize(function (prevData) {
+      setCartTotal(cartTotal + 1);
+      setModalShow(true);
+      return [...prevData,{ style }];
+    });
   }
-
 
   return (
     <>
@@ -49,10 +48,10 @@ function CustomizeSeat(props) {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 // 讓seat-box-img 圖片淡出
-                const newColor = { ...color, background: 'white' }
+                const newColor = { ...color, background: 'white' };
                 setColor(newColor);
                 // 改變.seat-backcolor的背景顏色
-                setStyle('white')
+                setStyle('white');
                 setTimeout(() => {
                   // 設置延遲
                   const newOpaOpen = '1';
@@ -61,7 +60,7 @@ function CustomizeSeat(props) {
                   const newImg = whiteSeat;
                   setSeatImg(newImg);
                   // 載入圖片
-                },700);
+                }, 700);
               }}
             ></div>
             <div
@@ -71,7 +70,7 @@ function CustomizeSeat(props) {
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#EE6A26' };
                 setColor(newColor);
-                setStyle('orangeSeat')
+                setStyle('orangeSeat');
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
@@ -87,7 +86,7 @@ function CustomizeSeat(props) {
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#0072D6' };
                 setColor(newColor);
-                setStyle('blueSeat')
+                setStyle('blueSeat');
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
@@ -102,10 +101,7 @@ function CustomizeSeat(props) {
               這是一個高級的座位，經由高級的大師以高級的手法所打造，給予高級的貴賓享受高級的旅程。
             </p>
           </div>
-          <button
-            className="seat-circle-btn"
-            onClick={() => addCart()}
-          >
+          <button className="seat-circle-btn" onClick={() => addCart()}>
             完成送出
           </button>
         </div>
@@ -122,7 +118,12 @@ function CustomizeSeat(props) {
           />
         </svg>
       </section>
-      <CustomizeOrder show={modalShow} onHide={() => setModalShow(false)} setCustomize={setCustomize} seatColor={color}/>
+      <CustomizeOrder
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        setCustomize={setCustomize}
+        seatColor={style}
+      />
     </>
   );
 }

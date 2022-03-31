@@ -42,6 +42,8 @@ function ProductsList() {
     const a = 'COUNT(1)';
     setAllList(menList.allRows[a]);
   };
+
+  
   const ProductWomanList = async function () {
     const responseWoman = await fetch(ProductsConfig.Woman_List);
     const WomanList = await responseWoman.json();

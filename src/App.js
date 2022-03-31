@@ -34,7 +34,7 @@ import SignOut from './components/SignOut';
 // Customize
 //import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
-//import CustomizeCraft from './pages/Customize/CustomizeCraft';
+import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
 
 // Cart
@@ -130,14 +130,15 @@ function App() {
 
   //周邊商品區
   const [productDetailList, setProductDetailList] = useState([]);
-  console.log('productDetailList', productDetailList); // 測試，by雍
+  //console.log('productDetailList', productDetailList); // 測試，by雍
   const [cartTotal, setCartTotal] = useState(0);
   const [userNavbar, setUserNavbar] = useState('登入');
   const [signOut, setSignOut] = useState('註冊');
 
   //客製化商品
-  const [customize, setCustomize] = useState([]);
-  //console.log('customize', customize);
+  const [customize, setCustomize] = useState([]); // 椅子
+  const [craft, setCraft] = useState([]); // 火箭
+  console.log(craft)
 
   return (
     <CartProvider>
@@ -225,13 +226,13 @@ function App() {
                     <Route path="/travel-choose">
                       <TravelChoose />
                     </Route>
-                    <Route path="/travel-titan">
+                    <Route path="/travel-UAP-001">
                       <TravelNotes />
                     </Route>
-                    <Route path="/travel-xandar">
+                    <Route path="/travel-UAP-002">
                       <TravelNotes2 />
                     </Route>
-                    <Route path="/travel-mann">
+                    <Route path="/travel-UAP-004">
                       <TravelNotes3 />
                     </Route>
                     <Route path="/travelchoose-pricem">
@@ -300,11 +301,11 @@ function App() {
                     <Route path="/customize-suit">
                       <CustomizeSuit />
                     </Route>
-                    {/* <Route path="/customize-craft">
-                      <CustomizeCraft />
-                    </Route> */}
+                    <Route path="/customize-craft">
+                      <CustomizeCraft setCraft={setCraft}/>
+                    </Route>
                     <Route path="/customize-seat">
-                      <CustomizeSeat setCustomize={setCustomize} />
+                      <CustomizeSeat setCustomize={setCustomize} craft={craft}/>
                     </Route>
                     <Route path="/customize-order"></Route>
                     <Route path="/trans-mainpage"></Route>

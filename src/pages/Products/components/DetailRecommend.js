@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 function DetailRecommend(props) {
   const { product, ProductDetail } = props;
   // console.log(props);
-
+//塞選品項排除自己
   const a = props.ProductDetail.filter((v, i) => {
     if (props.product.category == v.category && product.sid !== v.sid) {
       return v;
     }
   });
-  // console.log(a);
+  // 
   const b = a.filter((v, i) => {
     if (props.product.class == v.class) {
       return v;

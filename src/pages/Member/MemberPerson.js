@@ -36,6 +36,7 @@ const MemberPerson = () => {
       // history.push('/member-login'); //登入成功後導入會員頁
     });
   };
+
   // const handleChange = e => {
   //   const newData = { ...memInfo, [e.target.name]: e.target.value };
   //   setMemInfo(newData);
@@ -59,9 +60,12 @@ const MemberPerson = () => {
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
-    setUserNavbar("Hello "+ newUserName?.name);
-    setSignOut('登出')
+    localStorage.setItem('user_name', newUserName?.name);
+    setUserNavbar('Hello ' + newUserName?.name);
+    setSignOut('登出');
   }, [userAll]);
+
+  const imgurl = 'http://localhost:3001/img/';
 
   return (
     <>
@@ -203,7 +207,13 @@ const MemberPerson = () => {
                 <div className="person-line"></div>
               </div>
               <div className="person-avatar-container">
-                <div className="person-avatar-img"></div>
+                <div className="person-avatar-img">
+                  <img
+                    className="person-avatar-img"
+                    src={imgurl + memInfo.avatar}
+                    alt=""
+                  ></img>
+                </div>
               </div>
             </div>
           </div>

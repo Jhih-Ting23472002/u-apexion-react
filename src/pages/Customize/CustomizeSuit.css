@@ -6,7 +6,7 @@
   overflow: hidden;
   position: relative;
 }
-.left-page-svg {
+.right-page-svg {
   position: absolute;
   left: 0;
   width: 100%;
@@ -14,7 +14,7 @@
   z-index: 0;
   opacity: 1;
 }
-.right-page-svg {
+.left-page-svg {
   position: absolute;
   right: 0;
   width: 100%;
@@ -45,6 +45,7 @@
   box-shadow: inset -5px -5px 20px rgb(0, 0, 0);
   /* outline: 3px solid black; */
   filter: brightness(.7);
+  
 }
 /*圓形照片放大圖 */
 .image-mirrow-img {
@@ -54,19 +55,63 @@
   max-height: 250%;
   width: auto;
   filter: drop-shadow(-50px 10px 15px rgba(0, 0, 0, 0.3));
- 
+  transition: 1s ease-in-out ;
+}
+.suitCountryImg1{
+  z-index: 1;
+  width: 65px;
+  height: 39px;
+  position: absolute;
+  top: 55%;
+  left: 72%;
+  filter:sepia(.3);
+  box-shadow: -1px 0px 1px black;
+  transform: rotateY(20deg) rotate(-2deg);
+  transition: 1s ease-in-out;
+}
+.suitCountryImg2{
+  z-index: 1;
+  width: 20px;
+  height: 12px;
+  position: absolute;
+  top: 27%;
+  left: 67.5%;
+  filter:sepia(.4);
+  transform: rotateY(20deg) rotate(-2deg);
+  transition: .5s ease-in-out;
+}
+.suitMarkImg1{
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 57%;
+  left: 48%;
+  filter:sepia(.4) drop-shadow(-1px 1px 1px black);
+  transform: rotateY(20deg) rotate(-2deg) ;
+  transition: .5s ease-in-out;
+}
+.suitMarkImg2{
+  z-index: 1;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  top: 27.5%;
+  left: 56%;
+  filter:sepia(.4);
+  transform: rotateY(20deg)  rotate(-2deg);
+  transition: .5s ease-in-out;
 }
 
 .suit-circle {
   z-index: 1;
   position: absolute;
-  top:5%;
-  right: 50%;
+  top:6%;
+  right: 48%;
   opacity: 1;
 }
 .suit-circle-step {
-  width: 27vw;
-  min-width: 440px;
+  width: 500px;
   filter: drop-shadow(-30px 10px 10px rgb(0, 0, 0));
 }
 
@@ -111,14 +156,14 @@
   outline:none;
 }
 /* 模型照片 */
-.maybe-use-canvus img {
+.suitcanvas {
   z-index: 0;
-  width: 16vw;
-  min-width: 250px;
+  width: 57%;
   position: absolute;
   top: 3%;
   right:12%;
   filter: drop-shadow(-40px 5px 15px rgba(0, 0, 0, 0.5));
+  transition: .5s ease-in-out;
 }
 .suit-card {
   z-index: 1;
@@ -187,12 +232,7 @@
   align-items: center
   
 }
-.mark-select {
-  width: 120%;
-  height: 200px;
-  background-color: #323232;
-  border-radius: 10px;
-}
+
 .suit-flag{
 margin:10px ;
 position: relative;
@@ -224,9 +264,19 @@ object-fit: cover;
 filter:drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6);
 transition: .3s ease-in-out;
 }
+.mark-select::-webkit-scrollbar {
+  width: 10px;
+  background:  #00182c;
+}
+.mark-select::-webkit-scrollbar-thumb {
+  background-color: #05f2f2;
+  border: 4px solid #00182c;
+  border-radius: 20px;
+}
 .mark-select{
   width: 450px;
-  padding: 15px;
+  height: 200px;
+  padding: 10px;
   margin-bottom: 25px;
   border-radius: 10px;
   background-color: #323232;
@@ -234,6 +284,7 @@ transition: .3s ease-in-out;
   align-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
+  overflow: auto;
 }
 
 .suit-mark{
@@ -267,4 +318,25 @@ height: 50px;
 object-fit: cover;
 filter:drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6);
 transition: .3s ease-in-out;
+}
+.suitStepLine{
+  stroke:#05f2f2;
+      stroke-dasharray:540;
+      stroke-dashoffset:0;
+      animation: suitstepLine1 2s ease-in-out forwards;
+}
+.suitStepLine2{
+  stroke:#05f2f2;
+      stroke-dasharray:540;
+      stroke-dashoffset:0;
+      animation: suitstepLine1 2s ease-in-out forwards;
+}
+@keyframes suitstepLine1 {
+  0% {
+      stroke-dashoffset: 540;
+  }
+
+  100% {
+      stroke-dashoffset: 0;
+  }
 }

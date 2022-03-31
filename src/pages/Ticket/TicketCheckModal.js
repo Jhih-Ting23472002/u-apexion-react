@@ -16,15 +16,12 @@ function TicketOrderModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      {/* <Modal.Header
-        closeButton
-        style={{ backgroundColor: '#05DBF2', color: '#00002D' }}
-      >
-        <Modal.Title id="contained-modal-title-vcenter">輸入錯誤</Modal.Title>
-      </Modal.Header> */}
-      <Modal.Body style={{ color: '#00002D' }}>
-        <h4>確認信</h4>
-        <p>請輸入驗證碼</p>
+      <Modal.Header closeButton className="ticket-check-title">
+        {' '}
+        <h2>請輸入驗證碼</h2>
+        <p>Input verification code,please</p>
+      </Modal.Header>
+      <Modal.Body className="ticket-check-body" style={{ color: '#00002D' }}>
         <input type="text" />
       </Modal.Body>
       <Modal.Footer style={{ color: '#ffff2D' }}>

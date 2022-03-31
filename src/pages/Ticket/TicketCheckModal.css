@@ -15,3 +15,33 @@ element.style {
   position: relative;
   box-shadow: -5px 5px 20px black;
 }
+
+.modal-header.ticket-check-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  border: none;
+}
+
+.modal-header.ticket-check-title h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.modal-header.ticket-check-title p {
+  font-size: 0.9rem;
+}
+
+.ticket-check-body {
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+}
+
+@media screen and (min-width: 576px) {
+  .modal-content {
+    min-height: 400px;
+  }
+}

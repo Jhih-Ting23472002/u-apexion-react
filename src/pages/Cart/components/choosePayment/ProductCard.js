@@ -36,7 +36,7 @@ const ProductCard = props => {
   productDetailList.map(v => (productItem += v.total));
   console.log('productItem', productItem);
   setTotalProductItem(productItem);
-  setCartTotal(productItem);
+  setCartTotal(productItem + 1);
 
   return (
     <>

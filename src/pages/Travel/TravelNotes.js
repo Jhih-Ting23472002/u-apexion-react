@@ -92,9 +92,10 @@ function TravelNotes() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h2 className="carouselh4">First slide label</h2>
+              <h2 className="carouselh4">尊爵艙</h2>
               <p className="carouselp">
-                Nulla vitae elit libero, a pharetra augue mollis interdum.
+                尊貴艙面積達 160 至 182 平方英呎（4.5 至 5
+                坪），精心配備各類精美高品質設施，為您帶來舒適的住宿享受。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -106,9 +107,11 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Second slide label</h2>
+              <h2 className="carouselh4">豪華艙</h2>
               <p className="carouselp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                豪華艙面積為 232 至 274 平方英呎（6.5 至 7.7
+                坪），內部設施一應俱全。47 平方英呎（1.3
+                坪）讓您在艙房內盡情領略迷人太空景色。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -120,9 +123,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">爵士酒吧Take Five</h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                酒吧內的全天候服務餐廳，提供品種豐富的「太空上最佳披薩」和各種飲品酒類，一邊吃著美食一邊享受爵士樂。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -134,9 +137,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">太空步道The SpaceWalk</h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                懸於國際站外39米、長達8.5米的全透明玻璃步道－漫步其中，如同懸浮於太空之間，飽覽令人驚嘆的美景之餘充分洗滌身心。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -148,9 +151,11 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">
+                環球美食自助餐廳World Fresh Marketplace
+              </h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                來自世界各地的美味，餐檯上從傳統中式料理到地中海菜式，多樣佳餚隨時變換菜色，中島區域的烘焙坊更專為各式經典麵包、西點等。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -162,9 +167,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">皇冠海鮮牛排餐廳 Crown Grill</h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                上等美味牛排與新鮮海鮮佳餚，搭配洋溢濃郁紐約風情的餐廳風格，不可錯過的海陸兼具美食天堂，包括丁骨、肋眼、紐約客、菲力等應有盡有的特選牛排，佐以主廚特製小龍蝦、干貝、淡菜等經典前菜，一次滿足挑剔味蕾
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -175,27 +180,33 @@ function TravelNotes() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h2 className="carouselh4">First slide label</h2>
+              <h2 className="carouselh4">太空米製年糕space rice cake</h2>
               <p className="carouselp">
-                Nulla vitae elit libero, a pharetra augue mollis interdum.
+                此款是需要加水後變成恢復原樣的商品，經過幾秒鐘後年糕變得非常柔軟。記得撒上黃豆粉。太空年糕活用了冷凍乾燥特性的餐點呢！據說這款年糕是日本籍太空人真的會在太空時吃的商品。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="travelcarousel d-block w-100"
-              src="./travelimg/notescarouselimg/food3.jpg"
+              src="./travelimg/notescarouselimg/food5.jpg"
               alt="Second slide"
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Second slide label</h2>
+              <h2 className="carouselh4">太空咖哩space curry</h2>
               <p className="carouselp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                此款太空商品「太空咖哩」搭配的白米是嚴選出「秋田小町」白米，與宮城特產的「發芽米」，是有點黏又不會太黏的口感，用針筒注入熱水，30分鐘就可以食用。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+
+        <div className="gotop d-none d-xl-block">
+          <a href="#pagetop">
+            <img src="./travelimg/btn4_top2.png" alt="" />
+          </a>
+        </div>
 
         <div className="content">
           <h1 className="blue-text lighten-1 header">泰坦星Titan</h1>

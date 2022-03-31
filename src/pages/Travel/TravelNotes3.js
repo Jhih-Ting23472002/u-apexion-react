@@ -79,9 +79,9 @@ function TravelNotes() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h2 className="carouselh4">First slide label</h2>
+              <h2 className="carouselh4">雞肉絲飯Chicken Rice</h2>
               <p className="carouselp">
-                Nulla vitae elit libero, a pharetra augue mollis interdum.
+                此為令人熟悉的番茄醬口味「雞肉絲飯」。內為乾鬆的飯粒，也有雞肉和碗豆喔！而且有著濃厚的番茄醬風味。酥酥脆脆的米飯真是令人感到不可思議啊。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -93,9 +93,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Second slide label</h2>
+              <h2 className="carouselh4">太空布丁space pudding</h2>
               <p className="carouselp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                此款太空商品「太空布丁」外觀呈現正方形的黄色塊狀。但味道就是正統的「布丁」喔！有濃濃的布丁味。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -107,9 +107,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">太空步道The SpaceWalk</h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                懸於國際站外39米、長達8.5米的全透明玻璃步道－漫步其中，如同懸浮於太空之間，飽覽令人驚嘆的美景之餘充分洗滌身心。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -121,9 +121,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">免稅精品店 The Shops Of Princess</h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                全宇宙最大的免稅物天堂(共約100方公尺)駐有BVLGARI(寶格麗)、Cartier(卡地亞)、Chopard(蕭邦)等奢華品牌專賣店，購物後賓客可以漫步中庭廣場或前往精緻餐廳或酒吧，感受豐富的沈浸式太空站體驗。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -135,9 +135,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">國際點心吧 International Cafe</h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                琳瑯滿目的口袋餅、英式馬芬、蛋糕與各式輕食鹹點，24小時全天候不間斷提供各類餐點，還有許多不同茶飲、義大利特調和其他特製咖啡等，在深夜隨時滿足您的需求。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -149,9 +149,9 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Third slide label</h2>
+              <h2 className="carouselh4">史萊斯披薩吧 Slice Pizzeria</h2>
               <p className="carouselp">
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                池畔美食體驗，提供現烤切片披薩。一邊欣賞星空露天電影院放映的精彩大片，一邊享用美味絕倫的披薩，不論是正餐還是休閒小吃都將带給您無與倫比的吮指體驗。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -162,9 +162,10 @@ function TravelNotes() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h2 className="carouselh4">First slide label</h2>
+              <h2 className="carouselh4">尊爵艙</h2>
               <p className="carouselp">
-                Nulla vitae elit libero, a pharetra augue mollis interdum.
+                尊貴艙面積達 160 至 182 平方英呎（4.5 至 5
+                坪），精心配備各類精美高品質設施，為您帶來舒適的住宿享受。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -176,13 +177,21 @@ function TravelNotes() {
             />
 
             <Carousel.Caption>
-              <h2 className="carouselh4">Second slide label</h2>
+              <h2 className="carouselh4">豪華艙</h2>
               <p className="carouselp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                豪華艙面積為 232 至 274 平方英呎（6.5 至 7.7
+                坪），內部設施一應俱全。47 平方英呎（1.3
+                坪）讓您在艙房內盡情領略迷人太空景色。
               </p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+
+        <div className="gotop d-none d-xl-block">
+          <a href="#pagetop">
+            <img src="./travelimg/btn4_top2.png" alt="" />
+          </a>
+        </div>
 
         <div className="content">
           <h1 className="blue-text lighten-1 header">曼恩星Mann</h1>
