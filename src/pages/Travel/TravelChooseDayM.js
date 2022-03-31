@@ -29,11 +29,18 @@ function TravelChooseDM() {
   }, []);
 
   const spinner = (
-    <div className="d-flex justify-content-center">
-      <div className="spinner-border" role="status">
-        <span className="sr-only">Loading...</span>
+    <>
+      <div class="centerWrap d-none d-xl-block">
+        <div class="bb8"></div>
+        <span class="quote"></span>
       </div>
-    </div>
+      <div class="talign-center d-block d-xl-none">
+        <div
+          class="choosespinner icon-choosespinner-5"
+          aria-hidden="true"
+        ></div>
+      </div>
+    </>
   );
 
   const display = (

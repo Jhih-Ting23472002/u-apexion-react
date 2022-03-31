@@ -33,10 +33,11 @@ function TravelChooseDF() {
         <div class="bb8"></div>
         <span class="quote"></span>
       </div>
-      <div className="d-flex justify-content-center d-block d-xl-none">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
+      <div class="talign-center d-block d-xl-none">
+        <div
+          class="choosespinner icon-choosespinner-5"
+          aria-hidden="true"
+        ></div>
       </div>
     </>
   );
