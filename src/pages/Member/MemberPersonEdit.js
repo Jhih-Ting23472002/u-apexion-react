@@ -14,9 +14,25 @@ const MemberPersonEdit = () => {
     birthday: '',
     country: '',
   });
-  const [fileSrc, setFileSrc] = useState(null);
+  const [fileSrc, setFileSrc] = useState('');
   const [userPhoto, setUserPhoto] = useState('');
   console.log(userPhoto);
+
+  //const [userAll, setUserAll] = useState([]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch('http://localhost:3001/user/api/getuser');
+  //     const data = await res.json();
+  //     setUserAll(data);
+  //   };
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   const userId = localStorage.getItem('user_id');
+  //   const newUserName = userAll?.find(v => v.sid === parseInt(userId));
+  //   setFileSrc(newUserName?.avatar);
+  // }, [userAll]);
 
   //先從localStorage拿id (你們的user_id)
   const sid = localStorage.getItem('user_id');
@@ -233,7 +249,7 @@ const MemberPersonEdit = () => {
                   name="formImage"
                   onSubmit={handleFormSubmit}
                 > */}
-                <img className="person-avatar-img" src={fileSrc} alt=""></img>
+                <img className="person-avatar-img" src={fileSrc}  alt=""></img>
                 <div
                   className="person-avatar-upload"
                   // style={{ border: '1px solid red' }}

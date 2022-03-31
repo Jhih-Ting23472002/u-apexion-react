@@ -3,7 +3,7 @@ import './MemberAddress.css';
 import MemberAddressNew from './MemberAddressNew';
 import MemberEditOrDelete from './MemberEditOrDelete';
 import MemberNavbar from '../../components/MemberNav';
-import { findMem } from '../../data/UserWebApi';
+// import { findMem } from '../../data/UserWebApi';
 import { getAddress } from '../../data/UserWebApi';
 
 function MemberAddress() {

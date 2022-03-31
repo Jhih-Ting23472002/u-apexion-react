@@ -83,7 +83,7 @@ export const registerMem = registerData => {
   }).then(res => res.json());
 };
 
-//傳回後端修改資料
+//傳回後端修改資料 + 預覽照片 + 上傳照片
 export const reviseMem = fd => {
   return fetch(`${BASE_URL}/user/api/user-revise`, {
     method: 'POST',

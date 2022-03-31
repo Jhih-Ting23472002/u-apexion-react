@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import './CustomizeSuit.css';
-import whiteSuit from './images/spacesuit-white.png';
-import orangeSuit from './images/spacesuit-orange.png';
-import blueSuit from './images/spacesuit-blue.png';
-import noSelect from './images/noselect.png';
 const allCountry = [
   '/customize_img/america.png',
   '/customize_img/canada.png',
@@ -60,6 +56,35 @@ function CustomizeSuit() {
     fill2: '#595959',
     fill3: '#595959',
   });
+
+  function setFlagHandler(e) {
+    //抓取圖片放入太空船
+    const closeOpa = '0';
+    setCountrySelectSuit(closeOpa);
+    setTimeout(() => {
+      // 設置延遲
+      const openOpa = '1';
+      setCountrySelectSuit(openOpa);
+      // 讓圖片淡入
+      setCountryImgSuit(e.target.dataset.country);
+      // console.log('1===', e.target.dataset.img);
+      // 載入圖片
+    }, 800);
+    const newStep2 = {
+      ...suitStepColor,
+      fill2: '#05f2f2',
+    };
+    setSuitStepColor(newStep2);
+    setSuitStep2('suitStepLine');
+
+    //點選國旗變色
+    document.querySelectorAll('.suit-flag').forEach(v => {
+      console.log(v);
+      v.style.border = '0px solid white';
+    });
+    e.target.style.border = '5px yellow solid';
+  }
+
   return (
     <>
       <section className="Customsuit-page-view">
@@ -77,7 +102,11 @@ function CustomizeSuit() {
             />
             <img
               className="image-mirrow-img"
-              src={suitImg.length === 0 ? whiteSuit : suitImg}
+              src={
+                suitImg.length === 0
+                  ? '/customize_img/spacesuit-white.png'
+                  : suitImg
+              }
               style={{ opacity: opa }}
               alt=""
             />
@@ -177,7 +206,11 @@ function CustomizeSuit() {
             />
             <img
               className="suitcanvas"
-              src={suitImg.length === 0 ? whiteSuit : suitImg}
+              src={
+                suitImg.length === 0
+                  ? '/customize_img/spacesuit-white.png'
+                  : suitImg
+              }
               alt=""
               style={{ opacity: opa }}
             />
@@ -200,7 +233,7 @@ function CustomizeSuit() {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   // 讓圖片淡入
-                  const newImg = whiteSuit;
+                  const newImg = '/customize_img/spacesuit-white.png';
                   setSuitImg(newImg);
                   // 載入圖片
                 }, 700);
@@ -224,7 +257,7 @@ function CustomizeSuit() {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   // 讓圖片淡入
-                  const newImg = orangeSuit;
+                  const newImg = '/customize_img/spacesuit-orange.png';
                   setSuitImg(newImg);
                   // 載入圖片
                 }, 700);
@@ -248,7 +281,7 @@ function CustomizeSuit() {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   // 讓圖片淡入
-                  const newImg = blueSuit;
+                  const newImg = '/customize_img/spacesuit-blue.png';
                   setSuitImg(newImg);
                   // 載入圖片
                 }, 700);
@@ -275,24 +308,7 @@ function CustomizeSuit() {
                     src={v}
                     alt=""
                     onClick={e => {
-                      //抓取圖片放入太空船
-                      const closeOpa = '0';
-                      setCountrySelectSuit(closeOpa);
-                      setTimeout(() => {
-                        // 設置延遲
-                        const openOpa = '1';
-                        setCountrySelectSuit(openOpa);
-                        // 讓圖片淡入
-                        setCountryImgSuit(e.target.dataset.country);
-                        // console.log('1===', e.target.dataset.img);
-                        // 載入圖片
-                      }, 800);
-                      const newStep2 = {
-                        ...suitStepColor,
-                        fill2: '#05f2f2',
-                      };
-                      setSuitStepColor(newStep2);
-                      setSuitStep2('suitStepLine');
+                      setFlagHandler(e);
                     }}
                   />
                 </div>
@@ -300,7 +316,7 @@ function CustomizeSuit() {
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={noSelect} alt="" />
+                <img src={'/customize_img/noselect.png'} alt="" />
               </div>
             </div>
           </div>
@@ -338,7 +354,7 @@ function CustomizeSuit() {
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={noSelect} alt="" />
+                <img src={'/customize_img/noselect.png'} alt="" />
               </div>
             </div>
           </div>

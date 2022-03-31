@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './CustomizeCraft.css';
-import spaceCraft from './images/spacecraft.png';
-import noSelect from './images/noselect.png';
 //購物車數量
 import CartQuantity from '../Products/CartQuantity';
 import { useHistory } from 'react-router-dom';
@@ -148,7 +146,7 @@ function CustomizeCraft(props) {
                 style={{ opacity: craftCountryStyle }}
               />
             </div>
-            <img src={spaceCraft} alt="" />
+            <img src={'/customize_img/spacecraft.png'} alt="" />
             <p className="craft-string">{craftString}</p>
           </div>
         </div>
@@ -165,7 +163,7 @@ function CustomizeCraft(props) {
                 style={{ opacity: craftCountryStyle }}
               />
             </div>
-            <img className="craft-area-view1-pic" src={spaceCraft} alt="" />
+            <img className="craft-area-view1-pic" src={'/customize_img/spacecraft.png'} alt="" />
           </div>
           <div className="craft-lorem">
             <p>
@@ -173,7 +171,7 @@ function CustomizeCraft(props) {
             </p>
           </div>
           <div className="craft-area-view2">
-            <img className="craft-area-view2-pic" src={spaceCraft} alt="" />
+            <img className="craft-area-view2-pic" src={'/customize_img/spacecraft.png'} alt="" />
             <p className="craft-string2">{craftString}</p>
           </div>
         </div>
@@ -218,7 +216,7 @@ function CustomizeCraft(props) {
                   className={classNameSwitch}
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
-                  data-key={i + 1}
+                  data-craftimg={v}
                   onClick={e => {
                     // setClassNameSwitch(e.currentTarget);
                     // if(e.currentTarget.dataset.key!==lassNameSwitch.number)
@@ -232,7 +230,7 @@ function CustomizeCraft(props) {
                     //   e.currentTarget.classList.add('click-country')
                     // );
                     console.log(e.currentTarget.className);
-                    console.log(e.currentTarget.dataset.key);
+                    console.log(e.currentTarget.dataset.craftimg);
                     setClassNameSwitch(e.currentTarget.className);
                     // =======================
                     // console.log(e.currentTarget.dataset.key);
@@ -281,7 +279,7 @@ function CustomizeCraft(props) {
             })}
             <div className="suit-flag">
               <div className="no-select">
-                <img src={noSelect} alt="" />
+                <img src={'/customize_img/noselect.png'} alt="" />
               </div>
             </div>
           </div>

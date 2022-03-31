@@ -68,7 +68,7 @@ function TravelIndex() {
         <hr className="generalHr" />
       </section>
 
-      <Carousel slide={false} fade={false}>
+      <Carousel>
         <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
