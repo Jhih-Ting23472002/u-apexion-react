@@ -1,15 +1,15 @@
-import React from 'react';
-import './TravelChoose.css';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./TravelChoose.css";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function TravelChoosePF() {
   const [TravelChooseF, setTravelChooseF] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/travel-choose-dmf/api/travel-choosef'
+        "http://localhost:3001/travel-choose-dmf/api/travel-choosef"
       );
       const TravelChooseF = await response.json();
       setTravelChooseF(TravelChooseF);
@@ -17,7 +17,25 @@ function TravelChoosePF() {
     })();
   }, []);
 
-  return (
+  useEffect(() => {
+    //開啟載入資料指示
+    setLoading(true);
+
+    //載入資料
+    setTravelChooseF([]);
+    //X秒後,開啟載入資料指示
+    setTimeout(() => setLoading(false), 1000)
+  }, []);
+
+  const spinner = (
+    <div className="d-flex justify-content-center">
+      <div className="spinner-border" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    </div>
+  );
+
+  const display = (
     <>
       <section className="py-5">
         <div className="container choosecontainer">
@@ -92,7 +110,7 @@ function TravelChoosePF() {
                         <div className="col-sm-6 col-md-4 image">
                           <img
                             src={
-                              './travelimg/travelproductimg/' + c.travel_image
+                              "./travelimg/travelproductimg/" + c.travel_image
                             }
                             loading="lazy"
                             className="img-fluid rounded"
@@ -111,6 +129,8 @@ function TravelChoosePF() {
       <hr className="generalHr" />
     </>
   );
+
+  return <>{loading ? spinner : display}</>;
 }
 
 export default TravelChoosePF;

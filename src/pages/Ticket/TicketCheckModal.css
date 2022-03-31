@@ -35,13 +35,61 @@ element.style {
 }
 
 .ticket-check-body {
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.code-input {
+  height: 10%;
+  width: 50%;
+  font-size: 30px;
+}
+
+.ticket-check-footer {
+  display: flex;
+  justify-content: center;
+  border: 0;
+}
+
+.ticket-check-btn {
+  background-color: var(--main-color-02);
+  color: #000000;
+  width: fit-content;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  /* padding: 7px 0; */
+  position: relative;
+  cursor: pointer;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  background-color: '#05DBF2';
+  color: '#00002D';
+  text-decoration: none;
+}
+
+.ticket-check-btn::after {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 1px solid #093866;
+  border-radius: 15px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.ticket-check-btn:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  border: 4px double white;
 }
 
 @media screen and (min-width: 576px) {
   .modal-content {
-    min-height: 400px;
+    min-height: 200px;
   }
 }

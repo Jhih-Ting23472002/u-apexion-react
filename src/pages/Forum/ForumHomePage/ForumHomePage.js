@@ -54,12 +54,34 @@ const ForumSortNew = styled(Link)`
     border: 4px double black;
   `};
 `;
+
 const NUM_PER_PAGE = 4;
 const TOTAL_PAGES = 8;
 
 function Post({ post }) {
   const [likes, setLikes] = useState(post.article_likes);
   const [save, setSave] = useState(post.article_save);
+  const [article_id, setArtical_id] = useState(post.forum_sid);
+
+  const likeHandler = e => {
+    const newLike = likes + 1;
+    setLikes(newLike);
+    setArtical_id(post.forum_sid);
+    console.log('id', article_id);
+
+    console.log(likes);
+    fetch('http://localhost:3001/forum_index/likes-update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        art_likes: newLike,
+        art_id: article_id,
+      }),
+    }).then(res => res.json());
+  };
+
   return (
     <>
       <div className="card forum_card">
@@ -104,7 +126,8 @@ function Post({ post }) {
           <div
             className="article-like-box-group"
             // style={{ border: '1px solid red' }}
-            onClick={() => setLikes(likes + 1)}
+            // onClick={() => setLikes(likes + 1)}
+            onClick={likeHandler}
           >
             <i className="fas fa-heart article-like-box-group-icon"></i>
             <div className="article-like-box-number">{likes}</div>
