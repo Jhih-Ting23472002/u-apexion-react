@@ -11,11 +11,27 @@ const TripCard = props => {
     setTripDate,
     mealSelected,
     setMealSelected,
+    memberName,
   } = props;
 
+  //訂票資訊陣列 (餐點類型要解決)
+  const ticketArr = [
+    {
+      trip: tripSelected,
+      datestart: tripDate.dateSelected,
+      dateend: tripDate.returnDate,
+      meal: mealSelected,
+      people: memberName.length,
+      price: parseInt(tripPrice) * memberName.length,
+      img: cartTicket,
+    },
+  ];
+
+  console.log('購物車訂票資訊', ticketArr);
   console.log('tripPrice', tripPrice);
   let tripMoney = tripPrice;
   console.log(tripMoney);
+  console.log(mealSelected);
   console.log(
     'tripDate:dateSelected',
     tripDate.dateSelected,

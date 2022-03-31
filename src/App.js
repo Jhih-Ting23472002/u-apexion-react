@@ -94,6 +94,7 @@ function App() {
   const [mealSelected, setMealSelected] = useState([]);
   const [change, setChange] = useState(0);
   const [memberName, setMemberName] = useState([]);
+ 
   console.log('成員', memberName);
   console.log('行程', tripSelected);
   console.log('出發日期', tripDate);
@@ -276,6 +277,7 @@ function App() {
                         tripDate={tripDate}
                         seatNumberDemo={seatNumberDemo}
                         setSeatNumberDemo={setSeatNumberDemo}
+                        memberName={memberName}
                       />
                     </Route>
                     <Route path="/ticket-meal-choose">
@@ -289,6 +291,7 @@ function App() {
                         seatNumberDemo={seatNumberDemo}
                         tripDays={tripDays}
                         tripPrice={tripPrice}
+                        memberName={memberName}
                       />
                     </Route>
                     <Route path="/ticket-confirm"></Route>
@@ -335,6 +338,7 @@ function App() {
                         setTripDate={setTripDate} //from 采諭
                         mealSelected={mealSelected} //from 采諭
                         setMealSelected={setMealSelected} //from 采諭
+                        memberName={memberName}
                         //---------------------------------
                         productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                         setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給

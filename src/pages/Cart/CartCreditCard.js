@@ -13,6 +13,10 @@ const CartCreditCard = props => {
   const [focus, setFocus] = useState('');
   // const [productFinalName, setProductFinalName] = useState('');
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const {
     cartOrderListNumber,
     setCartOrderListNumber,
@@ -70,7 +74,7 @@ const CartCreditCard = props => {
   const sendOrderDeatilHandler = e => {
     setCartOrderListNumber(orderListNumber);
     //console.log('orderListNumber', orderListNumber);  測試是否印成功
-    alert('金額核對完畢，確認送出？');
+    // alert('金額核對完畢，確認送出？');
     fetch('http://localhost:3001/cart/order-list-post', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -142,7 +146,10 @@ const CartCreditCard = props => {
             <Link to={'/cart-complete'} className="mx-3">
               <button
                 type="button"
-                onClick={sendOrderDeatilHandler}
+                onClick={() => {
+                  sendOrderDeatilHandler();
+                  // handleShow();
+                }}
                 className="btn card-confirm cart-link"
               >
                 確認付款 (Confirm)
@@ -154,7 +161,12 @@ const CartCreditCard = props => {
           </div>
         </div>
       </div>
-      <CartCreditCardModal />
+      {/* <CartCreditCardModal
+        show={show}
+        setShow={setShow}
+        handleClose={handleClose}
+        handleShow={handleShow}
+      /> */}
     </>
   );
 };
