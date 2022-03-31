@@ -130,12 +130,12 @@ export default function ForumSinglePostPage() {
   const history = useHistory();
   const [imgSrc, setImgSrc] = useState();
 
-  function SinglePostResponsesArea({ name, res_content, res_time }) {
+  function SinglePostResponsesArea({ name, res_content, res_time, imgs }) {
     return (
       <div className="forum_response_area">
         <div className="forum_response_user">
           <div className="forum_response_user_img">
-            <img src="" alt="" />
+            <img src={`./index_img/${imgs}`} alt="" />
           </div>
           <div className="forum_response_user_name_time">
             <div className="forum_user_name">@{name}</div>
