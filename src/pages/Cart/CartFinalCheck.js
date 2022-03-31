@@ -16,6 +16,8 @@ const CartFinalCheck = props => {
     mealSelected,
     totalProductItem,
     cartTotalPrice,
+    cartTripTotal,
+    memberName,
   } = props;
 
   return (
@@ -126,7 +128,7 @@ const CartFinalCheck = props => {
                     行程：{tripSelected}
                   </div>
                   <div className="cart-product-list-group">
-                    餐點:{mealSelected.USER1}
+                    餐點:{mealSelected}
                   </div>
                 </div>
                 <div className="d-flex justify-content-between need-width">
@@ -136,9 +138,11 @@ const CartFinalCheck = props => {
                   </div>
                 </div>
                 <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">人數4</div>
                   <div className="cart-product-list-group">
-                    票價:${+tripPrice}
+                    人數：{memberName.length}
+                  </div>
+                  <div className="cart-product-list-group">
+                    票價：${cartTripTotal}
                   </div>
                 </div>
               </div>
@@ -146,9 +150,9 @@ const CartFinalCheck = props => {
             <div className="d-flex flex-column align-items-end final-total-price">
               <div className="mb-4">
                 共{totalProductItem + 1}件商品，總金額$
-                {cartTotalPrice + +tripPrice}
+                {cartTotalPrice + cartTripTotal}
               </div>
-              <div>本訂單需付款金額為${cartTotalPrice + +tripPrice}</div>
+              <div>本訂單需付款金額為${cartTotalPrice + cartTripTotal}</div>
             </div>
           </div>
 

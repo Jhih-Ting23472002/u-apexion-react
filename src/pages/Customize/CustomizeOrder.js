@@ -6,10 +6,8 @@ import ModalHeader from 'react-bootstrap/ModalHeader';
 function CustomizeOrder(props) {
   //app最外層傳入
   const { seatColor, craft } = props;
-  const abc=craft
-  const idList = Object.keys(abc);
- const nameList = Object.values(idList);
-  console.log(nameList)
+
+  console.log(craft[0].craftString)
 
 
   return (
@@ -54,7 +52,7 @@ function CustomizeOrder(props) {
               <table>
                 <tr>
                   <th>字樣：</th>
-                  <td></td>
+                  <td>{craft[0].craftString}</td>
                 </tr>
                 <tr>
                   <th>國家：</th>

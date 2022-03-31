@@ -64,6 +64,7 @@ import TravelChoosePriceM from './pages/Travel/TravelChoosePriceM';
 import TravelChoosePriceF from './pages/Travel/TravelChoosePriceF';
 import TravelChooseDayM from './pages/Travel/TravelChooseDayM';
 import TravelChooseDayF from './pages/Travel/TravelChooseDayF';
+import TravelIndexSearch from './pages/Travel/TravelIndexSearch';
 
 // Forum
 import ForumHomePage from './pages/Forum/ForumHomePage';
@@ -124,7 +125,8 @@ function App() {
     addressDist: '',
     address: '',
   });
-  const [cartTotalPrice, setCartTotalPrice] = useState(0); // 購物車總金額
+  const [cartTotalPrice, setCartTotalPrice] = useState(0); // 衣服褲子總金額
+  const [cartTripTotal, setCartTripTotal] = useState(0); // 票券總金額
   const [totalProductItem, setTotalProductItem] = useState(0);
   const [cartOrderListNumber, setCartOrderListNumber] = useState(0); // 訂單編號初始值
   // 以上是cart的部分
@@ -254,6 +256,10 @@ function App() {
                     <Route path="/travelchoose-dayf">
                       <TravelChooseDayF />
                     </Route>
+                    <Route path="/travelchoose-UAS-004">
+                      <TravelIndexSearch />
+                    </Route>
+
                     {/* 訂票頁面 */}
                     <Route path="/ticket-order">
                       <Ticket setMemberName={setMemberName} />
@@ -336,8 +342,8 @@ function App() {
                     </Route>
                     <Route exact path="/cart-payment">
                       <CartChoosePayment
-                        cartTotalPrice={cartTotalPrice} //購物車總金額
-                        setCartTotalPrice={setCartTotalPrice} //購物車總金額
+                        cartTotalPrice={cartTotalPrice} //衣服褲子總金額
+                        setCartTotalPrice={setCartTotalPrice} //衣服褲子總金額
                         //---------------------------------
                         tripSelected={tripSelected} //from 采諭
                         setTripSelected={setTripSelected} //from 采諭
@@ -353,6 +359,8 @@ function App() {
                         setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
                         totalProductItem={totalProductItem} //購物車總衣服數量
                         setTotalProductItem={setTotalProductItem}
+                        cartTripTotal={cartTripTotal} // 票券總金額
+                        setCartTripTotal={setCartTripTotal} // 票券總金額
                         //---------------------------------
                         setUserOption={setUserOption}
                         userOption={userOption}
@@ -374,6 +382,7 @@ function App() {
                         setTripDate={setTripDate} //from 采諭
                         mealSelected={mealSelected} //from 采諭
                         setMealSelected={setMealSelected} //from 采諭
+                        memberName={memberName}
                         //-------------------------------------------------
                         productDetailList={productDetailList} // from 智婷
                         userOption={userOption}
@@ -381,6 +390,7 @@ function App() {
                         cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
                         cartTotalPrice={cartTotalPrice} //購物車總金額
                         totalProductItem={totalProductItem} //購物車總衣服數量
+                        cartTripTotal={cartTripTotal} // 票券總金額
                       />
                     </Route>
                     <Route path="/cart-credit-card">
@@ -390,8 +400,10 @@ function App() {
                         productDetailList={productDetailList} //from 智婷  產品名稱、數量、金額
                         //-------------------------------------------------
                         cartTotalPrice={cartTotalPrice} //購物車總金額
+                        cartTripTotal={cartTripTotal} // 票券總金額
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
                         setCartOrderListNumber={setCartOrderListNumber} // 訂單編號後來的值
+                        memberName={memberName}
                       />
                     </Route>
                     <Route path="/cart-complete">
@@ -401,6 +413,8 @@ function App() {
                         tripSelected={tripSelected}
                         tripPrice={tripPrice}
                         cartTotalPrice={cartTotalPrice} //購物車總金額
+                        cartTripTotal={cartTripTotal} // 票券總金額
+                        memberName={memberName}
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>

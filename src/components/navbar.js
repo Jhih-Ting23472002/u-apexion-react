@@ -15,10 +15,9 @@ function Navbar(props) {
   //註冊連結
   const [register, setRegister] = useState('/member-sign-up');
   //是不是登入狀態個人頁連結
-  const [personalPage, setPersonalPage] = useState('/member-login')
+  const [personalPage, setPersonalPage] = useState('/member-login');
   // console.log(register)
   const { setProductDetailList } = props;
-
 
   useEffect(() => {
     if (localStorage.getItem('user_name')) {
@@ -34,11 +33,11 @@ function Navbar(props) {
   useEffect(() => {
     if (signOut === '登出') {
       setRegister('/member-login');
-      
-      setPersonalPage('/member-person')
+
+      setPersonalPage('/member-person');
     } else {
       setRegister('/member-sign-up');
-      setPersonalPage('/member-login')
+      setPersonalPage('/member-login');
     }
   }, [signOut]);
   //console.log(register)
@@ -48,7 +47,7 @@ function Navbar(props) {
       <div className="topspace"></div>
       <nav>
         <div className="nav_container">
-          <Link to="#/" className="nav_UA-logo"></Link>
+          <Link to="/" className="nav_UA-logo"></Link>
           <div className="nav_spa"></div>
           <ul className="nav_nav-bar">
             <li>
@@ -73,10 +72,10 @@ function Navbar(props) {
               <Link
                 to={register}
                 onClick={() => {
-                  setCartTotal(0)
+                  setCartTotal(0);
                   setSignOut('註冊');
                   setUserNavbar('登入');
-                  localStorage.clear() ;
+                  localStorage.clear();
                   // localStorage.removeItem('user_id');
                   // localStorage.removeItem('user_name');
                   // localStorage.removeItem('productLocalStorage');
