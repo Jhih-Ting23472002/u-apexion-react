@@ -52,7 +52,11 @@ function Post({ post }) {
             <div className="forum_user-top">
               <div className="forum_user_top_left">
                 <div className="forum_user-logo">
-                  {/* <img className="cover" src="" alt="" /> */}
+                  <img
+                    className="cover"
+                    src={`./index_img/${post.imgs}`}
+                    alt=""
+                  />
                 </div>
                 <div className="user-title">
                   <div className="user-name forum_user-name">{post.name}</div>
@@ -117,7 +121,7 @@ export default function ForumUArticlePage() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3001/forum_index/getAll')
+    fetch('http://localhost:3001/forum_index/UApexion-article')
       .then(res => res.json())
       .then(posts => setPosts(posts));
   }, []);
@@ -195,52 +199,6 @@ export default function ForumUArticlePage() {
                 .map(post => (
                   <Post post={post} />
                 ))}
-              {/* <nav aria-label="Page navigation example">
-                <ul class="pagination forum-pagination">
-                  <li class="page-item forum-page-item">
-                    <a
-                      style={{ color: '#808080' }}
-                      class="page-link forum-page-link"
-                      href="#/"
-                    >
-                      <i class="fas fa-angle-double-left"></i>
-                      Previous
-                    </a>
-                  </li>
-                  <li class="page-item forum-page-item">
-                    <a
-                      style={{ color: '#05F2F2' }}
-                      class="page-link forum-page-link"
-                      href="#/"
-                    >
-                      1
-                    </a>
-                  </li>
-                  <li class="page-item forum-page-item">
-                    <a class="page-link forum-page-link" href="#/">
-                      2
-                    </a>
-                  </li>
-                  <li class="page-item forum-page-item">
-                    <a class="page-link forum-page-link" href="#/">
-                      3
-                    </a>
-                  </li>
-                  <li class="page-item forum-page-item">
-                    <a
-                      style={{ display: 'inline' }}
-                      class="page-link forum-page-link"
-                      href="#/"
-                    >
-                      Next
-                    </a>
-                    <i
-                      style={{ fontSize: '10px' }}
-                      class="fas fa-angle-double-right"
-                    ></i>
-                  </li>
-                </ul>
-              </nav> */}
             </div>
           </div>
         </div>

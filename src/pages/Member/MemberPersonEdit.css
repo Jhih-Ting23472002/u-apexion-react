@@ -82,8 +82,7 @@
   background-color: #fff;
   opacity: 0.1;
 }
-.member-circle-btn input {
-}
+
 .person-avatar-container {
   width: 30%;
   display: flex;
@@ -93,8 +92,8 @@
 }
 
 .person-avatar-img {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   background-color: #aaa;
   border: 2px solid #fff;
   border-radius: 50%;

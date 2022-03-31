@@ -49,7 +49,11 @@ function Post({ post }) {
           <div className="card-user">
             <div className="forum_user-top">
               <div className="forum_user-logo">
-                {/* <img className="cover" src="" alt="" /> */}
+                <img
+                  className="cover"
+                  src={`http://localhost:3000/index_img/${post.imgs}`}
+                  alt=""
+                />
               </div>
               <div className="user-title">
                 <div className="user-name forum_user-name">{post.name}</div>

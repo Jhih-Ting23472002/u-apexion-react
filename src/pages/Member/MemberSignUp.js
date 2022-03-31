@@ -4,6 +4,7 @@ import './MemberSignUp.css';
 import { useState } from 'react';
 import { registerMem } from '../../data/UserWebApi';
 import { Link, useHistory } from 'react-router-dom';
+import MemberSignUpModal from './MemberSignUpModal';
 
 const MemberSignUp = () => {
   const [registerData, setRegisterData] = useState({
@@ -15,10 +16,11 @@ const MemberSignUp = () => {
     birthday: '',
     country: '',
   });
+  const [modalShow, setModalShow] = useState(false);
   // const [vCode, setVcode] = useState('');
   // const [errorMessageMail, setErrorMessageMail] = useState('');
+
   const history = useHistory();
-  // const history = useHistory();
   // const verify_code = localStorage.getItem('verify_code');
   //function
   const handleRegister = e => {
@@ -26,9 +28,9 @@ const MemberSignUp = () => {
     registerMem(registerData).then(obj => {
       console.log(obj);
       if (obj.success) {
-        alert('註冊成功');
+        setModalShow(true);
       }
-      history.push('/member-login'); //登入成功後導入會員頁
+      // history.push('/member-login'); //登入成功後導入會員頁
     });
   };
   const handleChange = e => {
@@ -225,6 +227,13 @@ const MemberSignUp = () => {
           </div>
         </div>
       </div>
+      <MemberSignUpModal
+        show={modalShow}
+        onHide={() => {
+          //setModalShow(false);
+          history.push('/member-login'); //登入成功後導入會員頁
+        }}
+      />
     </>
   );
 };
