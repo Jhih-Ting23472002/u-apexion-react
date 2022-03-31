@@ -118,7 +118,10 @@ const CardComplete = props => {
               繼續購物
             </Link>
             <div className="col-1"></div>
-            <Link className="col-2 btn cart-link to-other-page mt-5" to={''}>
+            <Link
+              className="col-2 btn cart-link to-other-page mt-5"
+              to={'/member-login'}
+            >
               登出
             </Link>
             <div className="col-1"></div>
