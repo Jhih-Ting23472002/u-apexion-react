@@ -64,7 +64,7 @@ function TravelIndex() {
       </section>
 
       <section className="trivia">
-        <h2 className="triviah2">訓練活動花絮</h2>
+        <h2 className="triviah2">活動花絮牆</h2>
         <hr className="generalHr" />
       </section>
 
@@ -76,9 +76,10 @@ function TravelIndex() {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h4 className="carouselh4">First slide label</h4>
+            <h4 className="carouselh4">航天遊客中心舉行的儀式</h4>
             <p className="carouselp">
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
+              羅伯特·卡巴納Bob
+              Cabana，在肯尼迪航天遊客中心舉行的儀式上，送螺栓給利亞姆與康納的合影。
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -90,9 +91,10 @@ function TravelIndex() {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h4 className="carouselh4">Second slide label</h4>
+            <h4 className="carouselh4">U-APEXION成立後第一組旅客</h4>
             <p className="carouselp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              左起為馬提亞斯Matthias Josef Maurer、托馬斯Thomas Henry
+              Marshburn、拉加Raja Chari、凱拉Kayla Barron的合影。
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -104,9 +106,9 @@ function TravelIndex() {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h4 className="carouselh4">Second slide label</h4>
+            <h4 className="carouselh4">旅客出發前的潛水訓練課程</h4>
             <p className="carouselp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              在太空中，從基本的靜止不動到翻身都得重新學習，每個人都要接受上千小時的水下訓練，才能上太空。
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -118,9 +120,9 @@ function TravelIndex() {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h4 className="carouselh4">Second slide label</h4>
+            <h4 className="carouselh4">U-APEXION專業維修人員</h4>
             <p className="carouselp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              在國際太空站上有專業的團隊維修人員，時時刻刻保養、維護站內站外的設備。
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -132,9 +134,10 @@ function TravelIndex() {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h4 className="carouselh4">Second slide label</h4>
+            <h4 className="carouselh4">旅客出發前的無重力體驗課程</h4>
             <p className="carouselp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              瞧瞧旅客們玩得很開心~!!
+              話說想要上太空旅行、可是要適應在零重力環境下生活呢。這可是必備課程之一喔~~
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -146,9 +149,10 @@ function TravelIndex() {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h4 className="carouselh4">Second slide label</h4>
+            <h4 className="carouselh4">U-APEXION專業維修人員</h4>
             <p className="carouselp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              我們的專業維修人員私下也有可愛的一面!!
+              正在外太空的艙內慶祝聖誕節~~
             </p>
           </Carousel.Caption>
         </Carousel.Item>
