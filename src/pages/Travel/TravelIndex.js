@@ -52,7 +52,7 @@ function TravelIndex() {
               <form action="" method="">
                 <input
                   type="search"
-                  placeholder="請輸入產品名/關鍵字/產品代碼 ex.巨蟹座 or 火星 or UAT-001"
+                  placeholder="請輸入產品名/關鍵字/產品代碼 ex.星座 or 金牛座 or UAS-004"
                 />
                 <Link to="/travelchoose-UAS-004">
                   <button>Search</button>
