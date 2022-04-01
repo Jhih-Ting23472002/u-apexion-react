@@ -127,6 +127,7 @@ function App() {
   });
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 衣服褲子總金額
   const [cartTripTotal, setCartTripTotal] = useState(0); // 票券總金額
+  const [cartTicketAmount, setCartTicketAmount] = useState(0); // 票券數量
   const [totalProductItem, setTotalProductItem] = useState(0);
   const [cartOrderListNumber, setCartOrderListNumber] = useState(0); // 訂單編號初始值
   // 以上是cart的部分

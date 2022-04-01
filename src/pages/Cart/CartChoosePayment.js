@@ -59,6 +59,8 @@ const CartChoosePayment = props => {
             memberName={props.memberName}
             cartTripTotal={props.cartTripTotal} // 票券總金額
             setCartTripTotal={props.setCartTripTotal} // 票券總金額
+            cartTicketAmount={props.cartTicketAmount} // 票券數量
+            setCartTicketAmount={props.setCartTicketAmount}
           />
 
           {/* <SuitCard />
@@ -103,7 +105,7 @@ const CartChoosePayment = props => {
             </div>
             <div className="cart-should-pay col-5">
               <h5 className="cart-should-pay-text">
-                共{props.totalProductItem + 1}件商品
+                共{props.totalProductItem + props.cartTicketAmount}件商品
               </h5>
               <h5 className="cart-should-pay-text">
                 小計:&nbsp;${props.cartTotalPrice + props.cartTripTotal}
