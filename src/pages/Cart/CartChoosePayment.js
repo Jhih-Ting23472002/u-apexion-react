@@ -63,11 +63,14 @@ const CartChoosePayment = props => {
             setCartTicketAmount={props.setCartTicketAmount}
           />
 
-          <SuitCard suit={props.suit} />
+          <SuitCard suit={props.suit} setSuit={props.setSuit} />
 
-          {/* <SeatCard />
+          <ShipCard craft={props.craft} setCraft={props.setCraft} />
 
-          <ShipCard /> */}
+          <SeatCard
+            customize={props.customize}
+            setCustomize={props.setCustomize}
+          />
 
           <div className="cart separated-line"></div>
           <div className="cart-user-option-should-pay">
