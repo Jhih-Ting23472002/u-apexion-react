@@ -139,6 +139,7 @@ function MemberAddress() {
         </div>
       </div>
       <MemberAddressNew show={modalShow} setModalShow={setModalShow} />
+
       <MemberEditOrDelete
         show={editmodalShow}
         setModalShow={setEditModalShow}

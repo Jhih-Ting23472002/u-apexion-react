@@ -115,7 +115,7 @@ const CardComplete = props => {
           <div className="d-flex justify-content-around">
             <Link
               className="col-2 btn cart-link to-other-page mt-5"
-              to={'/travel-index'}
+              to={'/u-apexion'}
             >
               回首頁
             </Link>

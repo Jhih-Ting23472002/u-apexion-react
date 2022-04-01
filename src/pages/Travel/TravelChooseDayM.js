@@ -25,7 +25,7 @@ function TravelChooseDM() {
     //載入資料
     setTravelChooseM([]);
     //X秒後,開啟載入資料指示
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(false), 2500);
   }, []);
 
   const spinner = (
@@ -128,7 +128,7 @@ function TravelChooseDM() {
                   <form action="" method="">
                     <input
                       type="search"
-                      placeholder="請輸入產品名/關鍵字/產品代碼 ex.巨蟹座 or 火星 or UAT-001"
+                      placeholder="請輸入產品名/關鍵字/產品代碼"
                       name="search"
                     />
                     <button>Search</button>

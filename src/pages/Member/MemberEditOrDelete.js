@@ -12,8 +12,9 @@ function MemberEditOrDelete(props) {
   const history = useHistory();
   const user_id = localStorage.getItem('user_id');
   const data = JSON.parse(localStorage.getItem('data'));
+  console.log('data:', data);
   console.log('user_id:', user_id);
-  console.log('data:', data.sid);
+  // console.log('data:', data.sid);
   //   {
   //     address: "台北市"
   //     phone_number: "0988888999"
@@ -33,16 +34,18 @@ function MemberEditOrDelete(props) {
   });
 
   useEffect(() => {
-    const newData = {
-      ...editData,
-      placename: data.place_name,
-      recipientname: data.recipient_name,
-      postalcode: data.postal_code,
-      address: data.address,
-      phonenumber: data.phone_number,
-      sid: data.sid,
-    };
-    setEditData(newData);
+    if (data) {
+      const newData = {
+        ...editData,
+        placename: data.place_name,
+        recipientname: data.recipient_name,
+        postalcode: data.postal_code,
+        address: data.address,
+        phonenumber: data.phone_number,
+        sid: data.sid,
+      };
+      setEditData(newData);
+    }
   }, []);
 
   // 用戶修改時，即時更新state狀態
