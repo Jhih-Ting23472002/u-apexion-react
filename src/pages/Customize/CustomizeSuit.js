@@ -365,7 +365,7 @@ function CustomizeSuit() {
                   }}
                 >
                   <img
-                    data-mark={v.slice(15, -4)}
+                    data-mark={v}
                     src={v}
                     alt=""
                     onClick={e => {
