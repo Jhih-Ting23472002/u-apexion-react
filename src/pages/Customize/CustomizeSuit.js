@@ -50,10 +50,12 @@ function CustomizeSuit(props) {
   //suitImgName服裝顏色名稱
   const [suitImgName, setSuitImgName] = useState('');
 
+
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
   const [country, setCountry] = useState('');
+  // console.log(country)
   //徽章
   const [markSelectSuit, setMarkSelectSuit] = useState('0');
   const [markImgSuit, setMarkImgSuit] = useState('0');
@@ -122,7 +124,7 @@ function CustomizeSuit(props) {
     setSuit(function (prevData) {
       history.push('/customize-craft');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { markSuit, country }];
+      return [...prevData, { markSuit, country,suitImgName }];
     });
   }
 

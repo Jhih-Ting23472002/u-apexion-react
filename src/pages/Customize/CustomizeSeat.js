@@ -5,7 +5,7 @@ import CartQuantity from '../Products/CartQuantity';
 
 function CustomizeSeat(props) {
   //最外面app參數
-  const { setCustomize, craft } = props;
+  const { setCustomize, craft, suit} = props;
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
 
   const [modalShow, setModalShow] = useState(false);
@@ -123,6 +123,7 @@ function CustomizeSeat(props) {
         setCustomize={setCustomize}
         seatColor={style}
         craft={craft}
+        suit={suit}
       />
     </>
   );
