@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import './CustomizeSuit.css';
+import CartQuantity from '../Products/CartQuantity';
+
 const allCountry = [
   '/customize_img/america.png',
   '/customize_img/canada.png',
@@ -37,7 +40,10 @@ const allMark = [
   '/customize_img/space-mark-23.png',
 ];
 
-function CustomizeSuit() {
+function CustomizeSuit(props) {
+  const { setSuit } = props;
+  const history = useHistory();
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
   //顏色
   const [opa, setOpa] = useState('');
   const [suitImg, setSuitImg] = useState('');
@@ -47,9 +53,11 @@ function CustomizeSuit() {
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
+  const [country, setCountry] = useState('');
   //徽章
   const [markSelectSuit, setMarkSelectSuit] = useState('0');
   const [markImgSuit, setMarkImgSuit] = useState('0');
+  const [markSuit, setMarkSuit] = useState('');
   //進度條
   const [suitStep1, setSuitStep1] = useState('');
   const [suitStep2, setSuitStep2] = useState('');
@@ -59,6 +67,7 @@ function CustomizeSuit() {
     fill2: '#595959',
     fill3: '#595959',
   });
+
   function setFlagHandler(e) {
     //抓取圖片放入太空船
     const closeOpa = '0';
@@ -108,6 +117,15 @@ function CustomizeSuit() {
     e.target.style.filter =
       'drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4)';
   }
+
+  function addCart() {
+    setSuit(function (prevData) {
+      history.push('/customize-craft');
+      setCartTotal(cartTotal + 1);
+      return [...prevData, { markSuit, country }];
+    });
+  }
+
   return (
     <>
       <section className="Customsuit-page-view">
@@ -217,7 +235,7 @@ function CustomizeSuit() {
             />
           </svg>
 
-          <button className="suit-circle-btn">完成送出</button>
+          <button className="suit-circle-btn" onClick={() => addCart()} >完成送出</button>
           <div className="maybe-use-canvus">
             <img
               alt=""
@@ -333,7 +351,7 @@ function CustomizeSuit() {
                   className="suit-flag"
                   key={i}
                   onClick={e => {
-                    console.log(e.currentTarget.dataset.countrykey);
+                    setCountry(e.currentTarget.dataset.countrykey);
                   }}
                 >
                   <img
@@ -361,7 +379,7 @@ function CustomizeSuit() {
                   className="suit-mark"
                   key={i}
                   onClick={e => {
-                    console.log(e.currentTarget.dataset.markkey);
+                    setMarkSuit(e.currentTarget.dataset.markkey);
                   }}
                 >
                   <img

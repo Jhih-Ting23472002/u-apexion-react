@@ -33,12 +33,13 @@ function CustomizeCraft(props) {
   const [craftCountryStyle, setCraftCountryStyle] = useState('0');
   const [craftString, setCraftString] = useState('');
   const [labelSt, setLabelSt] = useState('請輸入名稱(8個字元內)');
+  const [country, setCountry] = useState('');
 
   function addCart() {
     setCraft(function (prevData) {
       history.push('/customize-seat');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { craftString }];
+      return [...prevData, { craftString, country }];
     });
   }
 
@@ -140,12 +141,19 @@ function CustomizeCraft(props) {
               />
             </svg>
           </div>
-          <canvas id="canvasCraft" className="craft-img" width="120" height="600 ">
+          <canvas
+            id="canvasCraft"
+            className="craft-img"
+            width="120"
+            height="600 "
+          >
             <canvas
               className="craft-filter2"
               style={{ opacity: craftCountryStyle }}
             >
-              <canvas width="65" height="39"
+              <canvas
+                width="65"
+                height="39"
                 className="craft-area-view1-country2"
                 src={countryImg}
                 alt=""
@@ -230,11 +238,10 @@ function CustomizeCraft(props) {
                   className="suit-flag"
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
-                  data-craftimg={v.slice(15,-4)}
-                  onClick={e=>{
-                    console.log(e.currentTarget.dataset.craftimg)
+                  data-craftimg={v.slice(15, -4)}
+                  onClick={e => {
+                    setCountry(e.currentTarget.dataset.craftimg);
                   }}
-                  
                 >
                   <img
                     data-img={v}
