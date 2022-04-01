@@ -25,7 +25,7 @@ function TravelChoosePM() {
     //載入資料
     setTravelChooseM([]);
     //X秒後,開啟載入資料指示
-    setTimeout(() => setLoading(true), 2500);
+    setTimeout(() => setLoading(false), 2500);
   }, []);
 
   const spinner = (
@@ -98,17 +98,6 @@ function TravelChoosePM() {
 
   return (
     <>
-      <div className="youtube">
-        <div class="videobox">
-          <iframe
-            frameborder="0"
-            src="https://www.youtube.com/embed/BmzUAqK22Bs?autoplay=1&mute=1"
-            title="YouTube video player"
-            allowFullScreen="true"
-          ></iframe>
-        </div>
-      </div>
-
       <div className="container choosecontainer">
         <div className="position-relative">
           <div className="text-white px-3 pt-3 my-5">
