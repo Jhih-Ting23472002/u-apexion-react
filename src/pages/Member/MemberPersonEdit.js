@@ -31,8 +31,11 @@ const MemberPersonEdit = () => {
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
-    setFileSrc(`http://localhost:3001/img/${
-      newUserName?.avatar?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'}`);
+    setFileSrc(
+      `http://localhost:3001/img/${
+        newUserName?.avatar ?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'
+      }`
+    );
   }, [userAll]);
 
   //先從localStorage拿id (你們的user_id)
