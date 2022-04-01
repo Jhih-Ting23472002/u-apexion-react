@@ -322,7 +322,7 @@ function App() {
                     <CustomizeMainPage />
                   </Route> */}
                     <Route path="/customize-suit">
-                      <CustomizeSuit setSuit={setSuit}/>
+                      <CustomizeSuit setSuit={setSuit} />
                     </Route>
                     <Route path="/customize-craft">
                       <CustomizeCraft setCraft={setCraft} />
@@ -370,6 +370,8 @@ function App() {
                         setTotalProductItem={setTotalProductItem}
                         cartTripTotal={cartTripTotal} // 票券總金額
                         setCartTripTotal={setCartTripTotal} // 票券總金額
+                        cartTicketAmount={cartTicketAmount}
+                        setCartTicketAmount={setCartTicketAmount}
                         //---------------------------------
                         setUserOption={setUserOption}
                         userOption={userOption}
@@ -397,9 +399,10 @@ function App() {
                         userOption={userOption}
                         setCartUserInfo={setCartUserInfo}
                         cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
-                        cartTotalPrice={cartTotalPrice} //購物車總金額
+                        cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         totalProductItem={totalProductItem} //購物車總衣服數量
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        cartTicketAmount={cartTicketAmount} // 票券數量
                       />
                     </Route>
                     <Route path="/cart-credit-card">
@@ -408,7 +411,7 @@ function App() {
                         tripPrice={tripPrice} //from 采諭  票券金額
                         productDetailList={productDetailList} //from 智婷  產品名稱、數量、金額
                         //-------------------------------------------------
-                        cartTotalPrice={cartTotalPrice} //購物車總金額
+                        cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
                         setCartOrderListNumber={setCartOrderListNumber} // 訂單編號後來的值
@@ -418,10 +421,11 @@ function App() {
                     <Route path="/cart-complete">
                       <CardComplete
                         productDetailList={productDetailList}
-                        totalProductItem={totalProductItem} //購物車總衣服數量
+                        totalProductItem={totalProductItem} //總衣服數量
+                        cartTicketAmount={cartTicketAmount} // 票券數量
                         tripSelected={tripSelected}
                         tripPrice={tripPrice}
-                        cartTotalPrice={cartTotalPrice} //購物車總金額
+                        cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
                         memberName={memberName}
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去

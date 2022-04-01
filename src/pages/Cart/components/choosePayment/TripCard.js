@@ -28,7 +28,7 @@ const TripCard = props => {
       people: memberName.length,
       price: (parseInt(tripPrice) || 0) * memberName.length,
       img: cartTicket,
-      amount: 0,
+      amount: tripSelected ? 1 : 0,
     },
   ];
 
@@ -43,7 +43,7 @@ const TripCard = props => {
     'tripDate:returnDate',
     tripDate.returnDate,
     'mealSelected',
-    mealSelected
+    mealSelected[0]
   );
   let ticketAmount = 0;
   ticketArr.map(v => (ticketAmount += v.amount));
@@ -53,35 +53,36 @@ const TripCard = props => {
   // setTripPrice(ticketArr[0].price);
   return (
     <>
-      {ticketArr.map(v => (
-        <React.Fragment key="1">
-          <div className="cart separated-line"></div>
-          <div className="cart cart-order-item d-flex">
-            <div className="cart cart-img-div col-4 cart-ticket-margin-y">
-              <img src={v.img} alt="" />
-            </div>
-            <div className="cart content-detail col-8 d-flex">
-              <div className="content-detail-inside">
-                <div className="content-detail-inside-top-ticket">
-                  <div className="cart-ticket-destination">
-                    <h5 className="cart-trip-name">行程:{v.trip}</h5>
-                    <h5 className="cart-trip-food">餐點:{v.meal}</h5>
+      {tripSelected &&
+        ticketArr.map(v => (
+          <React.Fragment key="1">
+            <div className="cart separated-line"></div>
+            <div className="cart cart-order-item d-flex">
+              <div className="cart cart-img-div col-4 cart-ticket-margin-y">
+                <img src={v.img} alt="" />
+              </div>
+              <div className="cart content-detail col-8 d-flex">
+                <div className="content-detail-inside">
+                  <div className="content-detail-inside-top-ticket">
+                    <div className="cart-ticket-destination">
+                      <h5 className="cart-trip-name">行程:{v.trip}</h5>
+                      <h5 className="cart-trip-food">餐點:{v.meal}</h5>
+                    </div>
+                    <div className="cart-ticket-during">
+                      <h5 className="cart-start-time">啟航 {v.dateStart}</h5>
+                      <h5 className="cart-gohome-time">回程 {v.dateEnd}</h5>
+                    </div>
                   </div>
-                  <div className="cart-ticket-during">
-                    <h5 className="cart-start-time">啟航 {v.dateStart}</h5>
-                    <h5 className="cart-gohome-time">回程 {v.dateEnd}</h5>
+                  <div className="content-detail-inside-bottom-ticket">
+                    <h5 className="cart-number-people">人數{v.people}</h5>
+                    <button className="btn cart-remove-btn">remove</button>
+                    <div className="cart-order-money">${v.price}</div>
                   </div>
-                </div>
-                <div className="content-detail-inside-bottom-ticket">
-                  <h5 className="cart-number-people">人數{v.people}</h5>
-                  <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">${v.price}</div>
                 </div>
               </div>
             </div>
-          </div>
-        </React.Fragment>
-      ))}
+          </React.Fragment>
+        ))}
     </>
   );
 };
