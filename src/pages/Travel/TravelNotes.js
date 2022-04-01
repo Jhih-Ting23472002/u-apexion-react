@@ -84,6 +84,22 @@ function TravelNotes() {
           </ol>
         </div>
 
+        <div className="youtube">
+          <div class="videobox">
+            <iframe
+              frameborder="0"
+              src="https://www.youtube.com/embed/BmzUAqK22Bs?autoplay=1&mute=1"
+              title="YouTube video player"
+              allowFullScreen="true"
+            ></iframe>
+          </div>
+        </div>
+
+        <section className="carouselnotes">
+          <h2 className="carouselnotesh2">太空站設施商品</h2>
+          <hr className="generalHr" />
+        </section>
+
         <Carousel>
           <Carousel.Item>
             <img
