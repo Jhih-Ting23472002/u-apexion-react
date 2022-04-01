@@ -143,7 +143,9 @@ function App() {
   const [suit, setSuit] = useState([]); // 太空服
   const [customize, setCustomize] = useState([]); // 椅子
   const [craft, setCraft] = useState([]); // 火箭
-  console.log(craft);
+  console.log('suit', suit);
+  console.log('customize', customize);
+  console.log('craft', craft);
 
   // forum
   const [newpost, setNewPost] = useState(false);
@@ -366,6 +368,14 @@ function App() {
                         //---------------------------------
                         productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                         setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
+                        //---------------------------------
+                        suit={suit} // from Michael
+                        setSuit={setSuit} // from Michael
+                        customize={customize} // from Michael
+                        setCustomize={setCustomize} // from Michael
+                        craft={craft} // from Michael
+                        setCraft={setCraft} // from Michael
+                        //---------------------------------
                         totalProductItem={totalProductItem} //購物車總衣服數量
                         setTotalProductItem={setTotalProductItem}
                         cartTripTotal={cartTripTotal} // 票券總金額
@@ -396,6 +406,11 @@ function App() {
                         memberName={memberName}
                         //-------------------------------------------------
                         productDetailList={productDetailList} // from 智婷
+                        //-------------------------------------------------
+                        suit={suit} // from Michael
+                        customize={customize} // from Michael
+                        craft={craft} // from Michael
+                        //-------------------------------------------------
                         userOption={userOption}
                         setCartUserInfo={setCartUserInfo}
                         cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
@@ -411,6 +426,10 @@ function App() {
                         tripPrice={tripPrice} //from 采諭  票券金額
                         productDetailList={productDetailList} //from 智婷  產品名稱、數量、金額
                         //-------------------------------------------------
+                        suit={suit} // from Michael
+                        customize={customize} // from Michael
+                        craft={craft} // from Michael
+                        //-------------------------------------------------
                         cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
@@ -420,7 +439,12 @@ function App() {
                     </Route>
                     <Route path="/cart-complete">
                       <CardComplete
-                        productDetailList={productDetailList}
+                        productDetailList={productDetailList} //from 智婷
+                        //-------------------------------------------------
+                        suit={suit} // from Michael
+                        customize={customize} // from Michael
+                        craft={craft} // from Michael
+                        //-------------------------------------------------
                         totalProductItem={totalProductItem} //總衣服數量
                         cartTicketAmount={cartTicketAmount} // 票券數量
                         tripSelected={tripSelected}

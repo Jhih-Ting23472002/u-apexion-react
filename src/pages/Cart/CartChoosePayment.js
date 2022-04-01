@@ -63,9 +63,9 @@ const CartChoosePayment = props => {
             setCartTicketAmount={props.setCartTicketAmount}
           />
 
-          {/* <SuitCard />
+          <SuitCard suit={props.suit} />
 
-          <SeatCard />
+          {/* <SeatCard />
 
           <ShipCard /> */}
 
