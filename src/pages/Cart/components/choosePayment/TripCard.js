@@ -24,16 +24,16 @@ const TripCard = props => {
       dateend: tripDate.returnDate,
       meal: mealSelected,
       people: memberName.length,
-      price: parseInt(tripPrice) * memberName.length,
+      price: (parseInt(tripPrice) || 0) * memberName.length,
       img: cartTicket,
     },
   ];
 
   console.log('購物車訂票資訊', ticketArr);
   console.log('tripPrice', tripPrice);
+  console.log(parseInt(tripPrice), memberName.length);
   let tripMoney = ticketArr[0].price;
   console.log(tripMoney);
-  console.log(mealSelected);
   console.log(
     'tripDate:dateSelected',
     tripDate.dateSelected,
