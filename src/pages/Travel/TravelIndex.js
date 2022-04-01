@@ -280,7 +280,7 @@ function TravelIndex() {
               rel="noreferrer"
             >
               <p className="projectItemp">
-                Taiwan (971花蓮縣新城鄉七星街79巷5號)
+                Taiwan (966台東縣達仁鄉南田村79巷5號)
               </p>
             </a>
           </div>

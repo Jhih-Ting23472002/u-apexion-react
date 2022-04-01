@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import './CustomizeSuit.css';
 import CartQuantity from '../Products/CartQuantity';
@@ -237,7 +237,9 @@ function CustomizeSuit(props) {
             />
           </svg>
 
-          <button className="suit-circle-btn" onClick={() => addCart()} >完成送出</button>
+          <button className="suit-circle-btn" onClick={() => addCart()}>
+            完成送出
+          </button>
           <div className="maybe-use-canvus">
             <img
               alt=""
@@ -290,7 +292,7 @@ function CustomizeSuit(props) {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
-                setSuitImgName(suitImg.slice(25,-4))
+                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
               }}
             ></div>
             <div
@@ -316,7 +318,7 @@ function CustomizeSuit(props) {
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
 
-                setSuitImgName(suitImg.slice(25,-4))
+                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
               }}
             ></div>
             <div
@@ -341,7 +343,7 @@ function CustomizeSuit(props) {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
-                setSuitImgName(suitImg.slice(25,-4))
+                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
               }}
             ></div>
           </div>
@@ -385,7 +387,7 @@ function CustomizeSuit(props) {
                   }}
                 >
                   <img
-                    data-mark={v.slice(15, -4)}
+                    data-mark={v}
                     src={v}
                     alt=""
                     onClick={e => {
