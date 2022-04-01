@@ -249,7 +249,7 @@ const MemberPersonEdit = () => {
                   name="formImage"
                   onSubmit={handleFormSubmit}
                 > */}
-                <img className="person-avatar-img" src={fileSrc}  alt=""></img>
+                <img className="person-avatar-img" src={fileSrc} alt=""></img>
                 <div
                   className="person-avatar-upload"
                   // style={{ border: '1px solid red' }}

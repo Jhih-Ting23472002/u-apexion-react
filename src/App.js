@@ -163,7 +163,10 @@ function App() {
                       <IndexMain />
                     </Route>
                     <Route exact path="/forum-home">
-                      <ForumHomePage newpost={newpost} />
+                      <ForumHomePage
+                        newpost={newpost}
+                        setNewPost={setNewPost}
+                      />
                     </Route>
                     <Route path="/forum-home/posts/:sid">
                       <ForumSinglePostPage />

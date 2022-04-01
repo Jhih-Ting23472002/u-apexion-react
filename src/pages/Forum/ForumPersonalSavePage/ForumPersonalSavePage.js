@@ -104,8 +104,8 @@ export default function ForumPersonalSavePage() {
               <div className="forum_person_img"></div>
             </div>
             <div className="forum_person_right">
-              <div className="forum_person_email">Amanda Chiu</div>
-              <div className="forum_person_nickname">amandachius@gmail.com</div>
+              <div className="forum_person_email">Adem Chang</div>
+              <div className="forum_person_nickname">Adem@gmail.com</div>
             </div>
           </div>
           <div className="forum_person_bottom col">

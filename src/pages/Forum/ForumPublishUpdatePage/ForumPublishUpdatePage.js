@@ -57,7 +57,7 @@ export default function ForumPublishPage(props) {
   };
 
   const handleFormSubmit = e => {
-    // e.preventDefault()
+    e.preventDefault();
     const fd = new FormData(document.form1);
     alert('確認修改嗎？');
     fetch(`http://localhost:3001/forum_index/forumArticle_update/${sid}`, {
@@ -76,13 +76,13 @@ export default function ForumPublishPage(props) {
     })
       .then(res => res.json())
       .then(data => {
-        setTimeout(() => {
-          if (newpost === true) {
-            setNewPost(false);
-          } else {
-            setNewPost(true);
-          }
-        }, 20000);
+        // setTimeout(() => {
+        //   if (newpost === true) {
+        //     setNewPost(false);
+        //   } else {
+        //     setNewPost(true);
+        //   }
+        // }, 20000);
       });
     history.push('/forum-home');
   };
