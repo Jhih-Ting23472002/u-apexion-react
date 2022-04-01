@@ -139,6 +139,7 @@ function App() {
   const [signOut, setSignOut] = useState('註冊');
 
   //客製化商品
+  const [suit, setSuit] = useState([]); // 太空服
   const [customize, setCustomize] = useState([]); // 椅子
   const [craft, setCraft] = useState([]); // 火箭
   console.log(craft);
@@ -320,7 +321,7 @@ function App() {
                     <CustomizeMainPage />
                   </Route> */}
                     <Route path="/customize-suit">
-                      <CustomizeSuit />
+                      <CustomizeSuit setSuit={setSuit}/>
                     </Route>
                     <Route path="/customize-craft">
                       <CustomizeCraft setCraft={setCraft} />
@@ -329,6 +330,7 @@ function App() {
                       <CustomizeSeat
                         setCustomize={setCustomize}
                         craft={craft}
+                        suit={suit}
                       />
                     </Route>
                     <Route path="/customize-order"></Route>
