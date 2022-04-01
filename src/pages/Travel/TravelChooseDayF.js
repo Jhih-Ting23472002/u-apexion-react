@@ -24,7 +24,7 @@ function TravelChooseDF() {
     //載入資料
     setTravelChooseF([]);
     //X秒後,開啟載入資料指示
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(true), 2000);
   }, []);
 
   const spinner = (
