@@ -23,6 +23,10 @@ body {
   }
 }
 /* start navbar */
+.user-avatar-wrapper
+.user-avatar-img{
+  object-fit: cover;
+}
 .nav.user_nav {
   /* position: fixed; */
   left: 0;
@@ -134,6 +138,8 @@ body {
   display: inline-block;
   position: relative;
   margin-bottom: 15px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .user-account{

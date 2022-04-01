@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useCart } from '../../utils/useCart';
 import ProductsConfig from '../../../Products/ProductsConfig';
 import CartQuantity from '../../../Products/CartQuantity';
@@ -30,6 +30,7 @@ const ProductCard = props => {
   let totalProductPrice = 0;
   productDetailList.map(v => (totalProductPrice += v.price * v.total));
   console.log('totalProductPrice', totalProductPrice);
+  console.log('productDetailList', productDetailList);
   setCartTotalPrice(totalProductPrice);
 
   let productItem = 0;
@@ -37,6 +38,18 @@ const ProductCard = props => {
   console.log('productItem', productItem);
   setTotalProductItem(productItem);
   setCartTotal(productItem + 1);
+
+  const modifyProductTotal = (event, pid) => {
+    console.log(event.target.value, pid);
+    const list = productDetailList.map(v => {
+      if (v.pid === pid) {
+        return { ...v, total: +event.target.value };
+      } else {
+        return { ...v };
+      }
+    });
+    setProductDetailList(list);
+  };
 
   return (
     <>
@@ -52,8 +65,13 @@ const ProductCard = props => {
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top">
                   <h5 className="cart-product-name">{v.name}</h5>
-                  <select className="cart-select">
-                    <option>{v.total}</option>
+                  <select
+                    className="cart-select"
+                    value={v.total}
+                    onChange={e => {
+                      modifyProductTotal(e, v.pid);
+                    }}
+                  >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

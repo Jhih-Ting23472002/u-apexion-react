@@ -22,6 +22,10 @@ const MemberNavLinkAll = styled(Link)`
 
 export default function MemberNavbar() {
   const location = useLocation();
+  const user_email = localStorage.getItem('user_email');
+  const user_avatar = localStorage.getItem('avatar');
+
+  console.log(user_email);
   return (
     <div
       className="nav user_nav-bg d-flex flex-column flex-shrink-0 p-3 user_nav"
@@ -29,9 +33,15 @@ export default function MemberNavbar() {
     >
       <ul className="nav nav-pills flex-column mb-auto user_nav_ul">
         <li className="user-avatar-li">
-          <div className="user-avatar-wrapper"></div>
+          <div className="user-avatar-wrapper">
+            <img
+              className="user-avatar-img"
+              src={`http://localhost:3001/img/${user_avatar}`}
+              alt=""
+            />
+          </div>
 
-          <div className="user-account">使用者帳號</div>
+          <div className="user-account">{user_email}</div>
         </li>
         <li>
           <div
@@ -41,7 +51,7 @@ export default function MemberNavbar() {
             會員資料
           </div>
           <div className="user_nav_a-group">
-          <MemberNavLinkAll
+            <MemberNavLinkAll
               to="/member-person"
               $active={location.pathname === '/member-person'}
             >
@@ -57,7 +67,7 @@ export default function MemberNavbar() {
               $active={location.pathname === '/member-person-edit'}
             >
               <div className="user_navIcon_adjust">
-              <i class="fa-solid fa-user-pen"></i>
+                <i class="fa-solid fa-user-pen"></i>
                 <a href="/#" className="user_nav_item">
                   修改檔案
                 </a>
