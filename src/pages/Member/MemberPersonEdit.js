@@ -18,21 +18,22 @@ const MemberPersonEdit = () => {
   const [userPhoto, setUserPhoto] = useState('');
   console.log(userPhoto);
 
-  //const [userAll, setUserAll] = useState([]);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await fetch('http://localhost:3001/user/api/getuser');
-  //     const data = await res.json();
-  //     setUserAll(data);
-  //   };
-  //   fetchData();
-  // }, []);
+  const [userAll, setUserAll] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('http://localhost:3001/user/api/getuser');
+      const data = await res.json();
+      setUserAll(data);
+    };
+    fetchData();
+  }, []);
 
-  // useEffect(() => {
-  //   const userId = localStorage.getItem('user_id');
-  //   const newUserName = userAll?.find(v => v.sid === parseInt(userId));
-  //   setFileSrc(newUserName?.avatar);
-  // }, [userAll]);
+  useEffect(() => {
+    const userId = localStorage.getItem('user_id');
+    const newUserName = userAll?.find(v => v.sid === parseInt(userId));
+    setFileSrc(`http://localhost:3001/img/${
+      newUserName?.avatar?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'}`);
+  }, [userAll]);
 
   //先從localStorage拿id (你們的user_id)
   const sid = localStorage.getItem('user_id');

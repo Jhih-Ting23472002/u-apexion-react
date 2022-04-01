@@ -212,7 +212,7 @@ const MemberPerson = () => {
                     className="person-avatar-img"
                     //如果沒有上傳照片??，就給預設的照片
                     src={`http://localhost:3001/img/${
-                      memInfo.avatar?? 'db7efb56-50c7-40f7-b622-00cc246d45ca.jpg'}`}
+                      memInfo.avatar?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'}`}
                     alt=""
                   />
                 </div>

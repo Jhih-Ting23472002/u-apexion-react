@@ -30,7 +30,7 @@ const MemberLogin = () => {
           console.log(data);
           localStorage.setItem('user_id', data.info.sid);
           localStorage.setItem('user_email', data.info.account);
-          localStorage.setItem('user_name', data.info.name);
+          //localStorage.setItem('user_name', data.info.name);
           localStorage.setItem('user_img', data.info.imgs);
           localStorage.getItem('user_id');
           localStorage.getItem('user_email');
