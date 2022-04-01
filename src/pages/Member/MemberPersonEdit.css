@@ -89,6 +89,7 @@
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
+  object-fit: cover;
 }
 
 .person-avatar-img {
@@ -99,6 +100,9 @@
   border-radius: 50%;
   display: block;
   margin: 0 auto;
+  object-fit: cover;
+  
+  
 }
 
 .person-avatar-img,
