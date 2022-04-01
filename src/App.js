@@ -126,9 +126,10 @@ function App() {
     address: '',
   });
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 衣服褲子總金額
+  const [totalProductItem, setTotalProductItem] = useState(0); // 衣服褲子總數量
   const [cartTripTotal, setCartTripTotal] = useState(0); // 票券總金額
   const [cartTicketAmount, setCartTicketAmount] = useState(0); // 票券數量
-  const [totalProductItem, setTotalProductItem] = useState(0);
+  const [cartCustomTotalPrice, setCartCustomTotalPrice] = useState(0); // 客製化總金額
   const [cartOrderListNumber, setCartOrderListNumber] = useState(0); // 訂單編號初始值
   // 以上是cart的部分
 
@@ -376,12 +377,14 @@ function App() {
                         craft={craft} // from Michael
                         setCraft={setCraft} // from Michael
                         //---------------------------------
-                        totalProductItem={totalProductItem} //購物車總衣服數量
+                        totalProductItem={totalProductItem} // 總衣服數量
                         setTotalProductItem={setTotalProductItem}
                         cartTripTotal={cartTripTotal} // 票券總金額
                         setCartTripTotal={setCartTripTotal} // 票券總金額
                         cartTicketAmount={cartTicketAmount}
                         setCartTicketAmount={setCartTicketAmount}
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
+                        setCartCustomTotalPrice={setCartCustomTotalPrice}  // 客製化總金額
                         //---------------------------------
                         setUserOption={setUserOption}
                         userOption={userOption}
@@ -418,6 +421,7 @@ function App() {
                         totalProductItem={totalProductItem} //購物車總衣服數量
                         cartTripTotal={cartTripTotal} // 票券總金額
                         cartTicketAmount={cartTicketAmount} // 票券數量
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
                       />
                     </Route>
                     <Route path="/cart-credit-card">
@@ -432,6 +436,7 @@ function App() {
                         //-------------------------------------------------
                         cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
                         setCartOrderListNumber={setCartOrderListNumber} // 訂單編號後來的值
                         memberName={memberName}
@@ -451,6 +456,7 @@ function App() {
                         tripPrice={tripPrice}
                         cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
                         memberName={memberName}
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
