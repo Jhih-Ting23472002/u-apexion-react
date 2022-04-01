@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 // import { getPost } from '../../data/WebApi'
 import PropTypes from 'prop-types';
@@ -157,10 +157,12 @@ Post.propTypes = {
 
 export default function ForumHomePage(props) {
   const location = useLocation();
+  const { push } = useParams();
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const triggerRef = useRef(null);
-  const { newpost } = props;
+  const { setNewPost, newpost } = props;
+
   const onGrabData = currentPage => {
     return new Promise(resolve => {
       setTimeout(() => {
@@ -182,14 +184,20 @@ export default function ForumHomePage(props) {
   //     NUM_PER_PAGE * (2 % TOTAL_PAGES)
   //   )
   // );
-
   useEffect(() => {
-    // fetch('http://localhost:3000/forum-list-connectTry')
     fetch('http://localhost:3001/forum_index/getAll')
       .then(res => res.json())
       .then(posts => setPosts(posts));
+    // setNewPost(false);
   }, [newpost]);
-  console.log(newpost);
+
+  // useEffect(() => {
+  //   // fetch('http://localhost:3000/forum-list-connectTry')
+  //   fetch('http://localhost:3001/forum_index/getAll')
+  //     .then(res => res.json())
+  //     .then(posts => setPosts(posts));
+  // }, [newpost]);
+  // console.log(newpost);
 
   return (
     <Root>

@@ -54,8 +54,8 @@
 }
 
 .centerWrap {
-  left: 43%;
-  top: 15%;
+  left: 41%;
+  top: 16%;
   position: absolute;
 }
 .quote {
@@ -314,7 +314,7 @@
 
 @media (max-width: 640px) {
   .webdesigntuts-workshopchoose input {
-    width: 69%;
+    width: 77%;
   }
 }
 
@@ -447,5 +447,5 @@
 }
 
 .chr{
-  margin-top: 10.5%;
+  margin-top: 13.5%;
 }

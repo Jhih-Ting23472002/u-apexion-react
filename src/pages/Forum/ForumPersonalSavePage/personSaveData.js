@@ -11,17 +11,17 @@ const personSaveData = [
   },
   {
     id: 3,
-    photo: './index_img/rocket.png',
+    photo: './index_img/member2.png',
     postsLink: '/forum-home/posts/128',
   },
   {
     id: 4,
-    photo: './index_img/floor.jpg',
+    photo: './index_img/space-station.jpg',
     postsLink: '/',
   },
   {
     id: 5,
-    photo: './index_img/ig1.png',
+    photo: './index_img/bg-2.png',
     postsLink: '/',
   },
   {

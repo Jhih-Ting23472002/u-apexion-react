@@ -16,7 +16,7 @@ const Root = styled.div`
 const AllDisplayFlex = styled.div`
   display: flex;
 `;
-export default function ForumPublishPage() {
+export default function ForumPublishPage(props) {
   const [posts, setPosts] = useState([]);
   const [titleValue, setTitleValue] = useState();
   const [contentValue, setContentValue] = useState();
@@ -24,8 +24,10 @@ export default function ForumPublishPage() {
   const [hashtagOneValue, setHashtagOneValue] = useState();
   const [hashtagtwoValue, setHashTagTwoValue] = useState();
   const [fileSrc, setFileSrc] = useState(null);
+  const { setNewPost, newpost } = props;
 
   const { sid } = useParams();
+  const userImg = localStorage.getItem('user_img');
   const history = useHistory();
 
   const handleInputChange = e => {
@@ -55,7 +57,7 @@ export default function ForumPublishPage() {
   };
 
   const handleFormSubmit = e => {
-    // e.preventDefault()
+    e.preventDefault();
     const fd = new FormData(document.form1);
     alert('確認修改嗎？');
     fetch(`http://localhost:3001/forum_index/forumArticle_update/${sid}`, {
@@ -72,11 +74,15 @@ export default function ForumPublishPage() {
       // }),
       body: fd,
     })
-      .then(res => res.jon())
+      .then(res => res.json())
       .then(data => {
-        return fetch('http://localhost:3001/forum-list-connectTry')
-          .then(res => res.json())
-          .then(posts => setPosts(posts));
+        // setTimeout(() => {
+        //   if (newpost === true) {
+        //     setNewPost(false);
+        //   } else {
+        //     setNewPost(true);
+        //   }
+        // }, 20000);
       });
     history.push('/forum-home');
   };
@@ -107,7 +113,7 @@ export default function ForumPublishPage() {
                     <div className="forum_user-logo">
                       <img
                         className="forum_cover"
-                        src="./forum_img/u-apexionLogo.png"
+                        src={`http://localhost:3000/index_img/${userImg}`}
                         alt=""
                       />
                     </div>

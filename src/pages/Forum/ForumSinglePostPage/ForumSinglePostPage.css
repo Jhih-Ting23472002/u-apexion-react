@@ -35,6 +35,13 @@
   height: 50px;
   border-radius: 50%;
   border: 1px solid black;
+  /* object-fit: cover; */
+}
+.forum_response_user_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .forum_response_user_name_time {
   padding: 0 15px;
