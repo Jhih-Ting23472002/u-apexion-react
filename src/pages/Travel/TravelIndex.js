@@ -160,13 +160,13 @@ function TravelIndex() {
         <Carousel.Item interval={2500}>
           <img
             className="travelindexcarousel d-block w-100 "
-            src="./travelimg/indexcarouselimg/fun7.jpg"
+            src="./travelimg/indexcarouselimg/fun8.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h4 className="carouselh4">Second slide label</h4>
+            <h4 className="carouselh4">藍源公司慈善活動</h4>
             <p className="carouselp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              贊助商藍源公司貝佐斯先生在本次活動中，一起跟著世界各地學生設計數千張明信片發射至外太空，並捐款兩大慈善機構各1億元。
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -273,7 +273,12 @@ function TravelIndex() {
         <div className="projects">
           <div className="projectItem">
             <img src="./travelimg/taiwan.jpg" alt="" />
-            <a className="projectItemDesc" target="_blank" href="#/">
+            <a
+              className="projectItemDesc"
+              target="_blank"
+              href="https://www.google.com/maps/place/966%E5%8F%B0%E6%9D%B1%E7%B8%A3%E9%81%94%E4%BB%81%E9%84%89%E5%8D%97%E7%94%B0%E6%9D%91/@22.2607056,120.8917165,16z/data=!4m5!3m4!1s0x3471d294cc0d1b5b:0x208ab98ba6c3b229!8m2!3d22.2545849!4d120.8786026"
+              rel="noreferrer"
+            >
               <p className="projectItemp">
                 Taiwan (971花蓮縣新城鄉七星街79巷5號)
               </p>
@@ -281,7 +286,12 @@ function TravelIndex() {
           </div>
           <div className="projectItem">
             <img src="./travelimg/usa.jpg" alt="" />
-            <a className="projectItemDesc" target="_blank" href="#/">
+            <a
+              className="projectItemDesc"
+              target="_blank"
+              href="https://www.google.com/maps/search/1601+U-PX+Parkway+Houston,TX,USA+77058/@29.5592404,-95.1018366,15z"
+              rel="noreferrer"
+            >
               <p className="projectItemp">
                 USA (1601 U-PX Parkway Houston,TX,USA 77058)
               </p>
