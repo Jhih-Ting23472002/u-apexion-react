@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './CustomizeCraft.css';
 //購物車數量
 import CartQuantity from '../Products/CartQuantity';
@@ -31,8 +31,6 @@ function CustomizeCraft(props) {
   const [countryImg, setCountryImg] = useState('');
   //console.log(countryImg)
   const [craftCountryStyle, setCraftCountryStyle] = useState('0');
-  const [classNameSwitch, setClassNameSwitch] = useState('suit-flag');
-  const [countryClass, setCountryClass] = useState();
   const [craftString, setCraftString] = useState('');
   const [labelSt, setLabelSt] = useState('請輸入名稱(8個字元內)');
 
@@ -42,6 +40,14 @@ function CustomizeCraft(props) {
       setCartTotal(cartTotal + 1);
       return [...prevData, { craftString }];
     });
+  }
+
+  function saveCanvas() {
+    const canvasSave = document.getElementById('canvasCraft');
+    const d = canvasSave.toDataURL('image/png');
+    const w = window.open('about:blank', 'image from canvas');
+    w.document.write("<img src='" + d + "' alt='from canvas'/>");
+    console.log('Saved!');
   }
 
   return (
@@ -134,21 +140,21 @@ function CustomizeCraft(props) {
               />
             </svg>
           </div>
-          <div className="craft-img">
-            <div
+          <canvas id="canvasCraft" className="craft-img" width="120" height="600 ">
+            <canvas
               className="craft-filter2"
               style={{ opacity: craftCountryStyle }}
             >
-              <img
+              <canvas width="65" height="39"
                 className="craft-area-view1-country2"
                 src={countryImg}
                 alt=""
                 style={{ opacity: craftCountryStyle }}
               />
-            </div>
-            <img src={'/customize_img/spacecraft.png'} alt="" />
+            </canvas>
+            <cnavas src={'/customize_img/spacecraft.png'} alt="" />
             <p className="craft-string">{craftString}</p>
-          </div>
+          </canvas>
         </div>
         <div className="craft-main-area">
           <div className="craft-area-view1">
@@ -163,7 +169,11 @@ function CustomizeCraft(props) {
                 style={{ opacity: craftCountryStyle }}
               />
             </div>
-            <img className="craft-area-view1-pic" src={'/customize_img/spacecraft.png'} alt="" />
+            <img
+              className="craft-area-view1-pic"
+              src={'/customize_img/spacecraft.png'}
+              alt=""
+            />
           </div>
           <div className="craft-lorem">
             <p>
@@ -171,7 +181,11 @@ function CustomizeCraft(props) {
             </p>
           </div>
           <div className="craft-area-view2">
-            <img className="craft-area-view2-pic" src={'/customize_img/spacecraft.png'} alt="" />
+            <img
+              className="craft-area-view2-pic"
+              src={'/customize_img/spacecraft.png'}
+              alt=""
+            />
             <p className="craft-string2">{craftString}</p>
           </div>
         </div>
@@ -213,38 +227,14 @@ function CustomizeCraft(props) {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  className={classNameSwitch}
+                  className="suit-flag"
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
-                  data-craftimg={v}
-                  onClick={e => {
-                    // setClassNameSwitch(e.currentTarget);
-                    // if(e.currentTarget.dataset.key!==lassNameSwitch.number)
-                    // ===========
-                    // console.log(e.currentTarget.className);
-                    // const newClassNameSwitch = 'suit-flag';
-                    // e.currentTarget === e.currentTarget ? console.log('ok') : console.log('NOT ok')
-
-                    // console.log(classNameSwitch);
-                    // setClassNameSwitch(
-                    //   e.currentTarget.classList.add('click-country')
-                    // );
-                    console.log(e.currentTarget.className);
-                    console.log(e.currentTarget.dataset.craftimg);
-                    setClassNameSwitch(e.currentTarget.className);
-                    // =======================
-                    // console.log(e.currentTarget.dataset.key);
-                    // // console.log(e.currentTarget.attributes)
-                    // setClassNameSwitch(e.currentTarget.dataset.key);
-                    // console.log(classNameSwitch);
-
-                    // setCountryClass(
-                    //   classNameSwitch === e.currentTarget.dataset.key
-                    //     ? 'click-country'
-                    //     : 'suit-flag'
-                    // );
-                    // console.log(countryClass);
+                  data-craftimg={v.slice(15,-4)}
+                  onClick={e=>{
+                    console.log(e.currentTarget.dataset.craftimg)
                   }}
+                  
                 >
                   <img
                     data-img={v}
@@ -272,6 +262,14 @@ function CustomizeCraft(props) {
                       setTimeout(() => {
                         setStepClassname3('stepLine3');
                       }, 2000);
+                      //點選國旗變色
+                      document.querySelectorAll('.suit-flag img').forEach(v => {
+                        // console.log(v);
+                        v.style.filter =
+                          'drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6)';
+                      });
+                      e.target.style.filter =
+                        'drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4)';
                     }}
                   />
                 </div>

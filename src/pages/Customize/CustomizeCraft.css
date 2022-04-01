@@ -17,7 +17,7 @@
 .craft-step {
   position: absolute;
   right: 4vw;
-  width: 46vw;
+  width: 780px;
   min-width: 700px;
   filter: drop-shadow(-15px 10px 8px black);
 }
@@ -63,10 +63,8 @@
   position: absolute;
   top: 15%;
   right: 64vw;
-  width: 30vw;
-  height: 30vw;
-  min-width: 450px;
-  min-height: 450px;
+  width: 30%;
+  height: 67%;
   background-color: rgb(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
@@ -269,7 +267,7 @@
 .craft-in-label {
   position: relative;
   display: flex;
-  margin: 0 0 7% 0;
+  margin: 5% 0 20% 0;
 }
 .craft-in-label label {
   position: absolute;
@@ -301,18 +299,6 @@
   border: 1px solid #05f2f2;
   -webkit-stroke: 3px aliceblue;
   transition: 0.5s ease-in-out;
-}
-.click-country {
-  margin: 10px;
-  position: relative;
-  transition: 0.3s ease-in-out;
-}
-.click-country img {
-  width: 50px;
-  height: 30px;
-  object-fit: cover;
-  filter: drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4);
-  transition: 0.3s ease-in-out;
 }
 .stepLine {
   stroke: #05f2f2;

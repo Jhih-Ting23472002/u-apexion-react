@@ -56,7 +56,6 @@ function CustomizeSuit() {
     fill2: '#595959',
     fill3: '#595959',
   });
-
   function setFlagHandler(e) {
     //抓取圖片放入太空船
     const closeOpa = '0';
@@ -78,24 +77,47 @@ function CustomizeSuit() {
     setSuitStep2('suitStepLine');
 
     //點選國旗變色
-    document.querySelectorAll('.suit-flag').forEach(v => {
-      console.log(v);
-      v.style.border = '0px solid white';
+    document.querySelectorAll('.suit-flag img').forEach(v => {
+      // console.log(v);
+      v.style.filter = 'drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6)';
     });
-    e.target.style.border = '5px yellow solid';
+    e.target.style.filter =
+      'drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4)';
   }
-
+  function setMarkHandler(e) {
+    const closeOpa = '0';
+    setMarkSelectSuit(closeOpa);
+    setTimeout(() => {
+      const openOpa = '1';
+      setMarkSelectSuit(openOpa);
+      setMarkImgSuit(e.target.dataset.mark);
+    }, 800);
+    const newStep3 = {
+      ...suitStepColor,
+      fill3: '#05f2f2',
+    };
+    setSuitStepColor(newStep3);
+    setSuitStep3('suitStepLine');
+    document.querySelectorAll('.suit-mark img').forEach(v => {
+      // console.log(v);
+      v.style.filter = 'drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6)';
+    });
+    e.target.style.filter =
+      'drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4)';
+  }
   return (
     <>
       <section className="Customsuit-page-view">
         <div className="back-circle">
           <div className="image-mirrow">
             <img
+              alt=""
               className="suitMarkImg1"
               src={markImgSuit}
               style={{ opacity: markSelectSuit }}
             />
             <img
+              alt=""
               className="suitCountryImg1"
               src={countryImgSuit}
               style={{ opacity: countrySelectSuit }}
@@ -195,11 +217,13 @@ function CustomizeSuit() {
           <button className="suit-circle-btn">完成送出</button>
           <div className="maybe-use-canvus">
             <img
+              alt=""
               className="suitMarkImg2"
               src={markImgSuit}
               style={{ opacity: markSelectSuit }}
             />
             <img
+              alt=""
               src={countryImgSuit}
               className="suitCountryImg2"
               style={{ opacity: countrySelectSuit }}
@@ -298,10 +322,12 @@ function CustomizeSuit() {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  data-countrykey={i + 1}
+                  data-countrykey={v.slice(15, -4)}
                   className="suit-flag"
                   key={i}
-                  onClick={e => {}}
+                  onClick={e => {
+                    console.log(e.currentTarget.dataset.countrykey);
+                  }}
                 >
                   <img
                     data-country={v}
@@ -323,30 +349,20 @@ function CustomizeSuit() {
           <div className="mark-select">
             {allMark.map((v, i) => {
               return (
-                <div data-markkey={i + 1} className="suit-mark" key={i}>
+                <div
+                  data-markkey={v.slice(15,-4)}
+                  className="suit-mark"
+                  key={i}
+                  onClick={e => {
+                    console.log(e.currentTarget.dataset.markkey);
+                  }}
+                >
                   <img
-                    data-mark={v}
+                    data-mark={v.slice(15, -4)}
                     src={v}
                     alt=""
                     onClick={e => {
-                      //抓取圖片放入太空船
-                      const closeOpa = '0';
-                      setMarkSelectSuit(closeOpa);
-                      setTimeout(() => {
-                        // 設置延遲
-                        const openOpa = '1';
-                        setMarkSelectSuit(openOpa);
-                        // 讓圖片淡入
-                        setMarkImgSuit(e.target.dataset.mark);
-                        // console.log('1===', e.target.dataset.img);
-                        // 載入圖片
-                      }, 800);
-                      const newStep3 = {
-                        ...suitStepColor,
-                        fill3: '#05f2f2',
-                      };
-                      setSuitStepColor(newStep3);
-                      setSuitStep3('suitStepLine');
+                      setMarkHandler(e);
                     }}
                   />
                 </div>
