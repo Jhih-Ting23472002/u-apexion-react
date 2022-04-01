@@ -41,6 +41,9 @@ function CustomizeSuit() {
   //顏色
   const [opa, setOpa] = useState('');
   const [suitImg, setSuitImg] = useState('');
+  //suitImgName服裝顏色名稱
+  const [suitImgName, setSuitImgName] = useState('');
+
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
@@ -267,6 +270,7 @@ function CustomizeSuit() {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
+                setSuitImgName(suitImg.slice(25,-4))
               }}
             ></div>
             <div
@@ -291,6 +295,8 @@ function CustomizeSuit() {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
+
+                setSuitImgName(suitImg.slice(25,-4))
               }}
             ></div>
             <div
@@ -315,6 +321,7 @@ function CustomizeSuit() {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
+                setSuitImgName(suitImg.slice(25,-4))
               }}
             ></div>
           </div>
@@ -350,7 +357,7 @@ function CustomizeSuit() {
             {allMark.map((v, i) => {
               return (
                 <div
-                  data-markkey={v.slice(15,-4)}
+                  data-markkey={v.slice(15, -4)}
                   className="suit-mark"
                   key={i}
                   onClick={e => {
