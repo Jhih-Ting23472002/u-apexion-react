@@ -24,7 +24,8 @@ export default function ForumPublishPage(props) {
   const [hashtagOneValue, setHashtagOneValue] = useState();
   const [hashtagtwoValue, setHashTagTwoValue] = useState();
   const [fileSrc, setFileSrc] = useState(null);
-  const { setNewPost, newpost } = props;
+  // const { setNewPost, newpost } = props;
+  const [newImg, setNewImg] = useState(false);
 
   const { sid } = useParams();
   const userImg = localStorage.getItem('user_img');
@@ -50,6 +51,7 @@ export default function ForumPublishPage(props) {
   const imgChangeHandler = e => {
     const file = e.target.files[0];
     const fileReader = new FileReader();
+    setNewImg(true);
     fileReader.onload = function () {
       setFileSrc(fileReader.result);
     };
@@ -94,6 +96,7 @@ export default function ForumPublishPage(props) {
       setCategoryValue(post.art_category_sid);
       setHashtagOneValue(post.hashtag1);
       setHashTagTwoValue(post.hashtag2);
+      setFileSrc(post.art_photo);
     });
   }, []);
   // 照片加入？？
@@ -252,7 +255,15 @@ export default function ForumPublishPage(props) {
                         style={{ display: 'none' }}
                       />
                     </div>
-                    <img style={{ width: '180px' }} src={fileSrc} alt="" />
+                    <img
+                      style={{ width: '180px' }}
+                      src={
+                        newImg === true
+                          ? `${fileSrc}`
+                          : `http://localhost:3001/img/${fileSrc}`
+                      }
+                      alt=""
+                    />
                   </div>
                   <div className="btn-right">
                     <button type="submit" className="forum_btn forum_btn-white">

@@ -6,12 +6,13 @@ import { getOrderHistory } from '../../data/UserWebApi';
 
 function MemberOrderHistory() {
   const user_id = localStorage.getItem('user_id');
+  console.log(user_id);
   const [orderHistory, setOrderHistory] = useState([]);
 
   const getUserOrderHistory = async () => {
     const res = getOrderHistory(user_id).then(obj => {
-      console.log('obj:', obj);
-      setOrderHistory(obj.list);
+      console.log(obj);
+      setOrderHistory(obj);
     });
   };
   useEffect(() => {
@@ -38,25 +39,98 @@ function MemberOrderHistory() {
                   <tr>
                     <th scope="col">訂單編號</th>
                     <th scope="col">訂單日期</th>
-                    <th scope="col">金額總計</th>
-                    <th scope="col">付款方式</th>
-                    <th scope="col">訂單狀態</th>
                     <th scope="col">訂單明細</th>
+                    <th scope="col">訂單金額</th>
+                    <th scope="col">出貨狀態</th>
+                    {/* <th scope="col">訂單明細</th> */}
                   </tr>
                 </thead>
                 <tbody>
                   {orderHistory &&
-                    orderHistory.map((element, i) => {
+                    orderHistory.map((v, i) => {
                       return (
-                        <tr key={element[i]}>
-                          <td>{element.order_number}</td>
-                          <td>{element.order_date}</td>
-                          <td>{element.order_total}</td>
-                          <td>{element.order_pay_method}</td>
-                          <td>{element.order_status}</td>
-                          <td>
-                            <a href="/#">詳情</a>
+                        <tr key={v[i]} style={{ height: '220px' }}>
+                          <td style={{ width: '15%' }}>
+                            {v.order_list_checked}
                           </td>
+                          <td style={{ width: '20%' }}>
+                            {v.order_created_time}
+                          </td>
+                          <td
+                            style={{ width: '25%', lineHeight: '25px' }}
+                            // dangerouslySetInnerHTML={{
+                            //   __html: JSON.parse(v.order_product_name)[0].join(
+                            //     '<br />'
+                            //   ),
+                            // }}
+                          >
+                            <div
+                              style={{
+                                fontWeight: '400',
+                                // textDecoration: 'underline',
+                                color: '#05f2f2',
+                              }}
+                            >
+                              服飾:
+                            </div>
+                            <div
+                              style={{ marginBottom: '10px' }}
+                              dangerouslySetInnerHTML={{
+                                __html: JSON.parse(
+                                  v.order_product_name
+                                )[0].join('<br />'),
+                              }}
+                            ></div>
+                            <div
+                              style={{
+                                fontWeight: '400',
+                                // textDecoration: 'underline',
+                                color: '#05f2f2',
+                              }}
+                            >
+                              主題旅遊:
+                            </div>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: JSON.parse(
+                                  v.order_product_name
+                                )[1].join('<br />'),
+                              }}
+                            ></div>
+                            {/* 服飾 */}
+                          </td>
+                          <td style={{ width: '20%', lineHeight: '25px' }}>
+                            <div
+                              style={{
+                                fontWeight: '400',
+                                // textDecoration: 'underline',
+                                color: '#05f2f2',
+                              }}
+                            >
+                              服飾：
+                            </div>
+                            <div style={{ marginBottom: '10px' }}>
+                              $
+                              {JSON.parse(v.order_product_price)[0].reduce(
+                                (a, b) => a + b
+                              )}
+                            </div>
+                            <div
+                              style={{
+                                fontWeight: '400',
+                                color: '#05f2f2',
+                              }}
+                            >
+                              主題之旅：
+                            </div>
+                            <div>
+                              $
+                              {JSON.parse(v.order_product_price)[1].reduce(
+                                (a, b) => a + b
+                              )}
+                            </div>
+                          </td>
+                          <td>備貨中</td>
                         </tr>
                       );
                     })}
