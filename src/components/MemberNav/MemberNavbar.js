@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import './MemberNavbar.css';
 import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 // import { Dropdown } from 'react-bootstrap';
 
 const MemberNavLinkAll = styled(Link)`
@@ -23,9 +24,33 @@ const MemberNavLinkAll = styled(Link)`
 export default function MemberNavbar() {
   const location = useLocation();
   const user_email = localStorage.getItem('user_email');
-  const user_avatar = localStorage.getItem('avatar');
-
+  const user_avatar = localStorage.getItem('user_avatar');
   console.log(user_email);
+  console.log(user_avatar);
+
+  const [fileSrc, setFileSrc] = useState('');
+  const [userAll, setUserAll] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('http://localhost:3001/user/api/getuser');
+      const data = await res.json();
+      setUserAll(data);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const userId = localStorage.getItem('user_id');
+    const newUserName = userAll?.find(v => v.sid === parseInt(userId));
+    /*setFileSrc(
+      `http://localhost:3001/img/${
+        newUserName?.avatar ?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'
+      }`
+    );*/
+    setFileSrc('http://localhost:3001/img/' + newUserName?.avatar);
+  }, [userAll]);
+
   return (
     <div
       className="nav user_nav-bg d-flex flex-column flex-shrink-0 p-3 user_nav"
@@ -34,11 +59,7 @@ export default function MemberNavbar() {
       <ul className="nav nav-pills flex-column mb-auto user_nav_ul">
         <li className="user-avatar-li">
           <div className="user-avatar-wrapper">
-            <img
-              className="user-avatar-img"
-              src={`http://localhost:3001/img/${user_avatar}`}
-              alt=""
-            />
+            <img className="user-avatar-img" src={fileSrc} alt="" />
           </div>
 
           <div className="user-account">{user_email}</div>

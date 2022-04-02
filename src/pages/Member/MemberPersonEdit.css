@@ -101,8 +101,7 @@
   display: block;
   margin: 0 auto;
   object-fit: cover;
-  
-  
+  overflow:hidden;
 }
 
 .person-avatar-img,
