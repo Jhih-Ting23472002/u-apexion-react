@@ -19,6 +19,8 @@ const CartFinalCheck = props => {
     cartTripTotal,
     memberName,
     suit,
+    craft,
+    customize,
     cartCustomTotalPrice,
   } = props;
 
@@ -96,32 +98,47 @@ const CartFinalCheck = props => {
                 <div className="cart-list-detail-line"></div>
               </React.Fragment>
             ))}
-            {/* 太空艙座位 */}
-            {/* <div className="cart-order-item cart-list-detail d-flex">
-              <div className="cart-img-div col-4">
-                <img src={spaceSeat} alt="" />
-              </div>
-              <div className="cart-list-detail-inside col-8">
-                <h5 className="cart-product-list-group">太空艙座位</h5>
-                <div className="cart-product-list-group">顏色</div>
-                <div className="cart-product-list-group">$XXXXX</div>
-              </div>
-            </div>
-            <div className="cart-list-detail-line"></div> */}
 
             {/* 太空船 spacecraft */}
-            {/* <div className="cart-order-item cart-list-detail d-flex">
-              <div className="cart-img-div col-4">
-                <img src={spaceShip} alt="" className="spaceship-height" />
-              </div>
-              <div className="cart-list-detail-inside col-8">
-                <h5 className="cart-product-list-group">spacecraft</h5>
-                <div className="cart-product-list-group">鐫刻文字</div>
-                <div className="cart-product-list-group">已選好的國旗</div>
-                <div className="cart-product-list-group">$XXXXX</div>
-              </div>
-            </div>
-            <div className="cart-list-detail-line"></div> */}
+            {craft.map(v => (
+              <React.Fragment key="1">
+                <div className="cart-order-item cart-list-detail d-flex">
+                  <div className="cart-img-div col-4">
+                    <img src={spaceShip} alt="" className="spaceship-height" />
+                  </div>
+                  <div className="cart-list-detail-inside col-8">
+                    <h5 className="cart-product-list-group">spacecraft</h5>
+                    <div className="cart-product-list-group">
+                      鐫刻文字：{v.craftString}
+                    </div>
+                    <div className="cart-product-list-group">{v.country}</div>
+                    <div className="cart-product-list-group">
+                      ${v.craftPrice}
+                    </div>
+                  </div>
+                </div>
+                <div className="cart-list-detail-line"></div>
+              </React.Fragment>
+            ))}
+
+            {/* 太空艙座位 */}
+            {customize.map(v => (
+              <React.Fragment>
+                <div className="cart-order-item cart-list-detail d-flex">
+                  <div className="cart-img-div col-4">
+                    <img src={spaceSeat} alt="" />
+                  </div>
+                  <div className="cart-list-detail-inside col-8">
+                    <h5 className="cart-product-list-group">太空艙座位</h5>
+                    <div className="cart-product-list-group">{v.style}</div>
+                    <div className="cart-product-list-group">
+                      ${v.seatPrice}
+                    </div>
+                  </div>
+                </div>
+                <div className="cart-list-detail-line"></div>
+              </React.Fragment>
+            ))}
 
             {/* 票券 ticket */}
             {tripSelected && (

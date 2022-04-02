@@ -196,7 +196,8 @@ const CartCreditCard = props => {
               </button>
             </Link>
             <div className="card-trade mx-3">
-              交易金額 ${props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+              交易金額 $
+              {props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
             </div>
           </div>
         </div>
