@@ -62,7 +62,7 @@ export default function MemberNavbar() {
             <img className="user-avatar-img" src={fileSrc} alt="" />
           </div>
 
-          <div className="user-account">{user_email}</div>
+          <div className="user-account"><i class="fa-solid fa-envelope"></i>{user_email}</div>
         </li>
         <li>
           <div
