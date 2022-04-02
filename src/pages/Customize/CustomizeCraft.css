@@ -16,8 +16,8 @@
 }
 .craft-step {
   position: absolute;
-  right: 4vw;
-  width: 780px;
+  right: 4.5vw;
+  width: 770px;
   min-width: 700px;
   filter: drop-shadow(-15px 10px 8px black);
 }
@@ -267,7 +267,7 @@
 .craft-in-label {
   position: relative;
   display: flex;
-  margin: 5% 0 20% 0;
+  margin: 5% 0 17% 0;
 }
 .craft-in-label label {
   position: absolute;

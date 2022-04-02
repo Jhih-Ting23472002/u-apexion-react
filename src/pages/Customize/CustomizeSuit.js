@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import './CustomizeSuit.css';
 import CartQuantity from '../Products/CartQuantity';
+import { getStatusClassNames } from 'antd/lib/_util/statusUtils';
 
 const allCountry = [
   '/customize_img/america.png',
@@ -50,7 +51,6 @@ function CustomizeSuit(props) {
   //suitImgName服裝顏色名稱
   const [suitImgName, setSuitImgName] = useState('');
 
-
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
@@ -80,7 +80,6 @@ function CustomizeSuit(props) {
       setCountrySelectSuit(openOpa);
       // 讓圖片淡入
       setCountryImgSuit(e.target.dataset.country);
-      // console.log('1===', e.target.dataset.img);
       // 載入圖片
     }, 800);
     const newStep2 = {
@@ -91,12 +90,10 @@ function CustomizeSuit(props) {
     setSuitStep2('suitStepLine');
 
     //點選國旗變色
-    document.querySelectorAll('.suit-flag img').forEach(v => {
-      // console.log(v);
-      v.style.filter = 'drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6)';
+    document.querySelectorAll('.suit-flag').forEach(v => {
+      v.classList.remove('click-country');
     });
-    e.target.style.filter =
-      'drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4)';
+    e.currentTarget.classList.add('click-country');
   }
   function setMarkHandler(e) {
     const closeOpa = '0';
@@ -112,19 +109,17 @@ function CustomizeSuit(props) {
     };
     setSuitStepColor(newStep3);
     setSuitStep3('suitStepLine');
-    document.querySelectorAll('.suit-mark img').forEach(v => {
-      // console.log(v);
-      v.style.filter = 'drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6)';
+    document.querySelectorAll('.suit-mark').forEach(v => {
+      v.classList.remove('click-mark');
     });
-    e.target.style.filter =
-      'drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4)';
+    e.currentTarget.classList.add('click-mark');
   }
 
   function addCart() {
     setSuit(function (prevData) {
       history.push('/customize-craft');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { markSuit, country,suitImgName }];
+      return [...prevData, { markSuit, country, suitImgName }];
     });
   }
 
@@ -216,14 +211,14 @@ function CustomizeSuit(props) {
             />
             <circle
               fill={suitStepColor.fill1}
-              style={{ transition: ' .5s ease-in-out 1s' }}
+              style={{ transition: ' .5s ease-in-out 1.5s' }}
               cx="63"
               cy="146"
               r="8"
             />
             <circle
               fill={suitStepColor.fill2}
-              style={{ transition: ' .5s ease-in-out 1s' }}
+              style={{ transition: ' .5s ease-in-out 1.7s' }}
               cx="154"
               cy="619"
               r="8"
@@ -356,16 +351,10 @@ function CustomizeSuit(props) {
                   key={i}
                   onClick={e => {
                     setCountry(e.currentTarget.dataset.countrykey);
+                    setFlagHandler(e);
                   }}
                 >
-                  <img
-                    data-country={v}
-                    src={v}
-                    alt=""
-                    onClick={e => {
-                      setFlagHandler(e);
-                    }}
-                  />
+                  <img data-country={v} src={v} alt="" />
                 </div>
               );
             })}
@@ -384,16 +373,10 @@ function CustomizeSuit(props) {
                   key={i}
                   onClick={e => {
                     setMarkSuit(e.currentTarget.dataset.markkey);
+                    setMarkHandler(e);
                   }}
                 >
-                  <img
-                    data-mark={v}
-                    src={v}
-                    alt=""
-                    onClick={e => {
-                      setMarkHandler(e);
-                    }}
-                  />
+                  <img data-mark={v} src={v} alt="" />
                 </div>
               );
             })}

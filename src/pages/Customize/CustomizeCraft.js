@@ -141,17 +141,12 @@ function CustomizeCraft(props) {
               />
             </svg>
           </div>
-          <canvas
-            id="canvasCraft"
-            className="craft-img"
-            width="120"
-            height="600 "
-          >
-            <canvas
+          <div id="canvasCraft" className="craft-img" width="120" height="600 ">
+            <div
               className="craft-filter2"
               style={{ opacity: craftCountryStyle }}
             >
-              <canvas
+              <img
                 width="65"
                 height="39"
                 className="craft-area-view1-country2"
@@ -159,10 +154,10 @@ function CustomizeCraft(props) {
                 alt=""
                 style={{ opacity: craftCountryStyle }}
               />
-            </canvas>
-            <cnavas src={'/customize_img/spacecraft.png'} alt="" />
+            </div>
+            <img src={'/customize_img/spacecraft.png'} alt="" />
             <p className="craft-string">{craftString}</p>
-          </canvas>
+          </div>
         </div>
         <div className="craft-main-area">
           <div className="craft-area-view1">
@@ -240,45 +235,37 @@ function CustomizeCraft(props) {
                   key={i}
                   data-craftimg={v.slice(15, -4)}
                   onClick={e => {
+                    //抓取圖片放入太空船
+                    const closeOpa = '0';
+                    setCraftCountryStyle(closeOpa);
+                    setTimeout(() => {
+                      // 設置延遲
+                      const openOpa = '1';
+                      setCraftCountryStyle(openOpa);
+                      // 讓圖片淡入
+                      setCountryImg(e.target.dataset.img);
+                      // console.log('1===', e.target.dataset.img);
+                      // 載入圖片
+                    }, 700);
+                    const newStep2 = {
+                      ...craftStep,
+                      fill2: '#05f2f2',
+                    };
+                    setCraftStep(newStep2);
+                    setStepClassname2('stepLine2');
+                    setTimeout(() => {
+                      setStepClassname3('stepLine3');
+                    }, 2000);
+                    //點選國旗變色
+
+                    document.querySelectorAll('.suit-flag').forEach(v => {
+                      v.classList.remove('click-country');
+                    });
+                    e.currentTarget.classList.add('click-country');
                     setCountry(e.currentTarget.dataset.craftimg);
                   }}
                 >
-                  <img
-                    data-img={v}
-                    src={v}
-                    alt=""
-                    onClick={e => {
-                      //抓取圖片放入太空船
-                      const closeOpa = '0';
-                      setCraftCountryStyle(closeOpa);
-                      setTimeout(() => {
-                        // 設置延遲
-                        const openOpa = '1';
-                        setCraftCountryStyle(openOpa);
-                        // 讓圖片淡入
-                        setCountryImg(e.target.dataset.img);
-                        // console.log('1===', e.target.dataset.img);
-                        // 載入圖片
-                      }, 700);
-                      const newStep2 = {
-                        ...craftStep,
-                        fill2: '#05f2f2',
-                      };
-                      setCraftStep(newStep2);
-                      setStepClassname2('stepLine2');
-                      setTimeout(() => {
-                        setStepClassname3('stepLine3');
-                      }, 2000);
-                      //點選國旗變色
-                      document.querySelectorAll('.suit-flag img').forEach(v => {
-                        // console.log(v);
-                        v.style.filter =
-                          'drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6)';
-                      });
-                      e.target.style.filter =
-                        'drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4)';
-                    }}
-                  />
+                  <img data-img={v} src={v} alt="" />
                 </div>
               );
             })}
