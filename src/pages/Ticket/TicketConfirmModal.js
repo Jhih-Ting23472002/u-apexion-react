@@ -27,18 +27,19 @@ function TicketOrderModal(props) {
   // });
 
   console.log('價格', tripPrice);
+  console.log('確認頁餐點', mealSelected);
   // console.log('人數', memberData.length);
   // console.log('成員名子', memberDataArray);
   // console.log('成員ttt', memberDataArray[0]);
   // console.log('成員rrr', memberDataArray[1]);
-  console.log('餐點名稱', mealSelected.rrr);
-  console.log('餐點名稱', mealSelected.rrr);
+  // console.log('餐點名稱', mealSelected.rrr);
+  // console.log('餐點名稱', mealSelected.rrr);
   // console.log('餐點名稱', mealSelected[memberDataArray[0]]);
 
-  const abc = mealSelected.map((v, i) => {
-    return v + i;
-  });
-  console.log('餐點的map', abc);
+  // const abc = mealSelected.map((v, i) => {
+  //   return v + i;
+  // });
+  // console.log('餐點的map', abc);
 
   // const [seatNumberDemo, setSeatNumberDemo] = useState([]);
   // useEffect(() => {
@@ -54,8 +55,6 @@ function TicketOrderModal(props) {
   //     setMemberData(memberArray);
   //   })();
   // }, []);
-
-
 
   return (
     <Modal
@@ -111,7 +110,7 @@ function TicketOrderModal(props) {
               </div>
               <div>
                 {mealSelected.map((v, i) => {
-                  return <p>{v.memberData[i]}</p>;
+                  return <p>{v}</p>;
                 })}
               </div>
             </div>
@@ -126,9 +125,13 @@ function TicketOrderModal(props) {
           修改
         </Button>
         <div>
-          <Button onClick={()=> setCartTotal(cartTotal + 1)} className="ticket-confirm-btn">
+          <Link
+            to="./customize-mainpage"
+            onClick={() => setCartTotal(cartTotal + 1)}
+            className="ticket-confirm-btn"
+          >
             加購客製化服務
-          </Button>
+          </Link>
           <Link
             to="/cart-payment"
             onClick={props.onHide}

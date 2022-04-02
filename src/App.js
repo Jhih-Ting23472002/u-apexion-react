@@ -82,7 +82,7 @@ import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -92,7 +92,7 @@ function App() {
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
   const [seatNumberDemo, setSeatNumberDemo] = useState([]);
-  const [mealSelected, setMealSelected] = useState([]);
+  const [mealSelected, setMealSelected] = useState({});
   const [change, setChange] = useState(0);
   const [memberName, setMemberName] = useState([]);
 
@@ -164,9 +164,9 @@ function App() {
                     <Route exact path="/">
                       <IndexFirst />
                     </Route>
-                    <Route exact path="/u-apexion">
+                    {/* <Route exact path="/u-apexion">
                       <IndexMain />
-                    </Route>
+                    </Route> */}
                     <Route exact path="/forum-home">
                       <ForumHomePage
                         newpost={newpost}
