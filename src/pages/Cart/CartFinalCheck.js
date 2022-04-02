@@ -18,6 +18,8 @@ const CartFinalCheck = props => {
     cartTotalPrice,
     cartTripTotal,
     memberName,
+    suit,
+    cartCustomTotalPrice,
   } = props;
 
   return (
@@ -76,19 +78,24 @@ const CartFinalCheck = props => {
               </React.Fragment>
             ))}
             {/* 個人宇航服 */}
-            {/* <div className="cart-order-item cart-list-detail d-flex">
-              <div className="cart-img-div col-4">
-                <img src={spaceSuit} alt="" />
-              </div>
-              <div className="cart-list-detail-inside col-8">
-                <h5 className="cart-product-list-group">個人宇航服</h5>
-                <div className="cart-product-list-group">已選好的國旗</div>
-                <div className="cart-product-list-group">已選好的徽章</div>
-                <div className="cart-product-list-group">$XXXXX</div>
-              </div>
-            </div>
-            <div className="cart-list-detail-line"></div> */}
-
+            {suit.map(v => (
+              <React.Fragment>
+                <div className="cart-order-item cart-list-detail d-flex">
+                  <div className="cart-img-div col-4">
+                    <img src={spaceSuit} alt="" />
+                  </div>
+                  <div className="cart-list-detail-inside col-8">
+                    <h5 className="cart-product-list-group">個人宇航服</h5>
+                    <div className="cart-product-list-group">{v.country}</div>
+                    <div className="cart-product-list-group">{v.markSuit}</div>
+                    <div className="cart-product-list-group">
+                      ${v.suitPrice}
+                    </div>
+                  </div>
+                </div>
+                <div className="cart-list-detail-line"></div>
+              </React.Fragment>
+            ))}
             {/* 太空艙座位 */}
             {/* <div className="cart-order-item cart-list-detail d-flex">
               <div className="cart-img-div col-4">
@@ -117,42 +124,49 @@ const CartFinalCheck = props => {
             <div className="cart-list-detail-line"></div> */}
 
             {/* 票券 ticket */}
-            <div className="cart-order-item cart-list-detail d-flex">
-              <div className="cart-img-div col-4">
-                <img src={cartTicket} alt="" />
-              </div>
+            {tripSelected && (
+              <div className="cart-order-item cart-list-detail d-flex">
+                <div className="cart-img-div col-4">
+                  <img src={cartTicket} alt="" />
+                </div>
 
-              <div className="cart-list-detail-inside col-8 flex-column limit-width">
-                <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">
-                    行程：{tripSelected}
+                <div className="cart-list-detail-inside col-8 flex-column limit-width">
+                  <div className="d-flex justify-content-between need-width">
+                    <div className="cart-product-list-group">
+                      行程：{tripSelected}
+                    </div>
+                    <div className="cart-product-list-group">
+                      餐點:{mealSelected}
+                    </div>
                   </div>
-                  <div className="cart-product-list-group">
-                    餐點:{mealSelected}
+                  <div className="d-flex justify-content-between need-width">
+                    <div className="cart-product-list-group">日程</div>
+                    <div className="cart-product-list-group">
+                      {tripDate.dateSelected} &nbsp;to&nbsp;{' '}
+                      {tripDate.returnDate}
+                    </div>
                   </div>
-                </div>
-                <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">日程</div>
-                  <div className="cart-product-list-group">
-                    {tripDate.dateSelected} &nbsp;to&nbsp; {tripDate.returnDate}
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between need-width">
-                  <div className="cart-product-list-group">
-                    人數：{memberName.length}
-                  </div>
-                  <div className="cart-product-list-group">
-                    票價：${cartTripTotal}
+                  <div className="d-flex justify-content-between need-width">
+                    <div className="cart-product-list-group">
+                      人數：{memberName.length}
+                    </div>
+                    <div className="cart-product-list-group">
+                      票價：${cartTripTotal}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
+
             <div className="d-flex flex-column align-items-end final-total-price">
               <div className="mb-4">
                 共{totalProductItem + 1}件商品，總金額$
-                {cartTotalPrice + cartTripTotal}
+                {cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
               </div>
-              <div>本訂單需付款金額為${cartTotalPrice + cartTripTotal}</div>
+              <div>
+                本訂單需付款金額為$
+                {cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+              </div>
             </div>
           </div>
 

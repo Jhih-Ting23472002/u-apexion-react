@@ -25,6 +25,7 @@ const CartCreditCard = props => {
     memberName,
     productDetailList,
     cartTripTotal,
+    cartCustomTotalPrice,
   } = props;
 
   const ticketArr = [
@@ -195,7 +196,7 @@ const CartCreditCard = props => {
               </button>
             </Link>
             <div className="card-trade mx-3">
-              交易金額 ${props.cartTotalPrice + cartTripTotal}
+              交易金額 ${props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
             </div>
           </div>
         </div>
