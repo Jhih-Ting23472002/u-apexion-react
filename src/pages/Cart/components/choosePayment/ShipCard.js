@@ -21,7 +21,7 @@ const ShipCard = props => {
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top-spaceship">
                   <div className="cart-spaceship">
-                    <h5 className="cart-spaceship-name">您的專屬宇航艇</h5>
+                    <h5 className="cart-spaceship-name">宇航艇外觀</h5>
                     <h5 className="cart-spaceship-text">
                       鐫刻文字：{v.craftString}
                     </h5>
