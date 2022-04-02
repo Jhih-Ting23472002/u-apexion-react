@@ -92,7 +92,7 @@ function App() {
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
   const [seatNumberDemo, setSeatNumberDemo] = useState([]);
-  const [mealSelected, setMealSelected] = useState([]);
+  const [mealSelected, setMealSelected] = useState({});
   const [change, setChange] = useState(0);
   const [memberName, setMemberName] = useState([]);
 
