@@ -96,7 +96,7 @@
   background-color: #aaa;
   border: 1px solid #fff;
   border-radius: 50%;
-  overflow: hidden;
+  object-fit: cover;
 }
 
 .person-avatar-img,

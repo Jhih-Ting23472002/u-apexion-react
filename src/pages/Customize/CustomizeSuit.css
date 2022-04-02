@@ -59,14 +59,14 @@
 }
 .suitCountryImg1{
   z-index: 1;
-  width: 65px;
-  height: 39px;
+  width: 70px;
+  height: 42px;
   position: absolute;
   top: 55%;
-  left: 72%;
-  filter:sepia(.3);
-  box-shadow: -1px 0px 1px black;
-  transform: rotateY(20deg) rotate(-2deg);
+  left: 71%;
+  filter:sepia(.5);
+  box-shadow: -1px .5px 2px black;
+  transform: rotateY(30deg) rotate(-2deg);
   transition: 1s ease-in-out;
 }
 .suitCountryImg2{
@@ -106,7 +106,7 @@
 .suit-circle {
   z-index: 1;
   position: absolute;
-  top:6%;
+  top:3%;
   right: 48%;
   opacity: 1;
 }
@@ -232,10 +232,28 @@
   align-items: center
   
 }
-
+.click-country {
+  margin: 10px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+div.click-country img {
+  width: 50px;
+  height: 30px;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4);
+  transition: 0.3s ease-in-out;
+}
 .suit-flag{
-margin:10px ;
-position: relative;
+  margin:10px ;
+  position: relative;
+  transition: .3s ease-in-out;
+}
+.suit-flag img{
+width: 50px;
+height: 30px;
+object-fit: cover;
+filter:drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6);
 transition: .3s ease-in-out;
 }
 .suit-flag::before{
@@ -243,7 +261,6 @@ transition: .3s ease-in-out;
   width: 0px;
   height: 3px;
   transform: translateX(-50%);
-  /* background: linear-gradient(90deg,#323232 5%, #05f2f2 ,#323232 95%) ; */
   position: absolute;
   left: 50%;
   bottom: -11px;
@@ -256,13 +273,6 @@ transition: .3s ease-in-out;
 .suit-flag:hover img{
   filter:drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4) ;
   transition: .3s ease-in-out;
-}
-.suit-flag img{
-width: 50px;
-height: 30px;
-object-fit: cover;
-filter:drop-shadow(4px 4px 5px rgb(0, 0, 0)) brightness(.6);
-transition: .3s ease-in-out;
 }
 .mark-select::-webkit-scrollbar {
   width: 10px;
@@ -286,7 +296,18 @@ transition: .3s ease-in-out;
   align-items: center;
   overflow: auto;
 }
-
+.click-mark {
+  margin: 10px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+div.click-mark img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 0px rgb(0, 0, 0)) brightness(1.4);
+  transition: 0.3s ease-in-out;
+}
 .suit-mark{
   margin:10px ;
   position: relative;
@@ -331,6 +352,9 @@ transition: .3s ease-in-out;
       stroke-dashoffset:0;
       animation: suitstepLine1 2s ease-in-out forwards;
 }
+
+
+
 @keyframes suitstepLine1 {
   0% {
       stroke-dashoffset: 540;

@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import './CustomizeSuit.css';
+import CartQuantity from '../Products/CartQuantity';
+import { getStatusClassNames } from 'antd/lib/_util/statusUtils';
+
 const allCountry = [
   '/customize_img/america.png',
   '/customize_img/canada.png',
@@ -37,16 +41,25 @@ const allMark = [
   '/customize_img/space-mark-23.png',
 ];
 
-function CustomizeSuit() {
+function CustomizeSuit(props) {
+  const { setSuit } = props;
+  const history = useHistory();
+  const { cartTotal, setCartTotal } = useContext(CartQuantity);
   //顏色
   const [opa, setOpa] = useState('');
   const [suitImg, setSuitImg] = useState('');
+  //suitImgName服裝顏色名稱
+  const [suitImgName, setSuitImgName] = useState('');
+
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
+  const [country, setCountry] = useState('');
+  // console.log(country)
   //徽章
   const [markSelectSuit, setMarkSelectSuit] = useState('0');
   const [markImgSuit, setMarkImgSuit] = useState('0');
+  const [markSuit, setMarkSuit] = useState('');
   //進度條
   const [suitStep1, setSuitStep1] = useState('');
   const [suitStep2, setSuitStep2] = useState('');
@@ -56,6 +69,7 @@ function CustomizeSuit() {
     fill2: '#595959',
     fill3: '#595959',
   });
+  const [suitPrice, setPrice] = useState(25000);
 
   function setFlagHandler(e) {
     //抓取圖片放入太空船
@@ -67,7 +81,6 @@ function CustomizeSuit() {
       setCountrySelectSuit(openOpa);
       // 讓圖片淡入
       setCountryImgSuit(e.target.dataset.country);
-      // console.log('1===', e.target.dataset.img);
       // 載入圖片
     }, 800);
     const newStep2 = {
@@ -79,10 +92,36 @@ function CustomizeSuit() {
 
     //點選國旗變色
     document.querySelectorAll('.suit-flag').forEach(v => {
-      console.log(v);
-      v.style.border = '0px solid white';
+      v.classList.remove('click-country');
     });
-    e.target.style.border = '5px yellow solid';
+    e.currentTarget.classList.add('click-country');
+  }
+  function setMarkHandler(e) {
+    const closeOpa = '0';
+    setMarkSelectSuit(closeOpa);
+    setTimeout(() => {
+      const openOpa = '1';
+      setMarkSelectSuit(openOpa);
+      setMarkImgSuit(e.target.dataset.mark);
+    }, 800);
+    const newStep3 = {
+      ...suitStepColor,
+      fill3: '#05f2f2',
+    };
+    setSuitStepColor(newStep3);
+    setSuitStep3('suitStepLine');
+    document.querySelectorAll('.suit-mark').forEach(v => {
+      v.classList.remove('click-mark');
+    });
+    e.currentTarget.classList.add('click-mark');
+  }
+
+  function addCart() {
+    setSuit(function (prevData) {
+      history.push('/customize-craft');
+      setCartTotal(cartTotal + 1);
+      return [...prevData, { markSuit, country, suitImgName ,suitPrice}];
+    });
   }
 
   return (
@@ -91,11 +130,13 @@ function CustomizeSuit() {
         <div className="back-circle">
           <div className="image-mirrow">
             <img
+              alt=""
               className="suitMarkImg1"
               src={markImgSuit}
               style={{ opacity: markSelectSuit }}
             />
             <img
+              alt=""
               className="suitCountryImg1"
               src={countryImgSuit}
               style={{ opacity: countrySelectSuit }}
@@ -171,14 +212,14 @@ function CustomizeSuit() {
             />
             <circle
               fill={suitStepColor.fill1}
-              style={{ transition: ' .5s ease-in-out 1s' }}
+              style={{ transition: ' .5s ease-in-out 1.5s' }}
               cx="63"
               cy="146"
               r="8"
             />
             <circle
               fill={suitStepColor.fill2}
-              style={{ transition: ' .5s ease-in-out 1s' }}
+              style={{ transition: ' .5s ease-in-out 1.7s' }}
               cx="154"
               cy="619"
               r="8"
@@ -192,14 +233,18 @@ function CustomizeSuit() {
             />
           </svg>
 
-          <button className="suit-circle-btn">完成送出</button>
+          <button className="suit-circle-btn" onClick={() => addCart()}>
+            完成送出
+          </button>
           <div className="maybe-use-canvus">
             <img
+              alt=""
               className="suitMarkImg2"
               src={markImgSuit}
               style={{ opacity: markSelectSuit }}
             />
             <img
+              alt=""
               src={countryImgSuit}
               className="suitCountryImg2"
               style={{ opacity: countrySelectSuit }}
@@ -243,6 +288,7 @@ function CustomizeSuit() {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
+                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
               }}
             ></div>
             <div
@@ -267,6 +313,8 @@ function CustomizeSuit() {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
+
+                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
               }}
             ></div>
             <div
@@ -291,6 +339,7 @@ function CustomizeSuit() {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
+                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
               }}
             ></div>
           </div>
@@ -298,19 +347,15 @@ function CustomizeSuit() {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  data-countrykey={i + 1}
+                  data-countrykey={v.slice(15, -4)}
                   className="suit-flag"
                   key={i}
-                  onClick={e => {}}
+                  onClick={e => {
+                    setCountry(e.currentTarget.dataset.countrykey);
+                    setFlagHandler(e);
+                  }}
                 >
-                  <img
-                    data-country={v}
-                    src={v}
-                    alt=""
-                    onClick={e => {
-                      setFlagHandler(e);
-                    }}
-                  />
+                  <img data-country={v} src={v} alt="" />
                 </div>
               );
             })}
@@ -323,32 +368,16 @@ function CustomizeSuit() {
           <div className="mark-select">
             {allMark.map((v, i) => {
               return (
-                <div data-markkey={i + 1} className="suit-mark" key={i}>
-                  <img
-                    data-mark={v}
-                    src={v}
-                    alt=""
-                    onClick={e => {
-                      //抓取圖片放入太空船
-                      const closeOpa = '0';
-                      setMarkSelectSuit(closeOpa);
-                      setTimeout(() => {
-                        // 設置延遲
-                        const openOpa = '1';
-                        setMarkSelectSuit(openOpa);
-                        // 讓圖片淡入
-                        setMarkImgSuit(e.target.dataset.mark);
-                        // console.log('1===', e.target.dataset.img);
-                        // 載入圖片
-                      }, 800);
-                      const newStep3 = {
-                        ...suitStepColor,
-                        fill3: '#05f2f2',
-                      };
-                      setSuitStepColor(newStep3);
-                      setSuitStep3('suitStepLine');
-                    }}
-                  />
+                <div
+                  data-markkey={v.slice(15, -4)}
+                  className="suit-mark"
+                  key={i}
+                  onClick={e => {
+                    setMarkSuit(e.currentTarget.dataset.markkey);
+                    setMarkHandler(e);
+                  }}
+                >
+                  <img data-mark={v} src={v} alt="" />
                 </div>
               );
             })}

@@ -5,10 +5,9 @@ import ModalHeader from 'react-bootstrap/ModalHeader';
 
 function CustomizeOrder(props) {
   //app最外層傳入
-  const { seatColor, craft } = props;
+  const { seatColor, craft,suit } = props;
 
-  console.log(craft[0].craftString)
-
+  // console.log(suit[0].suitImgName);
 
   return (
     <>
@@ -29,15 +28,15 @@ function CustomizeOrder(props) {
               <table>
                 <tr>
                   <th>顏色：</th>
-                  <td>Blue</td>
+                  <td>{suit[0].suitImgName}</td>
                 </tr>
                 <tr>
                   <th>國家：</th>
-                  <td>Canada</td>
+                  <td>{suit[0].country}</td>
                 </tr>
                 <tr>
                   <th>徽章：</th>
-                  <td>NASA 50years</td>
+                  <td>{suit[0].markSuit}</td>
                 </tr>
               </table>
               <h3>25,000$</h3>
@@ -56,7 +55,7 @@ function CustomizeOrder(props) {
                 </tr>
                 <tr>
                   <th>國家：</th>
-                  <td>Canada</td>
+                  <td>{craft[0].country}</td>
                 </tr>
               </table>
               <h3>20,000$</h3>

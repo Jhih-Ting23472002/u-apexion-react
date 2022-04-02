@@ -126,8 +126,10 @@ function App() {
     address: '',
   });
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 衣服褲子總金額
+  const [totalProductItem, setTotalProductItem] = useState(0); // 衣服褲子總數量
   const [cartTripTotal, setCartTripTotal] = useState(0); // 票券總金額
-  const [totalProductItem, setTotalProductItem] = useState(0);
+  const [cartTicketAmount, setCartTicketAmount] = useState(0); // 票券數量
+  const [cartCustomTotalPrice, setCartCustomTotalPrice] = useState(0); // 客製化總金額
   const [cartOrderListNumber, setCartOrderListNumber] = useState(0); // 訂單編號初始值
   // 以上是cart的部分
 
@@ -139,9 +141,12 @@ function App() {
   const [signOut, setSignOut] = useState('註冊');
 
   //客製化商品
+  const [suit, setSuit] = useState([]); // 太空服
   const [customize, setCustomize] = useState([]); // 椅子
   const [craft, setCraft] = useState([]); // 火箭
-  console.log(craft);
+  console.log('suit', suit);
+  console.log('customize', customize);
+  console.log('craft', craft);
 
   // forum
   const [newpost, setNewPost] = useState(false);
@@ -320,7 +325,7 @@ function App() {
                     <CustomizeMainPage />
                   </Route> */}
                     <Route path="/customize-suit">
-                      <CustomizeSuit />
+                      <CustomizeSuit setSuit={setSuit} />
                     </Route>
                     <Route path="/customize-craft">
                       <CustomizeCraft setCraft={setCraft} />
@@ -329,6 +334,7 @@ function App() {
                       <CustomizeSeat
                         setCustomize={setCustomize}
                         craft={craft}
+                        suit={suit}
                       />
                     </Route>
                     <Route path="/customize-order"></Route>
@@ -363,10 +369,22 @@ function App() {
                         //---------------------------------
                         productDetailList={productDetailList} //from 智婷        // 刪除資料 state, setState 都要給
                         setProductDetailList={setProductDetailList} //from 智婷  // 刪除資料 state, setState 都要給
-                        totalProductItem={totalProductItem} //購物車總衣服數量
+                        //---------------------------------
+                        suit={suit} // from Michael
+                        setSuit={setSuit} // from Michael
+                        customize={customize} // from Michael
+                        setCustomize={setCustomize} // from Michael
+                        craft={craft} // from Michael
+                        setCraft={setCraft} // from Michael
+                        //---------------------------------
+                        totalProductItem={totalProductItem} // 總衣服數量
                         setTotalProductItem={setTotalProductItem}
                         cartTripTotal={cartTripTotal} // 票券總金額
                         setCartTripTotal={setCartTripTotal} // 票券總金額
+                        cartTicketAmount={cartTicketAmount}
+                        setCartTicketAmount={setCartTicketAmount}
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
+                        setCartCustomTotalPrice={setCartCustomTotalPrice}  // 客製化總金額
                         //---------------------------------
                         setUserOption={setUserOption}
                         userOption={userOption}
@@ -391,12 +409,19 @@ function App() {
                         memberName={memberName}
                         //-------------------------------------------------
                         productDetailList={productDetailList} // from 智婷
+                        //-------------------------------------------------
+                        suit={suit} // from Michael
+                        customize={customize} // from Michael
+                        craft={craft} // from Michael
+                        //-------------------------------------------------
                         userOption={userOption}
                         setCartUserInfo={setCartUserInfo}
                         cartUserInfo={cartUserInfo} //第二頁送到第三頁：收
-                        cartTotalPrice={cartTotalPrice} //購物車總金額
+                        cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         totalProductItem={totalProductItem} //購物車總衣服數量
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        cartTicketAmount={cartTicketAmount} // 票券數量
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
                       />
                     </Route>
                     <Route path="/cart-credit-card">
@@ -405,8 +430,13 @@ function App() {
                         tripPrice={tripPrice} //from 采諭  票券金額
                         productDetailList={productDetailList} //from 智婷  產品名稱、數量、金額
                         //-------------------------------------------------
-                        cartTotalPrice={cartTotalPrice} //購物車總金額
+                        suit={suit} // from Michael
+                        customize={customize} // from Michael
+                        craft={craft} // from Michael
+                        //-------------------------------------------------
+                        cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號初始值
                         setCartOrderListNumber={setCartOrderListNumber} // 訂單編號後來的值
                         memberName={memberName}
@@ -414,12 +444,19 @@ function App() {
                     </Route>
                     <Route path="/cart-complete">
                       <CardComplete
-                        productDetailList={productDetailList}
-                        totalProductItem={totalProductItem} //購物車總衣服數量
+                        productDetailList={productDetailList} //from 智婷
+                        //-------------------------------------------------
+                        suit={suit} // from Michael
+                        customize={customize} // from Michael
+                        craft={craft} // from Michael
+                        //-------------------------------------------------
+                        totalProductItem={totalProductItem} //總衣服數量
+                        cartTicketAmount={cartTicketAmount} // 票券數量
                         tripSelected={tripSelected}
                         tripPrice={tripPrice}
-                        cartTotalPrice={cartTotalPrice} //購物車總金額
+                        cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
+                        cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
                         memberName={memberName}
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />

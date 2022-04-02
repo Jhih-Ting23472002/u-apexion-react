@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './CustomizeCraft.css';
 //購物車數量
 import CartQuantity from '../Products/CartQuantity';
@@ -31,17 +31,25 @@ function CustomizeCraft(props) {
   const [countryImg, setCountryImg] = useState('');
   //console.log(countryImg)
   const [craftCountryStyle, setCraftCountryStyle] = useState('0');
-  const [classNameSwitch, setClassNameSwitch] = useState('suit-flag');
-  const [countryClass, setCountryClass] = useState();
   const [craftString, setCraftString] = useState('');
   const [labelSt, setLabelSt] = useState('請輸入名稱(8個字元內)');
+  const [country, setCountry] = useState('');
+  const [craftPrice, setPrice] = useState(20000);
 
   function addCart() {
     setCraft(function (prevData) {
       history.push('/customize-seat');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { craftString }];
+      return [...prevData, { craftString, country, craftPrice }];
     });
+  }
+
+  function saveCanvas() {
+    const canvasSave = document.getElementById('canvasCraft');
+    const d = canvasSave.toDataURL('image/png');
+    const w = window.open('about:blank', 'image from canvas');
+    w.document.write("<img src='" + d + "' alt='from canvas'/>");
+    console.log('Saved!');
   }
 
   return (
@@ -134,12 +142,14 @@ function CustomizeCraft(props) {
               />
             </svg>
           </div>
-          <div className="craft-img">
+          <div id="canvasCraft" className="craft-img" width="120" height="600 ">
             <div
               className="craft-filter2"
               style={{ opacity: craftCountryStyle }}
             >
               <img
+                width="65"
+                height="39"
                 className="craft-area-view1-country2"
                 src={countryImg}
                 alt=""
@@ -163,7 +173,11 @@ function CustomizeCraft(props) {
                 style={{ opacity: craftCountryStyle }}
               />
             </div>
-            <img className="craft-area-view1-pic" src={'/customize_img/spacecraft.png'} alt="" />
+            <img
+              className="craft-area-view1-pic"
+              src={'/customize_img/spacecraft.png'}
+              alt=""
+            />
           </div>
           <div className="craft-lorem">
             <p>
@@ -171,7 +185,11 @@ function CustomizeCraft(props) {
             </p>
           </div>
           <div className="craft-area-view2">
-            <img className="craft-area-view2-pic" src={'/customize_img/spacecraft.png'} alt="" />
+            <img
+              className="craft-area-view2-pic"
+              src={'/customize_img/spacecraft.png'}
+              alt=""
+            />
             <p className="craft-string2">{craftString}</p>
           </div>
         </div>
@@ -213,67 +231,42 @@ function CustomizeCraft(props) {
             {allCountry.map((v, i) => {
               return (
                 <div
-                  className={classNameSwitch}
+                  className="suit-flag"
                   //關鍵在這邊的 className 更改大家都一起改
                   key={i}
-                  data-craftimg={v}
+                  data-craftimg={v.slice(15, -4)}
                   onClick={e => {
-                    // setClassNameSwitch(e.currentTarget);
-                    // if(e.currentTarget.dataset.key!==lassNameSwitch.number)
-                    // ===========
-                    // console.log(e.currentTarget.className);
-                    // const newClassNameSwitch = 'suit-flag';
-                    // e.currentTarget === e.currentTarget ? console.log('ok') : console.log('NOT ok')
+                    //抓取圖片放入太空船
+                    const closeOpa = '0';
+                    setCraftCountryStyle(closeOpa);
+                    setTimeout(() => {
+                      // 設置延遲
+                      const openOpa = '1';
+                      setCraftCountryStyle(openOpa);
+                      // 讓圖片淡入
+                      setCountryImg(e.target.dataset.img);
+                      // console.log('1===', e.target.dataset.img);
+                      // 載入圖片
+                    }, 700);
+                    const newStep2 = {
+                      ...craftStep,
+                      fill2: '#05f2f2',
+                    };
+                    setCraftStep(newStep2);
+                    setStepClassname2('stepLine2');
+                    setTimeout(() => {
+                      setStepClassname3('stepLine3');
+                    }, 2000);
+                    //點選國旗變色
 
-                    // console.log(classNameSwitch);
-                    // setClassNameSwitch(
-                    //   e.currentTarget.classList.add('click-country')
-                    // );
-                    console.log(e.currentTarget.className);
-                    console.log(e.currentTarget.dataset.craftimg);
-                    setClassNameSwitch(e.currentTarget.className);
-                    // =======================
-                    // console.log(e.currentTarget.dataset.key);
-                    // // console.log(e.currentTarget.attributes)
-                    // setClassNameSwitch(e.currentTarget.dataset.key);
-                    // console.log(classNameSwitch);
-
-                    // setCountryClass(
-                    //   classNameSwitch === e.currentTarget.dataset.key
-                    //     ? 'click-country'
-                    //     : 'suit-flag'
-                    // );
-                    // console.log(countryClass);
+                    document.querySelectorAll('.suit-flag').forEach(v => {
+                      v.classList.remove('click-country');
+                    });
+                    e.currentTarget.classList.add('click-country');
+                    setCountry(e.currentTarget.dataset.craftimg);
                   }}
                 >
-                  <img
-                    data-img={v}
-                    src={v}
-                    alt=""
-                    onClick={e => {
-                      //抓取圖片放入太空船
-                      const closeOpa = '0';
-                      setCraftCountryStyle(closeOpa);
-                      setTimeout(() => {
-                        // 設置延遲
-                        const openOpa = '1';
-                        setCraftCountryStyle(openOpa);
-                        // 讓圖片淡入
-                        setCountryImg(e.target.dataset.img);
-                        // console.log('1===', e.target.dataset.img);
-                        // 載入圖片
-                      }, 700);
-                      const newStep2 = {
-                        ...craftStep,
-                        fill2: '#05f2f2',
-                      };
-                      setCraftStep(newStep2);
-                      setStepClassname2('stepLine2');
-                      setTimeout(() => {
-                        setStepClassname3('stepLine3');
-                      }, 2000);
-                    }}
-                  />
+                  <img data-img={v} src={v} alt="" />
                 </div>
               );
             })}

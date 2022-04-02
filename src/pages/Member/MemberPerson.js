@@ -61,7 +61,7 @@ const MemberPerson = () => {
     const userId = localStorage.getItem('user_id');
     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
     localStorage.setItem('user_name', newUserName?.name);
-    setUserNavbar('Hello ' + newUserName?.name);
+    setUserNavbar(newUserName?.name);
     setSignOut('登出');
   }, [userAll]);
 
@@ -207,17 +207,14 @@ const MemberPerson = () => {
                 <div className="person-line"></div>
               </div>
               <div className="person-avatar-container">
-                <div className="person-avatar-img">
-                  <img
-                    className="person-avatar-img"
-                    //如果沒有上傳照片??，就給預設的照片
-                    src={`http://localhost:3001/img/${
-                      memInfo.avatar ??
-                      'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'
-                    }`}
-                    alt=""
-                  />
-                </div>
+                <img
+                  className="person-avatar-img"
+                  //如果沒有上傳照片??，就給預設的照片
+                  src={`http://localhost:3001/img/${
+                    memInfo.avatar ?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'
+                  }`}
+                  alt=""
+                />
               </div>
             </div>
           </div>

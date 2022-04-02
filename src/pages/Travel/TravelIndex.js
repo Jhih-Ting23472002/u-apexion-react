@@ -64,7 +64,7 @@ function TravelIndex() {
       </section>
 
       <section className="trivia">
-        <h2 className="triviah2">活動花絮牆</h2>
+        <h2 className="triviah2">活動花絮</h2>
         <hr className="generalHr" />
       </section>
 
@@ -280,7 +280,7 @@ function TravelIndex() {
               rel="noreferrer"
             >
               <p className="projectItemp">
-                Taiwan (971花蓮縣新城鄉七星街79巷5號)
+                Taiwan (966台東縣達仁鄉南田村79巷5號)
               </p>
             </a>
           </div>
