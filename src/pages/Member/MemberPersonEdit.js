@@ -273,7 +273,7 @@ const MemberPersonEdit = () => {
                 </div>
                 <div className="person-avatar-txt" style={{ marginTop: '5px' }}>
                   <p>檔案大小:最大1MB</p>
-                  <p>檔案限制: .JEPG, .PNG</p>
+                  <p>檔案限制: .JPG, .PNG</p>
                 </div>
                 {/* </form> */}
               </div>

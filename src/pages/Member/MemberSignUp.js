@@ -76,6 +76,21 @@ const MemberSignUp = () => {
                 />
               </div>
 
+              <div className="member-input-container ">
+                <label htmlFor="name" className="member-label">
+                  護照英文姓名
+                </label>
+                <input
+                  type="text"
+                  placeholder=""
+                  className="member-input"
+                  name="passport"
+                  value={registerData.passport}
+                  onChange={handleChange}
+                  requried
+                />
+              </div>
+
               <div className="member-input-container completed">
                 <label htmlFor="account" className="member-label">
                   電子郵件
