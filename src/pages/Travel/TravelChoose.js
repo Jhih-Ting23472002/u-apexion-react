@@ -88,7 +88,7 @@ function TravelChoose() {
             <div className="row align-items-center filters">
               <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">
                 <Link to="/travel-choose">
-                  <button className="sortitemBuyButton">全部行程</button>
+                  <button className="sortitemBuyButtonAll">全部行程</button>
                 </Link>
               </div>
               <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">

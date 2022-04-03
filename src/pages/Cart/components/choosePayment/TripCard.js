@@ -3,6 +3,7 @@ import cartTicket from '../../img/cartTicket.png';
 
 const TripCard = props => {
   const {
+    setMealArr,
     tripSelected,
     setTripSelected,
     tripPrice,
@@ -18,13 +19,18 @@ const TripCard = props => {
     setCartTicketAmount,
   } = props;
 
+  let mealArray = [];
+  for (let i in mealSelected) {
+    mealArray.push(mealSelected[i]);
+  }
+  console.log('mealArray', mealArray);
   //訂票資訊陣列 (餐點類型要解決)
   const ticketArr = [
     {
       trip: tripSelected,
       dateStart: tripDate.dateSelected,
       dateEnd: tripDate.returnDate,
-      meal: mealSelected,
+      //meal: [mealArray], // 是有抓到值啦，但這個值要怎麼傳下去啊
       people: memberName.length,
       price: (parseInt(tripPrice) || 0) * memberName.length,
       img: cartTicket,
@@ -49,7 +55,7 @@ const TripCard = props => {
   ticketArr.map(v => (ticketAmount += v.amount));
   setCartTripTotal(ticketArr[0].price);
   setCartTicketAmount(ticketAmount);
-
+  // setMealArr(mealArray)
   // setTripPrice(ticketArr[0].price);
   return (
     <>

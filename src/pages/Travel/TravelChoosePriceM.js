@@ -59,10 +59,7 @@ function TravelChoosePM() {
                             <h4 className="chooseh4 pb-2 border-bottom">
                               {c.travel_name}
                             </h4>
-                            <p className="choosep">
-                              Pistachio stuffed kofta balls served with a
-                              persian style tomato sauce.
-                            </p>
+                            <p className="choosep">{c.travel_description}</p>
                             <ul className="chooseitinerary">
                               <li>類別:{c.travel_tags}</li>
                               <li>產品代碼:{c.travel_number}</li>
@@ -112,7 +109,7 @@ function TravelChoosePM() {
                   <button className="sortitemBuyButton">價格:低到高</button>
                 </Link>
                 <Link to="/travelchoose-pricem">
-                  <button className="sortitemBuyButton">價格:高到低</button>
+                  <button className="sortitemBuyButtonpm">價格:高到低</button>
                 </Link>
               </div>
               <div className="sortButton col-12 col-sm-12 col-md-3 mb-3">

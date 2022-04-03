@@ -21,6 +21,8 @@ const IndexMain = () => {
   const [index, setIndex] = React.useState(0);
   const [sec4Animate, setsec4Animate] = React.useState(false);
   const [circle4, setCircle4] = useState(false);
+  const [scrollTop, setScrollTop] = useState(false);
+  console.log(scrollTop);
 
   const imagehandler = e => {
     setIndex(e.target.dataset.value);
@@ -41,13 +43,24 @@ const IndexMain = () => {
   };
   const handleSectionScroll = () => {
     const scrollY = window.scrollY;
-    console.log(scrollY);
+    // console.log(scrollY);
     if (scrollY >= 3850) {
       // console.log('>3700-');
       setsec4Animate(true);
       setCircle4(true);
-      console.log(circle4);
+      // console.log(circle4);
     }
+  };
+
+  const handleGoToTop = () => {
+    setScrollTop(true);
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }, 300);
+    // console.log(scrollTop);
   };
 
   useEffect(() => {
@@ -65,7 +78,11 @@ const IndexMain = () => {
   // }
   return (
     <>
-      <div className="indexContainer" onScroll={handleSectionScroll}>
+      <div
+        className="indexContainer"
+        onScroll={handleSectionScroll}
+        style={{ position: 'relative' }}
+      >
         <div>
           <CameraController></CameraController>
         </div>
@@ -312,9 +329,13 @@ const IndexMain = () => {
           <div class="index_team">
             {data
               .filter((v, i) => {
-                console.log(i);
+                {
+                  /* console.log(i); */
+                }
                 if (i == index) {
-                  console.log(index);
+                  {
+                    /* console.log(index); */
+                  }
                   return v;
                 }
               })
@@ -398,9 +419,8 @@ const IndexMain = () => {
         </div>
         {/*
       {/* section3 end */}
-        {/* <LazyLoad offset={50} height={100}> */}
         {/* section4 */}
-        <div className="index-section4">
+        <div className="index-section4" style={{ position: 'relative' }}>
           <div className="index-sec-container">
             <div className="index-sec-container-top">
               <div className="index_steps">
@@ -492,8 +512,27 @@ const IndexMain = () => {
             </div>
           </div>
         </div>
+        <div
+          className={scrollTop ? 'indexScrollTop0' : 'indexScrollTop'}
+          onClick={handleGoToTop}
+        >
+          <img
+            src="./index_img/scrolltotop.png"
+            alt=""
+            style={{
+              width: '40%',
+              height: '40%',
+              // marginBottom: '10px',
+              // border: '1px solid red',
+              position: 'absolute',
+              top: '60%',
+              left: '50%',
+              transform: 'translate(-50%,-50%)',
+            }}
+          />
+          Scroll Top
+        </div>
       </div>
-      {/* </LazyLoad> */}
     </>
   );
 };
