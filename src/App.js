@@ -80,6 +80,9 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 
 import { CartProvider } from './pages/Cart/utils/useCart';
 
+//end
+import VedioEnd from './pages/VedioEnd'
+
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
 // import IndexMain from './pages/Index/IndexMain';
@@ -462,6 +465,9 @@ function App() {
                       />
                     </Route>
 
+                    <Route path="/vedio-end" exact>
+                      <VedioEnd />
+                    </Route>
                     <Route path="*">
                       <NotFoundPage />
                     </Route>
