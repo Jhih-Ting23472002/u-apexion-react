@@ -19,23 +19,23 @@ const MemberPerson = () => {
   const sid = localStorage.getItem('user_id');
   // const mem_id = getMemId('mem_id');
 
-  //這個步驟先把資料丟到欄位裡
+  // 這個步驟先把資料丟到欄位裡
   useEffect(() => {
     findMem(sid).then(obj => {
       setMemInfo(obj[0]);
     });
   }, []);
 
-  const handleRevise = e => {
-    e.preventDefault();
-    reviseMem(memInfo, sid).then(obj => {
-      console.log(obj);
-      if (obj.success) {
-        alert('修改成功');
-      }
-      // history.push('/member-login'); //登入成功後導入會員頁
-    });
-  };
+  // const handleRevise = e => {
+  //   e.preventDefault();
+  //   reviseMem(memInfo, sid).then(obj => {
+  //     console.log(obj);
+  //     if (obj.success) {
+  //       alert('修改成功');
+  //     }
+  //     // history.push('/member-login'); //登入成功後導入會員頁
+  //   });
+  // };
 
   // const handleChange = e => {
   //   const newData = { ...memInfo, [e.target.name]: e.target.value };
@@ -61,11 +61,11 @@ const MemberPerson = () => {
     const userId = localStorage.getItem('user_id');
     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
     localStorage.setItem('user_name', newUserName?.name);
-    setUserNavbar('Hello ' + newUserName?.name);
+    setUserNavbar(newUserName?.name);
     setSignOut('登出');
   }, [userAll]);
 
-  const imgurl = 'http://localhost:3001/img/';
+  // const imgurl = 'http://localhost:3001/img/';
 
   return (
     <>
@@ -79,7 +79,7 @@ const MemberPerson = () => {
               </div>
             </div>
             <div className="person-form-container">
-              <form className="person-form" onSubmit={handleRevise}>
+              <form className="person-form">
                 <div className="member-input-container ">
                   <label htmlFor="name" className="member-label">
                     姓名
@@ -89,7 +89,7 @@ const MemberPerson = () => {
                     type="text"
                     placeholder=""
                     className="member-input"
-                    value={memInfo?.name ?? 'name'}
+                    value={memInfo?.name ?? ''}
                     name="name"
                     // onChange={handleChange}
                   />
@@ -210,9 +210,7 @@ const MemberPerson = () => {
                 <img
                   className="person-avatar-img"
                   //如果沒有上傳照片??，就給預設的照片
-                  src={`http://localhost:3001/img/${
-                    memInfo.avatar ?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'
-                  }`}
+                  src={`http://localhost:3001/img/${memInfo?.avatar}`}
                   alt=""
                 />
               </div>

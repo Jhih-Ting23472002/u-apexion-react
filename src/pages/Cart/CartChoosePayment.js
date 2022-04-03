@@ -9,11 +9,11 @@ import ShipCard from './components/choosePayment/ShipCard';
 import { Link } from 'react-router-dom';
 
 const CartChoosePayment = props => {
-  // const [userOption, setUserOption] = useState({
-  //   a: '',
-  //   b: '',
-  //   c: ''
-  // })
+  const [suitPrice, setSuitPrice] = useState(0); // 客製化衣服的錢
+  const [shipPrice, setShipPrice] = useState(0); // 客製化太空船的錢
+  const [seatPrice, setSeatPrice] = useState(0); // 客製化椅子的錢
+
+  props.setCartCustomTotalPrice(suitPrice + shipPrice + seatPrice); // 客製化衣服的錢 + 客製化太空船的錢 + 客製化椅子的錢
 
   function doSetUserOption(type = 'delivery-area', value) {
     // props.setCartDeliveryArea(userOption)
@@ -35,7 +35,10 @@ const CartChoosePayment = props => {
           <ProcessLine />
           <div className="cart d-flex justify-content-center py-5 total-price-text">
             您的購物袋裡有以下商品，目前總金額是 $
-            {props.cartTotalPrice + props.cartTripTotal}。
+            {props.cartTotalPrice +
+              props.cartTripTotal +
+              props.cartCustomTotalPrice}
+            。
           </div>
 
           <ProductCard
@@ -48,6 +51,7 @@ const CartChoosePayment = props => {
           />
 
           <TripCard
+            setMealArr={props.setMealArr}
             tripSelected={props.tripSelected}
             setTripSelected={props.setTripSelected}
             tripPrice={props.tripPrice}
@@ -63,13 +67,24 @@ const CartChoosePayment = props => {
             setCartTicketAmount={props.setCartTicketAmount}
           />
 
-          <SuitCard suit={props.suit} setSuit={props.setSuit} />
+          <SuitCard
+            suit={props.suit}
+            setSuit={props.setSuit}
+            // suitPrice={suitPrice}
+            setSuitPrice={setSuitPrice}
+          />
 
-          <ShipCard craft={props.craft} setCraft={props.setCraft} />
+          <ShipCard
+            craft={props.craft}
+            setCraft={props.setCraft}
+            // shipPrice={shipPrice}
+            setShipPrice={setShipPrice}
+          />
 
           <SeatCard
             customize={props.customize}
             setCustomize={props.setCustomize}
+            setSeatPrice={setSeatPrice}
           />
 
           <div className="cart separated-line"></div>
@@ -111,11 +126,17 @@ const CartChoosePayment = props => {
                 共{props.totalProductItem + props.cartTicketAmount}件商品
               </h5>
               <h5 className="cart-should-pay-text">
-                小計:&nbsp;${props.cartTotalPrice + props.cartTripTotal}
+                小計:&nbsp;$
+                {props.cartTotalPrice +
+                  props.cartTripTotal +
+                  props.cartCustomTotalPrice}
               </h5>
               <div className="cart-should-pay-separated-line"></div>
               <h5 className="cart-should-pay-total-price">
-                應付總金額: ${props.cartTotalPrice + props.cartTripTotal}
+                應付總金額: $
+                {props.cartTotalPrice +
+                  props.cartTripTotal +
+                  props.cartCustomTotalPrice}
               </h5>
               <div className="cart-button">
                 <Link to={'/products'} className="btn continue-btn">

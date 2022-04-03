@@ -5,21 +5,22 @@ import CartQuantity from '../Products/CartQuantity';
 
 function CustomizeSeat(props) {
   //最外面app參數
-  const { setCustomize, craft, suit} = props;
+  const { setCustomize, craft, suit } = props;
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
 
   const [modalShow, setModalShow] = useState(false);
   const [color, setColor] = useState({});
   const [style, setStyle] = useState('');
   const [seatImg, setSeatImg] = useState('');
-
+  const [seatPrice, setPrice] = useState(15000);
   const [opa, setOpa] = useState('');
+  const [seatTotal, setTotal] = useState(1);
 
   function addCart() {
     setCustomize(function (prevData) {
       setCartTotal(cartTotal + 1);
       setModalShow(true);
-      return [...prevData, { style }];
+      return [...prevData, { style, seatPrice,seatTotal }];
     });
   }
 

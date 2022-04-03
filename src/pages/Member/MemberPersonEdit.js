@@ -4,6 +4,7 @@ import MemberNavbar from '../../components/MemberNav';
 import { useEffect, useState } from 'react';
 import { reviseMem, findMem } from '../../data/UserWebApi';
 import { useHistory } from 'react-router-dom';
+import MemberPersonEditModal from './MemberPersonEditModal';
 
 const MemberPersonEdit = () => {
   const history = useHistory();
@@ -16,7 +17,8 @@ const MemberPersonEdit = () => {
   });
   const [fileSrc, setFileSrc] = useState('');
   const [userPhoto, setUserPhoto] = useState('');
-  console.log(userPhoto);
+  const [modalShow, setModalShow] = useState(false);
+  //console.log(userPhoto);
 
   const [userAll, setUserAll] = useState([]);
   useEffect(() => {
@@ -31,11 +33,12 @@ const MemberPersonEdit = () => {
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     const newUserName = userAll?.find(v => v.sid === parseInt(userId));
-    setFileSrc(
+    /*setFileSrc(
       `http://localhost:3001/img/${
         newUserName?.avatar ?? 'bdeb89f5-bcd8-4261-b721-3ec0ce4889db.jpg'
       }`
-    );
+    );*/
+    setFileSrc('http://localhost:3001/img/' + newUserName?.avatar);
   }, [userAll]);
 
   //先從localStorage拿id (你們的user_id)
@@ -56,9 +59,10 @@ const MemberPersonEdit = () => {
       console.log(obj);
       if (obj.success) {
         setUserPhoto('http://localhost:3001/img' + '/' + obj.user_photo);
-        alert('修改成功');
+        // alert('修改成功');
+        setModalShow(true);
       }
-      history.push('/member-person'); //登入成功後導入會員頁
+      // history.push('/member-person');
     });
   };
   const handleChange = e => {
@@ -272,7 +276,7 @@ const MemberPersonEdit = () => {
                 </div>
                 <div className="person-avatar-txt" style={{ marginTop: '5px' }}>
                   <p>檔案大小:最大1MB</p>
-                  <p>檔案限制: .JEPG, .PNG</p>
+                  <p>檔案限制: .JPG, .PNG</p>
                 </div>
                 {/* </form> */}
               </div>
@@ -281,6 +285,14 @@ const MemberPersonEdit = () => {
           </div>
         </div>
       </div>
+      {/* <MemberNavbar fileSrc={fileSrc} setFileSrc={setFileSrc}/> */}
+      <MemberPersonEditModal
+        show={modalShow}
+        onHide={() => {
+          //setModalShow(false);
+          history.push('/member-person');
+        }}
+      />
     </>
   );
 };

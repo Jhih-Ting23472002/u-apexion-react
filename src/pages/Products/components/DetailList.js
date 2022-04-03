@@ -3,6 +3,7 @@ import '../productsDetail.scss';
 import ProductsConfig from '../ProductsConfig';
 import { useParams } from 'react-router-dom';
 import CartQuantity from '../CartQuantity';
+import ReactImageZoom from 'react-image-zoom';
 
 function DetailList(props) {
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
@@ -40,25 +41,34 @@ function DetailList(props) {
 
   useEffect(() => {
     setTotal(1);
-    setMoney(false)
+    setMoney(false);
   }, [sid]);
 
   const moneyClickHandler = e => {
     setMoney(true);
   };
 
+  const imgZoom = {
+    
+    width: '743',
+    height: '474',
+    zoomPosition: 'original',
+    img: `http://localhost:3001/img/product_img/${
+      props.product?.product_img ?? 'www.jpg'
+    }`,
+  };
 
   return (
     <>
       <div className="pr-detail-list">
         <div className="pr-detail-list-img">
-          <img
+          {/* <img
             className="pr-detail-img"
             src={`http://localhost:3001/img/product_img/${
-              props.product?.product_img ?? 'www.jpg'
-            }`}
+              props.product?.product_img ?? 'www.jpg'}`}
             alt=""
-          />
+          /> */}
+          <ReactImageZoom {...imgZoom} />
         </div>
         <div className="pr-detail-p">
           <i className="pr-detail-p-i fa-regular fa-heart"></i>
@@ -82,11 +92,7 @@ function DetailList(props) {
                 </select>
               </div>
               <p className="pr-price">US${props.product?.price ?? '0'}</p>
-              <div
-                className="pr-price-display"
-
-                onClick={moneyClickHandler}
-              >
+              <div className="pr-price-display" onClick={moneyClickHandler}>
                 <div
                   className="pr-price-tw"
                   style={{ opacity: money === true ? '0' : '1' }}

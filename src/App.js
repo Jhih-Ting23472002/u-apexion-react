@@ -80,19 +80,27 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 
 import { CartProvider } from './pages/Cart/utils/useCart';
 
+//end
+// import VedioEnd from './pages/VedioEnd'
+
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-// import IndexMain from './pages/Index/IndexMain';
+import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
 function App() {
-  const [tripSelected, setTripSelected] = useState('');
-  const [tripDays, setTripDays] = useState('');
+  //行程資訊傳遞
+  const [travelSelected, setTravelSelected] = useState('潘朵拉星Pandora');
+  console.log('行程選擇', travelSelected);
+
+  //訂票資訊傳遞
+  const [tripSelected, setTripSelected] = useState('潘朵拉星Pandora');
+  const [tripDays, setTripDays] = useState(8);
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
   const [seatNumberDemo, setSeatNumberDemo] = useState([]);
-  const [mealSelected, setMealSelected] = useState([]);
+  const [mealSelected, setMealSelected] = useState({});
   const [change, setChange] = useState(0);
   const [memberName, setMemberName] = useState([]);
 
@@ -125,6 +133,7 @@ function App() {
     addressDist: '',
     address: '',
   });
+  const [mealArr, setMealArr] = useState([]);
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 衣服褲子總金額
   const [totalProductItem, setTotalProductItem] = useState(0); // 衣服褲子總數量
   const [cartTripTotal, setCartTripTotal] = useState(0); // 票券總金額
@@ -164,9 +173,9 @@ function App() {
                     <Route exact path="/">
                       <IndexFirst />
                     </Route>
-                    {/* <Route exact path="/u-apexion">
+                    <Route exact path="/u-apexion">
                       <IndexMain />
-                    </Route> */}
+                    </Route>
                     <Route exact path="/forum-home">
                       <ForumHomePage
                         newpost={newpost}
@@ -247,13 +256,25 @@ function App() {
                       <TravelChoose />
                     </Route>
                     <Route path="/travel-UAP-001">
-                      <TravelNotes />
+                      <TravelNotes
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travel-UAP-002">
-                      <TravelNotes2 />
+                      <TravelNotes2
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travel-UAP-004">
-                      <TravelNotes3 />
+                      <TravelNotes3
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travelchoose-pricem">
                       <TravelChoosePriceM />
@@ -283,6 +304,7 @@ function App() {
                         setTripSelected={setTripSelected}
                         setTripDays={setTripDays}
                         setTripPrice={setTripPrice}
+                        travelSelected={travelSelected}
                       />
                     </Route>
                     <Route path="/ticket-date-choose">
@@ -357,6 +379,8 @@ function App() {
                         cartTotalPrice={cartTotalPrice} //衣服褲子總金額
                         setCartTotalPrice={setCartTotalPrice} //衣服褲子總金額
                         //---------------------------------
+                        mealArr={mealArr}
+                        setMealArr={setMealArr}
                         tripSelected={tripSelected} //from 采諭
                         setTripSelected={setTripSelected} //from 采諭
                         tripPrice={tripPrice} //from 采諭
@@ -384,7 +408,7 @@ function App() {
                         cartTicketAmount={cartTicketAmount}
                         setCartTicketAmount={setCartTicketAmount}
                         cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
-                        setCartCustomTotalPrice={setCartCustomTotalPrice}  // 客製化總金額
+                        setCartCustomTotalPrice={setCartCustomTotalPrice} // 客製化總金額
                         //---------------------------------
                         setUserOption={setUserOption}
                         userOption={userOption}
@@ -400,6 +424,7 @@ function App() {
                     </Route>
                     <Route path="/cart-final-check">
                       <CartFinalCheck
+                        mealArr={mealArr}
                         tripSelected={tripSelected} //from 采諭
                         tripPrice={tripPrice} //from 采諭
                         tripDate={tripDate} //from 采諭
@@ -462,6 +487,9 @@ function App() {
                       />
                     </Route>
 
+                    {/* <Route path="/vedio-end" exact>
+                      <VedioEnd />
+                    </Route> */}
                     <Route path="*">
                       <NotFoundPage />
                     </Route>

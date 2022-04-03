@@ -2,7 +2,13 @@ import React from 'react';
 import spaceSuit from '../../img/spaceSuit.png';
 
 const SuitCard = props => {
-  const { suit } = props;
+  const { suit, setSuitPrice } = props;
+
+  let price = 0;
+  suit.map(v => (price += v.suitPrice));
+  setSuitPrice(price); // 客製化衣服的錢 傳到 CartChoosePayment 這支檔案裡面
+
+  // 我需要一個數量的變數，並把他推進從太空服來的資料裡面。
 
   return (
     <>
@@ -29,7 +35,7 @@ const SuitCard = props => {
                 <div className="content-detail-inside-bottom-suit">
                   <div className="cart-empty-place"></div>
                   <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">${v.price}</div>
+                  <div className="cart-order-money">${v.suitPrice}</div>
                 </div>
               </div>
             </div>

@@ -114,9 +114,13 @@ export const getAddress = user_id => {
 
 // 回傳歷史訂單的資料
 export const getOrderHistory = user_id => {
-  return fetch(`${BASE_URL}/user/api/get-order-history/` + user_id).then(res =>
-    res.json()
-  );
+  return fetch('http://localhost:3001/user/api/history-order', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      user_id,
+    }),
+  }).then(res => res.json());
 };
 
 export const editAddress = (editData, user_id) => {

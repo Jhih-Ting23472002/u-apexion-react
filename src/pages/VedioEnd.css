@@ -1,0 +1,14 @@
+video::-webkit-media-controls-timeline {
+    display: none;
+  }
+  .video-end {
+    width: 100vw;
+  height: 88vh;
+  }
+
+  #video-end-i {
+    object-fit: cover;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }

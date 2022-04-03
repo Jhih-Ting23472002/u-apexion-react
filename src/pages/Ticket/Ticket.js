@@ -21,6 +21,9 @@ function Ticket(props) {
   const [number, setNumber] = useState(1);
   const API = config.TK_ORDER_API;
   const [userId, setUserId] = useState(0);
+  const [userPassport, setUserPassport] = useState(
+    localStorage.getItem('user_passport')
+  );
   const { setMemberName } = props;
 
   const { userNavbar } = useContext(UserNameF);
@@ -39,7 +42,9 @@ function Ticket(props) {
 
   useEffect(() => {
     const userID = localStorage.getItem('user_id');
+    const userPass = localStorage.getItem('user_passport');
     setUserId(userID);
+    setUserPassport(userPass);
   }, []);
 
   return (
@@ -47,7 +52,7 @@ function Ticket(props) {
       <div className="ticketWrap">
         <form className="inputArea" onSubmit={doSubmit} name="form1" multiple>
           <input type="hidden" name="userId" value={parseInt(userId)} />
-          <h2>{userNavbar === '登入' ? 'Hello' : userNavbar}</h2>
+          <h2>{userNavbar === '登入' ? 'Hello' : `Hello，${userNavbar}`}</h2>
           <div className="inputWrap">
             <label>人數</label>
             <div className="inputGroup">
@@ -69,7 +74,11 @@ function Ticket(props) {
               </span>
             </div>
           </div>
-          <TicketInput count={count} setMemberName={setMemberName} />
+          <TicketInput
+            count={count}
+            setMemberName={setMemberName}
+            userPassport={userPassport}
+          />
         </form>
         <div className="sliderArea">
           <div className="sliderWrap">

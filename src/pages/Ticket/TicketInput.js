@@ -4,7 +4,7 @@ import TicketCheckModal from './TicketCheckModal';
 
 function TicketInput(props) {
   const [checkModalShow, setCheckModalShow] = useState(false);
-  const { setMemberName } = props;
+  const { setMemberName, userPassport } = props;
   const [userEmail, setUserEmail] = useState('');
   const inputAr = [];
   const inputHtml = (
@@ -16,6 +16,7 @@ function TicketInput(props) {
             className="memberNames"
             name="memberName[]"
             type="text"
+            defaultValue={userPassport}
             placeholder="請輸入護照英文姓名"
           />
           <span></span>
@@ -64,15 +65,15 @@ function TicketInput(props) {
   }, []);
 
   function getMemberHandler(e) {
-    fetch(`http://localhost:3001/user/api/ticket-order-checkmail`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        account: userEmail,
-      }),
-    }).then(res => res.json());
+    // fetch(`http://localhost:3001/user/api/ticket-order-checkmail`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     account: userEmail,
+    //   }),
+    // }).then(res => res.json());
     setCheckModalShow(true);
     console.log(e);
     document.querySelectorAll('.memberNames').forEach(v => {

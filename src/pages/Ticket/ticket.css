@@ -432,6 +432,10 @@ img {
   transition: 1s;
 }
 
+.ticket-trip-card0 {
+  border: 5px solid #05F2F2;
+}
+
 .ticket-trip-card {
   width: 8%; /* 隨著資料數量變更改變 */
   height: 70vh;
@@ -564,6 +568,13 @@ img {
   position: absolute;
   right: 2%;
   font-size: 1.2rem;
+  transition: .5s;
+}
+
+.ticket-next:hover {
+  text-decoration: none;
+  color: #48ede8;
+  transform: rotate(360deg);
 }
 
 .ticket-next i {
@@ -818,7 +829,14 @@ img {
   right: 0;
   bottom: 3%;
   font-size: 1.2rem;
-  padding-right: 10%;
+  margin-right: 10%;
+  transition: .5s;
+}
+
+.ticket-date-next:hover {
+  text-decoration: none;
+  color: #000000;
+  transform: rotate(360deg);
 }
 
 .ticket-date-back {
@@ -829,7 +847,14 @@ img {
   left: 0;
   bottom: 3%;
   font-size: 1.2rem;
-  padding-left: 10%;
+  margin-left: 10%;
+  transition: .5s;
+}
+
+.ticket-date-back:hover {
+  text-decoration: none;
+  color: #000000;
+  transform: rotate(360deg);
 }
 
 .ticket-date-back-mb {
@@ -981,7 +1006,14 @@ img {
   right: 0;
   bottom: 3%;
   font-size: 1.2rem;
-  padding-right: 5%;
+  margin-right: 5%;
+  transition: .5s;
+}
+
+.ticket-seat-next:hover {
+  text-decoration: none;
+  color: var(--sub-color-01);
+  transform: rotate(360deg);
 }
 
 .ticket-seat-back {
@@ -992,7 +1024,14 @@ img {
   left: 0;
   bottom: 3%;
   font-size: 1.2rem;
-  padding-left: 6%;
+  margin-left: 6%;
+  transition: .5s;
+}
+
+.ticket-seat-back:hover {
+  text-decoration: none;
+  color: var(--sub-color-01);
+  transform: rotate(360deg);
 }
 
 .ticket-seat-demo-area {
@@ -1198,8 +1237,15 @@ img {
   right: 0;
   bottom: 2%;
   font-size: 1.2rem;
-  padding-right: 5%;
+  margin-right: 5%;
   text-decoration: none;
+  transition: .5s;
+}
+
+.ticket-meal-next:hover {
+  text-decoration: none;
+  color: #000000;
+  transform: rotate(360deg);
 }
 
 .ticket-meal-back {
@@ -1210,8 +1256,15 @@ img {
   left: 0;
   bottom: 2%;
   font-size: 1.2rem;
-  padding-left: 6%;
+  margin-left: 6%;
   text-decoration: none;
+  transition: .5s;
+}
+
+.ticket-meal-back:hover {
+  text-decoration: none;
+  color: #000000;
+  transform: rotate(360deg);
 }
 
 .ticket-date-next i,

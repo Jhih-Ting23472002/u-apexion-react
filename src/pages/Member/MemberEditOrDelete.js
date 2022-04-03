@@ -171,6 +171,9 @@ function MemberEditOrDelete(props) {
               <button
                 type="button"
                 className="member-modal-circle-btn member-cancel-btn"
+                onClick={() => {
+                  props.setModalShow(false);
+                }}
               >
                 返回
               </button>

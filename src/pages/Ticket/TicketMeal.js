@@ -77,13 +77,17 @@ function TicketMeal(props) {
   const mealSelectedHandler = function (e) {
     console.log(e.target.dataset.user);
     const newMealState = mealSelected;
+    console.log(newMealState);
     newMealState[e.target.dataset.user] = e.target.value;
+
     setMealSelected(newMealState);
     const nowChange = change + 1;
     setChange(nowChange);
     console.log('newMealState', newMealState);
     console.log('mealSelected', mealSelected);
   };
+
+ 
 
   console.log(demoImg);
   return (
