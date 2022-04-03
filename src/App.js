@@ -88,12 +88,12 @@ import IndexMain from './pages/Index/IndexMain';
 
 function App() {
   //行程資訊傳遞
-  const [travelSelected, setTravelSelected] = useState('');
+  const [travelSelected, setTravelSelected] = useState('潘朵拉星Pandora');
   console.log('行程選擇', travelSelected);
 
   //訂票資訊傳遞
-  const [tripSelected, setTripSelected] = useState('');
-  const [tripDays, setTripDays] = useState('');
+  const [tripSelected, setTripSelected] = useState('潘朵拉星Pandora');
+  const [tripDays, setTripDays] = useState(8);
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
   const [seatNumberDemo, setSeatNumberDemo] = useState([]);
