@@ -1,5 +1,5 @@
 import React from 'react';
-import './TravelChooseDayM.css';
+import './TravelChoose.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 

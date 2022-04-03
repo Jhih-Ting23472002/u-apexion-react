@@ -197,7 +197,7 @@
   border: 4px double black;
 }
 
-.sortitemBuyButtonAll {
+.sortitemBuyButtonAll, .sortitemBuyButtonpf, .sortitemBuyButtonpm, .sortitemBuyButtondf, .sortitemBuyButtondm {
   width: 120px;
   height: 40px;
   margin: 0 8.5px;
@@ -208,7 +208,7 @@
   font-size: 18px;
 }
 
-.ssortitemBuyButtonAll:hover {
+.ssortitemBuyButtonAll, .sortitemBuyButtonpf, .sortitemBuyButtonpm, .sortitemBuyButtondf, .sortitemBuyButtondm:hover {
   background-color: #05F2F2;
   color: black;
   border: 4px double black;
