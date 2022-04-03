@@ -4,6 +4,7 @@ import MemberNavbar from '../../components/MemberNav';
 import { useEffect, useState } from 'react';
 import { reviseMem, findMem } from '../../data/UserWebApi';
 import { useHistory } from 'react-router-dom';
+import MemberPersonEditModal from './MemberPersonEditModal';
 
 const MemberPersonEdit = () => {
   const history = useHistory();
@@ -16,6 +17,7 @@ const MemberPersonEdit = () => {
   });
   const [fileSrc, setFileSrc] = useState('');
   const [userPhoto, setUserPhoto] = useState('');
+  const [modalShow, setModalShow] = useState(false);
   //console.log(userPhoto);
 
   const [userAll, setUserAll] = useState([]);
@@ -57,9 +59,10 @@ const MemberPersonEdit = () => {
       console.log(obj);
       if (obj.success) {
         setUserPhoto('http://localhost:3001/img' + '/' + obj.user_photo);
-        alert('修改成功');
+        // alert('修改成功');
+        setModalShow(true);
       }
-      history.push('/member-person'); //登入成功後導入會員頁
+      // history.push('/member-person');
     });
   };
   const handleChange = e => {
@@ -283,6 +286,13 @@ const MemberPersonEdit = () => {
         </div>
       </div>
       {/* <MemberNavbar fileSrc={fileSrc} setFileSrc={setFileSrc}/> */}
+      <MemberPersonEditModal
+        show={modalShow}
+        onHide={() => {
+          //setModalShow(false);
+          history.push('/member-person');
+        }}
+      />
     </>
   );
 };
