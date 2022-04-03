@@ -87,6 +87,11 @@ import IndexFirst from './pages/Index/IndexFirst';
 //----頁面元件----
 
 function App() {
+  //行程資訊傳遞
+  const [travelSelected, setTravelSelected] = useState('');
+  console.log('行程選擇', travelSelected);
+
+  //訂票資訊傳遞
   const [tripSelected, setTripSelected] = useState('');
   const [tripDays, setTripDays] = useState('');
   const [tripPrice, setTripPrice] = useState('');
@@ -247,13 +252,25 @@ function App() {
                       <TravelChoose />
                     </Route>
                     <Route path="/travel-UAP-001">
-                      <TravelNotes />
+                      <TravelNotes
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travel-UAP-002">
-                      <TravelNotes2 />
+                      <TravelNotes2
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travel-UAP-004">
-                      <TravelNotes3 />
+                      <TravelNotes3
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travelchoose-pricem">
                       <TravelChoosePriceM />
@@ -283,6 +300,7 @@ function App() {
                         setTripSelected={setTripSelected}
                         setTripDays={setTripDays}
                         setTripPrice={setTripPrice}
+                        travelSelected={travelSelected}
                       />
                     </Route>
                     <Route path="/ticket-date-choose">
@@ -384,7 +402,7 @@ function App() {
                         cartTicketAmount={cartTicketAmount}
                         setCartTicketAmount={setCartTicketAmount}
                         cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
-                        setCartCustomTotalPrice={setCartCustomTotalPrice}  // 客製化總金額
+                        setCartCustomTotalPrice={setCartCustomTotalPrice} // 客製化總金額
                         //---------------------------------
                         setUserOption={setUserOption}
                         userOption={userOption}

@@ -4,8 +4,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function TravelNotes() {
+function TravelNotes(props) {
   const [JourneyMann, setJourneyMann] = useState([]);
+  const { setTravelSelected, setTripDays, setTripSelected } = props;
 
   useEffect(() => {
     (async function () {
@@ -398,7 +399,14 @@ function TravelNotes() {
           <div className="price--1fAWe">
             <span>$399,999</span>起
           </div>
-          <Link to="/ticket-order">
+          <Link
+            to="/ticket-order"
+            onClick={() => {
+              setTravelSelected('曼恩星Mann');
+              setTripDays(6);
+              setTripSelected('曼恩星Mann');
+            }}
+          >
             <span></span>
             <span></span>
             <span></span>

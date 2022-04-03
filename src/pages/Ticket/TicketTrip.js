@@ -8,12 +8,20 @@ import { motion } from 'framer-motion';
 function TicketTrip(props) {
   const [tripData, setTripData] = useState([]);
   const [distance, setDistance] = useState(0);
+  const { travelSelected } = props;
   // const [addAni, setAddAni] = useState(false);
 
   useEffect(() => {
     (async function () {
       const response = await fetch(
-        'http://localhost:3001/ticket-trip/api/plant-list'
+        'http://localhost:3001/ticket-trip/api/plant-list',
+        {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+          }),
+          body: JSON.stringify({ travel: travelSelected }),
+        }
       );
       const tripDatas = await response.json();
       setTripData(tripDatas);
@@ -182,7 +190,7 @@ function TicketTrip(props) {
                 {tripData.map((v, i) => {
                   return (
                     <React.Fragment key={i}>
-                      <div className="ticket-trip-card">
+                      <div className={'ticket-trip-card ticket-trip-card' + i}>
                         <div className="ticket-trip-days">{v.travel_day}日</div>
                         <div className="ticket-trip-card-head">
                           <img
