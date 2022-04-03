@@ -1,5 +1,5 @@
 import React from 'react';
-import './TravelChoose.css';
+import './TravelChooseDayM.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -59,10 +59,7 @@ function TravelChooseDM() {
                             <h4 className="chooseh4 pb-2 border-bottom">
                               {c.travel_name}
                             </h4>
-                            <p className="choosep">
-                              Pistachio stuffed kofta balls served with a
-                              persian style tomato sauce.
-                            </p>
+                            <p className="choosep">{c.travel_description}</p>
                             <ul className="chooseitinerary">
                               <li>類別:{c.travel_tags}</li>
                               <li>產品代碼:{c.travel_number}</li>
@@ -120,7 +117,7 @@ function TravelChooseDM() {
                   <button className="sortitemBuyButton">天數:少至多</button>
                 </Link>
                 <Link to="/travelchoose-daym">
-                  <button className="sortitemBuyButton">天數:多至少</button>
+                  <button className="sortitemBuyButtondm">天數:多至少</button>
                 </Link>
               </div>
               <div className="choosesearch col-12 col-sm-12 col-md-3 mb-3">

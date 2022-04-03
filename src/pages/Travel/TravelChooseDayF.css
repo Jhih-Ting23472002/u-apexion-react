@@ -180,24 +180,7 @@
   border-right:3px solid white ;
 }
 
-.sortitemBuyButton {
-  width: 120px;
-  height: 40px;
-  margin: 0 8.5px;
-  color: #05F2F2;
-  background-color: black;
-  border: 4px double #05F2F2;
-  border-radius: 200px;
-  font-size: 18px;
-}
-
-.sortitemBuyButton:hover {
-  background-color: #05F2F2;
-  color: black;
-  border: 4px double black;
-}
-
-.sortitemBuyButtonAll {
+.sortitemBuyButtondf {
   width: 120px;
   height: 40px;
   margin: 0 8.5px;
@@ -208,7 +191,7 @@
   font-size: 18px;
 }
 
-.ssortitemBuyButtonAll:hover {
+.sortitemBuyButtondf:hover {
   background-color: #05F2F2;
   color: black;
   border: 4px double black;
