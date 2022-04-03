@@ -70,6 +70,7 @@ function CustomizeSuit(props) {
     fill3: '#595959',
   });
   const [suitPrice, setPrice] = useState(25000);
+  const [suitTotal, setTotal] = useState(1);
 
   function setFlagHandler(e) {
     //抓取圖片放入太空船
@@ -120,7 +121,7 @@ function CustomizeSuit(props) {
     setSuit(function (prevData) {
       history.push('/customize-craft');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { markSuit, country, suitImgName ,suitPrice}];
+      return [...prevData, { markSuit, country, suitImgName ,suitPrice,suitTotal}];
     });
   }
 

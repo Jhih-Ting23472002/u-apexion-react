@@ -125,6 +125,7 @@ function App() {
     addressDist: '',
     address: '',
   });
+  const [mealArr, setMealArr] = useState([]);
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 衣服褲子總金額
   const [totalProductItem, setTotalProductItem] = useState(0); // 衣服褲子總數量
   const [cartTripTotal, setCartTripTotal] = useState(0); // 票券總金額
@@ -357,6 +358,8 @@ function App() {
                         cartTotalPrice={cartTotalPrice} //衣服褲子總金額
                         setCartTotalPrice={setCartTotalPrice} //衣服褲子總金額
                         //---------------------------------
+                        mealArr={mealArr}
+                        setMealArr={setMealArr}
                         tripSelected={tripSelected} //from 采諭
                         setTripSelected={setTripSelected} //from 采諭
                         tripPrice={tripPrice} //from 采諭
@@ -400,6 +403,7 @@ function App() {
                     </Route>
                     <Route path="/cart-final-check">
                       <CartFinalCheck
+                        mealArr={mealArr}
                         tripSelected={tripSelected} //from 采諭
                         tripPrice={tripPrice} //from 采諭
                         tripDate={tripDate} //from 采諭

@@ -14,12 +14,13 @@ function CustomizeSeat(props) {
   const [seatImg, setSeatImg] = useState('');
   const [seatPrice, setPrice] = useState(15000);
   const [opa, setOpa] = useState('');
+  const [seatTotal, setTotal] = useState(1);
 
   function addCart() {
     setCustomize(function (prevData) {
       setCartTotal(cartTotal + 1);
       setModalShow(true);
-      return [...prevData, { style, seatPrice }];
+      return [...prevData, { style, seatPrice,seatTotal }];
     });
   }
 

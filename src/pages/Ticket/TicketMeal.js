@@ -80,16 +80,14 @@ function TicketMeal(props) {
     console.log(newMealState);
     newMealState[e.target.dataset.user] = e.target.value;
 
-    let mealArray = [];
-    for (let s in newMealState) {
-      mealArray.push(newMealState[s]);
-    }
-    setMealSelected(mealArray);
+    setMealSelected(newMealState);
     const nowChange = change + 1;
     setChange(nowChange);
     console.log('newMealState', newMealState);
     console.log('mealSelected', mealSelected);
   };
+
+ 
 
   console.log(demoImg);
   return (
