@@ -96,7 +96,7 @@ function MemberPwdEdit() {
                 <div className="member-btn-container">
                   <div className="member-return-btn-wrap">
                     <button
-                      className="member-circle-btn member-cancel-btn"
+                      className="member-circle-btn"
                       onClick={() => {
                         setPwdEdit({
                           pwdold: '',
@@ -105,7 +105,7 @@ function MemberPwdEdit() {
                         });
                       }}
                     >
-                      返回
+                      取消更改
                     </button>
                   </div>
                   <div>

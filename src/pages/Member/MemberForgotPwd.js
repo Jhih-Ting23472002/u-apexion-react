@@ -6,10 +6,12 @@ import { accountAndMobileCheck } from '../../data/UserWebApi';
 import MemberForgotPwdCode from './MemberForgotPwdCode';
 import MemberForgotPwdNew from './MemberForgotPwdNew';
 import { useHistory } from 'react-router-dom';
+import MemberForgotPwdModal from './MemberForgotPwdModal';
 
 const MemberForgotPwd = () => {
   const [account, setAccount] = useState('');
   const [mobile, setMobile] = useState('');
+  const [modalShow, setModalShow] = useState(false);
 
   const [step, setStep] = useState(1);
   // const [errorMessage, setErrorMessage] = useState('');
@@ -21,8 +23,10 @@ const MemberForgotPwd = () => {
       //.then(obj => console.log(obj));
       .then(obj => {
         console.log('obj:', obj);
-        if (obj.code == '200') {
-          alert(obj.message);
+        if (obj.success) {
+          // alert(obj.message);
+          setModalShow(true);
+
           localStorage.setItem('verify_code', obj.verify_code);
           localStorage.setItem('forgotsid', obj.info.sid);
           //呼叫 發送驗證信
@@ -118,6 +122,12 @@ const MemberForgotPwd = () => {
           </div>
         </div>
       )}
+      <MemberForgotPwdModal
+        show={modalShow}
+        onHide={() => {
+          setModalShow(false);
+        }}
+      />
     </>
   );
 };

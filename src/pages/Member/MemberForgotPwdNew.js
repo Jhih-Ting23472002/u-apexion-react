@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import './MemberForgotPwd.css';
 
 import { pwdNewConfirm } from '../../data/UserWebApi';
+import MemberForgotPwdNewModal from './MemberForgotPwdNewModal';
+
 
 const MemberForgotPwd = () => {
   const history = useHistory();
@@ -11,6 +13,7 @@ const MemberForgotPwd = () => {
     newPassword: '',
     confirmPassword: '',
   });
+  const [modalShow, setModalShow] = useState(false);
 
   const handleChange = e => {
     const newData = { ...pwdNew, [e.target.name]: e.target.value };
@@ -27,8 +30,9 @@ const MemberForgotPwd = () => {
     pwdNewConfirm(pwdNew.newPassword, forgotsid).then(obj => {
       console.log('obj:', obj);
       if (obj.success) {
-        alert('更改成功');
-        history.push('/member-login');
+        // alert('更改成功');
+        setModalShow(true);
+        // history.push('/member-login');
       } else {
         alert(obj.errorMessage);
       }
@@ -46,7 +50,7 @@ const MemberForgotPwd = () => {
           新的密碼
         </label>
         <input
-          type="text"
+          type="password"
           value={pwdNew.newPassword}
           name="newPassword"
           onChange={handleChange}
@@ -59,7 +63,7 @@ const MemberForgotPwd = () => {
           確認密碼
         </label>
         <input
-          type="text"
+          type="password"
           value={pwdNew.confirmPassword}
           name="confirmPassword"
           onChange={handleChange}
@@ -89,6 +93,13 @@ const MemberForgotPwd = () => {
           </button>
         </div>
       </div>
+      <MemberForgotPwdNewModal
+        show={modalShow}
+        onHide={() => {
+          setModalShow(false);
+          history.push('/member-login');
+        }}
+      />
     </>
   );
 };
