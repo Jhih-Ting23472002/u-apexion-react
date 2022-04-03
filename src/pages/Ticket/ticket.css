@@ -432,6 +432,10 @@ img {
   transition: 1s;
 }
 
+.ticket-trip-card0 {
+  border: 5px solid #05F2F2;
+}
+
 .ticket-trip-card {
   width: 8%; /* 隨著資料數量變更改變 */
   height: 70vh;
