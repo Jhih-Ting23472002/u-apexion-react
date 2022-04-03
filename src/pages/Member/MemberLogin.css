@@ -115,8 +115,8 @@
   text-decoration: none;
   font-size: 0.5rem;
 }
-
-.login-primary-btn,
+/* ======= BTN ====== */
+/* .login-primary-btn,
 .login-google-btn,
 .login-signup-btn {
   width: 100%;
@@ -132,11 +132,52 @@
   text-decoration: none;
   text-align: center;
   transition: all 0.5s;
+} */
+.login-primary-btn,
+.login-google-btn,
+.login-signup-btn {
+  position: relative;
+  background-color: #000000;
+  color: #05f2f2;
+  width: 100%;
+  padding: 5px;
+  line-height: 1.2rem;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: -30px 10px 20px #00000050;
+  transition: 0.3s ease-in-out;
+}
+.login-primary-btn:after,
+.login-google-btn:after,
+.login-signup-btn:after {
+  content: '';
+  width: 102%;
+  height: 126%;
+  border: 2px solid #05f2f2;
+  border-radius: 20px;
+  position: absolute;
+  top:-13%;
+  right: -1%;
+  transition: 0.3s ease-in-out;
+}
+.login-primary-btn:hover:after,
+.login-google-btn:hover:after,
+.login-signup-btn:hover:after{
+  box-shadow: 0 0 15px #05f2f281;
+}
+.login-primary-btn:hover,
+.login-google-btn:hover,
+.login-signup-btn:hover {
+  background-color: #05f2f2;
+  color: #000000;
+}
+.login-primary-btn:focus,
+.login-google-btn:focus,
+.login-signup-btn:focus {
+  outline: none;
 }
 
-.login-primary-btn:hover {
-  background-color: #4ff3f3;
-}
 
 .login-google-btn,
 .login-signup-btn {
