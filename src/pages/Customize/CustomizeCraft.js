@@ -35,12 +35,13 @@ function CustomizeCraft(props) {
   const [labelSt, setLabelSt] = useState('請輸入名稱(8個字元內)');
   const [country, setCountry] = useState('');
   const [craftPrice, setPrice] = useState(20000);
+  const [craftTotal, setTotal] = useState(1);
 
   function addCart() {
     setCraft(function (prevData) {
       history.push('/customize-seat');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { craftString, country, craftPrice }];
+      return [...prevData, { craftString, country, craftPrice,craftTotal }];
     });
   }
 
