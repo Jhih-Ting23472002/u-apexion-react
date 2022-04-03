@@ -20,6 +20,12 @@ function TicketOrderModal(props) {
     memberName,
   } = props;
   console.log(mealSelected, tripSelected, tripDate, seatNumberDemo);
+
+  let mealArray = [];
+  for (let s in mealSelected) {
+    mealArray.push(mealSelected[s]);
+  }
+
   const memberAPI = config.TK_ORDER_API;
   // const [memberData, setMemberData] = useState([]);
   // const memberDataArray = memberData.map((v, i) => {
@@ -28,6 +34,7 @@ function TicketOrderModal(props) {
 
   console.log('價格', tripPrice);
   console.log('確認頁餐點', mealSelected);
+  console.log('確認頁餐點陣列', mealArray);
   // console.log('人數', memberData.length);
   // console.log('成員名子', memberDataArray);
   // console.log('成員ttt', memberDataArray[0]);
@@ -109,7 +116,7 @@ function TicketOrderModal(props) {
                 })}
               </div>
               <div>
-                {mealSelected.map((v, i) => {
+                {mealArray.map((v, i) => {
                   return <p>{v}</p>;
                 })}
               </div>
