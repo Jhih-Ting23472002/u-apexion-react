@@ -51,6 +51,7 @@ const CartChoosePayment = props => {
           />
 
           <TripCard
+            setMealArr={props.setMealArr}
             tripSelected={props.tripSelected}
             setTripSelected={props.setTripSelected}
             tripPrice={props.tripPrice}

@@ -944,3 +944,106 @@
   transition: 1.5s ease-in-out;
   /* width:15% */
 }
+.indexScrollTop {
+  color: white;
+  width: 80px;
+  height: 80px;
+  margin-right: 0;
+  position: absolute;
+  top: 98%;
+  right: 3%;
+  cursor: pointer;
+  background-image: linear-gradient(
+    90deg,
+    #05f2f2 20%,
+    rgba(0, 0, 0, 0.722) 27%
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glace 2s infinite;
+  /* animation: scrolltotop 1s infinite; */
+}
+.indexScrollTop::before {
+  content: '';
+  width: 100px;
+  height: 30px;
+  background: linear-gradient(
+    90deg,
+    #00000000 0%,
+    #00000000 40%,
+    rgb(0, 0, 0, 0.7) 50%,
+    rgb(0, 0, 0, 0.7) 55%,
+    #00000000 65%,
+    #00000000 100%
+  );
+  background-size: 400%;
+  position: absolute;
+  left: -10px;
+  top: -5px;
+}
+@keyframes glace {
+  from {
+    background-position: 100% 100%;
+  }
+  to {
+    background-position: 0% 0%;
+  }
+}
+@keyframes scrolltotop {
+  100% {
+    top: 98%;
+  }
+  50% {
+    top: 97.9%;
+  }
+  0% {
+    top: 98%;
+  }
+}
+.indexScrollTop0 {
+  color: white;
+  width: 80px;
+  height: 80px;
+  margin-right: 0;
+  position: absolute;
+  top: 17%;
+  right: 3%;
+  cursor: pointer;
+  background-image: linear-gradient(
+    90deg,
+    #05f2f2 20%,
+    rgba(0, 0, 0, 0.722) 27%
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glace 2s infinite;
+  animation: scrolltotop0 1.5s 1;
+}
+.indexScrollTop0::before {
+  content: '';
+  width: 100px;
+  height: 30px;
+  background: linear-gradient(
+    90deg,
+    #00000000 0%,
+    #00000000 40%,
+    rgb(0, 0, 0, 0.7) 50%,
+    rgb(0, 0, 0, 0.7) 55%,
+    #00000000 65%,
+    #00000000 100%
+  );
+  background-size: 400%;
+  position: absolute;
+  left: -10px;
+  top: -5px;
+}
+@keyframes scrolltotop0 {
+  from {
+    top: 98%;
+  }
+  to {
+    top: 15%;
+  }
+}

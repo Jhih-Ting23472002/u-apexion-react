@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 const CartFinalCheck = props => {
   const {
+    mealArr,
     productDetailList,
     tripSelected,
     tripPrice,
