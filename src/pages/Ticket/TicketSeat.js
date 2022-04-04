@@ -15,6 +15,7 @@ import { motion } from 'framer-motion';
 
 function TicketSeat(props) {
   const { tripDate, seatNumberDemo, setSeatNumberDemo, memberName } = props;
+  console.log('座位第一頁成員', memberName);
   const [isSeatA, setIsSeatA] = useState(false);
   const [isSeatB, setIsSeatB] = useState(false);
   const [isSeatC, setIsSeatC] = useState(false);
@@ -147,6 +148,7 @@ function TicketSeat(props) {
                     change={change}
                     setChange={setChange}
                     setSeatNumberDemo={setSeatNumberDemo}
+                    memberName={memberName}
                   />
                 </div>
                 {/* <img className="seat-svg" src={seatsvg} alt="" /> */}

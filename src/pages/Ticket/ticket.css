@@ -1240,6 +1240,7 @@ img {
   margin-right: 5%;
   text-decoration: none;
   transition: .5s;
+  cursor: pointer;
 }
 
 .ticket-meal-next:hover {
