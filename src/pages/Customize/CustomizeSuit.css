@@ -2,7 +2,7 @@
   width: 100%;
   /* navbar高的60px */
   height: calc(100vh - 60px);
-  background-color: rgb(0, 0, 0);
+  background:url(/public/customize_img/starry.jpg) right top/cover no-repeat;
   overflow: hidden;
   position: relative;
 }
@@ -363,4 +363,84 @@ transition: .3s ease-in-out;
   100% {
       stroke-dashoffset: 0;
   }
+}
+
+/* cubic-bezier(.8,-0.13,.63,1.1) */
+.suitMoveLeft1{
+  transform: translateX(-1000px);
+  animation: suitsMoveLeft 1.5s  ease-in-out forwards ;
+}
+.suitMoveLeft2{
+  transform: translateX(-1000px);
+  animation: suitsMoveLeft 1.5s  ease-in-out forwards .5s ;
+}
+.suitMoveLeft3{
+  transform: translateX(-1000px);
+  animation: suitsMoveLeft 2s  ease-in-out forwards 1s ;
+}
+.suitMoveRight1{
+  transform: translateX(1300px);
+  animation: suitsMoveRight 1.4s ease-in-out forwards ;
+}
+.suitMoveRight2{
+  transform: translateX(1300px);
+  animation: suitsMoveRight 1.4s ease-in-out forwards .5s;
+}
+@keyframes suitsMoveLeft {
+  0% {
+    transform: translateX(-1000px);
+  }
+  70% {
+    transform: translateX(0px);
+  }
+  85% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes suitsMoveRight {
+  0% {
+    transform: translateX(1300px);
+  }
+  70% {
+    transform: translateX(0px);
+  }
+  85% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+
+}
+@keyframes suitsMoveLeftOut {
+  0% {
+    transform: translateX(0px);
+  }
+  15% {
+    transform: translateX(-5px);
+  }
+  30% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+@keyframes suitsMoveRightOut {
+  0% {
+    transform: translateX(0px);
+  }
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(1300px);
+  }
+
 }
