@@ -85,7 +85,7 @@ import { CartProvider } from './pages/Cart/utils/useCart';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -174,7 +174,7 @@ function App() {
                       <IndexFirst />
                     </Route>
                     <Route exact path="/u-apexion">
-                      <IndexMain />
+                      {/* <IndexMain /> */}
                     </Route>
                     <Route exact path="/forum-home">
                       <ForumHomePage
