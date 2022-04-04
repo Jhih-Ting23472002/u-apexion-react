@@ -13,7 +13,7 @@ function BrowsingHistory(props) {
 
   // const sliceThree = Storage.slice(-3);
   //console.log(sliceThree);
-
+//歷史紀錄
   useEffect(() => {
     if (Storages.length !== 0) {
       const sliceThree = Storages.productLocalStorage.slice(-3);
