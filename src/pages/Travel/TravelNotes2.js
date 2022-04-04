@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function TravelNotes(props) {
   const [JourneyXandar, setJourneyXandar] = useState([]);
-  const { setTravelSelected, setTripDays, setTripSelected} = props;
+  const { setTravelSelected, setTripDays, setTripSelected } = props;
 
   useEffect(() => {
     (async function () {

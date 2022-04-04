@@ -32,7 +32,7 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-//import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
@@ -79,6 +79,9 @@ import ForumPersonalPage from './pages/Forum/ForumPersonalPage';
 import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 
 import { CartProvider } from './pages/Cart/utils/useCart';
+
+//end
+// import VedioEnd from './pages/VedioEnd'
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
@@ -484,6 +487,9 @@ function App() {
                       />
                     </Route>
 
+                    {/* <Route path="/vedio-end" exact>
+                      <VedioEnd />
+                    </Route> */}
                     <Route path="*">
                       <NotFoundPage />
                     </Route>

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 function TravelNotes(props) {
   const [JourneyTitan, setJourneyTitan] = useState([]);
-  const [JourneyUap001, setJourneyUap001] = useState([]);
   const { setTravelSelected, setTripDays, setTripSelected } = props;
 
   useEffect(() => {
@@ -17,17 +16,6 @@ function TravelNotes(props) {
       const JourneyTitan = await response.json();
       setJourneyTitan(JourneyTitan);
       console.log(JourneyTitan);
-    })();
-  }, []);
-
-  useEffect(() => {
-    (async function () {
-      const response = await fetch(
-        'http://localhost:3001/travel-notes/api/travel-journeyuap001'
-      );
-      const JourneyUap001 = await response.json();
-      setJourneyUap001(JourneyUap001);
-      console.log(JourneyUap001);
     })();
   }, []);
 
