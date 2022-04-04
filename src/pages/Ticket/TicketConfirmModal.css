@@ -137,6 +137,12 @@ element.style {
   left: 2px;
 }
 
+.ticket-confirm-btn:not(.ticket-confirm-btn:last-child):hover {
+  background-color: transparent;
+  border: 4px double white;
+  color: white;
+}
+
 
 
 .ticket-confirm-modal-footer>div {
