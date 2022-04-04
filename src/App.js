@@ -80,8 +80,8 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 
 import { CartProvider } from './pages/Cart/utils/useCart';
 
-//end
-// import VedioEnd from './pages/VedioEnd'
+//endmemberName
+// import VedioEnd from './pages/VedioEnd';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
@@ -105,10 +105,10 @@ function App() {
   const [memberName, setMemberName] = useState([]);
 
   console.log('成員', memberName);
-  console.log('行程', tripSelected);
-  console.log('出發日期', tripDate);
-  console.log('選擇座位', seatNumberDemo);
-  console.log('餐點', mealSelected);
+  // console.log('行程', tripSelected);
+  // console.log('出發日期', tripDate);
+  // console.log('選擇座位', seatNumberDemo);
+  // console.log('餐點', mealSelected);
   console.log(
     tripSelected,
     tripDays,
