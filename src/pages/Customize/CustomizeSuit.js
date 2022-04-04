@@ -50,12 +50,12 @@ function CustomizeSuit(props) {
   const [suitImg, setSuitImg] = useState('');
   //suitImgName服裝顏色名稱
   const [suitImgName, setSuitImgName] = useState('');
+  const [suitColorName, setSuitColorName] = useState('');
 
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
   const [country, setCountry] = useState('');
-  // console.log(country)
   //徽章
   const [markSelectSuit, setMarkSelectSuit] = useState('0');
   const [markImgSuit, setMarkImgSuit] = useState('0');
@@ -69,6 +69,8 @@ function CustomizeSuit(props) {
     fill2: '#595959',
     fill3: '#595959',
   });
+  const [suitLeftOut, setSuitLeftOut] = useState('');
+  const [suitRightOut, setSuitRightOut] = useState('');
   const [suitPrice, setPrice] = useState(25000);
   const [suitTotal, setTotal] = useState(1);
 
@@ -119,16 +121,24 @@ function CustomizeSuit(props) {
 
   function addCart() {
     setSuit(function (prevData) {
-      history.push('/customize-craft');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { markSuit, country, suitImgName ,suitPrice,suitTotal}];
+      setTimeout(() => {
+        history.push('/customize-craft');
+      }, 1500);
+      return [
+        ...prevData,
+        { markSuit, country, suitImgName, suitPrice, suitTotal },
+      ];
     });
   }
 
   return (
     <>
       <section className="Customsuit-page-view">
-        <div className="back-circle">
+        <div
+          className="back-circle suitMoveLeft3"
+          style={{ animation: suitLeftOut }}
+        >
           <div className="image-mirrow">
             <img
               alt=""
@@ -156,14 +166,18 @@ function CustomizeSuit(props) {
         </div>
         {/* 背景右側 */}
         <svg
-          className="right-page-svg"
+          className="right-page-svg suitMoveLeft1"
+          style={{ animation: suitLeftOut }}
           viewBox="0 0 913 1024"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M-5 0L420 0L200 1024L-5 1024L-5 0Z" fill="#323232" />
         </svg>
-        <div className="suit-circle">
+        <div
+          className="suit-circle suitMoveLeft2"
+          style={{ animation: suitLeftOut }}
+        >
           <svg
             width="512"
             height="672"
@@ -234,7 +248,16 @@ function CustomizeSuit(props) {
             />
           </svg>
 
-          <button className="suit-circle-btn" onClick={() => addCart()}>
+          <button
+            className="suit-circle-btn"
+            onClick={() => {
+              const newLeftOut = 'suitsMoveLeftOut 1.4s ease-in-out forwards ';
+              setSuitLeftOut(newLeftOut);
+              const newRightOut = 'suitsMoveRightOut 1.4s ease-in-out forwards';
+              setSuitRightOut(newRightOut);
+              addCart();
+            }}
+          >
             完成送出
           </button>
           <div className="maybe-use-canvus">
@@ -262,7 +285,11 @@ function CustomizeSuit(props) {
             />
           </div>
         </div>
-        <div className="suit-card">
+
+        <div
+          className="suit-card suitMoveRight2"
+          style={{ animation: suitRightOut }}
+        >
           <h1>請選擇太空服外觀</h1>
           <h3>Customize Your SpaceSuit</h3>
           <h2>25,000$</h2>
@@ -391,7 +418,8 @@ function CustomizeSuit(props) {
         </div>
 
         <svg
-          className="left-page-svg"
+          className="left-page-svg suitMoveRight1"
+          style={{ animation: suitRightOut }}
           viewBox="0 0 913 1024"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

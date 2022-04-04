@@ -28,6 +28,8 @@ function CustomizeCraft(props) {
     fill1: '#595959',
     fill2: '#595959',
   });
+  const [craftLeftOut, setCraftLeftOut] = useState('');
+  const [craftRightOut, setCraftRightOut] = useState('');
   const [countryImg, setCountryImg] = useState('');
   //console.log(countryImg)
   const [craftCountryStyle, setCraftCountryStyle] = useState('0');
@@ -39,9 +41,12 @@ function CustomizeCraft(props) {
 
   function addCart() {
     setCraft(function (prevData) {
-      history.push('/customize-seat');
       setCartTotal(cartTotal + 1);
-      return [...prevData, { craftString, country, craftPrice,craftTotal }];
+      setTimeout(() => {
+        history.push('/customize-seat');
+      }, 1500);
+
+      return [...prevData, { craftString, country, craftPrice, craftTotal }];
     });
   }
 
@@ -56,7 +61,10 @@ function CustomizeCraft(props) {
   return (
     <>
       <section className="Customcraft-page-view">
-        <div className="craft-tools">
+        <div
+          className="craft-tools craftMoveLeft2"
+          style={{ animation: craftLeftOut }}
+        >
           <div className="craft-step">
             <svg
               viewBox="0 0 859 707"
@@ -161,7 +169,10 @@ function CustomizeCraft(props) {
             <p className="craft-string">{craftString}</p>
           </div>
         </div>
-        <div className="craft-main-area">
+        <div
+          className="craft-main-area craftMoveLeft3"
+          style={{ animation: craftLeftOut }}
+        >
           <div className="craft-area-view1">
             <div
               className="craft-filter"
@@ -195,7 +206,8 @@ function CustomizeCraft(props) {
           </div>
         </div>
         <svg
-          className="left-page-svg"
+          style={{ animation: craftLeftOut }}
+          className="left-page-svg craftMoveLeft1"
           viewBox="0 0 913 1024"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +215,10 @@ function CustomizeCraft(props) {
           <path d="M-5 0L420 0L200 1024L-5 1024L-5 0Z" fill="#323232" />
         </svg>
 
-        <div className="craft-card">
+        <div
+          className="craft-card craftMoveRight2"
+          style={{ animation: craftRightOut }}
+        >
           <h1>請選擇太空船外觀</h1>
           <h3>Customize Your SpaceCraft</h3>
           <h2>20,000$</h2>
@@ -277,13 +292,26 @@ function CustomizeCraft(props) {
               </div>
             </div>
           </div>
-          <button className="craft-circle-btn" onClick={() => addCart()}>
+          <button
+            className="craft-circle-btn"
+            onClick={() => {
+              const newLeftOut = 'suitsMoveLeftOut 1.4s ease-in-out forwards ';
+              setCraftLeftOut(newLeftOut);
+              const newRightOut = 'suitsMoveRightOut 1.4s ease-in-out forwards';
+              setCraftRightOut(newRightOut);
+              addCart();
+              // setTimeout(() => {
+              //   addCart();
+              // }, 1500);
+            }}
+          >
             完成送出
           </button>
         </div>
 
         <svg
-          className="right-page-svg"
+          style={{ animation: craftRightOut }}
+          className="right-page-svg craftMoveRight1"
           viewBox="0 0 913 1024"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
