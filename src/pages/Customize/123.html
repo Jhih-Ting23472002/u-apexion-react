@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    canvas#viewport {
+      border: 1px solid hotpink;
+      background-color: rgba(9, 140, 255, 0);
+      opacity: 1;
+      width: 1000px;
+      height: 1000px;
+    }
+    #seat{
+      z-index: 1;
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+  <body>
+    <canvas id="viewport"> 
+      <!-- <img id="seat" src="./images/spaceseat-white.png" alt=""> -->
+    </canvas>
+
+    <script>
+      var canvas = document.getElementById('viewport'),
+        context = canvas.getContext('2d');
+        make_base();
+
+      function make_base() {
+        base_image = new Image();
+        base_image.src = './images/spaceseat-white.png';
+        base_image.onload = function () {
+          context.drawImage(base_image, 0, 0, 100, 100, 0, 0, 100, 100);
+          
+        };
+        console.log(base_image.onload)
+      }
+    </script>
+  </body>
+</html>

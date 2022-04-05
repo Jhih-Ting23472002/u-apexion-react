@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import './CustomizeOrder.css';
-import ModalHeader from 'react-bootstrap/ModalHeader';
 
 function CustomizeOrder(props) {
   //app最外層傳入
-  const { seatColor, craft,suit } = props;
+  const { seatColor, craft, suit } = props;
 
   // console.log(suit[0].suitImgName);
 

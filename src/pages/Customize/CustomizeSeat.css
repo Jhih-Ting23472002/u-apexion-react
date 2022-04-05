@@ -4,7 +4,7 @@
   height: calc(100vh - 60px);
   overflow: hidden;
   position: relative;
-  background-color: #000;
+  background:url(/public/customize_img/starry.jpg) right top/cover no-repeat;
 }
 .seat-backcolor {
   position: absolute;
@@ -113,4 +113,21 @@
   }
   .seat-circle-btn:focus{
     outline:none;
+  }
+  .seatMoveLeft1{
+    transform: translateX(-1000px);
+    animation: suitsMoveLeft 1.5s  ease-in-out forwards ;
+  }
+  .seatMoveLeft2{
+    transform: translateX(-1000px);
+    animation: suitsMoveLeft 1.5s  ease-in-out forwards .5s ;
+  }
+  
+  .seatMoveRight1{
+    transform: translateX(1300px);
+    animation: suitsMoveRight 1.4s ease-in-out forwards ;
+  }
+  .seatMoveRight2{
+    transform: translateX(1300px);
+    animation: suitsMoveRight 1.4s ease-in-out forwards .5s;
   }
