@@ -8,7 +8,7 @@ element.style {
 }
 
 .modal-content {
-  width: 1000px;
+  width: 100vw;
   height: 600px;
   background: url('./img/modal.png') center center / cover no-repeat;
   border-radius: 15px;
@@ -90,6 +90,7 @@ element.style {
   padding: 10px 25px;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .ticket-confirm-btn::after {
@@ -101,6 +102,13 @@ element.style {
   position: absolute;
   top: 2px;
   left: 2px;
+}
+
+.ticket-confirm-btn:hover {
+  border: 4px double white;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 .ticket-confirm-btn:not(.ticket-confirm-btn:last-child)  {
@@ -127,6 +135,12 @@ element.style {
   position: absolute;
   top: 2px;
   left: 2px;
+}
+
+.ticket-confirm-btn:not(.ticket-confirm-btn:last-child):hover {
+  background-color: transparent;
+  border: 4px double white;
+  color: white;
 }
 
 

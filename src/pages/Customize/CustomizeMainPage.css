@@ -10,7 +10,7 @@
   height: 100vh;
   overflow: hidden;
 }
-.movie-select a {
+.movie-select-a {
   position: absolute;
   left: 0%;
   right: 0%;

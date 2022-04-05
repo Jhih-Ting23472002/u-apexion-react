@@ -12,7 +12,7 @@ const CartCreditCard = props => {
   const [cvc, setCvc] = useState('');
   const [focus, setFocus] = useState('');
   // const [productFinalName, setProductFinalName] = useState('');
-
+  const [cartConfirmModalShow, setCartConfirmModalShow] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -126,6 +126,7 @@ const CartCreditCard = props => {
         productJTingTinaPrice,
       }),
     }).then(res => res.json());
+    setCartConfirmModalShow(true);
   };
 
   return (
@@ -183,18 +184,17 @@ const CartCreditCard = props => {
             ></input>
           </form>
           <div className="d-flex justify-content-center align-items-center mt-5">
-            <Link to={'/cart-complete'} className="mx-3">
-              <button
-                type="button"
-                onClick={() => {
-                  sendOrderDeatilHandler();
-                  // handleShow();
-                }}
-                className="btn card-confirm cart-link"
-              >
-                確認付款 (Confirm)
-              </button>
-            </Link>
+            {/* <Link to={'/cart-complete'} className="mx-3"> */}
+            <button
+              type="button"
+              onClick={() => {
+                sendOrderDeatilHandler();
+              }}
+              className="btn card-confirm cart-link"
+            >
+              確認付款 (Confirm)
+            </button>
+            {/* </Link> */}
             <div className="card-trade mx-3">
               交易金額 $
               {props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
@@ -202,12 +202,11 @@ const CartCreditCard = props => {
           </div>
         </div>
       </div>
-      {/* <CartCreditCardModal
-        show={show}
-        setShow={setShow}
-        handleClose={handleClose}
-        handleShow={handleShow}
-      /> */}
+      {/* <CartCreditCardModal show={show} onHide={() => setShow(false)} /> */}
+      <CartCreditCardModal
+        show={cartConfirmModalShow}
+        onHide={() => setCartConfirmModalShow(false)}
+      />
     </>
   );
 };

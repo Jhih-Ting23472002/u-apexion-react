@@ -4,7 +4,7 @@
   height: calc(100vh - 60px);
   overflow: hidden;
   position: relative;
-  background-color: #000;
+  background:url(/public/customize_img/starry.jpg) right top /cover no-repeat;
 }
 .craft-tools {
   z-index: 1;
@@ -344,4 +344,51 @@
   100% {
     stroke-dashoffset: 0;
   }
+}
+
+.craftMoveLeft1{
+  transform: translateX(-1000px);
+  animation: suitsMoveLeft 1.5s  ease-in-out forwards ;
+}
+.craftMoveLeft2{
+  transform: translateX(-1100px);
+  animation: suitsMoveLeft 1.5s  ease-in-out forwards .7s ;
+}
+.craftMoveLeft3{
+  transform: translateX(-1000px);
+  animation: suitsMoveLeft 2s  ease-in-out forwards 1s ;
+}
+.craftMoveRight1{
+  transform: translateX(1300px);
+  animation: suitsMoveRight 1.4s ease-in-out forwards ;
+}
+.craftMoveRight2{
+  transform: translateX(1300px);
+  animation: suitsMoveRight 1.4s ease-in-out forwards .5s;
+}
+
+.craft-img{
+  animation: suitsMove 1s ease-in-out forwards 1s;
+}
+@keyframes suitsMove {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  86% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;  }
 }

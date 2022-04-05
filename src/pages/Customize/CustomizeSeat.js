@@ -11,7 +11,7 @@ function CustomizeSeat(props) {
   const [modalShow, setModalShow] = useState(false);
   const [color, setColor] = useState({});
   const [style, setStyle] = useState('');
-  const [seatImg, setSeatImg] = useState('');
+  const [seatImg, setSeatImg] = useState('/customize_img/spaceseat-white.png');
   const [seatPrice, setPrice] = useState(15000);
   const [opa, setOpa] = useState('');
   const [seatTotal, setTotal] = useState(1);
@@ -27,14 +27,14 @@ function CustomizeSeat(props) {
   return (
     <>
       <section className="Customseat-page-view">
-        <div className="seat-backcolor" style={color}>
+        <div className="seat-backcolor seatMoveLeft1" style={color}>
           <img src={require('./images/seat-backimg.png')} alt="" />
         </div>
-        <div className="seat-box-img">
+        <div className="seat-box-img seatMoveLeft2">
           {/* 想讓他變換時  先讓他歸0 再變成1 */}
           <img src={seatImg} alt="" style={{ opacity: opa }} />
         </div>
-        <div className="seat-card">
+        <div className="seat-card seatMoveRight2" >
           <h1>請選擇太空椅外觀</h1>
           <h3>Customize Your Seat</h3>
           <h2>15,000$</h2>
@@ -106,8 +106,8 @@ function CustomizeSeat(props) {
           </button>
         </div>
 
-        <svg
-          className="right-page-svg"
+        <svg 
+          className="right-page-svg seatMoveRight1"
           viewBox="0 0 913 1024"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

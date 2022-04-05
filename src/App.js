@@ -32,7 +32,7 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-//import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
@@ -80,15 +80,23 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 
 import { CartProvider } from './pages/Cart/utils/useCart';
 
+//endmemberName
+// import VedioEnd from './pages/VedioEnd';
+
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
 function App() {
-  const [tripSelected, setTripSelected] = useState('');
-  const [tripDays, setTripDays] = useState('');
+  //行程資訊傳遞
+  const [travelSelected, setTravelSelected] = useState('潘朵拉星Pandora');
+  console.log('行程選擇', travelSelected);
+
+  //訂票資訊傳遞
+  const [tripSelected, setTripSelected] = useState('潘朵拉星Pandora');
+  const [tripDays, setTripDays] = useState(8);
   const [tripPrice, setTripPrice] = useState('');
   const [tripDate, setTripDate] = useState('');
   const [seatNumberDemo, setSeatNumberDemo] = useState([]);
@@ -97,10 +105,10 @@ function App() {
   const [memberName, setMemberName] = useState([]);
 
   console.log('成員', memberName);
-  console.log('行程', tripSelected);
-  console.log('出發日期', tripDate);
-  console.log('選擇座位', seatNumberDemo);
-  console.log('餐點', mealSelected);
+  // console.log('行程', tripSelected);
+  // console.log('出發日期', tripDate);
+  // console.log('選擇座位', seatNumberDemo);
+  // console.log('餐點', mealSelected);
   console.log(
     tripSelected,
     tripDays,
@@ -166,7 +174,7 @@ function App() {
                       <IndexFirst />
                     </Route>
                     <Route exact path="/u-apexion">
-                      <IndexMain />
+                      {/* <IndexMain /> */}
                     </Route>
                     <Route exact path="/forum-home">
                       <ForumHomePage
@@ -248,13 +256,25 @@ function App() {
                       <TravelChoose />
                     </Route>
                     <Route path="/travel-UAP-001">
-                      <TravelNotes />
+                      <TravelNotes
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travel-UAP-002">
-                      <TravelNotes2 />
+                      <TravelNotes2
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travel-UAP-004">
-                      <TravelNotes3 />
+                      <TravelNotes3
+                        setTravelSelected={setTravelSelected}
+                        setTripSelected={setTripSelected}
+                        setTripDays={setTripDays}
+                      />
                     </Route>
                     <Route path="/travelchoose-pricem">
                       <TravelChoosePriceM />
@@ -284,6 +304,7 @@ function App() {
                         setTripSelected={setTripSelected}
                         setTripDays={setTripDays}
                         setTripPrice={setTripPrice}
+                        travelSelected={travelSelected}
                       />
                     </Route>
                     <Route path="/ticket-date-choose">
@@ -387,7 +408,7 @@ function App() {
                         cartTicketAmount={cartTicketAmount}
                         setCartTicketAmount={setCartTicketAmount}
                         cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
-                        setCartCustomTotalPrice={setCartCustomTotalPrice}  // 客製化總金額
+                        setCartCustomTotalPrice={setCartCustomTotalPrice} // 客製化總金額
                         //---------------------------------
                         setUserOption={setUserOption}
                         userOption={userOption}
@@ -466,6 +487,9 @@ function App() {
                       />
                     </Route>
 
+                    {/* <Route path="/vedio-end" exact>
+                      <VedioEnd />
+                    </Route> */}
                     <Route path="*">
                       <NotFoundPage />
                     </Route>

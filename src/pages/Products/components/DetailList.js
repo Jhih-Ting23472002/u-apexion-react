@@ -8,7 +8,8 @@ import ReactImageZoom from 'react-image-zoom';
 function DetailList(props) {
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
   const [money, setMoney] = useState(false);
-
+  
+  const [size, setSize] = useState('請選擇')
   const [total, setTotal] = useState(1);
   const [twd, setTwd] = useState(0);
   const price = props.product.price;
@@ -35,13 +36,14 @@ function DetailList(props) {
       );
       const ExchangeRates = await response.json();
       setTwd(ExchangeRates.USDTWD['Exrate']);
-      console.log(ExchangeRates.USDTWD['Exrate']);
+      //console.log(ExchangeRates.USDTWD['Exrate']);
     })();
   }, []);
 
   useEffect(() => {
     setTotal(1);
     setMoney(false);
+    setSize('請選擇')
   }, [sid]);
 
   const moneyClickHandler = e => {
@@ -84,7 +86,7 @@ function DetailList(props) {
             <div className="primary-navigation">
               <p>尺寸 :</p>
               <div role="navigation" className="primary-navigation">
-                <select class="form-control info-select">
+                <select class="form-control info-select" value={size} onChange={e => setSize(e.target.value)}>
                   <option value="請選擇">請選擇</option>
                   <option value="Small">Small</option>
                   <option value="Middle">Middle</option>

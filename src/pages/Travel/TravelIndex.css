@@ -391,6 +391,9 @@
     .smallItem {
       width: 100%;
     }
+    .smallItem>img {
+      height: 300px;
+    }
   }
 
   /* locations */
@@ -459,10 +462,6 @@
   /* sizing */
 
   @media screen and (max-width: 912px) {
-    .projects {
-      width: 87%;
-    }
-
     .overlay>h1 {
       font-size: 70px;
       margin-bottom: 0%;
@@ -482,9 +481,6 @@
   }
 
   @media screen and (max-width: 641px) {
-    .projectItem>img {
-      width: relative;
-    }
 
     .projects {
       width: 100%;
@@ -501,10 +497,7 @@
     .generalHr {
       width: 90%;
     }
-  }
-
-  @media screen and (max-width: 400px) {
-    .smallItem>img {
-      width: relatve;
+    .projectItem{
+      height: 310px;
     }
   }
