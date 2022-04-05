@@ -4,6 +4,7 @@ import './ForumPersonalSavePage.css';
 // import Modal from 'react-bootstrap/Modal';
 import ForumPersonalSavePageModal from './ForumPersonalSavePageModal';
 import { personSaveData } from './personSaveData';
+import { TestData } from './TestData';
 import styled from 'styled-components';
 
 const CheckBoxWrapper = styled.div`
@@ -55,6 +56,16 @@ export default function ForumPersonalSavePage() {
   const [modalShow, setModalShow] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
   const [bgcolor, setBgColor] = useState(false);
+
+  const sugar = [];
+  for (let i in TestData) {
+    console.log(Object.keys(TestData[i]));
+    const sugarAll = TestData[i].mtl_sugar;
+    sugar.push(sugarAll);
+    console.log(sugar);
+  }
+  const sugurTotal = sugar.reduce((a, b) => a + b);
+  console.log(sugurTotal);
 
   const colorHandler = e => {
     setBgColor(true);
