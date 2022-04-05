@@ -8,7 +8,7 @@ element.style {
 }
 
 .modal-content {
-  width: 1000px;
+  width: 100vw;
   height: 600px;
   background: url('./img/modal.png') center center / cover no-repeat;
   border-radius: 15px;

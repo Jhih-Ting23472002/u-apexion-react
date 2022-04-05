@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import './VedioEnd.css';
+// import './VedioEnd.css';
 
 function VedioEnd() {
   return (
