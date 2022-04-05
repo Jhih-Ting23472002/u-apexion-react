@@ -135,6 +135,13 @@ function TicketTrip(props) {
           </div>
           {/* </div> */}
         </motion.div>
+        <div className="step-circle-mb-wrap">
+          <img className="step-circle-mb" src={stepCircleMb} alt="" />
+          <div className="ticket-steps">
+            <p>STEP</p>
+            <p>1</p>
+          </div>
+        </div>
 
         <div className="ticket-trip">
           <div className="ticket-trip-wrap">

@@ -109,6 +109,13 @@ function TicketSeat(props) {
             <p>3</p>
           </div>
         </motion.div>
+        <div className="step-circle-mb-wrap">
+          <img className="step-circle-mb" src={stepCircleMb} alt="" />
+          <div className="ticket-steps">
+            <p>STEP</p>
+            <p>3</p>
+          </div>
+        </div>
         <div class="ticket-seat">
           <div class="ticket-seat-wrap">
             <h2>請選擇 艙位及座位</h2>

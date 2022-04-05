@@ -62,6 +62,13 @@ function TicketDate(props) {
             <p>2</p>
           </div>
         </motion.div>
+        <div className="step-circle-mb-wrap">
+          <img className="step-circle-mb" src={stepCircleMb} alt="" />
+          <div className="ticket-steps">
+            <p>STEP</p>
+            <p>2</p>
+          </div>
+        </div>
         <div className="ticket-date">
           <div className="ticket-date-wrap">
             <div className="ticket-date-title">
