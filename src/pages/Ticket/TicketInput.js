@@ -6,6 +6,7 @@ function TicketInput(props) {
   const [checkModalShow, setCheckModalShow] = useState(false);
   const { setMemberName, userPassport } = props;
   const [userEmail, setUserEmail] = useState('');
+  const [userPassName, setUserPassName] = useState(true);
   const inputAr = [];
   // const inputHtml = (
   //   <>
@@ -55,13 +56,24 @@ function TicketInput(props) {
       inputAr.push(
         <>
           <div className="inputWrap">
+            <label className="input-check-label">成員{i}</label>
+            <div className="input-check inputGroup">
+              <input
+                className="memberNames"
+                name="memberName[]"
+                type="checkbox"
+                onChange={e => passportHandler(e)}
+              />
+              <span>與登入帳號的護照名稱相同</span>
+            </div>
+          </div>
+          <div className="inputWrap">
             <label>成員{i}</label>
             <div className="inputGroup">
               <input
                 className="memberNames"
                 name="memberName[]"
                 type="text"
-                defaultValue={userPassport}
                 placeholder="請輸入護照英文姓名"
               />
               <span></span>
@@ -134,6 +146,21 @@ function TicketInput(props) {
     console.log(e.target.parentNode.previousSibling);
     // e.currentTarget.previousSibling.innerHTML = e.currentTarget.value;
     console.log(e);
+  }
+
+  function passportHandler(e) {
+    setUserPassName(!userPassName);
+    if (userPassName) {
+      console.log(e);
+      console.log(
+        e.target.parentNode.parentNode.nextSibling.lastChild.firstChild
+      );
+      e.target.parentNode.parentNode.nextSibling.lastChild.firstChild.value =
+        userPassport;
+    } else {
+      e.target.parentNode.parentNode.nextSibling.lastChild.firstChild.value =
+        '';
+    }
   }
 
   return (

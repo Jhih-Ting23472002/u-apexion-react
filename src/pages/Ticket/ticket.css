@@ -119,9 +119,33 @@
   align-items: center;
 }
 
+.fa-chevron-down {
+  cursor: pointer;
+}
+
 .inputArea label {
   font-size: 1.25rem;
   color: white;
+}
+
+.input-check-label {
+  opacity: 0;
+}
+
+.input-check {
+  display: flex;
+  color: white;
+  /* border: none; */
+}
+
+.inputArea .input-check input {
+  width: 5%;
+  /* color: white; */
+}
+
+.inputArea .inputGroup.input-check {
+  justify-content: flex-start;
+  border: none;
 }
 
 .inputArea .inputGroup {
