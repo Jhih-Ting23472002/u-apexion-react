@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
 import './ForumPublishPage.css';
-// import Modal from 'react-bootstrap/Modal';
-// import Button from 'react-bootstrap/Button';
+import ForumPublishPageModal from './ForumPublishPageModal';
 import ForumNav from '../../../components/Forum-Nav';
-// import PropTypes from 'prop-types'
 
 const Root = styled.div`
   width: 100%;
@@ -33,6 +31,7 @@ export default function ForumPublishPage(props) {
   const [fileSrc, setFileSrc] = useState(null);
   const [postApiError, setPostApiError] = useState(null);
   const { setNewPost, newpost } = props;
+  const [modalShow, setModalShow] = useState(false);
 
   const userId = localStorage.getItem('user_id');
   const userImg = localStorage.getItem('user_img');
@@ -90,8 +89,12 @@ export default function ForumPublishPage(props) {
 
         }, 20000);
         */
-        history.push('/forum-home');
-        setNewPost(np => !np);
+        // console.log(data);
+        if (data.success) {
+          setNewPost(np => !np);
+          setModalShow(true);
+        }
+        // history.push('/forum-home');
       });
   };
 
@@ -339,6 +342,12 @@ export default function ForumPublishPage(props) {
             </div>
           </div>
         </div>
+        <ForumPublishPageModal
+          show={modalShow}
+          onHide={() => {
+            history.push('/forum-home'); 
+          }}
+        />
       </AllDisplayFlex>
     </Root>
   );

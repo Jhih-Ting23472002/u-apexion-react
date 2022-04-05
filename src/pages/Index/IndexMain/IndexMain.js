@@ -43,12 +43,9 @@ const IndexMain = () => {
   };
   const handleSectionScroll = () => {
     const scrollY = window.scrollY;
-    // console.log(scrollY);
     if (scrollY >= 3850) {
-      // console.log('>3700-');
       setsec4Animate(true);
       setCircle4(true);
-      // console.log(circle4);
     }
   };
 
@@ -64,13 +61,7 @@ const IndexMain = () => {
   };
 
   useEffect(() => {
-    // document.querySelector('.index_bg-img').style.opacity = '1';
-    // document.querySelector('.index_bg-img').style.opacity = '0.3';
-    // document.querySelector('.index_bg-img').style.border = '10px solid red';
     window.addEventListener('scroll', handleSectionScroll);
-    // setInterval(() => {
-    //   setCircle2(true);
-    // }, 10000);
   }, []);
 
   // {
@@ -329,13 +320,7 @@ const IndexMain = () => {
           <div class="index_team">
             {data
               .filter((v, i) => {
-                {
-                  /* console.log(i); */
-                }
-                if (i == index) {
-                  {
-                    /* console.log(index); */
-                  }
+                if (i === parseInt(index)) {
                   return v;
                 }
               })
@@ -392,15 +377,6 @@ const IndexMain = () => {
               ))}
             <div class="index_team-right">
               <div class="index_right-member">
-                <div class="index_member col-3">
-                  <img
-                    class="sm-img"
-                    alt=""
-                    style={{ objectFit: 'contain' }}
-                    src="./index_img/Mask-Grouplogo.png"
-                  />
-                  <p style={{ color: '#05f2f2' }}>Apexion Team</p>
-                </div>
                 {data.map((v, i) => (
                   <div class="index_member col-3">
                     <img
