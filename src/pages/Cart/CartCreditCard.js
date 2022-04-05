@@ -129,7 +129,7 @@ const CartCreditCard = props => {
       }),
     }).then(res => res.json());
     //setCartConfirmModalShow(true);
-    history.push('/vedio-end'); //轉跳至結尾影片
+    //history.push('/vedio-end'); //轉跳至結尾影片(智婷)
 
   };
 
