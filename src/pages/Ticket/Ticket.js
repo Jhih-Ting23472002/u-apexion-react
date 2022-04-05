@@ -6,7 +6,7 @@ import slider03 from './img/slider03.jpg';
 import slider04 from './img/slider04.jpg';
 import slider05 from './img/slider05.jpg';
 import slider06 from './img/slider06.jpg';
-import slider07 from './img/slider07.jpeg';
+import slider07 from './img/slider07.png';
 import slider08 from './img/slider08.jpg';
 import { useState, useContext, useEffect } from 'react';
 import UserNameF from '../../components/UserNameF';
