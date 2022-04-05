@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './CartCreditCard.css';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
-import { Link } from 'react-router-dom';
-import CartCreditCardModal from './CartCreditCardModal';
+import { Link,useHistory } from 'react-router-dom';
+//import CartCreditCardModal from './CartCreditCardModal';
 
 const CartCreditCard = props => {
   const [number, setNumber] = useState('');
@@ -12,10 +12,12 @@ const CartCreditCard = props => {
   const [cvc, setCvc] = useState('');
   const [focus, setFocus] = useState('');
   // const [productFinalName, setProductFinalName] = useState('');
-  const [cartConfirmModalShow, setCartConfirmModalShow] = useState(false);
+  //const [cartConfirmModalShow, setCartConfirmModalShow] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const history = useHistory();
+
 
   const {
     cartOrderListNumber,
@@ -126,7 +128,9 @@ const CartCreditCard = props => {
         productJTingTinaPrice,
       }),
     }).then(res => res.json());
-    setCartConfirmModalShow(true);
+    //setCartConfirmModalShow(true);
+    history.push('/vedio-end'); //轉跳至結尾影片
+
   };
 
   return (
@@ -202,11 +206,7 @@ const CartCreditCard = props => {
           </div>
         </div>
       </div>
-      {/* <CartCreditCardModal show={show} onHide={() => setShow(false)} /> */}
-      <CartCreditCardModal
-        show={cartConfirmModalShow}
-        onHide={() => setCartConfirmModalShow(false)}
-      />
+      {/* <CartCreditCardModal cartConfirmModalShow={cartConfirmModalShow} setCartConfirmModalShow={setCartConfirmModalShow}/> */}
     </>
   );
 };
