@@ -27,6 +27,11 @@ const CartFinalCheck = props => {
     cartCustomTotalPrice,
   } = props;
 
+  let mealArray = [];
+  for (let i in mealSelected) {
+    mealArray.push(mealSelected[i]);
+  }
+
   return (
     <>
       <div className="cart-background container-fluid">
@@ -155,7 +160,12 @@ const CartFinalCheck = props => {
                     <div className="cart-product-list-group">
                       行程：{tripSelected}
                     </div>
-                    <div className="cart-product-list-group">餐點:{}</div>
+                    <div className="cart-product-list-group">
+                      餐點:{' '}
+                      {mealArray.map(m => {
+                        return m + '/';
+                      })}
+                    </div>
                   </div>
                   <div className="d-flex justify-content-between need-width">
                     <div className="cart-product-list-group">日程</div>
