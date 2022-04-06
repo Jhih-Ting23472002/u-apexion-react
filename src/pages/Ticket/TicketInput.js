@@ -59,8 +59,7 @@ function TicketInput(props) {
             <label className="input-check-label">成員{i}</label>
             <div className="input-check inputGroup">
               <input
-                className="memberNames"
-                name="memberName[]"
+                className="member-check"
                 type="checkbox"
                 onChange={e => passportHandler(e)}
               />
