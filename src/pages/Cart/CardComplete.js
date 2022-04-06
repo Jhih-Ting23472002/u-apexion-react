@@ -12,6 +12,9 @@ const CardComplete = props => {
     cartTotalPrice,
     cartTripTotal,
     suit,
+    suitAmount,
+    shipAmount,
+    seatAmount,
     craft,
     customize,
     cartCustomTotalPrice,
@@ -53,7 +56,8 @@ const CardComplete = props => {
           </div>
           <div className="cart d-flex justify-content-center py-5 total-price-text deal-receipt">
             <p>
-              付款已完成，交易金額為${cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+              付款已完成，交易金額為$
+              {cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
               元。
             </p>
             <br />
@@ -97,18 +101,34 @@ const CardComplete = props => {
               </div>
 
               {suit.map(v => (
-                <div className="product-trip-custom d-flex align-items-center">
+                <div
+                  className="product-trip-custom d-flex align-items-center"
+                  key="6"
+                >
                   <div className="col-5 text-center">個人宇航服</div>
                   <div className="col-4 text-center">1</div>
-                  <div className="col-3 text-center">$25000</div>
+                  <div className="col-3 text-center">${v.suitPrice}</div>
                 </div>
               ))}
 
               {craft.map(v => (
-                <div className="product-trip-custom d-flex align-items-center">
+                <div
+                  className="product-trip-custom d-flex align-items-center"
+                  key="7"
+                >
                   <div className="col-5 text-center">宇航艇外觀</div>
                   <div className="col-4 text-center">1</div>
-                  <div className="col-3 text-center">$20000</div>
+                  <div className="col-3 text-center">${v.craftPrice}</div>
+                </div>
+              ))}
+              {customize.map(v => (
+                <div
+                  className="product-trip-custom d-flex align-items-center"
+                  key="8"
+                >
+                  <div className="col-5 text-center">個人太空椅</div>
+                  <div className="col-4 text-center">1</div>
+                  <div className="col-3 text-center">${v.seatPrice}</div>
                 </div>
               ))}
 
@@ -116,7 +136,9 @@ const CardComplete = props => {
               <div className="remind-money d-flex align-items-center">
                 <div className="col-5"></div>
                 <div className="col-4 text-center">
-                  共 {totalProductItem + 1} 項商品，總金額
+                  共
+                  {totalProductItem + 1 + suitAmount + shipAmount + seatAmount}
+                  項商品，總金額
                 </div>
                 <div className="col-3 text-center">
                   ${cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
