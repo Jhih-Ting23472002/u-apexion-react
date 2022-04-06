@@ -1,8 +1,8 @@
 const personSaveData = [
   {
     id: 1,
-    photo: './index_img/bg-1.png',
-    postsLink: '/forum-home/posts/29',
+    photo: './index_img/spacefood.jpg',
+    postsLink: '/forum-home/posts/138',
   },
   {
     id: 2,
