@@ -7,15 +7,16 @@ import MemberForgotPwdCodeModal from './MemberForgotPwdCodeModal';
 const MemberForgotPwdCode = props => {
   const { setStep } = props;
   const [validCode, setValidCode] = useState('');
-  const verify_code = localStorage.getItem('verify_code');
+ 
   const [modalShow, setModalShow] = useState(false);
+  const verify_code = localStorage.getItem('verify_code');
 
   const codeConfirmHandle = () => {
     verifyCodeConfirm(validCode, verify_code).then(obj => {
       console.log('obj:', obj);
       if (obj.success) {
-        // alert('驗證成功');
         setModalShow(true);
+        // alert('驗證成功');
         setStep(3);
       } else {
         alert(obj.errorMessage);
@@ -55,7 +56,7 @@ const MemberForgotPwdCode = props => {
         <div>
           <button
             className="member-circle-btn"
-            type="button"
+            type="submit"
             onClick={() => {
               codeConfirmHandle();
             }}

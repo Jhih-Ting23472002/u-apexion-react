@@ -72,6 +72,8 @@ const CartChoosePayment = props => {
             setSuit={props.setSuit}
             // suitPrice={suitPrice}
             setSuitPrice={setSuitPrice}
+            setSuitAmount={props.setSuitAmount}
+            suitAmount={props.suitAmount}
           />
 
           <ShipCard
@@ -79,12 +81,16 @@ const CartChoosePayment = props => {
             setCraft={props.setCraft}
             // shipPrice={shipPrice}
             setShipPrice={setShipPrice}
+            setShipAmount={props.setShipAmount}
+            shipAmount={props.shipAmount}
           />
 
           <SeatCard
             customize={props.customize}
             setCustomize={props.setCustomize}
             setSeatPrice={setSeatPrice}
+            setSeatAmount={props.setSeatAmount}
+            seatAmount={props.seatAmount}
           />
 
           <div className="cart separated-line"></div>
@@ -123,7 +129,13 @@ const CartChoosePayment = props => {
             </div>
             <div className="cart-should-pay col-5">
               <h5 className="cart-should-pay-text">
-                共{props.totalProductItem + props.cartTicketAmount}件商品
+                共
+                {props.totalProductItem +
+                  props.cartTicketAmount +
+                  props.suitAmount +
+                  props.shipAmount +
+                  props.seatAmount}
+                件商品
               </h5>
               <h5 className="cart-should-pay-text">
                 小計:&nbsp;$
