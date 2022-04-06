@@ -25,8 +25,8 @@ export default function MemberNavbar() {
   const location = useLocation();
   const user_email = localStorage.getItem('user_email');
   const user_avatar = localStorage.getItem('user_avatar');
-  console.log(user_email);
-  console.log(user_avatar);
+  //console.log(user_email);
+  //console.log(user_avatar);
 
   const [fileSrc, setFileSrc] = useState('');
   const [userAll, setUserAll] = useState([]);

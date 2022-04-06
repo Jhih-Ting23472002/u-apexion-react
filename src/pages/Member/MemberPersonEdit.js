@@ -14,6 +14,7 @@ const MemberPersonEdit = () => {
     gender: '',
     birthday: '',
     country: '',
+    passport: '',
   });
   const [fileSrc, setFileSrc] = useState('');
   const [userPhoto, setUserPhoto] = useState('');
@@ -104,6 +105,19 @@ const MemberPersonEdit = () => {
                 onSubmit={handleRevise}
                 name="form1"
               >
+              <div className="member-input-container ">
+                  <label htmlFor="name" className="member-label">
+                    護照英文姓名
+                  </label>
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="member-input"
+                    name="passport"
+                    value={memInfo?.passport_name ?? ''}
+                    onChange={handleChange}
+                  />
+                </div>
                 <div className="member-input-container ">
                   <label htmlFor="name" className="member-label">
                     姓名
@@ -136,6 +150,20 @@ const MemberPersonEdit = () => {
                     className="member-input"
                     value={memInfo?.mobile ?? ''}
                     name="mobile"
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="member-input-container">
+                  <label htmlFor="birthday" className="member-label">
+                    生日
+                  </label>
+                  <input
+                    type="date"
+                    placeholder=""
+                    className="member-input"
+                    value={memInfo?.birthday ?? ''}
+                    name="birthday"
                     onChange={handleChange}
                   />
                 </div>
@@ -186,19 +214,7 @@ const MemberPersonEdit = () => {
                   </div>
                 </div> */}
 
-                <div className="member-input-container">
-                  <label htmlFor="birthday" className="member-label">
-                    生日
-                  </label>
-                  <input
-                    type="date"
-                    placeholder=""
-                    className="member-input"
-                    value={memInfo?.birthday ?? ''}
-                    name="birthday"
-                    onChange={handleChange}
-                  />
-                </div>
+                
 
                 <div className="member-input-container">
                   <label htmlFor="country" className="member-label">
@@ -217,6 +233,7 @@ const MemberPersonEdit = () => {
                     <option>美國</option>
                   </select>
                 </div>
+                
                 <input
                   type="file"
                   name="avatar"

@@ -4,7 +4,7 @@ function MemberForgotPwdCodeModal(props) {
   return (
     <Modal
       {...props}
-      size="lg"
+      size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >

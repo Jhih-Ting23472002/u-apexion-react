@@ -9,6 +9,7 @@ import MemberSignUpModal from './MemberSignUpModal';
 const MemberSignUp = () => {
   const [registerData, setRegisterData] = useState({
     name: '',
+    passport: '',
     account: '',
     password: '',
     mobile: '',
@@ -61,6 +62,21 @@ const MemberSignUp = () => {
               <p>SIGNUP</p>
             </div>
             <form className="signup-form" onSubmit={handleRegister}>
+            <div className="member-input-container ">
+                <label htmlFor="name" className="member-label">
+                  護照英文姓名
+                </label>
+                <input
+                  type="text"
+                  placeholder=""
+                  className="member-input"
+                  name="passport"
+                  value={registerData.passport}
+                  onChange={handleChange}
+                  requried
+                />
+              </div>
+
               <div className="member-input-container ">
                 <label htmlFor="name" className="member-label">
                   姓名
@@ -76,21 +92,7 @@ const MemberSignUp = () => {
                 />
               </div>
 
-              <div className="member-input-container ">
-                <label htmlFor="name" className="member-label">
-                  護照英文姓名
-                </label>
-                <input
-                  type="text"
-                  placeholder=""
-                  className="member-input"
-                  name="passport"
-                  value={registerData.passport}
-                  onChange={handleChange}
-                  requried
-                />
-              </div>
-
+              
               <div className="member-input-container completed">
                 <label htmlFor="account" className="member-label">
                   電子郵件
@@ -148,6 +150,19 @@ const MemberSignUp = () => {
                 />
               </div>
               <div className="member-input-container">
+                <label htmlFor="birthday" className="member-label">
+                  生日
+                </label>
+                <input
+                  type="date"
+                  placeholder=""
+                  className="member-input"
+                  name="birthday"
+                  value={registerData.birthday}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="member-input-container">
                 <label htmlFor="gender" className="member-label">
                   性別
                 </label>
@@ -200,19 +215,7 @@ const MemberSignUp = () => {
                   </div>
                 </div>
               </div> */}
-              <div className="member-input-container">
-                <label htmlFor="birthday" className="member-label">
-                  生日
-                </label>
-                <input
-                  type="date"
-                  placeholder=""
-                  className="member-input"
-                  name="birthday"
-                  value={registerData.birthday}
-                  onChange={handleChange}
-                />
-              </div>
+             
 
               <div className="member-input-container">
                 <label htmlFor="country" className="member-label">
