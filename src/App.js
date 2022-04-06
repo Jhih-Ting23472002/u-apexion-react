@@ -32,7 +32,7 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
@@ -48,11 +48,10 @@ import CardComplete from './pages/Cart/CardComplete';
 import Ticket from './pages/Ticket/Ticket';
 import TicketDate from './pages/Ticket/TicketDate';
 import TicketDateOld from './pages/Ticket/TicketDateOld';
-//import TicketTest from './pages/Ticket/TicketTest';
 import TicketTrip from './pages/Ticket/TicketTrip';
 import TicketSeat from './pages/Ticket/TicketSeat';
 import TicketMeal from './pages/Ticket/TicketMeal';
-// import SeatDrag from './pages/Ticket/SeatDrag';
+import SeatDrag from './pages/Ticket/SeatDrag';
 
 // Travel
 import TravelIndex from './pages/Travel/TravelIndex';
@@ -81,7 +80,7 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 //endmemberName
-// import VedioEnd from './pages/VedioEnd';
+//import VedioEnd from './pages/VedioEnd';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
@@ -299,9 +298,6 @@ function App() {
                     <Route path="/ticket-order">
                       <Ticket setMemberName={setMemberName} />
                     </Route>
-                    {/* <Route path="/ticket-test">
-              <TicketTest />
-            </Route> */}
                     <Route path="/ticket-trip-choose">
                       <TicketTrip
                         setTripSelected={setTripSelected}
@@ -343,12 +339,12 @@ function App() {
                       />
                     </Route>
                     <Route path="/ticket-confirm"></Route>
-                    {/* <Route path="/ticket-test">
-              <SeatDrag />
-            </Route> */}
-                    {/* <Route path="/customize-mainpage">
-                    <CustomizeMainPage />
-                  </Route> */}
+                    <Route path="/ticket-test">
+                      <SeatDrag />
+                    </Route>
+                    <Route path="/customize-mainpage">
+                      <CustomizeMainPage />
+                    </Route>
                     <Route path="/customize-suit">
                       <CustomizeSuit setSuit={setSuit} />
                     </Route>
@@ -447,6 +443,9 @@ function App() {
                         suit={suit} // from Michael
                         customize={customize} // from Michael
                         craft={craft} // from Michael
+                        suitAmount={suitAmount}
+                        shipAmount={shipAmount}
+                        seatAmount={seatAmount}
                         //-------------------------------------------------
                         userOption={userOption}
                         setCartUserInfo={setCartUserInfo}
@@ -491,12 +490,15 @@ function App() {
                         cartTotalPrice={cartTotalPrice} // 衣服褲子總金額
                         cartTripTotal={cartTripTotal} // 票券總金額
                         cartCustomTotalPrice={cartCustomTotalPrice} // 客製化總金額
+                        suitAmount={suitAmount}
+                        shipAmount={shipAmount}
+                        seatAmount={seatAmount}
                         memberName={memberName}
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>
-
-                    {/* <Route path="/vedio-end" exact>
+{/* 
+                    <Route path="/vedio-end" exact>
                       <VedioEnd />
                     </Route> */}
                     <Route path="*">

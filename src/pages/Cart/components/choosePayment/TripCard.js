@@ -23,18 +23,20 @@ const TripCard = props => {
   for (let i in mealSelected) {
     mealArray.push(mealSelected[i]);
   }
-  console.log('mealArray', mealArray);
+
+  console.log('購物車mealArray', mealArray);
+  // console.log('購物車mealfinal', mealfinal);
   //訂票資訊陣列 (餐點類型要解決)
   const ticketArr = [
     {
       trip: tripSelected,
       dateStart: tripDate.dateSelected,
       dateEnd: tripDate.returnDate,
-      //meal: [mealArray], // 是有抓到值啦，但這個值要怎麼傳下去啊
+      meal: mealArray, // 是有抓到值啦，但這個值要怎麼傳下去啊
       people: memberName.length,
       price: (parseInt(tripPrice) || 0) * memberName.length,
       img: cartTicket,
-      amount: tripSelected ? 1 : 0,
+      amount: tripDate ? 1 : 0,
     },
   ];
 
@@ -72,7 +74,12 @@ const TripCard = props => {
                   <div className="content-detail-inside-top-ticket">
                     <div className="cart-ticket-destination">
                       <h5 className="cart-trip-name">行程:{v.trip}</h5>
-                      <h5 className="cart-trip-food">餐點:{v.meal}</h5>
+                      <h5 className="cart-trip-food">
+                        餐點:
+                        {v.meal.map(m => {
+                          return m + '/';
+                        })}
+                      </h5>
                     </div>
                     <div className="cart-ticket-during">
                       <h5 className="cart-start-time">啟航 {v.dateStart}</h5>
