@@ -2,11 +2,16 @@ import React from 'react';
 import spaceShip from '../../img/spaceShip.png';
 
 const ShipCard = props => {
-  const { craft, setShipPrice } = props;
+  const { craft, setShipPrice, setShipAmount, shipAmount } = props;
 
   let price = 0;
   craft.map(v => (price += v.craftPrice));
   setShipPrice(price); // 客製化太空船的錢 傳到 CartChoosePayment 這支檔案裡面
+
+  let total = 0;
+  craft.map(v => (total += v.craftTotal));
+  setShipAmount(total);
+  console.log('shipAmount', shipAmount); // 有抓到太空船數量的值了
 
   return (
     <>
