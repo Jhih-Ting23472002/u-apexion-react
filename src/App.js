@@ -133,6 +133,9 @@ function App() {
     addressDist: '',
     address: '',
   });
+  const [suitAmount, setSuitAmount] = useState(0);
+  const [shipAmount, setShipAmount] = useState(0);
+  const [seatAmount, setSeatAmount] = useState(0);
   const [mealArr, setMealArr] = useState([]);
   const [cartTotalPrice, setCartTotalPrice] = useState(0); // 衣服褲子總金額
   const [totalProductItem, setTotalProductItem] = useState(0); // 衣服褲子總數量
@@ -400,6 +403,12 @@ function App() {
                         setCustomize={setCustomize} // from Michael
                         craft={craft} // from Michael
                         setCraft={setCraft} // from Michael
+                        setSuitAmount={setSuitAmount}
+                        suitAmount={suitAmount}
+                        setShipAmount={setShipAmount}
+                        shipAmount={shipAmount}
+                        setSeatAmount={setSeatAmount}
+                        seatAmount={seatAmount}
                         //---------------------------------
                         totalProductItem={totalProductItem} // 總衣服數量
                         setTotalProductItem={setTotalProductItem}
