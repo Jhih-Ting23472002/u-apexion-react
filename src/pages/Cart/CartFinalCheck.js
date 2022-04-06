@@ -75,7 +75,7 @@ const CartFinalCheck = props => {
                     <h5 className="cart-product-list-group">{v.name}</h5>
                     <div className="cart-product-list-group">{v.total}</div>
                     <div className="cart-product-list-group">
-                      每項${v.price}
+                      ${v.price * v.total}
                     </div>
                   </div>
                 </div>
