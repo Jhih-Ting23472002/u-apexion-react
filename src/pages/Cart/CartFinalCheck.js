@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 
 const CartFinalCheck = props => {
   const {
-    mealArr,
     productDetailList,
     tripSelected,
     tripPrice,
@@ -20,8 +19,11 @@ const CartFinalCheck = props => {
     cartTripTotal,
     memberName,
     suit,
+    suitAmount,
     craft,
+    shipAmount,
     customize,
+    seatAmount,
     cartCustomTotalPrice,
   } = props;
 
@@ -82,7 +84,7 @@ const CartFinalCheck = props => {
             ))}
             {/* 個人宇航服 */}
             {suit.map(v => (
-              <React.Fragment>
+              <React.Fragment key="1">
                 <div className="cart-order-item cart-list-detail d-flex">
                   <div className="cart-img-div col-4">
                     <img src={spaceSuit} alt="" />
@@ -102,7 +104,7 @@ const CartFinalCheck = props => {
 
             {/* 太空船 spacecraft */}
             {craft.map(v => (
-              <React.Fragment key="1">
+              <React.Fragment key="2">
                 <div className="cart-order-item cart-list-detail d-flex">
                   <div className="cart-img-div col-4">
                     <img src={spaceShip} alt="" className="spaceship-height" />
@@ -124,7 +126,7 @@ const CartFinalCheck = props => {
 
             {/* 太空艙座位 */}
             {customize.map(v => (
-              <React.Fragment>
+              <React.Fragment key="3">
                 <div className="cart-order-item cart-list-detail d-flex">
                   <div className="cart-img-div col-4">
                     <img src={spaceSeat} alt="" />
@@ -153,14 +155,12 @@ const CartFinalCheck = props => {
                     <div className="cart-product-list-group">
                       行程：{tripSelected}
                     </div>
-                    <div className="cart-product-list-group">
-                      餐點:{mealSelected}
-                    </div>
+                    <div className="cart-product-list-group">餐點:{}</div>
                   </div>
                   <div className="d-flex justify-content-between need-width">
                     <div className="cart-product-list-group">日程</div>
                     <div className="cart-product-list-group">
-                      {tripDate.dateSelected} &nbsp;to&nbsp;{' '}
+                      {tripDate.dateSelected} &nbsp;to&nbsp;
                       {tripDate.returnDate}
                     </div>
                   </div>
@@ -178,7 +178,8 @@ const CartFinalCheck = props => {
 
             <div className="d-flex flex-column align-items-end final-total-price">
               <div className="mb-4">
-                共{totalProductItem + 1}件商品，總金額$
+                共{totalProductItem + 1 + suitAmount + shipAmount + seatAmount}
+                件商品，總金額$
                 {cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
               </div>
               <div>
