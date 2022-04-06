@@ -447,6 +447,9 @@ function App() {
                         suit={suit} // from Michael
                         customize={customize} // from Michael
                         craft={craft} // from Michael
+                        suitAmount={suitAmount}
+                        shipAmount={shipAmount}
+                        seatAmount={seatAmount}
                         //-------------------------------------------------
                         userOption={userOption}
                         setCartUserInfo={setCartUserInfo}
