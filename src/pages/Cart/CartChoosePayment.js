@@ -7,11 +7,14 @@ import SuitCard from './components/choosePayment/SuitCard';
 import SeatCard from './components/choosePayment/SeatCard';
 import ShipCard from './components/choosePayment/ShipCard';
 import { Link } from 'react-router-dom';
+import CartQuantity from '../../pages/Products/CartQuantity';
 
 const CartChoosePayment = props => {
   const [suitPrice, setSuitPrice] = useState(0); // 客製化衣服的錢
   const [shipPrice, setShipPrice] = useState(0); // 客製化太空船的錢
   const [seatPrice, setSeatPrice] = useState(0); // 客製化椅子的錢
+
+  const { cartTotal, setCartTotal } = useContext(CartQuantity); //購物車數量
 
   props.setCartCustomTotalPrice(suitPrice + shipPrice + seatPrice); // 客製化衣服的錢 + 客製化太空船的錢 + 客製化椅子的錢
 
@@ -23,6 +26,13 @@ const CartChoosePayment = props => {
     // 除錯檢查用 console.log(options);
   }
 
+  const allcart =
+    props.totalProductItem +
+    props.cartTicketAmount +
+    props.suitAmount +
+    props.shipAmount +
+    props.seatAmount;
+  setCartTotal(allcart);
   return (
     <>
       <div className="cart-background container-fluid">

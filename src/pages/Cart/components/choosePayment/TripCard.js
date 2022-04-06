@@ -34,7 +34,7 @@ const TripCard = props => {
       people: memberName.length,
       price: (parseInt(tripPrice) || 0) * memberName.length,
       img: cartTicket,
-      amount: tripSelected ? 1 : 0,
+      amount: tripDate ? 1 : 0,
     },
   ];
 
