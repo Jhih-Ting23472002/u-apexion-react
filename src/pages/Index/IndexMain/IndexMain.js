@@ -43,7 +43,7 @@ const IndexMain = () => {
   };
   const handleSectionScroll = () => {
     const scrollY = window.scrollY;
-    if (scrollY >= 3850) {
+    if (scrollY >= 3750) {
       setsec4Animate(true);
       setCircle4(true);
     }
