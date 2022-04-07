@@ -1,17 +1,26 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import './CustomizeOrder.css';
 
 function CustomizeOrder(props) {
+  const history = useHistory();
+  const [modalStyle, setModelStyle] = useState('');
   //app最外層傳入
   const { seatColor, craft, suit } = props;
-
+  function send() {
+    setModelStyle('blur(20px)');
+    setTimeout(() => {
+      history.push('/cart-payment');
+    }, 800);
+  }
   // console.log(suit[0].suitImgName);
 
   return (
     <>
       <Modal
         // animation={false}
+        style={{ filter: modalStyle }}
         className="customorder-view"
         {...props}
         centered
@@ -84,12 +93,18 @@ function CustomizeOrder(props) {
           </div>
         </Modal.Body>
         <div className="customorder-footer">
-          <button className="customorder-circle-btn" onClick={props.onHide}>
-            確定送出
+          <button
+            // to="/cart-payment"
+            onClick={() => {
+              send();
+            }}
+            className="customorder-circle-btn"
+          >
+            確認送出
           </button>
           <button
-            className="customorder-circle-btn cancel-btn"
             onClick={props.onHide}
+            className="customorder-circle-btn cancel-btn"
           >
             取消
           </button>

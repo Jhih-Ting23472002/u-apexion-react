@@ -20,7 +20,7 @@ function CustomizeSeat(props) {
     setCustomize(function (prevData) {
       setCartTotal(cartTotal + 1);
       setModalShow(true);
-      return [...prevData, { style, seatPrice,seatTotal }];
+      return [...prevData, { style, seatPrice, seatTotal, seatImg }];
     });
   }
 
@@ -34,7 +34,7 @@ function CustomizeSeat(props) {
           {/* 想讓他變換時  先讓他歸0 再變成1 */}
           <img src={seatImg} alt="" style={{ opacity: opa }} />
         </div>
-        <div className="seat-card seatMoveRight2" >
+        <div className="seat-card seatMoveRight2">
           <h1>請選擇太空椅外觀</h1>
           <h3>Customize Your Seat</h3>
           <h2>15,000$</h2>
@@ -49,7 +49,7 @@ function CustomizeSeat(props) {
                 const newColor = { ...color, background: 'white' };
                 setColor(newColor);
                 // 改變.seat-backcolor的背景顏色
-                setStyle('white');
+                setStyle('白銀河太空座椅');
                 setTimeout(() => {
                   // 設置延遲
                   const newOpaOpen = '1';
@@ -69,7 +69,7 @@ function CustomizeSeat(props) {
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#EE6A26' };
                 setColor(newColor);
-                setStyle('orangeSeat');
+                setStyle('火源橘太空座椅');
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
@@ -86,7 +86,7 @@ function CustomizeSeat(props) {
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#0072D6' };
                 setColor(newColor);
-                setStyle('blueSeat');
+                setStyle('生命藍太空座椅');
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
@@ -106,7 +106,7 @@ function CustomizeSeat(props) {
           </button>
         </div>
 
-        <svg 
+        <svg
           className="right-page-svg seatMoveRight1"
           viewBox="0 0 913 1024"
           fill="none"

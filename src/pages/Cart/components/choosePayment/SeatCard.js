@@ -1,5 +1,4 @@
 import React from 'react';
-import spaceSeat from '../../img/spaceSeat.png';
 
 const SeatCard = props => {
   const { customize, setSeatPrice, setSeatAmount, seatAmount } = props;
@@ -15,15 +14,15 @@ const SeatCard = props => {
   function formatMoney(n) {
     return (Math.round(n * 100) / 100).toLocaleString();
   }
-
+  // console.log(customize[0].seatImg)
   return (
     <>
       {customize.map(v => (
         <React.Fragment key="1">
           <div className="cart separated-line"></div>
           <div className="cart cart-order-item d-flex">
-            <div className="cart cart-img-div col-4">
-              <img src={spaceSeat} alt="" />
+            <div className="cart col-4">
+              <img src={customize[0].seatImg} alt="" className="cartSeatImg" />
             </div>
             <div className="cart content-detail col-8 d-flex">
               <div className="content-detail-inside">

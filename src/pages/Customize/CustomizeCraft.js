@@ -4,15 +4,16 @@ import './CustomizeCraft.css';
 import CartQuantity from '../Products/CartQuantity';
 import { useHistory } from 'react-router-dom';
 const allCountry = [
-  '/customize_img/america.png',
-  '/customize_img/canada.png',
-  '/customize_img/china.png',
-  '/customize_img/england.png',
-  '/customize_img/japan.png',
-  '/customize_img/korea.png',
-  '/customize_img/spain.png',
-  '/customize_img/taiwan.png',
-  '/customize_img/ukraine.png',
+  '/customize_img/美國.png',
+  '/customize_img/加拿大.png',
+  '/customize_img/中華人民共和國.png',
+  '/customize_img/中華民國.png',
+  '/customize_img/日本.png',
+  '/customize_img/大韓民國.png',
+  '/customize_img/西班牙.png',
+  '/customize_img/英國.png',
+  '/customize_img/烏克蘭.png',
+  '/customize_img/德國.png',
 ];
 
 function CustomizeCraft(props) {
@@ -64,11 +65,7 @@ function CustomizeCraft(props) {
 
     const canvasSave = document.querySelector('.craftCanvasOnly');
     const d = canvasSave.toDataURL('image/png');
-    // const w = window.open('about:blank', 'image from canvas');
-    // w.document.write("<img src='" + d + "' alt='from canvas'/>");
     setCraftBase64(d);
-    console.log('dddddddd=========', d);
-    console.log('craftBase64=========', craftBase64);
   }, [countryImg, craftString, printRef, craftBase64]);
 
   function addCart() {
@@ -84,7 +81,6 @@ function CustomizeCraft(props) {
       ];
     });
   }
-
 
   return (
     <>
@@ -329,7 +325,7 @@ function CustomizeCraft(props) {
           <button
             className="craft-circle-btn"
             onClick={() => {
-              const newLeftOut = 'suitsMoveLeftOut 1.4s ease-in-out forwards ';
+              const newLeftOut = 'craftMoveLeftOut 1.4s ease-in-out forwards ';
               setCraftLeftOut(newLeftOut);
               const newRightOut = 'suitsMoveRightOut 1.4s ease-in-out forwards';
               setCraftRightOut(newRightOut);
