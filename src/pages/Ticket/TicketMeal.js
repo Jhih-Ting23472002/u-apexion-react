@@ -17,6 +17,10 @@ function TicketMeal(props) {
   const [modalShow, setModalShow] = useState(false);
   const [demoImg, setDemoImg] = useState('menu01');
   const [active, setActive] = useState([true, false, false, false]);
+  const [menuTitle, setMenuTitle] = useState('太空拉麵');
+  const [menuContent, setMenuContent] = useState(
+    '叉燒肉脂肪偏多，雞肉則是舒肥的方式料理，湯頭屬於濃郁系，熱愛日式口味的拉麵控絕對會愛。'
+  );
   const {
     mealSelected,
     tripSelected,
@@ -52,15 +56,31 @@ function TicketMeal(props) {
     switch (demoImg) {
       case 'menu01':
         setActive([true, false, false, false]);
+        setMenuTitle('太空拉麵');
+        setMenuContent(
+          '叉燒肉脂肪偏多，雞肉則是舒肥的方式料理，湯頭屬於濃郁系，熱愛日式口味的拉麵控絕對會愛。'
+        );
         break;
       case 'menu02':
         setActive([false, true, false, false]);
+        setMenuTitle('太空炒飯');
+        setMenuContent(
+          '米飯炒得較鬆軟，搭配著一旁的酸豆使口味更為豐富，上頭排骨有厚度，搭配著醬油和蔥末一起吃很有味。'
+        );
         break;
       case 'menu03':
         setActive([false, false, true, false]);
+        setMenuTitle('太空咖哩');
+        setMenuContent(
+          '香辣濃稠咖哩搭配上，與宮城特產的「發芽米」，以各百分之50的黃金比例，調配出太空白米飯。'
+        );
         break;
       case 'menu04':
         setActive([false, false, false, true]);
+        setMenuTitle('太空炒麵');
+        setMenuContent(
+          '蔬菜的甜味加上肉絲的鮮香，油麵把鮮美湯汁吸得飽飽的，咕嚕咕嚕滑順入喉的美味，每每讓人欲罷不能。'
+        );
         break;
       default:
         console.log(`nothing!`);
@@ -87,8 +107,6 @@ function TicketMeal(props) {
     console.log('mealSelected', mealSelected);
   };
 
- 
-
   console.log(demoImg);
   return (
     <>
@@ -106,6 +124,13 @@ function TicketMeal(props) {
             <p>4</p>
           </div>
         </motion.div>
+        <div className="step-circle-mb-wrap">
+          <img className="step-circle-mb" src={stepCircleMb} alt="" />
+          <div className="ticket-steps">
+            <p>STEP</p>
+            <p>4</p>
+          </div>
+        </div>
         <div className="ticket-menu">
           <div className="ticket-menu-wrap">
             <div className="ticket-menu-title">
@@ -113,6 +138,10 @@ function TicketMeal(props) {
               <p>Select your meal the first day on the rocket,please</p>
             </div>
             <div className="menu-main">
+              <div className="menu-word-mb">
+                <h3>{menuTitle}</h3>
+                <p>{menuContent}</p>
+              </div>
               <div className="menu-list">
                 <div
                   className={demoImg === 'menu01' ? 'menu-clicked' : 'menu'}

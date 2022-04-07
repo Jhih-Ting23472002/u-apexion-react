@@ -1,14 +1,19 @@
-import React from 'react';
+import React,{ useState, useEffect} from 'react';
 import ReactPlayer from 'react-player';
 import './VedioEnd.css';
+import {useHistory } from 'react-router-dom';
 
 function VedioEnd() {
+
+  function card() {
+    history.push('/cart-complete')
+  }
+  const history = useHistory();
+  setTimeout(card, 30200)
+
   return (
     <div className="video-end">
-      {/* <video controls autoPlay loop id="video-end-i" muted>
-        <source src="./end.mp4" type="video/mp4" />
-      </video> */}
-      <ReactPlayer url="./end.mp4" width="100%" height="100%" playing={true} />
+      <ReactPlayer url="./end.mp4" width="100%" height="100%" playing={true}/>
     </div>
   );
 }

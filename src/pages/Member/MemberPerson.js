@@ -13,6 +13,7 @@ const MemberPerson = () => {
     gender: '',
     birthday: '',
     country: '',
+    passport: '',
   });
 
   //先從localStorage拿id (你們的user_id)
@@ -80,6 +81,19 @@ const MemberPerson = () => {
             </div>
             <div className="person-form-container">
               <form className="person-form">
+              <div className="member-input-container ">
+                  <label htmlFor="name" className="member-label">
+                    護照英文姓名
+                  </label>
+                  <input
+                    disabled="disabled"
+                    type="text"
+                    placeholder=""
+                    className="member-input"
+                    name="passport"
+                    value={memInfo?.passport_name ?? ''}
+                  />
+                </div>
                 <div className="member-input-container ">
                   <label htmlFor="name" className="member-label">
                     姓名
@@ -106,6 +120,21 @@ const MemberPerson = () => {
                     className="member-input"
                     value={memInfo?.mobile ?? ''}
                     name="mobile"
+                    // onChange={handleChange}
+                  />
+                </div>
+
+                <div className="member-input-container">
+                  <label htmlFor="birthday" className="member-label">
+                    生日
+                  </label>
+                  <input
+                    disabled="disabled"
+                    type="date"
+                    placeholder=""
+                    className="member-input"
+                    value={memInfo?.birthday ?? ''}
+                    name="birthday"
                     // onChange={handleChange}
                   />
                 </div>
@@ -157,20 +186,7 @@ const MemberPerson = () => {
                   </div>
                 </div> */}
 
-                <div className="member-input-container">
-                  <label htmlFor="birthday" className="member-label">
-                    生日
-                  </label>
-                  <input
-                    disabled="disabled"
-                    type="date"
-                    placeholder=""
-                    className="member-input"
-                    value={memInfo?.birthday ?? ''}
-                    name="birthday"
-                    // onChange={handleChange}
-                  />
-                </div>
+                
 
                 <div className="member-input-container">
                   <label htmlFor="country" className="member-label">
@@ -202,6 +218,7 @@ const MemberPerson = () => {
                     </button>
                   </div>
                 </div> */}
+                
               </form>
               <div className="member-line-wrap">
                 <div className="person-line"></div>

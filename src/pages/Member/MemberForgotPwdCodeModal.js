@@ -4,15 +4,15 @@ function MemberForgotPwdCodeModal(props) {
   return (
     <Modal
       {...props}
-      size="lg"
+      size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">驗證碼輸入正確</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">驗證碼正確</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>請至下一步更改密碼。</p>
+        <p>驗證碼正確，請至下一步更改密碼。</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉視窗</Button>

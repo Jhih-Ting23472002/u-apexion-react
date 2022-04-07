@@ -1,14 +1,14 @@
-video::-webkit-media-controls-timeline {
+/* video::-webkit-media-controls-timeline {
     display: none;
-  }
+  } */
   .video-end {
-    width: 100vw;
-  height: 90vh;
+    width: 98vw;
+  height: 94vh;
   }
 
-  #video-end-i {
+  /* #video-end-i {
     object-fit: cover;
     width: 100%;
     top: 0;
     left: 0;
-  }
+  } */

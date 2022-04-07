@@ -2,6 +2,7 @@ import React from 'react';
 import './IndexFirst.css';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ReactPlayer from 'react-player';
 
 const IndexEnter = styled(Link)`
   position: absolute;
@@ -13,9 +14,12 @@ const IndexEnter = styled(Link)`
 const IndexFirst = () => (
   <>
     <div className="index-vedio">
-      <video controls autoPlay loop id="bg-video" muted>
-        <source src="./index_img/rocket.mp4" type="video/mp4" />
-      </video>
+      <ReactPlayer
+        url="./index_img/rocket.mp4"
+        width="100%"
+        height="100%"
+        playing={true}
+      ></ReactPlayer>
       <img
         src="./index_img/indexfirst_title.png"
         alt=""

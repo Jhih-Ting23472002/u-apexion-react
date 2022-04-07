@@ -2,12 +2,16 @@ import React from 'react';
 import spaceSeat from '../../img/spaceSeat.png';
 
 const SeatCard = props => {
-  const { customize, setSeatPrice } = props;
+  const { customize, setSeatPrice, setSeatAmount, seatAmount } = props;
 
   let price = 0;
   customize.map(v => (price += v.seatPrice));
   setSeatPrice(price); // 客製化椅子的錢 傳到 CartChoosePayment 這支檔案裡面
 
+  let total = 0;
+  customize.map(v => (total += v.seatTotal));
+  setSeatAmount(total);
+  console.log('seatAmount', seatAmount);
   return (
     <>
       {customize.map(v => (

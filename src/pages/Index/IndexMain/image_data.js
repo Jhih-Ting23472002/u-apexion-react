@@ -1,5 +1,14 @@
 const data = [
   {
+    id: 1,
+    image: 'longLogo.png',
+    name: 'Apexion Team',
+    description: '代表色：黑色',
+    description2: 'Based in Taiwan',
+    description3: 'Established in 2022',
+    level: '團隊成員:7人',
+  },
+  {
     id: 2,
     image: 'member1.png',
     name: 'Amanda',

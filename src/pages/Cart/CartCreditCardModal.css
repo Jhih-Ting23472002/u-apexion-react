@@ -1,0 +1,41 @@
+video::-webkit-media-controls-timeline {
+    display: none;
+  }
+
+  .credit-video-end-wrap {
+      height: 70vh;
+      /* width: 1000px; */
+  }
+  .video-end {
+    /* width: 100%; */
+    /* border: 1px solid red; */
+  /* height: 90vh; */
+  }
+
+  #video-end-player{
+      width: 100%!important;
+      object-fit: cover;
+  }
+
+  #video-end-i {
+    object-fit: cover;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .credit-video-end.modal-body {
+      padding: 0;
+      height: 500px;
+  }
+
+  .modal-content {
+      width: 100vw;
+      height: 80vh;
+  }
+
+  .modal-dialog {
+      /* position: absolute;
+      left: 0; */
+      /* width: 100vw; */
+  }

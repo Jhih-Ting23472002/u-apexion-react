@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './CartCreditCard.css';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
-import { Link } from 'react-router-dom';
-import CartCreditCardModal from './CartCreditCardModal';
+import { Link, useHistory } from 'react-router-dom';
+//import CartCreditCardModal from './CartCreditCardModal';
 
 const CartCreditCard = props => {
   const [number, setNumber] = useState('');
@@ -12,10 +12,11 @@ const CartCreditCard = props => {
   const [cvc, setCvc] = useState('');
   const [focus, setFocus] = useState('');
   // const [productFinalName, setProductFinalName] = useState('');
-
+  //const [cartConfirmModalShow, setCartConfirmModalShow] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const history = useHistory();
 
   const {
     cartOrderListNumber,
@@ -26,6 +27,12 @@ const CartCreditCard = props => {
     productDetailList,
     cartTripTotal,
     cartCustomTotalPrice,
+    suit,
+    craft,
+    customize,
+    suitAmount, // 太空服數量
+    shipAmount, // 太空船數量
+    seatAmount, // 太空椅數量
   } = props;
 
   const ticketArr = [
@@ -99,17 +106,110 @@ const CartCreditCard = props => {
     console.log(productJTingPrice);
   }
 
+  // 購買麥可太空衣商品名稱的陣列，初始值為空
+  let productMichaelSuit = [];
+  for (let i in suit) {
+    // 跑回圈取到每一筆資料的國家
+    const MichaelSuitName = suit[i].country;
+
+    //把每一筆資料的國家推送到 productMichaelSuit 這個空陣列
+    productMichaelSuit.push(MichaelSuitName);
+  }
+
+  let productMichaelSuitQuantity = [];
+  for (let i in suit) {
+    const MichaelSuitQuantity = suit[i].suitTotal;
+    productMichaelSuitQuantity.push(MichaelSuitQuantity);
+  }
+
+  let productMichaelSuitPrice = [];
+  for (let i in suit) {
+    const MichaelSuitPrice = suit[i].suitPrice;
+    productMichaelSuitPrice.push(MichaelSuitPrice);
+    console.log(productMichaelSuitPrice);
+  }
+
+  // 購買麥可太空船商品名稱的陣列，初始值為空
+  let productMichaelShip = [];
+  for (let i in craft) {
+    // 跑回圈取到每一筆資料的鐫刻文字
+    const MichaelShipName = craft[i].craftString;
+
+    //把每一筆資料的鐫刻文字推送到 productMichaelShip 這個空陣列
+    productMichaelShip.push(MichaelShipName);
+  }
+
+  let productMichaelShipQuantity = [];
+  for (let i in craft) {
+    const MichaelShipQuantity = craft[i].craftTotal;
+    productMichaelShipQuantity.push(MichaelShipQuantity);
+  }
+
+  let productMichaelShipPrice = [];
+  for (let i in craft) {
+    const MichaelShipPrice = craft[i].craftPrice;
+    productMichaelShipPrice.push(MichaelShipPrice);
+    console.log(productMichaelShipPrice);
+  }
+
+  // 購買麥可太空椅名稱的陣列，初始值為空
+  let productMichaelSeat = [];
+  for (let i in customize) {
+    // 跑回圈取到每一筆資料的鐫刻文字
+    const MichaelSeatName = customize[i].style;
+
+    //把每一筆資料的鐫刻文字推送到 productMichaelShip 這個空陣列
+    productMichaelSeat.push(MichaelSeatName);
+    console.log(productMichaelSeat);
+  }
+
+  let productMichaelSeatQuantity = [];
+  for (let i in customize) {
+    const MichaelSeatQuantity = customize[i].seatTotal;
+    productMichaelSeatQuantity.push(MichaelSeatQuantity);
+    console.log(productMichaelSeatQuantity);
+  }
+
+  let productMichaelSeatPrice = [];
+  for (let i in customize) {
+    const MichaelSeatPrice = customize[i].seatPrice;
+    productMichaelSeatPrice.push(MichaelSeatPrice);
+    console.log(productMichaelSeatPrice);
+  }
+
   let orderListNumber = Math.floor(Math.random() * 1000000 + 10000000); // 訂單編號
   const userId = localStorage.getItem('user_id');
 
   const productJTingTina = []; // JTingTina 商品名稱分別加總
-  productJTingTina.push(productJTing, productTina);
+  productJTingTina.push(
+    productJTing,
+    productTina,
+    productMichaelSuit,
+    productMichaelShip,
+    productMichaelSeat
+  );
 
   const productJTingTinaQuantity = []; // JTingTina 商品數量分別加總
-  productJTingTinaQuantity.push(productJTingQuantity, productTinaQuantity);
+  productJTingTinaQuantity.push(
+    productJTingQuantity,
+    productTinaQuantity,
+    productMichaelSuitQuantity,
+    productMichaelShipQuantity,
+    productMichaelSeatQuantity
+  );
 
   const productJTingTinaPrice = []; // JTingTina 商品價錢分別加總
-  productJTingTinaPrice.push(productJTingPrice, productTinaPrice);
+  productJTingTinaPrice.push(
+    productJTingPrice,
+    productTinaPrice,
+    productMichaelSuitPrice,
+    productMichaelShipPrice,
+    productMichaelSeatPrice
+  );
+
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
 
   const sendOrderDeatilHandler = e => {
     setCartOrderListNumber(orderListNumber);
@@ -126,6 +226,9 @@ const CartCreditCard = props => {
         productJTingTinaPrice,
       }),
     }).then(res => res.json());
+    //setCartConfirmModalShow(true);
+    //history.push('/vedio-end'); //轉跳至結尾影片(智婷)
+    history.push('/cart-complete'); //轉跳至購物車
   };
 
   return (
@@ -183,31 +286,27 @@ const CartCreditCard = props => {
             ></input>
           </form>
           <div className="d-flex justify-content-center align-items-center mt-5">
-            <Link to={'/cart-complete'} className="mx-3">
-              <button
-                type="button"
-                onClick={() => {
-                  sendOrderDeatilHandler();
-                  // handleShow();
-                }}
-                className="btn card-confirm cart-link"
-              >
-                確認付款 (Confirm)
-              </button>
-            </Link>
+            {/* <Link to={'/cart-complete'} className="mx-3"> */}
+            <button
+              type="button"
+              onClick={() => {
+                sendOrderDeatilHandler();
+              }}
+              className="btn card-confirm cart-link"
+            >
+              確認付款 (Confirm)
+            </button>
+            {/* </Link> */}
             <div className="card-trade mx-3">
               交易金額 $
-              {props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+              {formatMoney(
+                props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice
+              )}
             </div>
           </div>
         </div>
       </div>
-      {/* <CartCreditCardModal
-        show={show}
-        setShow={setShow}
-        handleClose={handleClose}
-        handleShow={handleShow}
-      /> */}
+      {/* <CartCreditCardModal cartConfirmModalShow={cartConfirmModalShow} setCartConfirmModalShow={setCartConfirmModalShow}/> */}
     </>
   );
 };

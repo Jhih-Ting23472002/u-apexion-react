@@ -6,53 +6,108 @@ function TicketInput(props) {
   const [checkModalShow, setCheckModalShow] = useState(false);
   const { setMemberName, userPassport } = props;
   const [userEmail, setUserEmail] = useState('');
+  const [userPassName, setUserPassName] = useState(true);
   const inputAr = [];
-  const inputHtml = (
-    <>
-      <div className="inputWrap">
-        <label>成員</label>
-        <div className="inputGroup">
-          <input
-            className="memberNames"
-            name="memberName[]"
-            type="text"
-            defaultValue={userPassport}
-            placeholder="請輸入護照英文姓名"
-          />
-          <span></span>
-        </div>
-      </div>
-      <div className="inputWrap">
-        <label>成員</label>
-        <div className="inputGroup">
-          <p>請上傳影本及3個月內的健檢報告</p>
-          <label className="uploadButton" for="">
-            <input
-              type="file"
-              name="memberFiles[]"
-              id="file"
-              value=""
-              style={{
-                position: 'absolute',
-                top: '0%',
-                left: '0%',
-                width: '20px',
-                height: '100px',
-                cursor: 'pointer',
-                overflow: 'hidden',
-                fontSize: '0px',
-                opacity: '0',
-              }}
-            />
-            <i className="fas fa-cloud-upload-alt"></i>
-          </label>
-        </div>
-      </div>
-    </>
-  );
+  // const inputHtml = (
+  //   <>
+  //     <div className="inputWrap">
+  //       <label>成員</label>
+  //       <div className="inputGroup">
+  //         <input
+  //           className="memberNames"
+  //           name="memberName[]"
+  //           type="text"
+  //           defaultValue={userPassport}
+  //           placeholder="請輸入護照英文姓名"
+  //         />
+  //         <span></span>
+  //       </div>
+  //     </div>
+  //     <div className="inputWrap">
+  //       <label>成員</label>
+  //       <div className="inputGroup">
+  //         <p>請上傳影本及3個月內的健檢報告</p>
+  //         <label className="uploadButton" for="">
+  //           <input
+  //             type="file"
+  //             name="memberFiles[]"
+  //             id="file"
+  //             value=""
+  //             style={{
+  //               position: 'absolute',
+  //               top: '0%',
+  //               left: '0%',
+  //               width: '20px',
+  //               height: '100px',
+  //               cursor: 'pointer',
+  //               overflow: 'hidden',
+  //               fontSize: '0px',
+  //               opacity: '0',
+  //             }}
+  //           />
+  //           <i className="fas fa-cloud-upload-alt"></i>
+  //         </label>
+  //       </div>
+  //     </div>
+  //   </>
+  // );
   {
-    for (let i = 0; i < props.count; i++) {
-      inputAr.push(inputHtml);
+    for (let i = 1; i <= props.count; i++) {
+      inputAr.push(
+        <>
+          <div className="inputWrap">
+            <label className="input-check-label">成員{i}</label>
+            <div className="input-check inputGroup">
+              <input
+                className="member-check"
+                type="checkbox"
+                onChange={e => passportHandler(e)}
+              />
+              <span>與登入帳號的護照名稱相同</span>
+            </div>
+          </div>
+          <div className="inputWrap">
+            <label>成員{i}</label>
+            <div className="inputGroup">
+              <input
+                className="memberNames"
+                name="memberName[]"
+                type="text"
+                placeholder="請輸入護照英文姓名"
+              />
+              <span></span>
+            </div>
+          </div>
+          <div className="inputWrap">
+            <label>成員{i}</label>
+            <div className="inputGroup">
+              <p>請上傳護照影本及3個月內的健檢報告</p>
+              <label className="uploadButton" for="">
+                <input
+                  type="file"
+                  name="memberFiles[]"
+                  id="file"
+                  style={{
+                    position: 'absolute',
+                    top: '0%',
+                    left: '0%',
+                    width: '20px',
+                    height: '100px',
+                    cursor: 'pointer',
+                    overflow: 'hidden',
+                    fontSize: '0px',
+                    opacity: '0',
+                  }}
+                  onChange={e => {
+                    inputChangeHandler(e);
+                  }}
+                />
+                <i className="fas fa-cloud-upload-alt"></i>
+              </label>
+            </div>
+          </div>
+        </>
+      );
     }
   }
   console.log(inputAr);
@@ -82,6 +137,29 @@ function TicketInput(props) {
       console.log(memberNameArr);
       setMemberName(memberNameArr);
     });
+  }
+
+  function inputChangeHandler(e) {
+    console.log(e.target.value);
+    e.target.parentNode.previousSibling.innerHTML = e.target.value;
+    console.log(e.target.parentNode.previousSibling);
+    // e.currentTarget.previousSibling.innerHTML = e.currentTarget.value;
+    console.log(e);
+  }
+
+  function passportHandler(e) {
+    setUserPassName(!userPassName);
+    if (userPassName) {
+      console.log(e);
+      console.log(
+        e.target.parentNode.parentNode.nextSibling.lastChild.firstChild
+      );
+      e.target.parentNode.parentNode.nextSibling.lastChild.firstChild.value =
+        userPassport;
+    } else {
+      e.target.parentNode.parentNode.nextSibling.lastChild.firstChild.value =
+        '';
+    }
   }
 
   return (

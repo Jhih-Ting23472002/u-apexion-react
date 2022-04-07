@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
 import './MemberForgotPwd.css';
-// import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { verifyCodeConfirm } from '../../data/UserWebApi';
 import MemberForgotPwdCodeModal from './MemberForgotPwdCodeModal';
 
 const MemberForgotPwdCode = props => {
   const { setStep } = props;
   const [validCode, setValidCode] = useState('');
+
+  const [showModal, setShowModal] = useState(false);
   const verify_code = localStorage.getItem('verify_code');
-  const [modalShow, setModalShow] = useState(false);
 
   const codeConfirmHandle = () => {
     verifyCodeConfirm(validCode, verify_code).then(obj => {
-      console.log('obj:', obj);
+      // console.log('obj:', obj);
       if (obj.success) {
+        setShowModal(true);
+        // setStep(3);
+
+        // console.log(modalShow);
         // alert('驗證成功');
-        setModalShow(true);
-        setStep(3);
       } else {
         alert(obj.errorMessage);
       }
     });
   };
+  // console.log(modalShow);
 
   return (
     <>
@@ -65,9 +69,9 @@ const MemberForgotPwdCode = props => {
         </div>
       </div>
       <MemberForgotPwdCodeModal
-        show={modalShow}
+        show={showModal}
         onHide={() => {
-          setModalShow(false);
+          setStep(3);
         }}
       />
     </>

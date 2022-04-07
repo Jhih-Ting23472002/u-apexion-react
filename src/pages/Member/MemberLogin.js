@@ -54,7 +54,7 @@ const MemberLogin = () => {
                   type="text"
                   value={account}
                   className="text-input  "
-                  placeholder="Email"
+                  placeholder="電子郵件"
                   name="account"
                   onChange={e => {
                     setAccount(e.target.value);
@@ -66,7 +66,7 @@ const MemberLogin = () => {
                   type="password"
                   value={password}
                   className="text-input"
-                  placeholder="Password"
+                  placeholder="密碼"
                   name="password"
                   onChange={e => {
                     setPassword(e.target.value);

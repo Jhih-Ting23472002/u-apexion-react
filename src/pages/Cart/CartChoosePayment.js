@@ -7,11 +7,14 @@ import SuitCard from './components/choosePayment/SuitCard';
 import SeatCard from './components/choosePayment/SeatCard';
 import ShipCard from './components/choosePayment/ShipCard';
 import { Link } from 'react-router-dom';
+import CartQuantity from '../../pages/Products/CartQuantity';
 
 const CartChoosePayment = props => {
   const [suitPrice, setSuitPrice] = useState(0); // 客製化衣服的錢
   const [shipPrice, setShipPrice] = useState(0); // 客製化太空船的錢
   const [seatPrice, setSeatPrice] = useState(0); // 客製化椅子的錢
+
+  const { cartTotal, setCartTotal } = useContext(CartQuantity); //購物車數量
 
   props.setCartCustomTotalPrice(suitPrice + shipPrice + seatPrice); // 客製化衣服的錢 + 客製化太空船的錢 + 客製化椅子的錢
 
@@ -23,6 +26,17 @@ const CartChoosePayment = props => {
     // 除錯檢查用 console.log(options);
   }
 
+  const allcart =
+    props.totalProductItem +
+    props.cartTicketAmount +
+    props.suitAmount +
+    props.shipAmount +
+    props.seatAmount;
+  setCartTotal(allcart);
+
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
   return (
     <>
       <div className="cart-background container-fluid">
@@ -35,9 +49,11 @@ const CartChoosePayment = props => {
           <ProcessLine />
           <div className="cart d-flex justify-content-center py-5 total-price-text">
             您的購物袋裡有以下商品，目前總金額是 $
-            {props.cartTotalPrice +
-              props.cartTripTotal +
-              props.cartCustomTotalPrice}
+            {formatMoney(
+              props.cartTotalPrice +
+                props.cartTripTotal +
+                props.cartCustomTotalPrice
+            )}
             。
           </div>
 
@@ -72,6 +88,8 @@ const CartChoosePayment = props => {
             setSuit={props.setSuit}
             // suitPrice={suitPrice}
             setSuitPrice={setSuitPrice}
+            setSuitAmount={props.setSuitAmount}
+            suitAmount={props.suitAmount}
           />
 
           <ShipCard
@@ -79,12 +97,16 @@ const CartChoosePayment = props => {
             setCraft={props.setCraft}
             // shipPrice={shipPrice}
             setShipPrice={setShipPrice}
+            setShipAmount={props.setShipAmount}
+            shipAmount={props.shipAmount}
           />
 
           <SeatCard
             customize={props.customize}
             setCustomize={props.setCustomize}
             setSeatPrice={setSeatPrice}
+            setSeatAmount={props.setSeatAmount}
+            seatAmount={props.seatAmount}
           />
 
           <div className="cart separated-line"></div>
@@ -123,20 +145,30 @@ const CartChoosePayment = props => {
             </div>
             <div className="cart-should-pay col-5">
               <h5 className="cart-should-pay-text">
-                共{props.totalProductItem + props.cartTicketAmount}件商品
+                共
+                {props.totalProductItem +
+                  props.cartTicketAmount +
+                  props.suitAmount +
+                  props.shipAmount +
+                  props.seatAmount}
+                件商品
               </h5>
               <h5 className="cart-should-pay-text">
                 小計:&nbsp;$
-                {props.cartTotalPrice +
-                  props.cartTripTotal +
-                  props.cartCustomTotalPrice}
+                {formatMoney(
+                  props.cartTotalPrice +
+                    props.cartTripTotal +
+                    props.cartCustomTotalPrice
+                )}
               </h5>
               <div className="cart-should-pay-separated-line"></div>
               <h5 className="cart-should-pay-total-price">
                 應付總金額: $
-                {props.cartTotalPrice +
-                  props.cartTripTotal +
-                  props.cartCustomTotalPrice}
+                {formatMoney(
+                  props.cartTotalPrice +
+                    props.cartTripTotal +
+                    props.cartCustomTotalPrice
+                )}
               </h5>
               <div className="cart-button">
                 <Link to={'/products'} className="btn continue-btn">
