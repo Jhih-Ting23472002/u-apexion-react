@@ -80,7 +80,7 @@ import ForumPersonalSavePage from './pages/Forum/ForumPersonalSavePage';
 import { CartProvider } from './pages/Cart/utils/useCart';
 
 //endmemberName
-//import VedioEnd from './pages/VedioEnd';
+import VedioEnd from './pages/VedioEnd';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
@@ -497,10 +497,10 @@ function App() {
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>
-{/* 
+
                     <Route path="/vedio-end" exact>
                       <VedioEnd />
-                    </Route> */}
+                    </Route>
                     <Route path="*">
                       <NotFoundPage />
                     </Route>

@@ -224,6 +224,7 @@ const CartCreditCard = props => {
     }).then(res => res.json());
     //setCartConfirmModalShow(true);
     //history.push('/vedio-end'); //轉跳至結尾影片(智婷)
+    history.push('/cart-complete'); //轉跳至購物車
   };
 
   return (
