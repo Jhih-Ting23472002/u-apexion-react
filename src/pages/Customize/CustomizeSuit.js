@@ -360,9 +360,7 @@ function CustomizeSuit(props) {
                   s3: '30px',
                 };
                 setSuitSize(newSize);
-                console.log('s1',suitSize.s1)
-                console.log('s2',suitSize.s2)
-                console.log('s3',suitSize.s3)
+                
               }}
             ></div>
             <div
@@ -397,9 +395,6 @@ function CustomizeSuit(props) {
                   s3: '30px',
                 };
                 setSuitSize(newSize);
-                console.log('s1',suitSize.s1)
-                console.log('s2',suitSize.s2)
-                console.log('s3',suitSize.s3)
               }}
             ></div>
             <div
@@ -433,9 +428,6 @@ function CustomizeSuit(props) {
                   s3: '40px',
                 };
                 setSuitSize(newSize);
-                console.log('s1',suitSize.s1)
-                console.log('s2',suitSize.s2)
-                console.log('s3',suitSize.s3)
               }}
             ></div>
           </div>
