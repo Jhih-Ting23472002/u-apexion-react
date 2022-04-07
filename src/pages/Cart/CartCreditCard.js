@@ -207,6 +207,10 @@ const CartCreditCard = props => {
     productMichaelSeatPrice
   );
 
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
+
   const sendOrderDeatilHandler = e => {
     setCartOrderListNumber(orderListNumber);
     //console.log('orderListNumber', orderListNumber);  測試是否印成功
@@ -224,6 +228,7 @@ const CartCreditCard = props => {
     }).then(res => res.json());
     //setCartConfirmModalShow(true);
     //history.push('/vedio-end'); //轉跳至結尾影片(智婷)
+    history.push('/cart-complete'); //轉跳至購物車
   };
 
   return (
@@ -294,7 +299,9 @@ const CartCreditCard = props => {
             {/* </Link> */}
             <div className="card-trade mx-3">
               交易金額 $
-              {props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+              {formatMoney(
+                props.cartTotalPrice + cartTripTotal + cartCustomTotalPrice
+              )}
             </div>
           </div>
         </div>

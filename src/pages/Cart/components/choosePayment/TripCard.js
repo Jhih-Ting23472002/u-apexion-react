@@ -59,6 +59,11 @@ const TripCard = props => {
   setCartTicketAmount(ticketAmount);
   // setMealArr(mealArray)
   // setTripPrice(ticketArr[0].price);
+
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
+
   return (
     <>
       {tripSelected &&
@@ -89,7 +94,9 @@ const TripCard = props => {
                   <div className="content-detail-inside-bottom-ticket">
                     <h5 className="cart-number-people">人數{v.people}</h5>
                     <button className="btn cart-remove-btn">remove</button>
-                    <div className="cart-order-money">${v.price}</div>
+                    <div className="cart-order-money">
+                      ${formatMoney(v.price)}
+                    </div>
                   </div>
                 </div>
               </div>

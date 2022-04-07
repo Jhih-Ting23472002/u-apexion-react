@@ -32,6 +32,10 @@ const CartFinalCheck = props => {
     mealArray.push(mealSelected[i]);
   }
 
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
+
   return (
     <>
       <div className="cart-background container-fluid">
@@ -80,7 +84,7 @@ const CartFinalCheck = props => {
                     <h5 className="cart-product-list-group">{v.name}</h5>
                     <div className="cart-product-list-group">{v.total}</div>
                     <div className="cart-product-list-group">
-                      ${v.price * v.total}
+                      ${formatMoney(v.price * v.total)}
                     </div>
                   </div>
                 </div>
@@ -99,7 +103,7 @@ const CartFinalCheck = props => {
                     <div className="cart-product-list-group">{v.country}</div>
                     <div className="cart-product-list-group">{v.markSuit}</div>
                     <div className="cart-product-list-group">
-                      ${v.suitPrice}
+                      ${formatMoney(v.suitPrice)}
                     </div>
                   </div>
                 </div>
@@ -121,7 +125,7 @@ const CartFinalCheck = props => {
                     </div>
                     <div className="cart-product-list-group">{v.country}</div>
                     <div className="cart-product-list-group">
-                      ${v.craftPrice}
+                      ${formatMoney(v.craftPrice)}
                     </div>
                   </div>
                 </div>
@@ -140,7 +144,7 @@ const CartFinalCheck = props => {
                     <h5 className="cart-product-list-group">太空艙座位</h5>
                     <div className="cart-product-list-group">{v.style}</div>
                     <div className="cart-product-list-group">
-                      ${v.seatPrice}
+                      ${formatMoney(v.seatPrice)}
                     </div>
                   </div>
                 </div>
@@ -179,7 +183,7 @@ const CartFinalCheck = props => {
                       人數：{memberName.length}
                     </div>
                     <div className="cart-product-list-group">
-                      票價：${cartTripTotal}
+                      票價：${formatMoney(cartTripTotal)}
                     </div>
                   </div>
                 </div>
@@ -190,11 +194,15 @@ const CartFinalCheck = props => {
               <div className="mb-4">
                 共{totalProductItem + 1 + suitAmount + shipAmount + seatAmount}
                 件商品，總金額$
-                {cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+                {formatMoney(
+                  cartTotalPrice + cartTripTotal + cartCustomTotalPrice
+                )}
               </div>
               <div>
                 本訂單需付款金額為$
-                {cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+                {formatMoney(
+                  cartTotalPrice + cartTripTotal + cartCustomTotalPrice
+                )}
               </div>
             </div>
           </div>

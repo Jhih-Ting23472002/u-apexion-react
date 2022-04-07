@@ -12,7 +12,11 @@ const SuitCard = props => {
   let total = 0;
   suit.map(v => (total += v.suitTotal));
   setSuitAmount(total);
-  console.log('suitAmount', suitAmount); // 有抓到太空衣數量的值了
+  // 有抓到太空衣數量的值了
+
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
 
   return (
     <>
@@ -39,7 +43,9 @@ const SuitCard = props => {
                 <div className="content-detail-inside-bottom-suit">
                   <div className="cart-empty-place"></div>
                   <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">${v.suitPrice}</div>
+                  <div className="cart-order-money">
+                    ${formatMoney(v.suitPrice)}
+                  </div>
                 </div>
               </div>
             </div>

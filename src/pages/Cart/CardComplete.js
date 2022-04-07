@@ -23,6 +23,10 @@ const CardComplete = props => {
 
   const history = useHistory();
 
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
+
   // let orderListNumber = Math.floor(Math.random() * 100000000000);
   // console.log('orderListNumber', orderListNumber);
 
@@ -57,7 +61,9 @@ const CardComplete = props => {
           <div className="cart d-flex justify-content-center py-5 total-price-text deal-receipt">
             <p>
               付款已完成，交易金額為$
-              {cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+              {formatMoney(
+                cartTotalPrice + cartTripTotal + cartCustomTotalPrice
+              )}
               元。
             </p>
             <br />
@@ -141,7 +147,10 @@ const CardComplete = props => {
                   項商品，總金額
                 </div>
                 <div className="col-3 text-center">
-                  ${cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+                  $
+                  {formatMoney(
+                    cartTotalPrice + cartTripTotal + cartCustomTotalPrice
+                  )}
                 </div>
               </div>
 
@@ -150,7 +159,10 @@ const CardComplete = props => {
                 <div className="col-5"></div>
                 <div className="col-4 text-center">本訂單已付款金額</div>
                 <div className="col-3 text-center">
-                  ${cartTotalPrice + cartTripTotal + cartCustomTotalPrice}
+                  $
+                  {formatMoney(
+                    cartTotalPrice + cartTripTotal + cartCustomTotalPrice
+                  )}
                 </div>
               </div>
             </div>

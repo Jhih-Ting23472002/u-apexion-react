@@ -51,6 +51,10 @@ const ProductCard = props => {
     setProductDetailList(list);
   };
 
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
+
   return (
     <>
       {productDetailList.map(v => (
@@ -88,7 +92,9 @@ const ProductCard = props => {
                   >
                     remove
                   </button>
-                  <div className="cart-order-money">${v.price * v.total}</div>
+                  <div className="cart-order-money">
+                    ${formatMoney(v.price * v.total)}
+                  </div>
                 </div>
               </div>
             </div>
