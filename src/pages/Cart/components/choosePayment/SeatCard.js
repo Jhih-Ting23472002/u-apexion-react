@@ -11,7 +11,11 @@ const SeatCard = props => {
   let total = 0;
   customize.map(v => (total += v.seatTotal));
   setSeatAmount(total);
-  console.log('seatAmount', seatAmount);
+
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
+
   return (
     <>
       {customize.map(v => (
@@ -30,7 +34,9 @@ const SeatCard = props => {
                 <div className="content-detail-inside-bottom">
                   <div className="cart-empty-place"></div>
                   <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">${v.seatPrice}</div>
+                  <div className="cart-order-money">
+                    ${formatMoney(v.seatPrice)}
+                  </div>
                 </div>
               </div>
             </div>

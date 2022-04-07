@@ -11,7 +11,11 @@ const ShipCard = props => {
   let total = 0;
   craft.map(v => (total += v.craftTotal));
   setShipAmount(total);
-  console.log('shipAmount', shipAmount); // 有抓到太空船數量的值了
+  // 有抓到太空船數量的值了
+
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
 
   return (
     <>
@@ -39,7 +43,9 @@ const ShipCard = props => {
                 <div className="content-detail-inside-bottom-spaceship">
                   <div className="cart-number-people"></div>
                   <button className="btn cart-remove-btn">remove</button>
-                  <div className="cart-order-money">${v.craftPrice}</div>
+                  <div className="cart-order-money">
+                    ${formatMoney(v.craftPrice)}
+                  </div>
                 </div>
               </div>
             </div>
