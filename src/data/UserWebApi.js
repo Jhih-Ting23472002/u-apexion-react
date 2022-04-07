@@ -42,6 +42,19 @@ export const pwdNewConfirm = (newPassword, forgotsid) => {
   }).then(res => res.json());
 };
 
+// 確認舊密碼是否正確
+export const checkOldPwd = pswData => {
+  return fetch(`${BASE_URL}/user/api/check-old-pwd`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      pswData,
+    }),
+  }).then(res => res.json());
+};
+
 // 修改密碼前先取得舊密碼
 export const editPassword = pswData => {
   return fetch(`${BASE_URL}/user/api/edit-pwd`, {
