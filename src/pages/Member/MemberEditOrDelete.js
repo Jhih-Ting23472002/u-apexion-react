@@ -6,9 +6,10 @@ import { useState, useEffect } from 'react';
 import { editAddress } from '../../data/UserWebApi';
 import { removeAddress } from '../../data/UserWebApi';
 import { useHistory } from 'react-router-dom';
+import { set } from 'lodash';
 
 function MemberEditOrDelete(props) {
-  // const { modalShow, setModalShow } = props;
+  //const { modalShow, setModalShow } = props;
   const history = useHistory();
   const user_id = localStorage.getItem('user_id');
   const data = JSON.parse(localStorage.getItem('data'));
@@ -164,7 +165,10 @@ function MemberEditOrDelete(props) {
               <button
                 type="submit"
                 className="member-modal-circle-btn"
-                //  onClick={props.onHide}
+                onClick={() => {
+                  localStorage.setItem('data', JSON.stringify(editData));
+                  props.onHide();
+                }}
               >
                 確認修改
               </button>
