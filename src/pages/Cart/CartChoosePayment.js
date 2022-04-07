@@ -33,6 +33,10 @@ const CartChoosePayment = props => {
     props.shipAmount +
     props.seatAmount;
   setCartTotal(allcart);
+
+  function formatMoney(n) {
+    return (Math.round(n * 100) / 100).toLocaleString();
+  }
   return (
     <>
       <div className="cart-background container-fluid">
@@ -45,9 +49,11 @@ const CartChoosePayment = props => {
           <ProcessLine />
           <div className="cart d-flex justify-content-center py-5 total-price-text">
             您的購物袋裡有以下商品，目前總金額是 $
-            {props.cartTotalPrice +
-              props.cartTripTotal +
-              props.cartCustomTotalPrice}
+            {formatMoney(
+              props.cartTotalPrice +
+                props.cartTripTotal +
+                props.cartCustomTotalPrice
+            )}
             。
           </div>
 
@@ -149,16 +155,20 @@ const CartChoosePayment = props => {
               </h5>
               <h5 className="cart-should-pay-text">
                 小計:&nbsp;$
-                {props.cartTotalPrice +
-                  props.cartTripTotal +
-                  props.cartCustomTotalPrice}
+                {formatMoney(
+                  props.cartTotalPrice +
+                    props.cartTripTotal +
+                    props.cartCustomTotalPrice
+                )}
               </h5>
               <div className="cart-should-pay-separated-line"></div>
               <h5 className="cart-should-pay-total-price">
                 應付總金額: $
-                {props.cartTotalPrice +
-                  props.cartTripTotal +
-                  props.cartCustomTotalPrice}
+                {formatMoney(
+                  props.cartTotalPrice +
+                    props.cartTripTotal +
+                    props.cartCustomTotalPrice
+                )}
               </h5>
               <div className="cart-button">
                 <Link to={'/products'} className="btn continue-btn">
