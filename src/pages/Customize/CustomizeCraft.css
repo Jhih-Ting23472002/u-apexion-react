@@ -33,7 +33,7 @@
   font-size: 16px;
   text-align: center;
   letter-spacing: 2px;
-  font-family: 'Noto Sans HK', sans-serif;
+  font-family: 'Noto Sans HK';
   color: #4e4e4e;
   width: 150px;
   height: 25px;
@@ -391,4 +391,12 @@
   }
   100% {
     opacity: 1;  }
+}
+.craftCanvasOnly{ 
+  position: absolute;
+  top: -400px;
+  right: -50%;
+  z-index: -9;
+  opacity: 0;
+letter-spacing: 2px;
 }

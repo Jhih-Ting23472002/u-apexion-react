@@ -106,7 +106,7 @@
 .suit-circle {
   z-index: 1;
   position: absolute;
-  top:3%;
+  top:6%;
   right: 48%;
   opacity: 1;
 }
@@ -170,7 +170,7 @@
   color: #05f2f2;
   position: absolute;
   right: 12%;
-  top: 2%;
+  top: 10%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -198,7 +198,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   background-color: #323232;
   border-radius: 10px;
 }
@@ -223,7 +223,7 @@
 .country-select  {
   width: 380px;
   padding: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   border-radius: 10px;
   background-color: #323232;
   display: flex;
@@ -287,7 +287,7 @@ transition: .3s ease-in-out;
   width: 450px;
   height: 200px;
   padding: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   border-radius: 10px;
   background-color: #323232;
   display: flex;
@@ -443,4 +443,11 @@ transition: .3s ease-in-out;
     transform: translateX(1300px);
   }
 
+}
+.suitCanvasOnly{
+  position: absolute;
+  top: -400px;
+  right: -50%;
+  z-index: -9;
+  opacity: 0;
 }

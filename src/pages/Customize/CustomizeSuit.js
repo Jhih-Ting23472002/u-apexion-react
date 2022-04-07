@@ -1,9 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './CustomizeSuit.css';
 import CartQuantity from '../Products/CartQuantity';
-import { getStatusClassNames } from 'antd/lib/_util/statusUtils';
-
 const allCountry = [
   '/customize_img/america.png',
   '/customize_img/canada.png',
@@ -47,10 +45,11 @@ function CustomizeSuit(props) {
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
   //顏色
   const [opa, setOpa] = useState('');
-  const [suitImg, setSuitImg] = useState('');
+  const [suitImg, setSuitImg] = useState('/customize_img/spacesuit-white.png');
   //suitImgName服裝顏色名稱
   const [suitImgName, setSuitImgName] = useState('');
-  const [suitColorName, setSuitColorName] = useState('');
+  //傳送結果圖片
+  const [suitBase64, setSuitBase64] = useState('');
 
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
@@ -73,6 +72,36 @@ function CustomizeSuit(props) {
   const [suitRightOut, setSuitRightOut] = useState('');
   const [suitPrice, setPrice] = useState(25000);
   const [suitTotal, setTotal] = useState(1);
+  //存圖
+  const printRef = useRef(null);
+  function saveCanvas() {
+    const canvasSave = document.querySelector('.suitCanvasOnly');
+    const d = canvasSave.toDataURL('image/png');
+    const w = window.open('about:blank', 'image from canvas');
+    w.document.write("<img src='" + d + "' alt='from canvas'/>");
+    setSuitBase64(d);
+    // console.log('suitBase64=========', d);
+  }
+
+  useEffect(() => {
+    if (!printRef) return;
+
+    const ctx = printRef.current.getContext('2d');
+    const imageSuit = new Image();
+    imageSuit.src = suitImg ?? '/customize_img/spacesuit-white.png';
+    console.log(suitImg);
+    ctx.drawImage(imageSuit, 0, 0, 200, 400);
+
+    const imageCountry = new Image();
+    imageCountry.src = countryImgSuit;
+    // console.log(imageCountry);
+    ctx.drawImage(imageCountry, 130, 105, 10, 6);
+
+    const imageMark = new Image();
+    imageMark.src = markImgSuit;
+    // console.log(imageMark);
+    ctx.drawImage(imageMark, 90, 105, 15, 15);
+  }, [suitImg, countryImgSuit, markImgSuit]);
 
   function setFlagHandler(e) {
     //抓取圖片放入太空船
@@ -127,7 +156,7 @@ function CustomizeSuit(props) {
       }, 1500);
       return [
         ...prevData,
-        { markSuit, country, suitImgName, suitPrice, suitTotal },
+        { markSuit, country, suitImgName, suitPrice, suitTotal, suitBase64 },
       ];
     });
   }
@@ -135,6 +164,12 @@ function CustomizeSuit(props) {
   return (
     <>
       <section className="Customsuit-page-view">
+        <canvas
+          ref={printRef}
+          className="suitCanvasOnly"
+          width={200}
+          height={400}
+        />
         <div
           className="back-circle suitMoveLeft3"
           style={{ animation: suitLeftOut }}
@@ -251,6 +286,7 @@ function CustomizeSuit(props) {
           <button
             className="suit-circle-btn"
             onClick={() => {
+              saveCanvas();
               const newLeftOut = 'suitsMoveLeftOut 1.4s ease-in-out forwards ';
               setSuitLeftOut(newLeftOut);
               const newRightOut = 'suitsMoveRightOut 1.4s ease-in-out forwards';
@@ -317,6 +353,7 @@ function CustomizeSuit(props) {
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
                 setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
+                // draw(e);
               }}
             ></div>
             <div
@@ -343,6 +380,7 @@ function CustomizeSuit(props) {
                 setSuitStep1('suitStepLine');
 
                 setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
+                // draw(e);
               }}
             ></div>
             <div
@@ -368,6 +406,7 @@ function CustomizeSuit(props) {
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
                 setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
+                // draw(e);
               }}
             ></div>
           </div>

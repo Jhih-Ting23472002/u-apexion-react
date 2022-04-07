@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import './CustomizeCraft.css';
 //購物車數量
 import CartQuantity from '../Products/CartQuantity';
 import { useHistory } from 'react-router-dom';
-
 const allCountry = [
   '/customize_img/america.png',
   '/customize_img/canada.png',
@@ -20,6 +19,7 @@ function CustomizeCraft(props) {
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
   const { setCraft } = props;
   const history = useHistory();
+  const [craftBase64, setCraftBase64] = useState('');
 
   const [stepClassname1, setStepClassname1] = useState('');
   const [stepClassname2, setStepClassname2] = useState('');
@@ -39,6 +39,28 @@ function CustomizeCraft(props) {
   const [craftPrice, setPrice] = useState(20000);
   const [craftTotal, setTotal] = useState(1);
 
+  const printRef = useRef(null);
+  useEffect(() => {
+    if (!printRef) return;
+    //畫太空船
+    const ctx = printRef.current.getContext('2d');
+    const imageCraft = new Image();
+    imageCraft.src = '/customize_img/spacecraft.png';
+    ctx.drawImage(imageCraft, 0, 0, 70, 400);
+    //畫國旗
+    ctx.rotate((-90 * Math.PI) / 180);
+    //畫筆轉90度
+    const imageCraftCountry = new Image();
+    imageCraftCountry.src = countryImg;
+    console.log(countryImg);
+    ctx.drawImage(imageCraftCountry, -63, 24, 38, 23);
+    //畫字串
+    ctx.fillText(craftString, -285, 38.5);
+    ctx.font = '10px sans-serif';
+    //畫筆回轉90度(回歸)
+    ctx.rotate((90 * Math.PI) / 180);
+  }, [countryImg, craftString, printRef]);
+
   function addCart() {
     setCraft(function (prevData) {
       setCartTotal(cartTotal + 1);
@@ -46,21 +68,31 @@ function CustomizeCraft(props) {
         history.push('/customize-seat');
       }, 1500);
 
-      return [...prevData, { craftString, country, craftPrice, craftTotal }];
+      return [
+        ...prevData,
+        { craftString, country, craftPrice, craftTotal, craftBase64 },
+      ];
     });
   }
 
   function saveCanvas() {
-    const canvasSave = document.getElementById('canvasCraft');
+    const canvasSave = document.querySelector('.craftCanvasOnly');
     const d = canvasSave.toDataURL('image/png');
     const w = window.open('about:blank', 'image from canvas');
     w.document.write("<img src='" + d + "' alt='from canvas'/>");
-    console.log('Saved!');
+    setCraftBase64(d);
+    // console.log('suitBase64=========', d);
   }
 
   return (
     <>
       <section className="Customcraft-page-view">
+        <canvas
+          ref={printRef}
+          className="craftCanvasOnly"
+          width={90}
+          height={400}
+        />
         <div
           className="craft-tools craftMoveLeft2"
           style={{ animation: craftLeftOut }}
@@ -295,6 +327,7 @@ function CustomizeCraft(props) {
           <button
             className="craft-circle-btn"
             onClick={() => {
+              saveCanvas();
               const newLeftOut = 'suitsMoveLeftOut 1.4s ease-in-out forwards ';
               setCraftLeftOut(newLeftOut);
               const newRightOut = 'suitsMoveRightOut 1.4s ease-in-out forwards';
