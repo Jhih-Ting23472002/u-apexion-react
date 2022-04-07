@@ -49,7 +49,7 @@ function CustomizeSeat(props) {
                 const newColor = { ...color, background: 'white' };
                 setColor(newColor);
                 // 改變.seat-backcolor的背景顏色
-                setStyle('白銀河太空座椅');
+                setStyle('銀河白太空座椅');
                 setTimeout(() => {
                   // 設置延遲
                   const newOpaOpen = '1';
@@ -86,7 +86,7 @@ function CustomizeSeat(props) {
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#0072D6' };
                 setColor(newColor);
-                setStyle('生命藍太空座椅');
+                setStyle('能源藍太空座椅');
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);

@@ -44,14 +44,18 @@ function CustomizeSuit(props) {
   const { setSuit } = props;
   const history = useHistory();
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
+  //傳送結果圖片
+  const [suitBase64, setSuitBase64] = useState('');
+  //suitImgName服裝顏色名稱
+  const [suitImgName, setSuitImgName] = useState('');
   //顏色
   const [opa, setOpa] = useState('');
   const [suitImg, setSuitImg] = useState('/customize_img/spacesuit-white.png');
-  //suitImgName服裝顏色名稱
-  const [suitImgName, setSuitImgName] = useState('');
-  //傳送結果圖片
-  const [suitBase64, setSuitBase64] = useState('');
-
+  const [suitSize, setSuitSize] = useState({
+    s1: '35px',
+    s2: '35px',
+    s3: '35px',
+  });
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
@@ -75,7 +79,6 @@ function CustomizeSuit(props) {
   const [suitTotal, setTotal] = useState(1);
   //存圖
   const printRef = useRef(null);
-  
 
   useEffect(() => {
     if (!printRef) return;
@@ -88,23 +91,19 @@ function CustomizeSuit(props) {
 
     const imageCountry = new Image();
     imageCountry.src = countryImgSuit;
-    // console.log(imageCountry);
     ctx.drawImage(imageCountry, 130, 105, 10, 6);
 
     const imageMark = new Image();
     imageMark.src = markImgSuit;
-    // console.log(imageMark);
     ctx.drawImage(imageMark, 90, 105, 15, 15);
     // ===========傳圖片
     const canvasSave = document.querySelector('.suitCanvasOnly');
     const d = canvasSave.toDataURL('image/png');
-    // const w = window.open('about:blank', 'image from canvas');
-    // w.document.write("<img src='" + d + "' alt='from canvas'/>");
     setSuitBase64(d);
   }, [suitImg, countryImgSuit, markImgSuit, suitBase64]);
-
+  //國旗效果的狀態改變
   function setFlagHandler(e) {
-    //抓取圖片放入太空船
+    //抓取圖片放入太空服
     const closeOpa = '0';
     setCountrySelectSuit(closeOpa);
     setTimeout(() => {
@@ -128,6 +127,7 @@ function CustomizeSuit(props) {
     });
     e.currentTarget.classList.add('click-country');
   }
+  //徽章效果的狀態改變
   function setMarkHandler(e) {
     const closeOpa = '0';
     setMarkSelectSuit(closeOpa);
@@ -330,8 +330,9 @@ function CustomizeSuit(props) {
           <h2>25,000$</h2>
           <div className="suit-select-color">
             <div
-              data-img={'/customize_img/spacesuit-white.png'}
+              data-name={'銀河白太空衣'}
               className="white suit-flag"
+              style={{ width:suitSize.s1, height:suitSize.s1 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
@@ -351,13 +352,23 @@ function CustomizeSuit(props) {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
-                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
-                // draw(e);
+                setSuitImgName(e.currentTarget.dataset.name);
+                const newSize = {
+                  ...suitSize,
+                  s1: '40px',
+                  s2: '30px',
+                  s3: '30px',
+                };
+                setSuitSize(newSize);
+                console.log('s1',suitSize.s1)
+                console.log('s2',suitSize.s2)
+                console.log('s3',suitSize.s3)
               }}
             ></div>
             <div
-              data-img={'/customize_img/spacesuit-orange.png'}
+              data-name={'火源橘太空衣'}
               className="orange suit-flag"
+              style={{ width:suitSize.s2, height:suitSize.s2 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
@@ -378,13 +389,23 @@ function CustomizeSuit(props) {
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
 
-                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
-                // draw(e);
+                setSuitImgName(e.currentTarget.dataset.name);
+                const newSize = {
+                  ...suitSize,
+                  s1: '30px',
+                  s2: '40px',
+                  s3: '30px',
+                };
+                setSuitSize(newSize);
+                console.log('s1',suitSize.s1)
+                console.log('s2',suitSize.s2)
+                console.log('s3',suitSize.s3)
               }}
             ></div>
             <div
-              data-img={'/customize_img/spacesuit-blue.png'}
+              data-name={'能源藍太空衣'}
               className="blue suit-flag"
+              style={{ width:suitSize.s3, height:suitSize.s3 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
@@ -404,8 +425,17 @@ function CustomizeSuit(props) {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
-                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
-                // draw(e);
+                setSuitImgName(e.currentTarget.dataset.name);
+                const newSize = {
+                  ...suitSize,
+                  s1: '30px',
+                  s2: '30px',
+                  s3: '40px',
+                };
+                setSuitSize(newSize);
+                console.log('s1',suitSize.s1)
+                console.log('s2',suitSize.s2)
+                console.log('s3',suitSize.s3)
               }}
             ></div>
           </div>
