@@ -74,14 +74,7 @@ function CustomizeSuit(props) {
   const [suitTotal, setTotal] = useState(1);
   //存圖
   const printRef = useRef(null);
-  function saveCanvas() {
-    const canvasSave = document.querySelector('.suitCanvasOnly');
-    const d = canvasSave.toDataURL('image/png');
-    const w = window.open('about:blank', 'image from canvas');
-    w.document.write("<img src='" + d + "' alt='from canvas'/>");
-    setSuitBase64(d);
-    // console.log('suitBase64=========', d);
-  }
+  
 
   useEffect(() => {
     if (!printRef) return;
@@ -101,7 +94,13 @@ function CustomizeSuit(props) {
     imageMark.src = markImgSuit;
     // console.log(imageMark);
     ctx.drawImage(imageMark, 90, 105, 15, 15);
-  }, [suitImg, countryImgSuit, markImgSuit]);
+    // ===========傳圖片
+    const canvasSave = document.querySelector('.suitCanvasOnly');
+    const d = canvasSave.toDataURL('image/png');
+    // const w = window.open('about:blank', 'image from canvas');
+    // w.document.write("<img src='" + d + "' alt='from canvas'/>");
+    setSuitBase64(d);
+  }, [suitImg, countryImgSuit, markImgSuit, suitBase64]);
 
   function setFlagHandler(e) {
     //抓取圖片放入太空船
@@ -286,7 +285,6 @@ function CustomizeSuit(props) {
           <button
             className="suit-circle-btn"
             onClick={() => {
-              saveCanvas();
               const newLeftOut = 'suitsMoveLeftOut 1.4s ease-in-out forwards ';
               setSuitLeftOut(newLeftOut);
               const newRightOut = 'suitsMoveRightOut 1.4s ease-in-out forwards';

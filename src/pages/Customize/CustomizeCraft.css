@@ -398,5 +398,6 @@
   right: -50%;
   z-index: -9;
   opacity: 0;
+background-color: #fff;
 letter-spacing: 2px;
 }

@@ -84,7 +84,7 @@ import VedioEnd from './pages/VedioEnd';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -108,13 +108,13 @@ function App() {
   // console.log('出發日期', tripDate);
   // console.log('選擇座位', seatNumberDemo);
   // console.log('餐點', mealSelected);
-  console.log(
-    tripSelected,
-    tripDays,
-    tripPrice,
-    tripDate.dateSelected,
-    tripDate.returnDate
-  );
+  // console.log(
+  //   tripSelected,
+  //   tripDays,
+  //   tripPrice,
+  //   tripDate.dateSelected,
+  //   tripDate.returnDate
+  // );
 
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
@@ -155,8 +155,8 @@ function App() {
   const [suit, setSuit] = useState([]); // 太空服
   const [customize, setCustomize] = useState([]); // 椅子
   const [craft, setCraft] = useState([]); // 火箭
-  console.log('suit', suit);
-  console.log('customize', customize);
+  //console.log('suit', suit);
+  //console.log('customize', customize);
   console.log('craft', craft);
 
   // forum
@@ -175,9 +175,9 @@ function App() {
                     <Route exact path="/">
                       <IndexFirst />
                     </Route>
-                    <Route exact path="/u-apexion">
+                    {/* <Route exact path="/u-apexion">
                       <IndexMain />
-                    </Route>
+                    </Route> */}
                     <Route exact path="/forum-home">
                       <ForumHomePage
                         newpost={newpost}
