@@ -1,24 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './MemberPwdEdit.css';
 import MemberNavbar from '../../components/MemberNav';
 import { editPassword } from '../../data/UserWebApi';
-import { checkOldPwd } from '../../data/UserWebApi';
+// import { checkOldPwd } from '../../data/UserWebApi';
 import { useState, useEffect } from 'react';
-import MemberPwdEditModal from './MemberPwdEditModal';
+// import MemberPwdEditModal from './MemberPwdEditModal';
+
+import { Button, Modal } from 'react-bootstrap';
 
 function MemberPwdEdit() {
+  const msgRef = useRef();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [pwdEdit, setPwdEdit] = useState({
-    //pwdold: '',
+    pwdold: '',
     pwdnew: '',
     pwdconfirm: '',
   });
 
-  const [checkPwdOld, setCheckPwdOld] = useState({
-    pwdold: '',
-    showstatus: '',
-  });
-
-  const [modalShow, setModalShow] = useState(false);
+  // const [modalShow, setModalShow] = useState(false);
 
   const user_id = localStorage.getItem('user_id');
 
@@ -29,28 +33,29 @@ function MemberPwdEdit() {
     setPwdEdit(newData);
   };
 
-  //確認舊密碼是否正確
-  const checkPwdOldHandler = e => {
-    // console.log(e.target.value);
-    const oldPwdData = { ...checkPwdOld, [e.target.name]: e.target.value };
-    console.log(oldPwdData.pwdold);
-    setCheckPwdOld(oldPwdData);
+  // //確認舊密碼是否正確
+  // const checkPwdOldHandler = e => {
+  //   // console.log(e.target.value);
+  //   const oldPwdData = { ...checkPwdOld, [e.target.name]: e.target.value };
+  //   console.log(oldPwdData.pwdold);
+  //   setCheckPwdOld(oldPwdData);
 
-    let pswData = {};
-    pswData.old = oldPwdData.pwdold;
-    pswData.user_id = user_id;
-    checkOldPwd(pswData).then(obj => {
-      console.log('obj:', obj);
-      if (obj.code === '410') {
-        //setModalShow(true);
-        //alert(obj.message);
-        oldPwdData.showstatus = 1;
-      }
-    });
-  };
+  //   let pswData = {};
+  //   pswData.old = oldPwdData.pwdold;
+  //   pswData.user_id = user_id;
+  //   checkOldPwd(pswData).then(obj => {
+  //     console.log('obj:', obj);
+  //     if (obj.code === '410') {
+  //       // setModalShow(true);
+  //       // alert(obj.error);
+  //       // oldPwdData.showstatus = 1;
+  //     }
+  //   });
+  // };
 
   const submitHandler = e => {
     e.preventDefault();
+    console.log(msgRef.current);
 
     // 判斷新密碼與確認密碼是否一致
     if (pwdEdit.pwdnew === pwdEdit.pwdconfirm) {
@@ -63,12 +68,24 @@ function MemberPwdEdit() {
       editPassword(pswData).then(obj => {
         console.log('obj:', obj);
         if (obj.success) {
-          setModalShow(true);
+          setShow(true);
+          msgRef.current.innerText = '修改密碼成功';
+        } else {
+          setShow(true);
+          msgRef.current.innerText = '修改密碼失敗';
         }
       });
     } else {
-      alert('新密碼不一致');
+      setShow(true);
+      console.log(msgRef.current);
+      // msgRef.current.innerText = '確認密碼不相符';
     }
+
+    setPwdEdit({
+      pwdold: '',
+      pwdnew: '',
+      pwdconfirm: '',
+    });
   };
   return (
     <>
@@ -94,10 +111,10 @@ function MemberPwdEdit() {
                     className="member-input"
                     name="pwdold"
                     value={pwdEdit.pwdold}
-                    onBlur={checkPwdOldHandler}
+                    onChange={changeHandler}
                   />
                 </div>
-                {checkPwdOld.pwdold !== '' && checkPwdOld.showstatus !== true && (
+                {/* {checkPwdOld.pwdold !== '' && checkPwdOld.showstatus !== true && (
                   <div className=" confirmpassword-p">
                     <p
                       style={{
@@ -110,7 +127,7 @@ function MemberPwdEdit() {
                       原始密碼不正確
                     </p>
                   </div>
-                )}
+                )} */}
 
                 <div className="member-input-container ">
                   <label htmlFor="" className="member-label">
@@ -137,7 +154,7 @@ function MemberPwdEdit() {
                   />
                 </div>
 
-                {pwdEdit.pwdnew !== pwdEdit.pwdconfirm && (
+                {/* {pwdEdit.pwdnew !== pwdEdit.pwdconfirm && (
                   <div className=" confirmpassword-p">
                     <p
                       style={{
@@ -150,12 +167,13 @@ function MemberPwdEdit() {
                       新的密碼與確認密碼不相符
                     </p>
                   </div>
-                )}
+                )} */}
 
                 <div className="member-btn-container">
                   <div className="member-return-btn-wrap">
                     <button
                       className="member-circle-btn"
+                      type="button"
                       onClick={() => {
                         setPwdEdit({
                           pwdold: '',
@@ -186,7 +204,7 @@ function MemberPwdEdit() {
           </div>
         </div>
       </div>
-      <MemberPwdEditModal
+      {/* <MemberPwdEditModal
         show={modalShow}
         onHide={() => {
           setModalShow(false);
@@ -196,7 +214,24 @@ function MemberPwdEdit() {
             pwdconfirm: '',
           });
         }}
-      />
+      /> */}
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">更改密碼</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p ref={msgRef}>新的密碼與確認密碼不相符</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleClose}>關閉視窗</Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

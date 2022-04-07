@@ -12,7 +12,7 @@ function MemberPwdEditModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">更改密碼</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>更改密碼成功</p>
+        <p id="change-pwd-msg">更改密碼成功</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉視窗</Button>
