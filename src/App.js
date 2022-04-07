@@ -32,7 +32,7 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
@@ -342,9 +342,9 @@ function App() {
                     <Route path="/ticket-test">
                       <SeatDrag />
                     </Route>
-                    {/* <Route path="/customize-mainpage">
+                    <Route path="/customize-mainpage">
                       <CustomizeMainPage />
-                    </Route> */}
+                    </Route>
                     <Route path="/customize-suit">
                       <CustomizeSuit setSuit={setSuit} />
                     </Route>
@@ -497,10 +497,10 @@ function App() {
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>
-
+{/* 
                     <Route path="/vedio-end" exact>
                       <VedioEnd />
-                    </Route>
+                    </Route> */}
                     <Route path="*">
                       <NotFoundPage />
                     </Route>

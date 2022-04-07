@@ -90,11 +90,11 @@ function MemberAddress() {
                             <button
                               className="editordelete-btn"
                               onClick={() => {
-                                setEditModalShow(true);
                                 localStorage.setItem(
                                   'data',
                                   JSON.stringify(element)
                                 );
+                                setEditModalShow(true);
                               }}
                             >
                               修改或刪除
