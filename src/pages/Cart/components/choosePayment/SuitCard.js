@@ -32,7 +32,7 @@ const SuitCard = props => {
             <div className="cart content-detail col-8 d-flex">
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top-suit">
-                  <h5 className="cart-suit-name">{v.country}</h5>
+                  <h5 className="cart-suit-name">國旗：{v.country}</h5>
                   <div className="cart-ticket-country-badge">
                     <div className="cart-select-country-badge">
                       {v.markSuit}

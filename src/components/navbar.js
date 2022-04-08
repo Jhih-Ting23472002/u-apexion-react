@@ -65,7 +65,7 @@ function Navbar(props) {
               <Link to="/forum-home">論壇</Link>
             </li>
             <li>
-              <Link to={personalPage}>{userNavbar}&nbsp;&nbsp;|</Link>
+              <Link to={personalPage}>{userNavbar}&nbsp;&nbsp;</Link>
             </li>
             <li></li>
             <li className="navbar-login">

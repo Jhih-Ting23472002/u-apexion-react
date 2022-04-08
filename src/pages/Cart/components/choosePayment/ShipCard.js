@@ -39,7 +39,9 @@ const ShipCard = props => {
                   </div>
                   <div className="cart-country-flag">
                     <div className="cart-empty-flag"></div>
-                    <h5 className="cart-country-flag-text">{v.country}</h5>
+                    <h5 className="cart-country-flag-text">
+                      國旗：{v.country}
+                    </h5>
                   </div>
                 </div>
                 <div className="content-detail-inside-bottom-spaceship">
