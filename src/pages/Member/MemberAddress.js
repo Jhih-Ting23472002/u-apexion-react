@@ -25,12 +25,9 @@ function MemberAddress() {
 
   const getUserAddress = () => {
     getAddress(user_id).then(obj => {
-      console.log('555obj:', obj);
       setAddress(obj.list);
-      console.log('1111obj:', obj);
     });
   };
-  console.log('444444:', address);
   //  [
   //    { address: "台北市"
   //      phone_number: "0988888999"
@@ -49,10 +46,8 @@ function MemberAddress() {
   // 第一次進入網頁會做，modal的狀態只要有更新，也會再做
   useEffect(() => {
     getUserAddress();
-    console.log('address::2222', address);
   }, [modalShow, editmodalShow]);
 
-  console.log('33333----', dataTry);
 
   return (
     <>
@@ -99,7 +94,7 @@ function MemberAddress() {
                                     'data',
                                     JSON.stringify(element)
                                   );
-                                  // setDataTry(element);
+                                  setDataTry(element);
                                   setEditModalShow(true);
                                 }}
                               >
