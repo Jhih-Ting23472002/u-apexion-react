@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { editAddress } from '../../data/UserWebApi';
 import { removeAddress } from '../../data/UserWebApi';
 import { useHistory } from 'react-router-dom';
-import { set } from 'lodash';
 
 function MemberEditOrDelete(props) {
   //const { modalShow, setModalShow } = props;
@@ -28,28 +27,39 @@ function MemberEditOrDelete(props) {
   //     user_id: 1
   //   }
   const [editData, setEditData] = useState({
-    placename: dataTry.place_name,
-    recipientname: dataTry.recipient_name,
-    postalcode: dataTry.postal_code,
-    address: dataTry.address,
-    phonenumber: dataTry.phone_number,
-    sid: dataTry.sid,
+    // placename: dataTry.place_name,
+    // recipientname: dataTry.recipient_name,
+    // postalcode: dataTry.postal_code,
+    // address: dataTry.address,
+    // phonenumber: dataTry.phone_number,
+    // sid: dataTry.sid,
   });
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('data'));
-    if (data) {
-      const newData = {
-        ...editData,
-        placename: data.place_name,
-        recipientname: data.recipient_name,
-        postalcode: data.postal_code,
-        address: data.address,
-        phonenumber: data.phone_number,
-        sid: data.sid,
-      };
-      setEditData(newData);
-    }
+    setEditData({
+      placename: dataTry.place_name,
+      recipientname: dataTry.recipient_name,
+      postalcode: dataTry.postal_code,
+      address: dataTry.address,
+      phonenumber: dataTry.phone_number,
+      sid: dataTry.sid,
+    });
+  }, [dataTry]);
+
+  useEffect(() => {
+    // const data = JSON.parse(localStorage.getItem('data'));
+    // if (data) {
+    //   const newData = {
+    //     ...editData,
+    //     placename: data.place_name,
+    //     recipientname: data.recipient_name,
+    //     postalcode: data.postal_code,
+    //     address: data.address,
+    //     phonenumber: data.phone_number,
+    //     sid: data.sid,
+    //   };
+    //   setEditData(newData);
+    // }
   }, []);
 
   // 用戶修改時，即時更新state狀態
@@ -77,7 +87,6 @@ function MemberEditOrDelete(props) {
       if (obj.success) {
         alert('修改成功');
         props.setModalShow(false);
-        // history.push('/member-address'); //新增成功的話跳轉回地址清單頁
       }
     });
   };
@@ -89,7 +98,6 @@ function MemberEditOrDelete(props) {
       if (obj.success) {
         alert('刪除成功');
         props.setModalShow(false);
-        // history.push('/member-address'); //新增成功的話跳轉回地址清單頁
       }
     });
   };
