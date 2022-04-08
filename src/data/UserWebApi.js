@@ -137,15 +137,14 @@ export const getOrderHistory = user_id => {
 };
 
 // 拿到地址
-export const getAddressApi = user_id =>{
-  return fetch('http://localhost:3001/user/api/address-list',
-  {
-    method:'POST',
+export const getAddressApi = user_id => {
+  return fetch('http://localhost:3001/user/api/address-list', {
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-    user_id,
-}),
-}).then(res => res.json());
+      user_id,
+    }),
+  }).then(res => res.json());
 };
 
 export const editAddress = (editData, user_id) => {

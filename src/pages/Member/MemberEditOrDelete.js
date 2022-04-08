@@ -13,9 +13,9 @@ function MemberEditOrDelete(props) {
   const history = useHistory();
   const user_id = localStorage.getItem('user_id');
   const data = JSON.parse(localStorage.getItem('data'));
-  console.log('data:', data);
+  // console.log('data:', data);
   const { dataTry } = props;
-  console.log('dataTry:', dataTry);
+  // console.log('dataTry:', dataTry);
   // console.log('user_id:', user_id);
   // console.log('data:', data.sid);
   //   {
@@ -73,7 +73,7 @@ function MemberEditOrDelete(props) {
     // console.log('dataObj:', dataObj);
 
     editAddress(editData, user_id).then(obj => {
-      console.log('obj:', obj);
+      // console.log('obj:', obj);
       if (obj.success) {
         alert('修改成功');
         props.setModalShow(false);
@@ -85,7 +85,7 @@ function MemberEditOrDelete(props) {
   // 刪除資料
   const handleDelete = () => {
     removeAddress(data.sid, user_id).then(obj => {
-      console.log('obj:', obj);
+      // console.log('obj:', obj);
       if (obj.success) {
         alert('刪除成功');
         props.setModalShow(false);
