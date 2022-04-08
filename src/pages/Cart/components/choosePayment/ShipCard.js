@@ -1,5 +1,4 @@
 import React from 'react';
-import spaceShip from '../../img/spaceShip.png';
 
 const ShipCard = props => {
   const { craft, setShipPrice, setShipAmount, shipAmount } = props;
@@ -16,7 +15,6 @@ const ShipCard = props => {
   function formatMoney(n) {
     return (Math.round(n * 100) / 100).toLocaleString();
   }
-
   return (
     <>
       {craft.map(v => (
@@ -24,7 +22,11 @@ const ShipCard = props => {
           <div className="cart separated-line"></div>
           <div className="cart cart-order-item d-flex">
             <div className="cart cart-img-div col-4">
-              <img src={spaceShip} alt="" className="spaceship-height" />
+              <img
+                src={craft[0].craftBase64}
+                alt=""
+                className="spaceship-height"
+              />
             </div>
             <div className="cart content-detail col-8 d-flex">
               <div className="content-detail-inside">
@@ -37,7 +39,9 @@ const ShipCard = props => {
                   </div>
                   <div className="cart-country-flag">
                     <div className="cart-empty-flag"></div>
-                    <h5 className="cart-country-flag-text">{v.country}</h5>
+                    <h5 className="cart-country-flag-text">
+                      國旗：{v.country}
+                    </h5>
                   </div>
                 </div>
                 <div className="content-detail-inside-bottom-spaceship">

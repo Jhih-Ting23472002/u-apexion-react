@@ -33,7 +33,8 @@ open.mp4
 product_img
 # 影片暫不上傳...區
 movies
-
+._.DS_Store
+._end.mp4
 // cart 區域
 z_CartCreditCard.css
 z_CartCreditCard.js

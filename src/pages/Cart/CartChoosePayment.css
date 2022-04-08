@@ -71,6 +71,9 @@
   /* height: 100%; */
   /* border: 1px solid red; */
 }
+.cartSeatImg{
+  width: 80%;
+}
 .cart-img-div {
   width: 50px;
   /* border: 1px solid green; */

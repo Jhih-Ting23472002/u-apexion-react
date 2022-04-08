@@ -221,7 +221,8 @@
   border-radius: 50%;
 }
 .country-select  {
-  width: 380px;
+  width: 400px;
+  height: 135px;
   padding: 15px;
   margin-bottom: 30px;
   border-radius: 10px;
@@ -229,8 +230,17 @@
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
-  align-items: center
-  
+  align-items: center;
+  overflow: auto;
+}
+.country-select::-webkit-scrollbar {
+  width: 10px;
+  background:  #00182c;
+}
+.country-select::-webkit-scrollbar-thumb {
+  background-color: #05f2f2;
+  border: 4px solid #00182c;
+  border-radius: 20px;
 }
 .click-country {
   margin: 10px;

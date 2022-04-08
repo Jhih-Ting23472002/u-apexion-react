@@ -3,54 +3,59 @@ import { useHistory } from 'react-router-dom';
 import './CustomizeSuit.css';
 import CartQuantity from '../Products/CartQuantity';
 const allCountry = [
-  '/customize_img/america.png',
-  '/customize_img/canada.png',
-  '/customize_img/china.png',
-  '/customize_img/england.png',
-  '/customize_img/japan.png',
-  '/customize_img/korea.png',
-  '/customize_img/spain.png',
-  '/customize_img/taiwan.png',
-  '/customize_img/ukraine.png',
+  '/customize_img/美國.png',
+  '/customize_img/加拿大.png',
+  '/customize_img/中華人民共和國.png',
+  '/customize_img/中華民國.png',
+  '/customize_img/日本.png',
+  '/customize_img/大韓民國.png',
+  '/customize_img/西班牙.png',
+  '/customize_img/英國.png',
+  '/customize_img/烏克蘭.png',
+  '/customize_img/德國.png',
 ];
 const allMark = [
-  '/customize_img/space-mark-01.png',
-  '/customize_img/space-mark-02.png',
-  '/customize_img/space-mark-03.png',
-  '/customize_img/space-mark-04.png',
-  '/customize_img/space-mark-05.png',
-  '/customize_img/space-mark-06.png',
-  '/customize_img/space-mark-07.png',
-  '/customize_img/space-mark-08.png',
-  '/customize_img/space-mark-09.png',
-  '/customize_img/space-mark-10.png',
-  '/customize_img/space-mark-11.png',
-  '/customize_img/space-mark-12.png',
-  '/customize_img/space-mark-13.png',
-  '/customize_img/space-mark-14.png',
-  '/customize_img/space-mark-15.png',
-  '/customize_img/space-mark-16.png',
-  '/customize_img/space-mark-17.png',
-  '/customize_img/space-mark-18.png',
-  '/customize_img/space-mark-19.png',
-  '/customize_img/space-mark-20.png',
-  '/customize_img/space-mark-21.png',
-  '/customize_img/space-mark-22.png',
-  '/customize_img/space-mark-23.png',
+  '/customize_img/NASA-1週年紀念徽章.png',
+  '/customize_img/NASA-17週年紀念徽章.png',
+  '/customize_img/NASA-21週年紀念徽章.png',
+  '/customize_img/NASA-27週年紀念徽章.png',
+  '/customize_img/NASA-31週年紀念徽章.png',
+  '/customize_img/NASA-36週年紀念徽章.png',
+  '/customize_img/NASA-45週年紀念徽章.png',
+  '/customize_img/NASA-46週年紀念徽章.png',
+  '/customize_img/NASA-47週年紀念徽章.png',
+  '/customize_img/NASA-48週年紀念徽章.png',
+  '/customize_img/NASA-49週年紀念徽章.png',
+  '/customize_img/NASA-50週年紀念徽章.png',
+  '/customize_img/NASA-51週年紀念徽章.png',
+  '/customize_img/NASA-53週年紀念徽章.png',
+  '/customize_img/NASA-55週年紀念徽章.png',
+  '/customize_img/NASA-56週年紀念徽章.png',
+  '/customize_img/NASA-58週年紀念徽章.png',
+  '/customize_img/NASA-59週年紀念徽章.png',
+  '/customize_img/NASA-62週年紀念徽章.png',
+  '/customize_img/NASA-63週年紀念徽章.png',
+  '/customize_img/NASA-64週年紀念徽章.png',
+  '/customize_img/NASA-65週年紀念徽章.png',
+  '/customize_img/NASA-66週年紀念徽章.png',
 ];
 
 function CustomizeSuit(props) {
   const { setSuit } = props;
   const history = useHistory();
   const { cartTotal, setCartTotal } = useContext(CartQuantity);
+  //傳送結果圖片
+  const [suitBase64, setSuitBase64] = useState('');
+  //suitImgName服裝顏色名稱
+  const [suitImgName, setSuitImgName] = useState('');
   //顏色
   const [opa, setOpa] = useState('');
   const [suitImg, setSuitImg] = useState('/customize_img/spacesuit-white.png');
-  //suitImgName服裝顏色名稱
-  const [suitImgName, setSuitImgName] = useState('');
-  //傳送結果圖片
-  const [suitBase64, setSuitBase64] = useState('');
-
+  const [suitSize, setSuitSize] = useState({
+    s1: '35px',
+    s2: '35px',
+    s3: '35px',
+  });
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
@@ -74,14 +79,6 @@ function CustomizeSuit(props) {
   const [suitTotal, setTotal] = useState(1);
   //存圖
   const printRef = useRef(null);
-  function saveCanvas() {
-    const canvasSave = document.querySelector('.suitCanvasOnly');
-    const d = canvasSave.toDataURL('image/png');
-    const w = window.open('about:blank', 'image from canvas');
-    w.document.write("<img src='" + d + "' alt='from canvas'/>");
-    setSuitBase64(d);
-    // console.log('suitBase64=========', d);
-  }
 
   useEffect(() => {
     if (!printRef) return;
@@ -94,17 +91,19 @@ function CustomizeSuit(props) {
 
     const imageCountry = new Image();
     imageCountry.src = countryImgSuit;
-    // console.log(imageCountry);
     ctx.drawImage(imageCountry, 130, 105, 10, 6);
 
     const imageMark = new Image();
     imageMark.src = markImgSuit;
-    // console.log(imageMark);
     ctx.drawImage(imageMark, 90, 105, 15, 15);
-  }, [suitImg, countryImgSuit, markImgSuit]);
-
+    // ===========傳圖片
+    const canvasSave = document.querySelector('.suitCanvasOnly');
+    const d = canvasSave.toDataURL('image/png');
+    setSuitBase64(d);
+  }, [suitImg, countryImgSuit, markImgSuit, suitBase64]);
+  //國旗效果的狀態改變
   function setFlagHandler(e) {
-    //抓取圖片放入太空船
+    //抓取圖片放入太空服
     const closeOpa = '0';
     setCountrySelectSuit(closeOpa);
     setTimeout(() => {
@@ -128,6 +127,7 @@ function CustomizeSuit(props) {
     });
     e.currentTarget.classList.add('click-country');
   }
+  //徽章效果的狀態改變
   function setMarkHandler(e) {
     const closeOpa = '0';
     setMarkSelectSuit(closeOpa);
@@ -286,7 +286,6 @@ function CustomizeSuit(props) {
           <button
             className="suit-circle-btn"
             onClick={() => {
-              saveCanvas();
               const newLeftOut = 'suitsMoveLeftOut 1.4s ease-in-out forwards ';
               setSuitLeftOut(newLeftOut);
               const newRightOut = 'suitsMoveRightOut 1.4s ease-in-out forwards';
@@ -331,8 +330,9 @@ function CustomizeSuit(props) {
           <h2>25,000$</h2>
           <div className="suit-select-color">
             <div
-              data-img={'/customize_img/spacesuit-white.png'}
+              data-name={'銀河白太空衣'}
               className="white suit-flag"
+              style={{ width:suitSize.s1, height:suitSize.s1 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
@@ -352,13 +352,21 @@ function CustomizeSuit(props) {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
-                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
-                // draw(e);
+                setSuitImgName(e.currentTarget.dataset.name);
+                const newSize = {
+                  ...suitSize,
+                  s1: '40px',
+                  s2: '30px',
+                  s3: '30px',
+                };
+                setSuitSize(newSize);
+                
               }}
             ></div>
             <div
-              data-img={'/customize_img/spacesuit-orange.png'}
+              data-name={'火源橘太空衣'}
               className="orange suit-flag"
+              style={{ width:suitSize.s2, height:suitSize.s2 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
@@ -379,13 +387,20 @@ function CustomizeSuit(props) {
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
 
-                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
-                // draw(e);
+                setSuitImgName(e.currentTarget.dataset.name);
+                const newSize = {
+                  ...suitSize,
+                  s1: '30px',
+                  s2: '40px',
+                  s3: '30px',
+                };
+                setSuitSize(newSize);
               }}
             ></div>
             <div
-              data-img={'/customize_img/spacesuit-blue.png'}
+              data-name={'能源藍太空衣'}
               className="blue suit-flag"
+              style={{ width:suitSize.s3, height:suitSize.s3 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
@@ -405,8 +420,14 @@ function CustomizeSuit(props) {
                 };
                 setSuitStepColor(newStep);
                 setSuitStep1('suitStepLine');
-                setSuitImgName(e.currentTarget.dataset.img.slice(25, -4));
-                // draw(e);
+                setSuitImgName(e.currentTarget.dataset.name);
+                const newSize = {
+                  ...suitSize,
+                  s1: '30px',
+                  s2: '30px',
+                  s3: '40px',
+                };
+                setSuitSize(newSize);
               }}
             ></div>
           </div>

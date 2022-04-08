@@ -32,7 +32,7 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-// import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
@@ -84,7 +84,7 @@ import VedioEnd from './pages/VedioEnd';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-import IndexMain from './pages/Index/IndexMain';
+// import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -108,13 +108,13 @@ function App() {
   // console.log('出發日期', tripDate);
   // console.log('選擇座位', seatNumberDemo);
   // console.log('餐點', mealSelected);
-  console.log(
-    tripSelected,
-    tripDays,
-    tripPrice,
-    tripDate.dateSelected,
-    tripDate.returnDate
-  );
+  // console.log(
+  //   tripSelected,
+  //   tripDays,
+  //   tripPrice,
+  //   tripDate.dateSelected,
+  //   tripDate.returnDate
+  // );
 
   // 以下是cart的部分
   // 第一頁傳『userOption』資料到第二頁、第三頁
@@ -155,8 +155,8 @@ function App() {
   const [suit, setSuit] = useState([]); // 太空服
   const [customize, setCustomize] = useState([]); // 椅子
   const [craft, setCraft] = useState([]); // 火箭
-  console.log('suit', suit);
-  console.log('customize', customize);
+  //console.log('suit', suit);
+  //console.log('customize', customize);
   console.log('craft', craft);
 
   // forum
@@ -176,7 +176,7 @@ function App() {
                       <IndexFirst />
                     </Route>
                     <Route exact path="/u-apexion">
-                      <IndexMain />
+                      {/* <IndexMain /> */}
                     </Route>
                     <Route exact path="/forum-home">
                       <ForumHomePage
@@ -342,9 +342,9 @@ function App() {
                     <Route path="/ticket-test">
                       <SeatDrag />
                     </Route>
-                    {/* <Route path="/customize-mainpage">
+                    <Route path="/customize-mainpage">
                       <CustomizeMainPage />
-                    </Route> */}
+                    </Route>
                     <Route path="/customize-suit">
                       <CustomizeSuit setSuit={setSuit} />
                     </Route>
@@ -497,10 +497,10 @@ function App() {
                         cartOrderListNumber={cartOrderListNumber} // 訂單編號後來的值傳進去
                       />
                     </Route>
-
+{/* 
                     <Route path="/vedio-end" exact>
                       <VedioEnd />
-                    </Route>
+                    </Route> */}
                     <Route path="*">
                       <NotFoundPage />
                     </Route>

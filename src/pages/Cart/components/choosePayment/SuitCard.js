@@ -1,5 +1,4 @@
 import React from 'react';
-import spaceSuit from '../../img/spaceSuit.png';
 
 const SuitCard = props => {
   const { suit, setSuitPrice, setSuitAmount, suitAmount } = props;
@@ -17,7 +16,6 @@ const SuitCard = props => {
   function formatMoney(n) {
     return (Math.round(n * 100) / 100).toLocaleString();
   }
-
   return (
     <>
       {suit.map(v => (
@@ -25,12 +23,16 @@ const SuitCard = props => {
           <div className="cart separated-line"></div>
           <div className="cart cart-order-item d-flex">
             <div className="cart cart-img-div col-4">
-              <img src={spaceSuit} alt="" />
+              <img
+                src={suit[0].suitBase64}
+                alt=""
+                className="spaceship-height"
+              />
             </div>
             <div className="cart content-detail col-8 d-flex">
               <div className="content-detail-inside">
                 <div className="content-detail-inside-top-suit">
-                  <h5 className="cart-suit-name">{v.country}</h5>
+                  <h5 className="cart-suit-name">國旗：{v.country}</h5>
                   <div className="cart-ticket-country-badge">
                     <div className="cart-select-country-badge">
                       {v.markSuit}

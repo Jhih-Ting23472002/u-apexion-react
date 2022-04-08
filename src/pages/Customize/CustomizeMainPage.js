@@ -17,13 +17,12 @@ function CustomizeMainPage() {
               <Link to="/customize-suit">
                 <div className="movie-select-a">
                   <div className="suit-text-box">
-                    <h1>FALCON HEAVY</h1>
+                    <h1>太空服訂製</h1>
                     <div className="Custom-box-line"></div>
                     <p>
-                      With more than 5 million pounds of thrust at liftoff,
-                      Falcon Heavy is the most capable rocket flying. By
-                      comparison, the liftoff thrust of the Falcon Heavy equals
-                      eighteen 747 aircraft at full power.
+                      U-Apexion精細設計之太空服是由義大利知名設計師- Michael
+                      Change Chen.精心設計，並由德國Tina Hohoho.與西班牙-Amanda
+                      Chu.聯手打造，排汗又好穿，一個字...讚！
                     </p>
                   </div>
                   <video
@@ -52,13 +51,12 @@ function CustomizeMainPage() {
                 <div className="movie-select-a">
                   <div className="craft-text-box">
                     <div className="craft-box-deshed"></div>
-                    <h1>FALCON HEAVY</h1>
+                    <h1>太空船訂製</h1>
                     <div className="Custom-box-line"></div>
                     <p>
-                      With more than 5 million pounds of thrust at liftoff,
-                      Falcon Heavy is the most capable rocket flying. By
-                      comparison, the liftoff thrust of the Falcon Heavy equals
-                      eighteen 747 aircraft at full power.
+                      U-Apexion 的太空船是經由U-Apexion團隊- Alber Chen. - Sam
+                      Chen.與- Troy
+                      Guo.為貴賓一字一圖案，親手提筆製作而成，絕對包貴客滿意...一樣讚！
                     </p>
                   </div>
                   <video
@@ -86,13 +84,12 @@ function CustomizeMainPage() {
               <Link to="/customize-suit">
                 <div className="movie-select-a">
                   <div className="seat-text-box">
-                    <h1>FALCON HEAVY</h1>
+                    <h1>太空座椅訂製</h1>
                     <div className="Custom-box-line"></div>
                     <p>
-                      With more than 5 million pounds of thrust at liftoff,
-                      Falcon Heavy is the most capable rocket flying. By
-                      comparison, the liftoff thrust of the Falcon Heavy equals
-                      eighteen 747 aircraft at full power.
+                      U-Apexion精細設計之太空座椅是由立陶宛知名設計師-Ting
+                      Young.精心設計，座位以三色電鍍效果呈現，並由德國Tina
+                      Hohoho.與西班牙-Amanda Chu.聯手打造，美而精細，優秀！
                     </p>
                   </div>
                   <video

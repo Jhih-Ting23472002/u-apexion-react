@@ -15,12 +15,16 @@ function CustomizeSeat(props) {
   const [seatPrice, setPrice] = useState(15000);
   const [opa, setOpa] = useState('');
   const [seatTotal, setTotal] = useState(1);
-
+  const [suitSize, setSuitSize] = useState({
+    s1: '35px',
+    s2: '35px',
+    s3: '35px',
+  });
   function addCart() {
     setCustomize(function (prevData) {
       setCartTotal(cartTotal + 1);
       setModalShow(true);
-      return [...prevData, { style, seatPrice,seatTotal }];
+      return [...prevData, { style, seatPrice, seatTotal, seatImg }];
     });
   }
 
@@ -34,13 +38,14 @@ function CustomizeSeat(props) {
           {/* 想讓他變換時  先讓他歸0 再變成1 */}
           <img src={seatImg} alt="" style={{ opacity: opa }} />
         </div>
-        <div className="seat-card seatMoveRight2" >
+        <div className="seat-card seatMoveRight2">
           <h1>請選擇太空椅外觀</h1>
           <h3>Customize Your Seat</h3>
           <h2>15,000$</h2>
           <div className="seat-select-color">
             <div
               data-seat={'/customize_img/spaceseat-white.png'}
+              style={{ width:suitSize.s1, height:suitSize.s1 }}
               className="white suit-flag"
               onClick={e => {
                 const newOpaClose = '0';
@@ -49,7 +54,7 @@ function CustomizeSeat(props) {
                 const newColor = { ...color, background: 'white' };
                 setColor(newColor);
                 // 改變.seat-backcolor的背景顏色
-                setStyle('white');
+                setStyle('銀河白太空座椅');
                 setTimeout(() => {
                   // 設置延遲
                   const newOpaOpen = '1';
@@ -59,40 +64,63 @@ function CustomizeSeat(props) {
                   setSeatImg(newImg);
                   // 載入圖片
                 }, 700);
+                const newSize = {
+                  ...suitSize,
+                  s1: '40px',
+                  s2: '30px',
+                  s3: '30px',
+                };
+                setSuitSize(newSize);
               }}
             ></div>
             <div
               data-seat={'/customize_img/spaceseat-orange.png'}
               className="orange suit-flag"
+              style={{ width:suitSize.s2, height:suitSize.s2 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#EE6A26' };
                 setColor(newColor);
-                setStyle('orangeSeat');
+                setStyle('火源橘太空座椅');
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   const newImg = e.target.dataset.seat;
                   setSeatImg(newImg);
                 }, 700);
+                const newSize = {
+                  ...suitSize,
+                  s1: '30px',
+                  s2: '40px',
+                  s3: '30px',
+                };
+                setSuitSize(newSize);
               }}
             ></div>
             <div
               data-seat={'/customize_img/spaceseat-blue.png'}
               className="blue suit-flag"
+              style={{ width:suitSize.s3, height:suitSize.s3 }}
               onClick={e => {
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#0072D6' };
                 setColor(newColor);
-                setStyle('blueSeat');
+                setStyle('能源藍太空座椅');
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   const newImg = e.target.dataset.seat;
                   setSeatImg(newImg);
                 }, 700);
+                const newSize = {
+                  ...suitSize,
+                  s1: '30px',
+                  s2: '30px',
+                  s3: '40px',
+                };
+                setSuitSize(newSize);
               }}
             ></div>
           </div>
@@ -106,7 +134,7 @@ function CustomizeSeat(props) {
           </button>
         </div>
 
-        <svg 
+        <svg
           className="right-page-svg seatMoveRight1"
           viewBox="0 0 913 1024"
           fill="none"
