@@ -146,7 +146,7 @@ export default function ForumSinglePostPage() {
           <div className="forum_message">{res_content}</div>
           <div className="forum_likes_icon">
             <i className="fa-solid fa-heart">{/* <a href="#"></a> */}</i>
-            33
+            {/* 33 */}
           </div>
         </div>
       </div>

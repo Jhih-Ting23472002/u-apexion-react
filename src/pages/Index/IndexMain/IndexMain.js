@@ -97,11 +97,11 @@ const IndexMain = () => {
               }}
             >
               <div className="index_swiper_date_text">
-                <p>JUNE.</p>
-                <p>11</p>
-                <p>/</p>
-                <p>JUNE.</p>
+                <p>APRIL.</p>
                 <p>16</p>
+                <p>/</p>
+                <p>APRIL.</p>
+                <p>22</p>
               </div>
             </div>
             <div
@@ -111,7 +111,7 @@ const IndexMain = () => {
               }}
             >
               <div className="index_swiper_title_text">
-                <p>Gemini</p>
+                <p>Aries</p>
                 <p>12星座之旅</p>
               </div>
             </div>
@@ -141,10 +141,10 @@ const IndexMain = () => {
               }}
             >
               <div className="index_swiper_date_text">
-                <p>MARCH.</p>
+                <p>APRIL.</p>
                 <p>12</p>
                 <p>/</p>
-                <p>MARCH.</p>
+                <p>APRIL.</p>
                 <p>18</p>
               </div>
             </div>

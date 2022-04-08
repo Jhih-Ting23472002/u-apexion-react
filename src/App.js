@@ -32,7 +32,7 @@ import UserNameF from './components/UserNameF';
 import SignOut from './components/SignOut';
 
 // Customize
-import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
+//import CustomizeMainPage from './pages/Customize/CustomizeMainPage';
 import CustomizeSeat from './pages/Customize/CustomizeSeat';
 import CustomizeCraft from './pages/Customize/CustomizeCraft';
 import CustomizeSuit from './pages/Customize/CustomizeSuit';
@@ -84,7 +84,7 @@ import VedioEnd from './pages/VedioEnd';
 
 // Index
 import IndexFirst from './pages/Index/IndexFirst';
-// import IndexMain from './pages/Index/IndexMain';
+import IndexMain from './pages/Index/IndexMain';
 
 //----頁面元件----
 
@@ -176,7 +176,7 @@ function App() {
                       <IndexFirst />
                     </Route>
                     <Route exact path="/u-apexion">
-                      {/* <IndexMain /> */}
+                      <IndexMain />
                     </Route>
                     <Route exact path="/forum-home">
                       <ForumHomePage
@@ -342,9 +342,9 @@ function App() {
                     <Route path="/ticket-test">
                       <SeatDrag />
                     </Route>
-                    <Route path="/customize-mainpage">
+                    {/* <Route path="/customize-mainpage">
                       <CustomizeMainPage />
-                    </Route>
+                    </Route> */}
                     <Route path="/customize-suit">
                       <CustomizeSuit setSuit={setSuit} />
                     </Route>
