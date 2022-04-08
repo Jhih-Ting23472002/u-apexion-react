@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import './MemberAddressNew.css';
 // import ModalHeader from 'react-bootstrap/ModalHeader';
-import { useState } from 'react';
 import { createAddress } from '../../data/UserWebApi';
 import { useHistory } from 'react-router-dom';
 
@@ -18,6 +17,7 @@ function MemberAddressNew(props) {
     address: '',
     phonenumber: '',
   });
+
   const handleAddressNew = e => {
     e.preventDefault();
     const fd = new FormData(e.target);
@@ -38,6 +38,14 @@ function MemberAddressNew(props) {
         props.setModalShow(false);
         // history.push('/member-address'); //新增成功的話跳轉回地址清單頁
       }
+    });
+
+    setaddressNewData({
+      placename: '',
+      recipientname: '',
+      postalcode: '',
+      address: '',
+      phonenumber: '',
     });
   };
   const handleChange = e => {

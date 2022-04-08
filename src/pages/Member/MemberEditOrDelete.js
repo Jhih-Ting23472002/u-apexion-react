@@ -14,7 +14,9 @@ function MemberEditOrDelete(props) {
   const user_id = localStorage.getItem('user_id');
   const data = JSON.parse(localStorage.getItem('data'));
   console.log('data:', data);
-  console.log('user_id:', user_id);
+  const { dataTry } = props;
+  console.log('dataTry:', dataTry);
+  // console.log('user_id:', user_id);
   // console.log('data:', data.sid);
   //   {
   //     address: "台北市"
@@ -26,15 +28,16 @@ function MemberEditOrDelete(props) {
   //     user_id: 1
   //   }
   const [editData, setEditData] = useState({
-    placename: '',
-    recipientname: '',
-    postalcode: '',
-    address: '',
-    phonenumber: '',
-    sid: '',
+    placename: dataTry.place_name,
+    recipientname: dataTry.recipient_name,
+    postalcode: dataTry.postal_code,
+    address: dataTry.address,
+    phonenumber: dataTry.phone_number,
+    sid: dataTry.sid,
   });
 
   useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('data'));
     if (data) {
       const newData = {
         ...editData,

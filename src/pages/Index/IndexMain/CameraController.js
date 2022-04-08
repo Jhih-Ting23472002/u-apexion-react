@@ -195,7 +195,7 @@ const CameraController = () => {
     }
 
     function onMouseDown(evt) {
-      evt.preventDefault();
+      // evt.preventDefault();
       mouseDown = true;
       mouseX = evt.clientX;
       mouseY = evt.clientY;
@@ -221,7 +221,7 @@ const CameraController = () => {
         'mousedown',
         function (e) {
           onMouseDown(e);
-          // console.log('onMouseDown')
+          // console.log('onMouseDown');
         },
         false
       );

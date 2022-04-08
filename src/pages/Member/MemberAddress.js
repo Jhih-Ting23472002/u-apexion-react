@@ -10,6 +10,7 @@ function MemberAddress() {
   const user_id = localStorage.getItem('user_id');
   const [modalShow, setModalShow] = useState(false);
   const [editmodalShow, setEditModalShow] = useState(false);
+  const [dataTry, setDataTry] = useState({});
   // const [address, setAddress] = useState([]);
 
   // useEffect(() => {
@@ -80,27 +81,30 @@ function MemberAddress() {
                   {address &&
                     address.map((element, i) => {
                       return (
-                        <tr key={element[i]}>
-                          <td>{element.place_name}</td>
-                          <td>{element.recipient_name}</td>
-                          <td>{element.postal_code}</td>
-                          <td>{element.address}</td>
-                          <td>{element.phone_number}</td>
-                          <td className="editordelete-btn-td">
-                            <button
-                              className="editordelete-btn"
-                              onClick={() => {
-                                localStorage.setItem(
-                                  'data',
-                                  JSON.stringify(element)
-                                );
-                                setEditModalShow(true);
-                              }}
-                            >
-                              修改或刪除
-                            </button>
-                          </td>
-                        </tr>
+                        <>
+                          <tr key={element[i]}>
+                            <td>{element.place_name}</td>
+                            <td>{element.recipient_name}</td>
+                            <td>{element.postal_code}</td>
+                            <td>{element.address}</td>
+                            <td>{element.phone_number}</td>
+                            <td className="editordelete-btn-td">
+                              <button
+                                className="editordelete-btn"
+                                onClick={() => {
+                                  localStorage.setItem(
+                                    'data',
+                                    JSON.stringify(element)
+                                  );
+                                  setDataTry(element);
+                                  setEditModalShow(true);
+                                }}
+                              >
+                                修改或刪除
+                              </button>
+                            </td>
+                          </tr>
+                        </>
                       );
                     })}
 
@@ -143,6 +147,7 @@ function MemberAddress() {
       <MemberEditOrDelete
         show={editmodalShow}
         setModalShow={setEditModalShow}
+        dataTry={dataTry}
       />
     </>
   );
