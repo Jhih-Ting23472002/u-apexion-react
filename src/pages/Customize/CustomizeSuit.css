@@ -106,7 +106,7 @@
 .suit-circle {
   z-index: 1;
   position: absolute;
-  top:12%;
+  top:6%;
   right: 48%;
   opacity: 1;
 }
@@ -188,7 +188,7 @@
 }
 .suit-card h2 {
   font-size: 24px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-shadow:0 0 15px rgba(5, 242, 242, 0.8);
 }
 .suit-select-color {
@@ -198,7 +198,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   background-color: #323232;
   border-radius: 10px;
 }
@@ -224,7 +224,7 @@
   width: 400px;
   height: 135px;
   padding: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   border-radius: 10px;
   background-color: #323232;
   display: flex;
@@ -297,6 +297,7 @@ transition: .3s ease-in-out;
   width: 450px;
   height: 200px;
   padding: 10px;
+  margin:20px 0 30px;
   border-radius: 10px;
   background-color: #323232;
   display: flex;
@@ -459,14 +460,4 @@ transition: .3s ease-in-out;
   right: -50%;
   z-index: -9;
   opacity: 0;
-}
-
-.dataH h4{
-  margin-bottom: 10px;
-}
-.suitDataBox1,.suitDataBox2,.suitDataBox3{
-  padding: 10px 15px;
-  border-radius: 5px;
-  background-color: rgba(90, 90, 90, 0.3);
-
 }
