@@ -224,7 +224,7 @@
   width: 400px;
   height: 135px;
   padding: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   border-radius: 10px;
   background-color: #323232;
   display: flex;
@@ -297,7 +297,7 @@ transition: .3s ease-in-out;
   width: 450px;
   height: 200px;
   padding: 10px;
-  margin-bottom: 30px;
+  margin:20px 0 30px;
   border-radius: 10px;
   background-color: #323232;
   display: flex;

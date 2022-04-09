@@ -17,8 +17,8 @@
 .craft-step {
   position: absolute;
   right: 4.5vw;
-  width: 770px;
-  min-width: 700px;
+  width: 92%;
+  min-width: 770px;
   filter: drop-shadow(-15px 10px 8px black);
 }
 .craft-img {
