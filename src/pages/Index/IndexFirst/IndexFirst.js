@@ -19,7 +19,6 @@ const IndexFirst = () => (
         width="100%"
         height="100%"
         playing={true}
-        controls={true}
       ></ReactPlayer>
       <img
         src="./index_img/indexfirst_title.png"
