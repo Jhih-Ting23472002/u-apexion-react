@@ -323,7 +323,7 @@ const CameraController = () => {
               lineHeight: isToggleOn === true ? '2' : '1.5',
             }}
           >
-            太空站設立於台灣-台北，經過數年由多個模組在軌道上組裝而成，特點是多艙，積木式結構。
+            太空站設立於台灣-台東，經過數年由多個模組在軌道上組裝而成，特點是多艙，積木式結構。
           </div>
         </motion.div>
       </div>
