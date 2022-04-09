@@ -1047,3 +1047,11 @@
     top: 15%;
   }
 }
+#webgl {
+  width: 100%;
+  overflow: hidden;
+}
+
+.taiwan-station-btn:focus{
+  outline: none;
+}
