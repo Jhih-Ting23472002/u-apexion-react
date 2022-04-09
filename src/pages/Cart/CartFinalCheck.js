@@ -96,7 +96,11 @@ const CartFinalCheck = props => {
               <React.Fragment key="1">
                 <div className="cart-order-item cart-list-detail d-flex">
                   <div className="cart-img-div col-4">
-                    <img src={spaceSuit} alt="" />
+                    <img
+                      src={suit[0].suitBase64}
+                      alt=""
+                      className="spaceship-height"
+                    />
                   </div>
                   <div className="cart-list-detail-inside col-8">
                     <h5 className="cart-product-list-group">個人宇航服</h5>
@@ -116,7 +120,11 @@ const CartFinalCheck = props => {
               <React.Fragment key="2">
                 <div className="cart-order-item cart-list-detail d-flex">
                   <div className="cart-img-div col-4">
-                    <img src={spaceShip} alt="" className="spaceship-height" />
+                    <img
+                      src={craft[0].craftBase64}
+                      alt=""
+                      className="spaceship-height"
+                    />
                   </div>
                   <div className="cart-list-detail-inside col-8">
                     <h5 className="cart-product-list-group">spacecraft</h5>
@@ -138,7 +146,11 @@ const CartFinalCheck = props => {
               <React.Fragment key="3">
                 <div className="cart-order-item cart-list-detail d-flex">
                   <div className="cart-img-div col-4">
-                    <img src={spaceSeat} alt="" />
+                    <img
+                      src={customize[0].seatImg}
+                      alt=""
+                      className="cartSeatImg"
+                    />
                   </div>
                   <div className="cart-list-detail-inside col-8">
                     <h5 className="cart-product-list-group">太空艙座位</h5>
