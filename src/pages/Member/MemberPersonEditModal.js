@@ -10,10 +10,15 @@ function MemberPersonEditModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">修改檔案</Modal.Title>
+        <Modal.Title
+          id="contained-modal-title-vcenter"
+          style={{ color: 'white', fontSize: '30px' }}
+        >
+          修改檔案
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>修改個人檔案成功</p>
+        <p style={{ color: 'white', fontSize: '20px' }}>修改個人檔案成功。</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉視窗</Button>

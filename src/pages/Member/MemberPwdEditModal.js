@@ -9,10 +9,17 @@ function MemberPwdEditModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">更改密碼</Modal.Title>
+        <Modal.Title
+          id="contained-modal-title-vcenter"
+          style={{ color: 'white', fontSize: '30px' }}
+        >
+          更改密碼
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p id="change-pwd-msg">更改密碼成功</p>
+        <p id="change-pwd-msg" style={{ color: 'white', fontSize: '20px' }}>
+          更改密碼成功。
+        </p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉視窗</Button>

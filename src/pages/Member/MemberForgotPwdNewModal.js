@@ -9,10 +9,17 @@ function MemberForgotPwdNewModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">更改密碼成功</Modal.Title>
+        <Modal.Title
+          id="contained-modal-title-vcenter"
+          style={{ color: 'white', fontSize: '30px' }}
+        >
+          設定密碼
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>請用更改後的新密碼登入。</p>
+        <p style={{ color: 'white', fontSize: '20px' }}>
+          設定密碼成功，請用更改後的新密碼登入。
+        </p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉視窗</Button>

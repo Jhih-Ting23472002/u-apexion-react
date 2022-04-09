@@ -10,10 +10,17 @@ function MemberSignUpModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">創建帳戶</Modal.Title>
+        <Modal.Title
+          id="contained-modal-title-vcenter"
+          style={{ color: 'white', fontSize: '30px' }}
+        >
+          創建帳戶
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>註冊成功</p>
+        <p style={{ color: 'white', fontSize: '20px' }}>
+          註冊成功，請至會員首頁登入。
+        </p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉視窗</Button>

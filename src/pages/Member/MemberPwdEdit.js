@@ -69,10 +69,10 @@ function MemberPwdEdit() {
         console.log('obj:', obj);
         if (obj.success) {
           setShow(true);
-          msgRef.current.innerText = '修改密碼成功';
+          msgRef.current.innerText = '更改密碼成功。';
         } else {
           setShow(true);
-          msgRef.current.innerText = '修改密碼失敗';
+          msgRef.current.innerText = '更改密碼失敗。';
         }
       });
     } else {
@@ -223,10 +223,17 @@ function MemberPwdEdit() {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">更改密碼</Modal.Title>
+          <Modal.Title
+            id="contained-modal-title-vcenter"
+            style={{ color: 'white', fontSize: '30px' }}
+          >
+            更改密碼
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p ref={msgRef}>新的密碼與確認密碼不相符</p>
+          <p style={{ color: 'white', fontSize: '20px' }} ref={msgRef}>
+            新的密碼與確認密碼不相符。
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={handleClose}>關閉視窗</Button>

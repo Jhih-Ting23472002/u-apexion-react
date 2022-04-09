@@ -9,12 +9,17 @@ function MemberForgotPwdModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          電子郵件及手機號碼驗證正確
+        <Modal.Title
+          id="contained-modal-title-vcenter"
+          style={{ color: 'white', fontSize: '30px' }}
+        >
+          電子郵件及手機號碼驗證
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>請您至輸入的電子郵件收取驗證碼。</p>
+        <p style={{ color: 'white', fontSize: '20px' }}>
+          驗證通過，請至輸入的電子郵件收取驗證信。
+        </p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>關閉視窗</Button>

@@ -5,7 +5,6 @@ import './MemberForgotPwd.css';
 import { pwdNewConfirm } from '../../data/UserWebApi';
 import MemberForgotPwdNewModal from './MemberForgotPwdNewModal';
 
-
 const MemberForgotPwd = () => {
   const history = useHistory();
 
