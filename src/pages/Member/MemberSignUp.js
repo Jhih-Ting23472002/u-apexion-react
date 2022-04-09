@@ -62,7 +62,7 @@ const MemberSignUp = () => {
               <p>SIGNUP</p>
             </div>
             <form className="signup-form" onSubmit={handleRegister}>
-            <div className="member-input-container ">
+              <div className="member-input-container ">
                 <label htmlFor="name" className="member-label">
                   護照英文姓名
                 </label>
@@ -92,7 +92,6 @@ const MemberSignUp = () => {
                 />
               </div>
 
-              
               <div className="member-input-container completed">
                 <label htmlFor="account" className="member-label">
                   電子郵件
@@ -215,7 +214,6 @@ const MemberSignUp = () => {
                   </div>
                 </div>
               </div> */}
-             
 
               <div className="member-input-container">
                 <label htmlFor="country" className="member-label">
@@ -232,6 +230,8 @@ const MemberSignUp = () => {
                   <option>日本</option>
                   <option>韓國</option>
                   <option>美國</option>
+                  <option>英國</option>
+                  <option>烏克蘭</option>
                 </select>
               </div>
               <div className="member-btn-container">
