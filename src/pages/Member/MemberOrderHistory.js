@@ -3,6 +3,7 @@
 import MemberNavbar from '../../components/MemberNav';
 import React, { useEffect, useState } from 'react';
 import { getOrderHistory } from '../../data/UserWebApi';
+import './MemberOrderHistory.css';
 
 function MemberOrderHistory() {
   const user_id = localStorage.getItem('user_id');
@@ -19,12 +20,9 @@ function MemberOrderHistory() {
 
   const handleListDetail = () => {
     setListDetail(true);
-    // console.log(listDetail);
-    setTimeout(() => {
-      if (listDetail == true) {
-        setListDetail(false);
-      }
-    }, 500);
+    if (listDetail == true) {
+      setListDetail(false);
+    }
   };
 
   useEffect(() => {
@@ -83,11 +81,24 @@ function MemberOrderHistory() {
                                 transition: '0.5s',
                                 cursor: 'pointer',
                               }}
-                            ></i>
+                            >
+                              <div
+                                style={{
+                                  fontFamily: 'Arsenal',
+                                  display: 'inline-block',
+                                  marginLeft: '10px',
+                                  letterSpacing: '1.5px',
+                                  // textDecoration: 'underline',
+                                }}
+                              >
+                                Click for Details
+                              </div>
+                            </i>
                             <div
                               className="list-detail"
                               style={{
-                                display: listDetail === true ? 'none' : 'block',
+                                opacity: listDetail === true ? '1' : '0',
+                                // transition: '0.5s',
                               }}
                             >
                               <div
@@ -183,15 +194,28 @@ function MemberOrderHistory() {
                               class="fa-solid fa-arrow-down-1-9 listDetail-icon"
                               onClick={handleListDetail}
                               style={{
-                                transition: '0.5s',
+                                // transition: '0.5s',
                                 cursor: 'pointer',
+                                display: 'inline-block',
                               }}
-                            ></i>
+                            >
+                              <div
+                                style={{
+                                  fontFamily: 'Arsenal',
+                                  display: 'inline-block',
+                                  marginLeft: '10px',
+                                  letterSpacing: '1.5px',
+                                  // textDecoration: 'underline',
+                                }}
+                              >
+                                Click for Details
+                              </div>
+                            </i>
                             <div
                               className="detail-list"
                               style={{
-                                display: listDetail === true ? 'none' : 'block',
-                                transition: 'all 1s ease-in-out',
+                                opacity: listDetail === true ? '1' : '0',
+                                // transition: 'all 1s ease-in-out',
                               }}
                             >
                               <div

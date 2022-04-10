@@ -10,7 +10,6 @@ import { data } from './image_data';
 const IndexMain = () => {
   const [isToggleOn, setIsToggleOn] = useState(false);
   const handleSlideChange = () => {
-    console.log('changed');
     setIsToggleOn(true);
     if (isToggleOn === true) {
       setIsToggleOn(false);

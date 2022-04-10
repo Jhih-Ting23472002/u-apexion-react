@@ -23,11 +23,11 @@ const ErrorMessage = styled.div`
 
 export default function ForumPublishPage(props) {
   const [posts, setPosts] = useState([]);
-  const [titleValue, setTitleValue] = useState(null);
-  const [contentValue, setContentValue] = useState(null);
+  const [titleValue, setTitleValue] = useState('');
+  const [contentValue, setContentValue] = useState('');
   const [categoryValue, setCategoryValue] = useState(null);
-  const [hashtagOneValue, setHashtagOneValue] = useState(null);
-  const [hashtagtwoValue, setHashTagTwoValue] = useState(null);
+  const [hashtagOneValue, setHashtagOneValue] = useState('');
+  const [hashtagtwoValue, setHashTagTwoValue] = useState('');
   const [fileSrc, setFileSrc] = useState(null);
   const [postApiError, setPostApiError] = useState(null);
   const { setNewPost, newpost } = props;
@@ -40,6 +40,15 @@ export default function ForumPublishPage(props) {
   const user_name = localStorage.getItem('user_name');
 
   let history = useHistory();
+
+  const handleKeyIn = () => {
+    setTitleValue('全世界第一本太空旅行準備書！');
+    setHashtagOneValue('#全世界第一');
+    setHashTagTwoValue('#太空旅行準備書');
+    setContentValue(
+      '經過一九六○年代，前蘇聯與美國的太空競賽，讓外太空從一個大部分未知的空間，變成各國太空人的遊樂場，許多人都認為在當時可預見的未來，一般人也能夠進行太空旅行，而接下來的日子裡，這個預想還沒完全實現，只有許多電影、電視、電玩早已在畫面上滿足人類探訪太空的夢想，直到二○○一年四月二十八日，丹尼斯．迪托成為第415位進入太空的地球人，而且也是第一位自費進行太空旅行者。<br/><br/>丹尼斯．迪托在《去你的太空》提到：「我所付的錢，大約可以付得起一萬個蘇聯太空計劃工作人員至少一年的薪資」「相信我，簽支票還算是整個計畫中最簡單的一環。」當時迪托參加的是為期八天，一項定期執行的蘇聯太空計畫，該任務僅需兩位太空人升空，但執行任務的「聯合號」上卻有三個位子，因此迪托在第一家太空旅行社──太空冒險公司──執行長艾瑞克的協助下，在這個計畫中爭得「一席之地」，為了這趟太空旅行，迪托接受了為期六個月，總數超過900小時的訓練課程。<br/><br/>由於太空船以高速運動、再加上重力不同等因素，在太空中的生活會以和地球不同的節奏進行，要明確的訂出「清醒時間」與「睡眠時間」，並訂定各階段活動的時間表以盡量維持身體循環的節奏。此外，許多生活細節也要格外注意，例如：在地球上張開嘴巴嚼食，頂多只是不雅的行為，但若在微重力的狀態下，飛散的食物碎屑，可是會造成致命的危險，許多在地球上理所當然的行為，在零重力的狀態下，都會有不同的規則和需要注意的細節。<br/><br/>當然，這本「完全升空指南」如果要歸類為書架上的「實用工具書」，那你得先有太空旅行計畫才行，如果你對太空旅行有興趣，書中也介紹了幾種不同的太空套裝行程與相關網站，不妨參考一下，不然就像莽斯特一樣看書過乾癮，總有一天等到旅行社降價！'
+    );
+  };
 
   const handleInputChange = e => {
     setTitleValue(e.target.value);
@@ -108,7 +117,7 @@ export default function ForumPublishPage(props) {
               <div className="forum_card">
                 <div className="forum_card-user">
                   <div className="forum_user-top-left">
-                    <div className="forum_user-logo">
+                    <div className="forum_user-logo" onClick={handleKeyIn}>
                       <img
                         className="forum_cover"
                         src={`http://localhost:3000/index_img/${userImg}`}
@@ -345,7 +354,7 @@ export default function ForumPublishPage(props) {
         <ForumPublishPageModal
           show={modalShow}
           onHide={() => {
-            history.push('/forum-home'); 
+            history.push('/forum-home');
           }}
         />
       </AllDisplayFlex>
