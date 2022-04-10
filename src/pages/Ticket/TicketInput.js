@@ -81,7 +81,7 @@ function TicketInput(props) {
           <div className="inputWrap">
             <label>成員{i}</label>
             <div className="inputGroup">
-              <p>請上傳護照影本及3個月內的健檢報告</p>
+              <p>請上傳護照影本</p>
               <label className="uploadButton" for="">
                 <input
                   type="file"
