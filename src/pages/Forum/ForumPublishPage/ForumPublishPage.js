@@ -79,26 +79,12 @@ export default function ForumPublishPage(props) {
   const handleFormSubmit = e => {
     e.preventDefault();
     const fd = new FormData(document.form1);
-    // alert('確認送出嗎？');
     fetch('http://localhost:3001/forum_index/forumArticle_insert', {
-      // 修改
       method: 'POST',
       body: fd,
     })
       .then(res => res.json())
       .then(data => {
-        /*
-        setTimeout(() => {
-          if (newpost === true) {
-            setNewPost(false);
-          } else {
-            setNewPost(true);
-          }
-          
-
-        }, 20000);
-        */
-        // console.log(data);
         if (data.success) {
           setNewPost(np => !np);
           setModalShow(true);

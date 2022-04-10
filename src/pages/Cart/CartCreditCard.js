@@ -3,7 +3,7 @@ import './CartCreditCard.css';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Link, useHistory } from 'react-router-dom';
-//import CartCreditCardModal from './CartCreditCardModal';
+import CartCreditCardModal from './CartCreditCardModal';
 
 const CartCreditCard = props => {
   const [number, setNumber] = useState('');
@@ -16,6 +16,7 @@ const CartCreditCard = props => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [modalShow, setModalShow] = useState(false);
   const history = useHistory();
 
   const {
@@ -214,7 +215,7 @@ const CartCreditCard = props => {
   const sendOrderDeatilHandler = e => {
     setCartOrderListNumber(orderListNumber);
     //console.log('orderListNumber', orderListNumber);  測試是否印成功
-    alert('金額核對完畢，確認送出？');
+    // alert('金額核對完畢，確認送出？');
     fetch('http://localhost:3001/cart/order-list-post', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -225,11 +226,19 @@ const CartCreditCard = props => {
         productJTingTinaQuantity,
         productJTingTinaPrice,
       }),
-    }).then(res => res.json());
-    //setCartConfirmModalShow(true);
-    history.push('/vedio-end'); //轉跳至結尾影片(智婷)
-    //history.push('/cart-complete'); //轉跳至購物車
+    })
+      .then(res => res.json())
+      //setCartConfirmModalShow(true);
+      // history.push('/vedio-end'); //轉跳至結尾影片(智婷)
+      .then(data => {
+        console.log(data);
+        if ((data.affectedRows = 1)) {
+          console.log(data.affectedRows);
+          setModalShow(true);
+        }
+      });
   };
+  console.log('show', modalShow);
 
   return (
     <>
@@ -306,7 +315,12 @@ const CartCreditCard = props => {
           </div>
         </div>
       </div>
-      {/* <CartCreditCardModal cartConfirmModalShow={cartConfirmModalShow} setCartConfirmModalShow={setCartConfirmModalShow}/> */}
+      <CartCreditCardModal
+        show={modalShow}
+        onHide={() => {
+          history.push('/vedio-end');
+        }}
+      />
     </>
   );
 };

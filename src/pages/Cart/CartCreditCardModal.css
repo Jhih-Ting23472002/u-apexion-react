@@ -1,18 +1,18 @@
-video::-webkit-media-controls-timeline {
+/* video::-webkit-media-controls-timeline {
     display: none;
   }
 
   .credit-video-end-wrap {
-      height: 70vh;
+      height: 70vh; */
       /* width: 1000px; */
-  }
-  .video-end {
+  /* }
+  .video-end { */
     /* width: 100%; */
     /* border: 1px solid red; */
   /* height: 90vh; */
-  }
+  /* } */
 
-  #video-end-player{
+  /* #video-end-player{
       width: 100%!important;
       object-fit: cover;
   }
@@ -34,8 +34,10 @@ video::-webkit-media-controls-timeline {
       height: 80vh;
   }
 
-  .modal-dialog {
+  .modal-dialog { */
       /* position: absolute;
       left: 0; */
       /* width: 100vw; */
-  }
+  /* } */
+
+  
