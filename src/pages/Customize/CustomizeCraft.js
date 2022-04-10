@@ -39,6 +39,7 @@ function CustomizeCraft(props) {
   const [country, setCountry] = useState('');
   const [craftPrice, setPrice] = useState(20000);
   const [craftTotal, setTotal] = useState(1);
+  const [craftDataBox, setCraftDataBox] = useState(' translateY(50px)');
 
   const printRef = useRef(null);
   useEffect(() => {
@@ -66,7 +67,10 @@ function CustomizeCraft(props) {
     const canvasSave = document.querySelector('.craftCanvasOnly');
     const d = canvasSave.toDataURL('image/png');
     setCraftBase64(d);
-  }, [countryImg, craftString, printRef, craftBase64]);
+    setTimeout(() => {
+      document.querySelector('.craftData').innerHTML = country;
+    }, 300);
+  }, [countryImg, craftString, printRef, craftBase64, country]);
 
   function addCart() {
     setCraft(function (prevData) {
@@ -272,7 +276,9 @@ function CustomizeCraft(props) {
             />
             <label>{labelSt}</label>
           </div>
-
+          <div className="craftDataBox" style={{ transform: craftDataBox }}>
+            <h4 className="craftData">3</h4>
+          </div>
           <div className="country-select">
             {allCountry.map((v, i) => {
               return (
@@ -282,6 +288,12 @@ function CustomizeCraft(props) {
                   key={i}
                   data-craftimg={v.slice(15, -4)}
                   onClick={e => {
+                    const newCraftDataBoxHide = 'translateY(50px)';
+                    setCraftDataBox(newCraftDataBoxHide);
+                    setTimeout(() => {
+                      const newCraftDataBoxShow = 'translateY(0px)'
+                      setCraftDataBox(newCraftDataBoxShow);
+                    }, 700);
                     //抓取圖片放入太空船
                     const closeOpa = '0';
                     setCraftCountryStyle(closeOpa);

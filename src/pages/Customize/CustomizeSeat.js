@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './CustomizeSeat.css';
 import CustomizeOrder from './CustomizeOrder';
 import CartQuantity from '../Products/CartQuantity';
@@ -20,6 +20,12 @@ function CustomizeSeat(props) {
     s2: '35px',
     s3: '35px',
   });
+  const [seatDataBox, setSeatDataBox] = useState(' translateY(50px)');
+  useEffect(() => {
+    setTimeout(() => {
+      document.querySelector('.seatData').innerHTML = style;
+    }, 300);
+  }, [style]);
   function addCart() {
     setCustomize(function (prevData) {
       setCartTotal(cartTotal + 1);
@@ -42,12 +48,20 @@ function CustomizeSeat(props) {
           <h1>請選擇太空椅外觀</h1>
           <h3>Customize Your Seat</h3>
           <h2>15,000$</h2>
+          <div className="seatDataBox" style={{ transform: seatDataBox }}>
+            <h4 className="seatData">1</h4>
+          </div>
           <div className="seat-select-color">
             <div
-              data-seat={'/customize_img/spaceseat-white.png'}
-              style={{ width:suitSize.s1, height:suitSize.s1 }}
+              style={{ width: suitSize.s1, height: suitSize.s1 }}
               className="white suit-flag"
               onClick={e => {
+                const newSeatDataBoxHide = 'translateY(50px)';
+                setSeatDataBox(newSeatDataBoxHide);
+                setTimeout(() => {
+                  const newSeatDataBoxShow = 'translateY(0px)';
+                  setSeatDataBox(newSeatDataBoxShow);
+                }, 700);
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 // 讓seat-box-img 圖片淡出
@@ -60,7 +74,7 @@ function CustomizeSeat(props) {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
                   // 讓圖片淡入
-                  const newImg = e.target.dataset.seat;
+                  const newImg = '/customize_img/spaceseat-white.png';
                   setSeatImg(newImg);
                   // 載入圖片
                 }, 700);
@@ -74,10 +88,15 @@ function CustomizeSeat(props) {
               }}
             ></div>
             <div
-              data-seat={'/customize_img/spaceseat-orange.png'}
               className="orange suit-flag"
-              style={{ width:suitSize.s2, height:suitSize.s2 }}
+              style={{ width: suitSize.s2, height: suitSize.s2 }}
               onClick={e => {
+                const newSeatDataBoxHide = 'translateY(50px)';
+                setSeatDataBox(newSeatDataBoxHide);
+                setTimeout(() => {
+                  const newSeatDataBoxShow = 'translateY(0px)';
+                  setSeatDataBox(newSeatDataBoxShow);
+                }, 700);
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#EE6A26' };
@@ -86,7 +105,7 @@ function CustomizeSeat(props) {
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
-                  const newImg = e.target.dataset.seat;
+                  const newImg = '/customize_img/spaceseat-orange.png';
                   setSeatImg(newImg);
                 }, 700);
                 const newSize = {
@@ -99,10 +118,15 @@ function CustomizeSeat(props) {
               }}
             ></div>
             <div
-              data-seat={'/customize_img/spaceseat-blue.png'}
               className="blue suit-flag"
-              style={{ width:suitSize.s3, height:suitSize.s3 }}
+              style={{ width: suitSize.s3, height: suitSize.s3 }}
               onClick={e => {
+                const newSeatDataBoxHide = 'translateY(50px)';
+                setSeatDataBox(newSeatDataBoxHide);
+                setTimeout(() => {
+                  const newSeatDataBoxShow = 'translateY(0px)';
+                  setSeatDataBox(newSeatDataBoxShow);
+                }, 700);
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 const newColor = { ...color, background: '#0072D6' };
@@ -111,7 +135,7 @@ function CustomizeSeat(props) {
                 setTimeout(() => {
                   const newOpaOpen = '1';
                   setOpa(newOpaOpen);
-                  const newImg = e.target.dataset.seat;
+                  const newImg = '/customize_img/spaceseat-blue.png';
                   setSeatImg(newImg);
                 }, 700);
                 const newSize = {

@@ -56,6 +56,11 @@ function CustomizeSuit(props) {
     s2: '35px',
     s3: '35px',
   });
+  const [suitDataBox, setSuitDataBox] = useState({
+    BS: ' translateY(50px)',
+    BC: ' translateY(50px)',
+    BM: ' translateY(50px)',
+  });
   //國家
   const [countrySelectSuit, setCountrySelectSuit] = useState('0');
   const [countryImgSuit, setCountryImgSuit] = useState('0');
@@ -100,9 +105,27 @@ function CustomizeSuit(props) {
     const canvasSave = document.querySelector('.suitCanvasOnly');
     const d = canvasSave.toDataURL('image/png');
     setSuitBase64(d);
-  }, [suitImg, countryImgSuit, markImgSuit, suitBase64]);
+    // ====================商品名稱
+    setTimeout(() => {
+      document.querySelector('.suitData1').innerHTML = suitImgName;
+      document.querySelector('.suitData2').innerHTML = country;
+      document.querySelector('.suitData3').innerHTML = markSuit;
+    }, 200);
+  }, [suitImg, countryImgSuit, markImgSuit, suitBase64, suitImgName]);
   //國旗效果的狀態改變
   function setFlagHandler(e) {
+    const newSuitDataBoxHide = {
+      ...suitDataBox,
+      BC: 'translateY(50px)',
+    };
+    setSuitDataBox(newSuitDataBoxHide);
+    setTimeout(() => {
+      const newSuitDataBoxShow = {
+        ...suitDataBox,
+        BC: 'translateY(0px)',
+      };
+      setSuitDataBox(newSuitDataBoxShow);
+    }, 700);
     //抓取圖片放入太空服
     const closeOpa = '0';
     setCountrySelectSuit(closeOpa);
@@ -129,6 +152,18 @@ function CustomizeSuit(props) {
   }
   //徽章效果的狀態改變
   function setMarkHandler(e) {
+    const newSuitDataBoxHide = {
+      ...suitDataBox,
+      BM: 'translateY(50px)',
+    };
+    setSuitDataBox(newSuitDataBoxHide);
+    setTimeout(() => {
+      const newSuitDataBoxShow = {
+        ...suitDataBox,
+        BM: 'translateY(0px)',
+      };
+      setSuitDataBox(newSuitDataBoxShow);
+    }, 700);
     const closeOpa = '0';
     setMarkSelectSuit(closeOpa);
     setTimeout(() => {
@@ -328,12 +363,28 @@ function CustomizeSuit(props) {
           <h1>請選擇太空服外觀</h1>
           <h3>Customize Your SpaceSuit</h3>
           <h2>25,000$</h2>
+          <div className="suitDataBox1" style={{ transform: suitDataBox.BS }}>
+            <h4 className="suitData1">1</h4>
+          </div>
           <div className="suit-select-color">
             <div
               data-name={'銀河白太空衣'}
               className="white suit-flag"
-              style={{ width:suitSize.s1, height:suitSize.s1 }}
+              style={{ width: suitSize.s1, height: suitSize.s1 }}
               onClick={e => {
+                const newSuitDataBoxHide = {
+                  ...suitDataBox,
+                  BS: 'translateY(50px)',
+                };
+                setSuitDataBox(newSuitDataBoxHide);
+                setTimeout(() => {
+                  const newSuitDataBoxShow = {
+                    ...suitDataBox,
+                    BS: 'translateY(0px)',
+                  };
+                  setSuitDataBox(newSuitDataBoxShow);
+                }, 700);
+
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 // 讓seat-box-img 圖片淡出
@@ -360,14 +411,25 @@ function CustomizeSuit(props) {
                   s3: '30px',
                 };
                 setSuitSize(newSize);
-                
               }}
             ></div>
             <div
               data-name={'火源橘太空衣'}
               className="orange suit-flag"
-              style={{ width:suitSize.s2, height:suitSize.s2 }}
+              style={{ width: suitSize.s2, height: suitSize.s2 }}
               onClick={e => {
+                const newSuitDataBoxHide = {
+                  ...suitDataBox,
+                  BS: 'translateY(50px)',
+                };
+                setSuitDataBox(newSuitDataBoxHide);
+                setTimeout(() => {
+                  const newSuitDataBoxShow = {
+                    ...suitDataBox,
+                    BS: 'translateY(0px)',
+                  };
+                  setSuitDataBox(newSuitDataBoxShow);
+                }, 700);
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 // 讓seat-box-img 圖片淡出
@@ -400,8 +462,20 @@ function CustomizeSuit(props) {
             <div
               data-name={'能源藍太空衣'}
               className="blue suit-flag"
-              style={{ width:suitSize.s3, height:suitSize.s3 }}
+              style={{ width: suitSize.s3, height: suitSize.s3 }}
               onClick={e => {
+                const newSuitDataBoxHide = {
+                  ...suitDataBox,
+                  BS: 'translateY(50px)',
+                };
+                setSuitDataBox(newSuitDataBoxHide);
+                setTimeout(() => {
+                  const newSuitDataBoxShow = {
+                    ...suitDataBox,
+                    BS: 'translateY(0px)',
+                  };
+                  setSuitDataBox(newSuitDataBoxShow);
+                }, 700);
                 const newOpaClose = '0';
                 setOpa(newOpaClose);
                 // 讓seat-box-img 圖片淡出
@@ -431,6 +505,9 @@ function CustomizeSuit(props) {
               }}
             ></div>
           </div>
+          <div className="suitDataBox2" style={{ transform: suitDataBox.BC }}>
+            <h4 className="suitData2">2</h4>
+          </div>
           <div className="country-select">
             {allCountry.map((v, i) => {
               return (
@@ -452,6 +529,9 @@ function CustomizeSuit(props) {
                 <img src={'/customize_img/noselect.png'} alt="" />
               </div>
             </div>
+          </div>
+          <div className="suitDataBox3" style={{ transform: suitDataBox.BM }}>
+            <h4 className="suitData3">3</h4>
           </div>
           <div className="mark-select">
             {allMark.map((v, i) => {

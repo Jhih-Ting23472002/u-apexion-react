@@ -23,8 +23,8 @@
 }
 .seat-box-img {
   position: absolute;
-  top: 10vh;
-  right: 55vw;
+  top: 20%;
+  left: 20%;
   z-index: 1;
   width: 500px;
   filter:drop-shadow(-15px 10px 15px rgb(0, 0, 0));
@@ -89,7 +89,7 @@
     border: none;
     box-shadow: -30px 10px 20px #00000050;
     z-index: 2;
-    margin-top:30%;
+    margin-top:45%;
     transition: .3s ease-in-out;
   }
   .seat-circle-btn:after {
@@ -130,4 +130,14 @@
   .seatMoveRight2{
     transform: translateX(1300px);
     animation: suitsMoveRight 1.4s ease-in-out forwards .5s;
+  }
+  .seatDataBox{
+    position: absolute;
+    top:30%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: rgba(90, 90, 90, 0.3);
+  transform: translateY(50px);
+  color: #05f2f2b5;
+transition: .6s ease-in-out;
   }
