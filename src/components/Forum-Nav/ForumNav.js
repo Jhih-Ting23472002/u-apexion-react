@@ -257,13 +257,14 @@ export default function ForumNav() {
             <ForunArticalAll to="/#" $active={location.pathname === '/#'}>
               <div className="forum_navIcon_adjust">
                 <i className="fa-solid fa-bookmark"> </i>
-                <a
-                  href="/#"
+                <Link
+                  to="/forum-personal-saved"
+                  // href="/#"
                   className="forum_nav_item"
                   style={{ fontFamily: 'Noto', letterSpacing: '2px' }}
                 >
                   個人珍藏
-                </a>
+                </Link>
               </div>
             </ForunArticalAll>
           </div>
