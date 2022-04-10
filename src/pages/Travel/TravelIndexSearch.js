@@ -58,10 +58,7 @@ function TravelIndexSearch() {
                             <h4 className="chooseh4 pb-2 border-bottom">
                               {c.travel_name}
                             </h4>
-                            <p className="choosep">
-                              Pistachio stuffed kofta balls served with a
-                              persian style tomato sauce.
-                            </p>
+                            <p className="choosep">{c.travel_description}</p>
                             <ul className="chooseitinerary">
                               <li>類別:{c.travel_tags}</li>
                               <li>產品代碼:{c.travel_number}</li>
