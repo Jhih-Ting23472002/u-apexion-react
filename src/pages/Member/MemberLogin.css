@@ -4,17 +4,17 @@
   background: url('/public/member_img/space_tourist 1.png') center center/cover
     no-repeat;
   position: relative;
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
 }
 
 .login-group {
   background: rgba(0, 0, 0, 0.9);
   position: absolute;
-  width: 33%;
+  width: 480px;
   height: 100vh;
   top: 0;
-  right: 110px;
+  right: 100px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -22,6 +22,9 @@
   justify-content: center;
   height: 100vh;
 }
+
+
+
 
 .login-header {
   display: flex;
@@ -145,7 +148,7 @@
   font-size: 14px;
   border-radius: 20px;
   border: none;
-  box-shadow: -30px 10px 20px #00000050;
+  /* box-shadow: -30px 10px 20px #00000050; */
   transition: 0.3s ease-in-out;
 }
 .login-primary-btn:after,
@@ -179,8 +182,37 @@
 }
 
 
-.login-google-btn,
+/* .login-google-btn,
 .login-signup-btn {
   background: rgba(0, 0, 0, 0.8);
   color: #05f2f2;
+} */
+
+@media screen and (max-width: 950px) and (min-width: 481px) {
+  .login-container {
+    width: 100%;
+    height: 100vh;
+    background: url('/public/member_img/space_tourist 1.png')  
+    no-repeat;
+    /*position: relative;*/
+     /* display: flex;  */
+    /* flex-direction: row; */
+  }
+}
+
+@media screen and (max-width: 600px)  {
+  .login-group{
+    left:0px
+  }
+}
+
+
+@media screen and (max-width: 500px){
+  .login-container {
+    background: unset;
+  }
+  .login-group{
+    width: 100% ;
+    right: 0;
+  }
 }

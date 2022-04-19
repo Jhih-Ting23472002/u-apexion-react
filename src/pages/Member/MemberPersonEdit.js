@@ -230,6 +230,7 @@ const MemberPersonEdit = () => {
                     <option>韓國</option>
                     <option>美國</option>
                     <option>英國</option>
+                    <option>加拿大</option>
                     <option>烏克蘭</option>
                   </select>
                 </div>

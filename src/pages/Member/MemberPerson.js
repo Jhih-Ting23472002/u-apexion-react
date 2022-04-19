@@ -81,7 +81,7 @@ const MemberPerson = () => {
             </div>
             <div className="person-form-container">
               <form className="person-form">
-              <div className="member-input-container ">
+                <div className="member-input-container ">
                   <label htmlFor="name" className="member-label">
                     護照英文姓名
                   </label>
@@ -186,8 +186,6 @@ const MemberPerson = () => {
                   </div>
                 </div> */}
 
-                
-
                 <div className="member-input-container">
                   <label htmlFor="country" className="member-label">
                     國籍
@@ -218,7 +216,6 @@ const MemberPerson = () => {
                     </button>
                   </div>
                 </div> */}
-                
               </form>
               <div className="member-line-wrap">
                 <div className="person-line"></div>
